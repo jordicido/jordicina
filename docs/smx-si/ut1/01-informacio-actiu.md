@@ -18,7 +18,7 @@ No cal que una dada siga secreta per tindre valor. Un inventari, una agenda de c
 | Integritat | La informació és correcta i no ha sigut alterada indegudament. | Els preus publicats coincideixen amb els aprovats. |
 | Disponibilitat | El recurs està accessible quan la feina el necessita. | El servidor arranca després d’un microtall. |
 
-Les tres propietats poden entrar en tensió: xifrar una dada pot protegir-ne la confidencialitat però complicar-ne la disponibilitat si es perden les claus. La seguretat busca un equilibri adequat al risc.
+Les tres propietats poden entrar en tensió: xifrar una dada pot protegir-ne la confidencialitat però complicar-ne la disponibilitat si es perden les claus. La seguretat busca un equilibri adequat al risc
 
 ## Actius, amenaces, vulnerabilitats i riscos
 
