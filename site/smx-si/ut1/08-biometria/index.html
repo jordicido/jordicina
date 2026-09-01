@@ -842,6 +842,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#identificacio-i-verificacio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Identificació i verificació
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#avantatges-i-limitacions" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -857,6 +868,17 @@
     <span class="md-ellipsis">
       
         Decidir amb criteri
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#procediment-dalta-us-i-baixa" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Procediment d’alta, ús i baixa
       
     </span>
   </a>
@@ -2782,6 +2804,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#identificacio-i-verificacio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Identificació i verificació
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#avantatges-i-limitacions" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2797,6 +2830,17 @@
     <span class="md-ellipsis">
       
         Decidir amb criteri
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#procediment-dalta-us-i-baixa" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Procediment d’alta, ús i baixa
       
     </span>
   </a>
@@ -2821,6 +2865,9 @@
 <h1 id="8-sistemes-biometrics">8. Sistemes biomètrics</h1>
 <h2 id="que-es-la-biometria">Què és la biometria?</h2>
 <p>La biometria identifica o verifica una persona a partir d’una característica física o de comportament. Els sistemes habituals utilitzen empremta dactilar, reconeixement facial, iris o veu. Durant l’alta es captura una mostra i el sistema crea una plantilla per comparar-la més endavant.</p>
+<h2 id="identificacio-i-verificacio">Identificació i verificació</h2>
+<p>No és el mateix preguntar «qui és aquesta persona?» que «és realment Marta?». En una <strong>identificació</strong> es compara una mostra amb moltes plantilles per trobar una coincidència. En una <strong>verificació</strong> la persona declara una identitat i el sistema comprova si la mostra correspon a aquella identitat. La verificació sol encaixar millor amb l’accés a una sala o a un dispositiu concret.</p>
+<p>El sistema no hauria de guardar una fotografia o una gravació completa si només necessita una plantilla protegida. La plantilla continua sent informació sensible i ha de tindre accés restringit, període de conservació justificat i procediment de baixa.</p>
 <h2 id="avantatges-i-limitacions">Avantatges i limitacions</h2>
 <table>
 <thead>
@@ -2849,6 +2896,7 @@
 </tbody>
 </table>
 <p>Un <strong>fals positiu</strong> accepta una persona no autoritzada; un <strong>fals negatiu</strong> rebutja una persona autoritzada. El llindar d’acceptació és una decisió de risc: una sala de comunicacions pot exigir més precisió que una porta d’un espai general.</p>
+<p>Quan el llindar és molt permissiu, el sistema pot facilitar l’accés però augmentar els falsos positius. Quan és molt estricte, pot millorar la protecció però augmentar els falsos negatius i dificultar el treball. La decisió ha de considerar el risc, el context i les persones usuàries.</p>
 <h2 id="decidir-amb-criteri">Decidir amb criteri</h2>
 <p>Abans d’instal·lar biometria pregunta:</p>
 <ol>
@@ -2859,6 +2907,20 @@
 <li>Quin manteniment, cost i procediment de baixa necessita?</li>
 </ol>
 <p>La biometria és especialment útil com a factor addicional per a una zona crítica, però no elimina la necessitat d’ACL, registres, procediments i una alternativa controlada.</p>
+<h2 id="procediment-dalta-us-i-baixa">Procediment d’alta, ús i baixa</h2>
+<p>Una implantació responsable hauria de definir:</p>
+<ol>
+<li><strong>Alta:</strong> informar la persona, registrar-la amb autorització i comprovar que el sensor funciona.</li>
+<li><strong>Ús:</strong> limitar l’accés al propòsit previst i registrar els intents necessaris.</li>
+<li><strong>Incidència:</strong> oferir una alternativa segura si el sensor falla.</li>
+<li><strong>Canvi de funció:</strong> revisar si encara necessita accés.</li>
+<li><strong>Baixa:</strong> eliminar o desactivar la plantilla i retirar permisos associats.</li>
+</ol>
+<p>La biometria no ha de convertir-se en l’única manera d’accedir a una zona crítica. Una targeta personal, una clau custodiada o una intervenció autoritzada poden formar part del procediment alternatiu.</p>
+<div class="admonition example">
+<p class="admonition-title">Decisió raonada</p>
+<p>Per a una sala de comunicacions, una empresa podria usar targeta personal més PIN i reservar la biometria com a segon factor. Així pot revocar la targeta i el PIN i disposa d’una alternativa si el sensor falla.</p>
+</div>
 <div class="admonition tip">
 <p class="admonition-title">Pregunta de control</p>
 <p>Proposa un procediment alternatiu per a una persona autoritzada a qui el lector d’empremta rebutja repetidament.</p>

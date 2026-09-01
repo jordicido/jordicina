@@ -28,6 +28,33 @@ Les tres propietats poden entrar en tensió: xifrar una dada pot protegir-ne la 
 - **Impacte:** conseqüència si l’incident es produeix.
 - **Risc:** combinació de probabilitat i impacte.
 
+## Com fer una anàlisi inicial
+
+Per analitzar un entorn, segueix aquest ordre:
+
+1. **Inventaria els actius:** què hi ha i per a què serveix?
+2. **Assigna responsables:** qui necessita que funcione i qui el manté?
+3. **Pregunta què pot passar:** robatori, foc, aigua, tall, error o accés no autoritzat.
+4. **Busca vulnerabilitats observables:** porta oberta, equip al terra, cables sense ordre o permisos massa amplis.
+5. **Descriu l’impacte:** què deixaria de funcionar, quina informació s’exposaria i quant de temps afectaria?
+6. **Proposa una mesura verificable:** què canviarà, qui ho farà i com sabrem que funciona?
+
+No cal protegir tots els actius de la mateixa manera. Un monitor de recepció i un servidor amb dades de clients tenen valors i conseqüències diferents. L’anàlisi ha de reflectir aquesta diferència.
+
+## Impactes habituals
+
+Una incidència pot produir més d’una conseqüència:
+
+| Tipus d’impacte | Exemple |
+| --- | --- |
+| Operatiu | El personal no pot treballar o atendre clients. |
+| Econòmic | Es perden vendes, hores de treball o equipament. |
+| Informatiu | Es perden, s’alteren o s’exposen dades. |
+| Reputacional | Clients i proveïdors perden confiança. |
+| Organitzatiu | Cal activar personal, proveïdors o procediments d’emergència. |
+
+Una mateixa vulnerabilitat pot afectar diferents propietats. Per exemple, robar un portàtil pot comprometre la confidencialitat de les dades, la disponibilitat de l’equip i la integritat de la informació si algú la modifica.
+
 Una taula inicial pot ajudar a no saltar directament a la solució:
 
 | Actiu | Amenaça | Vulnerabilitat | Conseqüència | Mesura |
@@ -36,5 +63,8 @@ Una taula inicial pot ajudar a no saltar directament a la solució:
 
 !!! tip "Pregunta de control"
     Diferencia l’amenaça «aigua» de la vulnerabilitat «canonada damunt del rack». Poden existir per separat?
+
+!!! example "Exemple complet"
+    **Actiu:** servidor de fitxers. **Amenaça:** tall elèctric. **Vulnerabilitat:** no hi ha SAI i el servidor s’apaga bruscament. **Impacte:** indisponibilitat del servei i possible corrupció de dades. **Mesures:** SAI, apagada controlada i revisió de l’alimentació.
 
 [Següent: seguretat física i lògica](02-seguretat-fisica-logica.md) · [Índex](index.md)

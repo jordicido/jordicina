@@ -10,6 +10,20 @@ Els equips crítics necessiten un lloc amb accés restringit, ventilació, il·l
 
 Un servidor no hauria d’estar al terra: augmenta l’exposició a pols i aigua i dificulta el manteniment. Un switch o un router tampoc hauria d’estar a l’abast de qualsevol persona si controla la connectivitat de tota l’empresa.
 
+## Com hauria de ser una sala de comunicacions?
+
+Com a orientació, una sala destinada a servidors i xarxa hauria de tindre:
+
+- accés limitat a personal autoritzat;
+- rack fixat, ordenat i amb espai per a ventilació i manteniment;
+- equips elevats respecte del terra;
+- absència d’emmagatzematge de caixes, líquids o materials combustibles;
+- climatització o ventilació adequada a la calor generada;
+- cablejat identificat i separat per facilitar el diagnòstic;
+- sensors o avisos quan el risc d’aigua, fum o temperatura ho justifique.
+
+No sempre és possible disposar d’una sala perfecta. En aquest cas, documenta les limitacions i aplica compensacions: elevar el rack, protegir la finestra, instal·lar un sensor o limitar l’accés.
+
 ## Factors ambientals
 
 | Factor | Risc | Mesura possible |
@@ -28,6 +42,15 @@ Les xifres concretes de temperatura, humitat o càrrega elèctrica depenen del f
 ## Ergonomia i manteniment
 
 La protecció també inclou les persones. El cablejat ha de permetre circular i evacuar; les pantalles i taules s’han d’organitzar de manera segura; les operacions de manteniment han de deixar espai i il·luminació. Una sala inaccessible per al tècnic no és una sala ben protegida.
+
+## Monitoratge i manteniment ambiental
+
+Mesurar és útil només si hi ha una resposta definida. Un registre ambiental pot incloure data, temperatura, humitat, incidències i actuació realitzada. Si un sensor envia una alerta però ningú sap qui ha d’intervenir, el sistema no redueix realment el risc.
+
+El manteniment ha d’incloure neteja segura, revisió de ventiladors, comprovació de canaletes, inspecció visual d’aigua o corrosió i actualització del plànol i l’inventari. Les tasques s’han de planificar sense interrompre serveis crítics.
+
+!!! example "Decisió raonada"
+    Si el rack no es pot allunyar d’una finestra, una proposta acceptable pot combinar persiana o protecció solar, sensor d’obertura, rack tancat, elevació del terra i revisió periòdica. No és tan bona com canviar-lo d’ubicació, però redueix diversos riscos.
 
 !!! tip "Pregunta de control"
     Quins tres riscos revisaries primer en una sala amb un rack al costat d’una finestra i una impressora damunt d’una regleta?

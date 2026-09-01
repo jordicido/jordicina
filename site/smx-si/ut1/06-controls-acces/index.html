@@ -783,6 +783,23 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Identificar, autenticar i autoritzar">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exemple-pas-a-pas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exemple pas a pas
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -801,6 +818,28 @@
     <span class="md-ellipsis">
       
         Com redactar una ACL
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#acl-fisica-i-acl-logica" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ACL física i ACL lògica
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#revisio-duna-acl" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Revisió d’una ACL
       
     </span>
   </a>
@@ -2779,6 +2818,23 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Identificar, autenticar i autoritzar">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exemple-pas-a-pas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exemple pas a pas
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -2803,6 +2859,28 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#acl-fisica-i-acl-logica" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ACL física i ACL lògica
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#revisio-duna-acl" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Revisió d’una ACL
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2821,6 +2899,15 @@
 <h1 id="6-controls-dacces-i-llistes-de-control">6. Controls d’accés i llistes de control</h1>
 <h2 id="identificar-autenticar-i-autoritzar">Identificar, autenticar i autoritzar</h2>
 <p>La identificació declara una identitat (<code>marta</code>); l’autenticació comprova que és la persona corresponent; l’autorització decideix què pot fer. Confondre aquests passos porta a polítiques incompletes: saber qui és algú no implica donar-li accés a tot.</p>
+<h3 id="exemple-pas-a-pas">Exemple pas a pas</h3>
+<p>Quan Marta entra a la sala de comunicacions amb una targeta:</p>
+<ol>
+<li>El sistema rep la identitat associada a la targeta (<strong>identificació</strong>).</li>
+<li>Comprova la targeta i, si cal, un segon factor (<strong>autenticació</strong>).</li>
+<li>Consulta si el seu grup pot entrar en aquell horari (<strong>autorització</strong>).</li>
+<li>Obri la porta i registra l’accés si la regla ho permet.</li>
+</ol>
+<p>La mateixa seqüència es pot aplicar a una carpeta, un ordinador o un panell d’administració.</p>
 <h2 id="principi-de-minim-privilegi">Principi de mínim privilegi</h2>
 <p>Cada perfil ha de rebre només els permisos necessaris per fer la seua funció. El principi de necessitat de conéixer afegeix que no tota persona que treballa en una empresa necessita veure tota la informació.</p>
 <table>
@@ -2861,6 +2948,7 @@
 </table>
 <h2 id="com-redactar-una-acl">Com redactar una ACL</h2>
 <p>Una ACL ha d’indicar subjecte o grup, recurs, acció, condicions i resultat. També convé definir una regla per defecte, la prioritat en cas de conflicte, el registre d’accessos i la revisió periòdica.</p>
+<p>Una pràctica clara és començar per <strong>denegar per defecte</strong> i afegir només les excepcions necessàries. Això no significa bloquejar el treball sense criteri: significa que cada permís nou té una raó, un responsable i una revisió.</p>
 <table>
 <thead>
 <tr>
@@ -2896,6 +2984,42 @@
 </tbody>
 </table>
 <p>La gestió del cicle de vida és part de la seguretat: alta amb autorització, canvi de rol amb revisió, baixa immediata i revisió periòdica dels permisos.</p>
+<h2 id="acl-fisica-i-acl-logica">ACL física i ACL lògica</h2>
+<p>El mateix model serveix per a dos tipus de recursos:</p>
+<table>
+<thead>
+<tr>
+<th>Tipus</th>
+<th>Recurs</th>
+<th>Acció que es controla</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Física</td>
+<td>Sala de comunicacions</td>
+<td>Entrar o eixir</td>
+</tr>
+<tr>
+<td>Física</td>
+<td>Armari de portàtils</td>
+<td>Retirar o retornar un equip</td>
+</tr>
+<tr>
+<td>Lògica</td>
+<td>Carpeta de clients</td>
+<td>Llegir o modificar fitxers</td>
+</tr>
+<tr>
+<td>Lògica</td>
+<td>Consola del servidor</td>
+<td>Administrar o consultar</td>
+</tr>
+</tbody>
+</table>
+<p>En tots dos casos cal evitar comptes compartits. Si diverses persones utilitzen la mateixa identitat, el registre no permet atribuir una acció i la baixa d’una sola persona es complica.</p>
+<h2 id="revisio-duna-acl">Revisió d’una ACL</h2>
+<p>Per revisar-la, pregunta per a cada regla: continua existint el perfil?, el recurs és necessari?, el permís és massa ampli?, hi ha una data de caducitat?, es registren els accessos?, què passa si la persona canvia de lloc? El resultat ha de ser una ACL més xicoteta i comprensible, no una acumulació de permisos històrics.</p>
 <div class="admonition tip">
 <p class="admonition-title">Pregunta de control</p>
 <p>Quin problema apareix si una persona canvia de recepció a administració però conserva el grup anterior?</p>

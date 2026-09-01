@@ -667,6 +667,28 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#com-fer-una-analisi-inicial" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Com fer una anàlisi inicial
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#impactes-habituals" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Impactes habituals
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2803,6 +2825,28 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#com-fer-una-analisi-inicial" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Com fer una anàlisi inicial
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#impactes-habituals" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Impactes habituals
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2858,6 +2902,50 @@
 <li><strong>Impacte:</strong> conseqüència si l’incident es produeix.</li>
 <li><strong>Risc:</strong> combinació de probabilitat i impacte.</li>
 </ul>
+<h2 id="com-fer-una-analisi-inicial">Com fer una anàlisi inicial</h2>
+<p>Per analitzar un entorn, segueix aquest ordre:</p>
+<ol>
+<li><strong>Inventaria els actius:</strong> què hi ha i per a què serveix?</li>
+<li><strong>Assigna responsables:</strong> qui necessita que funcione i qui el manté?</li>
+<li><strong>Pregunta què pot passar:</strong> robatori, foc, aigua, tall, error o accés no autoritzat.</li>
+<li><strong>Busca vulnerabilitats observables:</strong> porta oberta, equip al terra, cables sense ordre o permisos massa amplis.</li>
+<li><strong>Descriu l’impacte:</strong> què deixaria de funcionar, quina informació s’exposaria i quant de temps afectaria?</li>
+<li><strong>Proposa una mesura verificable:</strong> què canviarà, qui ho farà i com sabrem que funciona?</li>
+</ol>
+<p>No cal protegir tots els actius de la mateixa manera. Un monitor de recepció i un servidor amb dades de clients tenen valors i conseqüències diferents. L’anàlisi ha de reflectir aquesta diferència.</p>
+<h2 id="impactes-habituals">Impactes habituals</h2>
+<p>Una incidència pot produir més d’una conseqüència:</p>
+<table>
+<thead>
+<tr>
+<th>Tipus d’impacte</th>
+<th>Exemple</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Operatiu</td>
+<td>El personal no pot treballar o atendre clients.</td>
+</tr>
+<tr>
+<td>Econòmic</td>
+<td>Es perden vendes, hores de treball o equipament.</td>
+</tr>
+<tr>
+<td>Informatiu</td>
+<td>Es perden, s’alteren o s’exposen dades.</td>
+</tr>
+<tr>
+<td>Reputacional</td>
+<td>Clients i proveïdors perden confiança.</td>
+</tr>
+<tr>
+<td>Organitzatiu</td>
+<td>Cal activar personal, proveïdors o procediments d’emergència.</td>
+</tr>
+</tbody>
+</table>
+<p>Una mateixa vulnerabilitat pot afectar diferents propietats. Per exemple, robar un portàtil pot comprometre la confidencialitat de les dades, la disponibilitat de l’equip i la integritat de la informació si algú la modifica.</p>
 <p>Una taula inicial pot ajudar a no saltar directament a la solució:</p>
 <table>
 <thead>
@@ -2882,6 +2970,10 @@
 <div class="admonition tip">
 <p class="admonition-title">Pregunta de control</p>
 <p>Diferencia l’amenaça «aigua» de la vulnerabilitat «canonada damunt del rack». Poden existir per separat?</p>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Exemple complet</p>
+<p><strong>Actiu:</strong> servidor de fitxers. <strong>Amenaça:</strong> tall elèctric. <strong>Vulnerabilitat:</strong> no hi ha SAI i el servidor s’apaga bruscament. <strong>Impacte:</strong> indisponibilitat del servei i possible corrupció de dades. <strong>Mesures:</strong> SAI, apagada controlada i revisió de l’alimentació.</p>
 </div>
 <p><a href="../02-seguretat-fisica-logica/">Següent: seguretat física i lògica</a> · <a href="../">Índex</a></p>
 
