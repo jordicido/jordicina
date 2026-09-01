@@ -1,4 +1,5 @@
 site_name: Recursos didàctics d'FP
+site_url: https://jordicido.github.io/jordicina/
 theme:
   name: materialx
 extra_css:
@@ -8,7 +9,7 @@ markdown_extensions:
   - pymdownx.details
   - pymdownx.superfences
 nav:
-  - Inici: fp/index.md
+  - Inici: index.md
   - SMX:
       - Seguretat informàtica:
           - Inici: smx-si/index.md
@@ -51,9 +52,9 @@ nav:
           - Avaluació: smx-aw/avaluacio.md
           - Preguntes freqüents: smx-aw/preguntes-frequents.md
       - Python:
-          - Inici: python/index.md
-          - Programació didàctica: python/programacio-didactica.md
-          - Materials: python/materials.md
+          - Inici: intro-python/index.md
+          - Programació didàctica: intro-python/programacio-didactica.md
+          - Materials: intro-python/materials.md
   - DAW:
       - Desplegament d'aplicacions web:
           - Inici: daw-daw/index.md

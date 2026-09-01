@@ -41,9 +41,9 @@ hide:
     <p style="margin: .25rem 0 0; color: rgba(255,255,255,.88);"><strong>Sistemes Microinformàtics i Xarxes</strong></p>
   </div>
   <div style="display: grid; gap: .6rem; padding: 1rem;">
-    <a class="fp-module-link" href="../smx-si/" style="display: block; padding: .85rem .9rem; border: 1px solid var(--md-default-fg-color--lightest); border-radius: 6px; background: var(--md-code-bg-color); font-weight: 800;">Seguretat informàtica</a>
-    <a class="fp-module-link" href="../smx-aw/" style="display: block; padding: .85rem .9rem; border: 1px solid var(--md-default-fg-color--lightest); border-radius: 6px; background: var(--md-code-bg-color); font-weight: 800;">Aplicacions web</a>
-    <a class="fp-module-link" href="../python/" style="display: block; padding: .85rem .9rem; border: 1px solid var(--md-default-fg-color--lightest); border-radius: 6px; background: var(--md-code-bg-color); font-weight: 800;">Introducció a la programació en Python</a>
+    <a class="fp-module-link" href="smx-si/" style="display: block; padding: .85rem .9rem; border: 1px solid var(--md-default-fg-color--lightest); border-radius: 6px; background: var(--md-code-bg-color); font-weight: 800;">Seguretat informàtica</a>
+    <a class="fp-module-link" href="smx-aw/" style="display: block; padding: .85rem .9rem; border: 1px solid var(--md-default-fg-color--lightest); border-radius: 6px; background: var(--md-code-bg-color); font-weight: 800;">Aplicacions web</a>
+    <a class="fp-module-link" href="intro-python/" style="display: block; padding: .85rem .9rem; border: 1px solid var(--md-default-fg-color--lightest); border-radius: 6px; background: var(--md-code-bg-color); font-weight: 800;">Introducció a la programació en Python</a>
   </div>
 </section>
 
@@ -54,11 +54,10 @@ hide:
     <p style="margin: .25rem 0 0; color: rgba(20,33,61,.82);"><strong>Desenvolupament d'Aplicacions Web</strong></p>
   </div>
   <div style="display: grid; gap: .6rem; padding: 1rem;">
-    <a class="fp-module-link" href="../daw-daw/" style="display: block; padding: .85rem .9rem; border: 1px solid var(--md-default-fg-color--lightest); border-radius: 6px; background: var(--md-code-bg-color); font-weight: 800;">Desplegament d'aplicacions web</a>
-    <a class="fp-module-link" href="../daw-ed/" style="display: block; padding: .85rem .9rem; border: 1px solid var(--md-default-fg-color--lightest); border-radius: 6px; background: var(--md-code-bg-color); font-weight: 800;">Entorns de desenvolupament</a>
-    <a class="fp-module-link" href="../python/" style="display: block; padding: .85rem .9rem; border: 1px solid var(--md-default-fg-color--lightest); border-radius: 6px; background: var(--md-code-bg-color); font-weight: 800;">Introducció a la programació en Python</a>
+    <a class="fp-module-link" href="daw-daw/" style="display: block; padding: .85rem .9rem; border: 1px solid var(--md-default-fg-color--lightest); border-radius: 6px; background: var(--md-code-bg-color); font-weight: 800;">Desplegament d'aplicacions web</a>
+    <a class="fp-module-link" href="daw-ed/" style="display: block; padding: .85rem .9rem; border: 1px solid var(--md-default-fg-color--lightest); border-radius: 6px; background: var(--md-code-bg-color); font-weight: 800;">Entorns de desenvolupament</a>
+    <a class="fp-module-link" href="intro-python/" style="display: block; padding: .85rem .9rem; border: 1px solid var(--md-default-fg-color--lightest); border-radius: 6px; background: var(--md-code-bg-color); font-weight: 800;">Introducció a la programació en Python</a>
   </div>
 </section>
 
 </div>
-
