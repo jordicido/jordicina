@@ -1,0 +1,3300 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+        
+      
+      
+      
+      
+        
+        
+        
+          <link rel="icon" href="../../assets/images/favicon.png">
+        
+      
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-materialx-10.1.8">
+    
+    
+      
+        <title>UP1. Teoria · Del problema al programa en funcionament - Recursos didàctics d'FP</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.314bbef5.min.css">
+      
+    
+    
+
+    
+
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/module-sections.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+  
+  
+    <body dir="ltr" data-mx-topbar="glass">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="toc" type="checkbox" id="__toc" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <label class="md-overlay" for="__toc"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#up1-teoria-del-problema-al-programa-en-funcionament" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Recursos didàctics d&#39;FP" class="md-header__button md-logo" aria-label="Recursos didàctics d'FP" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Recursos didàctics d'FP
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              UP1. Teoria · Del problema al programa en funcionament
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10.25 2a8.25 8.25 0 0 1 6.34 13.53l5.69 5.69a.749.749 0 0 1-.326 1.275.75.75 0 0 1-.734-.215l-5.69-5.69A8.25 8.25 0 1 1 10.25 2M3.5 10.25a6.75 6.75 0 1 0 13.5 0 6.75 6.75 0 0 0-13.5 0"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10.25 2a8.25 8.25 0 0 1 6.34 13.53l5.69 5.69a.749.749 0 0 1-.326 1.275.75.75 0 0 1-.734-.215l-5.69-5.69A8.25 8.25 0 1 1 10.25 2M3.5 10.25a6.75 6.75 0 1 0 13.5 0 6.75 6.75 0 0 0-13.5 0"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0">
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+                
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" hidden>
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Recursos didàctics d&#39;FP" class="md-nav__button md-logo" aria-label="Recursos didàctics d'FP" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Recursos didàctics d'FP
+  </label>
+  
+  <ul class="md-nav__list">
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../fp/index.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Inici
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SMX
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    SMX
+  
+
+          </label>
+          <ul class="md-nav__list">
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Seguretat informàtica
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Seguretat informàtica
+  
+
+          </label>
+          <ul class="md-nav__list">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../smx-si/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Inici
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../smx-si/guia-assignatura/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Guia de l’assignatura
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../smx-si/calendaritzacio/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Calendarització de les sessions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_1_4" id="__nav_2_1_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Unitats de treball
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_1_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Unitats de treball
+  
+
+          </label>
+          <ul class="md-nav__list">
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1_4_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_1_4_1" id="__nav_2_1_4_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UT1. Mesures de seguretat passiva
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_2_1_4_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1_4_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    UT1. Mesures de seguretat passiva
+  
+
+          </label>
+          <ul class="md-nav__list">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../smx-si/ut1-seguretat-passiva/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Presentació
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../smx-si/ut1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Índex i seqüència
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../smx-si/ut1/01-informacio-actiu/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. La informació com a actiu
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../smx-si/ut1/02-seguretat-fisica-logica/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2. Seguretat física i lògica
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../smx-si/ut1/03-ubicacio-condicions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3. Ubicació i condicions ambientals
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../smx-si/ut1/04-proteccio-fisica/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4. Protecció física dels sistemes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../smx-si/ut1/05-electricitat-sai/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5. Electricitat i SAI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../smx-si/ut1/06-controls-acces/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6. Controls d’accés i ACL
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../smx-si/ut1/07-contrasenyes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7. Política de contrasenyes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../smx-si/ut1/08-biometria/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8. Sistemes biomètrics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../smx-si/ut1/activitats/activitat-1-mapa-riscos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Activitat 1. Mapa inicial de riscos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../smx-si/ut1/activitats/activitat-2-auditoria-fisica/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Activitat 2. Auditoria física
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../smx-si/ut1/activitats/activitat-3-taller-sai/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Activitat 3. Taller de SAI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../smx-si/ut1/activitats/activitat-4-pla-microempresa/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Activitat 4. Pla de la microempresa
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../smx-si/ut1/activitats/autoavaluacio/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Autoavaluació
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../smx-si/ut2-emmagatzematge/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UT2. Gestió de dispositius d’emmagatzematge
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../smx-si/ut3-seguretat-activa/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UT3. Mecanismes de seguretat activa
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../smx-si/ut4-privacitat-xarxes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UT4. Privacitat de la informació en xarxes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../smx-si/ut5-legislacio-dades/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UT5. Legislació i protecció de dades
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../smx-si/recursos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Recursos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../smx-si/avaluacio/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Avaluació
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../smx-si/preguntes-frequents/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Preguntes freqüents
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Aplicacions web
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Aplicacions web
+  
+
+          </label>
+          <ul class="md-nav__list">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../smx-aw/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Inici
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../smx-aw/guia-assignatura/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Guia de l’assignatura
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2_3" id="__nav_2_2_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Unitats de programació
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Unitats de programació
+  
+
+          </label>
+          <ul class="md-nav__list">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../smx-aw/up1-gestors-continguts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UP1. Gestors de continguts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../smx-aw/up2-aprenentatge-distancia/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UP2. Gestió d’aprenentatge a distància
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../smx-aw/up3-arxius-web/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UP3. Serveis de gestió d’arxius web
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../smx-aw/up4-ofimatica-web/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UP4. Aplicacions d’ofimàtica web
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../smx-aw/up5-escriptori-web/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UP5. Aplicacions web d’escriptori
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../smx-aw/recursos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Recursos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../smx-aw/avaluacio/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Avaluació
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../smx-aw/preguntes-frequents/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Preguntes freqüents
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Python
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Python
+  
+
+          </label>
+          <ul class="md-nav__list">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../python/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Inici
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../python/programacio-didactica/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Programació didàctica
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../python/materials/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Materials
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DAW
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    DAW
+  
+
+          </label>
+          <ul class="md-nav__list">
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Desplegament d'aplicacions web
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Desplegament d'aplicacions web
+  
+
+          </label>
+          <ul class="md-nav__list">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../daw-daw/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Inici
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../daw-daw/programacio-didactica/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Programació didàctica
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../daw-daw/materials/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Materials
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Entorns de desenvolupament
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Entorns de desenvolupament
+  
+
+          </label>
+          <ul class="md-nav__list">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Inici
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../guia-assignatura/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Guia de l’assignatura
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2_3" id="__nav_3_2_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Unitats de programació
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Unitats de programació
+  
+
+          </label>
+          <ul class="md-nav__list">
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2_3_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2_3_1" id="__nav_3_2_3_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UP1. Del problema al programa
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_3_2_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    UP1. Del problema al programa
+  
+
+          </label>
+          <ul class="md-nav__list">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../up1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Índex i presentació
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../up1/01-programa-sistema/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. El programa i el sistema
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../up1/02-llenguatges/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2. Llenguatges de programació
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../up1/03-tipus-codi/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3. Tipus de codi
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../up1/04-execucio/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4. De codi font a programa en execució
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../up1/05-ferramentes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5. Ferramentes del desenvolupament
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../up1/06-fases/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6. Fases del desenvolupament
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../up1/07-equips/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7. Equips de desenvolupament
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../up1/08-metodologies/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8. Metodologies de desenvolupament
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../up1/activitats/activitat-1-autopsia/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Activitat 1. Autòpsia de tres programes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../up1/activitats/activitat-2-producte/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Activitat 2. Del problema al producte
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../up1/activitats/activitat-3-agil/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Activitat 3. Simulació àgil
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../up2-entorns-integrats/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UP2. Entorns integrats de desenvolupament
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../up3-proves/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UP3. Proves i verificació
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../up4-optimitzacio/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UP4. Optimització i qualitat del codi
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../up5-diagrames-classes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UP5. Diagrames de classes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../up6-diagrames-comportament/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UP6. Diagrames de comportament
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../recursos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Recursos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../avaluacio/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Avaluació
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../preguntes-frequents/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Preguntes freqüents
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+                
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc">
+      
+        <li class="md-nav__item">
+  <a href="#1-el-programa-informatic-i-el-sistema" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. El programa informàtic i el sistema
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. El programa informàtic i el sistema">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#programari-de-sistema-i-daplicacio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Programari de sistema i d’aplicació
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-llenguatges-de-programacio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Llenguatges de programació
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Llenguatges de programació">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tres-formes-de-classificar-los" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tres formes de classificar-los
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-tipus-de-codi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Tipus de codi
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-del-codi-font-al-programa-en-execucio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Del codi font al programa en execució
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-ferramentes-del-desenvolupament" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Ferramentes del desenvolupament
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-fases-del-desenvolupament-de-programari" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Fases del desenvolupament de programari
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-equips-de-desenvolupament" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Equips de desenvolupament
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-metodologies-de-desenvolupament" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Metodologies de desenvolupament
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8. Metodologies de desenvolupament">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#scrum-i-kanban" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Scrum i Kanban
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resum-en-una-pagina" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Resum en una pàgina
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+<h1 id="up1-teoria-del-problema-al-programa-en-funcionament">UP1. Teoria · Del problema al programa en funcionament</h1>
+<div class="admonition info">
+<p class="admonition-title">Com estudiar aquesta teoria</p>
+<p>Recorre els huit apartats en ordre. En cada bloc intenta respondre la pregunta final abans de continuar. Els exemples són orientatius: una mateixa tecnologia pot combinar diverses formes d’execució.</p>
+</div>
+<h2 id="1-el-programa-informatic-i-el-sistema">1. El programa informàtic i el sistema</h2>
+<p>Un <strong>programa informàtic</strong> és un conjunt ordenat d’instruccions que permet a un ordinador realitzar una tasca. Una <strong>aplicació</strong> és un programa, o un conjunt de programes, orientat a una finalitat. Un <strong>procés</strong> és un programa que s’està executant.</p>
+<h3 id="programari-de-sistema-i-daplicacio">Programari de sistema i d’aplicació</h3>
+<table>
+<thead>
+<tr>
+<th>Tipus</th>
+<th>Funció</th>
+<th>Exemples</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Programari de sistema</td>
+<td>Administra els recursos i ofereix serveis</td>
+<td>Sistema operatiu, controladors, utilitats</td>
+</tr>
+<tr>
+<td>Programari d’aplicació</td>
+<td>Resol una necessitat de l’usuari</td>
+<td>Navegador, editor, videojoc, aplicació web</td>
+</tr>
+</tbody>
+</table>
+<p>Quan executem un programa, el sistema operatiu el localitza en l’emmagatzematge, el carrega en la memòria RAM, crea un procés i assigna temps de processador. El programa rep dades mitjançant perifèrics o xarxes i genera resultats.</p>
+<table>
+<thead>
+<tr>
+<th>Component</th>
+<th>Paper en l’execució</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Emmagatzematge</td>
+<td>Conserva el programa i les dades</td>
+</tr>
+<tr>
+<td>Memòria RAM</td>
+<td>Manté temporalment les instruccions i dades en ús</td>
+</tr>
+<tr>
+<td>Processador</td>
+<td>Executa les instruccions</td>
+</tr>
+<tr>
+<td>Sistema operatiu</td>
+<td>Administra recursos i serveis</td>
+</tr>
+<tr>
+<td>Perifèrics i xarxa</td>
+<td>Permeten entrada, eixida i comunicació</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition tip">
+<p class="admonition-title">Pregunta de control</p>
+<p>Quina diferència hi ha entre un programa emmagatzemat i un procés?</p>
+</div>
+<h2 id="2-llenguatges-de-programacio">2. Llenguatges de programació</h2>
+<p>Un llenguatge de programació és un sistema formal per descriure dades, instruccions i processos. Té vocabulari, sintaxi i semàntica, a més de tipus de dades i estructures de control.</p>
+<h3 id="tres-formes-de-classificar-los">Tres formes de classificar-los</h3>
+<ul>
+<li><strong>Segons l’abstracció:</strong> baix nivell (màquina i assemblador) o alt nivell (Java, Python, JavaScript, PHP, Kotlin o C#).</li>
+<li><strong>Segons el paradigma:</strong> imperatiu, procedimental, orientat a objectes, funcional o declaratiu. SQL és un exemple de llenguatge declaratiu.</li>
+<li><strong>Segons l’execució:</strong> compilat, interpretat, de codi intermedi o híbrid.</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Llenguatge</th>
+<th>Paradigma habitual</th>
+<th>Execució habitual</th>
+<th>Ús freqüent</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Java</td>
+<td>Orientat a objectes</td>
+<td>Bytecode sobre JVM</td>
+<td>Aplicacions empresarials</td>
+</tr>
+<tr>
+<td>Python</td>
+<td>Multiparadigma</td>
+<td>Intèrpret o màquina virtual</td>
+<td>Automatització, dades i web</td>
+</tr>
+<tr>
+<td>JavaScript</td>
+<td>Multiparadigma</td>
+<td>Motor del navegador o Node.js</td>
+<td>Aplicacions web</td>
+</tr>
+<tr>
+<td>C</td>
+<td>Procedimental</td>
+<td>Compilació</td>
+<td>Sistemes i programari de base</td>
+</tr>
+<tr>
+<td>SQL</td>
+<td>Declaratiu</td>
+<td>SGBD</td>
+<td>Bases de dades</td>
+</tr>
+</tbody>
+</table>
+<p>Les classificacions no són excloents: depenen del llenguatge i de la implementació concreta.</p>
+<div class="admonition tip">
+<p class="admonition-title">Pregunta de control</p>
+<p>Per què Java i Python no es poden classificar només com a “compilats” o “interpretats” sense més context?</p>
+</div>
+<h2 id="3-tipus-de-codi">3. Tipus de codi</h2>
+<table>
+<thead>
+<tr>
+<th>Tipus</th>
+<th>Què és?</th>
+<th>Execució directa</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Codi font</td>
+<td>Text escrit per la persona programadora</td>
+<td>Normalment no</td>
+</tr>
+<tr>
+<td>Codi objecte</td>
+<td>Resultat traduït per un compilador, sovint per fitxer</td>
+<td>Normalment no</td>
+</tr>
+<tr>
+<td>Codi intermedi</td>
+<td>Representació entre el font i la màquina</td>
+<td>Mitjançant un entorn o màquina virtual</td>
+</tr>
+<tr>
+<td>Codi executable</td>
+<td>Resultat preparat per al sistema operatiu</td>
+<td>Sí, si té les dependències necessàries</td>
+</tr>
+</tbody>
+</table>
+<p>El codi font és llegible i modificable. El codi objecte i l’executable depenen més de l’arquitectura, del sistema operatiu i de les biblioteques. El codi intermedi busca conservar part de la portabilitat, com ocorre amb el bytecode de Java o el CIL de .NET.</p>
+<div class="admonition example">
+<p class="admonition-title">Exemple</p>
+<p><code>programa.c → programa.o</code> mostra una traducció a codi objecte. Encara caldrà completar el programa abans d’executar-lo.</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Pregunta de control</p>
+<p>Quin tipus de codi és el més adequat per modificar directament: el font o l’executable? Per què?</p>
+</div>
+<h2 id="4-del-codi-font-al-programa-en-execucio">4. Del codi font al programa en execució</h2>
+<p>El camí concret depén de la tecnologia, però sol incloure traducció, preparació i execució.</p>
+<div class="highlight"><pre><span></span><code>Codi font → traductor → codi objecte o intermedi → entorn d’execució → programa
+</code></pre></div>
+<ul>
+<li><strong>Compilació:</strong> tradueix el codi abans d’executar-lo i pot detectar errors de sintaxi o de tipus.</li>
+<li><strong>Interpretació:</strong> un entorn llig i gestiona el codi durant l’execució.</li>
+<li><strong>Assemblatge:</strong> tradueix assemblador a codi màquina o objecte.</li>
+<li><strong>Enllaçat:</strong> combina fitxers objecte i biblioteques per generar un executable.</li>
+<li><strong>Màquina virtual:</strong> ofereix un entorn independent de la màquina física concreta.</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Tecnologia</th>
+<th>Esquema simplificat</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>C</td>
+<td>Font → compilador → objecte → enllaçador → executable</td>
+</tr>
+<tr>
+<td>Java</td>
+<td>Font → <code>javac</code> → bytecode → JVM → execució</td>
+</tr>
+<tr>
+<td>Python</td>
+<td>Font → entorn Python → execució</td>
+</tr>
+<tr>
+<td>JavaScript</td>
+<td>Font → motor del navegador o Node.js → execució</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition tip">
+<p class="admonition-title">Pregunta de control</p>
+<p>Quina funció té l’enllaçador i per què són necessàries les biblioteques?</p>
+</div>
+<h2 id="5-ferramentes-del-desenvolupament">5. Ferramentes del desenvolupament</h2>
+<p>Cada ferramenta resol una part del procés. En aquesta unitat les identificarem; la configuració detallada dels IDE i de les proves es treballarà en unitats posteriors.</p>
+<table>
+<thead>
+<tr>
+<th>Ferramenta</th>
+<th>Funció principal</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Editor de codi</td>
+<td>Crear i modificar codi font</td>
+</tr>
+<tr>
+<td>IDE</td>
+<td>Integrar editor, construcció, depuració, proves i extensions</td>
+</tr>
+<tr>
+<td>SDK</td>
+<td>Incloure compiladors, biblioteques, documentació i exemples d’una plataforma</td>
+</tr>
+<tr>
+<td>Compilador o intèrpret</td>
+<td>Traduir o gestionar l’execució del codi</td>
+</tr>
+<tr>
+<td>Depurador</td>
+<td>Examinar l’execució amb punts de ruptura i pas a pas</td>
+</tr>
+<tr>
+<td>Construcció</td>
+<td>Automatitzar neteja, compilació, proves i empaquetatge</td>
+</tr>
+<tr>
+<td>Gestor de dependències</td>
+<td>Declarar, descarregar i actualitzar biblioteques</td>
+</tr>
+<tr>
+<td>Git i repositori remot</td>
+<td>Registrar canvis i col·laborar</td>
+</tr>
+<tr>
+<td>Proves i seguiment</td>
+<td>Verificar comportament i registrar incidències</td>
+</tr>
+</tbody>
+</table>
+<p>Una ferramenta és adequada quan respon a la necessitat, s’integra amb el projecte, és mantenible i deixa evidències comprensibles.</p>
+<div class="admonition tip">
+<p class="admonition-title">Pregunta de control</p>
+<p>Quina diferència hi ha entre un IDE i un SDK? Poden utilitzar-se junts?</p>
+</div>
+<h2 id="6-fases-del-desenvolupament-de-programari">6. Fases del desenvolupament de programari</h2>
+<p>Les fases ajuden a ordenar el treball, però no sempre formen una línia rígida: les proves poden obligar a tornar al disseny i el manteniment pot generar nous requisits.</p>
+<ol>
+<li><strong>Necessitats:</strong> quin problema es vol resoldre, per a qui i amb quines limitacions.</li>
+<li><strong>Anàlisi:</strong> què ha de fer el sistema; requisits, regles i casos d’ús.</li>
+<li><strong>Disseny:</strong> com es construirà; arquitectura, components, dades i interfícies.</li>
+<li><strong>Codificació:</strong> transformació del disseny en codi font.</li>
+<li><strong>Proves:</strong> verificació del comportament i detecció de regressions.</li>
+<li><strong>Documentació:</strong> informació per a usuaris, tècnics i mantenidors.</li>
+<li><strong>Desplegament:</strong> preparació en un servidor, ordinador, núvol, dispositiu o contenidor.</li>
+<li><strong>Manteniment:</strong> evolució correctiva, adaptativa, perfectiva o preventiva.</li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Idea clau</p>
+<p>Un projecte no acaba quan “funciona”: també cal poder provar-lo, documentar-lo, desplegar-lo i mantenir-lo.</p>
+</div>
+<h2 id="7-equips-de-desenvolupament">7. Equips de desenvolupament</h2>
+<p>Els projectes professionals necessiten coneixements diversos, coordinació, repartiment de responsabilitats i revisió del treball.</p>
+<table>
+<thead>
+<tr>
+<th>Perfil</th>
+<th>Responsabilitat habitual</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Client o responsable del producte</td>
+<td>Defineix necessitats i prioritats</td>
+</tr>
+<tr>
+<td>Analista</td>
+<td>Concreta requisits</td>
+</tr>
+<tr>
+<td>Arquitecte</td>
+<td>Defineix l’estructura tècnica</td>
+</tr>
+<tr>
+<td>Desenvolupador</td>
+<td>Implementa funcionalitats</td>
+</tr>
+<tr>
+<td>UX/UI</td>
+<td>Dissenya experiència i interfície</td>
+</tr>
+<tr>
+<td>QA o tester</td>
+<td>Verifica la qualitat</td>
+</tr>
+<tr>
+<td>DevOps o sistemes</td>
+<td>Automatitza construcció i desplegament</td>
+</tr>
+<tr>
+<td>Responsable de projecte</td>
+<td>Coordina persones, terminis i recursos</td>
+</tr>
+</tbody>
+</table>
+<p>En equips xicotets, una persona pot assumir diversos rols. La coordinació necessita tasques clares, canals de comunicació, documentació, control de versions, revisió de codi i registre de decisions.</p>
+<div class="admonition tip">
+<p class="admonition-title">Pregunta de control</p>
+<p>Per què és útil separar la responsabilitat de definir requisits de la d’implementar-los?</p>
+</div>
+<h2 id="8-metodologies-de-desenvolupament">8. Metodologies de desenvolupament</h2>
+<p>Una metodologia orienta la planificació, el repartiment del treball, les decisions, la validació i la gestió dels canvis.</p>
+<table>
+<thead>
+<tr>
+<th>Enfocament</th>
+<th>Característiques</th>
+<th>Quan pot encaixar</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Predictiu</td>
+<td>Planificació detallada i canvis controlats</td>
+<td>Requisits estables o regulació estricta</td>
+</tr>
+<tr>
+<td>Iteratiu</td>
+<td>Repeticions que revisen i milloren el producte</td>
+<td>Quan cal aprendre durant el projecte</td>
+</tr>
+<tr>
+<td>Incremental</td>
+<td>Afegir funcionalitats progressivament</td>
+<td>Quan es vol lliurar valor per parts</td>
+</tr>
+<tr>
+<td>Àgil</td>
+<td>Col·laboració, lliuraments freqüents i adaptació</td>
+<td>Requisits canviants i retroalimentació contínua</td>
+</tr>
+</tbody>
+</table>
+<h3 id="scrum-i-kanban">Scrum i Kanban</h3>
+<ul>
+<li><strong>Scrum:</strong> treballa amb product backlog, esprints, planificació, revisió i retrospectiva.</li>
+<li><strong>Kanban:</strong> visualitza el flux amb columnes com <code>Pendent</code>, <code>En procés</code>, <code>En revisió</code> i <code>Finalitzat</code>, i limita el treball en curs.</li>
+</ul>
+<p>Les metodologies àgils no eliminen la planificació ni la documentació: les adapten perquè siguen útils i revisables.</p>
+<div class="admonition tip">
+<p class="admonition-title">Pregunta de control</p>
+<p>Si els requisits canvien cada setmana, quin enfocament facilitaria més la retroalimentació: un pla tancat o un procés iteratiu i incremental?</p>
+</div>
+<h2 id="resum-en-una-pagina">Resum en una pàgina</h2>
+<div class="highlight"><pre><span></span><code>Necessitat → anàlisi → disseny → codi font → traducció → proves
+                                      ↓
+                         eines + equip + metodologia
+                                      ↓
+                         desplegament i manteniment
+</code></pre></div>
+<p>Abans de passar a la pràctica, comprova que pots explicar: què és un procés, quina diferència hi ha entre els tipus de codi, per a què serveix un IDE, quines fases té un projecte i quan és útil una metodologia àgil.</p>
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+          <div class="md-top" data-md-component="top" hidden>
+  <div class="md-top__center">
+    <button type="button" class="md-top__button md-top__button--main" data-md-action="top">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+      <span>Back to top</span>
+    </button>
+    
+      
+      
+        
+      
+      <label class="md-top__button md-top__side md-top__side--nav" for="__drawer" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-panel-left" viewBox="0 0 24 24"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M9 3v18"/></svg>
+      </label>
+    
+    
+      
+      
+      <label class="md-top__button md-top__side md-top__side--toc" for="__toc" >
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-panel-right" viewBox="0 0 24 24"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M15 3v18"/></svg>
+      </label>
+    
+  </div>
+</div>
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://jaywhj.github.io/mkdocs-materialx/" target="_blank" rel="noopener">
+      MaterialX
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "code": null, "features": [], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "code.collapse": "Collapse", "code.download": "Download", "code.expand": "Expand remaining # lines", "code.select": "Toggle line selection", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.fc193f93.min.js"></script>
+      
+    
+  </body>
+</html>
