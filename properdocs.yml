@@ -58,8 +58,26 @@ nav:
   - DAW:
       - Desplegament d'aplicacions web:
           - Inici: daw-daw/index.md
+          - Guia de l'assignatura: daw-daw/guia-assignatura.md
+          - Calendarització: daw-daw/calendaritzacio.md
+          - Unitat de programació:
+              - UP1. Implantació d'arquitectures web:
+                  - Presentació: daw-daw/up1-implantacio-arquitectures.md
+                  - Índex i seqüència: daw-daw/up1/index.md
+                  - 1. Models d'arquitectura: daw-daw/up1/01-models-arquitectura.md
+                  - 2. Protocols i recorregut: daw-daw/up1/02-protocols-recorregut.md
+                  - 3. Servidors web i d'aplicacions: daw-daw/up1/03-servidors-web-aplicacions.md
+                  - 4. Virtualització i contenidors: daw-daw/up1/04-virtualitzacio-contenidors.md
+                  - 5. Requisits i documentació: daw-daw/up1/05-requisits-documentacio.md
+                  - Activitat 1. Mapa d'arquitectura: daw-daw/up1/activitats/activitat-1-mapa-arquitectura.md
+                  - Activitat 2. Desplegament mínim: daw-daw/up1/activitats/activitat-2-desplegament-minim.md
+                  - Activitat 3. Fitxa de requisits: daw-daw/up1/activitats/activitat-3-fitxa-requisits.md
+                  - Autoavaluació: daw-daw/up1/activitats/autoavaluacio.md
           - Programació didàctica: daw-daw/programacio-didactica.md
           - Materials: daw-daw/materials.md
+          - Recursos: daw-daw/recursos.md
+          - Avaluació: daw-daw/avaluacio.md
+          - Preguntes freqüents: daw-daw/preguntes-frequents.md
       - Entorns de desenvolupament:
           - Inici: daw-ed/index.md
           - Guia de l’assignatura: daw-ed/guia-assignatura.md
