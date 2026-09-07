@@ -24,14 +24,16 @@ La programació del curs 2026–2027 indica **100 hores lectives**: **73 hores a
 
 El mòdul s'organitza en sis unitats de programació. La **UP1** és la porta d'entrada: abans d'administrar un servei cal entendre quina arquitectura es vol implantar, quins components intervenen i com es comprovarà el resultat.
 
-| Unitat | Denominació | Hores al centre | Avaluació |
-| --- | --- | ---: | --- |
-| [UP1](up1-implantacio-arquitectures.md) | Implantació d'arquitectures web | 7 | 1r trimestre |
-| UP2 | Configuració i administració de servidors web | 15 | 1r trimestre |
-| UP3 | Administració de servidors d'aplicacions | 15 | 1r trimestre |
-| UP6 | Documentació, control de versions i integració contínua | 11 | 2n trimestre |
-| UP4 | Servidors de transferència d'arxius | 14 | 2n trimestre |
-| UP5 | Serveis de xarxa implicats en el desplegament | 11 | 2n trimestre |
+| Unitat | Denominació | Hores al centre | Sessions amb alumnat | Avaluació |
+| --- | --- | ---: | ---: | --- |
+| [UP1](up1-implantacio-arquitectures.md) | Implantació d'arquitectures web | 7 | 2 | 1r trimestre |
+| [UP2](up2-servidors-web.md) | Configuració i administració de servidors web | 15 | 4 | 1r trimestre |
+| [UP3](up3-servidors-aplicacions.md) | Administració de servidors d'aplicacions | 15 | 4 | 1r trimestre |
+| [UP6](up6-documentacio-versions.md) | Documentació, control de versions i integració contínua | 11 | 3 | 2n trimestre |
+| [UP4](up4-transferencia-arxius.md) | Servidors de transferència d'arxius | 14 | 3 | 2n trimestre |
+| [UP5](up5-serveis-xarxa.md) | Serveis de xarxa implicats en el desplegament | 11 | 2 | 2n trimestre |
+
+El calendari detallat de les [18 sessions](calendaritzacio.md) assumeix dues hores per sessió i reserva temps per a una evidència pràctica de cada UP.
 
 Les 73 hores del centre es complementen amb 27 hores de formació en empresa. L'ordre de les UP segueix la programació aportada, que situa la UP6 abans de la UP4 i la UP5.
 

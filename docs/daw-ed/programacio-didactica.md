@@ -20,15 +20,15 @@ La [programació didàctica completa del curs 2025–2026](programacio-didactica
 
 | UP | Resultat d’aprenentatge | Hores | Pes de la UP |
 | --- | --- | ---: | ---: |
-| UP1 | Elements i eines del desenvolupament · RA1 | 12 | 5 % |
-| UP2 | Entorns integrats de desenvolupament · RA2 | 13 | 10 % |
-| UP3 | Proves i verificació · RA3 | 12 | 10 % |
-| UP4 | Optimització i qualitat del codi · RA4 | 12 | 15 % |
-| UP5 | Diagrames de classes · RA5 | 12 | 15 % |
-| UP6 | Diagrames de comportament · RA6 | 14 | 20 % |
+| UP1 | Entorns integrats de desenvolupament · RA2 | 15 | 20 % |
+| UP2 | Elements i eines del desenvolupament · RA1 | 11 | 15 % |
+| UP3 | Optimització i qualitat del codi · RA4 | 15 | 20 % |
+| UP4 | Proves i verificació · RA3 | 11 | 15 % |
+| UP5 | Diagrames de classes · RA5 | 11 | 15 % |
+| UP6 | Diagrames de comportament · RA6 | 11 | 15 % |
 | **Total al centre** |  | **75** |  |
 
-La formació en empresa completa les 21 hores restants. Els pesos de qualificació dels RA són 15 %, 15 %, 20 %, 20 %, 15 % i 15 %, respectivament.
+La formació en empresa completa les 21 hores restants. Els pesos de qualificació dels RA són 15 %, 20 %, 15 %, 20 %, 15 % i 15 %, respectivament.
 
 ## Incidència textual
 

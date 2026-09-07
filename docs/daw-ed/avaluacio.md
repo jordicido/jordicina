@@ -13,8 +13,8 @@ Els resultats d’aprenentatge (RA) descriuen allò que has de saber fer en acab
 | Resultat d’aprenentatge | Pes |
 | --- | ---: |
 | RA1. Reconéixer els elements i les eines del desenvolupament de programari | 15 % |
-| RA2. Avaluar entorns integrats de desenvolupament | 15 % |
-| RA3. Verificar el funcionament de programes mitjançant proves | 20 % |
+| RA2. Avaluar entorns integrats de desenvolupament | 20 % |
+| RA3. Verificar el funcionament de programes mitjançant proves | 15 % |
 | RA4. Optimitzar codi amb les eines de l’entorn | 20 % |
 | RA5. Generar diagrames de classes | 15 % |
 | RA6. Generar diagrames de comportament | 15 % |

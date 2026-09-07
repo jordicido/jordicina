@@ -29,8 +29,8 @@ hide:
 
 <h2>Unitats de programació</h2>
 <div class="module-grid">
-  <a class="module-card" href="up1/"><strong>UP1 · Del problema al programa</strong><span>Fases, llenguatges, codi, metodologies i eines.</span></a>
-  <a class="module-card" href="up2-entorns-integrats/"><strong>UP2 · Entorns integrats de desenvolupament</strong><span>Instal·lació, configuració, mòduls i executables.</span></a>
+  <a class="module-card" href="up1-entorns-integrats/"><strong>UP1 · Entorns integrats de desenvolupament</strong><span>VS Code, IntelliJ IDEA, mòduls, actualitzacions i executables.</span></a>
+  <a class="module-card" href="up2-elements-eines/"><strong>UP2 · Elements i eines del desenvolupament</strong><span>Sistema, llenguatges, codi, fases, equips i metodologies.</span></a>
   <a class="module-card" href="up3-proves/"><strong>UP3 · Proves i verificació</strong><span>Casos de prova, depuració, proves automàtiques i incidències.</span></a>
   <a class="module-card" href="up4-optimitzacio/"><strong>UP4 · Optimització i qualitat del codi</strong><span>Refactorització, analitzadors, Git, documentació i integració contínua.</span></a>
   <a class="module-card" href="up5-diagrames-classes/"><strong>UP5 · Diagrames de classes</strong><span>Programació orientada a objectes, UML, codi i enginyeria inversa.</span></a>

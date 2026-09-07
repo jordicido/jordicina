@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 300" role="img" aria-labelledby="title desc">
+  <title id="title">Flux d'una petició web</title><desc id="desc">Seqüència DNS, connexió TLS, petició HTTP, servidor web, aplicació i resposta al navegador.</desc>
+  <defs><marker id="a" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#315b72"/></marker></defs>
+  <rect width="1100" height="300" rx="24" fill="#f5f8fa"/>
+  <g font-family="Arial,sans-serif" text-anchor="middle"><rect x="35" y="92" width="130" height="90" rx="14" fill="#e8f4f7" stroke="#118ab2" stroke-width="3"/><text x="100" y="130" font-size="18" font-weight="700" fill="#0b1f33">Navegador</text><text x="100" y="158" font-size="14" fill="#315b72">URL</text>
+  <rect x="205" y="92" width="130" height="90" rx="14" fill="#edf7f1" stroke="#06a77d" stroke-width="3"/><text x="270" y="130" font-size="18" font-weight="700" fill="#0b1f33">DNS</text><text x="270" y="158" font-size="14" fill="#315b72">nom → IP</text>
+  <rect x="375" y="92" width="130" height="90" rx="14" fill="#fff4e5" stroke="#f4a261" stroke-width="3"/><text x="440" y="130" font-size="18" font-weight="700" fill="#0b1f33">TLS</text><text x="440" y="158" font-size="14" fill="#315b72">certificat</text>
+  <rect x="545" y="92" width="130" height="90" rx="14" fill="#e8f4f7" stroke="#118ab2" stroke-width="3"/><text x="610" y="130" font-size="18" font-weight="700" fill="#0b1f33">HTTP</text><text x="610" y="158" font-size="14" fill="#315b72">ruta + capçaleres</text>
+  <rect x="715" y="92" width="130" height="90" rx="14" fill="#edf7f1" stroke="#06a77d" stroke-width="3"/><text x="780" y="130" font-size="18" font-weight="700" fill="#0b1f33">Servidor</text><text x="780" y="158" font-size="14" fill="#315b72">web / aplicació</text>
+  <rect x="885" y="92" width="180" height="90" rx="14" fill="#f0ecfa" stroke="#7651a9" stroke-width="3"/><text x="975" y="130" font-size="18" font-weight="700" fill="#0b1f33">Resposta</text><text x="975" y="158" font-size="14" fill="#315b72">estat + contingut</text></g>
+  <g stroke="#315b72" stroke-width="3" marker-end="url(#a)"><line x1="168" y1="137" x2="198" y2="137"/><line x1="338" y1="137" x2="368" y2="137"/><line x1="508" y1="137" x2="538" y2="137"/><line x1="678" y1="137" x2="708" y2="137"/><line x1="848" y1="137" x2="878" y2="137"/></g>
+  <text x="550" y="245" text-anchor="middle" font-family="Arial,sans-serif" font-size="17" fill="#315b72">Diagnòstic: comprova cada pas per separat i no dones per fet que un procés actiu respon correctament</text>
+</svg>

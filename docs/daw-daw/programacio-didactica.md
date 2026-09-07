@@ -1,49 +1,49 @@
 ---
 hide:
   - navigation
-  - toc
 ---
-
 # Programació didàctica
 
-<div class="module-actions">
-  <a class="module-card" href="../"><strong>Inici</strong><span>Informació bàsica, objectius i forma de treball del mòdul.</span></a>
-  <a class="module-card" href="../guia-assignatura/"><strong>Guia de l'assignatura</strong><span>Organització, materials, entregues i normes de treball.</span></a>
-  <a class="module-card" href="./"><strong>Programació didàctica</strong><span>Resultats d'aprenentatge, unitats, metodologia i avaluació.</span></a>
-  <a class="module-card" href="../materials/"><strong>Materials</strong><span>Apunts, exercicis i pràctiques organitzades per blocs.</span></a>
-</div>
+La [programació didàctica completa del curs 2026–2027](DAW2SEMI_DAW%2026-27.pdf) es conserva en PDF per a consulta del professorat i de l'alumnat.
 
-<section class="module-highlight">
-  <h2>Desplegament d'aplicacions web</h2>
-  <p>La <a href="../DAW2SEMI_DAW%2026-27.pdf">programació didàctica completa del curs 2026–2027</a> estructura el mòdul des de la preparació de l'entorn fins a la publicació, verificació i manteniment d'una aplicació web.</p>
-</section>
+## Dades bàsiques
 
-<table class="module-table">
-  <thead><tr><th>UP</th><th>Resultat d'aprenentatge i continguts clau</th><th>Hores</th><th>Pes</th></tr></thead>
-  <tbody>
-    <tr><td><a href="../up1-implantacio-arquitectures/">UP1 · RA1</a></td><td>Arquitectures web, servidors, virtualització, contenidors i requisits d'implantació.</td><td>7 h</td><td>10 %</td></tr>
-    <tr><td>UP2 · RA2</td><td>Configuració de servidors web, hosts virtuals, HTTPS, autenticació i logs.</td><td>15 h</td><td>20 %</td></tr>
-    <tr><td>UP3 · RA3</td><td>Servidors d'aplicacions, seguretat, cooperació amb el servidor web i rendiment.</td><td>15 h</td><td>20 %</td></tr>
-    <tr><td>UP6 · RA6</td><td>Documentació, Git, GitHub, seguretat del repositori i integració contínua.</td><td>11 h</td><td>15 %</td></tr>
-    <tr><td>UP4 · RA4</td><td>FTP, SFTP, usuaris, permisos, modes de connexió i clients.</td><td>14 h</td><td>20 %</td></tr>
-    <tr><td>UP5 · RA5</td><td>DNS, servei de directoris, OpenLDAP i autenticació centralitzada.</td><td>11 h</td><td>15 %</td></tr>
-    <tr><td colspan="2"><strong>Total al centre</strong></td><td><strong>73 h</strong></td><td><strong>100 %</strong></td></tr>
-  </tbody>
-</table>
+- **Mòdul:** Desplegament d'Aplicacions Web.
+- **Codi:** 0614.
+- **Cicle:** Desenvolupament d'Aplicacions Web.
+- **Curs:** 2n semipresencial.
+- **Durada:** 100 hores lectives.
+- **Distribució:** 73 hores al centre i 27 hores en empresa.
 
 ## Resultats d'aprenentatge
 
-| RA | Descripció |
-| --- | --- |
-| RA1 | Implanta arquitectures web analitzant i aplicant criteris de funcionalitat. |
-| RA2 | Implanta aplicacions web en servidors web, aplicant criteris de configuració i seguretat. |
-| RA3 | Implanta aplicacions web en servidors d'aplicacions, aplicant criteris de configuració i seguretat. |
-| RA4 | Administra servidors de transferència d'arxius garantint la disponibilitat del servei. |
-| RA5 | Verifica l'execució d'aplicacions web configurant els serveis de xarxa necessaris. |
-| RA6 | Elabora la documentació amb eines de generació, control de versions i integració contínua. |
+1. Implantar arquitectures web analitzant i aplicant criteris de funcionalitat.
+2. Implantar aplicacions web en servidors web amb criteris de configuració i seguretat.
+3. Implantar aplicacions web en servidors d'aplicacions amb criteris de configuració i seguretat.
+4. Administrar servidors de transferència d'arxius garantint la disponibilitat del servei.
+5. Verificar l'execució d'aplicacions web configurant els serveis de xarxa necessaris.
+6. Elaborar documentació amb eines de generació, control de versions i integració contínua.
 
-<div class="module-grid">
-  <div class="resource-card"><strong>Metodologia</strong><span>Treball per escenaris: cada UP acaba amb un servei més complet i millor documentat.</span></div>
-  <div class="resource-card"><strong>Avaluació</strong><span>Es comprova que el servei funcione, siga reproduïble i tinga una explicació tècnica coherent.</span></div>
-  <div class="resource-card"><strong>Seguiment</strong><span>Les pràctiques acumulen un quadern de desplegament amb ordres, configuracions i proves.</span></div>
-</div>
+## Unitats i càrrega al centre
+
+| UP | Resultat d'aprenentatge | Hores | Pes |
+| --- | --- | ---: | ---: |
+| [UP1](up1-implantacio-arquitectures.md) | Implantació d'arquitectures web · RA1 | 7 | 10 % |
+| [UP2](up2-servidors-web.md) | Configuració i administració de servidors web · RA2 | 15 | 20 % |
+| [UP3](up3-servidors-aplicacions.md) | Administració de servidors d'aplicacions · RA3 | 15 | 20 % |
+| [UP6](up6-documentacio-versions.md) | Documentació, control de versions i integració contínua · RA6 | 11 | 15 % |
+| [UP4](up4-transferencia-arxius.md) | Instal·lació i administració de servidors de transferència · RA4 | 14 | 20 % |
+| [UP5](up5-serveis-xarxa.md) | Serveis de xarxa implicats en el desplegament · RA5 | 11 | 15 % |
+| **Total al centre** |  | **73** | **100 %** |
+
+La [calendarització de les 18 sessions](calendaritzacio.md) adapta aquesta càrrega a les sessions directes amb l'alumnat. La [guia de l'assignatura](guia-assignatura.md) explica la distribució entre centre, treball semipresencial i empresa.
+
+## Metodologia
+
+Treballarem amb classes teòriques orientades a la pràctica, pràctiques individuals i col·lectives, informes, activitats d'ampliació, vídeos i aprenentatge basat en problemes. Cada desplegament haurà d'incloure proves de funcionament i documentació reproduïble.
+
+## Formació en empresa
+
+Les 27 hores en empresa poden aportar evidències sobre proves de servidors, estructura d'aplicacions, hosts virtuals, certificats, seguretat del servidor d'aplicacions, usuaris d'accés remot i autenticació centralitzada.
+
+Per a la informació pràctica de l'alumnat, consulta la [guia de l'assignatura](guia-assignatura.md) i la pàgina d'[avaluació](avaluacio.md).

@@ -27,10 +27,10 @@ El mòdul s’organitza en sis unitats de programació. Les activitats del centr
 
 | Unitat | Contingut principal | Càrrega al centre | Avaluació |
 | --- | --- | ---: | --- |
-| UP1 | Elements i eines del desenvolupament | 12 h | 1r trimestre |
-| UP2 | Entorns integrats de desenvolupament | 13 h | 1r trimestre |
-| UP3 | Proves i verificació | 12 h | 2n trimestre |
-| UP4 | Optimització i qualitat del codi | 12 h | 2n trimestre |
+| UP1 | Entorns integrats de desenvolupament | 15 h | 1r trimestre |
+| UP2 | Elements i eines del desenvolupament | 11 h | 1r trimestre |
+| UP3 | Optimització i qualitat del codi | 15 h | 2n trimestre |
+| UP4 | Proves i verificació | 11 h | 2n trimestre |
 | UP5 | Diagrames de classes | 12 h | 3r trimestre |
 | UP6 | Diagrames de comportament | 14 h | 3r trimestre |
 | **Total al centre** |  | **75 h** |  |

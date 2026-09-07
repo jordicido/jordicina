@@ -36,4 +36,4 @@ Respon sense consultar els apunts i revisa després les teues respostes.
 
 Quina part del teu desplegament podries explicar millor a una persona que no l'ha fet? Converteix aquesta resposta en una millora concreta de la documentació.
 
-[Anterior: Fitxa de requisits](activitat-3-fitxa-requisits.md) · [Tornar a la presentació de la UP1](../../up1-implantacio-arquitectures.md)
+[Tornar a la teoria de la UP1](../../up1-implantacio-arquitectures.md)

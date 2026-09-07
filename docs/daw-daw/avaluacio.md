@@ -31,7 +31,7 @@ En les activitats de desplegament es valorarà especialment que:
 
 ## UP1 i RA1
 
-La UP1 treballa els criteris RA1.a, RA1.b, RA1.c, RA1.d, RA1.e, RA1.f, RA1.h i RA1.i. Les evidències són el [mapa d'arquitectura](up1/activitats/activitat-1-mapa-arquitectura.md), el [desplegament mínim](up1/activitats/activitat-2-desplegament-minim.md), la [fitxa de requisits](up1/activitats/activitat-3-fitxa-requisits.md) i l'[autoavaluació](up1/activitats/autoavaluacio.md).
+La UP1 treballa els criteris RA1.a, RA1.b, RA1.c, RA1.d, RA1.e, RA1.h i RA1.i, d'acord amb la seqüenciació de la programació didàctica. Els criteris RA1.f i RA1.g també poden aportar evidències en el període de formació en empresa, tal com preveu la programació. L'evidència principal de la UP1 és el [cas integrador de disseny, desplegament i verificació](up1/activitats/activitat-1-mapa-arquitectura.md). L'[autoavaluació](up1/activitats/autoavaluacio.md) és un recurs d'estudi no qualificable.
 
 ## Recuperació
 

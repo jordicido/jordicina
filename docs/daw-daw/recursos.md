@@ -4,28 +4,50 @@ hide:
 ---
 # Recursos
 
-## Entorn de pràctiques
+Els enllaços de descàrrega s'afegiran només quan estiguen disponibles i siguen fonts oficials. Consulta les instruccions de cada pràctica abans d'instal·lar cap programa.
 
-| Recurs | Ús |
-| --- | --- |
-| Linux o màquina virtual | Servidor de pràctiques i administració des del terminal. |
-| Docker o equivalent | Aïllar serveis i reproduir desplegaments. |
-| Navegador i `curl` | Comprovar respostes HTTP i capçaleres. |
-| Git i GitHub | Versionar configuracions i documentació. |
-| Editor de text | Treballar fitxers de configuració i Markdown. |
-| Aules | Instruccions, comunicacions i lliuraments. |
+## Eines i programari
 
-## Hàbits de treball
+- Docker o una eina equivalent de contenidors.
+- Git i GitHub.
+- Navegador web i `curl`.
+- Editor de text o entorn de desenvolupament.
+- Terminal Linux o màquina virtual.
 
-Un desplegament professional és reproduïble. Guarda les ordres en un README o script, anota les versions, separa configuració i secrets, registra les proves i descriu com tornar a l'estat anterior.
+## Màquines virtuals i contenidors
 
-!!! warning "Seguretat"
-    Treballa només amb dominis, xarxes i màquines autoritzades. No inclogues contrasenyes ni tokens reals en cap fitxer que vages a lliurar.
+Espai per a les màquines virtuals, imatges i fitxers de Compose autoritzats per al mòdul. La configuració concreta s'indicarà en cada pràctica.
 
-## Referències del mòdul
+## Servidors web i d'aplicacions
 
-- [UP1. Implantació d'arquitectures web](up1-implantacio-arquitectures.md)
-- [Programació didàctica](programacio-didactica.md)
-- [Guia de l'assignatura](guia-assignatura.md)
+La [UP1. Implantació d'arquitectures web](up1-implantacio-arquitectures.md) presenta els components i les proves inicials. Les UP següents incorporaran les instruccions específiques de cada servidor.
+
+## Manuals i documentació
+
+La documentació del professorat es publicarà en Aules o en la unitat corresponent. Consulta també la [programació didàctica](programacio-didactica.md) i la [guia de l'assignatura](guia-assignatura.md).
+
+## Guies ràpides
+
+- Comprovar una resposta HTTP amb `curl`.
+- Consultar l'estat i els logs d'un servei.
+- Identificar ports, dependències i variables de configuració.
+- Preparar una entrega reproduïble.
+
+## Ordres de Linux
+
+Les ordres s'introduiran en les pràctiques. No executes ordres sobre sistemes que no siguen teus o no estiguen autoritzats.
+
+## Control de versions
+
+El mòdul utilitza Git per conservar configuracions, documentació, proves i historial de canvis. No publiques credencials, tokens ni claus privades.
+
+## Recursos sobre xarxes
+
+La programació inclou DNS, HTTP/HTTPS, FTP, SFTP i serveis de directori. Les proves es realitzaran en entorns locals o autoritzats.
+
+## Recursos complementaris
+
 - [Documentació oficial de Docker](https://docs.docker.com/)
-- [Documentació de Git](https://git-scm.com/doc)
+- [Documentació oficial de Git](https://git-scm.com/doc)
+- [Documentació de Nginx](https://nginx.org/en/docs/)
+- [Documentació d'Apache HTTP Server](https://httpd.apache.org/docs/)
