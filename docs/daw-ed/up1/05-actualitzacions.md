@@ -2,37 +2,48 @@
 hide:
   - navigation
 ---
-# 5. Actualització de l’entorn
+# 5. Actualitzacions i recuperació
 
-## Actualitzar és gestionar un canvi
+## Introducció
 
-Una actualització pot corregir errors i vulnerabilitats, però també pot canviar APIs, formats de configuració, extensions/plugins o compatibilitat amb el JDK. Per això no convé activar totes les actualitzacions automàtiques sense criteri en un projecte que s’ha de lliurar.
+Actualitzar un IDE pot aportar correccions, compatibilitat i seguretat, però també pot canviar el comportament de plugins, el JDK detectat o les eines de construcció. Per això una actualització és un canvi que cal planificar i verificar, no una acció automàtica sense control.
 
-Abans d’actualitzar:
+## Canals i política d’actualització
 
-1. Identifica què canviarà: VS Code, IntelliJ IDEA, extensió, plugin, JDK o dependència.
-2. Consulta les notes de versió i les incidències conegudes.
-3. Guarda el codi, la configuració i la versió que funciona.
-4. Actualitza en un projecte de prova o en una branca separada.
-5. Executa la construcció i les proves mínimes.
-6. Accepta el canvi només si el resultat és correcte i queda documentat.
+Els IDE solen oferir canals estables i, en alguns casos, canals previs o de proves. Per a un entorn de classe i per a un projecte d’empresa, el canal estable és el punt de partida habitual. La política ha d’indicar qui pot actualitzar, quan es prova i com es torna a l’estat anterior.
 
-## Canals i política
-
-| Component | On el configurarem | Evidència |
+| Abans | Durant | Després |
 | --- | --- | --- |
-| VS Code i extensions | Preferències de VS Code i vista Extensions. | Versió de VS Code, extensió i prova Java/Python. |
-| IntelliJ IDEA i plugins | Settings/Preferences, Plugins i System Settings > Updates. | Versió, plugin, canal i projecte Maven construït. |
-| JDK i Maven | Gestor del sistema i configuració del projecte. | `java --version`, `mvn --version` i log de build. |
+| Anotar versions d’IDE, plugins, JDK i gestor. | Aplicar el canvi des de la font autoritzada. | Obrir el projecte i executar la construcció. |
+| Revisar compatibilitat i incidències conegudes. | No interrompre el procés ni tancar l’IDE a la força. | Comparar diagnòstics, proves i temps de construcció. |
+| Fer còpia de la configuració i del projecte. | Registrar versió anterior i nova. | Documentar resultat i pla de retorn. |
 
-Configura les actualitzacions de VS Code i IntelliJ IDEA, però documenta també la versió del JDK, Maven, extensions i plugins. L’IDE actualitzat no garanteix que el compilador o les biblioteques ho estiguen.
+## Què s’ha de conservar?
 
-Consulta també la documentació oficial de [les actualitzacions d’IntelliJ IDEA](https://www.jetbrains.com/help/idea/update.html) i de [la gestió de plugins](https://www.jetbrains.com/help/idea/managing-plugins.html).
+La recuperació és més senzilla si es conserven el projecte en Git, el fitxer de dependències, les configuracions compartibles, les ordres de construcció i una llista de versions. No cal copiar totes les cachés de l’IDE. Els fitxers amb secrets s’han de deixar fora del repositori.
 
-!!! warning "Pla de retorn"
-    Una còpia del projecte no sempre permet tornar arrere una extensió, un plugin o una versió de l’IDE. Conserva el perfil de VS Code, la configuració d’IntelliJ IDEA, el fitxer `pom.xml` i una ordre de construcció coneguda.
+Un inventari mínim pot ser:
 
-!!! tip "Pregunta de control"
-    Quines proves faries després d’actualitzar VS Code o IntelliJ IDEA abans d’acceptar el canvi per al projecte de tot l’equip?
+```text
+IDE: IntelliJ IDEA <versió>
+Plugin Kotlin: <versió>
+JDK: <versió i distribució>
+Maven: <versió>
+Projecte: commit <identificador>
+Prova: mvn clean package -> correcta
+```
 
-[Següent: construcció d’executables](06-executables.md) · [Anterior: personalització i automatització](04-personalitzacio-automatitzacio.md)
+Els marcadors s’han de substituir per dades reals en el registre de l’activitat.
+
+## Incidència i retorn
+
+Si després d’actualitzar falla una construcció, separa les hipòtesis: canvi del JDK, plugin incompatible, dependència no resolta o configuració local. Guarda el missatge d’error, identifica l’últim canvi i prova una recuperació controlada: desactivar el plugin actualitzat, seleccionar el JDK anterior o tornar a la versió autoritzada per l’entorn de laboratori. No elimines el projecte per ocultar la incidència.
+
+!!! warning "No confongues actualitzar i arreglar"
+    Actualitzar diverses peces alhora dificulta saber què ha provocat una fallada. En una pràctica, canvia una peça, registra-la i executa la mateixa prova abans de continuar.
+
+## Resum
+
+Una política d’actualització necessita canal, compatibilitat, còpia, registre, prova i pla de retorn. El criteri de l’èxit és que el projecte continue construint-se i que l’equip puga explicar què ha canviat.
+
+[Anterior: personalització](04-personalitzacio-automatitzacio.md) · [Següent: executables](06-executables.md) · [Índex](index.md)

@@ -1,0 +1,194 @@
+{"kind":"deck","id":"pr/9uhtj4","name":"Deck"}
+{"kind":"layout","layoutId":"/ppt/slideMasters/slideMaster1.xml","name":"","type":"master","placeholders":[{"name":"title","type":"title","textPreview":"Click to edit Master title style"},{"name":"body","type":"body","textPreview":"Click to edit Master text styles | Second level | Third level | Fourth level | Fifth level"},{"name":"dateTime","type":"dateTime","textPreview":"9/9/2026"},{"name":"footer","type":"footer"},{"name":"slideNumber","type":"slideNumber","textPreview":"‹#›"}]}
+{"kind":"layout","layoutId":"/ppt/slideLayouts/slideLayout1.xml","name":"Title Slide","type":"title","placeholders":[{"name":"title","type":"title","textPreview":"Click to edit Master title style"},{"name":"subtitle","type":"subtitle","textPreview":"Click to edit Master subtitle style"},{"name":"dateTime","type":"dateTime","textPreview":"9/9/2026"},{"name":"footer","type":"footer"},{"name":"slideNumber","type":"slideNumber","textPreview":"‹#›"}]}
+{"kind":"layout","layoutId":"/ppt/slideLayouts/slideLayout2.xml","name":"Title and Content","type":"obj","placeholders":[{"name":"title","type":"title","textPreview":"Click to edit Master title style"},{"name":"content placeholder 2","textPreview":"Click to edit Master text styles | Second level | Third level | Fourth level | Fifth level"},{"name":"dateTime","type":"dateTime","textPreview":"9/9/2026"},{"name":"footer","type":"footer"},{"name":"slideNumber","type":"slideNumber","textPreview":"‹#›"}]}
+{"kind":"layout","layoutId":"/ppt/slideLayouts/slideLayout3.xml","name":"Section Header","type":"secHead","placeholders":[{"name":"title","type":"title","textPreview":"Click to edit Master title style"},{"name":"body","type":"body","textPreview":"Click to edit Master text styles"},{"name":"dateTime","type":"dateTime","textPreview":"9/9/2026"},{"name":"footer","type":"footer"},{"name":"slideNumber","type":"slideNumber","textPreview":"‹#›"}]}
+{"kind":"layout","layoutId":"/ppt/slideLayouts/slideLayout4.xml","name":"Two Content","type":"twoObj","placeholders":[{"name":"title","type":"title","textPreview":"Click to edit Master title style"},{"name":"content placeholder 2","textPreview":"Click to edit Master text styles | Second level | Third level | Fourth level | Fifth level"},{"name":"content placeholder 3","textPreview":"Click to edit Master text styles | Second level | Third level | Fourth level | Fifth level"},{"name":"dateTime","type":"dateTime","textPreview":"9/9/2026"},{"name":"footer","type":"footer"},{"name":"slideNumber","type":"slideNumber","textPreview":"‹#›"}]}
+{"kind":"layout","layoutId":"/ppt/slideLayouts/slideLayout5.xml","name":"Comparison","type":"twoTxTwoObj","placeholders":[{"name":"title","type":"title","textPreview":"Click to edit Master title style"},{"name":"body","type":"body","textPreview":"Click to edit Master text styles"},{"name":"content placeholder 3","textPreview":"Click to edit Master text styles | Second level | Third level | Fourth level | Fifth level"},{"name":"body","type":"body","textPreview":"Click to edit Master text styles"},{"name":"content placeholder 5","textPreview":"Click to edit Master text styles | Second level | Third level | Fourth level | Fifth level"},{"name":"dateTime","type":"dateTime","textPreview":"9/9/2026"},{"name":"footer","type":"footer"},{"name":"slideNumber","type":"slideNumber","textPreview":"‹#›"}]}
+{"kind":"layout","layoutId":"/ppt/slideLayouts/slideLayout6.xml","name":"Title Only","type":"titleOnly","placeholders":[{"name":"title","type":"title","textPreview":"Click to edit Master title style"},{"name":"dateTime","type":"dateTime","textPreview":"9/9/2026"},{"name":"footer","type":"footer"},{"name":"slideNumber","type":"slideNumber","textPreview":"‹#›"}]}
+{"kind":"layout","layoutId":"/ppt/slideLayouts/slideLayout7.xml","name":"Blank","type":"blank","placeholders":[{"name":"dateTime","type":"dateTime","textPreview":"9/9/2026"},{"name":"footer","type":"footer"},{"name":"slideNumber","type":"slideNumber","textPreview":"‹#›"}]}
+{"kind":"layout","layoutId":"/ppt/slideLayouts/slideLayout8.xml","name":"Content with Caption","type":"objTx","placeholders":[{"name":"title","type":"title","textPreview":"Click to edit Master title style"},{"name":"content placeholder 2","textPreview":"Click to edit Master text styles | Second level | Third level | Fourth level | Fifth level"},{"name":"body","type":"body","textPreview":"Click to edit Master text styles"},{"name":"dateTime","type":"dateTime","textPreview":"9/9/2026"},{"name":"footer","type":"footer"},{"name":"slideNumber","type":"slideNumber","textPreview":"‹#›"}]}
+{"kind":"layout","layoutId":"/ppt/slideLayouts/slideLayout9.xml","name":"Picture with Caption","type":"picTx","placeholders":[{"name":"title","type":"title","textPreview":"Click to edit Master title style"},{"name":"picture","type":"picture"},{"name":"body","type":"body","textPreview":"Click to edit Master text styles"},{"name":"dateTime","type":"dateTime","textPreview":"9/9/2026"},{"name":"footer","type":"footer"},{"name":"slideNumber","type":"slideNumber","textPreview":"‹#›"}]}
+{"kind":"layout","layoutId":"/ppt/slideLayouts/slideLayout10.xml","name":"Title and Vertical Text","type":"vertTx","placeholders":[{"name":"title","type":"title","textPreview":"Click to edit Master title style"},{"name":"body","type":"body","textPreview":"Click to edit Master text styles | Second level | Third level | Fourth level | Fifth level"},{"name":"dateTime","type":"dateTime","textPreview":"9/9/2026"},{"name":"footer","type":"footer"},{"name":"slideNumber","type":"slideNumber","textPreview":"‹#›"}]}
+{"kind":"layout","layoutId":"/ppt/slideLayouts/slideLayout11.xml","name":"Vertical Title and Text","type":"vertTitleAndTx","placeholders":[{"name":"title","type":"title","textPreview":"Click to edit Master title style"},{"name":"body","type":"body","textPreview":"Click to edit Master text styles | Second level | Third level | Fourth level | Fifth level"},{"name":"dateTime","type":"dateTime","textPreview":"9/9/2026"},{"name":"footer","type":"footer"},{"name":"slideNumber","type":"slideNumber","textPreview":"‹#›"}]}
+{"kind":"layout","layoutId":"/ppt/slideLayouts/slideLayout12.xml","name":"Diapositiva de título","type":"title","placeholders":[{"name":"title","type":"title","textPreview":"Haga clic para modificar el estilo de título del patrón"},{"name":"dateTime","type":"dateTime"},{"name":"footer","type":"footer"},{"name":"slideNumber","type":"slideNumber","textPreview":"‹#›"},{"name":"body","type":"body","textPreview":"Click to edit the outline text format | Second Outline Level | Third Outline Level | Fourth Outline Level | Fifth Outline Level | Sixth O..."}]}
+{"kind":"layout","layoutId":"/ppt/slideLayouts/slideLayout13.xml","name":"En blanco","type":"blank","placeholders":[{"name":"dateTime","type":"dateTime","textPreview":"<date/time>"},{"name":"footer","type":"footer","textPreview":"<footer>"},{"name":"slideNumber","type":"slideNumber","textPreview":"‹#›"},{"name":"title","type":"title","textPreview":"Click to edit the title text format"},{"name":"body","type":"body","textPreview":"Click to edit the outline text format | Second Outline Level | Third Outline Level | Fourth Outline Level | Fifth Outline Level | Sixth O..."}]}
+{"kind":"slide","id":"sl/y90nupkv","slide":1,"title":"PRESENTACIÓ D'ED","textShapes":2}
+{"kind":"textbox","id":"sh/3m547yxw","slide":1,"name":"PlaceHolder 1","placeholder":"title","text":"PRESENTACIÓ D'ED","textPreview":"PRESENTACIÓ D'ED","textChars":16,"textLines":1,"bbox":[159.99,137.42,959.96,233.12]}
+{"kind":"shape","id":"sh/ilw3etgr","slide":1,"name":"Rectángulo 5","bbox":[84.25,384.19,1110.8,4.76]}
+{"kind":"shape","id":"sh/9kr6lsfm","slide":1,"name":"Rectángulo 2","bbox":[0,662.21,1279.97,57.75]}
+{"kind":"textbox","id":"sh/8ra1oze9","slide":1,"name":"PlaceHolder 2","placeholder":"subtitle","text":"1º CFGS – DESENROTLLAMENT D'APLICACIONS WEB\n\n\nJORDI CIDONCHA NAVARRETE\nCURS 2026/27","textPreview":"1º CFGS – DESENROTLLAMENT D'APLICACIONS WEB |  |  | JORDI CIDONCHA NAVARRETE | CURS 2026/27","textChars":83,"textLines":5,"bbox":[159.99,422.82,959.96,292.35]}
+{"kind":"image","id":"im/mps36pcv","slide":1,"name":"Picture 4","bbox":[84.25,62.51,287.96,92.18]}
+{"kind":"image","id":"im/loj2xkba","slide":1,"name":"Imagen 12","bbox":[952.18,45.58,287.96,156.51]}
+{"kind":"image","id":"im/0nal4fup","slide":1,"name":"Imagen 9","bbox":[554.65,24.87,170.04,167.51]}
+{"kind":"notes","id":"nt/y90nupkv","slide":1,"text":"[Sources]\n- Plantilla, logos i identitat visual: fitxer proporcionat per l'usuari, formatIESMRE.pptx.\n- Contingut: síntesi didàctica creada a partir del briefing de l'usuari; no s'han utilitzat fonts externes.\n- La portada presenta el mòdul i situa el grup de 1r DAW."}
+{"kind":"slide","id":"sl/hwbqtkby","slide":2,"title":"ÍNDEX","textShapes":4}
+{"kind":"shape","id":"sh/qt0fepw3","slide":2,"name":"Rectángulo 3","bbox":[0,655.56,1279.97,64.4]}
+{"kind":"textbox","id":"sh/bu9w7uxo","slide":2,"name":"Título 6","text":"ÍNDEX","textPreview":"ÍNDEX","textChars":5,"textLines":1,"bbox":[198.95,24.76,882.07,59.49]}
+{"kind":"shape","id":"sh/cv2xgzet","slide":2,"name":"Rectángulo 5","bbox":[0,0,1279.97,15.95]}
+{"kind":"shape","id":"sh/dwbe94fe","slide":2,"name":"Rectángulo 6","bbox":[0,648.72,1279.97,7.26]}
+{"kind":"textbox","id":"sh/2p0fapwr","slide":2,"name":"Subtítulo 4","text":"Presentació del curs","textPreview":"Presentació del curs","textChars":20,"textLines":1,"bbox":[0,656.01,381.85,63.95]}
+{"kind":"textbox","id":"sh/3q9w3uxc","slide":2,"name":"Subtítulo 4","text":"DAW – 1º CFGS ","textPreview":"DAW – 1º CFGS","textChars":14,"textLines":1,"bbox":[888.53,655.56,391.45,63.95]}
+{"kind":"textbox","id":"sh/ret8r2dk","slide":2,"name":"Subtítulo 4","text":"1. QUÈ ÉS ED?\n   El mòdul i el seu sentit\n2. QUÈ APRENDREM?\n   Eines, processos i qualitat\n3. COM TREBALLAREM?\n   Del problema al lliurament\n4. COM HO APLICAREM?\n   Projecte, pràctiques i reflexió","textPreview":"1. QUÈ ÉS ED? |    El mòdul i el seu sentit | 2. QUÈ APRENDREM? |    Eines, processos i qualitat | 3. COM TREBALLAREM? |    Del problema ...","textChars":196,"textLines":8,"bbox":[53.97,134.89,1172.07,488.01]}
+{"kind":"image","id":"im/p83qh8b6","slide":2,"name":"Imagen 16","bbox":[1082.27,30.8,170.04,45.13]}
+{"kind":"image","id":"im/25s7mtsf","slide":2,"name":"Imagen 7","bbox":[609.6,658.13,60.74,61.38]}
+{"kind":"notes","id":"nt/hwbqtkby","slide":2,"text":"[Sources]\n- Plantilla, logos i identitat visual: fitxer proporcionat per l'usuari, formatIESMRE.pptx.\n- Contingut: síntesi didàctica creada a partir del briefing de l'usuari; no s'han utilitzat fonts externes.\n- L'índex anticipa una progressió: sentit, aprenentatge, procés i aplicació."}
+{"kind":"slide","id":"sl/ofy9wn61","slide":3,"title":"ED CONNECTA IDEA I PROGRAMARI","textShapes":8}
+{"kind":"shape","id":"sh/ih43alwv","slide":3,"name":"Rectángulo 2","bbox":[0,655.56,1279.97,64.4]}
+{"kind":"shape","id":"sh/3id43qdg","slide":3,"name":"Rectángulo 5","bbox":[0,0,1279.97,15.95]}
+{"kind":"shape","id":"sh/gfml8ve5","slide":3,"name":"Rectángulo 6","bbox":[0,648.72,1279.97,7.26]}
+{"kind":"textbox","id":"sh/0bq5kfu9","slide":3,"name":"Título 6","text":"ED CONNECTA IDEA I PROGRAMARI","textPreview":"ED CONNECTA IDEA I PROGRAMARI","textChars":29,"textLines":1,"bbox":[198.95,30.35,882.07,80.58]}
+{"kind":"textbox","id":"sh/d0jax03i","slide":3,"name":"Subtítulo 4","text":"Presentació del curs","textPreview":"Presentació del curs","textChars":20,"textLines":1,"bbox":[0,656.01,381.85,63.95]}
+{"kind":"textbox","id":"sh/3ah8rqlg","slide":3,"name":"Subtítulo 4","text":"DAW – 1º CFGS ","textPreview":"DAW – 1º CFGS","textChars":14,"textLines":1,"bbox":[888.53,655.56,391.45,63.95]}
+{"kind":"textbox","id":"sh/a5s7a9gb","slide":3,"text":"Un projecte web no acaba quan «funciona».","textPreview":"Un projecte web no acaba quan «funciona».","textChars":41,"textLines":1,"bbox":[120,150,1040,44]}
+{"kind":"shape","id":"sh/x8jq5of2","slide":3,"bbox":[326,308,76,40]}
+{"kind":"shape","id":"sh/w7apcjyh","slide":3,"bbox":[666,308,76,40]}
+{"kind":"textbox","id":"sh/jul87yx8","slide":3,"text":"IDEA\nQuè volem resoldre?","textPreview":"IDEA | Què volem resoldre?","textChars":24,"textLines":2,"bbox":[90,250,220,150]}
+{"kind":"textbox","id":"sh/ytc7etwn","slide":3,"text":"SOLUCIÓ\nCodi + decisions","textPreview":"SOLUCIÓ | Codi + decisions","textChars":24,"textLines":2,"bbox":[430,250,220,150]}
+{"kind":"textbox","id":"sh/lw3q9ofy","slide":3,"text":"RESULTAT\nProva + explicació","textPreview":"RESULTAT | Prova + explicació","textChars":27,"textLines":2,"bbox":[770,250,220,150]}
+{"kind":"textbox","id":"sh/kvupg3ed","slide":3,"text":"ED ens dona el mètode per repetir aquest recorregut amb criteri.","textPreview":"ED ens dona el mètode per repetir aquest recorregut amb criteri.","textChars":64,"textLines":1,"bbox":[120,490,1040,56]}
+{"kind":"image","id":"im/2p8re547","slide":3,"name":"Imagen 16","bbox":[609.6,658.13,60.74,61.38]}
+{"kind":"image","id":"im/sj2hsryt","slide":3,"name":"Imagen 21","bbox":[1082.27,30.8,170.04,45.13]}
+{"kind":"notes","id":"nt/ofy9wn61","slide":3,"text":"[Sources]\n- Plantilla, logos i identitat visual: fitxer proporcionat per l'usuari, formatIESMRE.pptx.\n- Contingut: síntesi didàctica creada a partir del briefing de l'usuari; no s'han utilitzat fonts externes."}
+{"kind":"slide","id":"sl/jyx0ra1s","slide":4,"title":"QUÈ APRENDREM EN AQUEST MÒDUL","textShapes":9}
+{"kind":"shape","id":"sh/pcjadsb2","slide":4,"name":"Rectángulo 2","bbox":[0,655.56,1279.97,64.4]}
+{"kind":"shape","id":"sh/oba9k7uh","slide":4,"name":"Rectángulo 5","bbox":[0,0,1279.97,15.95]}
+{"kind":"shape","id":"sh/bylsf2t8","slide":4,"name":"Rectángulo 6","bbox":[0,648.72,1279.97,7.26]}
+{"kind":"textbox","id":"sh/z2lsjmtk","slide":4,"name":"Título 6","text":"QUÈ APRENDREM EN AQUEST MÒDUL","textPreview":"QUÈ APRENDREM EN AQUEST MÒDUL","textChars":29,"textLines":1,"bbox":[198.95,30.35,882.07,80.58]}
+{"kind":"textbox","id":"sh/0ba143al","slide":4,"name":"Subtítulo 4","text":"Presentació del curs","textPreview":"Presentació del curs","textChars":20,"textLines":1,"bbox":[0,656.01,381.85,63.95]}
+{"kind":"textbox","id":"sh/ql8jytsj","slide":4,"name":"Subtítulo 4","text":"DAW – 1º CFGS ","textPreview":"DAW – 1º CFGS","textChars":14,"textLines":1,"bbox":[888.53,655.56,391.45,63.95]}
+{"kind":"textbox","id":"sh/h8nq9wri","slide":4,"text":"Quatre capacitats que fan més sòlid el treball diari.","textPreview":"Quatre capacitats que fan més sòlid el treball diari.","textChars":53,"textLines":1,"bbox":[150,150,980,40]}
+{"kind":"textbox","id":"sh/u5wreh8r","slide":4,"text":"PREPARAR\nl'entorn","textPreview":"PREPARAR | l'entorn","textChars":17,"textLines":2,"bbox":[80,235,220,180]}
+{"kind":"textbox","id":"sh/v6587m9c","slide":4,"text":"ORGANITZAR\nel codi","textPreview":"ORGANITZAR | el codi","textChars":18,"textLines":2,"bbox":[365,235,220,180]}
+{"kind":"textbox","id":"sh/83upc7q1","slide":4,"text":"VERIFICAR\nla solució","textPreview":"VERIFICAR | la solució","textChars":20,"textLines":2,"bbox":[650,235,220,180]}
+{"kind":"textbox","id":"sh/943q5crm","slide":4,"text":"DOCUMENTAR\nel treball","textPreview":"DOCUMENTAR | el treball","textChars":21,"textLines":2,"bbox":[935,235,220,180]}
+{"kind":"textbox","id":"sh/m1c7ah8v","slide":4,"text":"Objectiu: treballar amb criteri, no només amb intuïció.","textPreview":"Objectiu: treballar amb criteri, no només amb intuïció.","textChars":55,"textLines":1,"bbox":[150,500,980,52]}
+{"kind":"image","id":"im/1c3e9wji","slide":4,"name":"Imagen 16","bbox":[609.6,658.13,60.74,61.38]}
+{"kind":"image","id":"im/j6t0fu10","slide":4,"name":"Imagen 21","bbox":[1082.27,30.8,170.04,45.13]}
+{"kind":"notes","id":"nt/jyx0ra1s","slide":4,"text":"[Sources]\n- Plantilla, logos i identitat visual: fitxer proporcionat per l'usuari, formatIESMRE.pptx.\n- Contingut: síntesi didàctica creada a partir del briefing de l'usuari; no s'han utilitzat fonts externes."}
+{"kind":"slide","id":"sl/i107q5of","slide":5,"title":"EL MÈTODE FA AVANÇAR EL CODI","textShapes":13}
+{"kind":"shape","id":"sh/dwz21s36","slide":5,"name":"Rectángulo 2","bbox":[0,655.56,1279.97,64.4]}
+{"kind":"shape","id":"sh/sv6l8n2l","slide":5,"name":"Rectángulo 5","bbox":[0,0,1279.97,15.95]}
+{"kind":"shape","id":"sh/3qxkvilo","slide":5,"name":"Rectángulo 6","bbox":[0,648.72,1279.97,7.26]}
+{"kind":"textbox","id":"sh/v2dkrils","slide":5,"name":"Título 6","text":"EL MÈTODE FA AVANÇAR EL CODI","textPreview":"EL MÈTODE FA AVANÇAR EL CODI","textChars":28,"textLines":1,"bbox":[198.95,30.35,882.07,80.58]}
+{"kind":"textbox","id":"sh/cf2tcr61","slide":5,"name":"Subtítulo 4","text":"Presentació del curs","textPreview":"Presentació del curs","textChars":20,"textLines":1,"bbox":[0,656.01,381.85,63.95]}
+{"kind":"textbox","id":"sh/yhkbe1o7","slide":5,"name":"Subtítulo 4","text":"DAW – 1º CFGS ","textPreview":"DAW – 1º CFGS","textChars":14,"textLines":1,"bbox":[888.53,655.56,391.45,63.95]}
+{"kind":"textbox","id":"sh/lwrqlkfe","slide":5,"text":"Cada pas deixa una pregunta més clara que l'anterior.","textPreview":"Cada pas deixa una pregunta més clara que l'anterior.","textChars":53,"textLines":1,"bbox":[160,150,960,40]}
+{"kind":"shape","id":"sh/yt0ra5wn","slide":5,"bbox":[300,320,92,42]}
+{"kind":"shape","id":"sh/zu98jax8","slide":5,"bbox":[550,320,92,42]}
+{"kind":"shape","id":"sh/8z29gfep","slide":5,"bbox":[800,320,92,42]}
+{"kind":"textbox","id":"sh/9kbqpkfa","slide":5,"text":"1","textPreview":"1","textChars":1,"textLines":1,"bbox":[150,275,78,78]}
+{"kind":"textbox","id":"sh/mx0repwz","slide":5,"text":"ANALITZAR\nQuin és el problema?","textPreview":"ANALITZAR | Quin és el problema?","textChars":30,"textLines":2,"bbox":[100,385,180,72]}
+{"kind":"textbox","id":"sh/ny98nuxk","slide":5,"text":"2","textPreview":"2","textChars":1,"textLines":1,"bbox":[400,275,78,78]}
+{"kind":"textbox","id":"sh/o3yp4vel","slide":5,"text":"IMPLEMENTAR\nQuin canvi fem?","textPreview":"IMPLEMENTAR | Quin canvi fem?","textChars":27,"textLines":2,"bbox":[350,385,180,72]}
+{"kind":"textbox","id":"sh/po7qd0f6","slide":5,"text":"3","textPreview":"3","textChars":1,"textLines":1,"bbox":[650,275,78,78]}
+{"kind":"textbox","id":"sh/e1w7y5w7","slide":5,"text":"PROVAR\nCom ho sabem?","textPreview":"PROVAR | Com ho sabem?","textChars":20,"textLines":2,"bbox":[600,385,180,72]}
+{"kind":"textbox","id":"sh/f25oraxs","slide":5,"text":"4","textPreview":"4","textChars":1,"textLines":1,"bbox":[900,275,78,78]}
+{"kind":"textbox","id":"sh/g3ep0fed","slide":5,"text":"MILLORAR\nQuè aprenem?","textPreview":"MILLORAR | Què aprenem?","textChars":21,"textLines":2,"bbox":[850,385,180,72]}
+{"kind":"textbox","id":"sh/14n6tkfy","slide":5,"text":"El valor no és només arribar: és poder explicar com hi hem arribat.","textPreview":"El valor no és només arribar: és poder explicar com hi hem arribat.","textChars":67,"textLines":1,"bbox":[150,515,980,50]}
+{"kind":"image","id":"im/tsbqtovm","slide":5,"name":"Imagen 16","bbox":[609.6,658.13,60.74,61.38]}
+{"kind":"image","id":"im/3mxsj2xo","slide":5,"name":"Imagen 21","bbox":[1082.27,30.8,170.04,45.13]}
+{"kind":"notes","id":"nt/i107q5of","slide":5,"text":"[Sources]\n- Plantilla, logos i identitat visual: fitxer proporcionat per l'usuari, formatIESMRE.pptx.\n- Contingut: síntesi didàctica creada a partir del briefing de l'usuari; no s'han utilitzat fonts externes."}
+{"kind":"slide","id":"sl/x8f69ofe","slide":6,"title":"DE LA TASCA AL LLIURAMENT","textShapes":10}
+{"kind":"shape","id":"sh/8bahobil","slide":6,"name":"Rectángulo 2","bbox":[0,655.56,1279.97,64.4]}
+{"kind":"shape","id":"sh/9cjyhgj6","slide":6,"name":"Rectángulo 5","bbox":[0,0,1279.97,15.95]}
+{"kind":"shape","id":"sh/adszq10r","slide":6,"name":"Rectángulo 6","bbox":[0,648.72,1279.97,7.26]}
+{"kind":"textbox","id":"sh/qh8fehk7","slide":6,"name":"Título 6","text":"DE LA TASCA AL LLIURAMENT","textPreview":"DE LA TASCA AL LLIURAMENT","textChars":25,"textLines":1,"bbox":[198.95,30.35,882.07,80.58]}
+{"kind":"textbox","id":"sh/zi98nu94","slide":6,"name":"Subtítulo 4","text":"Presentació del curs","textPreview":"Presentació del curs","textChars":20,"textLines":1,"bbox":[0,656.01,381.85,63.95]}
+{"kind":"textbox","id":"sh/98rqt4r6","slide":6,"name":"Subtítulo 4","text":"DAW – 1º CFGS ","textPreview":"DAW – 1º CFGS","textChars":14,"textLines":1,"bbox":[888.53,655.56,391.45,63.95]}
+{"kind":"textbox","id":"sh/sbe1kf2p","slide":6,"text":"Un exemple de flux de treball per a una incidència web.","textPreview":"Un exemple de flux de treball per a una incidència web.","textChars":55,"textLines":1,"bbox":[160,150,960,38]}
+{"kind":"shape","id":"sh/7a50bal4","slide":6,"bbox":[242,300,58,34]}
+{"kind":"shape","id":"sh/69wji54z","slide":6,"bbox":[470,300,58,34]}
+{"kind":"shape","id":"sh/h072hk3m","slide":6,"bbox":[698,300,58,34]}
+{"kind":"shape","id":"sh/gzy1oz21","slide":6,"bbox":[926,300,58,34]}
+{"kind":"textbox","id":"sh/fy5kfulg","slide":6,"text":"REPRODUIR\nl'error","textPreview":"REPRODUIR | l'error","textChars":17,"textLines":2,"bbox":[72,255,170,125]}
+{"kind":"textbox","id":"sh/udwjmpkv","slide":6,"text":"AÏLLAR\nla causa","textPreview":"AÏLLAR | la causa","textChars":15,"textLines":2,"bbox":[300,255,170,125]}
+{"kind":"textbox","id":"sh/x43i5032","slide":6,"text":"CANVIAR\nuna cosa","textPreview":"CANVIAR | una cosa","textChars":16,"textLines":2,"bbox":[528,255,170,125]}
+{"kind":"textbox","id":"sh/w3u1cvmh","slide":6,"text":"PROVAR\nde nou","textPreview":"PROVAR | de nou","textChars":13,"textLines":2,"bbox":[756,255,170,125]}
+{"kind":"textbox","id":"sh/5s721cfe","slide":6,"text":"EXPLICAR\nel resultat","textPreview":"EXPLICAR | el resultat","textChars":20,"textLines":2,"bbox":[984,255,170,125]}
+{"kind":"textbox","id":"sh/4ry187et","slide":6,"text":"Una tasca ben tancada deixa una evidència que una altra persona pot entendre.","textPreview":"Una tasca ben tancada deixa una evidència que una altra persona pot entendre.","textChars":77,"textLines":1,"bbox":[120,490,1040,62]}
+{"kind":"image","id":"im/kzmlona5","slide":6,"name":"Imagen 16","bbox":[609.6,658.13,60.74,61.38]}
+{"kind":"image","id":"im/ilwzi5sn","slide":6,"name":"Imagen 21","bbox":[1082.27,30.8,170.04,45.13]}
+{"kind":"notes","id":"nt/x8f69ofe","slide":6,"text":"[Sources]\n- Plantilla, logos i identitat visual: fitxer proporcionat per l'usuari, formatIESMRE.pptx.\n- Contingut: síntesi didàctica creada a partir del briefing de l'usuari; no s'han utilitzat fonts externes."}
+{"kind":"slide","id":"sl/gnmp4jqx","slide":7,"title":"EXEMPLE: QUAN UNA API NO RESPON","textShapes":9}
+{"kind":"shape","id":"sh/uhkvm9wv","slide":7,"name":"Rectángulo 2","bbox":[0,655.56,1279.97,64.4]}
+{"kind":"shape","id":"sh/fitcvedg","slide":7,"name":"Rectángulo 5","bbox":[0,0,1279.97,15.95]}
+{"kind":"shape","id":"sh/4nmdsjux","slide":7,"name":"Rectángulo 6","bbox":[0,648.72,1279.97,7.26]}
+{"kind":"textbox","id":"sh/cb6dw3u9","slide":7,"name":"Título 6","text":"EXEMPLE: QUAN UNA API NO RESPON","textPreview":"EXEMPLE: QUAN UNA API NO RESPON","textChars":31,"textLines":1,"bbox":[198.95,30.35,882.07,80.58]}
+{"kind":"textbox","id":"sh/dcbud0ra","slide":7,"name":"Subtítulo 4","text":"Presentació del curs","textPreview":"Presentació del curs","textChars":20,"textLines":1,"bbox":[0,656.01,381.85,63.95]}
+{"kind":"textbox","id":"sh/zedcfa9g","slide":7,"name":"Subtítulo 4","text":"DAW – 1º CFGS ","textPreview":"DAW – 1º CFGS","textChars":14,"textLines":1,"bbox":[888.53,655.56,391.45,63.95]}
+{"kind":"textbox","id":"sh/m58f2xwb","slide":7,"text":"El mateix problema pot generar caos o aprenentatge.","textPreview":"El mateix problema pot generar caos o aprenentatge.","textChars":51,"textLines":1,"bbox":[160,150,960,40]}
+{"kind":"textbox","id":"sh/98zyxcf2","slide":7,"text":"SENSE MÈTODE","textPreview":"SENSE MÈTODE","textChars":12,"textLines":1,"bbox":[95,215,460,56]}
+{"kind":"textbox","id":"sh/o7qx47eh","slide":7,"text":"AMB MÈTODE","textPreview":"AMB MÈTODE","textChars":10,"textLines":1,"bbox":[725,215,460,56]}
+{"kind":"textbox","id":"sh/zixgr2xk","slide":7,"text":"Canvie coses a l'atzar\nNo sé quina versió he provat\nNo puc explicar la causa","textPreview":"Canvie coses a l'atzar | No sé quina versió he provat | No puc explicar la causa","textChars":76,"textLines":3,"bbox":[95,290,460,175]}
+{"kind":"textbox","id":"sh/ehofyxgf","slide":7,"text":"Reproduïsc l'error\nAïlle el canvi\nProve i deixe evidència","textPreview":"Reproduïsc l'error | Aïlle el canvi | Prove i deixe evidència","textChars":57,"textLines":3,"bbox":[725,290,460,175]}
+{"kind":"textbox","id":"sh/14zytsfq","slide":7,"text":"La diferència és el procés, no la sort.","textPreview":"La diferència és el procés, no la sort.","textChars":39,"textLines":1,"bbox":[250,515,780,48]}
+{"kind":"image","id":"im/uh8jyl8z","slide":7,"name":"Imagen 16","bbox":[609.6,658.13,60.74,61.38]}
+{"kind":"image","id":"im/0b29s72l","slide":7,"name":"Imagen 21","bbox":[1082.27,30.8,170.04,45.13]}
+{"kind":"notes","id":"nt/gnmp4jqx","slide":7,"text":"[Sources]\n- Plantilla, logos i identitat visual: fitxer proporcionat per l'usuari, formatIESMRE.pptx.\n- Contingut: síntesi didàctica creada a partir del briefing de l'usuari; no s'han utilitzat fonts externes."}
+{"kind":"slide","id":"sl/fu1gfa1s","slide":8,"title":"EL RESULTAT HA DE SER REPRODUÏBLE","textShapes":9}
+{"kind":"shape","id":"sh/dkzmpgv2","slide":8,"name":"Rectángulo 2","bbox":[0,655.56,1279.97,64.4]}
+{"kind":"shape","id":"sh/sj65gbeh","slide":8,"name":"Rectángulo 5","bbox":[0,0,1279.97,15.95]}
+{"kind":"shape","id":"sh/fmh4rqd8","slide":8,"name":"Rectángulo 6","bbox":[0,648.72,1279.97,7.26]}
+{"kind":"textbox","id":"sh/nah4vqd4","slide":8,"name":"Título 6","text":"EL RESULTAT HA DE SER REPRODUÏBLE","textPreview":"EL RESULTAT HA DE SER REPRODUÏBLE","textChars":33,"textLines":1,"bbox":[198.95,30.35,882.07,80.58]}
+{"kind":"textbox","id":"sh/g72x4zyd","slide":8,"name":"Subtítulo 4","text":"Presentació del curs","textPreview":"Presentació del curs","textChars":20,"textLines":1,"bbox":[0,656.01,381.85,63.95]}
+{"kind":"textbox","id":"sh/6h0fypgb","slide":8,"name":"Subtítulo 4","text":"DAW – 1º CFGS ","textPreview":"DAW – 1º CFGS","textChars":14,"textLines":1,"bbox":[888.53,655.56,391.45,63.95]}
+{"kind":"textbox","id":"sh/lgjml0bi","slide":8,"text":"Una solució professional es pot tornar a executar, revisar i explicar.","textPreview":"Una solució professional es pot tornar a executar, revisar i explicar.","textChars":70,"textLines":1,"bbox":[100,150,1080,40]}
+{"kind":"shape","id":"sh/yds3a5sr","slide":8,"bbox":[320,335,320,0]}
+{"kind":"shape","id":"sh/ze14jatc","slide":8,"bbox":[640,335,320,0]}
+{"kind":"textbox","id":"sh/cbal8val","slide":8,"text":"ENTORN\nmateixes dependències","textPreview":"ENTORN | mateixes dependències","textChars":28,"textLines":2,"bbox":[90,265,260,140]}
+{"kind":"textbox","id":"sh/xcjmh0b6","slide":8,"text":"PROCÉS\npassos repetibles","textPreview":"PROCÉS | passos repetibles","textChars":24,"textLines":2,"bbox":[510,265,260,140]}
+{"kind":"textbox","id":"sh/ap836lsv","slide":8,"text":"EVIDÈNCIA\nproves i notes","textPreview":"EVIDÈNCIA | proves i notes","textChars":24,"textLines":2,"bbox":[930,265,260,140]}
+{"kind":"textbox","id":"sh/bqh4fqtg","slide":8,"text":"SOLUCIÓ\nQUE ES POT\nDEFENSAR","textPreview":"SOLUCIÓ | QUE ES POT | DEFENSAR","textChars":27,"textLines":3,"bbox":[510,445,260,115]}
+{"kind":"textbox","id":"sh/onql4bap","slide":8,"text":"Si una altra persona no pot repetir-ho, encara no està acabat.","textPreview":"Si una altra persona no pot repetir-ho, encara no està acabat.","textChars":62,"textLines":1,"bbox":[120,580,1040,32]}
+{"kind":"image","id":"im/5k7it4jm","slide":8,"name":"Imagen 16","bbox":[609.6,658.13,60.74,61.38]}
+{"kind":"image","id":"im/fqtsz2p0","slide":8,"name":"Imagen 21","bbox":[1082.27,30.8,170.04,45.13]}
+{"kind":"notes","id":"nt/fu1gfa1s","slide":8,"text":"[Sources]\n- Plantilla, logos i identitat visual: fitxer proporcionat per l'usuari, formatIESMRE.pptx.\n- Contingut: síntesi didàctica creada a partir del briefing de l'usuari; no s'han utilitzat fonts externes."}
+{"kind":"slide","id":"sl/udsvah03","slide":9,"title":"TRES ERRORS HABITUALS","textShapes":11}
+{"kind":"shape","id":"sh/lc7qdgn6","slide":9,"name":"Rectángulo 2","bbox":[0,655.56,1279.97,64.4]}
+{"kind":"shape","id":"sh/kbep4b6l","slide":9,"name":"Rectángulo 5","bbox":[0,0,1279.97,15.95]}
+{"kind":"shape","id":"sh/bm5o7m54","slide":9,"name":"Rectángulo 6","bbox":[0,648.72,1279.97,7.26]}
+{"kind":"textbox","id":"sh/nilo3m5s","slide":9,"name":"Título 6","text":"TRES ERRORS HABITUALS","textPreview":"TRES ERRORS HABITUALS","textChars":21,"textLines":1,"bbox":[198.95,30.35,882.07,80.58]}
+{"kind":"textbox","id":"sh/0b65obm9","slide":9,"name":"Subtítulo 4","text":"Presentació del curs","textPreview":"Presentació del curs","textChars":20,"textLines":1,"bbox":[0,656.01,381.85,63.95]}
+{"kind":"textbox","id":"sh/mdonql4z","slide":9,"name":"Subtítulo 4","text":"DAW – 1º CFGS ","textPreview":"DAW – 1º CFGS","textChars":14,"textLines":1,"bbox":[888.53,655.56,391.45,63.95]}
+{"kind":"textbox","id":"sh/dojmxs3q","slide":9,"text":"Tres hàbits que fan més difícil avançar.","textPreview":"Tres hàbits que fan més difícil avançar.","textChars":40,"textLines":1,"bbox":[180,150,920,38]}
+{"kind":"textbox","id":"sh/ql832d4z","slide":9,"text":"SALTAR LA PROVA","textPreview":"SALTAR LA PROVA","textChars":15,"textLines":1,"bbox":[80,230,250,70]}
+{"kind":"textbox","id":"sh/rm14vilk","slide":9,"text":"Resposta: verifica abans de donar-ho per bo.","textPreview":"Resposta: verifica abans de donar-ho per bo.","textChars":44,"textLines":1,"bbox":[80,330,250,145]}
+{"kind":"textbox","id":"sh/0ra58nmh","slide":9,"text":"COPIAR SENSE ENTENDRE","textPreview":"COPIAR SENSE ENTENDRE","textChars":21,"textLines":1,"bbox":[380,230,250,70]}
+{"kind":"textbox","id":"sh/1sjm1s3m","slide":9,"text":"Resposta: explica què fa cada decisió.","textPreview":"Resposta: explica què fa cada decisió.","textChars":38,"textLines":1,"bbox":[380,330,250,145]}
+{"kind":"textbox","id":"sh/epsn6x4b","slide":9,"text":"TREBALLAR SENSE ORDRE","textPreview":"TREBALLAR SENSE ORDRE","textChars":21,"textLines":1,"bbox":[680,230,250,70]}
+{"kind":"textbox","id":"sh/zq14zilw","slide":9,"text":"Resposta: deixa passos i versions clares.","textPreview":"Resposta: deixa passos i versions clares.","textChars":41,"textLines":1,"bbox":[680,330,250,145]}
+{"kind":"textbox","id":"sh/gvqlw3mx","slide":9,"text":"L'error és útil quan deixa una pista per a la pròxima decisió.","textPreview":"L'error és útil quan deixa una pista per a la pròxima decisió.","textChars":62,"textLines":1,"bbox":[150,530,980,45]}
+{"kind":"image","id":"im/hsfip83u","slide":9,"name":"Imagen 16","bbox":[609.6,658.13,60.74,61.38]}
+{"kind":"image","id":"im/rmh4f2pc","slide":9,"name":"Imagen 21","bbox":[1082.27,30.8,170.04,45.13]}
+{"kind":"notes","id":"nt/udsvah03","slide":9,"text":"[Sources]\n- Plantilla, logos i identitat visual: fitxer proporcionat per l'usuari, formatIESMRE.pptx.\n- Contingut: síntesi didàctica creada a partir del briefing de l'usuari; no s'han utilitzat fonts externes."}
+{"kind":"slide","id":"sl/m90b6t0r","slide":10,"title":"ACTIVITAT D’ARRANCADA","textShapes":7}
+{"kind":"shape","id":"sh/90bilsbq","slide":10,"name":"Rectángulo 2","bbox":[0,655.56,1279.97,64.4]}
+{"kind":"shape","id":"sh/8z21snal","slide":10,"name":"Rectángulo 5","bbox":[0,0,1279.97,15.95]}
+{"kind":"shape","id":"sh/zu90fito","slide":10,"name":"Rectángulo 6","bbox":[0,648.72,1279.97,7.26]}
+{"kind":"textbox","id":"sh/bq90byts","slide":10,"name":"Título 6","text":"ACTIVITAT D’ARRANCADA","textPreview":"ACTIVITAT D’ARRANCADA","textChars":21,"textLines":1,"bbox":[198.95,30.35,882.07,80.58]}
+{"kind":"textbox","id":"sh/cbu58j2h","slide":10,"name":"Subtítulo 4","text":"Presentació del curs","textPreview":"Presentació del curs","textChars":20,"textLines":1,"bbox":[0,656.01,381.85,63.95]}
+{"kind":"textbox","id":"sh/ydcnatkn","slide":10,"name":"Subtítulo 4","text":"DAW – 1º CFGS ","textPreview":"DAW – 1º CFGS","textChars":14,"textLines":1,"bbox":[888.53,655.56,391.45,63.95]}
+{"kind":"textbox","id":"sh/1w7yl4rq","slide":10,"text":"Situació: un company rep un projecte que no li arranca.","textPreview":"Situació: un company rep un projecte que no li arranca.","textChars":55,"textLines":1,"bbox":[120,150,1040,40]}
+{"kind":"textbox","id":"sh/e9wfqp8z","slide":10,"text":"ABANS DE TOCAR EL CODI\n\nQuines dades necessites?\nQuina evidència demanaries?","textPreview":"ABANS DE TOCAR EL CODI |  | Quines dades necessites? | Quina evidència demanaries?","textChars":76,"textLines":4,"bbox":[100,235,460,220]}
+{"kind":"textbox","id":"sh/fa5wju9k","slide":10,"text":"PRIMER PAS\n\nReproduir el problema\namb el mínim de variables.","textPreview":"PRIMER PAS |  | Reproduir el problema | amb el mínim de variables.","textChars":60,"textLines":4,"bbox":[720,235,460,220]}
+{"kind":"shape","id":"sh/ozyxwjq1","slide":10,"bbox":[575,320,125,55]}
+{"kind":"textbox","id":"sh/p07yp4rm","slide":10,"text":"Pensa-ho en parelles: què preguntaries primer?","textPreview":"Pensa-ho en parelles: què preguntaries primer?","textChars":46,"textLines":1,"bbox":[180,520,920,48]}
+{"kind":"image","id":"im/1cziho7i","slide":10,"name":"Imagen 16","bbox":[609.6,658.13,60.74,61.38]}
+{"kind":"image","id":"im/3654nm90","slide":10,"name":"Imagen 21","bbox":[1082.27,30.8,170.04,45.13]}
+{"kind":"notes","id":"nt/m90b6t0r","slide":10,"text":"[Sources]\n- Plantilla, logos i identitat visual: fitxer proporcionat per l'usuari, formatIESMRE.pptx.\n- Contingut: síntesi didàctica creada a partir del briefing de l'usuari; no s'han utilitzat fonts externes."}
+{"kind":"slide","id":"sl/jetc3ut0","slide":11,"title":"ED ÉS TREBALLAR AMB CRITERI","textShapes":8}
+{"kind":"shape","id":"sh/5wb6ls3q","slide":11,"name":"Rectángulo 2","bbox":[0,655.56,1279.97,64.4]}
+{"kind":"shape","id":"sh/kv2pcnm5","slide":11,"name":"Rectángulo 5","bbox":[0,0,1279.97,15.95]}
+{"kind":"shape","id":"sh/7yton2lw","slide":11,"name":"Rectángulo 6","bbox":[0,648.72,1279.97,7.26]}
+{"kind":"textbox","id":"sh/n2pobils","slide":11,"name":"Título 6","text":"ED ÉS TREBALLAR AMB CRITERI","textPreview":"ED ÉS TREBALLAR AMB CRITERI","textChars":27,"textLines":1,"bbox":[198.95,30.35,882.07,80.58]}
+{"kind":"textbox","id":"sh/wbih4b6d","slide":11,"name":"Subtítulo 4","text":"Presentació del curs","textPreview":"Presentació del curs","textChars":20,"textLines":1,"bbox":[0,656.01,381.85,63.95]}
+{"kind":"textbox","id":"sh/250zy18b","slide":11,"name":"Subtítulo 4","text":"DAW – 1º CFGS ","textPreview":"DAW – 1º CFGS","textChars":14,"textLines":1,"bbox":[888.53,655.56,391.45,63.95]}
+{"kind":"textbox","id":"sh/d8nml4ja","slide":11,"text":"El curs comença amb tres idees senzilles.","textPreview":"El curs comença amb tres idees senzilles.","textChars":41,"textLines":1,"bbox":[170,150,940,38]}
+{"kind":"textbox","id":"sh/q5w3a9kz","slide":11,"text":"1\nENTENDRE\nquè fem","textPreview":"1 | ENTENDRE | què fem","textChars":18,"textLines":3,"bbox":[120,240,260,180]}
+{"kind":"textbox","id":"sh/b65kje1k","slide":11,"text":"2\nJUSTIFICAR\ncom ho fem","textPreview":"2 | JUSTIFICAR | com ho fem","textChars":23,"textLines":3,"bbox":[510,240,260,180]}
+{"kind":"textbox","id":"sh/ojel8z2t","slide":11,"text":"3\nMILLORAR\namb evidència","textPreview":"3 | MILLORAR | amb evidència","textChars":24,"textLines":3,"bbox":[900,240,260,180]}
+{"kind":"textbox","id":"sh/pkn2h4je","slide":11,"text":"En aquest mòdul, el codi importa; el procés també.","textPreview":"En aquest mòdul, el codi importa; el procés també.","textChars":50,"textLines":1,"bbox":[120,510,1040,55]}
+{"kind":"image","id":"im/x0f6xw7i","slide":11,"name":"Imagen 16","bbox":[609.6,658.13,60.74,61.38]}
+{"kind":"image","id":"im/fu5sju90","slide":11,"name":"Imagen 21","bbox":[1082.27,30.8,170.04,45.13]}
+{"kind":"notes","id":"nt/jetc3ut0","slide":11,"text":"[Sources]\n- Plantilla, logos i identitat visual: fitxer proporcionat per l'usuari, formatIESMRE.pptx.\n- Contingut: síntesi didàctica creada a partir del briefing de l'usuari; no s'han utilitzat fonts externes."}

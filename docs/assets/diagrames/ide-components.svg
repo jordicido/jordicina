@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 430" role="img" aria-labelledby="title desc">
+  <title id="title">Components d’un IDE</title>
+  <desc id="desc">Un IDE coordina l’editor, el projecte, la construcció, el depurador i el control de versions.</desc>
+  <defs><style>.box{fill:#e9f5f9;stroke:#118ab2;stroke-width:2}.tool{fill:#fff7df;stroke:#e09f3e;stroke-width:2}.label{font:600 22px sans-serif;fill:#102a43}.small{font:16px sans-serif;fill:#334e68}.arrow{stroke:#52606d;stroke-width:2;marker-end:url(#a)}</style><marker id="a" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L9,3 L0,6 z" fill="#52606d"/></marker></defs>
+  <rect x="300" y="145" width="300" height="130" rx="18" class="box"/>
+  <text x="450" y="193" text-anchor="middle" class="label">IDE</text><text x="450" y="225" text-anchor="middle" class="small">projecte + interfície</text><text x="450" y="250" text-anchor="middle" class="small">serveis integrats</text>
+  <g class="tool"><rect x="35" y="35" width="215" height="75" rx="12"/><rect x="650" y="35" width="215" height="75" rx="12"/><rect x="35" y="320" width="215" height="75" rx="12"/><rect x="650" y="320" width="215" height="75" rx="12"/></g>
+  <text x="142" y="78" text-anchor="middle" class="label">Editor</text><text x="757" y="78" text-anchor="middle" class="label">Construcció</text><text x="142" y="363" text-anchor="middle" class="label">Depurador</text><text x="757" y="363" text-anchor="middle" class="label">Git i extensions</text>
+  <path d="M250 100 L330 155" class="arrow"/><path d="M650 100 L570 155" class="arrow"/><path d="M250 330 L330 265" class="arrow"/><path d="M650 330 L570 265" class="arrow"/>
+</svg>

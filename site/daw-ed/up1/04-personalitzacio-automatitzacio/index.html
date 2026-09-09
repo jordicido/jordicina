@@ -2754,10 +2754,10 @@
     <ul class="md-nav__list" data-md-component="toc">
       
         <li class="md-nav__item">
-  <a href="#personalitzar-amb-criteri" class="md-nav__link">
+  <a href="#introduccio" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Personalitzar amb criteri
+        Introducció
       
     </span>
   </a>
@@ -2765,10 +2765,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#automatitzar-una-tasca" class="md-nav__link">
+  <a href="#configuracio-personal-i-del-projecte" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Automatitzar una tasca
+        Configuració personal i del projecte
       
     </span>
   </a>
@@ -2776,10 +2776,32 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#terminal-integrada-i-scripts" class="md-nav__link">
+  <a href="#automatitzacio-amb-maven" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Terminal integrada i scripts
+        Automatització amb Maven
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#qualitat-duna-tasca" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Qualitat d’una tasca
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resum" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Resum
       
     </span>
   </a>
@@ -3027,6 +3049,118 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../up3-optimitzacio/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UP3. Optimització i qualitat del codi
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../up4-proves/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UP4. Proves i verificació
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../up5-diagrames-classes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UP5. Diagrames de classes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../up6-diagrames-comportament/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UP6. Diagrames de comportament
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -3163,10 +3297,10 @@
     <ul class="md-nav__list" data-md-component="toc">
       
         <li class="md-nav__item">
-  <a href="#personalitzar-amb-criteri" class="md-nav__link">
+  <a href="#introduccio" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Personalitzar amb criteri
+        Introducció
       
     </span>
   </a>
@@ -3174,10 +3308,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#automatitzar-una-tasca" class="md-nav__link">
+  <a href="#configuracio-personal-i-del-projecte" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Automatitzar una tasca
+        Configuració personal i del projecte
       
     </span>
   </a>
@@ -3185,10 +3319,32 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#terminal-integrada-i-scripts" class="md-nav__link">
+  <a href="#automatitzacio-amb-maven" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Terminal integrada i scripts
+        Automatització amb Maven
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#qualitat-duna-tasca" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Qualitat d’una tasca
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resum" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Resum
       
     </span>
   </a>
@@ -3211,55 +3367,33 @@
                   
 
 <h1 id="4-personalitzacio-i-automatitzacio">4. Personalització i automatització</h1>
-<h2 id="personalitzar-amb-criteri">Personalitzar amb criteri</h2>
-<p>Personalitzar no és afegir opcions sense límit. És adaptar l’entorn per llegir millor, reduir errors i repetir el mateix flux. Comença per opcions que siguen fàcils de compartir: formatació, final de línia, codificació, organització de fitxers, terminal i dreceres.</p>
-<p>Separa la configuració personal —tema, mida de lletra o dreceres— de la configuració del projecte —versió del JDK, formatador i ordres de build—. En VS Code treballarem amb <code>.vscode/settings.json</code>; en IntelliJ IDEA documentarem l’estil de codi, les inspeccions i les configuracions d’execució. La configuració del projecte ha d’estar documentada o versionada perquè l’equip puga reproduir-la.</p>
-<h2 id="automatitzar-una-tasca">Automatitzar una tasca</h2>
-<p>Una tasca automatitzada descriu una seqüència que abans depenia de memòria i ordres escrites a mà. En VS Code la guardarem en <code>.vscode/tasks.json</code>; en IntelliJ IDEA la repetirem amb la finestra de Maven o amb una configuració d’execució. Un flux senzill pot ser:</p>
+<h2 id="introduccio">Introducció</h2>
+<p>Personalitzar un IDE és adaptar-lo perquè l’equip treballe amb menys errors. Automatitzar és convertir una seqüència manual en una tasca repetible i observable.</p>
+<h2 id="configuracio-personal-i-del-projecte">Configuració personal i del projecte</h2>
+<p>Separa les preferències personals —tema, mida de lletra o dreceres— de les decisions del projecte —formatació, JDK, Maven i ordres de construcció—. Les segones s’han de documentar o versionar.</p>
+<p>En VS Code pots utilitzar <code>.vscode/settings.json</code>. En IntelliJ IDEA documenta l’estil de codi, les inspeccions i les configuracions d’execució. No compartisques configuracions que continguen rutes personals o secrets.</p>
+<h2 id="automatitzacio-amb-maven">Automatització amb Maven</h2>
+<p>El projecte Java pot tindre una seqüència comuna:</p>
 <div class="highlight"><pre><span></span><code>netejar la carpeta de sortida
-instal·lar o comprovar dependències
-compilar o empaquetar
-executar proves mínimes
-guardar l’artefacte i el log
+compilar el codi
+executar les proves
+empaquetar el JAR
+guardar el log i verificar el resultat
 </code></pre></div>
-<p>La tasca ha de tindre un nom clar, una entrada coneguda, una sortida localitzable i un codi de retorn interpretable. No automatitzes una ordre destructiva sense confirmar el directori i les dades que afectarà.</p>
-<table>
-<thead>
-<tr>
-<th>Element</th>
-<th>Exemple</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Entrada</td>
-<td>Carpeta del projecte i versió del JDK o de Python.</td>
-</tr>
-<tr>
-<td>Acció</td>
-<td><code>mvn package</code> en VS Code o des de la finestra Maven d’IntelliJ IDEA.</td>
-</tr>
-<tr>
-<td>Eixida</td>
-<td><code>target/app.jar</code>.</td>
-</tr>
-<tr>
-<td>Verificació</td>
-<td>Codi de retorn zero i execució de la versió esperada.</td>
-</tr>
-<tr>
-<td>Evidència</td>
-<td>Fitxer de configuració, log i captura del resultat.</td>
-</tr>
-</tbody>
-</table>
-<h2 id="terminal-integrada-i-scripts">Terminal integrada i scripts</h2>
-<p>La terminal integrada de VS Code i la terminal de IntelliJ IDEA no canvien la naturalesa de l’ordre: necessiten el JDK, Maven i els permisos corresponents. Quan la seqüència creix, guarda-la en un script o en el fitxer de tasques del projecte i explica com executar-la en els dos IDE.</p>
+<p>Des de VS Code pots executar aquesta seqüència en una tasca. Des d’IntelliJ IDEA pots executar el mateix objectiu en la finestra de Maven o en una configuració d’execució.</p>
+<div class="highlight"><pre><span></span><code>mvn<span class="w"> </span>clean<span class="w"> </span>package
+java<span class="w"> </span>-jar<span class="w"> </span>target/ide-lab-1.0.jar
+</code></pre></div>
+<p>La primera ordre construeix el projecte; la segona executa el JAR si el <code>pom.xml</code> ha configurat correctament el punt d’entrada.</p>
+<h2 id="qualitat-duna-tasca">Qualitat d’una tasca</h2>
+<p>Una automatització útil té un nom clar, una entrada coneguda, una eixida localitzable, un codi de retorn i un missatge d’error interpretable. No automatitzes una ordre destructiva sense comprovar el directori.</p>
 <div class="admonition tip">
 <p class="admonition-title">Pregunta de control</p>
-<p>Quina diferència hi ha entre personalitzar una opció del teu perfil de VS Code o IntelliJ IDEA i automatitzar una construcció que ha de poder repetir tot l’equip?</p>
+<p>Quina part de la configuració de VS Code o IntelliJ IDEA ha de compartir l’equip i quina pot quedar només en el teu perfil?</p>
 </div>
-<p><a href="../05-actualitzacions/">Següent: actualitzacions</a> · <a href="../03-moduls/">Anterior: mòduls i extensions</a></p>
+<h2 id="resum">Resum</h2>
+<p>La personalització millora l’ús individual; l’automatització fa repetible el treball de l’equip. El projecte ha de poder construir-se sense dependre de clics desconeguts.</p>
+<p><a href="../05-actualitzacions/">Següent: actualitzacions i recuperació</a> · <a href="../03-moduls/">Anterior: mòduls</a></p>
 
 
 

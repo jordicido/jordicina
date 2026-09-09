@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 330" role="img" aria-labelledby="title desc">
+  <title id="title">Automatització d’una tasca</title>
+  <desc id="desc">El codi i els prerequisits entren en una tasca documentada que produeix un artefacte verificable.</desc>
+  <defs><style>.b{fill:#e9f5f9;stroke:#118ab2;stroke-width:2}.y{fill:#fff7df;stroke:#e09f3e;stroke-width:2}.t{font:600 22px sans-serif;fill:#102a43}.s{font:16px sans-serif;fill:#334e68}.a{stroke:#52606d;stroke-width:3;marker-end:url(#m)}</style><marker id="m" markerWidth="12" markerHeight="12" refX="10" refY="4" orient="auto"><path d="M0,0 L11,4 L0,8 z" fill="#52606d"/></marker></defs>
+  <rect x="35" y="105" width="210" height="110" rx="16" class="b"/><rect x="345" y="75" width="215" height="170" rx="16" class="y"/><rect x="660" y="105" width="205" height="110" rx="16" class="b"/>
+  <text x="140" y="145" text-anchor="middle" class="t">Entrada</text><text x="140" y="177" text-anchor="middle" class="s">codi + pom.xml</text><text x="452" y="120" text-anchor="middle" class="t">Tasca</text><text x="452" y="157" text-anchor="middle" class="s">mvn clean package</text><text x="452" y="187" text-anchor="middle" class="s">ordre documentada</text><text x="762" y="145" text-anchor="middle" class="t">Resultat</text><text x="762" y="177" text-anchor="middle" class="s">JAR + prova</text>
+  <path d="M245 160 H340" class="a"/><path d="M560 160 H655" class="a"/>
+</svg>

@@ -80,7 +80,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#6-del-codi-font-a-lexecutable" class="md-skip">
+        <a href="#6-construccio-dexecutables" class="md-skip">
           Skip to content
         </a>
       
@@ -2810,10 +2810,10 @@
     <ul class="md-nav__list" data-md-component="toc">
       
         <li class="md-nav__item">
-  <a href="#que-es-un-executable" class="md-nav__link">
+  <a href="#introduccio" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Què és un executable?
+        Introducció
       
     </span>
   </a>
@@ -2821,10 +2821,21 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#dos-llenguatges-en-un-mateix-ide" class="md-nav__link">
+  <a href="#java-amb-maven" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Dos llenguatges en un mateix IDE
+        Java amb Maven
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#java-i-kotlin-en-un-mateix-ide" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Java i Kotlin en un mateix IDE
       
     </span>
   </a>
@@ -2836,6 +2847,17 @@
     <span class="md-ellipsis">
       
         El mateix codi en dos IDE
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resum" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Resum
       
     </span>
   </a>
@@ -3027,6 +3049,118 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../up3-optimitzacio/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UP3. Optimització i qualitat del codi
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../up4-proves/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UP4. Proves i verificació
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../up5-diagrames-classes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UP5. Diagrames de classes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../up6-diagrames-comportament/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UP6. Diagrames de comportament
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -3163,10 +3297,10 @@
     <ul class="md-nav__list" data-md-component="toc">
       
         <li class="md-nav__item">
-  <a href="#que-es-un-executable" class="md-nav__link">
+  <a href="#introduccio" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Què és un executable?
+        Introducció
       
     </span>
   </a>
@@ -3174,10 +3308,21 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#dos-llenguatges-en-un-mateix-ide" class="md-nav__link">
+  <a href="#java-amb-maven" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Dos llenguatges en un mateix IDE
+        Java amb Maven
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#java-i-kotlin-en-un-mateix-ide" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Java i Kotlin en un mateix IDE
       
     </span>
   </a>
@@ -3189,6 +3334,17 @@
     <span class="md-ellipsis">
       
         El mateix codi en dos IDE
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resum" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Resum
       
     </span>
   </a>
@@ -3210,76 +3366,71 @@
                 
                   
 
-<h1 id="6-del-codi-font-a-lexecutable">6. Del codi font a l’executable</h1>
-<h2 id="que-es-un-executable">Què és un executable?</h2>
-<p>En aquesta unitat usem «executables» en un sentit pràctic: un programa o artefacte que es pot llançar en l’entorn previst. Pot ser un binari natiu, un paquet, un JAR que s’executa amb la màquina virtual de Java o una aplicació publicada amb el runtime necessari. El format depén del llenguatge i de la ferramenta de construcció.</p>
-<table>
-<thead>
-<tr>
-<th>Llenguatge</th>
-<th>Procés habitual</th>
-<th>Artefacte possible</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Java</td>
-<td>Compilació a bytecode amb <code>javac</code> o Maven/Gradle.</td>
-<td>Fitxer <code>.class</code> o <code>.jar</code>.</td>
-</tr>
-<tr>
-<td>Python</td>
-<td>Execució amb l’intèrpret o empaquetament amb <code>zipapp</code>.</td>
-<td>Script <code>.py</code> o arxiu executable <code>.pyz</code>.</td>
-</tr>
-<tr>
-<td>JavaScript</td>
-<td>Execució amb Node.js o empaquetament segons el projecte.</td>
-<td>Paquet o aplicació distribuïda.</td>
-</tr>
-</tbody>
-</table>
-<p>No és suficient que l’IDE mostre «Run». Cal registrar quin compilador o runtime s’ha utilitzat, quina ordre s’ha executat, on està l’eixida i com es verifica.</p>
-<h2 id="dos-llenguatges-en-un-mateix-ide">Dos llenguatges en un mateix IDE</h2>
-<p>Per demostrar el criteri <strong>RA2.e</strong>, prepara en <strong>Visual Studio Code</strong> dos projectes menuts: un Java amb Maven i un Python amb <code>zipapp</code>. Instal·la només les extensions i les eines necessàries, configura una tasca de construcció per a cada projecte i compara:</p>
+<h1 id="6-construccio-dexecutables">6. Construcció d’executables</h1>
+<h2 id="introduccio">Introducció</h2>
+<p>El codi font és modificable; l’artefacte executable és el resultat que podem llançar amb les dependències necessàries. En aquesta UP generarem JAR de Java i un artefacte JVM de Kotlin en IntelliJ IDEA, i el mateix JAR Java des de VS Code i IntelliJ IDEA.</p>
+<h2 id="java-amb-maven">Java amb Maven</h2>
+<p>Estructura mínima:</p>
+<div class="highlight"><pre><span></span><code>ide-lab/
+├── pom.xml
+└── src/main/java/edu/daw/App.java
+</code></pre></div>
+<p>Exemple de codi:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">edu.daw</span><span class="p">;</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">App</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Construcció correcta&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Ordres:</p>
+<div class="highlight"><pre><span></span><code>mvn<span class="w"> </span>clean<span class="w"> </span>package
+java<span class="w"> </span>-jar<span class="w"> </span>target/ide-lab-1.0.jar
+</code></pre></div>
+<p>El <code>pom.xml</code> ha de definir el nom de l’artefacte i, si cal, la classe principal. Registra l’ordre, el fitxer generat i el missatge de prova.</p>
+<h2 id="java-i-kotlin-en-un-mateix-ide">Java i Kotlin en un mateix IDE</h2>
+<p>Per cobrir RA2.e utilitzarem IntelliJ IDEA amb dos projectes o mòduls petits: Java i Kotlin. Kotlin comparteix la JVM amb Java, però té sintaxi i compilador propis. No cal aprendre tot el llenguatge: només crear, construir i executar un programa mínim.</p>
+<div class="highlight"><pre><span></span><code><span class="kd">fun</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">println</span><span class="p">(</span><span class="s">&quot;Construcció Kotlin correcta&quot;</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>La taula de prova ha d’indicar el llenguatge, el compilador o plugin, l’ordre de construcció, l’artefacte i la prova d’execució.</p>
 <table>
 <thead>
 <tr>
 <th>Comprovació</th>
 <th>Java</th>
-<th>Python</th>
+<th>Kotlin</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Eina detectada</td>
-<td>JDK i Maven</td>
-<td>Python i <code>zipapp</code></td>
+<td>IDE</td>
+<td>IntelliJ IDEA</td>
+<td>IntelliJ IDEA</td>
 </tr>
 <tr>
-<td>Construcció</td>
-<td><code>mvn package</code></td>
-<td><code>python -m zipapp</code></td>
+<td>Eina</td>
+<td>JDK i Maven</td>
+<td>Plugin/compilador Kotlin i Gradle o Maven</td>
 </tr>
 <tr>
 <td>Artefacte</td>
-<td><code>.jar</code></td>
-<td><code>.pyz</code></td>
+<td>JAR</td>
+<td>JAR o artefacte JVM</td>
 </tr>
 <tr>
 <td>Prova</td>
-<td><code>java -jar ...</code> i missatge esperat</td>
-<td><code>python ...pyz</code> i missatge esperat</td>
+<td>Execució i missatge esperat</td>
+<td>Execució i missatge esperat</td>
 </tr>
 </tbody>
 </table>
-<p>Si l’aula treballa amb altres llenguatges, substitueix-los i explica la mateixa cadena: font, eina, construcció, artefacte i prova.</p>
 <h2 id="el-mateix-codi-en-dos-ide">El mateix codi en dos IDE</h2>
-<p>Per al criteri <strong>RA2.f</strong>, utilitza un projecte Java amb Maven sense configuració exclusiva d’un IDE. Obri’l en <strong>Visual Studio Code</strong> amb Extension Pack for Java i en <strong>IntelliJ IDEA</strong> amb el suport Maven, i genera el mateix JAR. Els fitxers de configuració propis de cada IDE poden canviar, però el codi font, el fitxer <code>pom.xml</code>, l’ordre de construcció i el resultat esperat han de ser equivalents.</p>
-<div class="admonition tip">
-<p class="admonition-title">Pregunta de control</p>
-<p>Si dos IDE generen fitxers diferents però tots dos executen el mateix projecte i passen la prova, quina informació compararies abans de dir que els resultats són equivalents?</p>
-</div>
+<p>Per cobrir RA2.f obri el mateix projecte Maven Java en VS Code i IntelliJ IDEA. No canvies el codi font entre les proves. La configuració pròpia de cada IDE pot variar, però han de coincidir el JDK, les dependències, l’ordre <code>mvn clean package</code>, el JAR i el resultat de l’execució.</p>
+<h2 id="resum">Resum</h2>
+<p>Generar un executable implica identificar el llenguatge, preparar les eines, construir, localitzar l’artefacte i provar-lo. Dos IDE són equivalents per a un projecte quan, amb el mateix entorn de construcció, produeixen un resultat verificable.</p>
 <p><a href="../07-comparacio/">Següent: comparació d’entorns</a> · <a href="../05-actualitzacions/">Anterior: actualitzacions</a></p>
 
 

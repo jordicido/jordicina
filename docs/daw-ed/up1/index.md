@@ -2,52 +2,59 @@
 hide:
   - navigation
 ---
-# UP1. Itinerari dels entorns integrats
+# UP1. Entorns integrats de desenvolupament
 
-Aquesta unitat recorre el camí que va des d’instal·lar Visual Studio Code i IntelliJ IDEA fins a comparar-los a partir d’un projecte Java construït i verificat.
+## Resultat d’aprenentatge
 
-## Itinerari de la teoria
+**RA2.** Avalua entorns integrats de desenvolupament, analitzant les seues característiques per a editar codi font i generar executables.
 
-| Apartat | Pregunta principal |
-| --- | --- |
-| [1. Què és un IDE](01-entorn.md) | Quines peces integra cada IDE i què aporta respecte d’un editor? |
-| [2. Instal·lació](02-instal·lacio.md) | Com instal·lem i verifiquem VS Code i IntelliJ IDEA? |
-| [3. Mòduls i extensions](03-moduls.md) | Què afegim i què retirem sense trencar el projecte? |
-| [4. Personalització i automatització](04-personalitzacio-automatitzacio.md) | Quines tasques convé convertir en una ordre repetible? |
-| [5. Actualitzacions](05-actualitzacions.md) | Com actualitzem sense perdre compatibilitat ni poder recuperar-nos? |
-| [6. Construcció d’executables](06-executables.md) | Com passem del codi font a un artefacte executable? |
-| [7. Comparació d’entorns](07-comparacio.md) | Què és comú i què depén de cada IDE? |
+## Criteris d’avaluació
 
-## Objectiu professional
+- **RA2.a** S’han instal·lat entorns de desenvolupament, propietaris i lliures.
+- **RA2.b** S’han afegit i eliminat mòduls a l’entorn de desenvolupament.
+- **RA2.c** S’ha personalitzat i automatitzat l’entorn de desenvolupament.
+- **RA2.d** S’ha configurat el sistema d’actualització de l’entorn de desenvolupament.
+- **RA2.e** S’han generat executables a partir de codi font de diferents llenguatges en un mateix entorn de desenvolupament.
+- **RA2.f** S’han generat executables a partir d’un mateix codi font amb diversos entorns de desenvolupament.
+- **RA2.g** S’han identificat les característiques comunes i específiques de diversos entorns de desenvolupament.
 
-En acabar hauràs de poder preparar un entorn nou, explicar per què has triat cada component i demostrar que una altra persona pot repetir la construcció. Una resposta professional no diu només «instal·la l’extensió»: indica la versió, la dependència, la configuració, l’ordre de construcció i la prova que confirma el resultat.
+## Què aprendrem?
 
-## Seqüència de 15 hores
+En aquesta unitat prepararàs un lloc de treball semblant al que trobaries en un equip de desenvolupament. Instal·laràs **Visual Studio Code** i **IntelliJ IDEA**, afegiràs només les extensions i els plugins necessaris, automatitzaràs tasques repetitives i comprovaràs com una mateixa aplicació Java es construeix en dos IDE diferents. També generaràs artefactes Java i Kotlin en IntelliJ IDEA per entendre que l’IDE coordina eines, però no substitueix el compilador ni el gestor de dependències.
 
-| Sessió | Treball principal | Evidència |
-| ---: | --- | --- |
-| 1 | IDE, llicències, requisits i criteris de selecció | Fitxa de comparació inicial |
-| 2 | Instal·lació de VS Code i IntelliJ IDEA | Captures, edicions i versions verificades |
-| 3 | Mòduls, extensions i dependències | Registre d’alta i baixa |
-| 4 | Perfils, format, terminal i personalització | Perfil de treball documentat |
-| 5 | Tasques i construcció automatitzada | Ordres repetibles del projecte |
-| 6 | Actualitzacions, canals i recuperació | Pla d’actualització |
-| 7 | Construcció de Java i Python en VS Code | Executables o artefactes i proves |
-| 8 | Mateix projecte Java en VS Code i IntelliJ IDEA | Informe i defensa final |
+L’objectiu professional no és memoritzar on està cada botó. És poder justificar la configuració, repetir-la en un altre equip i aportar proves que el resultat és correcte.
 
-La distribució concreta pot adaptar-se al calendari del centre. Les 15 hores són la referència de la UP; cada activitat ha d’indicar les hores efectivament emprades.
+## Continguts
+
+1. [L’IDE com a entorn de treball](01-entorn.md): components, llicències i criteris de selecció.
+2. [Instal·lació i verificació](02-instal·lacio.md): JDK, IDE, versions, projectes i comprovacions.
+3. [Mòduls, extensions i plugins](03-moduls.md): catàlegs, dependències, configuració i eliminació segura.
+4. [Personalització i automatització](04-personalitzacio-automatitzacio.md): perfils, format, tasques i configuracions reproduïbles.
+5. [Actualitzacions i recuperació](05-actualitzacions.md): canals, compatibilitat, còpies i recuperació davant incidències.
+6. [Del codi font a l’executable](06-executables.md): compilació, empaquetament i verificació en Java i Kotlin.
+7. [Comparació professional d’IDE](07-comparacio.md): característiques comunes, diferències i criteris de decisió.
 
 ## Activitats
 
-| Activitat | Què fareu? | Organització |
+- [Activitat 1. Laboratori d’instal·lació](activitats/activitat-1-instal·lacio.md): instal·lar i verificar els dos entorns.
+- [Activitat 2. Taller de mòduls, personalització i actualització](activitats/activitat-2-configuracio.md): configurar un entorn reproduïble.
+- [Activitat 3. Construcció i comparació](activitats/activitat-3-construccio.md): generar artefactes i comparar els IDE.
+- [Autoavaluació de la UP1](activitats/autoavaluacio.md): comprovar conceptes i preparar la defensa tècnica.
+
+## Seqüència de treball
+
+Primer entendràs què integra un IDE i quines responsabilitats continuen sent del sistema, del JDK o del gestor de dependències. Després instal·laràs les eines i configuraràs un perfil de treball. Finalment construiràs projectes, compararàs resultats i documentaràs les decisions. La seqüència concentra la pràctica en tres lliuraments perquè les evidències siguen manejables dins de les hores disponibles.
+
+## Cobertura dels criteris
+
+| Criteri | Teoria | Activitats |
 | --- | --- | --- |
-| [1. Laboratori d’instal·lació](activitats/activitat-1-instal·lacio.md) | Instal·lar VS Code i IntelliJ IDEA, comprovar versions i documentar llicències i requisits. | Parelles · 4 h |
-| [2. Taller de configuració](activitats/activitat-2-configuracio.md) | Afegir i llevar extensions, personalitzar l’IDE i automatitzar una tasca. | Individual · 4 h |
-| [3. Construcció i comparació](activitats/activitat-3-construccio.md) | Construir Java i Python en VS Code i repetir el mateix projecte Java en els dos IDE. | Equips · 5 h |
-| [Autoavaluació](activitats/autoavaluacio.md) | Comprovar individualment els conceptes i preparar la defensa. | Individual · 2 h |
+| RA2.a | [Instal·lació i verificació](02-instal·lacio.md) | [Activitat 1](activitats/activitat-1-instal·lacio.md) |
+| RA2.b | [Mòduls, extensions i plugins](03-moduls.md) | [Activitat 2](activitats/activitat-2-configuracio.md) |
+| RA2.c | [Personalització i automatització](04-personalitzacio-automatitzacio.md) | [Activitat 2](activitats/activitat-2-configuracio.md) |
+| RA2.d | [Actualitzacions i recuperació](05-actualitzacions.md) | [Activitat 2](activitats/activitat-2-configuracio.md) |
+| RA2.e | [Del codi font a l’executable](06-executables.md) | [Activitat 3](activitats/activitat-3-construccio.md) |
+| RA2.f | [Del codi font a l’executable](06-executables.md) | [Activitat 3](activitats/activitat-3-construccio.md) |
+| RA2.g | [Comparació professional d’IDE](07-comparacio.md) | [Activitat 3](activitats/activitat-3-construccio.md) |
 
-## Com estudiar
-
-Llig els apartats en ordre i conserva una còpia del perfil, de les ordres i dels resultats. Quan una extensió o una actualització provoque un error, registra el canvi i la recuperació: la incidència també és una evidència d’aprenentatge.
-
-[Tornar a la presentació de la UP1](../up1-entorns-integrats.md) · [Començar la teoria](01-entorn.md) · [Començar les activitats](activitats/activitat-1-instal·lacio.md)
+[Tornar a la presentació de la UP1](../up1-entorns-integrats.md)

@@ -80,7 +80,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#3-moduls-i-extensions" class="md-skip">
+        <a href="#3-moduls-extensions-i-plugins" class="md-skip">
           Skip to content
         </a>
       
@@ -2726,10 +2726,10 @@
     <ul class="md-nav__list" data-md-component="toc">
       
         <li class="md-nav__item">
-  <a href="#per-que-afegim-moduls" class="md-nav__link">
+  <a href="#introduccio" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Per què afegim mòduls?
+        Introducció
       
     </span>
   </a>
@@ -2737,10 +2737,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#alta-configuracio-i-baixa" class="md-nav__link">
+  <a href="#afegir-un-component" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Alta, configuració i baixa
+        Afegir un component
       
     </span>
   </a>
@@ -2748,10 +2748,32 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#dependencies-i-confianca" class="md-nav__link">
+  <a href="#desactivar-i-eliminar" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Dependències i confiança
+        Desactivar i eliminar
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#diagnostic-duna-incompatibilitat" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Diagnòstic d’una incompatibilitat
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resum" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Resum
       
     </span>
   </a>
@@ -3027,6 +3049,118 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../up3-optimitzacio/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UP3. Optimització i qualitat del codi
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../up4-proves/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UP4. Proves i verificació
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../up5-diagrames-classes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UP5. Diagrames de classes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../up6-diagrames-comportament/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UP6. Diagrames de comportament
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -3163,10 +3297,10 @@
     <ul class="md-nav__list" data-md-component="toc">
       
         <li class="md-nav__item">
-  <a href="#per-que-afegim-moduls" class="md-nav__link">
+  <a href="#introduccio" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Per què afegim mòduls?
+        Introducció
       
     </span>
   </a>
@@ -3174,10 +3308,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#alta-configuracio-i-baixa" class="md-nav__link">
+  <a href="#afegir-un-component" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Alta, configuració i baixa
+        Afegir un component
       
     </span>
   </a>
@@ -3185,10 +3319,32 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#dependencies-i-confianca" class="md-nav__link">
+  <a href="#desactivar-i-eliminar" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Dependències i confiança
+        Desactivar i eliminar
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#diagnostic-duna-incompatibilitat" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Diagnòstic d’una incompatibilitat
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resum" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Resum
       
     </span>
   </a>
@@ -3210,76 +3366,56 @@
                 
                   
 
-<h1 id="3-moduls-i-extensions">3. Mòduls i extensions</h1>
-<h2 id="per-que-afegim-moduls">Per què afegim mòduls?</h2>
-<p>En VS Code parlem sobretot d’extensions; en IntelliJ IDEA parlem de plugins. Tots dos amplien les funcions de l’IDE: suport per a un llenguatge, formatació, depuració, control de versions o integració amb un servei. Cada component afegit té un cost: ocupa espai, pot demanar permisos, rep actualitzacions i pot entrar en conflicte amb un altre.</p>
-<p>Abans d’instal·lar-lo, respon:</p>
+<h1 id="3-moduls-extensions-i-plugins">3. Mòduls, extensions i plugins</h1>
+<h2 id="introduccio">Introducció</h2>
+<p>Els components addicionals amplien un IDE, però també poden introduir dependències, permisos, consum de recursos o incompatibilitats. En VS Code parlem sobretot d’extensions; en IntelliJ IDEA, de plugins.</p>
+<h2 id="afegir-un-component">Afegir un component</h2>
+<p>Abans d’instal·lar-lo, identifica la necessitat, la font, l’editor, la versió, la llicència i la compatibilitat. Instal·la un component cada vegada i verifica una funció concreta.</p>
+<p>Per a aquesta UP:</p>
 <ul>
-<li>Quin problema resol i és realment necessari?</li>
-<li>Qui el manté i quan es va actualitzar?</li>
-<li>Quina llicència té i quins permisos sol·licita?</li>
-<li>De quina versió de l’IDE o del llenguatge depén?</li>
-<li>Com el desactivarem o eliminarem si causa una incidència?</li>
+<li>en VS Code instal·larem Extension Pack for Java i documentarem una extensió complementària;</li>
+<li>en IntelliJ IDEA instal·larem o activarem un plugin del repositori oficial i comprovarem el seu efecte sobre el projecte Java.</li>
 </ul>
-<h2 id="alta-configuracio-i-baixa">Alta, configuració i baixa</h2>
-<p>La seqüència recomanada és instal·lar un component cada vegada, obrir de nou l’IDE si cal, verificar una funció concreta i registrar el resultat. Per eliminar-lo, desactiva’l primer, comprova si el projecte continua funcionant i després lleva’l. No borres manualment carpetes de l’IDE sense saber quin component les utilitza.</p>
+<h2 id="desactivar-i-eliminar">Desactivar i eliminar</h2>
+<p>Desactivar és una prova reversible: permet comprovar si el projecte canvia sense perdre immediatament la configuració. Eliminar és una operació posterior, quan ja has comprovat que el component no és necessari.</p>
 <table>
 <thead>
 <tr>
 <th>Acció</th>
-<th>Evidència</th>
+<th>Evidència observable</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>Afegir</td>
-<td>Nom, editor, versió, data i funció comprovada.</td>
+<td>Nom, versió, font i funció comprovada.</td>
 </tr>
 <tr>
 <td>Configurar</td>
-<td>Opcions modificades i abast: usuari o projecte.</td>
+<td>Opcions modificades i abast de la configuració.</td>
 </tr>
 <tr>
 <td>Desactivar</td>
-<td>Prova que permet comparar el comportament amb i sense el mòdul.</td>
+<td>Prova amb el component actiu i inactiu.</td>
 </tr>
 <tr>
 <td>Eliminar</td>
-<td>Registre de baixa, reinici i prova de regressió.</td>
+<td>Registre de baixa i construcció de regressió.</td>
 </tr>
 </tbody>
 </table>
-<h2 id="dependencies-i-confianca">Dependències i confiança</h2>
-<p>Una extensió o plugin pot instal·lar dependències pròpies o executar codi amb els permisos de l’usuari. En VS Code revisa l’editor, la versió i els permisos de l’extensió; en IntelliJ IDEA revisa el repositori i la compatibilitat amb la versió de l’IDE. Prioritza els catàlegs oficials i treballa amb un compte sense privilegis d’administració quan siga possible.</p>
-<table>
-<thead>
-<tr>
-<th>IDE</th>
-<th>Component que afegirem</th>
-<th>Component que retirarem o desactivarem</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>VS Code</td>
-<td>Extension Pack for Java i extensió Python.</td>
-<td>Una extensió de prova, després de comprovar-ne l’efecte.</td>
-</tr>
-<tr>
-<td>IntelliJ IDEA</td>
-<td>Un plugin no essencial del repositori de plugins.</td>
-<td>El mateix plugin, primer desactivat i després eliminat.</td>
-</tr>
-</tbody>
-</table>
+<h2 id="diagnostic-duna-incompatibilitat">Diagnòstic d’una incompatibilitat</h2>
+<p>Si una fallada apareix després d’instal·lar una extensió o plugin, no conclogues automàticament que n’és la causa. Reprodueix la fallada, desactiva el component, repeteix la prova i registra el resultat. Comprova també la versió de l’IDE i del JDK.</p>
 <div class="admonition example">
-<p class="admonition-title">Decisió raonada</p>
-<p>Si una extensió de VS Code o un plugin d’IntelliJ IDEA només canvia els colors però demana permisos amplis, no l’afegiries sense revisar la necessitat i la procedència. La personalització no justifica qualsevol permís.</p>
+<p class="admonition-title">Cas professional</p>
+<p>Després d’afegir un plugin a IntelliJ IDEA, Maven deixa de sincronitzar el projecte. La investigació ha de comparar el mateix projecte amb el plugin desactivat, revisar el log i comprovar si el problema és el plugin, la xarxa, el JDK o el <code>pom.xml</code>.</p>
 </div>
-<div class="admonition tip">
-<p class="admonition-title">Pregunta de control</p>
-<p>Com demostraries que una fallada apareguda després d’instal·lar una extensió de VS Code o un plugin d’IntelliJ IDEA està relacionada amb aquest component?</p>
+<div class="admonition warning">
+<p class="admonition-title">Permisos</p>
+<p>No instal·les extensions copiades d’un repositori desconegut. La personalització no justifica concedir accés ampli a fitxers o a la terminal sense necessitat.</p>
 </div>
+<h2 id="resum">Resum</h2>
+<p>Els mòduls són útils quan resolen una necessitat i es poden mantindre. L’alta, la configuració, la desactivació i la baixa han de deixar evidències.</p>
 <p><a href="../04-personalitzacio-automatitzacio/">Següent: personalització i automatització</a> · <a href="../02-instal%C2%B7lacio/">Anterior: instal·lació</a></p>
 
 

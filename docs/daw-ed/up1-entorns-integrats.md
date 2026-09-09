@@ -10,17 +10,17 @@ En aquesta unitat instal·larem, configurarem i compararem dos entorns integrats
 
 > **Com podem preparar un entorn de desenvolupament reproduïble que permeta editar, construir i mantindre programes?**
 
-Un IDE reuneix un editor, eines de construcció, depuració, gestió de projectes i extensions en una mateixa interfície. Compararem un entorn lleuger i extensible amb un entorn orientat a projectes Java i a la integració de ferramentes. No totes les extensions o plugins són necessaris: instal·larem només el que necessitem, documentarem les versions i justificarem les decisions.
+Un IDE reuneix un editor, eines de construcció, depuració, gestió de projectes i extensions en una mateixa interfície. Compararem un entorn lleuger i extensible amb un entorn orientat a projectes Java i a la integració de ferramentes. Per cobrir la construcció de llenguatges diferents utilitzarem Java i Kotlin en IntelliJ IDEA; el projecte principal es mantindrà en Java amb Maven.
 
 ## Dades de la unitat
 
 | Element | Referència |
 | --- | --- |
-| Duració de referència | **15 hores** |
+| Duració de referència | **10 hores** |
 | Resultat d’aprenentatge | **RA2** |
-| Pes de referència | **20 %** |
+| Pes de referència | **15 %** |
 | IDE del laboratori | **Visual Studio Code i IntelliJ IDEA** |
-| Producte final | Informe comparatiu i demostració d’un entorn reproduïble |
+| Producte final | Informe comparatiu i demostració de construccions reproduïbles |
 | Forma de treball | Individual, parelles i equips de tres |
 
 ## Què aprendràs
@@ -29,7 +29,7 @@ Un IDE reuneix un editor, eines de construcció, depuració, gestió de projecte
 - Afegir, configurar i eliminar mòduls, connectors i extensions.
 - Personalitzar l’editor i automatitzar tasques habituals del projecte.
 - Configurar canals d’actualització i comprovar la compatibilitat abans d’actualitzar.
-- Generar executables o artefactes executables a partir de codi de llenguatges diferents en un mateix IDE.
+- Generar artefactes Java i Kotlin en un mateix IntelliJ IDEA.
 - Construir el mateix projecte Java amb Visual Studio Code i IntelliJ IDEA i comparar el resultat.
 - Identificar característiques comunes i específiques de diversos entorns.
 - Deixar una guia de reproducció amb versions, ordres, proves i incidències.
@@ -70,7 +70,7 @@ Consulta l’[índex de la UP1](up1/index.md) per veure l’ordre recomanat, la 
 
 ## Resultat d’aprenentatge i criteris
 
-**RA2.** Avaluar entorns integrats de desenvolupament, analitzant les seues característiques per a editar codi font i generar executables.
+**RA2.** Avalua entorns integrats de desenvolupament, analitzant les seues característiques per a editar codi font i generar executables.
 
 | Criteri | Què hauràs de demostrar |
 | --- | --- |

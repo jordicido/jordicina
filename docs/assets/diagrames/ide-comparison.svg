@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 390" role="img" aria-labelledby="title desc">
+  <title id="title">Mapa de comparació d’IDE</title>
+  <desc id="desc">La comparació de VS Code i IntelliJ IDEA parteix de funcions comunes i considera dimensions professionals.</desc>
+  <defs><style>.c{fill:#e9f5f9;stroke:#118ab2;stroke-width:2}.v{fill:#eef6ee;stroke:#4f772d;stroke-width:2}.i{fill:#fff7df;stroke:#e09f3e;stroke-width:2}.t{font:600 21px sans-serif;fill:#102a43}.s{font:15px sans-serif;fill:#334e68}.a{stroke:#52606d;stroke-width:2.5;marker-end:url(#m)}</style><marker id="m" markerWidth="11" markerHeight="11" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 z" fill="#52606d"/></marker></defs>
+  <rect x="315" y="25" width="270" height="75" rx="15" class="c"/><text x="450" y="57" text-anchor="middle" class="t">Funcions comunes</text><text x="450" y="81" text-anchor="middle" class="s">editar · construir · depurar · Git</text>
+  <rect x="70" y="160" width="270" height="90" rx="15" class="v"/><text x="205" y="198" text-anchor="middle" class="t">VS Code</text><text x="205" y="224" text-anchor="middle" class="s">extensible · lleuger</text>
+  <rect x="560" y="160" width="270" height="90" rx="15" class="i"/><text x="695" y="198" text-anchor="middle" class="t">IntelliJ IDEA</text><text x="695" y="224" text-anchor="middle" class="s">integració Java · inspeccions</text>
+  <path d="M370 100 L260 155" class="a"/><path d="M530 100 L640 155" class="a"/>
+  <rect x="155" y="305" width="590" height="55" rx="12" class="c"/><text x="450" y="339" text-anchor="middle" class="s">decisió: projecte · automatització · recursos · llicència · manteniment</text>
+  <path d="M205 250 L350 300" class="a"/><path d="M695 250 L550 300" class="a"/>
+</svg>

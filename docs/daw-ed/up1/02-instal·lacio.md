@@ -2,42 +2,92 @@
 hide:
   - navigation
 ---
-# 2. Instal·lació d’entorns
+# 2. Instal·lació i verificació
 
-## Abans d’instal·lar
+## Introducció
 
-Una instal·lació professional comença amb una fitxa de requisits. Per a VS Code i IntelliJ IDEA anota el sistema operatiu i la seua arquitectura, l’espai lliure, la memòria disponible, el JDK necessari, Maven, l’edició de l’IDE i la llicència.
+Instal·lar un IDE no és només executar un instal·lador. Cal preparar els prerequisits, triar una font fiable, conéixer la llicència, confirmar l’arquitectura del sistema i verificar que el projecte pot compilar. Una instal·lació professional queda descrita perquè una altra persona puga repetir-la.
 
-No descarregues un instal·lador des d’un enllaç desconegut. Utilitza la pàgina oficial, comprova la signatura o la suma quan el fabricant la publique i conserva la versió exacta emprada.
+En el laboratori treballarem amb VS Code i IntelliJ IDEA i utilitzarem **Java amb un JDK LTS**. La versió concreta del JDK i de cada IDE serà la que haja fixat el centre o la imatge de laboratori; no s’ha d’assumir que tots els equips tenen la mateixa.
 
-## Instal·lació reproduïble
+## Prerequisits i ordre de preparació
 
-La instal·lació és reproduïble quan una altra persona pot repetir-la amb la informació documentada:
+![Ordre de preparació d’un IDE](../../assets/diagrames/ide-installation.svg)
 
-1. Identifica el sistema i comprova els prerequisits.
-2. Descarrega l’IDE i les eines del llenguatge des de fonts oficials.
-3. Instal·la amb les opcions justificades i evita afegir components innecessaris.
-4. Obri el projecte de prova i configura el JDK o l’intèrpret de Python.
-5. Executa una ordre de versió i una construcció mínima.
-6. Registra el resultat, l’edició, la versió i qualsevol incidència.
+*Figura. La verificació del sistema i del JDK precedeix la configuració del projecte.*
 
-| IDE | Components del laboratori | Projectes de prova | Verificació mínima |
-| --- | --- | --- | --- |
-| Visual Studio Code | VS Code, JDK, Extension Pack for Java i extensió Python. | Java amb Maven i Python amb un entorn virtual. | Versió de VS Code, `java --version`, `python --version` i dos programes executats. |
-| IntelliJ IDEA | IntelliJ IDEA, JDK i suport Maven; plugins addicionals només si són necessaris. | Projecte Java amb `pom.xml`. | Edició i versió de l’IDE, JDK del projecte i JAR construït. |
+Abans d’instal·lar:
 
-No substituirem aquests IDE per altres eines: tota la UP es desenvoluparà amb Visual Studio Code i IntelliJ IDEA. Registra la versió instal·lada i si treballes amb les funcions bàsiques gratuïtes o amb les funcions avançades d’Ultimate.
+1. Identifica el sistema operatiu, l’arquitectura i els permisos disponibles.
+2. Descarrega el paquet des del lloc oficial o des del repositori autoritzat pel centre.
+3. Consulta l’edició, la llicència i els requisits.
+4. Instal·la o selecciona el JDK i anota el seu camí.
+5. Instal·la l’IDE i comprova que s’obri sense errors.
+6. Obri un projecte mínim i construeix-lo; aquesta és la verificació funcional.
 
-### Fonts oficials de consulta
+El JDK inclou el compilador `javac`, la màquina virtual `java` i ferramentes de desenvolupament. Un IDE pot detectar diversos JDK, però l’elecció de l’IDE i la del gestor de construcció han de coincidir amb el projecte.
 
-- [Java en Visual Studio Code](https://code.visualstudio.com/docs/languages/java)
-- [Python en Visual Studio Code](https://code.visualstudio.com/docs/languages/python)
-- [Instal·lació d’IntelliJ IDEA](https://www.jetbrains.com/help/idea/installation-guide.html)
+## Verificació des del terminal
 
-!!! warning "No confongues IDE i SDK"
-    L’IDE és la interfície i la integració d’eines. El JDK aporta el compilador i les biblioteques de Java; Python necessita el seu intèrpret. Ni VS Code ni IntelliJ IDEA substitueixen aquestes eines del llenguatge.
+En un terminal nou, executa ordres de consulta com aquestes:
 
-!!! tip "Pregunta de control"
-    Quines proves faries en VS Code i en IntelliJ IDEA per demostrar que el JDK i Maven estan correctament configurats?
+```bash
+java --version
+javac --version
+mvn --version
+```
 
-[Següent: mòduls i extensions](03-moduls.md) · [Anterior: què és un IDE](01-entorn.md)
+La primera línia comprova el runtime, la segona el compilador i la tercera Maven, si el projecte l’utilitza. Si `java` funciona però `javac` no existeix, probablement només hi ha un runtime instal·lat o el `PATH` no està configurat per al JDK.
+
+Un projecte Java mínim pot tindre aquesta estructura:
+
+```text
+salut-java/
+├── pom.xml
+└── src/main/java/ca/exemple/App.java
+```
+
+```java title="src/main/java/ca/exemple/App.java"
+package ca.exemple;
+
+public class App {
+    public static void main(String[] args) {
+        System.out.println("Entorn verificat");
+    }
+}
+```
+
+Construeix-lo amb:
+
+```bash
+mvn clean package
+java -cp target/classes ca.exemple.App
+```
+
+`mvn clean` elimina artefactes anteriors del projecte. Usa’l només dins del projecte de pràctiques, perquè pot esborrar el directori `target/` i els resultats que hi haja guardats.
+
+## Verificació dins de cada IDE
+
+En VS Code, obri la carpeta del projecte, comprova la versió en la informació de l’aplicació i revisa quin JDK mostra el paquet d’extensions de Java. En IntelliJ IDEA, importa el projecte com a Maven o Gradle, revisa el **Project SDK** i comprova el perfil de construcció. En tots dos casos:
+
+- el projecte es reconeix sense errors de dependències;
+- l’editor mostra la classe i els imports correctament;
+- la construcció genera l’artefacte esperat;
+- l’execució mostra `Entorn verificat`;
+- la versió, el JDK i qualsevol incidència queden anotats.
+
+## Errors habituals
+
+| Símptoma | Causa probable | Comprovació |
+| --- | --- | --- |
+| `java` no es troba | `PATH` incorrecte o JDK absent. | `command -v java` i `java --version`. |
+| `javac` no es troba | Només s’ha instal·lat un JRE/runtime. | `javac --version` i camí del JDK. |
+| Imports en roig | Projecte no importat o dependències no resoltes. | Reimportar Maven/Gradle i revisar el gestor. |
+| La construcció funciona al terminal però no a l’IDE | L’IDE usa un altre JDK. | Comparar el JDK del terminal amb el del projecte. |
+| No es pot instal·lar el producte | Permisos o paquet incompatible. | Arquitectura, permisos i font de descàrrega. |
+
+## Resum
+
+Una instal·lació fiable combina font oficial, llicència documentada, JDK coherent i una prova funcional. La versió que mostra l’IDE no és suficient: cal demostrar que un projecte compila i s’executa.
+
+[Anterior: què és un IDE](01-entorn.md) · [Següent: mòduls](03-moduls.md) · [Índex](index.md)

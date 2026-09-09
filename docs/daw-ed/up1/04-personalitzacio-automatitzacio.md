@@ -4,39 +4,78 @@ hide:
 ---
 # 4. Personalització i automatització
 
-## Personalitzar amb criteri
+## Introducció
 
-Personalitzar no és afegir opcions sense límit. És adaptar l’entorn per llegir millor, reduir errors i repetir el mateix flux. Comença per opcions que siguen fàcils de compartir: formatació, final de línia, codificació, organització de fitxers, terminal i dreceres.
+Personalitzar un IDE té sentit quan redueix errors o fa més ràpid un flux repetitiu. Canviar colors és una preferència; configurar el format, l’ús del JDK o una tasca de construcció és una decisió de treball que convé poder compartir.
 
-Separa la configuració personal —tema, mida de lletra o dreceres— de la configuració del projecte —versió del JDK, formatador i ordres de build—. En VS Code treballarem amb `.vscode/settings.json`; en IntelliJ IDEA documentarem l’estil de codi, les inspeccions i les configuracions d’execució. La configuració del projecte ha d’estar documentada o versionada perquè l’equip puga reproduir-la.
+![De l’acció manual a la tasca reproduïble](../../assets/diagrames/ide-automation.svg)
 
-## Automatitzar una tasca
+*Figura. Una tasca documentada converteix una seqüència de passos en una acció verificable.*
 
-Una tasca automatitzada descriu una seqüència que abans depenia de memòria i ordres escrites a mà. En VS Code la guardarem en `.vscode/tasks.json`; en IntelliJ IDEA la repetirem amb la finestra de Maven o amb una configuració d’execució. Un flux senzill pot ser:
+## Configuració per capes
 
-```text
-netejar la carpeta de sortida
-instal·lar o comprovar dependències
-compilar o empaquetar
-executar proves mínimes
-guardar l’artefacte i el log
+VS Code combina configuració d’usuari, configuració de l’espai de treball i configuració específica de llançament o tasques. IntelliJ IDEA separa, entre altres, la configuració global, la configuració del projecte, els perfils d’execució i els estils de codi. La configuració del projecte és preferible quan ha de compartir-se amb l’equip.
+
+Un fitxer `.editorconfig` pot establir regles comunes per a editors diferents:
+
+```ini
+root = true
+
+[*]
+charset = utf-8
+end_of_line = lf
+insert_final_newline = true
+indent_style = space
+indent_size = 4
+
+[*.java]
+ij_java_align_multiline_parameters = false
 ```
 
-La tasca ha de tindre un nom clar, una entrada coneguda, una sortida localitzable i un codi de retorn interpretable. No automatitzes una ordre destructiva sense confirmar el directori i les dades que afectarà.
+No totes les propietats són compatibles amb tots els editors; comprova el resultat i evita duplicar regles contradictòries.
 
-| Element | Exemple |
-| --- | --- |
-| Entrada | Carpeta del projecte i versió del JDK o de Python. |
-| Acció | `mvn package` en VS Code o des de la finestra Maven d’IntelliJ IDEA. |
-| Eixida | `target/app.jar`. |
-| Verificació | Codi de retorn zero i execució de la versió esperada. |
-| Evidència | Fitxer de configuració, log i captura del resultat. |
+## Tasques automatitzades en VS Code
 
-## Terminal integrada i scripts
+Una tasca pot encapsular una ordre que l’equip executa sovint. Aquest exemple construeix el projecte Maven:
 
-La terminal integrada de VS Code i la terminal de IntelliJ IDEA no canvien la naturalesa de l’ordre: necessiten el JDK, Maven i els permisos corresponents. Quan la seqüència creix, guarda-la en un script o en el fitxer de tasques del projecte i explica com executar-la en els dos IDE.
+```json title=".vscode/tasks.json"
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Construir Java",
+      "type": "shell",
+      "command": "mvn clean package",
+      "group": "build",
+      "problemMatcher": []
+    }
+  ]
+}
+```
 
-!!! tip "Pregunta de control"
-    Quina diferència hi ha entre personalitzar una opció del teu perfil de VS Code o IntelliJ IDEA i automatitzar una construcció que ha de poder repetir tot l’equip?
+La tasca no amaga el procés: el `README` ha d’explicar què fa i quins prerequisits té. `mvn clean package` crea artefactes nous, per tant s’ha d’executar dins del repositori de pràctiques i no en una carpeta que continga treball no desat.
 
-[Següent: actualitzacions](05-actualitzacions.md) · [Anterior: mòduls i extensions](03-moduls.md)
+## Configuracions d’execució en IntelliJ IDEA
+
+IntelliJ IDEA permet crear una configuració d’execució amb la classe principal, el mòdul, els arguments i les variables d’entorn. Perquè siga reproduïble, la part essencial ha de quedar en Maven o Gradle i en la documentació. Les configuracions locals no han de contenir contrasenyes ni rutes absolutes de l’ordinador.
+
+Una automatització útil té entrada, procés i resultat:
+
+| Element | Exemple | Com es verifica |
+| --- | --- | --- |
+| Entrada | Codi font i `pom.xml`. | Fitxers presents i versions anotades. |
+| Procés | `mvn clean package`. | Ordre i eixida guardades. |
+| Resultat | `target/*.jar` o classes compilades. | Fitxer existent i programa executable. |
+
+## Perfils i bones pràctiques
+
+Un perfil permet canviar extensions, tema i configuracions segons el projecte. Mantín separat el perfil personal del perfil que compartiràs amb l’equip. Versiona únicament configuracions útils i evita incloure carpetes de caché o fitxers amb secrets.
+
+!!! tip "Regla de reproducció"
+    Si una altra persona no pot repetir una tasca llegint el nom de l’ordre, els prerequisits i el resultat esperat, encara no està prou automatitzada.
+
+## Resum
+
+La personalització ha de servir al flux de treball i l’automatització ha de produir un resultat observable. Perfils, `.editorconfig`, tasques i configuracions d’execució són útils quan no substitueixen la documentació del projecte ni amaguen prerequisits.
+
+[Anterior: mòduls](03-moduls.md) · [Següent: actualitzacions](05-actualitzacions.md) · [Índex](index.md)

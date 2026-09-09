@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 300" role="img" aria-labelledby="title desc">
+  <title id="title">Flux de construcció</title>
+  <desc id="desc">El codi font i les dependències passen per l’anàlisi, la compilació i l’empaquetament fins a una prova executable.</desc>
+  <defs><style>.b{fill:#e9f5f9;stroke:#118ab2;stroke-width:2}.y{fill:#fff7df;stroke:#e09f3e;stroke-width:2}.t{font:600 19px sans-serif;fill:#102a43}.s{font:15px sans-serif;fill:#334e68}.a{stroke:#52606d;stroke-width:3;marker-end:url(#m)}</style><marker id="m" markerWidth="12" markerHeight="12" refX="10" refY="4" orient="auto"><path d="M0,0 L11,4 L0,8 z" fill="#52606d"/></marker></defs>
+  <rect x="20" y="95" width="170" height="105" rx="14" class="b"/><rect x="235" y="95" width="170" height="105" rx="14" class="y"/><rect x="450" y="95" width="170" height="105" rx="14" class="y"/><rect x="665" y="95" width="170" height="105" rx="14" class="b"/><rect x="855" y="95" width="105" height="105" rx="14" class="b"/>
+  <g text-anchor="middle"><text x="105" y="130" class="t">Font</text><text x="105" y="159" class="s">.java / .kt</text><text x="105" y="181" class="s">+ dependències</text><text x="320" y="130" class="t">Anàlisi</text><text x="320" y="159" class="s">errors i tipus</text><text x="535" y="130" class="t">Compilació</text><text x="535" y="159" class="s">.class / bytecode</text><text x="750" y="130" class="t">Empaquetament</text><text x="750" y="159" class="s">JAR / artefacte</text><text x="907" y="130" class="t">Prova</text><text x="907" y="159" class="s">run</text></g>
+  <path d="M190 147 H230" class="a"/><path d="M405 147 H445" class="a"/><path d="M620 147 H660" class="a"/><path d="M835 147 H850" class="a"/>
+</svg>

@@ -4,57 +4,85 @@ hide:
 ---
 # Activitat 3. Construcció i comparació d’entorns
 
-## Finalitat
+## Context
 
-Generareu executables o artefactes executables a partir de llenguatges diferents en VS Code i construireu el mateix projecte Java en VS Code i IntelliJ IDEA. Treballareu els criteris **RA2.e**, **RA2.f** i **RA2.g**.
+Una consultora ha de decidir quin IDE recomanarà per a un equip que manté una aplicació Java i un petit component Kotlin. La decisió ha de basar-se en construccions i proves repetibles, no en la preferència personal per una interfície.
 
-## Organització i duració
+## Objectiu
 
-- Equips de tres.
-- **5 hores**: 90 minuts de preparació, 120 de construcció i proves, 60 de comparació i 30 de defensa.
+Generar artefactes a partir de dos llenguatges en un mateix IDE, construir el mateix codi Java amb VS Code i IntelliJ IDEA i elaborar una comparació professional basada en evidències.
 
-## Tasca 1. Dos llenguatges en un IDE
+## Criteris d’avaluació treballats
 
-En **VS Code**, prepareu dos projectes mínims: un Java amb Maven i un Python empaquetat amb `zipapp`. Per a cada llenguatge indiqueu l’eina, l’extensió, l’ordre de construcció, la carpeta de sortida i la prova d’execució.
+- **RA2.e** Generació d’executables a partir de codi font de diferents llenguatges en un mateix entorn.
+- **RA2.f** Generació d’executables a partir del mateix codi font amb diversos entorns.
+- **RA2.g** Identificació de característiques comunes i específiques de diversos entorns.
 
-| Projecte | Font | Eina | Ordre | Artefacte | Prova |
-| --- | --- | --- | --- | --- | --- |
-| A | Java | JDK/Maven |  |  |  |
-| B | Python | Python/zipapp |  |  |  |
+## Tasca
 
-Podeu substituir els llenguatges si el vostre entorn docent treballa amb una altra combinació, però la substitució ha d’estar justificada.
+### Fase 1. Projecte Java
 
-## Tasca 2. El mateix codi en dos IDE
+Obri el mateix repositori o commit en VS Code i IntelliJ IDEA. Construeix el projecte amb Maven i executa la classe principal. Conserva la comanda, el JDK, la versió de Maven i el resultat.
 
-Utilitzeu un projecte Java amb Maven. Obriu-lo en VS Code i IntelliJ IDEA, genereu el mateix JAR i executeu la mateixa prova. No canvieu el codi font entre una construcció i l’altra.
+```bash
+mvn clean package
+java -cp target/classes ca.exemple.App
+```
 
-| Comprovació | Visual Studio Code | IntelliJ IDEA |
+### Fase 2. Projecte Kotlin en IntelliJ IDEA
+
+Crea o obri un projecte Kotlin/JVM en IntelliJ IDEA amb una funció `main` que produïsca una eixida observable. Usa el sistema de construcció del projecte i documenta el fitxer de configuració, el plugin, el JDK, l’ordre de construcció i el nom de l’artefacte.
+
+No és suficient executar el programa amb el botó verd: cal explicar quin procés genera l’artefacte i comprovar que el resultat existeix.
+
+### Fase 3. Comparació del mateix Java
+
+Repeteix la construcció del projecte Java des de la interfície de VS Code i d’IntelliJ IDEA. Mantín el mateix codi i les mateixes ordres. Completa:
+
+| Dada | VS Code | IntelliJ IDEA |
 | --- | --- | --- |
-| Versió de l’IDE |  |  |
-| SDK o compilador |  |  |
-| Fitxers de configuració propis |  |  |
+| Commit o estat del codi |  |  |
+| JDK i distribució |  |  |
+| Maven i projecte detectat |  |  |
 | Ordre de construcció |  |  |
-| Artefacte i mida |  |  |
-| Resultat de la prova |  |  |
-| Temps aproximat |  |  |
-| Incidències i solució |  |  |
+| Artefacte generat |  |  |
+| Eixida del programa |  |  |
+| Diagnòstics i depuració observats |  |  |
+| Incidència i resolució, si n’hi ha |  |  |
 
-## Tasca 3. Compareu i defenseu
+### Fase 4. Informe de decisió
 
-Completeu una matriu amb almenys sis dimensions: edició, construcció, depuració, extensions, automatització, actualitzacions, consum, llicència i facilitat per a l’equip. Indiqueu tres característiques comunes i tres de específiques per entorn.
+Identifica almenys tres característiques comunes i tres específiques. Justifica quin entorn recomanaries per a l’equip del cas i quins compromisos acceptaries en integració, consum, extensibilitat, llicència i manteniment.
+
+## Requisits
+
+- Java i Kotlin s’han de construir en el mateix IntelliJ IDEA.
+- El mateix projecte Java s’ha de construir en VS Code i IntelliJ IDEA.
+- Les versions, les ordres i les proves han de quedar registrades.
+- L’eixida dels programes i els artefactes s’han de poder verificar.
+- La comparació ha de separar fets observats d’opinions i justificar la recomanació.
 
 ## Lliurament
 
-Entregueu un repositori o carpeta amb:
+Entrega un repositori o carpeta amb:
 
-1. els dos projectes i el codi font;
-2. les ordres o tasques de construcció;
-3. els artefactes generats o un registre si no es poden adjuntar;
-4. captures o logs de les proves;
-5. la matriu comparativa;
-6. una conclusió de 250–300 paraules i una defensa de cinc minuts.
+- codi font Java i Kotlin i els fitxers Maven/Gradle corresponents;
+- registre de construcció en IntelliJ IDEA dels dos llenguatges;
+- registre de construcció del mateix Java en VS Code i IntelliJ IDEA;
+- artefactes o identificadors, ordres, versions i eixides;
+- matriu comparativa i recomanació final;
+- captures o logs suficients per verificar les afirmacions.
 
-!!! tip "Criteri de qualitat"
-    Dos fitxers amb el mateix nom no demostren que siguen el mateix resultat. Indiqueu el llenguatge, la versió del compilador, l’ordre, l’artefacte i la prova que confirma el comportament.
+## Evidències d’aprenentatge
 
-[Activitat 2. Taller de configuració](activitat-2-configuracio.md) · [Autoavaluació](autoavaluacio.md)
+El professorat podrà observar dos artefactes de llenguatges diferents generats en IntelliJ IDEA, el mateix resultat Java obtingut des dels dos IDE i una anàlisi que distingeix les funcions comunes de les específiques amb proves.
+
+## Criteris de correcció
+
+Es valorarà la coherència entre codi, eines i ordres, la construcció real dels artefactes, la verificació de l’eixida, el control de versions i la qualitat de l’anàlisi comparativa. Es penalitzaran comparacions fetes amb còpies diferents, captures sense context, dependències no documentades i conclusions sense evidència.
+
+## Ampliació
+
+Calcula i compara la suma de comprovació dels artefactes Java. Si no coincideix, investiga si la causa és el contingut, la versió de les eines o les metadades de l’empaquetament.
+
+[Anterior: taller de configuració](activitat-2-configuracio.md) · [Autoavaluació](autoavaluacio.md) · [Índex](../index.md)

@@ -3027,6 +3027,118 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../up3-optimitzacio/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UP3. Optimització i qualitat del codi
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../up4-proves/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UP4. Proves i verificació
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../up5-diagrames-classes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UP5. Diagrames de classes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../up6-diagrames-comportament/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UP6. Diagrames de comportament
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -3211,35 +3323,35 @@
                   
 
 <h1 id="autoavaluacio-de-la-up1">Autoavaluació de la UP1</h1>
-<p>Respon sense consultar els apunts. Després revisa la solució orientativa i anota què has de repassar.</p>
+<p>Respon sense consultar els apunts i justifica les respostes amb exemples de VS Code, IntelliJ IDEA o Maven.</p>
 <h2 id="preguntes">Preguntes</h2>
 <ol>
-<li>Quina diferència hi ha entre un editor de text, un IDE i un SDK?</li>
-<li>Un programa gratuït és necessàriament de codi obert? Justifica la resposta.</li>
-<li>Quines dades documentes abans d’instal·lar un IDE?</li>
-<li>Quins riscos pot introduir una extensió i com els reduiries?</li>
-<li>Quina diferència hi ha entre desactivar i eliminar un mòdul?</li>
-<li>Escriu una tasca automatitzada amb entrada, acció, eixida i prova.</li>
-<li>Per què una actualització pot corregir un problema i provocar-ne un altre?</li>
-<li>Quina diferència hi ha entre un <code>.jar</code>, un <code>.pyz</code> i un binari natiu?</li>
-<li>Què has de mantindre igual quan construeixes el mateix codi en dos IDE?</li>
-<li>Escriu tres característiques comunes i tres d’específiques de dos IDE.</li>
+<li>Quina diferència hi ha entre un IDE, el JDK i Maven?</li>
+<li>Quines dades cal registrar després d’instal·lar VS Code i IntelliJ IDEA?</li>
+<li>Quina diferència hi ha entre afegir, desactivar i eliminar una extensió o plugin?</li>
+<li>Quina configuració hauria d’estar en el projecte i quina pot ser personal?</li>
+<li>Quins elements ha de tindre una tasca automatitzada?</li>
+<li>Per què una actualització necessita una prova i un pla de retorn?</li>
+<li>Què és un JAR i com es construeix amb Maven?</li>
+<li>Com demostraríes RA2.e amb Java i Kotlin en IntelliJ IDEA?</li>
+<li>Què has de mantindre igual per demostrar RA2.f en VS Code i IntelliJ IDEA?</li>
+<li>Escriu tres característiques comunes i tres específiques dels dos IDE.</li>
 </ol>
 <h2 id="solucio-orientativa">Solució orientativa</h2>
 <ol>
-<li>L’editor escriu text; l’IDE integra edició, construcció, depuració i projectes; el SDK aporta les eines i biblioteques del llenguatge.</li>
-<li>No. «Gratuït» descriu el preu d’un ús concret; la llicència de codi obert descriu drets d’estudi, modificació o redistribució segons les seues condicions.</li>
-<li>Sistema i arquitectura, versió, edició, llicència, espai, memòria, SDK/intèrpret, font de descàrrega i extensions necessàries.</li>
-<li>Pot tindre vulnerabilitats, permisos excessius, dependències incompatibles o deixar de mantindre’s. Cal revisar l’origen, la llicència, els permisos i provar-la abans de compartir-la.</li>
-<li>Desactivar permet comprovar el comportament sense el mòdul i reactivar-lo fàcilment; eliminar-lo lleva el component i pot requerir reinstal·lar-lo.</li>
-<li>Una resposta vàlida neteja una carpeta de sortida controlada, construeix, executa una prova, guarda el log i comprova el codi de retorn.</li>
-<li>Pot canviar APIs, dependències, extensions o configuracions encara que també corregisca errors i vulnerabilitats.</li>
-<li>Són formats diferents: el JAR conté bytecode Java, el <code>.pyz</code> és un arxiu Python executable amb un intèrpret i el binari natiu depén del sistema i arquitectura objectiu.</li>
-<li>El codi font, les entrades, la versió del llenguatge quan siga rellevant, les dependències, la prova i el resultat esperat.</li>
-<li>Per exemple, editor, terminal i construcció; com a específiques, un depurador, un catàleg de mòduls o una integració concreta amb un SDK.</li>
+<li>L’IDE integra el flux de treball; el JDK aporta les eines de Java; Maven gestiona la construcció i les dependències.</li>
+<li>Sistema, arquitectura, versions, JDK, Maven, extensions/plugins, llicència o modalitat d’ús i resultat de la primera construcció.</li>
+<li>Afegir incorpora el component; desactivar permet provar sense eliminar-lo; eliminar el lleva de l’entorn.</li>
+<li>El format, el JDK del projecte, Maven i les ordres de construcció han de poder compartir-se; tema i dreceres poden ser personals.</li>
+<li>Entrada, ordre, directori controlat, eixida, codi de retorn, log i prova del resultat.</li>
+<li>Perquè una versió nova pot trencar plugins, configuracions o dependències i cal poder recuperar l’estat conegut.</li>
+<li>És un paquet Java que pot contindre classes i metadades; Maven el genera habitualment amb <code>mvn clean package</code>.</li>
+<li>Crearia un projecte Java i un Kotlin en IntelliJ IDEA, registraria les eines i generaria/provaria un artefacte de cada llenguatge.</li>
+<li>El codi font, el <code>pom.xml</code>, les dependències, el JDK, l’ordre de construcció i el resultat esperat.</li>
+<li>Comuns: editor, construcció i depuració. Específics: extensions davant de plugins, model de projecte i manera d’automatitzar.</li>
 </ol>
 <h2 id="repte-final">Repte final</h2>
-<p>En deu línies, compara VS Code i IntelliJ IDEA per a un equip que necessita Java, Python en VS Code, construcció Maven i actualitzacions controlades. Justifica quin IDE utilitzaries per a cada tasca amb dos avantatges, una limitació i una mesura de recuperació.</p>
+<p>Redacta una recomanació de cinc línies per a un equip que manté un projecte Java Maven i vol utilitzar VS Code i IntelliJ IDEA sense perdre reproduïbilitat.</p>
 <p><a href="../../">Tornar a l’índex de la UP1</a> · <a href="../../01-entorn/">Començar la teoria</a></p>
 
 

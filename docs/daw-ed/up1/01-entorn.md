@@ -2,39 +2,53 @@
 hide:
   - navigation
 ---
-# 1. VS Code i IntelliJ IDEA com a IDE
+# 1. L’IDE com a entorn de treball
 
-## De l’editor a l’IDE
+## Introducció
 
-Un editor permet escriure text i, en alguns casos, ofereix ressaltat de sintaxi. Un entorn integrat de desenvolupament —IDE, *Integrated Development Environment*— afegeix eines que ajuden a entendre, construir i verificar un projecte. En aquesta UP treballarem amb Visual Studio Code i IntelliJ IDEA:
+Un editor permet escriure fitxers de text. Un **entorn integrat de desenvolupament** o **IDE** (*Integrated Development Environment*) afegeix serveis que ajuden a comprendre, construir, executar i mantindre un projecte. La diferència no és només visual: un IDE coneix l’estructura del projecte i pot coordinar el compilador, el gestor de dependències, el depurador i el control de versions.
+
+En aquesta UP compararem **Visual Studio Code (VS Code)**, lleuger i extensible, amb **IntelliJ IDEA**, orientat a projectes Java i a una anàlisi profunda del codi.
+
+## Components fonamentals
+
+![Components d’un entorn integrat de desenvolupament](../../assets/diagrames/ide-components.svg)
+
+*Figura. Un IDE coordina serveis del projecte i ferramentes externes; no les substitueix necessàriament.*
 
 | Component | Funció | VS Code | IntelliJ IDEA |
 | --- | --- | --- | --- |
-| Editor | Escriure i navegar pel codi font. | IntelliSense, diagnòstic i extensions. | Compleció, inspeccions i refactorització. |
-| Projecte | Organitzar fitxers, dependències i configuració. | Carpeta oberta o projecte Maven. | Projecte Java i finestra de projecte. |
-| Construcció | Convertir el codi en un artefacte executable. | Terminal o tasca Maven. | Maven/Gradle i configuració de build. |
-| Depurador | Executar pas a pas i inspeccionar valors. | Extensió de depuració. | Depurador integrat. |
-| Extensions/plugins | Afegir suport per a llenguatges o serveis. | Extensions de Java i Python. | Plugins i funcionalitats integrades. |
+| Editor i navegació | Escriure, buscar símbols i entendre fitxers relacionats. | Nucli lleuger amb extensions. | Anàlisi profunda integrada. |
+| Model del projecte | Conéixer carpetes, mòduls, dependències i versions. | Carpeta oberta o projecte Maven/Gradle. | Projecte i mòduls amb suport Maven/Gradle. |
+| Construcció | Coordinar compilació, proves i empaquetament. | Tasques, terminal o extensió. | Maven/Gradle i configuracions d’execució. |
+| Depuració | Executar pas a pas, consultar variables i punts d’interrupció. | Adaptador o extensió de llenguatge. | Depurador Java integrat. |
+| Extensions o plugins | Afegir suport per a llenguatges i serveis. | Extensions del Marketplace. | Plugins del repositori de JetBrains. |
 | Control de versions | Consultar i registrar canvis. | Git i extensió de control de versions. | Git integrat en l’IDE. |
 
-Un IDE no substitueix el compilador, l’intèrpret ni el gestor de dependències: els coordina i els presenta de manera integrada.
+Un IDE també pot incloure terminal, explorador de dependències, formatador, analitzadors estàtics i eines de refactorització. La responsabilitat final continua sent de la persona desenvolupadora: ha d’entendre què executa l’IDE i poder repetir les ordres fora de la interfície.
 
-## Llicències i edicions del laboratori
+## Llicències i edicions
 
-«Lliure», «de codi obert», «gratuït» i «propietari» no són sinònims perfectes. Cal llegir la llicència concreta de l’IDE, de les extensions i dels plugins que instal·la. El criteri RA2.a es treballarà amb les dues eines concretes i amb la documentació de l’edició real disponible al centre.
+Els termes **lliure**, **de codi obert**, **gratuït** i **propietari** descriuen aspectes diferents. La llicència del producte no determina automàticament la llicència de cada extensió o plugin. En un entorn professional cal registrar la font oficial, la versió i la modalitat d’ús autoritzada.
 
-| Eina | Ús en aquesta UP | Què documentarem? |
+| Producte | Característica rellevant | Què cal documentar |
 | --- | --- | --- |
-| Visual Studio Code | Entorn lleuger i extensible per a Java i Python. | Versió, distribució, llicència, extensions i permisos. |
-| IntelliJ IDEA | Producte unificat: funcions bàsiques gratuïtes i funcions avançades d’Ultimate amb subscripció o llicència educativa. | Versió, modalitat de llicència, plugins i funcions incloses. |
+| VS Code | Editor distribuït per Microsoft amb un ecosistema extensible; també existeixen distribucions basades en el mateix codi. | Distribució instal·lada, versió, font, llicència i extensions. |
+| IntelliJ IDEA | IDE de JetBrains amb funcionalitats bàsiques i funcionalitats avançades segons l’edició o la llicència disponible. | Edició o modalitat activa, versió, plugins i autorització d’ús. |
 
-La fitxa de laboratori ha d’indicar el producte, la versió, la modalitat de llicència i l’ús autoritzat. IntelliJ IDEA té un instal·lador unificat; diferencia les funcions bàsiques de les funcions avançades activades amb Ultimate.
+No instal·les versions modificades d’origen dubtós ni copies claus de llicència. Si el centre proporciona una llicència educativa, indica-la en la documentació sense incloure cap credencial.
 
-## Criteris per triar un IDE
+## Com triar un IDE
 
-Per a aquesta comparació valorarem el suport de Java i Python, el JDK detectat, Maven, el depurador, les extensions/plugins, les tasques automatitzades, el consum de recursos, les actualitzacions, la llicència i la facilitat per repetir el projecte.
+La tria depén del problema. Per a un projecte Java gran poden pesar la navegació entre classes, les inspeccions i la refactorització. Per a una combinació de llenguatges, scripts i configuracions pot resultar útil la flexibilitat de VS Code. En tots dos casos cal valorar el JDK, Maven o Gradle, el depurador, Git, el consum de recursos, les actualitzacions i la facilitat de reproducció.
 
-!!! tip "Pregunta de control"
-    Quina modalitat de llicència d’IntelliJ IDEA tens activa? I quines eines addicionals necessites perquè VS Code puga treballar amb Java?
+Una comparació professional utilitza evidències: una versió detectada, una compilació correcta, una tasca executada o una incidència recuperada. No és suficient afirmar que un IDE és «més complet».
 
-[Següent: instal·lació](02-instal·lacio.md) · [Índex](index.md)
+!!! question "Comprovació"
+    Si VS Code no reconeix una classe Java, quines tres peces comprovaries abans de canviar d’IDE? Una resposta raonable inclou el JDK, el projecte o gestor de dependències i les extensions de Java.
+
+## Resum
+
+Un IDE integra editor, model de projecte, construcció, execució, depuració i extensions. VS Code prioritza l’extensibilitat; IntelliJ IDEA ofereix una experiència especialment integrada per a Java. La comparació ha d’incloure funcionalitat, llicència, recursos i possibilitat de repetir la configuració.
+
+[Següent: instal·lació](02-instal·lacio.md) · [Índex de la UP1](index.md)

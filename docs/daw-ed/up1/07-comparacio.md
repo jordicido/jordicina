@@ -2,43 +2,53 @@
 hide:
   - navigation
 ---
-# 7. Comparació d’entorns
+# 7. Comparació professional d’IDE
+
+## Introducció
+
+Comparar IDE no consisteix a comptar botons. Cal relacionar les característiques amb les necessitats del projecte i aportar una evidència. Un equip Java pot prioritzar refactorització i depuració; un projecte amb diversos llenguatges pot prioritzar extensibilitat i rapidesa d’inici.
+
+![Mapa de comparació dels dos entorns](../../assets/diagrames/ide-comparison.svg)
+
+*Figura. La decisió combina funcionalitat, projecte, automatització, operació i llicència.*
 
 ## Característiques comunes
 
-Visual Studio Code i IntelliJ IDEA comparteixen un conjunt de funcions: edició amb ressaltat, exploració del projecte, terminal, gestió de components, construcció, execució, depuració i integració amb Git. Aquestes funcions comunes permeten canviar d’eina sense començar de zero, però la manera d’organitzar-les és diferent.
+VS Code i IntelliJ IDEA comparteixen funcions essencials: edició amb ressaltat i compleció, navegació, integració amb Git, terminal, configuracions d’execució, diagnòstic, extensions o plugins i integració amb ferramentes de construcció. Per això tots dos poden participar en el cicle de vida d’un projecte Java.
 
 ## Característiques específiques
 
-La comparació professional concreta què fa millor cada entorn i en quines condicions:
+| Dimensió | VS Code | IntelliJ IDEA |
+| --- | --- | --- |
+| Model d’entorn | Nucli menut que s’amplia per extensions. | Plataforma molt integrada amb funcions específiques de llenguatge. |
+| Java | Requereix extensions i un JDK configurat. | Suport Java integrat i anàlisi avançada del projecte. |
+| Personalització | Perfils, `settings.json`, tasques i extensions. | Perfils, inspeccions, estils i configuracions d’execució. |
+| Construcció | Terminal, tasques o integració amb Maven/Gradle. | Finestres i accions integrades amb Maven/Gradle. |
+| Recursos | Pot iniciar ràpidament amb pocs components. | Pot requerir més memòria en projectes grans. |
+| Llicència i cost | Cal distingir la distribució i les extensions. | Les funcions disponibles depenen de l’edició o llicència. |
 
-| Dimensió | Visual Studio Code | IntelliJ IDEA | Evidència |
-| --- | --- | --- | --- |
-| Llenguatges i SDK | Java amb extensions i Python. | Java amb JDK i projecte Maven. | Projecte que obri i versió detectada. |
-| Construcció | Terminal o tasca Maven. | Finestra Maven o configuració de build. | Ordre i artefacte generat. |
-| Depuració | Configuració de llançament i extensió. | Depurador integrat i configuració d’execució. | Punt d’interrupció i variable inspeccionada. |
-| Extensions/plugins | Extension Pack for Java i Python. | Plugins disponibles i plugins del projecte. | Component i versió. |
-| Automatització | `.vscode/tasks.json`. | Maven, scripts i configuracions d’execució. | Tasca o script repetible. |
-| Actualitzacions | VS Code i vista Extensions. | IDE, plugins i canal d’actualització. | Política i prova configurades. |
-| Consum i rendiment | Entorn lleuger i extensible. | Entorn amb més integració del projecte. | Observació amb el mateix projecte. |
-| Llicència i cost | Distribució i extensions utilitzades. | Funcions bàsiques gratuïtes o Ultimate amb subscripció/llicència educativa. | Font oficial i condicions d’ús. |
-
-No compares només la interfície o el nombre d’icones. Una comparació útil relaciona cada funció amb una necessitat del projecte i aporta una prova.
+Les diferències poden canviar segons la versió, el sistema operatiu i els plugins instal·lats. Per això l’informe ha d’indicar l’entorn concret de la prova.
 
 ## Matriu de decisió
 
-Pots puntuar cada criteri de 1 a 5, però la puntuació no substitueix la justificació. Si la construcció és obligatòria i un IDE no detecta el SDK requerit, aquesta limitació pot pesar més que una diferència menor en el tema visual.
+Una matriu amb una escala acordada ajuda a evitar conclusions basades només en preferències. Per exemple:
 
-| Criteri | Pes | VS Code | IntelliJ IDEA | Observació |
-| --- | ---: | ---: | ---: | --- |
-| Suport del llenguatge del projecte |  |  |  |  |
-| Construcció i depuració |  |  |  |  |
-| Automatització |  |  |  |  |
-| Manteniment i actualitzacions |  |  |  |  |
-| Llicència i cost |  |  |  |  |
-| Facilitat per a l’equip |  |  |  |  |
+| Criteri | Pes decidit per l’equip | Evidència |
+| --- | ---: | --- |
+| Construcció i dependències Java | Alt | Construcció Maven correcta. |
+| Depuració i navegació | Alt | Punt d’interrupció i salt a una classe. |
+| Automatització | Mitjà | Tasca o configuració reproduïble. |
+| Consum de recursos | Mitjà | Observació en el mateix projecte. |
+| Extensions/plugins i manteniment | Mitjà | Llista, versions i actualització. |
+| Llicència i disponibilitat | Alt | Font i modalitat d’ús documentades. |
 
-!!! tip "Pregunta de control"
-    Quina diferència és comuna a tots dos entorns i quina és específica? Escriu una evidència que permeta comprovar cadascuna.
+No hi ha una puntuació universal. El valor professional està en justificar els pesos i relacionar la decisió amb el context.
 
-[Tornar a l’índex](index.md) · [Activitat de construcció](activitats/activitat-3-construccio.md)
+## Resum
+
+Els dos IDE comparteixen el cicle bàsic d’edició, construcció, execució i depuració, però difereixen en el grau d’integració, l’extensibilitat, el consum, les funcions disponibles i la llicència. Una comparació rigorosa necessita versions, proves i criteris explícits.
+
+!!! question "Comprovació final"
+    Si els dos IDE generen un JAR funcional, quines altres dades inclouries per decidir quin és més adequat per a un equip? Com a mínim: temps i ordre de construcció, diagnòstics, depuració, consum, extensions/plugins, manteniment i llicència.
+
+[Anterior: executables](06-executables.md) · [Índex de la UP1](index.md)

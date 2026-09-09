@@ -2,44 +2,80 @@
 hide:
   - navigation
 ---
-# Activitat 2. Mòduls, personalització i actualitzacions
+# Activitat 2. Taller de mòduls, personalització i actualització
 
-## Finalitat
+## Context
 
-Convertireu VS Code i IntelliJ IDEA en entorns de treball útils, controlats i repetibles. Treballareu els criteris **RA2.b**, **RA2.c** i **RA2.d**.
+L’equip de desenvolupament vol que un projecte Java es puga obrir en ordinadors diferents amb una configuració semblant. Necessita suport de Java, una tasca de construcció, regles bàsiques de format i un procediment d’actualització que permeta tornar arrere si apareix una incompatibilitat.
 
-## Organització i duració
+## Objectiu
 
-- Individual.
-- **4 hores**: 60 minuts d’extensions, 60 de personalització, 90 d’automatització i 30 d’actualització.
+Afegir i eliminar mòduls o extensions de manera segura, personalitzar el flux de treball, automatitzar una construcció i configurar una política d’actualització amb registre i recuperació.
 
-## Tasca 1. Afegiu i retireu un mòdul
+## Criteris d’avaluació treballats
 
-En VS Code instal·leu l’Extension Pack for Java i l’extensió Python. En IntelliJ IDEA instal·leu un plugin no essencial del repositori oficial. Anoteu el nom, editor, versió, permisos i dependències. Configureu cada component, executeu una prova i després desactiveu-lo o elimineu-lo. Expliqueu què ha canviat i com heu comprovat que el projecte continua funcionant.
+- **RA2.b** Addició i eliminació de mòduls a l’entorn de desenvolupament.
+- **RA2.c** Personalització i automatització de l’entorn.
+- **RA2.d** Configuració del sistema d’actualització de l’entorn.
 
-## Tasca 2. Personalitzeu el projecte
+## Tasca
 
-En VS Code configureu com a mínim formatació, terminal, final de línia, un perfil i `.vscode/settings.json`. En IntelliJ IDEA configureu formatació, inspeccions i una configuració d’execució. Diferencieu la configuració personal de la que ha de compartir l’equip. No convertiu el tema de colors en el centre de l’activitat: interessa la qualitat del flux.
+### Fase 1. Inventari inicial
 
-## Tasca 3. Automatitzeu una construcció
+Obri la carpeta amb el programa de l’activitat 1 i registra les extensions de VS Code, els plugins d’IntelliJ IDEA i el JDK. Explica quina funcionalitat necessita cada peça; la carpeta inicial no pressuposa cap eina de construcció addicional.
 
-Creeu a VS Code una tasca en `.vscode/tasks.json` i repetiu-la en IntelliJ IDEA amb la finestra de Maven o una configuració d’execució. Ha d’incloure quatre passos: neteja controlada, construcció, execució de la prova mínima i guardat del resultat. Registreu l’ordre, el directori de treball, la sortida esperada i què passa quan la construcció falla.
+### Fase 2. Alta i baixa controlades
 
-## Tasca 4. Configureu les actualitzacions
+En VS Code, afegeix el suport de Java necessari. En IntelliJ IDEA, activa o instal·la el plugin de Kotlin per poder obrir el programa de l’activitat 3. Registra nom, editor, versió i dependències. Desactiva o elimina una extensió de prova que no siga necessària i demostra que el projecte continua en l’estat esperat.
 
-Configureu les actualitzacions de VS Code i IntelliJ IDEA, reviseu l’estat de les extensions/plugins i consulteu una nota de versió. Feu la prova en una còpia o branca. Anoteu com tornaríeu a l’estat anterior si la versió nova trenca una extensió o plugin.
+No elimines extensions o plugins essencials del perfil habitual sense disposar d’una còpia o d’un perfil de pràctiques recuperable.
+
+### Fase 3. Personalització
+
+Configura, com a mínim, un perfil o espai de treball amb:
+
+- format i final de línia coherents;
+- JDK del projecte seleccionat explícitament;
+- una regla d’editor compartible, com `.editorconfig`;
+- una configuració d’execució sense secrets ni rutes absolutes.
+
+### Fase 4. Automatització
+
+Defineix una tasca en VS Code o una configuració equivalent en IntelliJ IDEA que execute la construcció Maven del projecte. La documentació ha d’indicar l’ordre, els prerequisits, el resultat esperat i on apareix l’artefacte.
+
+### Fase 5. Actualització i recuperació
+
+Tria el canal d’actualització disponible per a cada IDE, consulta la compatibilitat dels plugins i escriu un registre amb versió anterior, versió nova, prova executada i resultat. Elabora un procediment de retorn: quina configuració o plugin recuperaràs i quina prova confirmarà que l’entorn torna a funcionar.
+
+## Requisits
+
+- Cada alta o baixa ha d’estar justificada per una necessitat del projecte.
+- El registre ha d’incloure versions reals observades en l’IDE.
+- La tasca automatitzada ha de poder repetir-se des de zero en un projecte de prova.
+- Les configuracions compartibles no han d’incloure secrets, fitxers de caché ni rutes personals.
+- El pla d’actualització ha d’incloure compatibilitat, còpia, prova i recuperació.
 
 ## Lliurament
 
-Entregueu:
+Entrega:
 
-- una taula d’alta i baixa del mòdul;
-- el perfil o fitxer de configuració sense dades personals;
-- la tasca o script automatitzat;
-- el registre de l’actualització i la prova de recuperació;
-- una conclusió de 200 paraules sobre manteniment i riscos.
+- inventari abans i després de les extensions/plugins;
+- registre d’alta i baixa amb captures o eixides justificades;
+- perfil o fitxers de configuració compartibles;
+- tasca automatitzada i instruccions d’execució;
+- registre de l’actualització i pla de retorn;
+- incidències i conclusions tècniques.
 
-!!! warning "Seguretat"
-    No executeu scripts de neteja en una carpeta que continga dades reals. Comproveu sempre el directori abans d’automatitzar una ordre destructiva en VS Code o IntelliJ IDEA.
+## Evidències d’aprenentatge
 
-[Activitat 1. Laboratori d’instal·lació](activitat-1-instal·lacio.md) · [Activitat 3. Construcció i comparació](activitat-3-construccio.md)
+El professorat podrà comprovar que s’han afegit i retirat peces sense confondre-les amb dependències del projecte, que el format i el JDK estan configurats, que una tasca genera un resultat i que la política d’actualització permet verificar i recuperar l’entorn.
+
+## Criteris de correcció
+
+Es valorarà la justificació de les extensions/plugins, la seguretat de les baixes, la configuració reproduïble, l’automatització observable i la qualitat del registre d’actualització. Es penalitzaran els fitxers locals innecessaris, les rutes absolutes, els secrets i les actualitzacions no verificades.
+
+## Ampliació
+
+Prepara un perfil d’IDE específic per al projecte Java i explica quines opcions no compartiries amb la resta de l’equip i per què.
+
+[Anterior: laboratori d’instal·lació](activitat-1-instal·lacio.md) · [Següent: construcció i comparació](activitat-3-construccio.md) · [Índex](../index.md)

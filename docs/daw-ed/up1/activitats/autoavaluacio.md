@@ -4,36 +4,31 @@ hide:
 ---
 # Autoavaluació de la UP1
 
-Respon sense consultar els apunts. Després revisa la solució orientativa i anota què has de repassar.
+Aquesta autoavaluació serveix per detectar què necessites repassar abans de defensar les activitats. Respon amb les teues paraules i relaciona les respostes amb les evidències del laboratori.
 
-## Preguntes
+## Comprova els conceptes
 
-1. Quina diferència hi ha entre un editor de text, un IDE i un SDK?
-2. Un programa gratuït és necessàriament de codi obert? Justifica la resposta.
-3. Quines dades documentes abans d’instal·lar un IDE?
-4. Quins riscos pot introduir una extensió i com els reduiries?
-5. Quina diferència hi ha entre desactivar i eliminar un mòdul?
-6. Escriu una tasca automatitzada amb entrada, acció, eixida i prova.
-7. Per què una actualització pot corregir un problema i provocar-ne un altre?
-8. Quina diferència hi ha entre un `.jar`, un `.pyz` i un binari natiu?
-9. Què has de mantindre igual quan construeixes el mateix codi en dos IDE?
-10. Escriu tres característiques comunes i tres d’específiques de dos IDE.
+1. Quina diferència hi ha entre un editor i un IDE?
+2. Per què no és suficient instal·lar un IDE si el JDK no està disponible?
+3. Diferencia una extensió o plugin d’una dependència declarada en Maven o Gradle.
+4. Quina informació hauria de contindre una tasca automatitzada perquè una altra persona la puga repetir?
+5. Quins passos faries abans i després d’actualitzar un plugin?
+6. Quina transformació fa `javac` i quin paper té Maven?
+7. Per què cal mantindre el mateix codi i les mateixes versions en comparar dos IDE?
+8. Escriu tres característiques comunes i tres específiques de VS Code i IntelliJ IDEA.
 
-## Solució orientativa
+## Comprova la pràctica
 
-1. L’editor escriu text; l’IDE integra edició, construcció, depuració i projectes; el SDK aporta les eines i biblioteques del llenguatge.
-2. No. «Gratuït» descriu el preu d’un ús concret; la llicència de codi obert descriu drets d’estudi, modificació o redistribució segons les seues condicions.
-3. Sistema i arquitectura, versió, edició, llicència, espai, memòria, SDK/intèrpret, font de descàrrega i extensions necessàries.
-4. Pot tindre vulnerabilitats, permisos excessius, dependències incompatibles o deixar de mantindre’s. Cal revisar l’origen, la llicència, els permisos i provar-la abans de compartir-la.
-5. Desactivar permet comprovar el comportament sense el mòdul i reactivar-lo fàcilment; eliminar-lo lleva el component i pot requerir reinstal·lar-lo.
-6. Una resposta vàlida neteja una carpeta de sortida controlada, construeix, executa una prova, guarda el log i comprova el codi de retorn.
-7. Pot canviar APIs, dependències, extensions o configuracions encara que també corregisca errors i vulnerabilitats.
-8. Són formats diferents: el JAR conté bytecode Java, el `.pyz` és un arxiu Python executable amb un intèrpret i el binari natiu depén del sistema i arquitectura objectiu.
-9. El codi font, les entrades, la versió del llenguatge quan siga rellevant, les dependències, la prova i el resultat esperat.
-10. Per exemple, editor, terminal i construcció; com a específiques, un depurador, un catàleg de mòduls o una integració concreta amb un SDK.
+- [ ] Puc mostrar les versions i la modalitat d’ús dels dos IDE.
+- [ ] Puc demostrar que un projecte Java es construeix en els dos entorns.
+- [ ] Puc explicar quina extensió o plugin he afegit, quina he retirat i per què.
+- [ ] Puc executar una tasca automatitzada i identificar el seu resultat.
+- [ ] Puc descriure el meu canal d’actualització i el pla de recuperació.
+- [ ] Puc demostrar dos llenguatges construïts en un mateix IDE.
+- [ ] Puc justificar una recomanació amb dades observables.
 
 ## Repte final
 
-En deu línies, compara VS Code i IntelliJ IDEA per a un equip que necessita Java, Python en VS Code, construcció Maven i actualitzacions controlades. Justifica quin IDE utilitzaries per a cada tasca amb dos avantatges, una limitació i una mesura de recuperació.
+Explica oralment, en ordre, què passa des que obris un fitxer `.java` fins que executes l’artefacte. Inclou l’IDE, el JDK, Maven, les dependències, la compilació, l’empaquetament i la prova final. Si no pots assenyalar una evidència per a cada pas, torna al [bloc d’executables](../06-executables.md) i a l’[activitat 3](activitat-3-construccio.md).
 
-[Tornar a l’índex de la UP1](../index.md) · [Començar la teoria](../01-entorn.md)
+[Índex de la UP1](../index.md) · [Presentació de la UP1](../../up1-entorns-integrats.md)
