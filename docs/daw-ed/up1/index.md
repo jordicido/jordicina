@@ -36,7 +36,7 @@ L’objectiu professional no és memoritzar on està cada botó. És poder justi
 
 ## Activitats
 
-- [Activitat 1. Laboratori d’instal·lació](activitats/activitat-1-instal·lacio.md): instal·lar i verificar els dos entorns.
+- [Activitat 1. Instal·lació dels IDE](activitats/activitat-1-instal·lacio.md): instal·lar, ampliar i actualitzar els dos entorns.
 - [Activitat 2. Taller de mòduls, personalització i actualització](activitats/activitat-2-configuracio.md): configurar un entorn reproduïble.
 - [Activitat 3. Construcció i comparació](activitats/activitat-3-construccio.md): generar artefactes i comparar els IDE.
 - [Autoavaluació de la UP1](activitats/autoavaluacio.md): comprovar conceptes i preparar la defensa tècnica.
@@ -50,9 +50,9 @@ Primer entendràs què integra un IDE i quines responsabilitats continuen sent d
 | Criteri | Teoria | Activitats |
 | --- | --- | --- |
 | RA2.a | [Instal·lació i verificació](02-instal·lacio.md) | [Activitat 1](activitats/activitat-1-instal·lacio.md) |
-| RA2.b | [Mòduls, extensions i plugins](03-moduls.md) | [Activitat 2](activitats/activitat-2-configuracio.md) |
+| RA2.b | [Mòduls, extensions i plugins](03-moduls.md) | [Activitat 1](activitats/activitat-1-instal·lacio.md) i [activitat 2](activitats/activitat-2-configuracio.md) |
 | RA2.c | [Personalització i automatització](04-personalitzacio-automatitzacio.md) | [Activitat 2](activitats/activitat-2-configuracio.md) |
-| RA2.d | [Actualitzacions i recuperació](05-actualitzacions.md) | [Activitat 2](activitats/activitat-2-configuracio.md) |
+| RA2.d | [Actualitzacions i recuperació](05-actualitzacions.md) | [Activitat 1](activitats/activitat-1-instal·lacio.md) i [activitat 2](activitats/activitat-2-configuracio.md) |
 | RA2.e | [Del codi font a l’executable](06-executables.md) | [Activitat 3](activitats/activitat-3-construccio.md) |
 | RA2.f | [Del codi font a l’executable](06-executables.md) | [Activitat 3](activitats/activitat-3-construccio.md) |
 | RA2.g | [Comparació professional d’IDE](07-comparacio.md) | [Activitat 3](activitats/activitat-3-construccio.md) |

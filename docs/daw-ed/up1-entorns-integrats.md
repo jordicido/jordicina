@@ -54,7 +54,7 @@ Consulta l’[índex de la UP1](up1/index.md) per veure l’ordre recomanat, la 
 
 | Activitat | Producte |
 | --- | --- |
-| [1. Laboratori d’instal·lació](up1/activitats/activitat-1-instal·lacio.md) | Fitxa d’instal·lació de VS Code i IntelliJ IDEA. |
+| [1. Instal·lació dels IDE](up1/activitats/activitat-1-instal·lacio.md) | Evidències d’instal·lació, extensions, plugins i actualitzacions de VS Code i IntelliJ IDEA. |
 | [2. Taller de mòduls i automatització](up1/activitats/activitat-2-configuracio.md) | Perfil de treball, extensió, tasca automatitzada i registre d’actualització. |
 | [3. Construcció i comparació](up1/activitats/activitat-3-construccio.md) | Executables/artefactes de diversos llenguatges i el mateix projecte en dos IDE. |
 | [Autoavaluació de la UP1](up1/activitats/autoavaluacio.md) | Qüestionari individual i repte final. |
@@ -63,7 +63,7 @@ Consulta l’[índex de la UP1](up1/index.md) per veure l’ordre recomanat, la 
 
 | Evidència | Producte | Criteris principals |
 | --- | --- | --- |
-| 1. Laboratori d’instal·lació | Fitxa amb requisits, versions, llicència i verificació | RA2.a |
+| 1. Instal·lació dels IDE | PDF amb evidències d’instal·lació, extensions, plugins i actualitzacions | RA2.a, RA2.b, RA2.d |
 | 2. Configuració de l’entorn | Perfil, mòduls, personalització, automatització i actualització | RA2.b, RA2.c, RA2.d |
 | 3. Construcció multiplataforma | Registre de comandes, executables, proves i incidències | RA2.e, RA2.f |
 | 4. Informe comparatiu | Matriu de característiques i defensa de la proposta | RA2.g |

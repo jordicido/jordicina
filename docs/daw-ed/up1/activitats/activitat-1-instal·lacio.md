@@ -2,99 +2,185 @@
 hide:
   - navigation
 ---
-# Activitat 1. Laboratori d’instal·lació i verificació
-
-## Context
-
-Una empresa incorpora una persona desenvolupadora júnior i necessita preparar un equip amb dos entorns: VS Code per a tasques flexibles i IntelliJ IDEA per a projectes Java. La persona responsable no vol una captura de l’instal·lador; necessita saber què s’ha instal·lat, amb quina llicència i com s’ha comprovat que el JDK i els IDE funcionen.
+# Activitat 1. Instal·lació dels IDE
 
 ## Objectiu
 
-Instal·lar VS Code i IntelliJ IDEA a partir de fonts autoritzades, preparar un JDK i demostrar que els dos IDE poden obrir, compilar i executar un programa Java mínim.
+Durant el curs treballarem principalment amb dos entorns de desenvolupament:
+
+- **Visual Studio Code**, especialment per al desenvolupament amb Python i altres tecnologies.
+- **IntelliJ IDEA**, principalment per al desenvolupament amb Java.
+
+L’objectiu d’aquesta activitat és preparar el vostre ordinador perquè disposeu d’un entorn de desenvolupament funcional i actualitzat per a les pròximes pràctiques.
+
+En finalitzar l’activitat haureu de ser capaços de:
+
+- instal·lar correctament diferents entorns de desenvolupament;
+- afegir i eliminar extensions o plugins;
+- configurar el sistema d’actualització;
+- comprovar que els entorns estan operatius.
 
 ## Criteris d’avaluació treballats
 
-- **RA2.a** Instal·lació d’entorns de desenvolupament, propietaris i lliures.
-- **RA2.g** Identificació de característiques comunes i específiques, com a inici de la comparació.
+| Criteri | Descripció | Pes sobre RA2 |
+| --- | --- | ---: |
+| **RA2.a** | S’han instal·lat entorns de desenvolupament, propietaris i lliures. | 30 % |
+| **RA2.b** | S’han afegit i eliminat mòduls a l’entorn de desenvolupament. | 5 % |
+| **RA2.d** | S’ha configurat el sistema d’actualització de l’entorn de desenvolupament. | 5 % |
+|  | **Total de l’activitat** | **40 %** |
 
 ## Tasca
 
-### Fase 1. Planificació
+### Part 1. Visual Studio Code
 
-Consulta els requisits del sistema i les fonts oficials o autoritzades. Anota el sistema operatiu, l’arquitectura, el JDK seleccionat, l’edició o modalitat d’IntelliJ IDEA i la distribució concreta de VS Code. No uses claus compartides ni paquets d’origen desconegut.
+Instal·la l’última versió estable de Visual Studio Code des de la seua pàgina oficial.
 
-### Fase 2. Instal·lació
+Durant la instal·lació, revisa les opcions disponibles i activa aquelles que consideres útils per al treball habitual de desenvolupament.
 
-Instal·la els dos IDE i el JDK. En VS Code, instal·la com a mínim les extensions **Language Support for Java™ by Red Hat** i **Debugger for Java**, que són necessàries per reconéixer, executar i depurar programes Java des de l’IDE. També pots instal·lar l’**Extension Pack for Java**, que les inclou, però no cal utilitzar ni estudiar cap eina de construcció en aquesta activitat. En IntelliJ IDEA, el suport bàsic de Java ja està integrat.
+Una vegada instal·lat:
 
-Obri cada aplicació, comprova la seua versió i selecciona el JDK que farà servir el programa. No afegisques altres extensions o plugins opcionals: les ampliacions es treballaran en l’activitat 2. Pots consultar la [guia oficial d’inici de Java en VS Code](https://code.visualstudio.com/docs/java/java-tutorial).
+- obri Visual Studio Code;
+- accedeix a **Help → About** i comprova la versió instal·lada;
+- comprova que pots obrir una carpeta de treball;
+- crea una carpeta anomenada `edd-up1`;
+- obri aquesta carpeta des de Visual Studio Code.
 
-### Fase 3. Projecte de verificació
+#### Extensions
 
-Crea una carpeta senzilla amb un únic fitxer `App.java`. El programa ha de mostrar un missatge. Comprova primer des del terminal que el JDK funciona i, després, obri la mateixa carpeta des de cada IDE:
+Accedeix al gestor d’extensions i instal·la, com a mínim:
 
-```bash
-java --version
-javac --version
-javac App.java
-java App
-```
+- **Python**;
+- **Pylance**;
+- **Python Debugger**;
+- **Extension Pack for Java**.
 
-Si guardes el fitxer en una subcarpeta o utilitzes un paquet, adapta les ordres i documenta-les. Executa també el programa des de cada IDE i registra qualsevol diferència entre la compilació del terminal i la de l’IDE.
+No és necessari dominar encara aquestes extensions. Les utilitzarem posteriorment durant el curs.
 
-### Fase 4. Comparació inicial
+#### Prova d’instal·lació i eliminació
 
-Obri la mateixa carpeta i el mateix programa `App.java` en els dos IDE. No cal buscar informació teòrica: completa la matriu amb dades que puges comprovar directament. En concret:
+Per comprovar que sabeu gestionar les extensions:
 
-- **Versió i font:** anota la versió instal·lada de cada IDE i indica d’on s’ha obtingut.
-- **Edició o llicència aplicable:** indica quina edició utilitzes i quin tipus de llicència o ús permet.
-- **JDK detectat:** anota la versió del JDK que mostra o utilitza cada IDE.
-- **Programa Java obert:** comprova si reconeix el fitxer com a Java i si ofereix ressaltat, errors o ajuda de codi.
-- **Compilació, execució i eixida:** comprova si pots compilar i executar el programa des de cada IDE i anota el missatge que es mostra.
-- **Característica específica observada:** descriu una funció que hages observat en aquell IDE i explica amb una prova breu què fa.
+1. Busca una extensió que no estiga instal·lada.
+2. Instal·la-la.
+3. Comprova que apareix en la llista d’extensions instal·lades.
+4. Desinstal·la-la.
 
-Completa aquesta matriu amb les dades observades, no amb opinions:
+No elimines les extensions indicades anteriorment.
 
-| Aspecte | VS Code | IntelliJ IDEA |
-| --- | --- | --- |
-| Versió i font |  |  |
-| Edició o llicència aplicable |  |  |
-| JDK detectat |  |  |
-| Programa Java obert |  |  |
-| Compilació, execució i eixida |  |  |
-| Característica específica observada |  |  |
+### Part 2. IntelliJ IDEA
 
-## Requisits
+Instal·la IntelliJ IDEA.
 
-- Els instal·ladors o paquets han de procedir d’una font oficial o autoritzada.
-- La fitxa ha d’indicar la modalitat de llicència sense incloure credencials.
-- El programa s’ha de poder compilar i executar amb ordres del JDK documentades.
-- Les captures han de mostrar només informació necessària i no dades personals o secrets.
-- Cada problema ha d’incloure símptoma, hipòtesi, acció i resultat.
+Durant la instal·lació, revisa les diferents opcions que ofereix l’instal·lador i selecciona les que consideres adequades.
+
+Una vegada instal·lat:
+
+- inicia IntelliJ IDEA;
+- comprova la versió instal·lada;
+- accedeix a la configuració de l’aplicació;
+- localitza l’apartat de gestió de plugins;
+- identifica quins plugins venen instal·lats o activats per defecte.
+
+#### Gestió de plugins
+
+Realitza la següent prova:
+
+1. Accedeix al Marketplace de plugins.
+2. Selecciona un plugin gratuït que no estiga instal·lat.
+3. Instal·la’l.
+4. Reinicia l’IDE si és necessari.
+5. Comprova que el plugin apareix com a instal·lat.
+6. Desinstal·la’l.
+
+L’objectiu no és utilitzar el plugin, sinó demostrar que sabeu gestionar els components addicionals de l’entorn.
+
+### Part 3. Configuració de les actualitzacions
+
+Un entorn de desenvolupament és una ferramenta que evoluciona constantment. Els IDE, extensions i plugins reben actualitzacions que poden incorporar noves funcionalitats, solucionar errors o corregir problemes de seguretat.
+
+#### Visual Studio Code
+
+Localitza la configuració relacionada amb les actualitzacions i comprova:
+
+- com s’actualitza Visual Studio Code;
+- si les extensions s’actualitzen automàticament;
+- quina configuració tens activada.
+
+Configura l’entorn perquè comprove periòdicament si hi ha actualitzacions.
+
+#### IntelliJ IDEA
+
+Localitza l’apartat:
+
+**Settings → Appearance & Behavior → System Settings → Updates**
+
+o l’opció equivalent de la versió instal·lada.
+
+Comprova:
+
+- si la comprovació automàtica d’actualitzacions està activada;
+- quin canal d’actualització s’està utilitzant;
+- com es comproven les actualitzacions dels plugins.
+
+Deixa configurat l’entorn perquè comprove automàticament si existeixen actualitzacions.
+
+### Part 4. Comprovació final
+
+Abans de finalitzar, comprova que el teu equip compleix tots els requisits següents.
+
+#### Visual Studio Code
+
+- [ ] Visual Studio Code està instal·lat.
+- [ ] L’aplicació s’inicia correctament.
+- [ ] La carpeta `edd-up1` es pot obrir.
+- [ ] Les extensions de Python estan instal·lades.
+- [ ] Les extensions de Java estan instal·lades.
+- [ ] Has instal·lat i eliminat una extensió.
+- [ ] Les actualitzacions estan configurades.
+
+#### IntelliJ IDEA
+
+- [ ] IntelliJ IDEA està instal·lat.
+- [ ] L’aplicació s’inicia correctament.
+- [ ] Pots accedir a la configuració de l’IDE.
+- [ ] Pots accedir al gestor de plugins.
+- [ ] Has instal·lat i eliminat un plugin.
+- [ ] Les actualitzacions estan configurades.
 
 ## Lliurament
 
-Entrega un únic arxiu PDF amb tot el treball. El document ha d’incloure:
+Crea un document breu en format PDF amb les evidències de la pràctica.
 
-- una fitxa d’instal·lació amb requisits, fonts, versions, llicències i passos;
-- la matriu de comparació inicial;
-- el codi del programa Java mínim, inclòs directament en el PDF;
-- les ordres i eixides de verificació;
-- captures justificades de la versió, del JDK, de la compilació i de l’execució;
-- una breu conclusió sobre una característica comuna i una d’específica de cada IDE.
+No cal elaborar un manual d’instal·lació complet. L’objectiu és demostrar que les tasques s’han realitzat correctament.
 
-No cal entregar una carpeta ni un repositori separat. Comprova que el PDF es pot obrir correctament i que el text, el codi i les captures es llegeixen amb claredat.
+Cada captura haurà d’anar acompanyada d’una breu explicació que indique què s’hi mostra, quina tasca acredita i quin resultat s’hi pot comprovar. No es valoraran captures presentades sense context ni una explicació mínima.
 
-## Evidències d’aprenentatge
+El document haurà de contindre:
 
-El professorat podrà observar la presència dels dos IDE, la modalitat d’ús documentada, el JDK i les versions, un programa Java reconegut pels dos entorns i una compilació i execució que produeixen l’eixida esperada. També podrà comprovar que la comparació es basa en observacions.
+### 1. Visual Studio Code
 
-## Criteris de correcció
+- una captura on es puga veure Visual Studio Code en funcionament i la versió instal·lada;
+- una captura del gestor d’extensions on apareguen les extensions instal·lades.
 
-Es valorarà que la instal·lació siga reproduïble, que les fonts i llicències estiguen ben identificades, que el JDK i les ordres de compilació siguen coherents i que la verificació incloga resultats, no només captures. Es penalitzaran les dades inventades, les claus exposades i les conclusions que no tinguen una prova associada.
+### 2. IntelliJ IDEA
 
-## Ampliació
+- una captura on es puga veure IntelliJ IDEA en funcionament i la versió instal·lada;
+- una captura del gestor de plugins.
 
-Prepara un script o una pàgina de documentació que comprove automàticament les versions de `java` i `javac` i indique si falta algun prerequisit.
+### 3. Actualitzacions
+
+Una captura de:
+
+- la configuració d’actualitzacions de Visual Studio Code;
+- la configuració d’actualitzacions d’IntelliJ IDEA.
+
+### 4. Gestió de mòduls
+
+Indica breument:
+
+- **Extensió instal·lada i eliminada en VS Code:**
+- **Plugin instal·lat i eliminat en IntelliJ IDEA:**
+
+No és necessari incloure captures de cada pas de la instal·lació.
 
 [Següent: taller de configuració](activitat-2-configuracio.md) · [Índex de la UP1](../index.md)

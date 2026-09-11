@@ -78,4 +78,4 @@ Es valorarà la justificació de les extensions/plugins, la seguretat de les bai
 
 Prepara un perfil d’IDE específic per al projecte Java i explica quines opcions no compartiries amb la resta de l’equip i per què.
 
-[Anterior: laboratori d’instal·lació](activitat-1-instal·lacio.md) · [Següent: construcció i comparació](activitat-3-construccio.md) · [Índex](../index.md)
+[Anterior: instal·lació dels IDE](activitat-1-instal·lacio.md) · [Següent: construcció i comparació](activitat-3-construccio.md) · [Índex](../index.md)
