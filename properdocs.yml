@@ -55,8 +55,31 @@ nav:
           - Preguntes freqüents: smx-aw/preguntes-frequents.md
       - Python:
           - Inici: intro-python/index.md
+          - Guia de l’assignatura: intro-python/guia-assignatura.md
           - Programació didàctica: intro-python/programacio-didactica.md
+          - Unitats de programació:
+              - UP1. Primers passos amb Python:
+                  - Presentació: intro-python/up1-fonaments-programacio.md
+                  - Índex i seqüència: intro-python/up1/index.md
+                  - 1. Què és un programa: intro-python/up1/01-programa.md
+                  - 2. Preparació de l’entorn: intro-python/up1/02-entorn.md
+                  - 3. Eixida amb print(): intro-python/up1/03-print.md
+                  - 4. Variables: intro-python/up1/04-variables.md
+                  - 5. Tipus bàsics: intro-python/up1/05-tipus.md
+                  - 6. Entrada amb input(): intro-python/up1/06-input.md
+                  - 7. Operacions bàsiques: intro-python/up1/07-operacions.md
+                  - Activitat 1. Preparació de l’entorn: intro-python/up1/activitats/activitat-1-preparacio-entorn.md
+                  - Activitat 2. Sèrie d’exercicis: intro-python/up1/activitats/activitat-2-exercicis.md
+                  - Autoavaluació: intro-python/up1/activitats/autoavaluacio.md
+              - UP2. Programes senzills i orientació a objectes: intro-python/up2-programes-senzills.md
+              - UP3. Control i depuració: intro-python/up3-control-i-depuracio.md
+              - UP4. Classes i programació orientada a objectes: intro-python/up4-classes-i-poo.md
+              - UP5. Entrada, eixida i llibreries: intro-python/up5-entrada-eixida-i-llibreries.md
+              - UP6. Estructures avançades de dades: intro-python/up6-estructures-avancades.md
           - Materials: intro-python/materials.md
+          - Recursos: intro-python/recursos.md
+          - Avaluació: intro-python/avaluacio.md
+          - Preguntes freqüents: intro-python/preguntes-frequents.md
   - DAW:
       - Desplegament d'aplicacions web:
           - Inici: daw-daw/index.md

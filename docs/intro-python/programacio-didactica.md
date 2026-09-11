@@ -1,34 +1,44 @@
 ---
 hide:
   - navigation
-  - toc
 ---
-
 # Programació didàctica
 
-<div class="module-actions">
-  <a class="module-card" href="../"><strong>Inici</strong><span>Informació bàsica, objectius i forma de treball del mòdul.</span></a>
-  <a class="module-card" href="./"><strong>Programació didàctica</strong><span>Resultats d'aprenentatge, unitats, metodologia i avaluació.</span></a>
-  <a class="module-card" href="../materials/"><strong>Materials</strong><span>Apunts, exercicis i pràctiques organitzades per blocs.</span></a>
-</div>
+## Dades bàsiques
 
-<section class="module-highlight">
-  <h2>Introducció a la programació en Python</h2>
-  <p>La programació didàctica planteja una progressió curta i acumulativa: entendre una idea, practicar-la i aplicar-la en problemes cada vegada més complets.</p>
-</section>
+- **Mòdul:** Introducció a la programació en Python.
+- **Codi:** IPR.
+- **Cicle:** SMX i DAW.
+- **Durada:** 62 hores lectives.
+- **Unitats de programació:** 6.
 
-<table class="module-table">
-  <thead><tr><th>Bloc</th><th>Continguts clau</th><th>Evidències</th></tr></thead>
-  <tbody>
-    <tr><td>1. Primers programes</td><td>Variables, tipus, entrada, sortida, operadors i lectura d'errors.</td><td>Exercicis resolts i explicació del procés.</td></tr>
-    <tr><td>2. Control de flux</td><td>Condicions, bucles, acumuladors, comptadors i validació d'entrada.</td><td>Reptes amb casos de prova.</td></tr>
-    <tr><td>3. Estructures i funcions</td><td>Llistes, diccionaris, funcions, paràmetres i retorns.</td><td>Programes modulars i reutilitzables.</td></tr>
-    <tr><td>4. Fitxers i projecte</td><td>Lectura i escriptura de fitxers, tractament de dades i petit projecte final.</td><td>Aplicació senzilla amb documentació d'ús.</td></tr>
-  </tbody>
-</table>
+## Resultats d’aprenentatge i unitats
 
-<div class="module-grid">
-  <div class="resource-card"><strong>Metodologia</strong><span>Exemples curts, pràctica immediata, correcció d'errors i reptes acumulatius.</span></div>
-  <div class="resource-card"><strong>Avaluació</strong><span>Es valora que el codi funcione, siga llegible i que l'alumne puga explicar la solució.</span></div>
-  <div class="resource-card"><strong>Seguiment</strong><span>Els exercicis han d'incloure proves manuals i una revisió dels errors trobats.</span></div>
-</div>
+| RA | Resultat d’aprenentatge | UP relacionada | Hores | Pes |
+| --- | --- | --- | ---: | ---: |
+| RA1 | Reconéixer l’estructura d’un programa informàtic, identificant i relacionant els elements propis del llenguatge de programació utilitzat. | UP1 | 6 | 10 % |
+| RA2 | Escriure i provar programes senzills, reconeixent i aplicant els fonaments de la programació orientada a objectes. | UP2 | 9 | 20 % |
+| RA3 | Escriure i depurar codi, analitzant i utilitzant les estructures de control del llenguatge. | UP3 | 20 | 25 % |
+| RA4 | Desenvolupar programes organitzats en classes, analitzant i aplicant els principis de la programació orientada a objectes. | UP4 | 12 | 20 % |
+| RA5 | Realitzar operacions d’entrada i eixida d’informació, utilitzant procediments específics del llenguatge i llibreries de classes. | UP5 | 9 | 15 % |
+| RA6 | Escriure programes que manipulen informació, seleccionant i utilitzant tipus avançats de dades. | UP6 | 6 | 10 % |
+| **Total** |  |  | **62** | **100 %** |
+
+## Seqüència de continguts
+
+| UP | Continguts clau | Producte o evidència principal |
+| --- | --- | --- |
+| UP1 | Estructura d’un programa, sintaxi, variables, tipus, expressions i entrada/eixida bàsica. | Exercicis de primers programes i explicació de la seua estructura. |
+| UP2 | Execució, proves senzilles, funcions inicials i primers conceptes d’objecte i classe. | Programa curt amb casos de prova i reflexió sobre la solució. |
+| UP3 | Condicions, bucles, comptadors, acumuladors, validació i depuració. | Programa resolt amb proves, depuració i registre d’errors. |
+| UP4 | Classes, objectes, atributs, mètodes, encapsulació, herència i polimorfisme. | Aplicació modular organitzada en classes. |
+| UP5 | Fitxers, formats de text, mòduls, paquets i llibreries de classes. | Programa que llig, transforma i guarda informació. |
+| UP6 | Llistes, tuples, diccionaris, conjunts i selecció del tipus de dada adequat. | Petit programa de gestió i consulta d’informació. |
+
+## Metodologia
+
+La proposta combina modelatge del professorat, pràctica guiada, exercicis individuals, revisió d’errors i reptes acumulatius. Les activitats parteixen de problemes concrets i demanen justificar les decisions, provar diversos casos i millorar el codi.
+
+## Avaluació
+
+La qualificació final és la mitjana ponderada dels sis RA segons els pesos de la taula. Les evidències podran incloure exercicis, programes, proves d’execució, explicacions, revisions de codi i pràctiques. Consulta la pàgina d’[avaluació](avaluacio.md) per a les condicions generals.
