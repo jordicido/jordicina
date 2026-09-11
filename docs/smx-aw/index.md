@@ -23,8 +23,8 @@ hide:
 
 <section class="module-highlight">
   <h2>Què estem treballant ara?</h2>
-  <p><strong>TODO: actualitzar aquest bloc en començar cada unitat.</strong></p>
-  <p>Indica ací la unitat actual, la pràctica en curs i el pròxim lliurament.</p>
+  <p><strong>UP1 · Gestors de continguts</strong></p>
+  <p>Estem instal·lant i configurant un gestor de continguts, creant usuaris i rols, personalitzant-lo i revisant-ne la seguretat i les còpies. Consulta la <a href="up1-gestors-continguts/">teoria de la UP1</a> i les activitats associades.</p>
 </section>
 
 <h2>Unitats de programació</h2>

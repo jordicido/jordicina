@@ -23,8 +23,8 @@ hide:
 
 <section class="module-highlight">
   <h2>Què estem treballant ara?</h2>
-  <p><strong>TODO: actualitzar aquest bloc en començar cada unitat.</strong></p>
-  <p>Indica ací la unitat actual, la pràctica en curs i el pròxim lliurament.</p>
+  <p><strong>UP1 · Entorns integrats de desenvolupament</strong></p>
+  <p>Estem instal·lant i configurant VS Code i IntelliJ IDEA, treballant amb extensions i plugins, automatitzant tasques i construint executables. Consulta la <a href="up1-entorns-integrats/">teoria de la UP1</a> i les activitats associades.</p>
 </section>
 
 <h2>Unitats de programació</h2>

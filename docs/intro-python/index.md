@@ -22,8 +22,9 @@ hide:
 </div>
 
 <section class="module-highlight">
-  <h2>Què treballarem</h2>
-  <p>Aquest mòdul és compartit com a accés des de SMX i DAW. El treball avança des de variables i control de flux fins a funcions, estructures de dades, fitxers i petits programes útils.</p>
+  <h2>Què estem treballant ara?</h2>
+  <p><strong>UP1 · Primers programes</strong></p>
+  <p>Estem començant amb variables, tipus, entrada i sortida, operadors i lectura d'errors. Consulta els <a href="materials/">materials de la UP1</a> per practicar amb els primers exercicis.</p>
 </section>
 
 <div class="module-grid">

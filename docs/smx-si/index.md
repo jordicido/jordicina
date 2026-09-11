@@ -24,8 +24,8 @@ hide:
 
 <section class="module-highlight">
   <h2>Què estem treballant ara?</h2>
-  <p><strong>TODO: actualitzar aquest bloc en començar cada unitat.</strong></p>
-  <p>Indica ací la unitat actual, la pràctica en curs i el pròxim lliurament.</p>
+  <p><strong>UP1 · Mesures de seguretat passiva</strong></p>
+  <p>Estem treballant què cal protegir en una organització i com aplicar mesures de seguretat física i lògica, SAI, control d'accessos, contrasenyes i biometria. Consulta la <a href="ut1-seguretat-passiva/">teoria de la UP1</a> i les activitats associades.</p>
 </section>
 
 <h2>Unitats de treball</h2>
