@@ -46,6 +46,14 @@ Consulta l'[índex i seqüència de la UP1](up1/index.md) per seguir l'ordre rec
 | [5. Apache HTTP Server](up1/05-servidor-web-apache.md) | Instal·lació, Virtual Hosts, permisos, mòduls, logs, proxy i diagnòstic. |
 | [6. Apache Tomcat](up1/06-servidor-aplicacions-tomcat.md) | Java, instal·lació, estructura, WAR, Manager, logs i integració amb Apache. |
 
+## Activitats avaluables
+
+| Activitat | Producte |
+| --- | --- |
+| [Pràctica 1. Arquitectura i pla de desplegament](up1/activitats/activitat-1-arquitectura-desplegament.md) | Informe de l'arquitectura, els recursos, la seguretat, les proves i el procés de desplegament. |
+| [Pràctica 2. Instal·lació d'Apache i Tomcat](up1/activitats/activitat-2-apache-tomcat.md) | Informe de la instal·lació, configuració, verificació i diagnòstic dels dos serveis. |
+| Prova individual | Comprovació dels conceptes i de la capacitat d'explicar el laboratori. |
+
 ## Resultat d'aprenentatge i criteris
 
 **RA1.** Implanta arquitectures web analitzant i aplicant criteris de funcionalitat.

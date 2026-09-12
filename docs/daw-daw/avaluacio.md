@@ -31,7 +31,7 @@ En les activitats de desplegament es valorarà especialment que:
 
 ## UP1 i RA1
 
-La UP1 treballa els criteris RA1.a, RA1.b, RA1.c, RA1.d, RA1.e, RA1.h i RA1.i, d'acord amb la seqüenciació de la programació didàctica. Els criteris RA1.f i RA1.g també poden aportar evidències en el període de formació en empresa, tal com preveu la programació. La [teoria completa i l'itinerari de la UP1](up1/index.md) inclouen preguntes de comprovació i orientacions per preparar les evidències de disseny, desplegament i verificació. Aquestes preguntes són un recurs d'estudi no qualificable.
+La UP1 treballa els criteris RA1.a, RA1.b, RA1.c, RA1.d, RA1.e, RA1.h i RA1.i, d'acord amb la seqüenciació de la programació didàctica. Els criteris RA1.f i RA1.g també poden aportar evidències en el període de formació en empresa, tal com preveu la programació. Les evidències principals són la [Pràctica 1. Disseny de l'arquitectura i pla de desplegament](up1/activitats/activitat-1-arquitectura-desplegament.md), la [Pràctica 2. Instal·lació i configuració d'Apache i Tomcat](up1/activitats/activitat-2-apache-tomcat.md) i la prova individual. La [teoria completa i l'itinerari de la UP1](up1/index.md) inclouen preguntes de comprovació i orientacions per preparar-les.
 
 ## Recuperació
 

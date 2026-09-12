@@ -95,6 +95,8 @@ nav:
                   - 4. Requisits del desplegament: daw-daw/up1/04-requisits-desplegament.md
                   - 5. Servidor web Apache: daw-daw/up1/05-servidor-web-apache.md
                   - 6. Servidor d'aplicacions Tomcat: daw-daw/up1/06-servidor-aplicacions-tomcat.md
+                  - Pràctica 1. Arquitectura i pla de desplegament: daw-daw/up1/activitats/activitat-1-arquitectura-desplegament.md
+                  - Pràctica 2. Instal·lació d'Apache i Tomcat: daw-daw/up1/activitats/activitat-2-apache-tomcat.md
               - UP2. Configuració i administració de servidors web: daw-daw/up2-servidors-web.md
               - UP3. Administració de servidors d'aplicacions: daw-daw/up3-servidors-aplicacions.md
               - UP6. Documentació, control de versions i integració contínua: daw-daw/up6-documentacio-versions.md
