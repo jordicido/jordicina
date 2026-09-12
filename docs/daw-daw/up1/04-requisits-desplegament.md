@@ -1,4 +1,6 @@
 ---
+hide:
+  - navigation
 title: "4. Requisits del procés de desplegament"
 description: "Requisits, entorns, variables, seguretat, base de dades, proves, monitoratge, CI/CD, documentació i rollback."
 ---

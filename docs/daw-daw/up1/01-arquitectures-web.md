@@ -1,4 +1,6 @@
 ---
+hide:
+  - navigation
 title: "1. Aspectes generals de les arquitectures web"
 description: "Arquitectura client-servidor, pàgines estàtiques i dinàmiques, aplicacions web, capes i patró MVC."
 ---

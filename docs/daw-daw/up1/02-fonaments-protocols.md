@@ -1,4 +1,6 @@
 ---
+hide:
+  - navigation
 title: "2. Fonaments i protocols dels servidors web"
 description: "Servidor web, recursos, mètriques, HTTP/HTTPS, DNS, URL, FQDN, ports i recorregut complet d'una petició web."
 ---

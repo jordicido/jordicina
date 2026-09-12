@@ -1,4 +1,6 @@
 ---
+hide:
+  - navigation
 title: "5. Instal·lació i configuració d'Apache HTTP Server"
 description: "Servidor web, Apache, instal·lació en Ubuntu Server 24.04, estructura de directoris, Virtual Hosts, logs, permisos i diagnòstic."
 ---

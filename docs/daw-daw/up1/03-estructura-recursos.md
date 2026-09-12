@@ -1,4 +1,6 @@
 ---
+hide:
+  - navigation
 title: "3. Estructura i recursos de les aplicacions web"
 description: "Frontend, backend, bases de dades, API, caché, CDN, balanceig, proxy invers, seguretat i monitoratge."
 ---

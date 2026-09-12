@@ -1,4 +1,6 @@
 ---
+hide:
+  - navigation
 title: "6. Servidors d'aplicacions i Apache Tomcat"
 description: "Servidor d'aplicacions, arquitectura de tres capes, Apache Tomcat, instal·lació, estructura, Manager, WAR, logs i integració amb Apache."
 ---
