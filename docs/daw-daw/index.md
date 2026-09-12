@@ -25,7 +25,7 @@ hide:
 <section class="module-highlight">
   <h2>Què estem treballant ara?</h2>
   <p><strong>UP1 · Implantació d'arquitectures web</strong></p>
-  <p>Estem identificant els components d'una aplicació web, el recorregut d'una petició i els requisits d'un primer desplegament. Consulta la <a href="up1-implantacio-arquitectures/">teoria completa de la UP1</a> i les activitats que hi estan associades.</p>
+  <p>Estem identificant els components d'una aplicació web, el recorregut d'una petició i els requisits d'un primer desplegament. Consulta la <a href="up1-implantacio-arquitectures/">presentació de la UP1</a> i el seu <a href="up1/">material teòric complet</a>.</p>
 </section>
 
 <h2>Unitats de programació</h2>

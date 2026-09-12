@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="700" viewBox="0 0 1200 700" role="img" aria-labelledby="title desc">
+<title id="title">Estructura i recursos</title><desc id="desc">Frontend, backend, base de dades i recursos complementaris</desc>
+<defs>
+  <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L0,6 L9,3 z" fill="#24527a"/></marker>
+  <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="5" stdDeviation="6" flood-opacity="0.15"/></filter>
+</defs>
+<rect width="100%" height="100%" fill="#ffffff"/>
+
+<text x="600" y="55" text-anchor="middle" font-family="Arial" font-size="38" font-weight="700" fill="#17324d">Estructura i recursos d’una aplicació web</text>
+<rect x="80" y="150" width="280" height="180" rx="22" fill="#eef6fb" stroke="#24527a" stroke-width="3" filter="url(#shadow)"/>
+<text x="220.0" y="234.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="30" font-weight="700" fill="#17324d">Frontend</text><text x="220.0" y="276.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" fill="#4d5d6c">HTML · CSS · JavaScript</text>
+<rect x="460" y="150" width="280" height="180" rx="22" fill="#eef6fb" stroke="#24527a" stroke-width="3" filter="url(#shadow)"/>
+<text x="600.0" y="234.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="30" font-weight="700" fill="#17324d">Backend</text><text x="600.0" y="276.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" fill="#4d5d6c">PHP · Python · Java · JS</text>
+<rect x="840" y="150" width="280" height="180" rx="22" fill="#eef6fb" stroke="#24527a" stroke-width="3" filter="url(#shadow)"/>
+<text x="980.0" y="234.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="30" font-weight="700" fill="#17324d">Base de dades</text><text x="980.0" y="276.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" fill="#4d5d6c">SQL / NoSQL</text>
+<line x1="360" y1="240" x2="460" y2="240" stroke="#24527a" stroke-width="4" marker-end="url(#arrow)"/><text x="410.0" y="226.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" fill="#24527a">API</text><line x1="740" y1="240" x2="840" y2="240" stroke="#24527a" stroke-width="4" marker-end="url(#arrow)"/><text x="790.0" y="226.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" fill="#24527a">consultes</text>
+<text x="600" y="410" text-anchor="middle" font-family="Arial" font-size="27" font-weight="700" fill="#17324d">Recursos que donen suport al sistema</text>
+<g font-family="Arial" font-size="23" fill="#17324d">
+<rect x="90" y="455" width="210" height="85" rx="18" fill="#f7fbfd" stroke="#9ab8cc"/><text x="195" y="507" text-anchor="middle">Servidor web</text>
+<rect x="320" y="455" width="210" height="85" rx="18" fill="#f7fbfd" stroke="#9ab8cc"/><text x="425" y="507" text-anchor="middle">Memòria cau</text>
+<rect x="550" y="455" width="210" height="85" rx="18" fill="#f7fbfd" stroke="#9ab8cc"/><text x="655" y="507" text-anchor="middle">CDN</text>
+<rect x="780" y="455" width="210" height="85" rx="18" fill="#f7fbfd" stroke="#9ab8cc"/><text x="885" y="507" text-anchor="middle">Balancejador</text>
+<rect x="1010" y="455" width="120" height="85" rx="18" fill="#f7fbfd" stroke="#9ab8cc"/><text x="1070" y="507" text-anchor="middle">Logs</text>
+</g>
+
+</svg>

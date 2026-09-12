@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="620" viewBox="0 0 1200 620" role="img" aria-labelledby="title desc">
+<title id="title">Recorregut d'una petició web</title><desc id="desc">Passos des de la URL i DNS fins al servidor web, l'aplicació i la base de dades</desc>
+<defs><marker id="a" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#24527a"/></marker><filter id="s"><feDropShadow dx="0" dy="4" stdDeviation="5" flood-opacity=".15"/></filter></defs>
+<rect width="1200" height="620" fill="#fff"/><text x="600" y="60" text-anchor="middle" font-family="Arial" font-size="38" font-weight="700" fill="#17324d">De la URL a la resposta</text>
+<g font-family="Arial" text-anchor="middle">
+<rect x="45" y="210" width="160" height="120" rx="18" fill="#eef6fb" stroke="#24527a" stroke-width="3" filter="url(#s)"/><text x="125" y="260" font-size="26" font-weight="700" fill="#17324d">Navegador</text><text x="125" y="295" font-size="18" fill="#4d5d6c">URL</text>
+<rect x="245" y="210" width="150" height="120" rx="18" fill="#fff6e8" stroke="#d88718" stroke-width="3" filter="url(#s)"/><text x="320" y="260" font-size="26" font-weight="700" fill="#17324d">DNS</text><text x="320" y="295" font-size="18" fill="#4d5d6c">nom → IP</text>
+<rect x="435" y="210" width="180" height="120" rx="18" fill="#eef6fb" stroke="#24527a" stroke-width="3" filter="url(#s)"/><text x="525" y="255" font-size="24" font-weight="700" fill="#17324d">Apache</text><text x="525" y="290" font-size="18" fill="#4d5d6c">HTTP/HTTPS</text>
+<rect x="655" y="210" width="180" height="120" rx="18" fill="#eef6fb" stroke="#24527a" stroke-width="3" filter="url(#s)"/><text x="745" y="255" font-size="24" font-weight="700" fill="#17324d">Tomcat</text><text x="745" y="290" font-size="18" fill="#4d5d6c">aplicació</text>
+<rect x="875" y="210" width="200" height="120" rx="18" fill="#eef6fb" stroke="#24527a" stroke-width="3" filter="url(#s)"/><text x="975" y="255" font-size="24" font-weight="700" fill="#17324d">Base de dades</text><text x="975" y="290" font-size="18" fill="#4d5d6c">consulta</text>
+</g>
+<g stroke="#24527a" stroke-width="4" marker-end="url(#a)"><line x1="205" y1="270" x2="245" y2="270"/><line x1="395" y1="270" x2="435" y2="270"/><line x1="615" y1="270" x2="655" y2="270"/><line x1="835" y1="270" x2="875" y2="270"/></g>
+<path d="M975 345 C900 500 620 505 525 345" fill="none" stroke="#5f7f99" stroke-width="4" marker-end="url(#a)"/><path d="M525 365 C470 520 200 520 125 345" fill="none" stroke="#5f7f99" stroke-width="4" marker-end="url(#a)"/>
+<text x="750" y="470" font-family="Arial" font-size="21" fill="#4d5d6c" text-anchor="middle">dades → resposta de l'aplicació</text><text x="325" y="525" font-family="Arial" font-size="21" fill="#4d5d6c" text-anchor="middle">HTTP 200 + HTML/JSON</text>
+</svg>
