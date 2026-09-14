@@ -141,7 +141,7 @@ Podeu respondre qüestions com: **És una sala segura? Quin és el principal pro
 
 - **Format:** PDF.
 - **Extensió orientativa:** 3–5 pàgines, sense comptar la portada.
-- **Treball:** individual o per parelles, segons el que decidisca el professorat.
+- **Treball:** individual.
 
 Es valorarà especialment que els problemes estiguen **ben identificats, justificats i relacionats amb mesures de seguretat adequades**.
 
