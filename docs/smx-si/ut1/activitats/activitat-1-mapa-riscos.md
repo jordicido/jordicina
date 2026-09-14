@@ -2,70 +2,150 @@
 hide:
   - navigation
 ---
-# Activitat 1. Mapa inicial de riscos
+# Activitat 1. Informe d’anàlisi de riscos d’una sala de servidors
 
 ## Finalitat
 
-Aprendreu a passar d’una observació superficial —«aquesta oficina no és segura»— a una anàlisi justificable d’actius, amenaces, vulnerabilitats i mesures.
+Aprendreu a passar de «veig coses malament» a identificar actius, amenaces i vulnerabilitats, valorar riscos i proposar mesures de protecció justificades.
 
-Treballareu principalment els criteris **RA1.a** i **RA1.b**.
+Treballareu principalment els criteris **RA1.a**, **RA1.b**, **RA1.c** i **RA1.d**.
 
 ## Organització i duració
 
-- Parelles.
-- **1 hora i 30 minuts**: 20 minuts d’anàlisi, 45 de taula i 25 de priorització.
+- Individual o per parelles, segons indique el professorat.
+- **1 hora i 30 minuts** d’anàlisi i planificació, més el temps necessari per redactar l’informe.
 
-## Cas d’estudi
+## Situació
 
-Observeu aquesta oficina fictícia:
+L’empresa **TecnoGest SL** ha instal·lat recentment una xicoteta sala de servidors des d’on es gestionen diversos serveis interns de l’empresa.
 
-![Oficina amb ordinadors, servidor, rack obert, cablejat desordenat, regleta sobrecarregada i una porta oberta](../../../assets/img/imatge-servidors.png)
+La direcció sospita que la instal·lació presenta alguns problemes de seguretat i vos ha demanat, com a tècnics informàtics, que feu una **primera anàlisi de riscos de la sala**.
 
-*Imatge de l’escenari d’anàlisi. Identifiqueu els actius i les possibles vulnerabilitats visibles abans de consultar la descripció escrita.*
+Disposeu únicament de la imatge següent:
 
-## Tasca 1. Identifiqueu els actius
+![Sala de servidors amb ordinadors, servidor, rack obert, cablejat desordenat, regleta sobrecarregada i una porta oberta](../../../assets/img/imatge-servidors.png)
 
-Anoteu almenys huit actius. Incloeu maquinari, informació, instal·lacions i elements de suport. Per a cada actiu indiqueu si afecta sobretot la confidencialitat, la integritat, la disponibilitat o més d’una propietat.
+*Imatge de la instal·lació que heu d’analitzar.*
 
-## Tasca 2. Completeu la taula de riscos
+La vostra faena serà elaborar un **informe tècnic professional** en què expliqueu els problemes detectats, valoreu els riscos i proposeu mesures de millora.
 
-| Actiu | Amenaça | Vulnerabilitat | Conseqüència | P (probabilitat) | I (impacte) | Mesura proposada |
-| --- | --- | --- | --- | --- | --- | --- |
-| Servidor | Aigua | Canonada damunt | Aturada i pèrdua | M | A | Reubicar i sensor |
-|  |  |  |  |  |  |  |
+No es tracta simplement de trobar «coses que estan mal». Haureu de **justificar per què representen un risc per als sistemes o per a la informació**.
 
-### Com s’han d’interpretar les sigles?
+## Abans de començar
 
-- **P** significa **probabilitat**: estima fins a quin punt és possible que l’amenaça provoque una incidència.
-- **I** significa **impacte**: estima la gravetat de les conseqüències si la incidència arriba a produir-se.
-- **B** significa **baix**, **M** significa **mitjà** i **A** significa **alt**.
+Utilitzeu com a guia el recurs d’INCIBE **Análisis de riesgos en 6 pasos**.
 
-| Valoració | En la probabilitat (`P`) | En l’impacte (`I`) |
+L’objectiu no és copiar el contingut, sinó entendre com es relacionen aquests conceptes:
+
+**Actiu → Amenaça → Vulnerabilitat → Impacte → Risc → Mesura de protecció**
+
+Per exemple:
+
+> **Actiu:** servidor
+> **Amenaça:** inundació o fuga d’aigua
+> **Vulnerabilitat:** canonada situada al costat dels equips
+> **Conseqüència:** avaria dels servidors i interrupció del servei
+> **Mesura:** separar les conduccions d’aigua de la sala o protegir els equips davant possibles fugues
+
+## Què heu de fer?
+
+Seguiu aquest procés:
+
+1. **Observeu la sala i identifiqueu els actius importants.** No penseu només en els ordinadors: també poden ser actius els servidors, els equips de xarxa, les dades, el cablejat, l’alimentació elèctrica o els serveis que depenen d’aquests equips.
+2. **Identifiqueu els riscos que observeu.** Busqueu situacions relacionades amb accés físic, electricitat, aigua, temperatura, incendi, cablejat, ubicació dels equips i manipulació accidental.
+3. **Analitzeu cada risc.** Per a cada problema detectat indiqueu quin actiu està afectat, quina amenaça existeix, quina vulnerabilitat facilita que es produïsca i quines podrien ser les conseqüències.
+4. **Valoreu el risc.** Utilitzeu una escala senzilla de probabilitat i impacte: **baix, mitjà o alt**.
+5. **Proposeu una solució.** Expliqueu quina mesura aplicaríeu per eliminar el problema o reduir-ne el risc. La mesura ha de ser coherent amb el problema detectat.
+6. **Prioritzeu.** Al final de l’informe indiqueu quines serien les **tres actuacions que realitzaríeu primer** si l’empresa tinguera un pressupost limitat.
+
+## Informe que heu d’entregar
+
+El document final haurà de tindre aspecte d’un **informe tècnic**, no d’un qüestionari.
+
+### 1. Portada
+
+Incloeu:
+
+**Informe d’anàlisi de riscos de la sala de servidors**
+
+Nom i cognoms
+
+Mòdul: Seguretat Informàtica
+
+Data
+
+### 2. Objectiu de l’informe
+
+Expliqueu en un paràgraf breu què s’ha analitzat i quina és la finalitat de l’informe.
+
+Per exemple:
+
+> L’objectiu d’aquest informe és analitzar les condicions de seguretat física de la sala de servidors de TecnoGest SL, identificar possibles riscos per als sistemes informàtics i proposar mesures que permeten reduir-los.
+
+### 3. Actius identificats
+
+Incloeu una taula senzilla:
+
+| Actiu | Importància |
+| --- | --- |
+| Servidors | Allotgen serveis i informació de l’empresa |
+| Switch i router | Permeten la comunicació de la xarxa |
+| Dades | Informació necessària per al funcionament de l’empresa |
+| Alimentació elèctrica | Necessària per mantindre els sistemes disponibles |
+| ... | ... |
+
+No és necessari fer un inventari exhaustiu. Identifiqueu els actius que considereu més importants per a l’anàlisi.
+
+### 4. Identificació i anàlisi de riscos
+
+Aquesta serà la part principal de l’informe:
+
+| Nº | Actiu | Amenaça | Vulnerabilitat detectada | Conseqüència | Probabilitat | Impacte | Risc |
+| ---: | --- | --- | --- | --- | --- | --- | --- |
+| 1 | Servidors | Aigua | Canonada pròxima als equips | Avaria i pèrdua temporal del servei | Mitjana | Alt | Alt |
+| 2 |  |  |  |  |  |  |  |
+| 3 |  |  |  |  |  |  |  |
+
+No hi ha un nombre exacte de problemes que heu de trobar. **La qualitat de l’anàlisi és més important que la quantitat.**
+
+### 5. Propostes de millora
+
+Per als riscos que heu identificat, proposeu una mesura de protecció:
+
+| Risc detectat | Mesura proposada | Justificació |
 | --- | --- | --- |
-| **B · Baixa** | És poc probable que passe o necessita una coincidència poc habitual. | Les conseqüències serien limitades i es podrien resoldre ràpidament. |
-| **M · Mitjana** | Pot passar alguna vegada o depén d’una situació que es repeteix. | Podria interrompre una part del treball o requerir una intervenció tècnica. |
-| **A · Alta** | És probable que passe, perquè la vulnerabilitat està present sovint o és fàcil d’aprofitar. | Podria causar una aturada important, pèrdua de dades, robatori o una despesa elevada. |
+| Possibles danys per fuga d’aigua | Reubicar el servidor o modificar la conducció | Evita que una fuga puga afectar directament els equips |
+|  |  |  |
 
-Per exemple, una **regleta sobrecarregada** pot tindre una probabilitat **alta** i un impacte **alt**. Una finestra que dona a un pati interior i està sempre tancada podria tindre una probabilitat de robatori **baixa**, però l’impacte continuaria sent **alt** si arribara a produir-se. La valoració no és matemàtica: expliqueu en una frase per què heu triat cada nivell.
+No és suficient indicar «arreglar-ho» o «millorar la seguretat». Expliqueu **què faríeu concretament**.
 
-## Tasca 3. Classifiqueu les mesures
+### 6. Priorització
 
-Classifiqueu sis mesures com a físiques o lògiques i com a preventives, detectores o correctores. Una mesura pot tindre més d’una etiqueta, però cal justificar-la.
+Imagineu que l’empresa **no pot solucionar tots els problemes immediatament**.
 
-## Tasca 4. Prioritzeu
+Seleccioneu les **tres mesures que aplicaríeu primer** i justifiqueu breument per què:
 
-Seleccioneu les cinc primeres actuacions amb un pressupost limitat. Ordeneu-les i indiqueu si tenen cost baix, mitjà o alt. No trieu només les més tecnològiques: considereu urgència, eficàcia i manteniment.
+| Prioritat | Actuació | Motiu |
+| ---: | --- | --- |
+| 1 |  |  |
+| 2 |  |  |
+| 3 |  |  |
 
-## Lliurament
+### 7. Conclusions
 
-Entregueu `mapa-riscos.md` amb:
+Finalitzeu amb una valoració breu de l’estat general de la sala.
 
-1. inventari d’actius;
-2. taula de riscos amb almenys huit files;
-3. classificació de mesures;
-4. priorització raonada en 150–200 paraules.
+Podeu respondre qüestions com: **És una sala segura? Quin és el principal problema? Creieu que existeix algun risc que podria arribar a interrompre completament els serveis de l’empresa?**
 
-!!! tip "Abans d’entregar"
-    Reviseu que una amenaça no estiga escrita com una vulnerabilitat i que cada mesura responga a un risc concret.
+## Format de lliurament
+
+- **Format:** PDF.
+- **Extensió orientativa:** 3–5 pàgines, sense comptar la portada.
+- **Treball:** individual o per parelles, segons el que decidisca el professorat.
+
+Es valorarà especialment que els problemes estiguen **ben identificats, justificats i relacionats amb mesures de seguretat adequades**.
+
+!!! tip "Connexió amb la primera observació"
+    Si ja havíeu analitzat aquesta imatge de manera informal, compareu aquella primera observació amb l’informe actual. Una frase com «hi ha cables pel terra» ara s’hauria de poder expressar com una vulnerabilitat, una amenaça, un impacte i una mesura concreta.
 
 [Activitat 2. Auditoria física](activitat-2-auditoria-fisica.md) · [Índex de la UT1](../index.md)

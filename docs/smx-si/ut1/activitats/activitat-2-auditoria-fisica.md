@@ -69,4 +69,4 @@ Entregueu `informe-auditoria.md` i, si l’heu utilitzat, un plànol en PDF o im
 !!! tip "Criteri de qualitat"
     Una observació com «la sala està malament» no és una evidència. Escriviu què heu vist, quin risc genera i quina actuació el redueix.
 
-[Activitat 1. Mapa de riscos](activitat-1-mapa-riscos.md) · [Activitat 3. Taller de SAI](activitat-3-taller-sai.md)
+[Activitat 1. Informe d’anàlisi de riscos](activitat-1-mapa-riscos.md) · [Activitat 3. Taller de SAI](activitat-3-taller-sai.md)

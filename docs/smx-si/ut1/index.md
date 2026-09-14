@@ -27,7 +27,7 @@ En acabar hauràs de poder analitzar un entorn, prioritzar riscos i explicar per
 
 | Sessió | Treball principal | Evidència |
 | ---: | --- | --- |
-| 1 | Informació, actius, amenaces, vulnerabilitats i risc | Mapa inicial de riscos |
+| 1 | Informació, actius, amenaces, vulnerabilitats i risc | Informe d’anàlisi de riscos |
 | 2 | Seguretat física/lògica i priorització de mesures | Matriu de mesures |
 | 3 | Auditoria de l’aula: ubicació, ambient i cablejat | Checklist |
 | 4 | Protecció física i redacció de l’informe | Informe d’auditoria |
@@ -41,7 +41,7 @@ La distribució concreta pot adaptar-se al calendari del centre. Les 14 hores s�
 
 | Activitat | Què fareu? | Organització |
 | --- | --- | --- |
-| [1. Mapa de riscos](activitats/activitat-1-mapa-riscos.md) | Analitzar una oficina amb vulnerabilitats i prioritzar actuacions. | Parelles · 1 h 30 min |
+| [1. Informe d’anàlisi de riscos](activitats/activitat-1-mapa-riscos.md) | Analitzar una sala de servidors, valorar riscos i proposar mesures. | Individual o parelles · 1 h 30 min |
 | [2. Auditoria física de l’aula](activitats/activitat-2-auditoria-fisica.md) | Inspeccionar un espai autoritzat i convertir les observacions en un informe. | Equips · 4 h |
 | [3. Taller de SAI](activitats/activitat-3-taller-sai.md) | Estimar càrrega, seleccionar connexions i verificar una resposta davant d’un tall. | Parelles · 2 h |
 | [4. Pla de la microempresa](activitats/activitat-4-pla-microempresa.md) | Integrar riscos, protecció, SAI i control d’accés en un únic pla. | Equips · 4 h |
