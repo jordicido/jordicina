@@ -4,7 +4,7 @@ hide:
 ---
 # Recursos
 
-Els enllaços de descàrrega s'afegiran només quan estiguen disponibles i siguen fonts oficials. Consulta les instruccions de cada pràctica abans d'instal·lar cap programa.
+Els enllaços de descàrrega s'afegiran només quan estiguen disponibles i siguen fonts oficials. Consulta les instruccions de cada laboratori abans d'instal·lar cap programa.
 
 ## Eines i programari
 
@@ -16,7 +16,7 @@ Els enllaços de descàrrega s'afegiran només quan estiguen disponibles i sigue
 
 ## Màquines virtuals i contenidors
 
-Espai per a les màquines virtuals, imatges i fitxers de Compose autoritzats per al mòdul. La configuració concreta s'indicarà en cada pràctica.
+Espai per a les màquines virtuals, imatges i fitxers de Compose autoritzats per al mòdul. La configuració concreta s'indicarà en cada laboratori.
 
 ## Servidors web i d'aplicacions
 

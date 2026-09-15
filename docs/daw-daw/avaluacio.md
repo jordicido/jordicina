@@ -17,22 +17,6 @@ hide:
 
 La nota final és la mitjana ponderada dels sis RA. Per superar el mòdul cal obtindre almenys el 50 % i superar tots els RA, d'acord amb la programació didàctica.
 
-## Evidències i instruments
-
-Cada criteri d'avaluació es treballa amb una o més activitats. Es poden utilitzar rúbriques, llistes de comprovació, portafolis, observació directa, proves escrites o pràctiques, pràctiques de taller, autoavaluació i coavaluació.
-
-En les activitats de desplegament es valorarà especialment que:
-
-- el servei funcione i es puga comprovar;
-- la configuració siga reproduïble i segura;
-- les decisions estiguen justificades;
-- la documentació permeta a una altra persona repetir el procés;
-- la resolució d'errors es base en proves i logs.
-
-## UP1 i RA1
-
-La UP1 treballa els criteris RA1.a, RA1.b, RA1.c, RA1.d, RA1.e, RA1.h i RA1.i, d'acord amb la seqüenciació de la programació didàctica. Els criteris RA1.f i RA1.g també poden aportar evidències en el període de formació en empresa, tal com preveu la programació. Les evidències principals són la [Pràctica 1. Disseny de l'arquitectura i pla de desplegament](up1/activitats/activitat-1-arquitectura-desplegament.md), la [Pràctica 2. Instal·lació i configuració d'Apache i Tomcat](up1/activitats/activitat-2-apache-tomcat.md) i la prova individual. La [teoria completa i l'itinerari de la UP1](up1/index.md) inclouen preguntes de comprovació i orientacions per preparar-les.
-
 ## Recuperació
 
 Si no se supera un criteri, el professorat pot proposar una recuperació en el format i la data comunicats prèviament. En la convocatòria ordinària es recuperen els criteris no superats del RA corresponent. Si s'ha perdut l'avaluació contínua, la prova inclou tots els RA. La convocatòria extraordinària inclou els RA no superats, segons la programació.

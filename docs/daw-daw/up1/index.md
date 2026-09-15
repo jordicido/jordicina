@@ -42,18 +42,6 @@ En aquesta UP es treballen especialment els criteris següents:
 5. [Instal·lació i configuració d'Apache](05-servidor-web-apache.md)
 6. [Servidors d'aplicacions i Apache Tomcat](06-servidor-aplicacions-tomcat.md)
 
-## Activitats avaluables i prova individual
-
-La UP1 combina dues pràctiques avaluables amb una prova individual. Les pràctiques permeten obtindre evidències aplicades i la prova comprova que cada alumne entén i pot explicar les decisions i els serveis treballats.
-
-| Instrument | Producte | Criteris principals |
-| --- | --- | --- |
-| [Pràctica 1. Disseny de l'arquitectura i pla de desplegament](activitats/activitat-1-arquitectura-desplegament.md) | Informe amb components, diagrama, recursos, entorns, seguretat, proves, monitorització i rollback. | RA1.a, RA1.g, RA1.h |
-| [Pràctica 2. Instal·lació i configuració d'Apache i Tomcat](activitats/activitat-2-apache-tomcat.md) | Informe amb instal·lació, configuració, proves, logs i diagnòstic d'Apache i Tomcat. | RA1.c, RA1.d |
-| Prova individual | Respostes i explicació oral o pràctica dels conceptes i procediments de la UP1. | RA1.a, RA1.b, RA1.g, RA1.h |
-
-La [Pràctica 1](activitats/activitat-1-arquitectura-desplegament.md) es pot preparar després dels blocs 1–4. La [Pràctica 2](activitats/activitat-2-apache-tomcat.md) utilitza especialment els blocs 5 i 6. No cal convertir cada apartat teòric en un lliurament independent.
-
 ## El cas conductor: DAWShop
 
 Al llarg de la unitat utilitzarem una aplicació fictícia, **DAWShop**, per relacionar els conceptes.

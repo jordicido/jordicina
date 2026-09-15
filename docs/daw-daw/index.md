@@ -11,7 +11,7 @@ hide:
   <div class="module-meta">
     <div><strong>Durada</strong><span>100 hores · 18 sessions planificades</span></div>
     <div><strong>Treballarem</strong><span>Arquitectures, servidors i serveis</span></div>
-    <div><strong>Materials</strong><span>Apunts, activitats i recursos de consulta</span></div>
+    <div><strong>Materials</strong><span>Apunts i recursos de consulta</span></div>
   </div>
 </section>
 

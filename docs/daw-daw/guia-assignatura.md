@@ -33,25 +33,25 @@ El mòdul s'organitza en sis unitats de programació. La **UP1** és la porta d'
 | [UP4](up4-transferencia-arxius.md) | Servidors de transferència d'arxius | 14 | 3 | 2n trimestre |
 | [UP5](up5-serveis-xarxa.md) | Serveis de xarxa implicats en el desplegament | 11 | 2 | 2n trimestre |
 
-El calendari detallat de les [18 sessions](calendaritzacio.md) assumeix dues hores per sessió i reserva temps per a una evidència pràctica de cada UP.
+El calendari detallat de les [18 sessions](calendaritzacio.md) assumeix dues hores per sessió i distribueix el treball de cada UP.
 
 Les 73 hores del centre es complementen amb 27 hores de formació en empresa. L'ordre de les UP segueix la programació aportada, que situa la UP6 abans de la UP4 i la UP5.
 
 ## 4. Materials i programes necessaris
 
-Cal disposar d'un ordinador amb connexió a Internet, navegador, terminal, un entorn Linux o una màquina virtual, Docker o una eina equivalent de contenidors, Git i un editor de text. Les eines concretes i les versions es fixaran en cada pràctica.
+Cal disposar d'un ordinador amb connexió a Internet, navegador, terminal, un entorn Linux o una màquina virtual, Docker o una eina equivalent de contenidors, Git i un editor de text. Les eines concretes i les versions es fixaran en cada bloc de treball.
 
-## 5. Funcionament i entregues
+## 5. Funcionament i documentació
 
-Consulta la unitat abans de cada sessió i conserva les evidències: fitxers de configuració, ordres, captures, logs, proves i conclusions. Cada lliurament ha d'incloure:
+Consulta la unitat abans de cada sessió i conserva les notes del treball: fitxers de configuració, ordres, captures, logs, proves i conclusions.
+
+En els laboratoris, documenta:
 
 - objectiu i requisits;
 - esquema o diagrama de l'arquitectura;
 - procediment reproduïble;
 - proves de funcionament i incidències;
 - conclusions i possibles millores.
-
-El canal, el format i la data exactes de cada entrega quedaran indicats en Aules o en les instruccions del professorat.
 
 ## 6. Normes bàsiques
 

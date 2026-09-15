@@ -40,7 +40,7 @@ La [calendarització de les 18 sessions](calendaritzacio.md) adapta aquesta càr
 
 ## Metodologia
 
-Treballarem amb classes teòriques orientades a la pràctica, pràctiques individuals i col·lectives, informes, activitats d'ampliació, vídeos i aprenentatge basat en problemes. Cada desplegament haurà d'incloure proves de funcionament i documentació reproduïble.
+Treballarem amb classes teòriques orientades a la pràctica, laboratoris individuals i col·lectius, informes, tasques d'ampliació, vídeos i aprenentatge basat en problemes. Cada desplegament haurà d'incloure proves de funcionament i documentació reproduïble.
 
 ## Formació en empresa
 
