@@ -2,27 +2,49 @@
 hide:
   - navigation
 ---
-# Activitat 1. Webmail de l'empresa
+# Activitat 1. Instal·lació i configuració de Roundcube
 
-## Situació professional
+## Finalitat
 
-L'empresa disposa d'un servidor de correu preparat, però necessita una interfície web perquè els usuaris puguen consultar i enviar missatges des del navegador. El teu encàrrec és desplegar **Roundcube**, integrar-lo amb el servidor de correu i comprovar que el servei funciona.
+En aquesta activitat instal·larem una aplicació web per consultar i enviar correu electrònic des del navegador.
 
-El servidor de correu serà proporcionat i estarà preparat pel professorat. No cal configurar Postfix, Dovecot, DNS ni altres serveis de correu des de zero: en aquesta activitat treballarem l'aplicació web i la seua integració.
+Utilitzarem tres elements:
 
-## Objectiu
+| Element | Funció |
+|---|---|
+| **Ethereal Email** | Ens proporciona un compte i un servidor de correu de proves. |
+| **Roundcube** | És l'aplicació web des de la qual consultarem i enviarem correus. |
+| **Docker Desktop** | Ens permet instal·lar i executar Roundcube fàcilment en Windows. |
 
-Desplegar i configurar un webmail, gestionar un compte d'usuari i verificar l'accés, l'enviament i la recepció de correu.
+L'arquitectura que muntarem serà aquesta:
 
-En finalitzar l'activitat hauràs de ser capaç de:
+```text
+                      NAVEGADOR
+                         │
+                         │ HTTP
+                         ▼
+                  ┌──────────────┐
+                  │  Roundcube   │
+                  │   Docker     │
+                  └──────┬───────┘
+                         │
+              ┌──────────┴──────────┐
+              │                     │
+            IMAP                   SMTP
+              │                     │
+              ▼                     ▼
+   imap.ethereal.email    smtp.ethereal.email
+              │                     │
+              └──────────┬──────────┘
+                         ▼
+                   Ethereal Email
+```
 
-- diferenciar un client de correu d'escriptori d'un webmail;
-- explicar la funció bàsica d'IMAP i SMTP;
-- desplegar una aplicació web de correu;
-- configurar la connexió amb els serveis IMAP i SMTP;
-- gestionar la identitat i el compte d'un usuari;
-- comprovar el funcionament mitjançant proves i evidències;
-- diagnosticar una incidència senzilla de configuració.
+És important entendre una idea abans de començar:
+
+> **Roundcube no és el servidor de correu.**
+
+Roundcube és només l'aplicació web que utilitzarem per comunicar-nos amb un servidor de correu.
 
 ## Criteris d'avaluació treballats
 
@@ -35,175 +57,710 @@ En finalitzar l'activitat hauràs de ser capaç de:
 | **RA5.e** | Verificar l'accés al correu electrònic. | 20 % |
 |  | **Total de l'activitat** | **80 %** |
 
-## Materials i dades de partida
+## 1. Comprovar que Docker funciona
 
-El professorat proporcionarà:
+### Què has de fer
 
-- l'entorn de pràctiques o servidor web on desplegar Roundcube;
-- l'adreça del servidor de correu;
-- les dades dels serveis IMAP i SMTP;
-- un compte de proves per a cada alumne o parella;
-- les instruccions d'accés a l'entorn.
+Docker Desktop ja ha d'estar instal·lat en l'ordinador.
 
-Exemple de configuració:
+1. Obri **Docker Desktop** i espera que indique que Docker està funcionant.
+2. Obri **PowerShell**.
+3. Executa:
+
+```powershell
+docker --version
+```
+
+Hauries de veure alguna cosa semblant a:
 
 ```text
-IMAP: mail.empresa.local
-Port: 993
-TLS: Sí
-
-SMTP: mail.empresa.local
-Port: 587
-TLS: Sí
+Docker version 28.x.x
 ```
 
-No publiques contrasenyes ni altres credencials en el lliurament.
+4. Comprova també Docker Compose:
 
-## Tasca
-
-### 1. Comparació inicial
-
-Abans de començar, respon breument:
-
-1. Quina diferència hi ha entre Thunderbird i Roundcube?
-2. Quin programa actua com a client en cada cas?
-3. Quin protocol s'utilitza habitualment per enviar correu?
-4. Quin protocol permet consultar i gestionar la bústia del servidor?
-5. Quins avantatges aporta accedir al correu des d'un navegador?
-
-Compara, com a mínim, aquestes aplicacions:
-
-| Aplicació | Tipus | Accés principal | Servei amb què treballa |
-|---|---|---|---|
-| Thunderbird | Escriptori | Programa instal·lat | Servidor de correu |
-| Gmail o Outlook Web | Web | Navegador | Servei de correu |
-| Roundcube | Web | Navegador | Servidor IMAP i SMTP |
-
-### 2. Desplegament de Roundcube
-
-1. Accedeix a l'entorn de pràctiques.
-2. Desplega Roundcube seguint les indicacions del professorat.
-3. Comprova que l'aplicació web s'inicia sense errors.
-4. Obri l'adreça de Roundcube des del navegador.
-5. Anota l'adreça utilitzada i la versió de l'aplicació, si és visible.
-
-No cal documentar cada ordre d'instal·lació. Cal demostrar que l'aplicació queda accessible i operativa.
-
-### 3. Configuració dels serveis
-
-Configura Roundcube perquè utilitze les dades proporcionades:
-
-- servidor IMAP;
-- port IMAP;
-- xifratge o TLS;
-- servidor SMTP;
-- port SMTP;
-- autenticació del compte.
-
-Recorda que Roundcube és el client web. El servidor de correu continua sent el responsable de les bústies i dels serveis de missatgeria.
-
-### 4. Compte i identitat
-
-Accedeix amb el compte de proves i configura:
-
-- el nom que es mostrarà als destinataris;
-- l'adreça de correu;
-- una signatura professional breu.
-
-No inclogues la contrasenya en cap captura.
-
-### 5. Proves de funcionament
-
-Realitza aquestes proves:
-
-1. Inicia sessió amb el compte proporcionat.
-2. Envia un missatge a un company o al compte indicat pel professorat.
-3. Comprova que el destinatari rep el missatge.
-4. Respon el missatge rebut.
-5. Envia un fitxer adjunt de prova que no continga dades personals.
-6. Comprova que pots consultar, moure i marcar missatges.
-
-Registra el resultat de cada prova:
-
-| Prova | Resultat | Observacions |
-|---|---|---|
-| Accés i inici de sessió | Correcte / Incorrecte |  |
-| Enviament | Correcte / Incorrecte |  |
-| Recepció | Correcte / Incorrecte |  |
-| Resposta | Correcte / Incorrecte |  |
-| Fitxer adjunt | Correcte / Incorrecte |  |
-
-### 6. Diagnòstic d'una incidència
-
-El professorat et proporcionarà una configuració amb una dada incorrecta. Pot ser, per exemple:
-
-- un port IMAP o SMTP incorrecte;
-- el servidor SMTP incorrecte;
-- el TLS desactivat o mal seleccionat;
-- un usuari incorrecte.
-
-Localitza el problema a partir dels símptomes, corregeix-lo i explica quina prova confirma la solució. No canvies diverses dades alhora sense justificar-ho.
-
-Pots seguir aquest esquema:
-
-```mermaid
-flowchart TD
-    A[Webmail no funciona] --> B{Podem obrir la pàgina?}
-    B -- No --> C[Revisar servidor web i adreça]
-    B -- Sí --> D{Podem iniciar sessió?}
-    D -- No --> E[Revisar compte i IMAP]
-    D -- Sí --> F{Podem rebre?}
-    F -- No --> G[Revisar IMAP]
-    F -- Sí --> H{Podem enviar?}
-    H -- No --> I[Revisar SMTP]
-    H -- Sí --> J[Servei verificat]
+```powershell
+docker compose version
 ```
 
-## Comprovació final
+Si les dues ordres funcionen, pots continuar.
 
-- [ ] He comparat una aplicació web i una d'escriptori.
-- [ ] Roundcube és accessible des del navegador.
-- [ ] La connexió IMAP està configurada.
-- [ ] La connexió SMTP està configurada.
-- [ ] He accedit amb el compte proporcionat.
-- [ ] He configurat la identitat i la signatura.
-- [ ] He enviat i rebut un missatge.
-- [ ] He respost un missatge.
-- [ ] He comprovat un fitxer adjunt.
-- [ ] He resolt una incidència de configuració.
-- [ ] Les evidències no contenen contrasenyes ni dades sensibles.
+### Per què ho fem?
 
-## Lliurament
+Docker serà l'eina que utilitzarem per executar Roundcube.
 
-Entrega un document breu, preferiblement en PDF, amb:
+No instal·larem Roundcube directament sobre Windows. Roundcube s'executarà dins d'un **contenidor Docker**.
 
-1. la resposta de la comparació inicial;
-2. una captura de Roundcube accessible;
-3. una captura de la configuració IMAP i SMTP sense credencials;
-4. una captura del compte o la identitat configurada, sense contrasenya;
-5. una evidència de l'enviament i la recepció;
-6. la taula de proves completada;
-7. la incidència detectada, la solució i la prova final.
+### Què has de comprovar?
 
-Cada captura ha d'anar acompanyada d'una frase que indique què acredita. No cal elaborar una memòria llarga ni incloure captures de cada pas.
+- Docker Desktop indica que està en funcionament.
+- `docker --version` mostra una versió.
+- `docker compose version` mostra una versió.
+
+## 2. Crear un compte de correu de proves
+
+### Què has de fer
+
+1. Accedeix a **Ethereal Email** des del navegador.
+2. Crea un nou compte de prova.
+3. Guarda el compte i la contrasenya que genere Ethereal.
+
+Ethereal mostrarà una informació semblant a aquesta:
+
+```text
+Usuari:
+xxxxxxxx@ethereal.email
+
+Contrasenya:
+xxxxxxxx
+```
+
+> No mostres la contrasenya en captures de pantalla ni la publiques en cap repositori.
+
+Utilitzarem aquests servidors:
+
+| Servei | Servidor | Port | Seguretat |
+|---|---|---:|---|
+| IMAP | `imap.ethereal.email` | 993 | TLS |
+| SMTP | `smtp.ethereal.email` | 587 | STARTTLS |
+
+### Per què ho fem?
+
+Ethereal ens proporciona un servidor de proves. Així podem configurar Roundcube i comprovar l'enviament sense enviar missatges reals a persones externes.
+
+### Què has de comprovar?
+
+Recorda la funció de cada servei:
+
+```text
+IMAP
+ ↓
+Consultar el correu
+Llegir missatges
+Veure carpetes
+
+SMTP
+ ↓
+Enviar correus
+```
+
+Per tant:
+
+```text
+Roundcube ─── IMAP ───> consulta correus
+
+Roundcube ─── SMTP ───> envia correus
+```
+
+## 3. Crear la carpeta de treball
+
+### Què has de fer
+
+Obri PowerShell i executa:
+
+```powershell
+mkdir roundcube-smx
+```
+
+Entra dins de la carpeta:
+
+```powershell
+cd roundcube-smx
+```
+
+Comprova on estàs:
+
+```powershell
+pwd
+```
+
+Hauries de veure una ruta semblant a:
+
+```text
+C:\Users\alumne\roundcube-smx
+```
+
+### Per què ho fem?
+
+La carpeta contindrà el fitxer de configuració de Docker Compose i les dades de la pràctica.
+
+### Què has de comprovar?
+
+La ruta actual acaba en `roundcube-smx`.
+
+## 4. Crear el fitxer de Docker Compose
+
+### Què has de fer
+
+Dins de la carpeta de treball, crea el fitxer:
+
+```powershell
+New-Item docker-compose.yml -ItemType File
+```
+
+Obri'l amb Visual Studio Code:
+
+```powershell
+code docker-compose.yml
+```
+
+Si aquesta ordre no funciona, pots utilitzar:
+
+```powershell
+notepad docker-compose.yml
+```
+
+### Per què ho fem?
+
+El fitxer indicarà a Docker quina aplicació ha d'executar, quin port exposarà i a quins serveis de correu s'ha de connectar.
+
+### Què has de comprovar?
+
+El fitxer es diu exactament:
+
+```text
+docker-compose.yml
+```
+
+No ha de ser `docker-compose.yml.txt`.
+
+## 5. Escriure la configuració de Roundcube
+
+### Què has de fer
+
+Copia aquest contingut dins de `docker-compose.yml`:
+
+```yaml
+services:
+
+  roundcube:
+
+    image: roundcube/roundcubemail:latest
+
+    ports:
+      - "8080:80"
+
+    environment:
+
+      ROUNDCUBEMAIL_DB_TYPE: sqlite
+
+      ROUNDCUBEMAIL_DEFAULT_HOST: ssl://imap.ethereal.email
+      ROUNDCUBEMAIL_DEFAULT_PORT: 993
+
+      ROUNDCUBEMAIL_SMTP_SERVER: tls://smtp.ethereal.email
+      ROUNDCUBEMAIL_SMTP_PORT: 587
+
+    volumes:
+      - roundcube-db:/var/roundcube/db
+
+volumes:
+  roundcube-db:
+```
+
+**No executes encara Docker.** Primer entendrem què significa cada part.
+
+### Què has de comprovar?
+
+- El fitxer conté un servei anomenat `roundcube`.
+- El port publicat és `8080:80`.
+- El servidor IMAP és `imap.ethereal.email` i el port és `993`.
+- El servidor SMTP és `smtp.ethereal.email` i el port és `587`.
+- El fitxer no conté cap contrasenya.
+
+## 6. Entendre el fitxer `docker-compose.yml`
+
+### La imatge
+
+```yaml
+image: roundcube/roundcubemail:latest
+```
+
+Indica a Docker quina aplicació volem utilitzar. En aquest cas, Roundcube. Docker descarregarà la imatge automàticament.
+
+### Els ports
+
+```yaml
+ports:
+  - "8080:80"
+```
+
+Roundcube funciona dins del contenidor en el port `80`. Nosaltres podrem accedir-hi des de Windows mitjançant el port `8080`:
+
+```text
+Windows                     Contenidor
+
+localhost:8080  ──────────>  port 80
+```
+
+Per això després entrarem en:
+
+```text
+http://localhost:8080
+```
+
+### La base de dades
+
+```yaml
+ROUNDCUBEMAIL_DB_TYPE: sqlite
+```
+
+Roundcube necessita guardar determinada informació. Utilitzarem **SQLite** perquè és una base de dades senzilla i no necessitem instal·lar MySQL o MariaDB.
+
+### Per què ho fem?
+
+Llegir el fitxer abans d'executar-lo ajuda a relacionar cada paràmetre amb la funció que tindrà en el servei.
+
+## 7. Configuració IMAP
+
+En el fitxer apareixen aquestes línies:
+
+```yaml
+ROUNDCUBEMAIL_DEFAULT_HOST: ssl://imap.ethereal.email
+ROUNDCUBEMAIL_DEFAULT_PORT: 993
+```
+
+### Què has de fer?
+
+Localitza les dues línies i identifica:
+
+- el servidor IMAP;
+- el port;
+- el tipus de connexió segura.
+
+### Per què ho fem?
+
+Aquesta configuració indica a Roundcube on ha de connectar-se quan un usuari vulga consultar el correu.
+
+```text
+IMAP = llegir / consultar correu
+```
+
+Per això `DEFAULT_HOST` i `DEFAULT_PORT` fan referència al servidor IMAP.
+
+## 8. Configuració SMTP
+
+En el fitxer també tenim:
+
+```yaml
+ROUNDCUBEMAIL_SMTP_SERVER: tls://smtp.ethereal.email
+ROUNDCUBEMAIL_SMTP_PORT: 587
+```
+
+### Què has de fer?
+
+Localitza les dues línies i identifica:
+
+- el servidor SMTP;
+- el port;
+- el tipus de connexió segura.
+
+### Per què ho fem?
+
+Aquesta configuració s'utilitza per **enviar correus**.
+
+```text
+SMTP = enviar correu
+```
+
+Per tant:
+
+```text
+                        Roundcube
+
+                 ┌─────────┴─────────┐
+                 │                   │
+               IMAP                SMTP
+                 │                   │
+                 ▼                   ▼
+              llegir               enviar
+              correu               correu
+
+          imap.ethereal         smtp.ethereal
+             :993                  :587
+```
+
+## 9. Guardar i revisar el fitxer
+
+### Què has de fer?
+
+1. Guarda el fitxer `docker-compose.yml`.
+2. Torna a PowerShell.
+3. Executa:
+
+```powershell
+dir
+```
+
+### Què has de comprovar?
+
+La llista de fitxers ha de mostrar `docker-compose.yml` i no `docker-compose.yml.txt`.
+
+## 10. Desplegar Roundcube
+
+### Què has de fer?
+
+Executa:
+
+```powershell
+docker compose up -d
+```
+
+La primera vegada Docker haurà de descarregar la imatge de Roundcube i pot tardar uns minuts.
+
+Quan acabe, comprova l'estat:
+
+```powershell
+docker compose ps
+```
+
+També pots entrar en **Docker Desktop → Containers** i comprovar que apareix el contenidor.
+
+### Per què ho fem?
+
+Hem passat de:
+
+```text
+Windows sense Roundcube
+```
+
+a:
+
+```text
+Windows
+   │
+Docker Desktop
+   │
+Contenidor
+   │
+Roundcube
+```
+
+### Què has de comprovar?
+
+- La imatge s'ha descarregat.
+- El contenidor apareix en execució.
+- `docker compose ps` mostra el servei actiu.
+
+## 11. Accedir a Roundcube
+
+### Què has de fer?
+
+Obri el navegador i escriu:
+
+```text
+http://localhost:8080
+```
+
+### Què has de comprovar?
+
+Hauries de veure la pantalla d'inici de sessió de Roundcube.
+
+Si no apareix, comprova primer:
+
+```powershell
+docker compose ps
+```
+
+## 12. Iniciar sessió
+
+### Què has de fer?
+
+Utilitza les credencials que t'ha proporcionat Ethereal:
+
+```text
+Usuari:
+xxxxxx@ethereal.email
+
+Contrasenya:
+xxxxxxxx
+```
+
+Prem **Login / Iniciar sessió**.
+
+### Per què ho fem?
+
+Si pots entrar en Roundcube, significa que la connexió IMAP funciona:
+
+```text
+Roundcube
+    │
+    │ IMAP
+    ▼
+imap.ethereal.email
+    │
+    ▼
+Compte correcte
+```
+
+## 13. Configurar la identitat
+
+### Què has de fer?
+
+Una vegada dins de Roundcube, entra en:
+
+```text
+Settings / Configuració
+```
+
+Busca:
+
+```text
+Identities / Identitats
+```
+
+Configura:
+
+```text
+Nom:
+El teu nom i cognoms
+
+Correu:
+el teu compte d'Ethereal
+
+Organització:
+SMX Solutions
+```
+
+Crea també una signatura, per exemple:
+
+```text
+Nom i cognoms
+Tècnic de sistemes
+SMX Solutions
+```
+
+Guarda els canvis.
+
+### Per què ho fem?
+
+Una identitat és la informació que apareix com a remitent quan envies un correu. No estàs creant un nou compte: el compte continua estant en Ethereal.
+
+## 14. Enviar un correu
+
+### Què has de fer?
+
+1. Prem **Compose / Redactar**.
+2. Utilitza com a destinatari:
+
+```text
+client@example.com
+```
+
+3. Escriu l'assumpte:
+
+```text
+Prova Roundcube
+```
+
+4. Escriu aquest missatge:
+
+```text
+Aquest és un missatge de prova enviat
+des de Roundcube utilitzant Ethereal Email.
+```
+
+5. Afig un fitxer adjunt senzill, com ara `prova.txt`.
+6. Envia el correu.
+
+### Què has de comprovar?
+
+Si Roundcube indica que s'ha enviat correctament, la connexió SMTP està funcionant:
+
+```text
+Roundcube
+    │
+    │ SMTP
+    ▼
+smtp.ethereal.email
+```
+
+## 15. Comprovar el missatge en Ethereal
+
+### Què has de fer?
+
+1. Torna a la web d'Ethereal.
+2. Inicia sessió amb el teu compte.
+3. Busca els missatges enviats o capturats.
+4. Localitza el correu que acabes d'enviar des de Roundcube.
+
+### Per què ho fem?
+
+Ethereal és un servidor de proves. El missatge destinat a `client@example.com` no arribarà realment a eixa adreça: Ethereal el captura perquè puguem comprovar l'enviament.
+
+El procés complet és:
+
+```text
+Navegador
+    │
+    ▼
+Roundcube
+    │
+    │ SMTP
+    ▼
+Ethereal
+    │
+    ▼
+Missatge capturat
+```
+
+## 16. Provocar una avaria
+
+### Què has de fer?
+
+Ara comprovaràs si entens què estàs configurant.
+
+1. Obri de nou `docker-compose.yml`.
+2. Busca:
+
+```yaml
+ROUNDCUBEMAIL_SMTP_PORT: 587
+```
+
+3. Canvia-ho temporalment per:
+
+```yaml
+ROUNDCUBEMAIL_SMTP_PORT: 9999
+```
+
+4. Guarda el fitxer.
+5. Reinicia el servei:
+
+```powershell
+docker compose down
+docker compose up -d
+```
+
+6. Torna a `http://localhost:8080` i inicia sessió.
+7. Comprova què ocorre quan intentes enviar un correu.
+
+### Què has de comprovar?
+
+Hauries d'observar:
+
+```text
+Iniciar sessió     → funciona
+Consultar bústia   → funciona
+Enviar correu      → falla
+```
+
+### Per què ho fem?
+
+Només hem modificat la configuració **SMTP**. IMAP continua configurat correctament:
+
+```text
+IMAP → funciona → podem consultar correu
+
+SMTP → falla → no podem enviar correu
+```
+
+Si un usuari pot llegir els correus però no pot enviar-ne, una de les primeres dades que cal revisar és la configuració SMTP.
+
+## 17. Reparar l'avaria
+
+### Què has de fer?
+
+1. Torna a posar:
+
+```yaml
+ROUNDCUBEMAIL_SMTP_PORT: 587
+```
+
+2. Guarda el fitxer.
+3. Reinicia el servei:
+
+```powershell
+docker compose down
+docker compose up -d
+```
+
+4. Comprova que pots tornar a enviar correus.
+
+### Què has de comprovar?
+
+L'enviament torna a funcionar i el missatge apareix capturat en Ethereal.
+
+## 18. Finalitzar la pràctica
+
+Quan acabes pots detindre Roundcube:
+
+```powershell
+docker compose down
+```
+
+Aquesta ordre elimina el contenidor, però manté les dades guardades en el volum.
+
+Si després tornes a executar:
+
+```powershell
+docker compose up -d
+```
+
+Roundcube tornarà a funcionar.
+
+## Què has d'entendre en acabar?
+
+La idea fonamental de la pràctica és aquesta:
+
+```text
+                     ROUND CUBE
+
+              aplicació web de correu
+
+                      │
+         ┌────────────┴────────────┐
+         │                         │
+       IMAP                       SMTP
+         │                         │
+         ▼                         ▼
+     CONSULTAR                   ENVIAR
+      CORREU                     CORREU
+         │                         │
+      port 993                  port 587
+         │                         │
+         └────────────┬────────────┘
+                      ▼
+
+                    ETHEREAL
+
+               servidor de correu
+```
+
+Roundcube **no crea ni allotja el teu compte de correu**. El compte existeix en **Ethereal**. Roundcube simplement et proporciona una interfície web per utilitzar-lo.
+
+## Evidències a entregar
+
+Entrega només aquestes evidències, sense mostrar contrasenyes:
+
+| Evidència | Què ha de mostrar |
+|---:|---|
+| 1 | Docker Desktop amb Roundcube executant-se. |
+| 2 | Pantalla principal de Roundcube. |
+| 3 | Identitat i signatura configurades. |
+| 4 | Missatge enviat des de Roundcube. |
+| 5 | El mateix missatge capturat en Ethereal. |
+| 6 | Explicació breu de què són IMAP i SMTP. |
+| 7 | Explicació de per què el port `9999` impedeix enviar però permet continuar entrant. |
+| 8 | Fitxer `docker-compose.yml`. |
+
+No cal fer una memòria llarga ni documentar cada clic. Cada captura o evidència ha d'anar acompanyada d'una frase breu que explique què acredita.
+
+## Comprovació conceptual
+
+Respon aquestes quatre preguntes:
+
+1. On està realment el teu compte de correu, en Roundcube o en Ethereal?
+2. Què utilitza Roundcube per consultar el correu?
+3. Què utilitza Roundcube per enviar-lo?
+4. Per què podem entrar en Roundcube quan el port SMTP és incorrecte?
 
 ## Verificació davant del professorat
 
 En una comprovació ràpida hauràs de poder:
 
-- obrir el webmail;
+- obrir Roundcube;
 - explicar la diferència entre IMAP i SMTP;
-- mostrar una prova d'enviament o recepció;
-- indicar quina dada corregiries davant d'un símptoma concret.
-
-## Rúbrica de tres nivells
-
-| Aspecte | Assoliment alt | Assoliment bàsic | En procés |
-|---|---|---|---|
-| Comparació i conceptes | Diferencia clarament aplicacions web i d'escriptori i explica la funció d'IMAP i SMTP. | Identifica els dos tipus d'aplicació i associa els protocols amb alguna ajuda. | Confón client, servidor, IMAP o SMTP. |
-| Desplegament i configuració | Roundcube és accessible i els serveis IMAP/SMTP estan configurats de manera coherent. | L'aplicació funciona, però necessita alguna correcció o explicació addicional. | No aconsegueix fer accessible o configurar l'aplicació. |
-| Compte i identitat | Gestiona el compte, configura la identitat i evita exposar credencials. | Completa la configuració amb errors menors o evidències incompletes. | No pot accedir al compte o mostra dades sensibles. |
-| Verificació i diagnòstic | Prova enviament, recepció i adjunts, interpreta els símptomes i resol la incidència amb criteri. | Fa les proves principals i resol la incidència amb orientació. | No pot verificar el servei ni localitzar el problema. |
-| Evidències | Presenta captures contextualitzades, taula de proves i conclusions breus. | Presenta les evidències essencials amb alguna mancança. | Presenta captures sense context o no lliura les proves necessàries. |
+- mostrar el missatge capturat en Ethereal;
+- explicar què ha passat amb el port 9999;
+- identificar on es troba el compte de correu.
 
 [Següent: agenda web de l'empresa](activitat-2-calendari-web.md) · [Índex de la UP1](../index.md)
