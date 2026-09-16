@@ -1,3 +1,7 @@
+---
+hide:
+  - navigation
+---
 # 1. Aplicacions web i aplicacions d'escriptori
 
 Utilitzem aplicacions informàtiques constantment, però no totes funcionen de la mateixa manera.

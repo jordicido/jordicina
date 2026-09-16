@@ -1,3 +1,7 @@
+---
+hide:
+  - navigation
+---
 # 2. Correu electrònic i webmail
 
 El correu electrònic és un dels serveis més utilitzats d'Internet.

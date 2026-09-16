@@ -1,3 +1,7 @@
+---
+hide:
+  - navigation
+---
 # 3. Calendaris web
 
 Un calendari web és una aplicació que permet gestionar informació relacionada amb el temps i l'organització personal o professional.
