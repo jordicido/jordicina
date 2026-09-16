@@ -727,23 +727,6 @@ La idea fonamental de la pràctica és aquesta:
 
 Roundcube **no crea ni allotja el teu compte de correu**. El compte existeix en **Ethereal**. Roundcube simplement et proporciona una interfície web per utilitzar-lo.
 
-## Evidències a entregar
-
-Entrega només aquestes evidències, sense mostrar contrasenyes:
-
-| Evidència | Què ha de mostrar |
-|---:|---|
-| 1 | Docker Desktop amb Roundcube executant-se. |
-| 2 | Pantalla principal de Roundcube. |
-| 3 | Identitat i signatura configurades. |
-| 4 | Missatge enviat des de Roundcube. |
-| 5 | El mateix missatge capturat en Ethereal. |
-| 6 | Explicació breu de què són IMAP i SMTP. |
-| 7 | Explicació de per què el port `9999` impedeix enviar però permet continuar entrant. |
-| 8 | Fitxer `docker-compose.yml`. |
-
-No cal fer una memòria llarga ni documentar cada clic. Cada captura o evidència ha d'anar acompanyada d'una frase breu que explique què acredita.
-
 ## Comprovació conceptual
 
 Respon aquestes quatre preguntes:
@@ -753,7 +736,7 @@ Respon aquestes quatre preguntes:
 3. Què utilitza Roundcube per enviar-lo?
 4. Per què podem entrar en Roundcube quan el port SMTP és incorrecte?
 
-## Verificació davant del professorat
+## Verificació presencial davant del professorat
 
 En una comprovació ràpida hauràs de poder:
 
