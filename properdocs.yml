@@ -2,12 +2,20 @@ site_name: Recursos didàctics d'FP
 site_url: https://jordicido.github.io/jordicina/
 theme:
   name: materialx
+  features:
+    - content.code.copy
 extra_css:
   - assets/stylesheets/module-sections.css
+extra_javascript:
+  - https://unpkg.com/mermaid@11/dist/mermaid.min.js
 markdown_extensions:
   - admonition
   - pymdownx.details
-  - pymdownx.superfences
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
   - pymdownx.tasklist:
       custom_checkbox: true
 nav:
