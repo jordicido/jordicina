@@ -2,7 +2,7 @@
 hide:
   - navigation
 ---
-# UP1. Gestors de continguts
+# UP4. Gestors de continguts
 
 ## 1. Introducció
 Instal·larem i administrarem un gestor de continguts i en comprovarem el funcionament.

@@ -2,7 +2,7 @@
 hide:
   - navigation
 ---
-# UP4. Aplicacions d’ofimàtica web
+# UP2. Aplicacions d’ofimàtica web
 
 ## 1. Introducció
 Treballarem amb aplicacions d’ofimàtica web i els seus entorns d’ús col·laboratiu.

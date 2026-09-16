@@ -45,11 +45,17 @@ nav:
           - Inici: smx-aw/index.md
           - Guia de l’assignatura: smx-aw/guia-assignatura.md
           - Unitats de programació:
-              - UP1. Gestors de continguts: smx-aw/up1-gestors-continguts.md
-              - UP2. Gestió d’aprenentatge a distància: smx-aw/up2-aprenentatge-distancia.md
+              - UP1. Aplicacions web de correu i calendari:
+                  - Índex i seqüència: smx-aw/up1/index.md
+                  - 1. Aplicacions web i aplicacions d’escriptori: smx-aw/up1/01-aplicacions-web-i-escriptori.md
+                  - 2. Correu electrònic i webmail: smx-aw/up1/02-correu-electronic-i-webmail.md
+                  - 3. Calendaris web: smx-aw/up1/03-calendaris-web.md
+                  - Activitat 1. Webmail de l’empresa: smx-aw/up1/activitats/activitat-1-webmail.md
+                  - Activitat 2. Agenda web de l’empresa: smx-aw/up1/activitats/activitat-2-calendari-web.md
+              - UP2. Aplicacions d’ofimàtica web: smx-aw/up2-ofimatica-web.md
               - UP3. Serveis de gestió d’arxius web: smx-aw/up3-arxius-web.md
-              - UP4. Aplicacions d’ofimàtica web: smx-aw/up4-ofimatica-web.md
-              - UP5. Aplicacions web d’escriptori: smx-aw/up5-escriptori-web.md
+              - UP4. Gestors de continguts: smx-aw/up4-gestors-continguts.md
+              - UP5. Gestió d’aprenentatge a distància: smx-aw/up5-aprenentatge-distancia.md
           - Recursos: smx-aw/recursos.md
           - Avaluació: smx-aw/avaluacio.md
           - Preguntes freqüents: smx-aw/preguntes-frequents.md

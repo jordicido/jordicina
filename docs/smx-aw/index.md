@@ -23,17 +23,17 @@ hide:
 
 <section class="module-highlight">
   <h2>Què estem treballant ara?</h2>
-  <p><strong>UP1 · Gestors de continguts</strong></p>
-  <p>Estem instal·lant i configurant un gestor de continguts, creant usuaris i rols, personalitzant-lo i revisant-ne la seguretat i les còpies. Consulta la <a href="up1-gestors-continguts/">teoria de la UP1</a> i les activitats associades.</p>
+  <p><strong>UP1 · Aplicacions web de correu i calendari</strong></p>
+  <p>Estem configurant aplicacions web d’escriptori relacionades amb el correu i el calendari, integrant-les amb el servidor i gestionant comptes. Consulta la <a href="up1/">teoria de la UP1</a> i les activitats associades.</p>
 </section>
 
 <h2>Unitats de programació</h2>
 <div class="module-grid">
-  <a class="module-card" href="up1-gestors-continguts/"><strong>UP1 · Gestors de continguts</strong><span>Instal·lació, usuaris, personalització, seguretat i còpies.</span></a>
-  <a class="module-card" href="up2-aprenentatge-distancia/"><strong>UP2 · Gestió d’aprenentatge a distància</strong><span>Cursos, perfils, comunicació, còpies i informes.</span></a>
+  <a class="module-card" href="up1/"><strong>UP1 · Aplicacions web de correu i calendari</strong><span>Webmail, calendaris, comptes, sincronització i productivitat.</span></a>
+  <a class="module-card" href="up2-ofimatica-web/"><strong>UP2 · Aplicacions d’ofimàtica web</strong><span>Instal·lació, comptes, seguretat i treball col·laboratiu.</span></a>
   <a class="module-card" href="up3-arxius-web/"><strong>UP3 · Serveis de gestió d’arxius web</strong><span>Usuaris, permisos, recursos compartits i seguretat.</span></a>
-  <a class="module-card" href="up4-ofimatica-web/"><strong>UP4 · Aplicacions d’ofimàtica web</strong><span>Instal·lació, comptes, seguretat i treball col·laboratiu.</span></a>
-  <a class="module-card" href="up5-escriptori-web/"><strong>UP5 · Aplicacions web d’escriptori</strong><span>Correu web, calendari, comptes i configuració.</span></a>
+  <a class="module-card" href="up4-gestors-continguts/"><strong>UP4 · Gestors de continguts</strong><span>Instal·lació, usuaris, personalització, seguretat i còpies.</span></a>
+  <a class="module-card" href="up5-aprenentatge-distancia/"><strong>UP5 · Gestió d’aprenentatge a distància</strong><span>Cursos, perfils, comunicació, còpies i informes.</span></a>
 </div>
 
 <section class="module-highlight">

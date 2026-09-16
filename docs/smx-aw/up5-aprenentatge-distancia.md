@@ -2,7 +2,7 @@
 hide:
   - navigation
 ---
-# UP2. Sistemes de gestió d’aprenentatge a distància
+# UP5. Sistemes de gestió d’aprenentatge a distància
 
 ## 1. Introducció
 Coneixerem la gestió de plataformes d’aprenentatge i la seua estructura de lloc i directoris.

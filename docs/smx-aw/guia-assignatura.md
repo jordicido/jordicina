@@ -27,11 +27,11 @@ El mòdul s’organitza en cinc unitats de programació. Les activitats del cent
 
 | Unitat | Contingut principal | Càrrega al centre | Avaluació |
 | --- | --- | ---: | --- |
-| UP1 | Gestors de continguts | 22 h | 1r trimestre |
-| UP2 | Sistemes de gestió d’aprenentatge a distància | 19 h | 2n trimestre |
+| UP1 | Aplicacions web de correu i calendari | 6 h | 1r trimestre |
+| UP2 | Aplicacions d’ofimàtica web | 6 h | 1r trimestre |
 | UP3 | Serveis de gestió d’arxius web | 20 h | 2n trimestre |
-| UP4 | Aplicacions d’ofimàtica web | 6 h | 1r trimestre |
-| UP5 | Aplicacions web d’escriptori | 6 h | 1r trimestre |
+| UP4 | Gestors de continguts | 22 h | 1r trimestre |
+| UP5 | Sistemes de gestió d’aprenentatge a distància | 19 h | 2n trimestre |
 | **Total al centre** |  | **73 h** |  |
 
 La formació en empresa representa 27 hores addicionals, fins a completar les 100 hores del mòdul.

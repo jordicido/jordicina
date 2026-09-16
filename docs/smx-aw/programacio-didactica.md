@@ -20,11 +20,11 @@ La [programació didàctica completa del curs 2026–2027](programacio-didactica
 
 | UP | Resultat d’aprenentatge | Hores | Pes |
 | --- | --- | ---: | ---: |
-| UP1 | Gestors de continguts · RA1 | 22 | 29 % |
-| UP2 | Sistemes de gestió d’aprenentatge a distància · RA2 | 19 | 26 % |
+| UP1 | Aplicacions web de correu i calendari · RA5 | 6 | 9 % |
+| UP2 | Aplicacions d’ofimàtica web · RA4 | 6 | 9 % |
 | UP3 | Serveis de gestió d’arxius web · RA3 | 20 | 27 % |
-| UP4 | Aplicacions d’ofimàtica web · RA4 | 6 | 9 % |
-| UP5 | Aplicacions web d’escriptori · RA5 | 6 | 9 % |
+| UP4 | Gestors de continguts · RA1 | 22 | 29 % |
+| UP5 | Sistemes de gestió d’aprenentatge a distància · RA2 | 19 | 26 % |
 | **Total** |  | **73** | **100 %** |
 
 La formació en empresa completa les 27 hores restants i inclou criteris d’avaluació observables en l’entorn laboral.
