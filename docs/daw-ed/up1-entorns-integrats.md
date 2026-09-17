@@ -10,7 +10,7 @@ En aquesta unitat instal·larem, configurarem i compararem dos entorns integrats
 
 > **Com podem preparar un entorn de desenvolupament reproduïble que permeta editar, construir i mantindre programes?**
 
-Un IDE reuneix un editor, eines de construcció, depuració, gestió de projectes i extensions en una mateixa interfície. Compararem un entorn lleuger i extensible amb un entorn orientat a projectes Java i a la integració de ferramentes. Per cobrir la construcció de llenguatges diferents utilitzarem Java i Kotlin en IntelliJ IDEA; el projecte principal es mantindrà en Java amb Maven.
+Un IDE reuneix un editor, eines de construcció, depuració, gestió de projectes i extensions en una mateixa interfície. Compararem un entorn lleuger i extensible amb un entorn orientat a projectes Java i a la integració de ferramentes. En les primeres activitats instal·larem i configurarem els entorns; després executarem el mateix projecte Java en tots dos IDE.
 
 ## Dades de la unitat
 
@@ -20,7 +20,7 @@ Un IDE reuneix un editor, eines de construcció, depuració, gestió de projecte
 | Resultat d’aprenentatge | **RA2** |
 | Pes de referència | **15 %** |
 | IDE del laboratori | **Visual Studio Code i IntelliJ IDEA** |
-| Producte final | Informe comparatiu i demostració de construccions reproduïbles |
+| Producte final | Informe de configuració, execució i comparació dels dos IDE |
 | Forma de treball | Individual, parelles i equips de tres |
 
 ## Què aprendràs
@@ -29,8 +29,8 @@ Un IDE reuneix un editor, eines de construcció, depuració, gestió de projecte
 - Afegir, configurar i eliminar mòduls, connectors i extensions.
 - Personalitzar l’editor i automatitzar tasques habituals del projecte.
 - Configurar canals d’actualització i comprovar la compatibilitat abans d’actualitzar.
-- Generar artefactes Java i Kotlin en un mateix IntelliJ IDEA.
-- Construir el mateix projecte Java amb Visual Studio Code i IntelliJ IDEA i comparar el resultat.
+- Relacionar el codi font amb les ferramentes de compilació i l’execució del programa.
+- Executar el mateix projecte Java amb Visual Studio Code i IntelliJ IDEA i comparar l’experiència.
 - Identificar característiques comunes i específiques de diversos entorns.
 - Deixar una guia de reproducció amb versions, ordres, proves i incidències.
 
@@ -56,7 +56,7 @@ Consulta l’[índex de la UP1](up1/index.md) per veure l’ordre recomanat, la 
 | --- | --- |
 | [1. Instal·lació dels IDE](up1/activitats/activitat-1-instal·lacio.md) | Evidències d’instal·lació, extensions, plugins i actualitzacions de VS Code i IntelliJ IDEA. |
 | [2. Posa a punt el teu entorn de desenvolupament](up1/activitats/activitat-2-configuracio.md) | Personalització de VS Code, perfil DAW, automatització, actualitzacions i comparació amb IntelliJ IDEA. |
-| [3. Construcció i comparació](up1/activitats/activitat-3-construccio.md) | Executables/artefactes de diversos llenguatges i el mateix projecte en dos IDE. |
+| [3. Un mateix projecte, dos IDE](up1/activitats/activitat-3-construccio.md) | Execució, canvi mínim i comparació d’un projecte Java en VS Code i IntelliJ IDEA. |
 | [Autoavaluació de la UP1](up1/activitats/autoavaluacio.md) | Qüestionari individual i repte final. |
 
 ## Evidències avaluables
@@ -65,7 +65,7 @@ Consulta l’[índex de la UP1](up1/index.md) per veure l’ordre recomanat, la 
 | --- | --- | --- |
 | 1. Instal·lació dels IDE | PDF amb evidències d’instal·lació, extensions, plugins i actualitzacions | RA2.a, RA2.b, RA2.d |
 | 2. Configuració de l’entorn | Perfil, personalització, automatització, actualització i comparació amb IntelliJ IDEA | RA2.c, RA2.d, RA2.g |
-| 3. Construcció multiplataforma | Registre de comandes, executables, proves i incidències | RA2.e, RA2.f |
+| 3. Un mateix projecte, dos IDE | Execució, comparació i gestió d’una extensió temporal | RA2.b, RA2.f, RA2.g |
 | 4. Informe comparatiu | Matriu de característiques i defensa de la proposta | RA2.g |
 
 ## Resultat d’aprenentatge i criteris

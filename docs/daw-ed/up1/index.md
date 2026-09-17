@@ -20,7 +20,7 @@ hide:
 
 ## Què aprendrem?
 
-En aquesta unitat prepararàs un lloc de treball semblant al que trobaries en un equip de desenvolupament. Entendràs què és un IDE, instal·laràs **Visual Studio Code** i **IntelliJ IDEA**, personalitzaràs l’entorn i aprendràs a localitzar opcions equivalents en aplicacions diferents. Més endavant afegiràs extensions i plugins, i comprovaràs com una mateixa aplicació Java es construeix en dos IDE diferents.
+En aquesta unitat prepararàs un lloc de treball semblant al que trobaries en un equip de desenvolupament. Entendràs què és un IDE, instal·laràs **Visual Studio Code** i **IntelliJ IDEA**, personalitzaràs l’entorn i aprendràs a localitzar opcions equivalents en aplicacions diferents. Finalment obriràs, modificaràs i executaràs el mateix projecte Java en els dos IDE.
 
 L’objectiu professional no és memoritzar on està cada botó. És poder justificar la configuració, repetir-la en un altre equip i aportar proves que el resultat és correcte.
 
@@ -38,22 +38,22 @@ L’objectiu professional no és memoritzar on està cada botó. És poder justi
 
 - [Activitat 1. Instal·lació dels IDE](activitats/activitat-1-instal·lacio.md): instal·lar, ampliar i actualitzar els dos entorns.
 - [Activitat 2. Posa a punt el teu entorn de desenvolupament](activitats/activitat-2-configuracio.md): personalitzar, automatitzar i actualitzar l'entorn.
-- [Activitat 3. Construcció i comparació](activitats/activitat-3-construccio.md): generar artefactes i comparar els IDE.
+- [Activitat 3. Un mateix projecte, dos IDE](activitats/activitat-3-construccio.md): executar, modificar i comparar un projecte Java en els dos entorns.
 - [Autoavaluació de la UP1](activitats/autoavaluacio.md): comprovar conceptes i preparar la defensa tècnica.
 
 ## Seqüència de treball
 
-Primer entendràs què integra un IDE i quines responsabilitats continuen sent del sistema, del JDK o del gestor de dependències. Després instal·laràs les eines i configuraràs un perfil de treball. Finalment construiràs projectes, compararàs resultats i documentaràs les decisions. La seqüència concentra la pràctica en tres lliuraments perquè les evidències siguen manejables dins de les hores disponibles.
+Primer entendràs què integra un IDE i quines responsabilitats continuen sent del sistema, del JDK o del gestor de dependències. Després instal·laràs les eines i configuraràs un perfil de treball. Finalment executaràs el mateix projecte en dos IDE, compararàs els resultats i documentaràs les decisions. La seqüència concentra la pràctica en tres lliuraments perquè les evidències siguen manejables dins de les hores disponibles.
 
 ## Cobertura dels criteris
 
 | Criteri | Teoria | Activitats |
 | --- | --- | --- |
 | RA2.a | [Instal·lació i verificació](02-instal·lacio.md) | [Activitat 1](activitats/activitat-1-instal·lacio.md) |
-| RA2.b | [Mòduls, extensions i plugins](03-moduls.md) | [Activitat 1](activitats/activitat-1-instal·lacio.md) |
+| RA2.b | [Mòduls, extensions i plugins](03-moduls.md) | [Activitat 1](activitats/activitat-1-instal·lacio.md) i [activitat 3](activitats/activitat-3-construccio.md) |
 | RA2.c | [Personalització i automatització](04-personalitzacio-automatitzacio.md) | [Activitat 2](activitats/activitat-2-configuracio.md) |
 | RA2.d | [Actualitzar l’entorn](05-actualitzacions.md) | [Activitat 1](activitats/activitat-1-instal·lacio.md) i [activitat 2](activitats/activitat-2-configuracio.md) |
-| RA2.e | [Del codi font a l’executable](06-executables.md) | [Activitat 3](activitats/activitat-3-construccio.md) |
+| RA2.e | [Del codi font a l’executable](06-executables.md) | — |
 | RA2.f | [Del codi font a l’executable](06-executables.md) | [Activitat 3](activitats/activitat-3-construccio.md) |
 | RA2.g | [Comparació d’entorns de desenvolupament](07-comparacio.md) | [Activitat 2](activitats/activitat-2-configuracio.md) i [activitat 3](activitats/activitat-3-construccio.md) |
 

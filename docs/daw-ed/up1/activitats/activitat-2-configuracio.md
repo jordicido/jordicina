@@ -221,11 +221,11 @@ L'objectiu és comprovar que **IDE diferents solen oferir funcionalitats semblan
 
 # Lliurament
 
-Crea un fitxer anomenat:
+Entrega un document en format PDF anomenat:
 
-`activitat-2.md`
+`activitat-2.pdf`
 
-El document ha de contindre els apartats següents.
+El document PDF ha de contindre els apartats següents.
 
 ## 1. La meua configuració
 
@@ -271,22 +271,6 @@ Inclou **quatre captures de pantalla**:
 
 ---
 
-# Avaluació
-
-L'activitat s'avaluarà mitjançant la següent rúbrica.
-
-| Aspecte | Assoliment alt | Assoliment mitjà | Assoliment baix |
-|---|---|---|---|
-| **Personalització de l'aparença** | Configura correctament tema, icones, font i interfície i les decisions preses són coherents amb un entorn de treball còmode. | Configura la major part dels elements, encara que falta alguna configuració o justificació. | La personalització és mínima, incompleta o no es pot comprovar. |
-| **Configuració de l'editor** | Configura correctament el zoom amb `Ctrl + roda`, l'ajust de línies i les pestanyes, i comprova el seu funcionament. | La major part de les configuracions funcionen, però alguna és incorrecta o no està justificada. | Diverses configuracions no s'han realitzat o no funcionen correctament. |
-| **Automatització de l'entorn** | Configura el desament automàtic i una segona automatització, i explica correctament la utilitat de les dues. | Configura les automatitzacions però alguna explicació és insuficient o alguna configuració no és adequada. | No configura les automatitzacions demanades o no explica la seua utilitat. |
-| **Gestió del perfil DAW** | Crea el perfil, guarda o exporta la configuració i comprova correctament que pot recuperar-la. | Crea el perfil i guarda la configuració, però la comprovació és incompleta. | No crea correctament el perfil o no demostra que la configuració es pot recuperar. |
-| **Configuració de les actualitzacions** | Localitza les opcions d'actualització, configura un comportament adequat i identifica correctament el seu funcionament. | Configura les actualitzacions però no explica clarament el comportament seleccionat. | No localitza o no configura correctament el sistema d'actualització. |
-| **Comparació entre IDE** | Localitza correctament les funcionalitats equivalents en IntelliJ IDEA i identifica semblances en l'organització dels dos entorns. | Localitza la major part de les funcionalitats, encara que hi ha alguna imprecisió. | La comparació està incompleta o no identifica les funcionalitats equivalents. |
-| **Lliurament i evidències** | El document és clar i ordenat, conté totes les evidències demanades i les justificacions són concretes i adequades. | El document permet comprovar el treball, però falta alguna evidència o hi ha justificacions poc clares. | Falten diverses evidències o el document no permet comprovar adequadament el treball realitzat. |
-
----
-
 ## Abans d'entregar
 
 Comprova que:
@@ -303,4 +287,4 @@ Comprova que:
 - [ ] Has comparat algunes d'aquestes opcions amb IntelliJ IDEA.
 - [ ] El document conté les quatre captures de pantalla demanades.
 
-[Anterior: instal·lació dels IDE](activitat-1-instal·lacio.md) · [Següent: construcció i comparació](activitat-3-construccio.md) · [Índex](../index.md)
+[Anterior: instal·lació dels IDE](activitat-1-instal·lacio.md) · [Següent: un mateix projecte, dos IDE](activitat-3-construccio.md) · [Índex](../index.md)
