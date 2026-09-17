@@ -2,53 +2,128 @@
 hide:
   - navigation
 ---
-# 7. Comparació professional d’IDE
+# 7. Comparació d’entorns de desenvolupament
 
-## Introducció
+Comparar IDE no consisteix a comptar botons. Cal relacionar les característiques amb les necessitats del projecte i entendre que una mateixa funcionalitat pot aparéixer en llocs diferents.
 
-Comparar IDE no consisteix a comptar botons. Cal relacionar les característiques amb les necessitats del projecte i aportar una evidència. Un equip Java pot prioritzar refactorització i depuració; un projecte amb diversos llenguatges pot prioritzar extensibilitat i rapidesa d’inici.
+---
 
-![Mapa de comparació dels dos entorns](../../assets/diagrames/ide-comparison.svg)
+## 7.1. Visual Studio Code i IntelliJ IDEA
 
-*Figura. La decisió combina funcionalitat, projecte, automatització, operació i llicència.*
+Visual Studio Code i IntelliJ IDEA poden utilitzar-se per desenvolupar programari, però tenen filosofies diferents.
 
-## Característiques comunes
+### Visual Studio Code
 
-VS Code i IntelliJ IDEA comparteixen funcions essencials: edició amb ressaltat i compleció, navegació, integració amb Git, terminal, configuracions d’execució, diagnòstic, extensions o plugins i integració amb ferramentes de construcció. Per això tots dos poden participar en el cicle de vida d’un projecte Java.
+Visual Studio Code és un editor molt configurable que pot ampliar les seues funcionalitats segons les necessitats del desenvolupador.
 
-## Característiques específiques
+Destaca per:
 
-| Dimensió | VS Code | IntelliJ IDEA |
+- una interfície relativament lleugera;
+- gran capacitat de personalització;
+- compatibilitat amb molts llenguatges;
+- funcionalitats que poden incorporar-se progressivament.
+
+### IntelliJ IDEA
+
+IntelliJ IDEA és un entorn de desenvolupament especialment orientat a projectes de programari i proporciona moltes ferramentes integrades.
+
+Destaca per:
+
+- una integració completa de ferramentes;
+- gestió avançada de projectes;
+- assistència al desenvolupament;
+- moltes funcionalitats disponibles directament des de l’IDE.
+
+| Dimensió | Visual Studio Code | IntelliJ IDEA |
 | --- | --- | --- |
-| Model d’entorn | Nucli menut que s’amplia per extensions. | Plataforma molt integrada amb funcions específiques de llenguatge. |
-| Java | Requereix extensions i un JDK configurat. | Suport Java integrat i anàlisi avançada del projecte. |
-| Personalització | Perfils, `settings.json`, tasques i extensions. | Perfils, inspeccions, estils i configuracions d’execució. |
-| Construcció | Terminal, tasques o integració amb Maven/Gradle. | Finestres i accions integrades amb Maven/Gradle. |
-| Recursos | Pot iniciar ràpidament amb pocs components. | Pot requerir més memòria en projectes grans. |
-| Llicència i cost | Cal distingir la distribució i les extensions. | Les funcions disponibles depenen de l’edició o llicència. |
+| Filosofia | Editor lleuger i extensible. | Entorn integrat orientat a projectes. |
+| Personalització | Perfils, configuració i extensions. | Perfils, preferències i configuració del projecte. |
+| Organització | Carpeta oberta i panells configurables. | Projecte, finestres d’eines i mòduls. |
+| Recursos | Pot iniciar ràpidament amb pocs components. | Pot integrar més funcions des del principi. |
 
-Les diferències poden canviar segons la versió, el sistema operatiu i els plugins instal·lats. Per això l’informe ha d’indicar l’entorn concret de la prova.
+!!! question "Quin és millor?"
+    No existeix un IDE perfecte per a totes les situacions. L’elecció dependrà del llenguatge, del projecte, de les ferramentes necessàries i de les preferències del desenvolupador.
 
-## Matriu de decisió
+---
 
-Una matriu amb una escala acordada ajuda a evitar conclusions basades només en preferències. Per exemple:
+## 7.2. Conceptes comuns, interfícies diferents
 
-| Criteri | Pes decidit per l’equip | Evidència |
-| --- | ---: | --- |
-| Construcció i dependències Java | Alt | Construcció Maven correcta. |
-| Depuració i navegació | Alt | Punt d’interrupció i salt a una classe. |
-| Automatització | Mitjà | Tasca o configuració reproduïble. |
-| Consum de recursos | Mitjà | Observació en el mateix projecte. |
-| Extensions/plugins i manteniment | Mitjà | Llista, versions i actualització. |
-| Llicència i disponibilitat | Alt | Font i modalitat d’ús documentades. |
+Aprendre un IDE **no consisteix a memoritzar la posició dels botons**.
 
-No hi ha una puntuació universal. El valor professional està en justificar els pesos i relacionar la decisió amb el context.
+Les aplicacions evolucionen, les interfícies canvien i cada IDE organitza les seues opcions d’una manera diferent. El més important és reconéixer els conceptes.
+
+```mermaid
+flowchart TB
+    C["Necessitat"]
+
+    C --> A["Canviar l’aparença"]
+    C --> B["Modificar la mida del text"]
+    C --> D["Guardar automàticament"]
+    C --> E["Actualitzar l’IDE"]
+
+    A --> V["VS Code"]
+    A --> I["IntelliJ IDEA"]
+    B --> V
+    B --> I
+    D --> V
+    D --> I
+    E --> V
+    E --> I
+```
+
+Dos IDE poden oferir la mateixa funcionalitat però:
+
+- utilitzar noms diferents;
+- situar-la en menús diferents;
+- oferir opcions diferents.
+
+Per això és important aprendre a **buscar i interpretar configuracions**, no simplement memoritzar passos.
+
+---
+
+## 7.3. La configuració adequada depén del context
+
+No existeix una única configuració correcta per a un IDE. Dos desenvolupadors poden utilitzar configuracions diferents i treballar perfectament.
+
+| Configuració | Desenvolupador A | Desenvolupador B |
+| --- | --- | --- |
+| Tema | Fosc | Clar |
+| Font | 14 px | 16 px |
+| Word Wrap | Activat | Desactivat |
+| Auto Save | Activat | Desactivat |
+| Barra lateral | Esquerra | Dreta |
+
+Les dues configuracions poden ser vàlides. La qüestió important és:
+
+> **Puc explicar per què he configurat així el meu entorn?**
+
+---
+
+## 7.4. Un desenvolupador ha de poder adaptar-se
+
+Durant la vostra carrera professional probablement utilitzareu diferents IDE, llenguatges, sistemes operatius, ferramentes i versions.
+
+Per això l’objectiu no és aprendre una llista de botons de Visual Studio Code, sinó desenvolupar una habilitat més general:
+
+```mermaid
+flowchart LR
+    A["Tinc una necessitat"] --> B["Identifique què vull configurar"]
+    B --> C["Busque l’opció"]
+    C --> D["Interprete les alternatives"]
+    D --> E["Configure"]
+    E --> F["Comprove el resultat"]
+```
+
+Aquest procés es pot aplicar pràcticament a qualsevol entorn de desenvolupament.
 
 ## Resum
 
-Els dos IDE comparteixen el cicle bàsic d’edició, construcció, execució i depuració, però difereixen en el grau d’integració, l’extensibilitat, el consum, les funcions disponibles i la llicència. Una comparació rigorosa necessita versions, proves i criteris explícits.
+VS Code i IntelliJ IDEA comparteixen funcionalitats bàsiques, però difereixen en la seua filosofia i en la manera d’organitzar-les. Una comparació útil parteix d’una necessitat concreta, localitza l’equivalent en cada IDE i comprova el resultat.
+
+!!! success "Idea clau"
+    La capacitat professional no és saber on està cada opció en un programa concret, sinó poder trobar-la i interpretar-la en un entorn nou.
 
 !!! question "Comprovació final"
-    Si els dos IDE generen un JAR funcional, quines altres dades inclouries per decidir quin és més adequat per a un equip? Com a mínim: temps i ordre de construcció, diagnòstics, depuració, consum, extensions/plugins, manteniment i llicència.
+    On buscaries en un IDE que no coneixes una opció per canviar el tema, configurar el desament automàtic o comprovar les actualitzacions? Explica la necessitat, els termes de cerca i com comprovaries el resultat.
 
 [Anterior: executables](06-executables.md) · [Índex de la UP1](index.md)

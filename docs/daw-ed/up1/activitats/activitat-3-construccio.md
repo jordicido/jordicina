@@ -85,4 +85,4 @@ Es valorarà la coherència entre codi, eines i ordres, la construcció real del
 
 Calcula i compara la suma de comprovació dels artefactes Java. Si no coincideix, investiga si la causa és el contingut, la versió de les eines o les metadades de l’empaquetament.
 
-[Anterior: taller de configuració](activitat-2-configuracio.md) · [Autoavaluació](autoavaluacio.md) · [Índex](../index.md)
+[Anterior: posar a punt l'entorn](activitat-2-configuracio.md) · [Autoavaluació](autoavaluacio.md) · [Índex](../index.md)

@@ -45,8 +45,8 @@ Consulta l’[índex de la UP1](up1/index.md) per veure l’ordre recomanat, la 
 | [1. Què és un IDE](up1/01-entorn.md) | Components i diferències entre Visual Studio Code i IntelliJ IDEA. |
 | [2. Instal·lació](up1/02-instal·lacio.md) | JDK, extensions, plugins, versions i instal·lació verificable. |
 | [3. Mòduls i extensions](up1/03-moduls.md) | Catàlegs, dependències, configuració i eliminació segura. |
-| [4. Personalització i automatització](up1/04-personalitzacio-automatitzacio.md) | Perfils, format, tasques, terminals i construccions repetibles. |
-| [5. Actualitzacions](up1/05-actualitzacions.md) | Versions, canals, còpies, compatibilitat i recuperació. |
+| [4. Personalització i automatització](up1/04-personalitzacio-automatitzacio.md) | Aparença, comportament, desament, automatització i perfils. |
+| [5. Actualitzacions](up1/05-actualitzacions.md) | Tipus d’actualització, criteris i comprovacions. |
 | [6. Construcció d’executables](up1/06-executables.md) | Llenguatges, compiladors, intèrprets, paquets i artefactes. |
 | [7. Comparació d’entorns](up1/07-comparacio.md) | Elements comuns, diferències i criteris de selecció. |
 
@@ -55,7 +55,7 @@ Consulta l’[índex de la UP1](up1/index.md) per veure l’ordre recomanat, la 
 | Activitat | Producte |
 | --- | --- |
 | [1. Instal·lació dels IDE](up1/activitats/activitat-1-instal·lacio.md) | Evidències d’instal·lació, extensions, plugins i actualitzacions de VS Code i IntelliJ IDEA. |
-| [2. Taller de mòduls i automatització](up1/activitats/activitat-2-configuracio.md) | Perfil de treball, extensió, tasca automatitzada i registre d’actualització. |
+| [2. Posa a punt el teu entorn de desenvolupament](up1/activitats/activitat-2-configuracio.md) | Personalització de VS Code, perfil DAW, automatització, actualitzacions i comparació amb IntelliJ IDEA. |
 | [3. Construcció i comparació](up1/activitats/activitat-3-construccio.md) | Executables/artefactes de diversos llenguatges i el mateix projecte en dos IDE. |
 | [Autoavaluació de la UP1](up1/activitats/autoavaluacio.md) | Qüestionari individual i repte final. |
 
@@ -64,7 +64,7 @@ Consulta l’[índex de la UP1](up1/index.md) per veure l’ordre recomanat, la 
 | Evidència | Producte | Criteris principals |
 | --- | --- | --- |
 | 1. Instal·lació dels IDE | PDF amb evidències d’instal·lació, extensions, plugins i actualitzacions | RA2.a, RA2.b, RA2.d |
-| 2. Configuració de l’entorn | Perfil, mòduls, personalització, automatització i actualització | RA2.b, RA2.c, RA2.d |
+| 2. Configuració de l’entorn | Perfil, personalització, automatització, actualització i comparació amb IntelliJ IDEA | RA2.c, RA2.d, RA2.g |
 | 3. Construcció multiplataforma | Registre de comandes, executables, proves i incidències | RA2.e, RA2.f |
 | 4. Informe comparatiu | Matriu de característiques i defensa de la proposta | RA2.g |
 

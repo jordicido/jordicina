@@ -183,4 +183,4 @@ Indica breument:
 
 No és necessari incloure captures de cada pas de la instal·lació.
 
-[Següent: taller de configuració](activitat-2-configuracio.md) · [Índex de la UP1](../index.md)
+[Següent: posar a punt l'entorn](activitat-2-configuracio.md) · [Índex de la UP1](../index.md)

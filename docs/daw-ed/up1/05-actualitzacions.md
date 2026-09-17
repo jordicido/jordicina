@@ -2,48 +2,86 @@
 hide:
   - navigation
 ---
-# 5. Actualitzacions i recuperació
+# 5. Actualitzar l’entorn de desenvolupament
 
-## Introducció
+Els IDE són programes que evolucionen constantment.
 
-Actualitzar un IDE pot aportar correccions, compatibilitat i seguretat, però també pot canviar el comportament de plugins, el JDK detectat o les eines de construcció. Per això una actualització és un canvi que cal planificar i verificar, no una acció automàtica sense control.
+Una actualització pot incorporar:
 
-## Canals i política d’actualització
+- correccions d’errors;
+- millores de rendiment;
+- noves funcionalitats;
+- millores de compatibilitat;
+- correccions de seguretat.
 
-Els IDE solen oferir canals estables i, en alguns casos, canals previs o de proves. Per a un entorn de classe i per a un projecte d’empresa, el canal estable és el punt de partida habitual. La política ha d’indicar qui pot actualitzar, quan es prova i com es torna a l’estat anterior.
+```mermaid
+flowchart LR
+    A["Versió actual"] --> B["Comprovar actualitzacions"]
+    B --> C{"Nova versió?"}
 
-| Abans | Durant | Després |
-| --- | --- | --- |
-| Anotar versions d’IDE, plugins, JDK i gestor. | Aplicar el canvi des de la font autoritzada. | Obrir el projecte i executar la construcció. |
-| Revisar compatibilitat i incidències conegudes. | No interrompre el procés ni tancar l’IDE a la força. | Comparar diagnòstics, proves i temps de construcció. |
-| Fer còpia de la configuració i del projecte. | Registrar versió anterior i nova. | Documentar resultat i pla de retorn. |
-
-## Què s’ha de conservar?
-
-La recuperació és més senzilla si es conserven el projecte en Git, el fitxer de dependències, les configuracions compartibles, les ordres de construcció i una llista de versions. No cal copiar totes les cachés de l’IDE. Els fitxers amb secrets s’han de deixar fora del repositori.
-
-Un inventari mínim pot ser:
-
-```text
-IDE: IntelliJ IDEA <versió>
-Plugin Kotlin: <versió>
-JDK: <versió i distribució>
-Maven: <versió>
-Projecte: commit <identificador>
-Prova: mvn clean package -> correcta
+    C -->|No| D["Continuar"]
+    C -->|Sí| E["Descarregar"]
+    E --> F["Instal·lar"]
+    F --> G["Nova versió"]
 ```
 
-Els marcadors s’han de substituir per dades reals en el registre de l’activitat.
+Actualitzar és una acció habitual, però convé entendre quin comportament té configurat l’IDE i triar una opció adequada al nostre context.
 
-## Incidència i retorn
+---
 
-Si després d’actualitzar falla una construcció, separa les hipòtesis: canvi del JDK, plugin incompatible, dependència no resolta o configuració local. Guarda el missatge d’error, identifica l’últim canvi i prova una recuperació controlada: desactivar el plugin actualitzat, seleccionar el JDK anterior o tornar a la versió autoritzada per l’entorn de laboratori. No elimines el projecte per ocultar la incidència.
+## 5.1. Com es poden gestionar?
+
+Segons l’aplicació podem trobar diferents comportaments.
+
+### Actualització automàtica
+
+L’aplicació gestiona gran part del procés automàticament.
+
+**Avantatge:** mantenim l’entorn al dia sense haver de comprovar-lo manualment.
+
+**Consideració:** una nova versió pot canviar el comportament de l’entorn quan encara no l’hem provada.
+
+### Avís d’actualització
+
+L’IDE detecta una nova versió i informa l’usuari.
+
+**Avantatge:** podem decidir quan instal·lar-la.
+
+**Consideració:** si ignorem els avisos, podem quedar-nos amb una versió antiga.
+
+### Actualització manual
+
+L’usuari decideix quan comprovar i instal·lar les actualitzacions.
+
+**Avantatge:** permet controlar completament el moment del canvi.
+
+**Consideració:** requereix recordar les comprovacions i actuar amb regularitat.
+
+!!! tip
+    El més important no és memoritzar el nom exacte de cada opció, sinó saber **localitzar i interpretar el sistema d’actualitzacions de l’entorn que utilitzem**.
+
+---
+
+## 5.2. Una actualització responsable
+
+En un entorn professional, abans d’actualitzar convé:
+
+1. comprovar quina versió tenim instal·lada;
+2. consultar què canvia en la nova versió;
+3. revisar si és compatible amb el sistema i el projecte;
+4. conservar la configuració o el perfil de treball;
+5. provar que l’IDE continua funcionant després del canvi.
+
+No cal actualitzar totes les ferramentes al mateix temps. Si canviem una peça cada vegada, serà més fàcil identificar l’origen d’una incidència.
 
 !!! warning "No confongues actualitzar i arreglar"
-    Actualitzar diverses peces alhora dificulta saber què ha provocat una fallada. En una pràctica, canvia una peça, registra-la i executa la mateixa prova abans de continuar.
+    Una actualització no ha de servir per ocultar un problema. Si alguna cosa deixa de funcionar, conserva el missatge d’error i identifica quin canvi l’ha provocat abans de modificar més opcions.
 
 ## Resum
 
-Una política d’actualització necessita canal, compatibilitat, còpia, registre, prova i pla de retorn. El criteri de l’èxit és que el projecte continue construint-se i que l’equip puga explicar què ha canviat.
+Les actualitzacions poden millorar la seguretat, el rendiment i la compatibilitat de l’IDE. Cal conéixer si l’entorn actualitza automàticament, avisa o espera una acció manual, i comprovar que el nostre entorn continua funcionant després del canvi.
+
+!!! success "Idea clau"
+    Mantindre un IDE actualitzat és important, però també ho és poder explicar què s’ha actualitzat i comprovar que el nostre entorn continua sent útil.
 
 [Anterior: personalització](04-personalitzacio-automatitzacio.md) · [Següent: executables](06-executables.md) · [Índex](index.md)

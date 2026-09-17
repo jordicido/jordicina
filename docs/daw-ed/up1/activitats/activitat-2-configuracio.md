@@ -2,80 +2,305 @@
 hide:
   - navigation
 ---
-# Activitat 2. Taller de mòduls, personalització i actualització
+# Activitat 2. Posa a punt el teu entorn de desenvolupament
 
-## Context
+## Finalitat
 
-L’equip de desenvolupament vol que un projecte Java es puga obrir en ordinadors diferents amb una configuració semblant. Necessita suport de Java, una tasca de construcció, regles bàsiques de format i un procediment d’actualització que permeta tornar arrere si apareix una incompatibilitat.
+Una vegada instal·lats els entorns de desenvolupament, el següent pas és adaptar-los a la nostra manera de treballar.
 
-## Objectiu
+En un entorn professional no és habitual treballar sempre amb la configuració predeterminada de l'IDE. Aspectes com l'aparença, la mida del text, el comportament de l'editor, el desament automàtic, els perfils d'usuari o les actualitzacions poden adaptar-se per aconseguir un entorn de treball més còmode i eficient.
 
-Afegir i eliminar mòduls o extensions de manera segura, personalitzar el flux de treball, automatitzar una construcció i configurar una política d’actualització amb registre i recuperació.
+En aquesta activitat configurareu el vostre entorn de desenvolupament i explorareu algunes de les possibilitats de personalització que ofereixen els IDE.
 
-## Criteris d’avaluació treballats
+Treballareu principalment els criteris:
 
-- **RA2.b** Addició i eliminació de mòduls a l’entorn de desenvolupament.
-- **RA2.c** Personalització i automatització de l’entorn.
-- **RA2.d** Configuració del sistema d’actualització de l’entorn.
+- **RA2.c.** S'ha personalitzat i automatitzat l'entorn de desenvolupament.
+- **RA2.d.** S'ha configurat el sistema d'actualització de l'entorn de desenvolupament.
+- **RA2.g.** S'han identificat les característiques comunes i específiques de diversos entorns de desenvolupament.
 
-## Tasca
+!!! info "Important"
+    En aquesta activitat **no instal·larem extensions, plugins, SDK ni gestors de dependències**. Aquestes ferramentes s'introduiran més endavant, quan comencem a necessitar-les per desenvolupar programes.
 
-### Fase 1. Inventari inicial
+---
 
-Obri la carpeta amb el programa de l’activitat 1 i registra les extensions de VS Code, els plugins d’IntelliJ IDEA i el JDK. Explica quina funcionalitat necessita cada peça; la carpeta inicial no pressuposa cap eina de construcció addicional.
+## Situació
 
-### Fase 2. Alta i baixa controlades
+Has instal·lat els IDE que utilitzaràs durant el curs, però encara conserven pràcticament tota la configuració predeterminada.
 
-En VS Code, afegeix el suport de Java necessari. En IntelliJ IDEA, activa o instal·la el plugin de Kotlin per poder obrir el programa de l’activitat 3. Registra nom, editor, versió i dependències. Desactiva o elimina una extensió de prova que no siga necessària i demostra que el projecte continua en l’estat esperat.
+Abans de començar a treballar amb projectes reals, vols preparar un entorn de desenvolupament que:
 
-No elimines extensions o plugins essencials del perfil habitual sense disposar d’una còpia o d’un perfil de pràctiques recuperable.
+- siga còmode per treballar durant moltes hores;
+- s'adapte a les teues preferències;
+- automatitze algunes tasques habituals;
+- puga recuperar-se fàcilment si canvies d'ordinador;
+- es mantinga actualitzat.
 
-### Fase 3. Personalització
+La configuració final **no ha de ser igual per a tot l'alumnat**. Algunes opcions seran obligatòries, però en altres haureu de prendre decisions i justificar-les.
 
-Configura, com a mínim, un perfil o espai de treball amb:
+---
 
-- format i final de línia coherents;
-- JDK del projecte seleccionat explícitament;
-- una regla d’editor compartible, com `.editorconfig`;
-- una configuració d’execució sense secrets ni rutes absolutes.
+## Part 1. Personalitza l'aspecte de l'IDE
 
-### Fase 4. Automatització
+Obri **Visual Studio Code** i adapta la seua interfície.
 
-Defineix una tasca en VS Code o una configuració equivalent en IntelliJ IDEA que execute la construcció Maven del projecte. La documentació ha d’indicar l’ordre, els prerequisits, el resultat esperat i on apareix l’artefacte.
+### 1.1. Tema de color
 
-### Fase 5. Actualització i recuperació
+Canvia el tema de color de l'editor.
 
-Tria el canal d’actualització disponible per a cada IDE, consulta la compatibilitat dels plugins i escriu un registre amb versió anterior, versió nova, prova executada i resultat. Elabora un procediment de retorn: quina configuració o plugin recuperaràs i quina prova confirmarà que l’entorn torna a funcionar.
+Pots utilitzar qualsevol dels temes que ja estan disponibles en VS Code.
 
-## Requisits
+Tria'n un que et resulte còmode per treballar.
 
-- Cada alta o baixa ha d’estar justificada per una necessitat del projecte.
-- El registre ha d’incloure versions reals observades en l’IDE.
-- La tasca automatitzada ha de poder repetir-se des de zero en un projecte de prova.
-- Les configuracions compartibles no han d’incloure secrets, fitxers de caché ni rutes personals.
-- El pla d’actualització ha d’incloure compatibilitat, còpia, prova i recuperació.
+### 1.2. Tema d'icones
 
-## Lliurament
+Explora les opcions disponibles per modificar les icones utilitzades en l'explorador de fitxers.
 
-Entrega:
+Selecciona la configuració que preferisques.
 
-- inventari abans i després de les extensions/plugins;
-- registre d’alta i baixa amb captures o eixides justificades;
-- perfil o fitxers de configuració compartibles;
-- tasca automatitzada i instruccions d’execució;
-- registre de l’actualització i pla de retorn;
-- incidències i conclusions tècniques.
+### 1.3. Mida de la font
 
-## Evidències d’aprenentatge
+Configura una mida de font que et resulte còmoda per treballar.
 
-El professorat podrà comprovar que s’han afegit i retirat peces sense confondre-les amb dependències del projecte, que el format i el JDK estan configurats, que una tasca genera un resultat i que la política d’actualització permet verificar i recuperar l’entorn.
+No es tracta simplement de fer el text més gran o més menut: pensa que hauràs de llegir codi durant moltes hores al llarg del curs.
 
-## Criteris de correcció
+### 1.4. Organització de la interfície
 
-Es valorarà la justificació de les extensions/plugins, la seguretat de les baixes, la configuració reproduïble, l’automatització observable i la qualitat del registre d’actualització. Es penalitzaran els fitxers locals innecessaris, les rutes absolutes, els secrets i les actualitzacions no verificades.
+Modifica almenys **un element de la distribució de la interfície**.
 
-## Ampliació
+Per exemple:
 
-Prepara un perfil d’IDE específic per al projecte Java i explica quines opcions no compartiries amb la resta de l’equip i per què.
+- posició de la barra lateral;
+- visibilitat del minimapa;
+- barra d'activitats;
+- panell inferior;
+- altres elements de la interfície.
+
+La decisió és teua.
+
+---
+
+## Part 2. Millora la interacció amb l'editor
+
+Ara configurarem algunes opcions que afecten directament la forma de treballar amb l'editor.
+
+### 2.1. Zoom amb el ratolí
+
+Configura Visual Studio Code perquè siga possible **augmentar o reduir la mida de la font utilitzant `Ctrl` + roda del ratolí**.
+
+Comprova que funciona correctament.
+
+!!! tip "Pista"
+    Les opcions de configuració de VS Code disposen d'un cercador. No és necessari saber exactament on es troba cada opció.
+
+### 2.2. Ajust de línies
+
+Localitza la configuració relacionada amb **Word Wrap**.
+
+Decideix quin comportament vols utilitzar quan una línia és més llarga que l'espai disponible en l'editor.
+
+Explica breument la decisió presa.
+
+### 2.3. Pestanyes de l'editor
+
+Explora les opcions relacionades amb les pestanyes dels fitxers oberts.
+
+Modifica almenys **una opció** relacionada amb el seu comportament o aparença.
+
+---
+
+## Part 3. Automatitza el teu entorn
+
+Un IDE també pot realitzar automàticament algunes accions repetitives.
+
+### 3.1. Desament automàtic
+
+Localitza la configuració **Auto Save**.
+
+Analitza les diferents possibilitats disponibles i configura el comportament que preferisques.
+
+Indica:
+
+- quina opció has seleccionat;
+- per què l'has triada.
+
+### 3.2. Una automatització addicional
+
+Explora la configuració de Visual Studio Code i localitza **una altra opció que automatitze o simplifique alguna acció habitual**.
+
+Activa-la o configura-la.
+
+Explica breument:
+
+1. què fa;
+2. per què pot resultar útil.
+
+!!! warning "No instal·les extensions"
+    Aquesta part s'ha de realitzar únicament utilitzant les opcions incorporades en Visual Studio Code.
+
+---
+
+## Part 4. Crea el teu perfil de desenvolupament
+
+Durant el curs utilitzaràs moltes configuracions diferents.
+
+Visual Studio Code permet agrupar part d'aquesta configuració mitjançant **perfils**.
+
+### 4.1. Crea un perfil
+
+Crea un perfil amb el nom:
+
+`DAW`
+
+Comprova quins elements pot guardar un perfil de Visual Studio Code.
+
+### 4.2. Guarda la configuració
+
+Investiga les possibilitats que ofereix VS Code per poder recuperar la configuració en un altre ordinador.
+
+Pots utilitzar alguna de les opcions següents:
+
+- sincronització de configuració mitjançant un compte;
+- exportació del perfil a un fitxer.
+
+!!! note
+    No és obligatori vincular un compte personal. Si no vols fer-ho, utilitza l'opció d'exportació del perfil.
+
+### 4.3. Comprova que el perfil funciona
+
+Realitza una prova:
+
+1. guarda o exporta el perfil `DAW`;
+2. crea temporalment un altre perfil;
+3. canvia a aquest nou perfil;
+4. torna al perfil `DAW`.
+
+Comprova que recuperes la configuració associada al perfil.
+
+---
+
+## Part 5. Configura les actualitzacions
+
+Els entorns de desenvolupament evolucionen constantment.
+
+Localitza en Visual Studio Code la configuració relacionada amb les **actualitzacions de l'aplicació**.
+
+Investiga les opcions disponibles i comprova quin comportament té configurat el teu IDE.
+
+Deixa configurat el sistema perquè Visual Studio Code:
+
+- es mantinga actualitzat automàticament, o
+- t'avise quan hi haja una actualització disponible.
+
+En el lliurament hauràs d'indicar quina opció has seleccionat.
+
+---
+
+## Part 6. I en IntelliJ IDEA?
+
+Moltes de les funcionalitats que acabem de configurar no són exclusives de Visual Studio Code.
+
+Obri **IntelliJ IDEA** i intenta localitzar l'equivalent de les configuracions següents:
+
+| Funcionalitat | Visual Studio Code | IntelliJ IDEA |
+|---|---|---|
+| Canviar el tema de l'IDE | Sí | ? |
+| Modificar la mida de la font | Sí | ? |
+| Configurar les actualitzacions | Sí | ? |
+| Gestionar la configuració o preferències de l'usuari | Sí | ? |
+
+Completa la taula indicant:
+
+- si IntelliJ disposa d'una funcionalitat equivalent;
+- on l'has localitzada.
+
+No és necessari repetir tota la configuració realitzada anteriorment.
+
+L'objectiu és comprovar que **IDE diferents solen oferir funcionalitats semblants, encara que les organitzen i presenten de manera diferent**.
+
+---
+
+# Lliurament
+
+Crea un fitxer anomenat:
+
+`activitat-2.md`
+
+El document ha de contindre els apartats següents.
+
+## 1. La meua configuració
+
+Completa una taula semblant a aquesta:
+
+| Configuració | Opció seleccionada | Justificació |
+|---|---|---|
+| Tema | | |
+| Tema d'icones | | |
+| Mida de la font | | |
+| Organització de la interfície | | |
+| Word Wrap | | |
+| Comportament de les pestanyes | | |
+| Auto Save | | |
+| Automatització addicional | | |
+| Actualitzacions | | |
+
+Les justificacions han de ser breus. Una o dues frases són suficients.
+
+## 2. Perfil DAW
+
+Indica:
+
+- com has guardat la configuració del perfil;
+- si has utilitzat sincronització o exportació;
+- què has comprovat en canviar de perfil.
+
+## 3. Comparació amb IntelliJ IDEA
+
+Inclou la taula de comparació de la Part 6.
+
+## 4. Evidències
+
+Inclou **quatre captures de pantalla**:
+
+1. aspecte general de Visual Studio Code després de personalitzar-lo;
+2. configuració de `Ctrl + roda del ratolí`;
+3. perfil `DAW`;
+4. configuració de les actualitzacions.
+
+!!! warning
+    Les captures han de mostrar únicament la informació necessària. Evita captures de pantalla completa si l'element que vols demostrar ocupa només una xicoteta part.
+
+---
+
+# Avaluació
+
+L'activitat s'avaluarà mitjançant la següent rúbrica.
+
+| Aspecte | Assoliment alt | Assoliment mitjà | Assoliment baix |
+|---|---|---|---|
+| **Personalització de l'aparença** | Configura correctament tema, icones, font i interfície i les decisions preses són coherents amb un entorn de treball còmode. | Configura la major part dels elements, encara que falta alguna configuració o justificació. | La personalització és mínima, incompleta o no es pot comprovar. |
+| **Configuració de l'editor** | Configura correctament el zoom amb `Ctrl + roda`, l'ajust de línies i les pestanyes, i comprova el seu funcionament. | La major part de les configuracions funcionen, però alguna és incorrecta o no està justificada. | Diverses configuracions no s'han realitzat o no funcionen correctament. |
+| **Automatització de l'entorn** | Configura el desament automàtic i una segona automatització, i explica correctament la utilitat de les dues. | Configura les automatitzacions però alguna explicació és insuficient o alguna configuració no és adequada. | No configura les automatitzacions demanades o no explica la seua utilitat. |
+| **Gestió del perfil DAW** | Crea el perfil, guarda o exporta la configuració i comprova correctament que pot recuperar-la. | Crea el perfil i guarda la configuració, però la comprovació és incompleta. | No crea correctament el perfil o no demostra que la configuració es pot recuperar. |
+| **Configuració de les actualitzacions** | Localitza les opcions d'actualització, configura un comportament adequat i identifica correctament el seu funcionament. | Configura les actualitzacions però no explica clarament el comportament seleccionat. | No localitza o no configura correctament el sistema d'actualització. |
+| **Comparació entre IDE** | Localitza correctament les funcionalitats equivalents en IntelliJ IDEA i identifica semblances en l'organització dels dos entorns. | Localitza la major part de les funcionalitats, encara que hi ha alguna imprecisió. | La comparació està incompleta o no identifica les funcionalitats equivalents. |
+| **Lliurament i evidències** | El document és clar i ordenat, conté totes les evidències demanades i les justificacions són concretes i adequades. | El document permet comprovar el treball, però falta alguna evidència o hi ha justificacions poc clares. | Falten diverses evidències o el document no permet comprovar adequadament el treball realitzat. |
+
+---
+
+## Abans d'entregar
+
+Comprova que:
+
+- [ ] Has personalitzat l'aparença de Visual Studio Code.
+- [ ] Pots modificar la mida de la font amb `Ctrl + roda del ratolí`.
+- [ ] Has configurat l'ajust de línies.
+- [ ] Has modificat alguna opció relacionada amb les pestanyes.
+- [ ] Has configurat el desament automàtic.
+- [ ] Has configurat una automatització addicional.
+- [ ] Has creat el perfil `DAW`.
+- [ ] Has comprovat que pots recuperar la configuració del perfil.
+- [ ] Has configurat les actualitzacions.
+- [ ] Has comparat algunes d'aquestes opcions amb IntelliJ IDEA.
+- [ ] El document conté les quatre captures de pantalla demanades.
 
 [Anterior: instal·lació dels IDE](activitat-1-instal·lacio.md) · [Següent: construcció i comparació](activitat-3-construccio.md) · [Índex](../index.md)

@@ -20,24 +20,24 @@ hide:
 
 ## Què aprendrem?
 
-En aquesta unitat prepararàs un lloc de treball semblant al que trobaries en un equip de desenvolupament. Instal·laràs **Visual Studio Code** i **IntelliJ IDEA**, afegiràs només les extensions i els plugins necessaris, automatitzaràs tasques repetitives i comprovaràs com una mateixa aplicació Java es construeix en dos IDE diferents. També generaràs artefactes Java i Kotlin en IntelliJ IDEA per entendre que l’IDE coordina eines, però no substitueix el compilador ni el gestor de dependències.
+En aquesta unitat prepararàs un lloc de treball semblant al que trobaries en un equip de desenvolupament. Entendràs què és un IDE, instal·laràs **Visual Studio Code** i **IntelliJ IDEA**, personalitzaràs l’entorn i aprendràs a localitzar opcions equivalents en aplicacions diferents. Més endavant afegiràs extensions i plugins, i comprovaràs com una mateixa aplicació Java es construeix en dos IDE diferents.
 
 L’objectiu professional no és memoritzar on està cada botó. És poder justificar la configuració, repetir-la en un altre equip i aportar proves que el resultat és correcte.
 
 ## Continguts
 
-1. [L’IDE com a entorn de treball](01-entorn.md): components, llicències i criteris de selecció.
+1. [L’IDE com a entorn de treball](01-entorn.md): concepte, parts principals i funcionalitats comunes.
 2. [Instal·lació i verificació](02-instal·lacio.md): JDK, IDE, versions, projectes i comprovacions.
 3. [Mòduls, extensions i plugins](03-moduls.md): catàlegs, dependències, configuració i eliminació segura.
-4. [Personalització i automatització](04-personalitzacio-automatitzacio.md): perfils, format, tasques i configuracions reproduïbles.
-5. [Actualitzacions i recuperació](05-actualitzacions.md): canals, compatibilitat, còpies i recuperació davant incidències.
+4. [Personalització i automatització](04-personalitzacio-automatitzacio.md): aparença, comportament, desament, automatització i perfils.
+5. [Actualitzar l’entorn](05-actualitzacions.md): tipus d’actualització, criteris i comprovacions.
 6. [Del codi font a l’executable](06-executables.md): compilació, empaquetament i verificació en Java i Kotlin.
-7. [Comparació professional d’IDE](07-comparacio.md): característiques comunes, diferències i criteris de decisió.
+7. [Comparació d’entorns de desenvolupament](07-comparacio.md): conceptes comuns, diferències i capacitat d’adaptació.
 
 ## Activitats
 
 - [Activitat 1. Instal·lació dels IDE](activitats/activitat-1-instal·lacio.md): instal·lar, ampliar i actualitzar els dos entorns.
-- [Activitat 2. Taller de mòduls, personalització i actualització](activitats/activitat-2-configuracio.md): configurar un entorn reproduïble.
+- [Activitat 2. Posa a punt el teu entorn de desenvolupament](activitats/activitat-2-configuracio.md): personalitzar, automatitzar i actualitzar l'entorn.
 - [Activitat 3. Construcció i comparació](activitats/activitat-3-construccio.md): generar artefactes i comparar els IDE.
 - [Autoavaluació de la UP1](activitats/autoavaluacio.md): comprovar conceptes i preparar la defensa tècnica.
 
@@ -50,11 +50,11 @@ Primer entendràs què integra un IDE i quines responsabilitats continuen sent d
 | Criteri | Teoria | Activitats |
 | --- | --- | --- |
 | RA2.a | [Instal·lació i verificació](02-instal·lacio.md) | [Activitat 1](activitats/activitat-1-instal·lacio.md) |
-| RA2.b | [Mòduls, extensions i plugins](03-moduls.md) | [Activitat 1](activitats/activitat-1-instal·lacio.md) i [activitat 2](activitats/activitat-2-configuracio.md) |
+| RA2.b | [Mòduls, extensions i plugins](03-moduls.md) | [Activitat 1](activitats/activitat-1-instal·lacio.md) |
 | RA2.c | [Personalització i automatització](04-personalitzacio-automatitzacio.md) | [Activitat 2](activitats/activitat-2-configuracio.md) |
-| RA2.d | [Actualitzacions i recuperació](05-actualitzacions.md) | [Activitat 1](activitats/activitat-1-instal·lacio.md) i [activitat 2](activitats/activitat-2-configuracio.md) |
+| RA2.d | [Actualitzar l’entorn](05-actualitzacions.md) | [Activitat 1](activitats/activitat-1-instal·lacio.md) i [activitat 2](activitats/activitat-2-configuracio.md) |
 | RA2.e | [Del codi font a l’executable](06-executables.md) | [Activitat 3](activitats/activitat-3-construccio.md) |
 | RA2.f | [Del codi font a l’executable](06-executables.md) | [Activitat 3](activitats/activitat-3-construccio.md) |
-| RA2.g | [Comparació professional d’IDE](07-comparacio.md) | [Activitat 3](activitats/activitat-3-construccio.md) |
+| RA2.g | [Comparació d’entorns de desenvolupament](07-comparacio.md) | [Activitat 2](activitats/activitat-2-configuracio.md) i [activitat 3](activitats/activitat-3-construccio.md) |
 
 [Tornar a la presentació de la UP1](../up1-entorns-integrats.md)
