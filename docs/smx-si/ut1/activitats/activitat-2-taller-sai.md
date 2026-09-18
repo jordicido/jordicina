@@ -2,7 +2,7 @@
 hide:
   - navigation
 ---
-# Activitat 3. Taller de selecció i verificació d’un SAI
+# Activitat 2. Taller de selecció i verificació d’un SAI
 
 ## Finalitat
 
@@ -82,4 +82,4 @@ Entregueu `fitxa-sai.md` amb la identificació, la taula de càrrega, un esquema
 !!! warning "Si no hi ha equip real"
     Feu una verificació documental: indiqueu quina prova faríeu, què esperaries observar i quina dada faltaria per confirmar el funcionament.
 
-[Activitat 2. Auditoria física](activitat-2-auditoria-fisica.md) · [Activitat 4. Pla de la microempresa](activitat-4-pla-microempresa.md)
+[Activitat 1. Informe d’anàlisi de riscos](activitat-1-mapa-riscos.md) · [Activitat 3. Pla de la microempresa](activitat-3-pla-microempresa.md)

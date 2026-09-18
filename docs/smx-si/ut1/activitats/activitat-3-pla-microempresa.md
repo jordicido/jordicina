@@ -2,7 +2,7 @@
 hide:
   - navigation
 ---
-# Activitat 4. Pla bàsic de seguretat passiva d’una microempresa
+# Activitat 3. Pla bàsic de seguretat passiva d’una microempresa
 
 ## Finalitat
 
@@ -73,4 +73,4 @@ El qüestionari individual comprovarà que cada persona entén el pla i no nomé
 !!! tip "Abans d’entregar"
     Comproveu que les mesures formen una cadena: risc → protecció → responsable → verificació. Una ACL sense rols o un SAI sense càrrega calculada no és una proposta completa.
 
-[Activitat 3. Taller de SAI](activitat-3-taller-sai.md) · [Autoavaluació](autoavaluacio.md) · [Índex de la UT1](../index.md)
+[Activitat 2. Taller de SAI](activitat-2-taller-sai.md) · [Autoavaluació](autoavaluacio.md) · [Índex de la UT1](../index.md)

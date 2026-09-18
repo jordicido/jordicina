@@ -54,9 +54,8 @@ Consulta l’[índex de la UT1](ut1/index.md) per veure l’ordre recomanat i la
 | Activitat | Producte |
 | --- | --- |
 | [1. Informe d’anàlisi de riscos](ut1/activitats/activitat-1-mapa-riscos.md) | Informe d’una sala de servidors amb actius, riscos i prioritats. |
-| [2. Auditoria física de l’aula](ut1/activitats/activitat-2-auditoria-fisica.md) | Checklist, registre d’incidències i informe tècnic. |
-| [3. Taller de selecció i verificació d’un SAI](ut1/activitats/activitat-3-taller-sai.md) | Fitxa de càrrega, connexions, autonomia i prova. |
-| [4. Pla de seguretat d’una microempresa](ut1/activitats/activitat-4-pla-microempresa.md) | Pla final, ACL, política de credencials i defensa. |
+| [2. Taller de selecció i verificació d’un SAI](ut1/activitats/activitat-2-taller-sai.md) | Fitxa de càrrega, connexions, autonomia i prova. |
+| [3. Pla de seguretat d’una microempresa](ut1/activitats/activitat-3-pla-microempresa.md) | Pla final, ACL, política de credencials i defensa. |
 | [Autoavaluació de la UT1](ut1/activitats/autoavaluacio.md) | Qüestionari individual de repàs. |
 
 ## Evidències avaluables
@@ -64,9 +63,8 @@ Consulta l’[índex de la UT1](ut1/index.md) per veure l’ordre recomanat i la
 | Evidència | Producte | Criteris principals |
 | --- | --- | --- |
 | 1. Informe d’anàlisi de riscos | Informe d’actius, amenaces, vulnerabilitats, conseqüències i mesures | RA1.a, RA1.b, RA1.c, RA1.d |
-| 2. Auditoria física | Checklist, registre d’incidències i informe | RA1.c, RA1.d |
-| 3. Taller de SAI | Fitxa de verificació, càrrega i selecció | RA1.e, RA1.f |
-| 4. Pla de la microempresa | Informe, ACL, política de credencials i defensa | RA1.g, RA1.h, RA1.i |
+| 2. Taller de SAI | Fitxa de verificació, càrrega i selecció | RA1.e, RA1.f |
+| 3. Pla de la microempresa | Informe, ACL, política de credencials i defensa | RA1.g, RA1.h, RA1.i |
 
 El [qüestionari d’autoavaluació](ut1/activitats/autoavaluacio.md) serveix per comprovar el domini individual dels conceptes abans del tancament.
 

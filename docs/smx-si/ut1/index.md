@@ -42,9 +42,8 @@ La distribució concreta pot adaptar-se al calendari del centre. Les 14 hores s�
 | Activitat | Què fareu? | Organització |
 | --- | --- | --- |
 | [1. Informe d’anàlisi de riscos](activitats/activitat-1-mapa-riscos.md) | Analitzar una sala de servidors, valorar riscos i proposar mesures. | Individual o parelles · 1 h 30 min |
-| [2. Auditoria física de l’aula](activitats/activitat-2-auditoria-fisica.md) | Inspeccionar un espai autoritzat i convertir les observacions en un informe. | Equips · 4 h |
-| [3. Taller de SAI](activitats/activitat-3-taller-sai.md) | Estimar càrrega, seleccionar connexions i verificar una resposta davant d’un tall. | Parelles · 2 h |
-| [4. Pla de la microempresa](activitats/activitat-4-pla-microempresa.md) | Integrar riscos, protecció, SAI i control d’accés en un únic pla. | Equips · 4 h |
+| [2. Taller de SAI](activitats/activitat-2-taller-sai.md) | Estimar càrrega, seleccionar connexions i verificar una resposta davant d’un tall. | Parelles · 2 h |
+| [3. Pla de la microempresa](activitats/activitat-3-pla-microempresa.md) | Integrar riscos, protecció, SAI i control d’accés en un únic pla. | Equips · 4 h |
 | [Autoavaluació](activitats/autoavaluacio.md) | Comprovar individualment els conceptes abans de lliurar. | Individual · 30 min |
 
 ## Com estudiar
