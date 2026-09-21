@@ -2,7 +2,7 @@
 hide:
   - navigation
 ---
-# UT2. Gestió de dispositius d’emmagatzematge
+# UP2. Gestió de dispositius d’emmagatzematge
 
 ## 1. Introducció
 Aprendrem a triar, protegir i recuperar informació emmagatzemada en diferents mitjans.

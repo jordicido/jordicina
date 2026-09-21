@@ -23,7 +23,7 @@ En aquesta UP **no treballarem encara** condicions, bucles, llistes ni funcions.
 | Duració de referència | **6 hores** |
 | Resultat d’aprenentatge | **RA1** |
 | Pes de referència | **10 %** |
-| Criteris treballats | **RA1.a–RA1.e** |
+| Criteris treballats | **RA1.a–RA1.i** |
 | Producte final | Entorn preparat i sèrie de programes lineals explicats i verificats |
 | Forma de treball | Individual, parelles i comprovació individual |
 
@@ -36,6 +36,9 @@ En aquesta UP **no treballarem encara** condicions, bucles, llistes ni funcions.
 - Crear, consultar, modificar i combinar variables.
 - Llegir dades amb `input()` i convertir-les quan calga.
 - Mostrar resultats amb `print()` i f-strings.
+- Distingir literals i constants per convenció.
+- Utilitzar operadors en expressions i comprovar conversions explícites i implícites.
+- Introduir comentaris útils per documentar el codi.
 
 ## Itinerari de treball
 
@@ -49,9 +52,9 @@ Consulta l’[índex de la UP1](up1/index.md) per seguir l’ordre recomanat, ve
 | [2. Preparació de l’entorn](up1/02-entorn.md) | Python, Visual Studio Code, extensió, intèrpret i primer projecte. |
 | [3. Eixida amb `print()`](up1/03-print.md) | Text, nombres, variables, f-strings i presentació de resultats. |
 | [4. Variables](up1/04-variables.md) | Assignació, consulta, modificació i noms descriptius. |
-| [5. Tipus bàsics](up1/05-tipus.md) | `int`, `float`, `str`, `bool` i `type()`. |
+| [5. Tipus bàsics](up1/05-tipus.md) | `int`, `float`, `str`, `bool`, literals i constants. |
 | [6. Entrada amb `input()`](up1/06-input.md) | Entrada de text i conversió amb `int()` i `float()`. |
-| [7. Operacions bàsiques](up1/07-operacions.md) | Suma, resta, producte i divisió com a contingut instrumental. |
+| [7. Operacions bàsiques](up1/07-operacions.md) | Operadors, expressions, conversions i comentaris. |
 
 ### Activitats i autoavaluació
 
@@ -66,8 +69,8 @@ Consulta l’[índex de la UP1](up1/index.md) per seguir l’ordre recomanat, ve
 | Evidència | Producte | Criteris principals |
 | --- | --- | --- |
 | 1. Preparació de l’entorn | Comprovació de l’equip i `hola.py` executat | RA1.b, RA1.c |
-| 2. Sèrie d’exercicis | Carpeta d’exercicis i programa final | RA1.a, RA1.d, RA1.e |
-| 3. Comprovació individual | Explicació i modificació breu del codi lliurat | RA1.a, RA1.d, RA1.e |
+| 2. Sèrie d’exercicis | Projecte documentat, carpeta d’exercicis i programa final | RA1.a, RA1.b, RA1.c, RA1.d, RA1.e, RA1.f, RA1.g, RA1.h, RA1.i |
+| 3. Comprovació individual | Explicació i modificació breu del codi lliurat | RA1.a, RA1.d, RA1.e, RA1.f, RA1.g, RA1.h, RA1.i |
 
 ## Resultat d’aprenentatge i criteris
 
@@ -75,11 +78,15 @@ Consulta l’[índex de la UP1](up1/index.md) per seguir l’ordre recomanat, ve
 
 | Criteri | Què hauràs de demostrar |
 | --- | --- |
-| **RA1.a** | Identificar l’estructura d’un programa i l’ordre d’execució de les instruccions. |
-| **RA1.b** | Crear projectes de desenvolupament de programari amb una estructura ordenada. |
-| **RA1.c** | Utilitzar un entorn integrat de desenvolupament i seleccionar l’intèrpret adequat. |
-| **RA1.d** | Identificar els tipus bàsics de variables del llenguatge. |
-| **RA1.e** | Utilitzar variables per emmagatzemar, modificar i mostrar informació. |
+| **RA1.a** | Identificar els blocs que componen l’estructura d’un programa informàtic. |
+| **RA1.b** | Crear projectes de desenvolupament d’aplicacions. |
+| **RA1.c** | Utilitzar entorns integrats de desenvolupament. |
+| **RA1.d** | Identificar els tipus de variables i la utilitat específica de cadascun. |
+| **RA1.e** | Modificar el codi per crear i utilitzar variables. |
+| **RA1.f** | Crear i utilitzar constants i literals. |
+| **RA1.g** | Classificar, reconéixer i utilitzar els operadors en expressions. |
+| **RA1.h** | Comprovar conversions de tipus explícites i implícites. |
+| **RA1.i** | Introduir comentaris en el codi. |
 
 ## Abans de començar
 

@@ -2,7 +2,7 @@
 hide:
   - navigation
 ---
-# UT4. Privacitat de la informació en xarxes
+# UP4. Privacitat de la informació en xarxes
 
 ## 1. Introducció
 Analitzarem les vulnerabilitats de les comunicacions i les mesures per protegir la privacitat en xarxes.

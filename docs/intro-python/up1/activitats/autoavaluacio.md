@@ -20,18 +20,26 @@ Aquesta autoavaluació serveix per detectar què necessites repassar abans de ll
 10. Per què cal utilitzar `int()` o `float()`?
 11. Explica el recorregut d’una dada en el model entrada → variables/processament → eixida.
 12. Per què és millor anomenar una variable `preu_unitari` que `p`?
+13. Quina diferència hi ha entre un literal i una constant per convenció?
+14. Quina diferència hi ha entre un operador i una expressió?
+15. Quina diferència hi ha entre una conversió explícita i una d’implícita?
+16. Per a què serveixen els comentaris i què ha d’aportar un comentari útil?
 
 ## Comprova la pràctica
 
 - [ ] Puc mostrar la versió de Python i explicar quin intèrpret utilitza VS Code.
-- [ ] Puc crear i obrir la carpeta `python/up1`.
+- [ ] Puc crear i obrir la carpeta `python/up1` com a projecte.
+- [ ] Puc explicar l’estructura de `up1`, seleccionar l’intèrpret i comprovar-lo des de VS Code i la terminal.
 - [ ] Puc executar `hola.py` des de VS Code i des de la terminal.
 - [ ] Puc explicar l’ordre d’execució d’un programa lineal.
 - [ ] Puc reconéixer `int`, `float`, `str` i `bool`.
 - [ ] Puc crear, consultar i modificar una variable.
 - [ ] Puc explicar que `input()` retorna text.
 - [ ] Puc convertir una entrada a enter o decimal.
-- [ ] Puc explicar qualsevol dels meus dotze exercicis.
+- [ ] Puc distingir literals i constants i utilitzar operadors en expressions.
+- [ ] Puc explicar conversions explícites i implícites.
+- [ ] Puc introduir comentaris útils en el codi.
+- [ ] Puc explicar qualsevol dels meus setze exercicis.
 - [ ] Puc fer una modificació breu sense trencar el programa.
 
 ## Repte final

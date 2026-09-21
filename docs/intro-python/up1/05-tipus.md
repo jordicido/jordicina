@@ -66,4 +66,24 @@ print(type(True))
 
 El tipus determina quines operacions tenen sentit. Per exemple, `18` és un nombre enter, però `"18"` és text.
 
+## Literals i constants
+
+Un **literal** és un valor escrit directament en el codi, com `18`, `3.5`, `"Python"` o `True`:
+
+```python
+edat = 18          # 18 és un literal enter
+nom = "Python"     # "Python" és un literal de text
+actiu = True       # True és un literal booleà
+```
+
+Python no obliga el programa a mantindre una constant immòbil. Per convenció, escrivim en majúscules els noms que no haurien de canviar:
+
+```python
+IVA = 0.21
+preu = 100
+preu_final = preu * (1 + IVA)
+```
+
+La diferència important és entre el valor literal (`0.21`) i el nom (`IVA`) que permet reutilitzar-lo i explicar-ne el significat.
+
 [Anterior: variables](04-variables.md) · [Següent: `input()`](06-input.md) · [Índex](index.md)

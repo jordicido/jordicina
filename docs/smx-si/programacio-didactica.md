@@ -24,6 +24,6 @@ La [programació didàctica completa del curs 2026–2027](programacio-didactica
 
 ## Incidències que cal revisar
 
-La taula de seqüenciació del PDF assigna 14, 18, 14, 30 i 52 hores a les cinc UT. La suma és **128 hores**, no 110. A més, aquesta taula assigna UT2 a RA5, UT3 a RA2, UT4 a RA3 i UT5 a RA4, mentre que l’apartat de criteris de qualificació utilitza RA1–RA5 amb les descripcions completes anteriors. En aquest lloc web s’ha mantingut la numeració coherent amb les descripcions i la taula de qualificació, sense corregir silenciosament el PDF.
+La taula de seqüenciació del PDF assigna 14, 18, 14, 30 i 52 hores a les cinc UP. La suma és **128 hores**, no 110. A més, aquesta taula assigna UP2 a RA5, UP3 a RA2, UP4 a RA3 i UP5 a RA4, mentre que l’apartat de criteris de qualificació utilitza RA1–RA5 amb les descripcions completes anteriors. En aquest lloc web s’ha mantingut la numeració coherent amb les descripcions i la taula de qualificació, sense corregir silenciosament el PDF.
 
 Per a la informació pràctica de l’alumnat, consulta la [guia de l’assignatura](guia-assignatura.md) i la pàgina d’[avaluació](avaluacio.md).

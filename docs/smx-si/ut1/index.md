@@ -2,7 +2,7 @@
 hide:
   - navigation
 ---
-# UT1. Itinerari de la seguretat passiva
+# UP1. Itinerari de la seguretat passiva
 
 Aquesta unitat recorre el camí que va des de preguntar **què cal protegir** fins a justificar un pla de protecció per a una microempresa.
 
@@ -31,7 +31,7 @@ En acabar hauràs de poder analitzar un entorn, prioritzar riscos i explicar per
 | 2 | Seguretat física/lògica i priorització de mesures | Matriu de mesures |
 | 3 | Auditoria de l’aula: ubicació, ambient i cablejat | Checklist |
 | 4 | Protecció física i redacció de l’informe | Informe d’auditoria |
-| 5 | Problemes elèctrics i taller de SAI | Fitxa de verificació |
+| 5 | Problemes elèctrics i selecció teòrica d’un SAI | Requisits i pressupost |
 | 6 | ACL, rols, contrasenyes i biometria | Matriu d’accés |
 | 7 | Pla de la microempresa, defensa i qüestionari individual | Producte final |
 
@@ -42,7 +42,7 @@ La distribució concreta pot adaptar-se al calendari del centre. Les 14 hores s�
 | Activitat | Què fareu? | Organització |
 | --- | --- | --- |
 | [1. Informe d’anàlisi de riscos](activitats/activitat-1-mapa-riscos.md) | Analitzar una sala de servidors, valorar riscos i proposar mesures. | Individual o parelles · 1 h 30 min |
-| [2. Taller de SAI](activitats/activitat-2-taller-sai.md) | Estimar càrrega, seleccionar connexions i verificar una resposta davant d’un tall. | Parelles · 2 h |
+| [2. Selecció i pressupost d’un SAI](activitats/activitat-2-taller-sai.md) | Definir requisits, comparar productes en línia i preparar un pressupost de compra i instal·lació. | Individual |
 | [3. Pla de la microempresa](activitats/activitat-3-pla-microempresa.md) | Integrar riscos, protecció, SAI i control d’accés en un únic pla. | Equips · 4 h |
 | [Autoavaluació](activitats/autoavaluacio.md) | Comprovar individualment els conceptes abans de lliurar. | Individual · 30 min |
 
@@ -50,4 +50,4 @@ La distribució concreta pot adaptar-se al calendari del centre. Les 14 hores s�
 
 Llig els apartats en ordre, intenta respondre la pregunta de control de cada pàgina i conserva les decisions de les activitats. El producte final reutilitza informació de les evidències anteriors: no cal començar el pla des de zero.
 
-[Tornar a la pàgina general de la UT1](../ut1-seguretat-passiva.md) · [Començar la teoria](01-informacio-actiu.md) · [Començar les activitats](activitats/activitat-1-mapa-riscos.md)
+[Tornar a la pàgina general de la UP1](../ut1-seguretat-passiva.md) · [Començar la teoria](01-informacio-actiu.md) · [Començar les activitats](activitats/activitat-1-mapa-riscos.md)

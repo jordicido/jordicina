@@ -6,7 +6,7 @@ hide:
 
 ## On puc trobar els apunts?
 
-En la unitat de treball corresponent i, quan així s’indique, en la plataforma Aules.
+En la unitat de programació corresponent i, quan així s’indique, en la plataforma Aules.
 
 ## Com he d’entregar una pràctica?
 

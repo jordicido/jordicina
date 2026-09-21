@@ -2,7 +2,7 @@
 hide:
   - navigation
 ---
-# UT5. Legislació i protecció de dades
+# UP5. Legislació i protecció de dades
 
 ## 1. Introducció
 Coneixerem les obligacions relacionades amb la informació personal, els serveis digitals i la gestió de la seguretat.

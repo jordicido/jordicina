@@ -2,7 +2,7 @@
 hide:
   - navigation
 ---
-# Autoavaluació de la UT1
+# Autoavaluació de la UP1
 
 Respon sense consultar els apunts. Després revisa la solució raonada i anota què has de repassar.
 
@@ -36,4 +36,4 @@ Respon sense consultar els apunts. Després revisa la solució raonada i anota q
 
 En cinc línies, explica quines tres mesures implantaríes primer en una microempresa amb finestres accessibles, microtalls i personal extern. Justifica-les amb actiu, risc i impacte.
 
-[Tornar a l’índex de la UT1](../index.md) · [Començar la teoria](../01-informacio-actiu.md)
+[Tornar a l’índex de la UP1](../index.md) · [Començar la teoria](../01-informacio-actiu.md)

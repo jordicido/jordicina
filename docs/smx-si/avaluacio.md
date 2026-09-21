@@ -18,7 +18,7 @@ Els resultats d’aprenentatge (RA) descriuen allò que has de saber fer en acab
 | RA4. Assegurar la privacitat de la informació transmesa en xarxes informàtiques | 20 % |
 | RA5. Reconéixer la legislació i normativa sobre seguretat i protecció de dades | 20 % |
 
-La taula anterior coincideix amb l’apartat de criteris de qualificació del PDF. En la temporalització del mateix document hi ha una numeració diferent per a UT2–UT5; per això preval la descripció completa i la numeració de la taula de qualificació.
+La taula anterior coincideix amb l’apartat de criteris de qualificació del PDF. En la temporalització del mateix document hi ha una numeració diferent per a UP2–UP5; per això preval la descripció completa i la numeració de la taula de qualificació.
 
 ## Com es calcula la qualificació?
 

@@ -28,7 +28,7 @@ hide:
 
 | UP | Continguts clau | Producte o evidència principal |
 | --- | --- | --- |
-| UP1 | Estructura d’un programa, sintaxi, variables, tipus, expressions i entrada/eixida bàsica. | Exercicis de primers programes i explicació de la seua estructura. |
+| UP1 | Estructura d’un programa, sintaxi, variables, tipus, literals, constants, operadors, expressions, conversions, comentaris i entrada/eixida bàsica. | Exercicis de primers programes i explicació de la seua estructura. |
 | UP2 | Execució, proves senzilles, funcions inicials i primers conceptes d’objecte i classe. | Programa curt amb casos de prova i reflexió sobre la solució. |
 | UP3 | Condicions, bucles, comptadors, acumuladors, validació i depuració. | Programa resolt amb proves, depuració i registre d’errors. |
 | UP4 | Classes, objectes, atributs, mètodes, encapsulació, herència i polimorfisme. | Aplicació modular organitzada en classes. |

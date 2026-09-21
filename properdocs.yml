@@ -25,8 +25,8 @@ nav:
           - Inici: smx-si/index.md
           - Guia de l’assignatura: smx-si/guia-assignatura.md
           - Calendarització de les sessions: smx-si/calendaritzacio.md
-          - Unitats de treball:
-              - UT1. Mesures de seguretat passiva:
+          - Unitats de programació:
+              - UP1. Mesures de seguretat passiva:
                   - Presentació: smx-si/ut1-seguretat-passiva.md
                   - Índex i seqüència: smx-si/ut1/index.md
                   - 1. La informació com a actiu: smx-si/ut1/01-informacio-actiu.md
@@ -38,13 +38,13 @@ nav:
                   - 7. Política de contrasenyes: smx-si/ut1/07-contrasenyes.md
                   - 8. Sistemes biomètrics: smx-si/ut1/08-biometria.md
                   - Activitat 1. Informe d’anàlisi de riscos: smx-si/ut1/activitats/activitat-1-mapa-riscos.md
-                  - Activitat 2. Taller de SAI: smx-si/ut1/activitats/activitat-2-taller-sai.md
+                  - Activitat 2. Selecció i pressupost d’un SAI: smx-si/ut1/activitats/activitat-2-taller-sai.md
                   - Activitat 3. Pla de la microempresa: smx-si/ut1/activitats/activitat-3-pla-microempresa.md
                   - Autoavaluació: smx-si/ut1/activitats/autoavaluacio.md
-              - UT2. Gestió de dispositius d’emmagatzematge: smx-si/ut2-emmagatzematge.md
-              - UT3. Mecanismes de seguretat activa: smx-si/ut3-seguretat-activa.md
-              - UT4. Privacitat de la informació en xarxes: smx-si/ut4-privacitat-xarxes.md
-              - UT5. Legislació i protecció de dades: smx-si/ut5-legislacio-dades.md
+              - UP2. Gestió de dispositius d’emmagatzematge: smx-si/ut2-emmagatzematge.md
+              - UP3. Mecanismes de seguretat activa: smx-si/ut3-seguretat-activa.md
+              - UP4. Privacitat de la informació en xarxes: smx-si/ut4-privacitat-xarxes.md
+              - UP5. Legislació i protecció de dades: smx-si/ut5-legislacio-dades.md
           - Recursos: smx-si/recursos.md
           - Avaluació: smx-si/avaluacio.md
           - Preguntes freqüents: smx-si/preguntes-frequents.md

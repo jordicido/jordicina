@@ -2,7 +2,7 @@
 hide:
   - navigation
 ---
-# UT3. Mecanismes de seguretat activa
+# UP3. Mecanismes de seguretat activa
 
 ## 1. Introducció
 Treballarem les mesures que detecten, contenen i ajuden a recuperar-se d’una incidència de seguretat.

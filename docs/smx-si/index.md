@@ -28,13 +28,13 @@ hide:
   <p>Estem treballant què cal protegir en una organització i com aplicar mesures de seguretat física i lògica, SAI, control d'accessos, contrasenyes i biometria. Consulta la <a href="ut1-seguretat-passiva/">teoria de la UP1</a> i les activitats associades.</p>
 </section>
 
-<h2>Unitats de treball</h2>
+<h2>Unitats de programació</h2>
 <div class="module-grid">
-  <a class="module-card" href="ut1-seguretat-passiva/"><strong>UT1 · Mesures de seguretat passiva</strong><span>Protecció física i lògica, SAI, accessos, contrasenyes i biometria.</span></a>
-  <a class="module-card" href="ut2-emmagatzematge/"><strong>UT2 · Gestió d’emmagatzematge</strong><span>Còpies de seguretat, redundància, mitjans i imatges de sistemes.</span></a>
-  <a class="module-card" href="ut3-seguretat-activa/"><strong>UT3 · Mecanismes de seguretat activa</strong><span>Programari maliciós, actualitzacions, contingència i recuperació.</span></a>
-  <a class="module-card" href="ut4-privacitat-xarxes/"><strong>UT4 · Privacitat en xarxes</strong><span>Enginyeria social, xarxes sense fils, identificació i tallafocs.</span></a>
-  <a class="module-card" href="ut5-legislacio-dades/"><strong>UT5 · Legislació i protecció de dades</strong><span>Protecció de dades, comerç electrònic i gestió de la seguretat.</span></a>
+  <a class="module-card" href="ut1-seguretat-passiva/"><strong>UP1 · Mesures de seguretat passiva</strong><span>Protecció física i lògica, SAI, accessos, contrasenyes i biometria.</span></a>
+  <a class="module-card" href="ut2-emmagatzematge/"><strong>UP2 · Gestió d’emmagatzematge</strong><span>Còpies de seguretat, redundància, mitjans i imatges de sistemes.</span></a>
+  <a class="module-card" href="ut3-seguretat-activa/"><strong>UP3 · Mecanismes de seguretat activa</strong><span>Programari maliciós, actualitzacions, contingència i recuperació.</span></a>
+  <a class="module-card" href="ut4-privacitat-xarxes/"><strong>UP4 · Privacitat en xarxes</strong><span>Enginyeria social, xarxes sense fils, identificació i tallafocs.</span></a>
+  <a class="module-card" href="ut5-legislacio-dades/"><strong>UP5 · Legislació i protecció de dades</strong><span>Protecció de dades, comerç electrònic i gestió de la seguretat.</span></a>
 </div>
 
 <section class="module-highlight">

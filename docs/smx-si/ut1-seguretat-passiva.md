@@ -2,7 +2,7 @@
 hide:
   - navigation
 ---
-# UT1. Mesures de seguretat passiva
+# UP1. Mesures de seguretat passiva
 
 ## Presentació
 
@@ -34,7 +34,7 @@ La unitat combina conceptes, observació de l’entorn, documentació tècnica i
 
 ## Itinerari de treball
 
-Consulta l’[índex de la UT1](ut1/index.md) per veure l’ordre recomanat i la seqüència de sessions. Tota la teoria i totes les activitats també estan disponibles directament des d’aquesta pàgina.
+Consulta l’[índex de la UP1](ut1/index.md) per veure l’ordre recomanat i la seqüència de sessions. Tota la teoria i totes les activitats també estan disponibles directament des d’aquesta pàgina.
 
 ### Materials teòrics
 
@@ -54,16 +54,16 @@ Consulta l’[índex de la UT1](ut1/index.md) per veure l’ordre recomanat i la
 | Activitat | Producte |
 | --- | --- |
 | [1. Informe d’anàlisi de riscos](ut1/activitats/activitat-1-mapa-riscos.md) | Informe d’una sala de servidors amb actius, riscos i prioritats. |
-| [2. Taller de selecció i verificació d’un SAI](ut1/activitats/activitat-2-taller-sai.md) | Fitxa de càrrega, connexions, autonomia i prova. |
+| [2. Selecció i pressupost d’un SAI](ut1/activitats/activitat-2-taller-sai.md) | Requisits, comparativa de productes i pressupost de compra i instal·lació en PDF. |
 | [3. Pla de seguretat d’una microempresa](ut1/activitats/activitat-3-pla-microempresa.md) | Pla final, ACL, política de credencials i defensa. |
-| [Autoavaluació de la UT1](ut1/activitats/autoavaluacio.md) | Qüestionari individual de repàs. |
+| [Autoavaluació de la UP1](ut1/activitats/autoavaluacio.md) | Qüestionari individual de repàs. |
 
 ## Evidències avaluables
 
 | Evidència | Producte | Criteris principals |
 | --- | --- | --- |
 | 1. Informe d’anàlisi de riscos | Informe d’actius, amenaces, vulnerabilitats, conseqüències i mesures | RA1.a, RA1.b, RA1.c, RA1.d |
-| 2. Taller de SAI | Fitxa de verificació, càrrega i selecció | RA1.e, RA1.f |
+| 2. Selecció i pressupost d’un SAI | Requisits, comparativa, pressupost i instal·lació prevista en PDF | RA1.e, RA1.f |
 | 3. Pla de la microempresa | Informe, ACL, política de credencials i defensa | RA1.g, RA1.h, RA1.i |
 
 El [qüestionari d’autoavaluació](ut1/activitats/autoavaluacio.md) serveix per comprovar el domini individual dels conceptes abans del tancament.
@@ -88,4 +88,4 @@ El [qüestionari d’autoavaluació](ut1/activitats/autoavaluacio.md) serveix pe
 
 No manipules quadres elèctrics, bateries, extintors, sistemes de videovigilància ni equipament de xarxa sense autorització. En l’auditoria no fotografies persones, pantalles amb dades personals ni credencials. Quan una comprovació no siga segura, descriu-la i deixa que la realitze el professorat.
 
-[Anar a l’índex de la UT1](ut1/index.md) · [Començar la teoria](ut1/01-informacio-actiu.md) · [Començar les activitats](ut1/activitats/activitat-1-mapa-riscos.md)
+[Anar a l’índex de la UP1](ut1/index.md) · [Començar la teoria](ut1/01-informacio-actiu.md) · [Començar les activitats](ut1/activitats/activitat-1-mapa-riscos.md)

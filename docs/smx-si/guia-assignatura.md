@@ -20,22 +20,22 @@ La programació indica una durada de **110 hores lectives** i **4 hores setmanal
 
 ## 3. Organització del curs
 
-El mòdul s’organitza en cinc unitats de treball. Cada unitat combina continguts, activitats pràctiques i evidències d’avaluació. Els materials publicats ací complementen el treball de classe i la plataforma Aules.
+El mòdul s’organitza en cinc unitats de programació. Cada unitat combina continguts, activitats pràctiques i evidències d’avaluació. Els materials publicats ací complementen el treball de classe i la plataforma Aules.
 
 ## 4. Temporalització
 
 | Unitat | Denominació | Hores | Avaluació |
 | --- | --- | ---: | --- |
-| UT1 | Mesures de seguretat passiva en sistemes informàtics | 14 | 1a |
-| UT2 | Gestió de dispositius d’emmagatzematge | 18 | 1a |
-| UT3 | Mecanismes de seguretat activa | 14 | 2a |
-| UT4 | Privacitat de la informació en xarxes informàtiques | 30 | 2a |
-| UT5 | Legislació i normativa sobre seguretat i protecció de dades | 52 | 3a |
+| UP1 | Mesures de seguretat passiva en sistemes informàtics | 14 | 1a |
+| UP2 | Gestió de dispositius d’emmagatzematge | 18 | 1a |
+| UP3 | Mecanismes de seguretat activa | 14 | 2a |
+| UP4 | Privacitat de la informació en xarxes informàtiques | 30 | 2a |
+| UP5 | Legislació i normativa sobre seguretat i protecció de dades | 52 | 3a |
 
 !!! warning "Dada pendent de revisió"
     La taula de temporalització del PDF suma **128 hores**, mentre que la introducció del document indica **110 hores**. Cal confirmar aquesta diferència abans de donar la temporalització per definitiva.
 
-La mateixa taula relaciona UT2 amb RA5, UT3 amb RA2, UT4 amb RA3 i UT5 amb RA4. En canvi, l’apartat de criteris de qualificació utilitza les descripcions completes RA1–RA5 de manera coherent amb les unitats. Per evitar propagar l’error, en aquest web s’utilitza la descripció completa de cada resultat d’aprenentatge i la numeració de la qualificació.
+La mateixa taula relaciona UP2 amb RA5, UP3 amb RA2, UP4 amb RA3 i UP5 amb RA4. En canvi, l’apartat de criteris de qualificació utilitza les descripcions completes RA1–RA5 de manera coherent amb les unitats. Per evitar propagar l’error, en aquest web s’utilitza la descripció completa de cada resultat d’aprenentatge i la numeració de la qualificació.
 
 La [calendarització provisional de les sessions](calendaritzacio.md) adapta aquesta distribució a una previsió de 21 setmanes, amb dues sessions setmanals de dues hores, mentre no es confirme el calendari definitiu.
 

@@ -148,4 +148,4 @@ Es valorarà especialment que els problemes estiguen **ben identificats, justifi
 !!! tip "Connexió amb la primera observació"
     Si ja havíeu analitzat aquesta imatge de manera informal, compareu aquella primera observació amb l’informe actual. Una frase com «hi ha cables pel terra» ara s’hauria de poder expressar com una vulnerabilitat, una amenaça, un impacte i una mesura concreta.
 
-[Activitat 2. Taller de SAI](activitat-2-taller-sai.md) · [Índex de la UT1](../index.md)
+[Activitat 2. Selecció i pressupost d’un SAI](activitat-2-taller-sai.md) · [Índex de la UP1](../index.md)
