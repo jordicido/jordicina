@@ -23,7 +23,13 @@ El teu objectiu és:
 
 ## Projecte inicial
 
-El professorat proporcionarà la carpeta següent:
+Prepara tu mateix el projecte abans d'obrir cap IDE:
+
+1. Crea una carpeta anomenada `hola-daw`.
+2. Dins de `hola-daw`, crea una carpeta anomenada `src`.
+3. Dins de `src`, crea el fitxer `Main.java`.
+
+L'estructura final ha de ser:
 
 ```text
 hola-daw/
@@ -31,7 +37,7 @@ hola-daw/
     └── Main.java
 ```
 
-El fitxer `Main.java` contindrà:
+Escriu en `Main.java` el codi següent:
 
 ```java title="src/Main.java"
 public class Main {
