@@ -2,37 +2,47 @@
 hide:
   - navigation
 ---
-# Activitat 3. Un mateix projecte, dos IDE
+
+# Activitat 3. Migrem un projecte: VS Code vs IntelliJ IDEA
 
 ## Finalitat
 
-Ara que ja tenim els entorns instal·lats i configurats, començarem a utilitzar-los sobre un projecte real.
+Ara que ja tenim els entorns instal·lats i configurats, començarem a utilitzar-los sobre un mateix projecte.
 
-L’objectiu no és aprendre Java encara, sinó observar **què necessita un IDE per treballar amb un llenguatge**, executar un projecte ja preparat i comparar com resolen la mateixa tasca Visual Studio Code i IntelliJ IDEA.
+En aquesta activitat treballarem amb un projecte Java molt senzill. L'objectiu **no és aprendre Java**, sinó entendre millor què fa un entorn de desenvolupament i comprovar si un mateix projecte pot treballar-se des de diferents IDE.
 
 Treballarem principalment:
 
-- **RA2.b:** afegir i eliminar mòduls de l’entorn.
-- **RA2.g:** identificar característiques comunes i específiques de diversos IDE.
-- **RA2.f:** començar a observar com un mateix codi font pot treballar-se des de diferents entorns.
+- **RA2.f:** generar executables a partir d'un mateix codi font amb diversos entorns de desenvolupament.
+- **RA2.g:** identificar les característiques comunes i específiques de diversos entorns de desenvolupament.
+
+També relacionarem la pràctica amb conceptes treballats anteriorment com el **codi font, la compilació, el codi intermedi i la màquina virtual**.
 
 ---
 
 ## Situació
 
-T’incorpores a un equip de desenvolupament i et proporcionen un projecte Java ja creat.
+T'incorpores a un equip de desenvolupament que treballa amb Java.
 
-No has d’escriure el programa des de zero.
+Un company t'envia un projecte que ha estat treballant amb un IDE diferent del teu. Abans de continuar desenvolupant-lo, vols comprovar si el projecte depén de l'entorn utilitzat o si pot obrir-se i executar-se des d'altres ferramentes.
 
-La teua tasca és:
+La teua missió serà:
 
-1. comprovar que el teu entorn està preparat;
-2. executar el projecte;
-3. identificar quines ferramentes de l’IDE ho fan possible;
-4. obrir el mateix projecte amb un altre IDE;
-5. comparar l’experiència.
+1. executar el projecte amb Visual Studio Code;
+2. identificar què necessita realment Java per executar-lo;
+3. obrir **exactament el mateix projecte** amb IntelliJ IDEA;
+4. resoldre una incidència relacionada amb l'entorn;
+5. comparar els dos IDE i decidir quin utilitzaries en diferents situacions.
 
-El professorat facilitarà una carpeta molt simple:
+!!! question "Pregunta que intentarem respondre"
+
+    **Un programa Java funciona gràcies a l'IDE o gràcies a les ferramentes que hi ha darrere?**
+
+---
+
+## Projecte inicial
+
+El professorat proporcionarà la carpeta següent:
 
 ```text
 hola-daw/
@@ -40,289 +50,470 @@ hola-daw/
     └── Main.java
 ```
 
-Per exemple:
+El fitxer `Main.java` contindrà un programa molt senzill:
 
 ```java title="src/Main.java"
 public class Main {
+
     public static void main(String[] args) {
+
         System.out.println("Entorn de desenvolupament preparat!");
         System.out.println("DAW - IES Mestre Ramon Esteve");
+
     }
+
 }
 ```
 
-!!! info "No cal dominar Java encara"
-    No és necessari entendre tota la sintaxi del programa. Ens interessa el procés que segueix l’entorn per treballar amb ell.
+!!! info "No cal saber Java"
+    No és necessari entendre tota la sintaxi del programa.
+
+    En aquesta activitat ens interessa **el procés que segueix l'entorn per aconseguir executar-lo**.
 
 ---
 
-## Part 1. Què tenim instal·lat?
+## Part 1. Aconsegueix executar el projecte
 
-Abans d’executar res, obri el gestor d’extensions de Visual Studio Code.
+Obri la carpeta `hola-daw` amb **Visual Studio Code**.
 
-Localitza les extensions relacionades amb Java que ja tens instal·lades.
+La teua primera missió és molt simple:
 
-Per a **dues d’elles**, completa:
+> **Aconsegueix executar `Main.java`.**
 
-| Extensió | Desenvolupador | Per a què creus que serveix? |
-| --- | --- | --- |
-| | | |
-| | | |
+No tindràs una guia pas a pas.
 
-No busques una descripció tècnica extensa. Amb una frase és suficient.
+Hauràs de localitzar les ferramentes necessàries i comprovar si l'entorn està correctament preparat.
 
-Per exemple:
-
-> Permet que VS Code reconega i execute projectes Java.
-
-Les extensions Java són una ampliació de les capacitats de l’IDE:
-
-```text
-VS Code
-   +
-extensions Java
-   ↓
-Entorn capaç de treballar amb Java
-```
-
-Cal distingir aquest concepte del de dependència:
-
-```text
-EXTENSIÓ / PLUGIN
-Amplia les capacitats de l’IDE.
-
-DEPENDÈNCIA
-Forma part del projecte o és utilitzada pel programa.
-```
-
-De moment treballarem només amb el primer concepte.
-
----
-
-## Part 2. Executa el projecte amb VS Code
-
-Obri la carpeta `hola-daw` amb Visual Studio Code.
-
-Sense modificar inicialment el programa:
-
-1. localitza el fitxer `Main.java`;
-2. identifica com pots executar-lo;
-3. executa’l;
-4. localitza on apareix el resultat.
-
-Hauries d’obtindre una eixida semblant a:
+El resultat esperat és:
 
 ```text
 Entorn de desenvolupament preparat!
 DAW - IES Mestre Ramon Esteve
 ```
 
-Després respon:
+Quan funcione, investiga el teu entorn i respon:
 
-- On apareix l’eixida del programa?
-- Quina acció has utilitzat per executar-lo?
-- Creus que VS Code podria executar aquest programa sense les ferramentes de Java que té instal·lades?
+1. Quin **JDK** està utilitzant Visual Studio Code?
+2. On apareix l'eixida del programa?
+3. Quina acció has utilitzat per executar-lo?
+4. Quina ferramenta creus que s'encarrega realment de compilar el programa?
 
-La tercera pregunta és especialment important.
+!!! tip "Una pista"
+    Visual Studio Code és l'entorn des del qual treballes, però això no significa necessàriament que siga ell qui compile Java.
 
 ---
 
-## Part 3. Del codi font a l’execució
+## Part 2. Què ocorre quan premem «Run»?
 
-El professorat explicarà breument el procés que té lloc quan executem el programa:
+Quan executem un programa Java, l'IDE simplifica un procés en què intervenen diverses ferramentes.
+
+De manera simplificada:
 
 ```mermaid
 flowchart LR
-    A["Main.java<br/>Codi font"] --> B["Compilació"]
-    B --> C["Main.class"]
+
+    A["Main.java<br/>Codi font"] --> B["javac<br/>Compilador"]
+    B --> C["Main.class<br/>Bytecode"]
     C --> D["JVM"]
-    D --> E["Programa en execució"]
+    D --> E["Programa<br/>en execució"]
 ```
 
-A continuació, investiga si pots localitzar algun fitxer generat pel procés.
+Investiga les carpetes del projecte després d'haver-lo executat.
 
-L’objectiu és començar a relacionar:
+### Busca evidències
 
-**codi font → ferramenta → execució**
+Intenta localitzar algun fitxer `.class` generat durant el procés.
 
-No cal entrar encara en els detalls de la programació ni de la construcció de projectes.
+!!! question
+    Quina diferència observes entre:
+
+    - `Main.java`
+    - `Main.class`
+
+No cal analitzar el contingut intern dels fitxers. Ens interessa entendre **quin paper té cadascun dins del procés**.
 
 ---
 
-## Part 4. Fes un canvi mínim
+## Prova fora de l'IDE
 
-Ara modifica el codi de manera controlada.
+Ara obrirem una terminal.
 
-Canvia:
+Situa't en la carpeta del projecte i prova:
 
-```java
-System.out.println("DAW - IES Mestre Ramon Esteve");
+```bash
+javac src/Main.java
 ```
 
-per:
+Si la compilació és correcta, executa:
 
-```java
-System.out.println("DAW - Nom Cognom");
+```bash
+java -cp src Main
 ```
 
-Torna a executar-lo i comprova el resultat.
-
-Aquest és el cicle de treball que repetirem moltes vegades durant el curs:
-
-```mermaid
-flowchart LR
-    A["Editar"] --> B["Guardar"]
-    B --> C["Executar"]
-    C --> D["Comprovar"]
-    D --> A
-```
-
----
-
-## Part 5. El mateix projecte en IntelliJ IDEA
-
-Ara tanca Visual Studio Code i obri **exactament la mateixa carpeta** amb IntelliJ IDEA.
-
-Hauràs d’aconseguir que el programa torne a mostrar:
+Hauries d'obtindre el mateix resultat:
 
 ```text
 Entorn de desenvolupament preparat!
-DAW - Nom Cognom
+DAW - IES Mestre Ramon Esteve
 ```
 
-No es donaran tots els passos exactes. Localitza:
+Ara respon:
 
-- l’estructura del projecte;
+> **Necessitem Visual Studio Code perquè aquest programa funcione?**
+
+Justifica breument la resposta.
+
+---
+
+## Part 3. Migrem el projecte
+
+Ara arriba la part principal de l'activitat.
+
+Tanca Visual Studio Code i obri **exactament la mateixa carpeta `hola-daw`** amb IntelliJ IDEA.
+
+!!! warning "Important"
+    No crees un projecte Java nou.
+
+    No copies `Main.java` dins d'un altre projecte.
+
+    Has de treballar sobre **la mateixa carpeta que utilitzaves en Visual Studio Code**.
+
+La teua missió és:
+
+> **Aconseguir executar `Main.java` des d'IntelliJ IDEA sense modificar el seu codi.**
+
+Per aconseguir-ho hauràs de localitzar:
+
+- l'estructura del projecte;
 - el fitxer `Main.java`;
-- la configuració o detecció del JDK;
-- el botó o l’opció d’execució;
-- la zona on apareix l’eixida.
+- el JDK utilitzat;
+- l'opció d'execució;
+- la zona on apareix el resultat.
+
+El resultat ha de tornar a ser:
+
+```text
+Entorn de desenvolupament preparat!
+DAW - IES Mestre Ramon Esteve
+```
 
 ```mermaid
 flowchart TB
-    A["Main.java"]
+
+    A["Mateix Main.java"]
 
     A --> B["VS Code"]
     A --> C["IntelliJ IDEA"]
 
-    B --> D["Mateix resultat"]
+    B --> D["Compilació"]
     C --> D
+
+    D --> E["Mateix resultat"]
 ```
 
 !!! question "Pregunta clau"
-    Ha sigut necessari modificar el codi perquè funcione en un IDE diferent? No: el mateix codi font pot obrir-se i executar-se en els dos entorns.
+    **Ha sigut necessari modificar `Main.java` perquè funcione en IntelliJ IDEA?**
+
+    Què et diu això sobre la relació entre **el codi font i l'IDE**?
 
 ---
 
-## Part 6. Què tenen en comú?
+## Part 4. Analitza el canvi d'entorn
 
-Compara els dos entorns i indica on has localitzat cada funcionalitat:
+Ara que has executat el mateix projecte en dos IDE diferents, analitza què ha canviat i què s'ha mantingut.
 
-| Funcionalitat | VS Code | IntelliJ IDEA |
-| --- | --- | --- |
-| Explorador del projecte | | |
-| Editor de codi | | |
-| Executar el programa | | |
-| Mostrar l’eixida | | |
-| Terminal integrada | | |
-| Configurar Java/JDK | | |
-| Extensions o plugins | | |
+Completa:
 
-No cal explicar-ho tot. Per cada fila pots indicar simplement on has localitzat la funcionalitat o escriure una frase curta.
+| Element                      | Ha canviat? | Explicació breu |
+| ---------------------------- | :---------: | --------------- |
+| Codi font `Main.java`        |             |                 |
+| IDE                          |             |                 |
+| Forma d'executar el programa |             |                 |
+| Ubicació de l'eixida         |             |                 |
+| JDK                          |             |                 |
+| Resultat del programa        |             |                 |
 
 Després respon:
 
-1. Quines funcionalitats tenen en comú els dos IDE?
-2. Quina diferència t’ha cridat més l’atenció?
-3. Quin paper creus que tenen les extensions o plugins dins d’un IDE?
+### Quines ferramentes tenen en comú?
+
+Indica almenys **tres funcionalitats** que has trobat tant en Visual Studio Code com en IntelliJ IDEA.
+
+Per exemple:
+
+- explorador del projecte;
+- editor;
+- terminal;
+- execució;
+- configuració del JDK;
+- depurador.
+
+### I quina diferència és la més important?
+
+Indica una diferència entre els dos entorns que t'haja cridat especialment l'atenció.
+
+No ens interessa tant una diferència estètica com una diferència relacionada amb **la manera de treballar**.
 
 ---
 
-## Part 7. Afig i elimina una funcionalitat
+## Part 5. Incidència: el projecte no funciona
 
-**No toques les extensions de Java.**
+En un entorn professional, moltes vegades el problema no està en el codi.
 
-En canvi:
+Imagina que un company intenta executar el projecte i obté:
 
-1. obri el gestor d’extensions o plugins;
-2. instal·la una extensió indicada pel professorat;
-3. comprova quin canvi produeix;
-4. desinstal·la-la;
-5. comprova que la funcionalitat desapareix.
+```text
+java: command not found
+```
 
-L’extensió ha de ser **totalment prescindible**. Pot afegir una funcionalitat visual o modificar temporalment alguna característica de l’entorn, però no ha de ser necessària per treballar durant el curs.
+o que el seu IDE mostra un missatge semblant a:
 
-!!! warning "No desinstal·les les extensions de Java"
-    Les extensions de Java són necessàries per a aquesta pràctica. La prova d’alta i baixa es farà amb una extensió addicional i recuperable.
+```text
+No JDK configured
+```
 
-Aquesta prova permet demostrar el **RA2.b** sense posar en risc la configuració de Java.
+Analitza la situació.
+
+### Respon
+
+1. Quin creus que és el problema?
+2. Quina és la primera comprovació que faries?
+3. Quina ferramenta falta o està mal configurada?
+4. Instal·lar un altre IDE solucionaria necessàriament el problema? Per què?
+
+---
+
+## Repte addicional
+
+El professorat pot introduir una incidència real en algun dels entorns.
+
+Per exemple:
+
+- JDK incorrecte;
+- JDK no detectat;
+- carpeta `src` no reconeguda correctament;
+- projecte obert des d'una carpeta incorrecta;
+- configuració d'execució no vàlida.
+
+En aquest cas hauràs de:
+
+```text
+Detectar el problema
+        ↓
+Investigar la causa
+        ↓
+Aplicar una solució
+        ↓
+Comprovar que funciona
+```
+
+No es donarà directament la solució.
+
+!!! tip
+    L'objectiu no és provar opcions aleatòriament.
+
+    Intenta entendre **què necessita el projecte per funcionar** abans de modificar la configuració.
+
+---
+
+## Part 6. Quin IDE utilitzaries?
+
+Ara imagina que has de començar tres projectes diferents.
+
+Per a cada situació, selecciona l'IDE que utilitzaries:
+
+- **Visual Studio Code**
+- **IntelliJ IDEA**
+
+La resposta ha d'estar justificada a partir de característiques que hages observat durant la pràctica.
+
+---
+
+## Cas A. Projecte Java gran
+
+Treballaràs durant diversos mesos en una aplicació Java amb moltes classes, proves, dependències i diferents membres de l'equip.
+
+**IDE triat:**
+
+```text
+Visual Studio Code / IntelliJ IDEA
+```
+
+**Justificació:**
+
+```text
+
+
+
+```
+
+---
+
+## Cas B. Desenvolupament web
+
+Treballaràs habitualment amb:
+
+```text
+HTML
+CSS
+JavaScript
+JSON
+Python
+scripts
+```
+
+i canviaràs sovint entre diferents tecnologies.
+
+**IDE triat:**
+
+```text
+Visual Studio Code / IntelliJ IDEA
+```
+
+**Justificació:**
+
+```text
+
+
+
+```
+
+---
+
+## Cas C. Equip amb recursos limitats
+
+Treballaràs en un portàtil amb recursos limitats i principalment desenvoluparàs projectes senzills amb diferents llenguatges.
+
+**IDE triat:**
+
+```text
+Visual Studio Code / IntelliJ IDEA
+```
+
+**Justificació:**
+
+```text
+
+
+
+```
+
+!!! info
+    No existeix necessàriament una única resposta correcta.
+
+    L'important és que la decisió estiga **justificada amb característiques reals dels entorns**.
 
 ---
 
 # Lliurament
 
-L’activitat ha de ser més lleugera que l’anterior. No cal elaborar un informe extens.
+No cal elaborar un informe extens.
 
-## 1. Extensions Java
+Prepara un document breu amb les següents evidències i conclusions.
 
-| Extensió | Funció |
-| --- | --- |
-| | |
-| | |
+## 1. Execució en VS Code
 
-## 2. Comparació dels IDE
+Inclou **una captura** on es veja el projecte executant-se correctament en Visual Studio Code.
 
-Inclou la taula comparativa de la Part 6.
+Afig una frase explicant què acredita la captura.
 
-## 3. Preguntes
+---
 
-Respon aquestes quatre preguntes:
+## 2. Execució en IntelliJ IDEA
 
-1. Quin paper tenen les extensions de Java instal·lades en VS Code?
-2. Ha sigut necessari modificar `Main.java` per utilitzar IntelliJ IDEA? Per què?
-3. Indica dues funcionalitats comunes entre els dos IDE.
-4. Quina diferència has observat entre VS Code i IntelliJ IDEA?
+Inclou **una captura** on es veja **el mateix projecte** executant-se correctament en IntelliJ IDEA.
 
-## 4. Evidències
+Afig una frase explicant què acredita la captura.
 
-Inclou només **tres captures de pantalla**:
+---
 
-- el programa executat en VS Code;
-- el mateix programa executat en IntelliJ IDEA;
-- l’extensió o plugin temporal instal·lat.
+## 3. Anàlisi del procés
 
-La desinstal·lació es pot comprovar mitjançant observació o amb una quarta captura, si el professorat ho indica.
+Completa:
 
-!!! warning
-    Les captures han de mostrar únicament la informació necessària i han d’anar acompanyades d’una frase que explique què acrediten.
+| Pregunta                                           | Resposta |
+| -------------------------------------------------- | -------- |
+| Quin JDK has utilitzat?                            |          |
+| Què compila `Main.java`?                           |          |
+| Quin fitxer es genera després de la compilació?    |          |
+| Què executa el bytecode Java?                      |          |
+| Ha calgut modificar `Main.java` per canviar d'IDE? |          |
+
+---
+
+## 4. Incidència
+
+Descriu breument:
+
+```text
+Problema:
+_________________________________________________
+
+Possible causa:
+_________________________________________________
+
+Comprovació o solució:
+_________________________________________________
+```
+
+---
+
+## 5. Comparació final
+
+Indica:
+
+### Tres funcionalitats comunes
+
+1.
+2.
+3.
+
+### Una diferència important
+
+```text
+
+
+
+```
+
+---
+
+## 6. Elecció de l'IDE
+
+Inclou les decisions justificades dels casos:
+
+- projecte Java gran;
+- desenvolupament web;
+- equip amb recursos limitats.
 
 ---
 
 # Avaluació
 
-| Aspecte | Assoliment alt | Assoliment mitjà | Assoliment baix |
-| --- | --- | --- | --- |
-| **Extensions i plugins** | Identifica correctament la funció de les extensions Java i instal·la i elimina una extensió addicional comprovant el canvi. | Realitza les operacions, però mostra alguna dificultat per explicar la seua funció. | No identifica la funció dels mòduls o no aconsegueix instal·lar o eliminar l’extensió. |
-| **Execució en VS Code** | Obri, executa i modifica correctament el projecte proporcionat. | Executa el projecte amb alguna ajuda o presenta alguna dificultat menor. | No aconsegueix executar correctament el projecte. |
-| **Execució en IntelliJ IDEA** | Obri i executa el mateix projecte en IntelliJ sense modificar-ne innecessàriament el codi. | Aconsegueix executar-lo amb alguna ajuda. | No aconsegueix executar el projecte. |
-| **Comparació dels IDE** | Identifica correctament les principals funcionalitats comunes i diferències dels dos entorns. | Identifica la major part de les funcionalitats, amb alguna imprecisió. | La comparació és incompleta o mostra confusió entre els dos entorns. |
-| **Evidències i conclusions** | Les evidències demostren clarament el treball i les respostes mostren comprensió del procés. | Les evidències són suficients però alguna resposta és superficial. | Falten evidències o les respostes no permeten comprovar la comprensió. |
+| Aspecte                    | Assoliment alt                                                                                                                      | Assoliment mitjà                                                                                            | Assoliment baix                                                                               |
+| -------------------------- | ----------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- |
+| **Execució del projecte**  | Executa correctament el mateix projecte en els dos IDE sense modificar innecessàriament el codi font.                               | Executa el projecte en els dos entorns amb alguna ajuda o presenta alguna dificultat menor de configuració. | No aconsegueix executar correctament el projecte en un o els dos entorns.                     |
+| **Comprensió del procés**  | Relaciona correctament codi font, compilació, bytecode, JDK/JVM i execució.                                                         | Comprén el procés general però presenta alguna imprecisió.                                                  | Mostra confusió entre els principals elements del procés.                                     |
+| **Diagnòstic de l'entorn** | Identifica correctament la causa de la incidència i proposa o aplica una solució raonada.                                           | Identifica parcialment el problema o necessita ajuda per arribar a la solució.                              | No identifica la causa del problema o aplica canvis sense relacionar-los amb la incidència.   |
+| **Comparació dels IDE**    | Identifica característiques comunes i diferències significatives entre els dos entorns.                                             | Identifica les principals característiques però amb alguna justificació superficial.                        | La comparació és incompleta o mostra confusió entre els dos IDE.                              |
+| **Elecció de ferramentes** | Selecciona un IDE adequat per als diferents escenaris i justifica les decisions amb característiques observades durant la pràctica. | Les decisions són raonables però alguna justificació és poc concreta.                                       | Les decisions no estan justificades o no es relacionen amb les característiques dels entorns. |
 
 ---
 
-## Abans d’entregar
+## Abans d'entregar
 
 Comprova que:
 
-- [ ] Has identificat dues extensions Java de VS Code.
-- [ ] Has executat el projecte en VS Code.
-- [ ] Has localitzat l’eixida del programa.
-- [ ] Has localitzat algun fitxer generat durant el procés.
-- [ ] Has fet el canvi mínim en `Main.java`.
-- [ ] Has executat el mateix projecte en IntelliJ IDEA.
-- [ ] Has comparat les funcionalitats bàsiques dels dos IDE.
-- [ ] Has instal·lat i eliminat una extensió temporal.
-- [ ] No has modificat ni desinstal·lat les extensions de Java.
-- [ ] Has preparat les evidències demanades.
+- [ ] Has executat el projecte en Visual Studio Code.
+- [ ] Has identificat el JDK utilitzat.
+- [ ] Has relacionat `Main.java`, `Main.class` i la JVM.
+- [ ] Has executat el programa també des de la terminal.
+- [ ] Has obert **la mateixa carpeta** amb IntelliJ IDEA.
+- [ ] Has executat el projecte en IntelliJ sense copiar el codi a un projecte nou.
+- [ ] Has comparat què canvia i què es manté entre els dos IDE.
+- [ ] Has analitzat la incidència proposada.
+- [ ] Has identificat almenys tres funcionalitats comunes.
+- [ ] Has justificat quin IDE utilitzaries en els tres casos plantejats.
+- [ ] Has inclòs només les evidències necessàries.
 
-[Anterior: posar a punt l’entorn](activitat-2-configuracio.md) · [Autoavaluació](autoavaluacio.md) · [Índex](../index.md)
+[[Anterior: posar a punt l'entorn](https://chatgpt.com/g/g-p-6a6e0b0272708191a4eaa0d3537e1f61-ies-mestre-ramon-esteve/c/activitat-2-configuracio.md)](activitat-2-configuracio.md) · [[Autoavaluació](https://chatgpt.com/g/g-p-6a6e0b0272708191a4eaa0d3537e1f61-ies-mestre-ramon-esteve/c/autoavaluacio.md)](autoavaluacio.md) · [[Índex](https://chatgpt.com/g/g-p-6a6e0b0272708191a4eaa0d3537e1f61-ies-mestre-ramon-esteve/index.md)](../index.md)
