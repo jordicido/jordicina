@@ -42,7 +42,7 @@ RA1.b i RA1.c es reforcen ací, però la seua evidència avaluable principal con
 
 ## Bloc 0 · Projecte i entorn
 
-### Exercici 0. Prepara i documenta el projecte
+### Exercici 0. Prepara i comprova el projecte
 
 Abans d’escriure els setze programes:
 
@@ -50,25 +50,10 @@ Abans d’escriure els setze programes:
 2. Obri la carpeta `python/up1` amb Visual Studio Code, no només el fitxer solt.
 3. Selecciona l’intèrpret de Python que utilitzaràs en la UP1.
 4. Comprova des de la terminal integrada la versió amb `python --version` o `python3 --version`.
-5. Crea `README.md` dins de `up1` i documenta l’estructura del projecte, la versió de Python i l’ordre que utilitzes per executar els fitxers.
+5. Comprova que dins de `up1` tens la carpeta `exercicis` i que hi guardaràs els setze fitxers Python.
 6. Executa un programa de la sèrie des de VS Code i des de la terminal. El resultat ha de ser equivalent.
 
-El `README.md` ha d’incloure una estructura semblant a aquesta:
-
-```text
-up1/
-├── README.md
-└── exercicis/
-    ├── ex01.py
-    ├── ...
-    ├── ex12.py
-    ├── ex13.py
-    ├── ex14.py
-    ├── ex15.py
-    └── ex16.py
-```
-
-Indica també quin intèrpret has seleccionat i com has comprovat que VS Code i la terminal utilitzen la instal·lació esperada. No inclogues rutes personals innecessàries ni dades sensibles.
+En el document breu del lliurament, indica quin intèrpret has seleccionat i com has comprovat que VS Code i la terminal utilitzen la instal·lació esperada. No inclogues rutes personals innecessàries ni dades sensibles.
 
 ## Bloc A · Estructura i `print()`
 
@@ -231,7 +216,7 @@ Els comentaris han d’explicar decisions o parts del programa. No repetisques s
 
 ## Lliurament
 
-Entrega la carpeta `up1` amb el `README.md`, els setze fitxers Python i un document breu amb:
+Entrega la carpeta `up1` amb els setze fitxers Python i un document breu amb:
 
 - la versió de Python i l’intèrpret seleccionat, relacionats amb l’exercici 0;
 - l’estructura del projecte i una evidència d’execució des de VS Code i des de la terminal;
