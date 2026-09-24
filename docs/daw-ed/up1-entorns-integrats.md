@@ -47,7 +47,7 @@ Consulta l’[índex de la UP1](up1/index.md) per veure l’ordre recomanat, la 
 | [3. Mòduls i extensions](up1/03-moduls.md) | Catàlegs, dependències, configuració i eliminació segura. |
 | [4. Personalització i automatització](up1/04-personalitzacio-automatitzacio.md) | Aparença, comportament, desament, automatització i perfils. |
 | [5. Actualitzacions](up1/05-actualitzacions.md) | Tipus d’actualització, criteris i comprovacions. |
-| [6. Construcció d’executables](up1/06-executables.md) | Llenguatges, compiladors, intèrprets, paquets i artefactes. |
+| [6. Del codi font al programa en execució](up1/06-executables.md) | Compilació amb `javac`, execució amb `java` i introducció a Maven. |
 | [7. Comparació d’entorns](up1/07-comparacio.md) | Elements comuns, diferències i criteris de selecció. |
 
 ### Activitats i autoavaluació

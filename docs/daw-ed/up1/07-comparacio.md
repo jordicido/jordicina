@@ -126,4 +126,4 @@ VS Code i IntelliJ IDEA comparteixen funcionalitats bàsiques, però difereixen 
 !!! question "Comprovació final"
     On buscaries en un IDE que no coneixes una opció per canviar el tema, configurar el desament automàtic o comprovar les actualitzacions? Explica la necessitat, els termes de cerca i com comprovaries el resultat.
 
-[Anterior: executables](06-executables.md) · [Índex de la UP1](index.md)
+[Anterior: codi font i execució](06-executables.md) · [Índex de la UP1](index.md)

@@ -84,4 +84,4 @@ Les actualitzacions poden millorar la seguretat, el rendiment i la compatibilita
 !!! success "Idea clau"
     Mantindre un IDE actualitzat és important, però també ho és poder explicar què s’ha actualitzat i comprovar que el nostre entorn continua sent útil.
 
-[Anterior: personalització](04-personalitzacio-automatitzacio.md) · [Següent: executables](06-executables.md) · [Índex](index.md)
+[Anterior: personalització](04-personalitzacio-automatitzacio.md) · [Següent: codi font i execució](06-executables.md) · [Índex](index.md)

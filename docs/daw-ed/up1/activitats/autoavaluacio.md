@@ -29,6 +29,6 @@ Aquesta autoavaluació serveix per detectar què necessites repassar abans de de
 
 ## Repte final
 
-Explica oralment, en ordre, què passa des que obris un fitxer `.java` fins que executes l’artefacte. Inclou l’IDE, el JDK, Maven, les dependències, la compilació, l’empaquetament i la prova final. Si no pots assenyalar una evidència per a cada pas, torna al [bloc d’executables](../06-executables.md) i a l’[activitat 3](activitat-3-construccio.md).
+Explica oralment, en ordre, què passa des que obris un fitxer `.java` fins que executes el programa. Inclou l’IDE, el JDK, Maven, la compilació, l’empaquetament i la prova final. Si no pots explicar algun pas, torna al [bloc de codi font i execució](../06-executables.md) i a l’[activitat 3](activitat-3-construccio.md).
 
 [Índex de la UP1](../index.md) · [Presentació de la UP1](../../up1-entorns-integrats.md)

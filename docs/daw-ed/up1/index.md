@@ -31,7 +31,7 @@ L’objectiu professional no és memoritzar on està cada botó. És poder justi
 3. [Mòduls, extensions i plugins](03-moduls.md): catàlegs, dependències, configuració i eliminació segura.
 4. [Personalització i automatització](04-personalitzacio-automatitzacio.md): aparença, comportament, desament, automatització i perfils.
 5. [Actualitzar l’entorn](05-actualitzacions.md): tipus d’actualització, criteris i comprovacions.
-6. [Del codi font a l’executable](06-executables.md): compilació, empaquetament i verificació en Java i Kotlin.
+6. [Del codi font al programa en execució](06-executables.md): compilació amb `javac`, execució amb `java` i introducció a Maven.
 7. [Comparació d’entorns de desenvolupament](07-comparacio.md): conceptes comuns, diferències i capacitat d’adaptació.
 
 ## Activitats
@@ -53,8 +53,8 @@ Primer entendràs què integra un IDE i quines responsabilitats continuen sent d
 | RA2.b | [Mòduls, extensions i plugins](03-moduls.md) | [Activitat 1](activitats/activitat-1-instal·lacio.md) |
 | RA2.c | [Personalització i automatització](04-personalitzacio-automatitzacio.md) | [Activitat 2](activitats/activitat-2-configuracio.md) |
 | RA2.d | [Actualitzar l’entorn](05-actualitzacions.md) | [Activitat 1](activitats/activitat-1-instal·lacio.md) i [activitat 2](activitats/activitat-2-configuracio.md) |
-| RA2.e | [Del codi font a l’executable](06-executables.md) | — |
-| RA2.f | [Del codi font a l’executable](06-executables.md) | [Activitat 3](activitats/activitat-3-construccio.md) |
+| RA2.e | [Del codi font al programa en execució](06-executables.md) | — |
+| RA2.f | [Del codi font al programa en execució](06-executables.md) | [Activitat 3](activitats/activitat-3-construccio.md) |
 | RA2.g | [Comparació d’entorns de desenvolupament](07-comparacio.md) | [Activitat 2](activitats/activitat-2-configuracio.md) |
 
 [Tornar a la presentació de la UP1](../up1-entorns-integrats.md)
