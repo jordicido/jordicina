@@ -287,4 +287,4 @@ Comprova que:
 - [ ] Has comparat algunes d'aquestes opcions amb IntelliJ IDEA.
 - [ ] El document conté les quatre captures de pantalla demanades.
 
-[Anterior: instal·lació dels IDE](activitat-1-instal·lacio.md) · [Següent: un mateix projecte, dos IDE](activitat-3-construccio.md) · [Índex](../index.md)
+[Anterior: instal·lació dels IDE](activitat-1-instal·lacio.md) · [Següent: crea, replica i executa un projecte Java](activitat-3-construccio.md) · [Índex](../index.md)

@@ -3,7 +3,7 @@ hide:
   - navigation
 ---
 
-# Activitat 3. Migrem un projecte: VS Code vs IntelliJ IDEA
+# Activitat 3. Crea, replica i executa un projecte Java
 
 ## Finalitat
 
