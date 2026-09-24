@@ -7,7 +7,7 @@ hide:
 
 ## Finalitat
 
-Executar el mateix projecte Java en Visual Studio Code i IntelliJ IDEA, treballant sempre sobre la mateixa carpeta i resolent les incidències de configuració que puguen aparéixer.
+Crear i executar un projecte Java senzill en Visual Studio Code, replicar-lo en un projecte Maven nou d'IntelliJ IDEA i comprovar també l'execució des de la terminal.
 
 ## Situació
 
@@ -17,8 +17,8 @@ El teu objectiu és:
 
 1. obrir el projecte amb Visual Studio Code i executar-lo;
 2. fer un canvi menut i comprovar que continua funcionant;
-3. obrir la mateixa carpeta amb IntelliJ IDEA i executar-la;
-4. resoldre una incidència de l'entorn, si apareix.
+3. crear un projecte nou amb Maven en IntelliJ IDEA i replicar-hi `Main.java`;
+4. compilar i executar el projecte original des de la terminal.
 
 ## Projecte inicial
 
@@ -52,7 +52,7 @@ public class Main {
 ```
 
 !!! info "Condicions de la pràctica"
-    No crees un projecte nou ni copies el fitxer a una altra carpeta. Durant tota l'activitat has de treballar sobre `hola-daw`.
+    La Part 1 i la Part 3 es fan sobre `hola-daw`. En la Part 2 crearàs un projecte Maven independent i hi replicaràs `Main.java`.
 
 ---
 
@@ -93,21 +93,24 @@ Guarda el fitxer, torna a executar-lo i comprova que l'eixida s'ha actualitzat.
 
 ---
 
-## Part 2. Obri la mateixa carpeta amb IntelliJ IDEA
+## Part 2. Crea un projecte nou amb Maven en IntelliJ IDEA
 
-Tanca Visual Studio Code i obri **la mateixa carpeta `hola-daw`** amb IntelliJ IDEA.
+Tanca Visual Studio Code i obri IntelliJ IDEA.
+
+En aquesta part no has d'obrir la carpeta `hola-daw`. Crea un projecte nou amb Maven.
 
 Segueix aquest procés:
 
-1. Obri la carpeta existent; no crees un projecte Java nou.
-2. Localitza `src/Main.java`.
-3. Comprova o configura el JDK del projecte si IntelliJ IDEA el sol·licita.
-4. Comprova que `src` està disponible com a carpeta de codi font.
-5. Executa `Main.java`.
-6. Comprova que apareix l'eixida amb el nom que has escrit.
+1. Selecciona **New Project** i tria **Maven**.
+2. Anomena el projecte `hola-daw-maven`.
+3. Selecciona un JDK i crea el projecte amb l'estructura Maven predeterminada.
+4. Dins de `src/main/java`, crea un fitxer nou anomenat `Main.java`.
+5. Replica en aquest fitxer el contingut de `hola-daw/src/Main.java`, inclòs el canvi de nom que has fet en la Part 1.
+6. Executa `Main.java` des d'IntelliJ IDEA.
+7. Comprova que apareix l'eixida amb el nom que has escrit.
 
-!!! warning "No dupliques el projecte"
-    No copies `Main.java`, no canvies la ubicació de la carpeta i no treballes sobre una còpia diferent de `hola-daw`.
+!!! warning "Projectes independents"
+    No òbrigues `hola-daw` amb IntelliJ IDEA ni copies la carpeta sencera. El projecte Maven ha de ser nou i només has de replicar-hi el fitxer `Main.java`.
 
 ---
 
