@@ -109,4 +109,31 @@ Segueix aquest procés:
 !!! warning "No dupliques el projecte"
     No copies `Main.java`, no canvies la ubicació de la carpeta i no treballes sobre una còpia diferent de `hola-daw`.
 
+---
+
+## Part 3. Compila i executa el projecte des de la terminal
+
+Ara tanca els IDE i obri una terminal dins de la carpeta `hola-daw`.
+
+Comprova que estàs situat en la carpeta correcta i executa:
+
+```bash
+javac src/Main.java
+```
+
+Si la compilació acaba correctament, executa el programa amb:
+
+```bash
+java -cp src Main
+```
+
+Comprova que apareix el mateix resultat que en Visual Studio Code i IntelliJ IDEA:
+
+```text
+Entorn de desenvolupament preparat!
+DAW - Nom Cognom
+```
+
+Si apareix un error, revisa la carpeta actual, el nom del fitxer, el contingut de `Main.java` i la configuració del JDK abans de tornar-ho a provar.
+
 [Anterior: posar a punt l'entorn](activitat-2-configuracio.md) · [Autoavaluació](autoavaluacio.md) · [Índex](../index.md)
