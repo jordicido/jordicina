@@ -7,17 +7,18 @@ hide:
 
 ## Finalitat
 
-Crear i executar un projecte Java senzill en Visual Studio Code, replicar-lo en un projecte Maven nou d'IntelliJ IDEA i comprovar també l'execució des de la terminal.
+Crear i executar un projecte Java senzill en Visual Studio Code, replicar-lo en un projecte Maven nou d'IntelliJ IDEA, executar un programa Python en Visual Studio Code i comprovar també l'execució des de la terminal.
 
-## Criteri d'avaluació treballat
+## Criteris d'avaluació treballats
 
-En aquesta activitat s'avalua principalment el criteri següent:
+En aquesta activitat s'avaluen principalment els criteris següents:
 
 | Criteri | Descripció |
 | --- | --- |
+| **RA2.e** | S'han generat executables a partir de codi font de diferents llenguatges en un mateix entorn de desenvolupament. |
 | **RA2.f** | S'han generat executables a partir d'un mateix codi font amb diversos entorns de desenvolupament. |
 
-Es comprovarà que el mateix programa Java funciona en Visual Studio Code, IntelliJ IDEA i la terminal, i que saps explicar les diferències entre els processos d'execució.
+Es comprovarà que saps executar programes Java i Python en Visual Studio Code i que el mateix programa Java funciona en Visual Studio Code, IntelliJ IDEA i la terminal.
 
 ## Situació
 
@@ -148,5 +149,39 @@ DAW - Nom Cognom
 ```
 
 Si apareix un error, revisa la carpeta actual, el nom del fitxer, el contingut de `Main.java` i la configuració del JDK abans de tornar-ho a provar.
+
+## Part 4. Executa un programa Python en Visual Studio Code
+
+Ara comprovaràs que pots treballar amb més d'un llenguatge en el mateix entorn de desenvolupament.
+
+### Programa proporcionat
+
+Dins de la carpeta `hola-daw`, crea un fitxer anomenat `hola_python.py` amb el contingut següent:
+
+```python title="hola_python.py"
+nom = "Nom Cognom"
+
+print("Programa Python executat correctament")
+print(f"Hola, {nom}!")
+```
+
+Substitueix `Nom Cognom` pel teu nom.
+
+### Execució en Visual Studio Code
+
+1. Obri la carpeta `hola-daw` amb Visual Studio Code.
+2. Obri el fitxer `hola_python.py`.
+3. Comprova que Visual Studio Code reconeix un intèrpret de Python.
+4. Selecciona l'opció **Run Python File** o equivalent.
+5. Comprova que l'eixida és semblant a aquesta:
+
+```text
+Programa Python executat correctament
+Hola, Nom Cognom!
+```
+
+6. Torna a executar `Main.java` en Visual Studio Code i comprova que pots executar els dos llenguatges en el mateix IDE.
+
+Inclou una captura on es veja el fitxer Python i el resultat de l'execució. En l'explicació de la captura, indica quin intèrpret has utilitzat i relaciona aquesta prova amb el criteri **RA2.e**.
 
 [Anterior: posar a punt l'entorn](activitat-2-configuracio.md) · [Autoavaluació](autoavaluacio.md) · [Índex](../index.md)

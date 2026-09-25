@@ -38,7 +38,7 @@ L’objectiu professional no és memoritzar on està cada botó. És poder justi
 
 - [Activitat 1. Instal·lació dels IDE](activitats/activitat-1-instal·lacio.md): instal·lar, ampliar i actualitzar els dos entorns (**RA2.a, RA2.b i RA2.d**).
 - [Activitat 2. Posa a punt el teu entorn de desenvolupament](activitats/activitat-2-configuracio.md): personalitzar, automatitzar i actualitzar l'entorn (**RA2.c, RA2.d i RA2.g**).
-- [Activitat 3. Crea, replica i executa un projecte Java](activitats/activitat-3-construccio.md): crear, executar i replicar un projecte Java amb VS Code, Maven, IntelliJ IDEA i la terminal (**RA2.f**).
+- [Activitat 3. Crea, replica i executa un projecte Java](activitats/activitat-3-construccio.md): executar Java i Python en VS Code i replicar un projecte Java amb IntelliJ IDEA i la terminal (**RA2.e i RA2.f**).
 - [Autoavaluació de la UP1](activitats/autoavaluacio.md): revisar tots els criteris (**RA2.a–RA2.g**); no és qualificable independentment.
 
 ## Seqüència de treball
@@ -53,7 +53,7 @@ Primer entendràs què integra un IDE i quines responsabilitats continuen sent d
 | RA2.b | [Mòduls, extensions i plugins](03-moduls.md) | [Activitat 1](activitats/activitat-1-instal·lacio.md) |
 | RA2.c | [Personalització i automatització](04-personalitzacio-automatitzacio.md) | [Activitat 2](activitats/activitat-2-configuracio.md) |
 | RA2.d | [Actualitzar l’entorn](05-actualitzacions.md) | [Activitat 1](activitats/activitat-1-instal·lacio.md) i [activitat 2](activitats/activitat-2-configuracio.md) |
-| RA2.e | [Del codi font al programa en execució](06-executables.md) | — |
+| RA2.e | [Del codi font al programa en execució](06-executables.md) | [Activitat 3](activitats/activitat-3-construccio.md) |
 | RA2.f | [Del codi font al programa en execució](06-executables.md) | [Activitat 3](activitats/activitat-3-construccio.md) |
 | RA2.g | [Comparació d’entorns de desenvolupament](07-comparacio.md) | [Activitat 2](activitats/activitat-2-configuracio.md) |
 
