@@ -36,10 +36,10 @@ L’objectiu professional no és memoritzar on està cada botó. És poder justi
 
 ## Activitats
 
-- [Activitat 1. Instal·lació dels IDE](activitats/activitat-1-instal·lacio.md): instal·lar, ampliar i actualitzar els dos entorns (**RA2.a, RA2.b i RA2.d**).
-- [Activitat 2. Posa a punt el teu entorn de desenvolupament](activitats/activitat-2-configuracio.md): personalitzar, automatitzar i actualitzar l'entorn (**RA2.c, RA2.d i RA2.g**).
-- [Activitat 3. Crea, replica i executa un projecte Java](activitats/activitat-3-construccio.md): executar Java i Python en VS Code i replicar un projecte Java amb IntelliJ IDEA i la terminal (**RA2.e i RA2.f**).
-- [Autoavaluació de la UP1](activitats/autoavaluacio.md): revisar tots els criteris (**RA2.a–RA2.g**); no és qualificable independentment.
+- [Activitat 1. Instal·lació dels IDE](activitats/activitat-1-instal·lacio.md): instal·lar, ampliar i actualitzar els dos entorns. **CA treballats: RA2.a, RA2.b i RA2.d.**
+- [Activitat 2. Posa a punt el teu entorn de desenvolupament](activitats/activitat-2-configuracio.md): personalitzar, automatitzar i actualitzar l'entorn. **CA treballats: RA2.c, RA2.d i RA2.g.**
+- [Activitat 3. Crea, replica i executa un projecte Java](activitats/activitat-3-construccio.md): executar Java i Python en VS Code i replicar un projecte Java amb IntelliJ IDEA i la terminal. **CA treballats: RA2.e i RA2.f.**
+- [Autoavaluació de la UP1](activitats/autoavaluacio.md): revisar tots els criteris. **CA revisats: RA2.a–RA2.g.** No és qualificable independentment.
 
 ## Seqüència de treball
 
