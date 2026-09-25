@@ -9,6 +9,16 @@ hide:
 
 Crear i executar un projecte Java senzill en Visual Studio Code, replicar-lo en un projecte Maven nou d'IntelliJ IDEA i comprovar també l'execució des de la terminal.
 
+## Criteri d'avaluació treballat
+
+En aquesta activitat s'avalua principalment el criteri següent:
+
+| Criteri | Descripció |
+| --- | --- |
+| **RA2.f** | S'han generat executables a partir d'un mateix codi font amb diversos entorns de desenvolupament. |
+
+Es comprovarà que el mateix programa Java funciona en Visual Studio Code, IntelliJ IDEA i la terminal, i que saps explicar les diferències entre els processos d'execució.
+
 ## Situació
 
 T'incorpores a un equip de desenvolupament que treballa amb Java. Un company t'envia un projecte senzill perquè el continues en el teu ordinador.

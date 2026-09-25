@@ -6,6 +6,20 @@ hide:
 
 Aquesta autoavaluació serveix per detectar què necessites repassar abans de defensar les activitats. Respon amb les teues paraules i relaciona les respostes amb les evidències del laboratori.
 
+## Criteris d'avaluació que revisa
+
+Aquesta pàgina **no és una activitat qualificable independent**. Serveix per comprovar si has assolit els criteris de la UP1 abans de la defensa:
+
+| Criteri | Què has de poder demostrar |
+| --- | --- |
+| **RA2.a** | Instal·lar i posar en funcionament diferents entorns de desenvolupament. |
+| **RA2.b** | Afegir i eliminar extensions o plugins. |
+| **RA2.c** | Personalitzar i automatitzar l'entorn. |
+| **RA2.d** | Configurar i explicar el sistema d'actualitzacions. |
+| **RA2.e** | Generar executables de diferents llenguatges en un mateix entorn. |
+| **RA2.f** | Generar un executable a partir del mateix codi en diversos entorns. |
+| **RA2.g** | Identificar característiques comunes i específiques de diversos entorns. |
+
 ## Comprova els conceptes
 
 1. Quina diferència hi ha entre un editor i un IDE?
