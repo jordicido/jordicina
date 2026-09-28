@@ -12,8 +12,8 @@ Preparar l’ordinador per treballar durant el mòdul d’Introducció a la prog
 
 | Criteri | Descripció | Pes sobre RA1 |
 | --- | --- | ---: |
-| **RA1.b** | Crear un projecte de desenvolupament amb una estructura ordenada. | 15 % |
-| **RA1.c** | Utilitzar l’entorn integrat i seleccionar l’intèrpret adequat. | 20 % |
+| **RA1.b** | S’han creat projectes de desenvolupament d’aplicacions. | 15 % |
+| **RA1.c** | S’han utilitzat entorns integrats de desenvolupament. | 20 % |
 |  | **Total de l’activitat** | **35 %** |
 
 ## Tasca

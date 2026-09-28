@@ -27,15 +27,15 @@ Abans de començar els exercicis de Python, completa el **Bloc 0**. Aquest bloc 
 
 | Criteri | Descripció | Evidència en la UP1 |
 | --- | --- | ---: |
-| **RA1.b** | Crear i mantindre un projecte de desenvolupament amb una estructura ordenada. | Activitat 1 i exercici 0 |
-| **RA1.c** | Utilitzar VS Code i seleccionar i comprovar l’intèrpret adequat. | Activitat 1 i exercici 0 |
-| **RA1.a** | Identificar els blocs que componen l’estructura d’un programa. | Activitat 2 · 10 % |
-| **RA1.d** | Identificar els tipus de variables i la utilitat específica de cadascun. | Activitat 2 · 10 % |
-| **RA1.e** | Modificar el codi per crear i utilitzar variables. | Activitat 2 · 15 % |
-| **RA1.f** | Crear i utilitzar constants i literals. | Activitat 2 · 10 % |
-| **RA1.g** | Classificar, reconéixer i utilitzar els operadors en expressions. | Activitat 2 · 10 % |
-| **RA1.h** | Comprovar conversions de tipus explícites i implícites. | Activitat 2 · 5 % |
-| **RA1.i** | Introduir comentaris en el codi. | Activitat 2 · 5 % |
+| **RA1.b** | S’han creat projectes de desenvolupament d’aplicacions. | Activitat 1 i exercici 0 |
+| **RA1.c** | S’han utilitzat entorns integrats de desenvolupament. | Activitat 1 i exercici 0 |
+| **RA1.a** | S’han identificat els blocs que componen l’estructura d’un programa informàtic. | Activitat 2 · 10 % |
+| **RA1.d** | S’han identificat els diferents tipus de variables i la utilitat específica de cadascun. | Activitat 2 · 10 % |
+| **RA1.e** | S’ha modificat el codi d’un programa per a crear i utilitzar variables. | Activitat 2 · 15 % |
+| **RA1.f** | S’han creat i utilitzat constants i literals. | Activitat 2 · 10 % |
+| **RA1.g** | S’han classificat, reconegut i utilitzat en expressions els operadors del llenguatge. | Activitat 2 · 10 % |
+| **RA1.h** | S’ha comprovat el funcionament de les conversions de tipus explícites i implícites. | Activitat 2 · 5 % |
+| **RA1.i** | S’han introduït comentaris en el codi. | Activitat 2 · 5 % |
 |  | **Criteris avaluats directament en aquesta activitat** | **65 %** |
 
 RA1.b i RA1.c es reforcen ací, però la seua evidència avaluable principal continua sent l’Activitat 1. Els exercicis 13–16 completen la cobertura dels CA de la RA1 que faltaven en la sèrie inicial.

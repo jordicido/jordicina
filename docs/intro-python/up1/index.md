@@ -10,15 +10,15 @@ hide:
 
 ## Criteris d’avaluació
 
-- **RA1.a** Identificar els blocs que componen l’estructura d’un programa informàtic.
-- **RA1.b** Crear projectes de desenvolupament d’aplicacions.
-- **RA1.c** Utilitzar entorns integrats de desenvolupament.
-- **RA1.d** Identificar els tipus de variables i la utilitat específica de cadascun.
-- **RA1.e** Modificar el codi per crear i utilitzar variables.
-- **RA1.f** Crear i utilitzar constants i literals.
-- **RA1.g** Classificar, reconéixer i utilitzar els operadors en expressions.
-- **RA1.h** Comprovar conversions de tipus explícites i implícites.
-- **RA1.i** Introduir comentaris en el codi.
+- **RA1.a** S’han identificat els blocs que componen l’estructura d’un programa informàtic.
+- **RA1.b** S’han creat projectes de desenvolupament d’aplicacions.
+- **RA1.c** S’han utilitzat entorns integrats de desenvolupament.
+- **RA1.d** S’han identificat els diferents tipus de variables i la utilitat específica de cadascun.
+- **RA1.e** S’ha modificat el codi d’un programa per a crear i utilitzar variables.
+- **RA1.f** S’han creat i utilitzat constants i literals.
+- **RA1.g** S’han classificat, reconegut i utilitzat en expressions els operadors del llenguatge.
+- **RA1.h** S’ha comprovat el funcionament de les conversions de tipus explícites i implícites.
+- **RA1.i** S’han introduït comentaris en el codi.
 
 ## Què aprendrem?
 
