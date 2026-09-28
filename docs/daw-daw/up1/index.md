@@ -2,7 +2,7 @@
 hide:
   - navigation
 title: "UP1. Arquitectures web i servidors"
-description: "Material autosuficient per al treball semipresencial del RA1: arquitectures web, protocols, recursos, desplegament, Apache i Tomcat."
+description: "Material autosuficient per al treball semipresencial del RA1: arquitectures web, protocols, recursos, desplegament, virtualització, Apache i Tomcat."
 ---
 
 # UP1. Arquitectures web i servidors
@@ -32,6 +32,9 @@ En aquesta UP es treballen especialment els criteris següents:
 | **RA1.h** | Descriure els requeriments del procés d'implantació d'una aplicació web. |
 | **RA1.c** | Realitzar la instal·lació i configuració bàsica de servidors web. |
 | **RA1.d** | Realitzar la instal·lació i configuració bàsica de servidors d'aplicacions. |
+| **RA1.e** | Realitzar la instal·lació i configuració bàsica de tecnologies de virtualització de servidors en el núvol i en contenidors. |
+| **RA1.f** | Realitzar proves de funcionament dels servidors i de les tecnologies de virtualització. |
+| **RA1.i** | Documentar els processos d'instal·lació i configuració realitzats. |
 
 ## Itinerari de la unitat
 
@@ -41,6 +44,8 @@ En aquesta UP es treballen especialment els criteris següents:
 4. [Requisits del procés de desplegament](04-requisits-desplegament.md)
 5. [Instal·lació i configuració d'Apache](05-servidor-web-apache.md)
 6. [Servidors d'aplicacions i Apache Tomcat](06-servidor-aplicacions-tomcat.md)
+7. [Virtualització de servidors, núvol i contenidors](07-virtualitzacio-servidors-nuvol-contenidors.md)
+8. [Proves de funcionament i documentació del desplegament](08-proves-funcionament-documentacio.md)
 
 ## El cas conductor: DAWShop
 
@@ -121,6 +126,7 @@ Et proposem aquest procés:
 | Com passem d'un nom a una IP? | **DNS** |
 | Com demanem i rebem recursos? | **HTTP/HTTPS** |
 | Com passem del codi a un sistema usable? | **Procés de desplegament** |
+| Com aïllem i reproduïm els serveis? | **VM, cloud i contenidors** |
 | Com comprovem que continua funcionant? | **Logs, monitoratge i manteniment** |
 
 ## Abans de començar

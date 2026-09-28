@@ -45,6 +45,8 @@ Consulta l'[índex i seqüència de la UP1](up1/index.md) per seguir l'ordre rec
 | [4. Requisits del desplegament](up1/04-requisits-desplegament.md) | Entorns, variables, secrets, proves, backups, CI/CD, rollback i documentació. |
 | [5. Apache HTTP Server](up1/05-servidor-web-apache.md) | Instal·lació, Virtual Hosts, permisos, mòduls, logs, proxy i diagnòstic. |
 | [6. Apache Tomcat](up1/06-servidor-aplicacions-tomcat.md) | Java, instal·lació, estructura, WAR, Manager, logs i integració amb Apache. |
+| [7. Virtualització, núvol i contenidors](up1/07-virtualitzacio-servidors-nuvol-contenidors.md) | Màquines virtuals, cloud, Docker, xarxes, volums i Compose. |
+| [8. Proves i documentació](up1/08-proves-funcionament-documentacio.md) | Verificació, diagnòstic, proves HTTP, persistència, logs i documentació reproduïble. |
 
 ## Resultat d'aprenentatge i criteris
 
