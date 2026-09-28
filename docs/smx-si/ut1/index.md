@@ -43,7 +43,7 @@ La distribució concreta pot adaptar-se al calendari del centre. Les 14 hores s�
 | --- | --- | --- |
 | [1. Informe d’anàlisi de riscos](activitats/activitat-1-mapa-riscos.md) | Analitzar una sala de servidors, valorar riscos i proposar mesures. | Individual o parelles · 1 h 30 min |
 | [2. Selecció i pressupost d’un SAI](activitats/activitat-2-taller-sai.md) | Definir requisits, comparar productes en línia i preparar un pressupost de compra i instal·lació. | Individual |
-| [3. Pla de la microempresa](activitats/activitat-3-pla-microempresa.md) | Integrar riscos, protecció, SAI i control d’accés en un únic pla. | Equips · 4 h |
+| [3. Projecte SecureOffice VLC](activitats/activitat-3-pla-microempresa.md) | Dissenyar, pressupostar i defensar un pla integral de seguretat per a unes noves oficines. | Equips · projecte final |
 | [Autoavaluació](activitats/autoavaluacio.md) | Comprovar individualment els conceptes abans de lliurar. | Individual · 30 min |
 
 ## Com estudiar
