@@ -2,186 +2,276 @@
 hide:
   - navigation
 ---
-# Activitat 2. Agenda web de l'empresa
+# Activitat 2 · Organitzem el treball amb un calendari web
 
-## Situació professional
+## Finalitat
 
-El servei tècnic d'una empresa necessita una agenda web per coordinar instal·lacions, reunions i tasques de manteniment. L'encàrrec consisteix a activar una aplicació de calendari, preparar l'agenda de la setmana i comprovar quines funcionalitats de productivitat pot utilitzar l'equip.
+En aquesta activitat treballaràs amb una aplicació real de calendari web desplegada en el teu
+propi equip. La infraestructura ja està preparada: no hauràs d'instal·lar manualment Nextcloud
+ni configurar una base de dades.
 
-El professorat proporcionarà Nextcloud ja desplegat o un entorn equivalent. Si la instal·lació completa de la plataforma requereix massa temps, només caldrà activar o instal·lar l'aplicació **Calendar**.
+La teua faena serà posar el servei en marxa i, sobretot, configurar i utilitzar les funcionalitats
+del calendari.
 
-## Objectiu
+Treballarem principalment:
 
-Instal·lar o activar una aplicació de calendari web, crear i compartir esdeveniments i utilitzar les prestacions bàsiques d'una agenda de treball.
+- **RA5.f** · Instal·lar una aplicació de calendari accessible des del navegador.
+- **RA5.g** · Reconéixer i utilitzar les prestacions de les aplicacions instal·lades.
 
-En finalitzar l'activitat hauràs de ser capaç de:
+**Temps orientatiu:** 1 h 15 min – 1 h 30 min.
 
-- activar o instal·lar una aplicació de calendari web;
-- crear esdeveniments amb informació completa;
-- configurar recordatoris i recurrències;
-- compartir un calendari amb altres usuaris;
-- diferenciar un esdeveniment d'una tasca;
-- identificar les prestacions disponibles i comprovar-les.
+## 1. Posada en marxa
 
-## Criteris d'avaluació treballats
+Descarrega el fitxer `compose.yaml` i situa't amb el terminal en la mateixa carpeta.
 
-| Criteri | Descripció | Pes sobre RA5 |
-|---|---|---:|
-| **RA5.f** | Instal·lar aplicacions de calendari web. | 10 % |
-| **RA5.g** | Reconéixer les prestacions específiques de les aplicacions instal·lades: cites, tasques, recordatoris, etc. | 10 % |
-|  | **Total de l'activitat** | **20 %** |
+Executa:
 
-## Materials i dades de partida
-
-El professorat proporcionarà:
-
-- l'adreça de Nextcloud o de l'aplicació equivalent;
-- les dades d'accés del compte de proves;
-- els usuaris amb qui es compartirà el calendari;
-- les indicacions per activar Calendar si és necessari.
-
-No publiques contrasenyes, enllaços privats ni dades personals en el lliurament.
-
-## Tasca
-
-### 1. Activació de l'aplicació
-
-1. Accedeix a la plataforma web.
-2. Comprova si l'aplicació Calendar està activa.
-3. Si no ho està, instal·la-la o activa-la seguint les indicacions del professorat.
-4. Obri el calendari des del navegador.
-5. Anota el nom i la versió de l'aplicació, si són visibles.
-
-No cal instal·lar tota la plataforma des de zero si el professorat ha proporcionat l'entorn preparat.
-
-### 2. Creació d'un calendari
-
-Crea un calendari anomenat:
-
-```text
-Servei tècnic - Setmana de pràctiques
+```bash
+docker compose up -d
 ```
 
-Tria un color que permeta diferenciar-lo dels calendaris personals i comprova que es mostra en la vista de calendari.
+Comprova l'estat dels contenidors:
 
-### 3. Creació de cites
+```bash
+docker compose ps
+```
 
-Crea, com a mínim, aquestes activitats:
+Quan el contenidor estiga funcionant, obri [http://localhost:8080](http://localhost:8080).
 
-| Hora | Activitat | Ubicació |
-|---|---|---|
-| 09:00 | Instal·lació d'un ordinador | Aula 2 |
-| 10:30 | Reunió amb client | Sala de reunions |
-| 12:00 | Manteniment del servidor | Sala tècnica |
-| 16:00 | Revisió de còpies de seguretat | Sala tècnica |
+Credencials inicials:
 
-Completa cada esdeveniment amb:
+| Camp | Valor |
+|---|---|
+| Usuari | `admin` |
+| Contrasenya | `Aules2026!` |
 
-- títol;
-- data i hora;
-- duració;
+La primera arrancada pot tardar uns minuts mentre Nextcloud completa la inicialització.
+
+## 2. Preparació dels usuaris
+
+Des del compte `admin`, crea aquests tres usuaris:
+
+- `coordinador`
+- `tecnic1`
+- `tecnic2`
+
+Assigna una contrasenya pròpia a cada compte.
+
+A partir d'aquest moment, treballaràs principalment amb l'usuari `coordinador`.
+
+## 3. Organització dels calendaris
+
+Inicia sessió com a `coordinador` i crea els calendaris següents:
+
+| Calendari | Ús |
+|---|---|
+| **Equip** | Reunions i treball compartit |
+| **Lliuraments** | Terminis i dates importants |
+| **Personal** | Organització individual |
+
+Personalitza el color de cadascun perquè es distingisquen clarament.
+
+Configura en **Equip** un recordatori per defecte de 15 minuts abans dels esdeveniments.
+
+## 4. Esdeveniments
+
+Has de crear els esdeveniments següents. Utilitza dates futures pròximes perquè pugues veure'ls
+fàcilment en el calendari.
+
+### A. Reunió inicial del projecte
+
+Calendari: **Equip**
+
+Configura:
+
+- duració d'1 hora;
+- ubicació: Sala de reunions;
+- descripció breu amb l'objectiu de la reunió;
+- afegeix `tecnic1` i `tecnic2` com a participants;
+- recordatori de Nextcloud 30 minuts abans;
+- marca l'esdeveniment com a ocupat.
+
+### B. Daily de seguiment
+
+Calendari: **Equip**
+
+Crea un esdeveniment de 15 minuts que es repetisca:
+
+- de dilluns a divendres;
+- durant dues setmanes;
+- a la mateixa hora;
+- amb un recordatori de 5 minuts abans.
+
+Comprova en la vista de calendari que apareixen totes les repeticions.
+
+Després modifica només una ocurrència de la sèrie i canvia-la 30 minuts d'hora. La resta de
+repeticions han de mantindre l'horari original.
+
+### C. Revisió setmanal
+
+Calendari: **Equip**
+
+Crea una reunió recurrent:
+
+- una vegada per setmana;
+- durant 6 setmanes;
+- duració de 45 minuts;
+- amb ubicació;
+- amb descripció;
+- amb `tecnic1` com a participant.
+
+### D. Manteniment mensual
+
+Calendari: **Equip**
+
+Crea un esdeveniment recurrent amb una regla més avançada:
+
+- el segon dilluns de cada mes;
+- durant 4 mesos;
+- duració d'1 hora.
+
+Afig un recordatori d'1 dia abans.
+
+### E. Lliurament del projecte
+
+Calendari: **Lliuraments**
+
+Configura:
+
+- esdeveniment de dia complet;
+- descripció amb allò que s'ha d'entregar;
+- recordatori 1 dia abans;
+- un segon recordatori 2 hores abans, si l'aplicació ho permet.
+
+### F. Reunió amb un client d'una altra zona horària
+
+Calendari: **Equip**
+
+Crea una reunió amb:
+
+- hora d'inici en `Europe/Madrid`;
+- una segona zona horària diferent per comprovar el selector;
 - ubicació;
-- descripció breu.
+- descripció;
+- recordatori.
 
-### 4. Recordatoris i recurrències
+L'objectiu és comprovar com representa Nextcloud un esdeveniment quan intervenen zones horàries.
 
-Configura les opcions següents:
+## 5. Compartició i permisos
 
-- un recordatori 15 minuts abans d'una reunió;
-- una cita recurrent, com ara una reunió d'equip cada dilluns a les 9:00;
-- una modificació d'una cita ja creada.
+Comparteix:
 
-Comprova que el canvi només afecta l'esdeveniment seleccionat o tota la sèrie, segons l'opció que tries.
+- **Equip** amb `tecnic1` amb permís d'escriptura;
+- **Lliuraments** amb `tecnic2` en mode només lectura.
 
-### 5. Compartició i invitacions
+Comprova els permisos:
 
-Comparteix el calendari amb un company o amb l'usuari indicat pel professorat.
+1. Inicia sessió com a `tecnic1`.
+2. Crea un esdeveniment nou dins del calendari **Equip**.
+3. Edita un dels esdeveniments existents.
+4. Inicia sessió com a `tecnic2`.
+5. Comprova que pot consultar **Lliuraments**.
+6. Intenta modificar-lo i comprova que no disposa de permís d'escriptura.
 
-Prova, com a mínim, dues capacitats diferents:
+## 6. Publicació d'un calendari
 
-- només consultar;
-- crear o modificar esdeveniments.
+Torna a entrar com a `coordinador`.
 
-Si l'aplicació ho permet, crea una invitació per a la reunió amb el client. Comprova si el participant pot acceptar-la o rebutjar-la.
+Publica el calendari **Lliuraments** mitjançant un enllaç públic de només lectura. Copia l'enllaç
+i obri'l:
 
-### 6. Tasques
+- en una finestra privada o d'incògnit, o
+- en un altre navegador.
 
-Si l'aplicació disposa de gestió de tasques, crea aquestes tasques:
+Comprova que es pot consultar sense iniciar sessió però no modificar.
 
-```text
-☑ Actualitzar servidor web
-☐ Revisar còpies de seguretat
-☐ Configurar nou usuari
+## 7. Eliminació i recuperació
+
+Elimina un esdeveniment que no siga important.
+
+Accedeix a la paperera del calendari i:
+
+1. localitza l'esdeveniment;
+2. restaura'l;
+3. comprova que torna a aparéixer al calendari.
+
+## 8. Exportació i importació
+
+Exporta el calendari **Lliuraments** en format iCalendar (`.ics`). Després:
+
+1. crea un calendari nou anomenat **Importat**;
+2. importa el fitxer `.ics`;
+3. comprova que els esdeveniments apareixen correctament.
+
+No elimines el calendari original.
+
+## 9. Comprovació final
+
+Quan acabes, hauràs de poder mostrar al professor:
+
+| Element | Comprovació |
+|---|---|
+| Servei | Nextcloud funciona des del navegador |
+| Usuaris | `admin`, `coordinador`, `tecnic1` i `tecnic2` |
+| Calendaris | **Equip**, **Lliuraments** i **Personal** |
+| Esdeveniments | Puntuals, de dia complet i recurrents |
+| Recurrència | Diària, setmanal i mensual |
+| Recordatoris | Diferents configuracions |
+| Participants | Usuaris afegits a reunions |
+| Compartició | Escriptura i només lectura |
+| Publicació | Enllaç públic de calendari |
+| Recuperació | Esdeveniment restaurat de la paperera |
+| Interoperabilitat | Exportació i importació `.ics` |
+
+## 10. Lliurament
+
+Entrega un PDF de màxim 3 pàgines amb aquestes evidències:
+
+1. captura de `docker compose ps`;
+2. captura de la vista mensual o setmanal on es vegen diversos esdeveniments;
+3. captura de la configuració d'un esdeveniment recurrent;
+4. captura d'un calendari compartit;
+5. captura del calendari públic obert sense iniciar sessió;
+6. resposta breu a aquesta pregunta:
+
+> Quin avantatge té allotjar un calendari web en infraestructura pròpia i quin inconvenient té
+> respecte d'un servei gestionat com Google Calendar o Outlook?
+
+No cal documentar pas a pas totes les accions.
+
+## Ajuda
+
+### Veure l'estat
+
+```bash
+docker compose ps
 ```
 
-Indica la diferència entre una tasca i un esdeveniment:
+### Veure els logs
 
-- un esdeveniment ocorre en una data i hora concretes;
-- una tasca representa una activitat que cal completar i pot tindre una data límit.
+```bash
+docker compose logs -f
+```
 
-Si la solució no incorpora tasques, documenta aquesta limitació i indica quina aplicació addicional utilitzaries.
+### Parar el servei
 
-### 7. Prestacions disponibles
+```bash
+docker compose down
+```
 
-Completa aquesta taula amb el que observes en la plataforma:
+### Tornar a iniciar-lo
 
-| Prestació | Disponible? | Evidència o observació |
-|---|---|---|
-| Crear calendaris | Sí / No |  |
-| Crear esdeveniments | Sí / No |  |
-| Recordatoris | Sí / No |  |
-| Esdeveniments recurrents | Sí / No |  |
-| Calendaris compartits | Sí / No |  |
-| Invitacions | Sí / No |  |
-| Tasques | Sí / No |  |
-| Sincronització CalDAV | Sí / No / No comprovat |  |
+```bash
+docker compose up -d
+```
 
-## Comprovació final
+### Començar completament de zero
 
-- [ ] Calendar està instal·lat o activat.
-- [ ] He creat el calendari de l'empresa.
-- [ ] He creat cites amb data, hora, ubicació i descripció.
-- [ ] He configurat un recordatori.
-- [ ] He creat una cita recurrent.
-- [ ] He modificat una cita.
-- [ ] He compartit el calendari.
-- [ ] He comprovat els permisos d'un altre usuari.
-- [ ] He provat una invitació o n'he documentat la limitació.
-- [ ] He creat una tasca o he explicat que l'aplicació no en disposa.
-- [ ] He identificat les prestacions disponibles.
+Aquesta ordre elimina usuaris, calendaris, esdeveniments i configuració:
 
-## Lliurament
-
-Entrega un document breu, preferiblement en PDF, amb:
-
-1. una captura de l'aplicació Calendar activa;
-2. una captura del calendari creat;
-3. una o dues captures de les cites i el recordatori;
-4. una evidència de la recurrència i la modificació;
-5. una captura de la compartició o dels permisos;
-6. la taula de prestacions completada;
-7. una conclusió breu sobre la utilitat de l'agenda per al servei tècnic.
-
-No cal incloure una captura de cada clic. Cada evidència ha d'explicar quina tasca acredita i no ha de mostrar credencials ni dades sensibles.
-
-## Verificació davant del professorat
-
-En una comprovació ràpida hauràs de poder:
-
-- obrir el calendari;
-- mostrar una cita amb recordatori;
-- explicar com compartiries el calendari;
-- diferenciar una tasca d'un esdeveniment;
-- indicar una prestació que l'aplicació ofereix i una que no has pogut comprovar.
-
-## Rúbrica de tres nivells
-
-| Aspecte | Assoliment alt | Assoliment bàsic | En procés |
-|---|---|---|---|
-| Activació de l'aplicació | Activa Calendar, comprova l'accés i identifica l'aplicació o la versió. | Activa o obri el calendari amb alguna orientació. | No aconsegueix accedir a l'aplicació. |
-| Esdeveniments i recordatoris | Crea cites completes, recurrents i amb recordatoris, i modifica una cita correctament. | Crea les cites principals però deixa alguna dada o prova incompleta. | No pot crear o modificar els esdeveniments. |
-| Compartició i invitacions | Comparteix el calendari, comprova els permisos i gestiona una invitació. | Comparteix el calendari o comprova els permisos amb ajuda. | No configura la compartició ni explica els permisos. |
-| Tasques i prestacions | Diferencia tasques i esdeveniments i documenta amb precisió les prestacions disponibles, inclòs CalDAV si es pot comprovar. | Identifica les funcionalitats principals i documenta alguna limitació. | Confón les funcionalitats o no aporta evidències. |
-| Evidències | Presenta captures contextualitzades, taula de prestacions i una conclusió professional. | Presenta les evidències essencials amb alguna mancança. | Presenta captures sense context o no lliura les proves necessàries. |
+```bash
+docker compose down -v
+docker compose up -d
+```
 
 [Anterior: webmail de l'empresa](activitat-1-webmail.md) · [Índex de la UP1](../index.md)

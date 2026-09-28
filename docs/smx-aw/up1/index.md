@@ -70,7 +70,7 @@ Durant la unitat treballarem amb aplicacions com:
 La UP es treballarà amb dues pràctiques breus i orientades a l'acció:
 
 1. [Instal·lació i configuració de Roundcube](activitats/activitat-1-webmail.md): desplegament, configuració i verificació d'un webmail.
-2. [Agenda web de l'empresa](activitats/activitat-2-calendari-web.md): calendari, cites, recordatoris, compartició i tasques.
+2. [Organitzem el treball amb un calendari web](activitats/activitat-2-calendari-web.md): desplegament local, calendaris, recurrències, permisos, publicació i interoperabilitat.
 
 La primera activitat inclou una comparació inicial entre aplicacions web i d'escriptori per evidenciar el RA5.a. No es farà un examen separat: l'avaluació serà pràctica i es completarà amb una verificació ràpida davant del professorat.
 

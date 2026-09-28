@@ -746,4 +746,4 @@ En una comprovació ràpida hauràs de poder:
 - explicar què ha passat amb el port 9999;
 - identificar on es troba el compte de correu.
 
-[Següent: agenda web de l'empresa](activitat-2-calendari-web.md) · [Índex de la UP1](../index.md)
+[Següent: organitzem el treball amb un calendari web](activitat-2-calendari-web.md) · [Índex de la UP1](../index.md)
