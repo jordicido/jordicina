@@ -55,7 +55,7 @@ Consulta l’[índex de la UP1](ut1/index.md) per veure l’ordre recomanat i la
 | --- | --- |
 | [1. Informe d’anàlisi de riscos](ut1/activitats/activitat-1-mapa-riscos.md) | Informe d’una sala de servidors amb actius, riscos i prioritats. |
 | [2. Selecció i pressupost d’un SAI](ut1/activitats/activitat-2-taller-sai.md) | Requisits, comparativa de productes i pressupost de compra i instal·lació en PDF. |
-| [3. Pla de seguretat d’una microempresa](ut1/activitats/activitat-3-pla-microempresa.md) | Pla final, ACL, política de credencials i defensa. |
+| [3. Projecte SecureOffice VLC](ut1/activitats/activitat-3-pla-microempresa.md) | Pla final, ACL, política de credencials i defensa. |
 | [Autoavaluació de la UP1](ut1/activitats/autoavaluacio.md) | Qüestionari individual de repàs. |
 
 ## Evidències avaluables

@@ -4,6 +4,21 @@ hide:
 ---
 # Activitat final. Projecte SecureOffice VLC
 
+## Criteris d'avaluació treballats
+
+En aquesta activitat es treballen i s'evidencien els criteris d'avaluació següents:
+
+| Criteri | Què s'ha de demostrar | Evidència en el projecte |
+| --- | --- | --- |
+| **RA1.a** | Explicar per què cal mantindre segura la informació. | Anàlisi inicial de riscos i justificació de les decisions. |
+| **RA1.b** | Diferenciar seguretat física i lògica i relacionar-les. | Disseny global de la protecció de l'oficina i dels sistemes. |
+| **RA1.c** | Definir una ubicació i unes condicions ambientals adequades. | Disseny de la sala de servidors i mesures ambientals. |
+| **RA1.d** | Identificar la necessitat de protegir físicament els sistemes. | Mesures de protecció física, incendi, aigua i accés. |
+| **RA1.f** | Seleccionar on i per a què s'ha d'aplicar un SAI. | Dimensionament, selecció i justificació del SAI. |
+| **RA1.g** | Esquematitzar una política basada en llistes de control d'accés. | Matriu ACL i procediment de gestió dels accessos. |
+| **RA1.h** | Valorar la importància d'una política de contrasenyes. | Política de contrasenyes i gestió de comptes. |
+| **RA1.i** | Valorar els avantatges i les limitacions dels sistemes biomètrics. | Decisió argumentada sobre l'ús de biometria. |
+
 ## El repte
 
 Enhorabona. La vostra empresa de consultoria informàtica acaba de rebre el seu primer encàrrec important.
@@ -154,7 +169,7 @@ No n'hi ha prou amb escriure:
 
 Heu d'explicar per què 3000 VA i no 1000, 2000 o 6000 VA.
 
-El funcionament pràctic del SAI ja es pot evidenciar amb el taller anterior; ací el repte és sobretot dimensionar-lo i seleccionar correctament els punts d'aplicació, una distinció que encaixa amb els criteris RA1.e i RA1.f. SMX2_SI 26-27
+El funcionament pràctic del SAI ja es pot evidenciar amb el taller anterior; ací el repte és sobretot dimensionar-lo i seleccionar correctament els punts d'aplicació, una tasca que evidencia el criteri RA1.f. SMX2_SI 26-27
 
 ### 5. Seguretat física de l'oficina
 
