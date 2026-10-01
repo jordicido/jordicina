@@ -8,66 +8,53 @@ RA1
 CA treballats: a, b, c, d, e, f i g.
 -->
 
-# UP2. Desenvolupament de programari
+# UP2. Elements i eines del desenvolupament
 
-## Una visió global
+## Resultat d’aprenentatge
 
-Quan una persona obri una aplicació web, només veu el resultat final: una pàgina, un formulari o una resposta. Darrere d'eixe resultat hi ha un recorregut complet. Una necessitat es concreta en requisits; els requisits es transformen en codi; el codi passa per ferramentes de desenvolupament i, finalment, el sistema operatiu coordina la seua execució en el processador i la memòria.
+**RA1.** Reconeix els elements i les ferramentes que intervenen en el desenvolupament d’un programa informàtic, analitzant les seues característiques i les fases en què actuen fins a arribar a la seua posada en funcionament.
 
-```text
-Necessitat
-    ↓
-Desenvolupament
-    ↓
-Codi font
-    ↓
-Ferramentes
-    ↓
-Compilació / interpretació
-    ↓
-Execució
-    ↓
-CPU + memòria + sistema operatiu
-```
+## Criteris d’avaluació
 
-Aquest procés no és una cadena purament tècnica. També cal decidir què es construirà, com es comprovarà, com es compartirà el codi i com s'organitzarà el treball de l'equip. Les metodologies tradicionals i àgils ofereixen maneres diferents de planificar i adaptar aquest recorregut.
-
-```mermaid
-flowchart LR
-    N[Problema o necessitat] --> D[Desenvolupament]
-    D --> L[Llenguatge de programació]
-    L --> C[Codi font]
-    C --> F[Ferramentes]
-    F --> R[Executable o runtime]
-    R --> S[Sistema informàtic]
-    S --> U[Usuari o usuària]
-    U -. feedback .-> N
-```
+- **RA1.a** S’ha reconegut la relació dels programes amb els components del sistema informàtic: memòria, processador i perifèrics, entre altres.
+- **RA1.b** S’han identificat les fases de desenvolupament d’una aplicació informàtica.
+- **RA1.c** S’han diferenciat els conceptes de codi font, codi objecte i codi executable.
+- **RA1.d** S’han reconegut les característiques de la generació de codi intermedi per a la seua execució en màquines virtuals.
+- **RA1.e** S’han classificat els llenguatges de programació, identificant-ne les característiques.
+- **RA1.f** S’ha avaluat la funcionalitat oferida per les ferramentes utilitzades en el desenvolupament de programari.
+- **RA1.g** S’han identificat les característiques i els escenaris d’ús de les metodologies àgils de desenvolupament de programari.
 
 ## Què aprendrem?
 
-En acabar aquesta unitat hauràs de poder:
+En aquesta unitat seguiràs el recorregut complet d’un programa: una necessitat es converteix en requisits, els requisits en codi font, el codi passa per ferramentes de construcció i finalment s’executa en un sistema informàtic. També veuràs que el procés s’organitza amb fases, eines i metodologies de treball.
 
-- entendre què ocorre quan executes un programa i com intervenen el sistema operatiu, la memòria, el processador i els perifèrics;
-- diferenciar el codi font, el codi objecte, el codi executable i el codi intermedi;
-- explicar per què Java utilitza una màquina virtual i comparar-ho amb els models habituals de C, Python i JavaScript;
-- classificar llenguatges segons l'abstracció, els paradigmes, el tipatge i la manera habitual d'executar-los;
-- reconéixer les fases que transformen una necessitat en una aplicació desplegada i mantinguda;
-- identificar la funció d'un IDE, un compilador, un gestor de dependències, Git, un debugger i una pipeline de CI/CD;
-- entendre per què un equip pot organitzar-se amb enfocaments iteratius i àgils, i quan convé combinar-los amb més planificació i controls.
+## Continguts
 
-## Itinerari de la unitat
+1. [Del programa al sistema informàtic](01-programa-sistema.md): programa, procés, memòria, CPU, sistema operatiu i perifèrics.
+2. [Llenguatges de programació](02-llenguatges-programacio.md): abstracció, models d’execució, paradigmes, tipatge i criteris de selecció.
+3. [Del codi font a l’execució](03-codi-execucio.md): codi objecte, enllaç, executables, bytecode i màquines virtuals.
+4. [Cicle de desenvolupament del programari](04-cicle-desenvolupament.md): planificació, requisits, disseny, implementació, proves, desplegament i manteniment.
+5. [Ferramentes de desenvolupament](05-ferramentes-desenvolupament.md): IDE, compiladors, build tools, Git, proves, debugger, documentació i CI/CD.
+6. [Metodologies àgils de desenvolupament](06-metodologies-agils.md): Agile, iteracions, increments, Scrum, Kanban i feedback.
 
-1. [Del programa al sistema informàtic](01-programa-sistema.md): què passa en executar una aplicació.
-2. [Llenguatges de programació](02-llenguatges-programacio.md): diferents maneres d'expressar solucions.
-3. [Del codi font a l'execució](03-codi-execucio.md): compilació, codi intermedi i màquines virtuals.
-4. [Cicle de desenvolupament del programari](04-cicle-desenvolupament.md): fases i artefactes d'un projecte.
-5. [Ferramentes de desenvolupament](05-ferramentes-desenvolupament.md): l'ecosistema que ajuda l'equip.
-6. [Metodologies àgils de desenvolupament](06-metodologies-agils.md): planificació, feedback i adaptació.
+## Seqüència de treball
 
-El fil conductor serà una aplicació web de **gestió de reserves**. Ens permetrà relacionar requisits, codi, proves, desplegament i treball d'equip sense tractar cada concepte com una definició aïllada.
+Primer entendràs la relació entre programa i sistema informàtic. Després estudiaràs els llenguatges i les diferents formes de transformar i executar el codi. A continuació veuràs les fases del desenvolupament i les ferramentes que les connecten. Finalment estudiaràs com s’organitza el treball amb metodologies àgils.
 
-!!! tip "En la pràctica"
-    Quan analitzes una aplicació, pregunta't sempre tres coses: quin problema resol, quines ferramentes s'han utilitzat i què passa en el sistema quan l'aplicació s'executa.
+## Cobertura dels criteris
 
-[Començar per programa i sistema informàtic](01-programa-sistema.md)
+| Criteri | Teoria |
+| --- | --- |
+| RA1.a | [Del programa al sistema informàtic](01-programa-sistema.md) |
+| RA1.b | [Cicle de desenvolupament del programari](04-cicle-desenvolupament.md) |
+| RA1.c | [Del codi font a l’execució](03-codi-execucio.md) |
+| RA1.d | [Del codi font a l’execució](03-codi-execucio.md) |
+| RA1.e | [Llenguatges de programació](02-llenguatges-programacio.md) |
+| RA1.f | [Ferramentes de desenvolupament](05-ferramentes-desenvolupament.md) |
+| RA1.g | [Metodologies àgils de desenvolupament](06-metodologies-agils.md) |
+
+## Continua
+
+Comença la teoria per [Del programa al sistema informàtic](01-programa-sistema.md).
+
+[Tornar a la presentació de la UP2](../up2-elements-eines.md)
