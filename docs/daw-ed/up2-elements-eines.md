@@ -36,6 +36,9 @@ Programa i sistema · llenguatges · tipus de codi · obtenció de l’executabl
 !!! info "Relació amb la UP1"
     En la UP2 coneixeràs les eines i els conceptes generals. En la UP1 aplicaràs aquests coneixements directament en Visual Studio Code i IntelliJ IDEA per configurar entorns i generar artefactes executables.
 
-La teoria i les activitats detallades es publicaran progressivament en aquest apartat.
+La teoria completa està organitzada en sis pàgines i connecta el funcionament del sistema amb el codi, les ferramentes i les metodologies de treball. Aquesta entrega no inclou encara activitats avaluables.
+
+!!! tip "Comença la teoria"
+    Consulta l’[índex de la teoria de la UP2](up2/index.md) i segueix l’itinerari en ordre.
 
 [Tornar a l’inici d’Entorns de desenvolupament](index.md) · [Consultar l’avaluació](avaluacio.md)

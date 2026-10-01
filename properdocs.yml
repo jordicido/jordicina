@@ -138,7 +138,15 @@ nav:
                   - Activitat 2. Posa a punt el teu entorn de desenvolupament: daw-ed/up1/activitats/activitat-2-configuracio.md
                   - Activitat 3. Crea, replica i executa un projecte Java: daw-ed/up1/activitats/activitat-3-construccio.md
                   - Autoavaluació: daw-ed/up1/activitats/autoavaluacio.md
-              - UP2. Elements i eines del desenvolupament: daw-ed/up2-elements-eines.md
+              - UP2. Elements i eines del desenvolupament:
+                  - Presentació: daw-ed/up2-elements-eines.md
+                  - Índex i seqüència: daw-ed/up2/index.md
+                  - 1. Del programa al sistema informàtic: daw-ed/up2/01-programa-sistema.md
+                  - 2. Llenguatges de programació: daw-ed/up2/02-llenguatges-programacio.md
+                  - 3. Del codi font a l’execució: daw-ed/up2/03-codi-execucio.md
+                  - 4. Cicle de desenvolupament del programari: daw-ed/up2/04-cicle-desenvolupament.md
+                  - 5. Ferramentes de desenvolupament: daw-ed/up2/05-ferramentes-desenvolupament.md
+                  - 6. Metodologies àgils: daw-ed/up2/06-metodologies-agils.md
               - UP3. Optimització i qualitat del codi: daw-ed/up3-optimitzacio.md
               - UP4. Proves i verificació: daw-ed/up4-proves.md
               - UP5. Diagrames de classes: daw-ed/up5-diagrames-classes.md
