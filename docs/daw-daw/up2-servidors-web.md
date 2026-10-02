@@ -101,6 +101,8 @@ No canvies cinc paràmetres alhora: perdràs la relació entre causa i efecte. A
 
 Estudia l'esquema, prepara una taula de paràmetres, reprodueix un servei local i entrega una captura o sortida de cada prova. Completa l'informe amb la configuració abans i després, l'error que has observat i la correcció aplicada.
 
+Per aprofundir en la unitat, consulta l'[índex complet de la teoria de la UP2](up2/index.md), amb els set blocs numerats, exemples d'Apache 2.4, diagrames Mermaid i preguntes d'autoavaluació.
+
 ### Resum de la UP2
 
 Un servidor web és frontera, encaminador, publicador i font d'evidències. Configurar-lo bé significa limitar funcions, protegir el transport, controlar accessos, publicar l'aplicació correcta i poder explicar qualsevol incidència amb els logs.

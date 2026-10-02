@@ -111,7 +111,16 @@ nav:
                   - 6. Servidor d'aplicacions Tomcat: daw-daw/up1/06-servidor-aplicacions-tomcat.md
                   - 7. Virtualització, núvol i contenidors: daw-daw/up1/07-virtualitzacio-servidors-nuvol-contenidors.md
                   - 8. Proves i documentació: daw-daw/up1/08-proves-funcionament-documentacio.md
-              - UP2. Configuració i administració de servidors web: daw-daw/up2-servidors-web.md
+              - UP2. Configuració i seguretat del servidor web:
+                  - Presentació: daw-daw/up2-servidors-web.md
+                  - Índex i seqüència: daw-daw/up2/index.md
+                  - 1. Paràmetres del servidor web: daw-daw/up2/01-parametres-servidor.md
+                  - 2. Mòduls d'Apache: daw-daw/up2/02-moduls-apache.md
+                  - 3. Virtual Hosts: daw-daw/up2/03-virtual-hosts.md
+                  - 4. Autenticació i control d'accés: daw-daw/up2/04-autenticacio-control-acces.md
+                  - 5. Certificats digitals: daw-daw/up2/05-certificats-digitals.md
+                  - 6. Seguretat de les comunicacions: daw-daw/up2/06-seguretat-comunicacions.md
+                  - 7. Logs, monitorització i anàlisi: daw-daw/up2/07-logs-monitoratge.md
               - UP3. Administració de servidors d'aplicacions: daw-daw/up3-servidors-aplicacions.md
               - UP6. Documentació, control de versions i integració contínua: daw-daw/up6-documentacio-versions.md
               - UP4. Servidors de transferència d'arxius: daw-daw/up4-transferencia-arxius.md
