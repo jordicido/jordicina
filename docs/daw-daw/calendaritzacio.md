@@ -24,7 +24,7 @@ La distribució reserva temps a totes les UP i manté l'ordre de la programació
 | Unitat | Hores de referència al centre | Sessions | Hores presencials | Període |
 | --- | ---: | ---: | ---: | --- |
 | [UP1. Implantació d'arquitectures web](up1-implantacio-arquitectures.md) | 7 | 2 | 4 | 1r trimestre |
-| [UP2. Servidors web](up2-servidors-web.md) | 15 | 4 | 8 | 1r trimestre |
+| [UP2. Servidors web](up2/index.md) | 15 | 4 | 8 | 1r trimestre |
 | [UP3. Servidors d'aplicacions](up3-servidors-aplicacions.md) | 15 | 4 | 8 | 1r trimestre |
 | [UP6. Documentació i control de versions](up6-documentacio-versions.md) | 11 | 3 | 6 | 2n trimestre |
 | [UP4. Transferència d'arxius](up4-transferencia-arxius.md) | 14 | 3 | 6 | 2n trimestre |

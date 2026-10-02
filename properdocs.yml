@@ -112,7 +112,6 @@ nav:
                   - 7. Virtualització, núvol i contenidors: daw-daw/up1/07-virtualitzacio-servidors-nuvol-contenidors.md
                   - 8. Proves i documentació: daw-daw/up1/08-proves-funcionament-documentacio.md
               - UP2. Configuració i seguretat del servidor web:
-                  - Presentació: daw-daw/up2-servidors-web.md
                   - Índex i seqüència: daw-daw/up2/index.md
                   - 1. Paràmetres del servidor web: daw-daw/up2/01-parametres-servidor.md
                   - 2. Mòduls d'Apache: daw-daw/up2/02-moduls-apache.md

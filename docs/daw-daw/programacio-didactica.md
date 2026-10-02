@@ -29,7 +29,7 @@ La [programació didàctica completa del curs 2026–2027](DAW2SEMI_DAW%2026-27.
 | UP | Resultat d'aprenentatge | Hores | Pes |
 | --- | --- | ---: | ---: |
 | [UP1](up1-implantacio-arquitectures.md) | Implantació d'arquitectures web · RA1 | 7 | 10 % |
-| [UP2](up2-servidors-web.md) | Configuració i administració de servidors web · RA2 | 15 | 20 % |
+| [UP2](up2/index.md) | Configuració i seguretat del servidor web · RA2 | 15 | 20 % |
 | [UP3](up3-servidors-aplicacions.md) | Administració de servidors d'aplicacions · RA3 | 15 | 20 % |
 | [UP6](up6-documentacio-versions.md) | Documentació, control de versions i integració contínua · RA6 | 11 | 15 % |
 | [UP4](up4-transferencia-arxius.md) | Instal·lació i administració de servidors de transferència · RA4 | 14 | 20 % |

@@ -27,7 +27,7 @@ El mòdul s'organitza en sis unitats de programació. La **UP1** és la porta d'
 | Unitat | Denominació | Hores al centre | Sessions amb alumnat | Avaluació |
 | --- | --- | ---: | ---: | --- |
 | [UP1](up1-implantacio-arquitectures.md) | Implantació d'arquitectures web | 7 | 2 | 1r trimestre |
-| [UP2](up2-servidors-web.md) | Configuració i administració de servidors web | 15 | 4 | 1r trimestre |
+| [UP2](up2/index.md) | Configuració i seguretat del servidor web | 15 | 4 | 1r trimestre |
 | [UP3](up3-servidors-aplicacions.md) | Administració de servidors d'aplicacions | 15 | 4 | 1r trimestre |
 | [UP6](up6-documentacio-versions.md) | Documentació, control de versions i integració contínua | 11 | 3 | 2n trimestre |
 | [UP4](up4-transferencia-arxius.md) | Servidors de transferència d'arxius | 14 | 3 | 2n trimestre |
