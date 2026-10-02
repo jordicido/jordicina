@@ -37,21 +37,25 @@ En aquesta unitat seguiràs el recorregut complet d’un programa: una necessita
 5. [Ferramentes de desenvolupament](05-ferramentes-desenvolupament.md): IDE, compiladors, build tools, Git, proves, debugger, documentació i CI/CD.
 6. [Metodologies àgils de desenvolupament](06-metodologies-agils.md): Agile, iteracions, increments, Scrum, Kanban i feedback.
 
+## Activitats
+
+- [Activitat 1. Del codi a l’execució](activitats/activitat-1-codi-execucio.md): laboratori comparatiu de quatre programes per treballar els criteris RA1.a, RA1.c, RA1.d i RA1.e.
+
 ## Seqüència de treball
 
 Primer entendràs la relació entre programa i sistema informàtic. Després estudiaràs els llenguatges i les diferents formes de transformar i executar el codi. A continuació veuràs les fases del desenvolupament i les ferramentes que les connecten. Finalment estudiaràs com s’organitza el treball amb metodologies àgils.
 
 ## Cobertura dels criteris
 
-| Criteri | Teoria |
-| --- | --- |
-| RA1.a | [Del programa al sistema informàtic](01-programa-sistema.md) |
-| RA1.b | [Cicle de desenvolupament del programari](04-cicle-desenvolupament.md) |
-| RA1.c | [Del codi font a l’execució](03-codi-execucio.md) |
-| RA1.d | [Del codi font a l’execució](03-codi-execucio.md) |
-| RA1.e | [Llenguatges de programació](02-llenguatges-programacio.md) |
-| RA1.f | [Ferramentes de desenvolupament](05-ferramentes-desenvolupament.md) |
-| RA1.g | [Metodologies àgils de desenvolupament](06-metodologies-agils.md) |
+| Criteri | Teoria | Activitat |
+| --- | --- | --- |
+| RA1.a | [Del programa al sistema informàtic](01-programa-sistema.md) | [Activitat 1](activitats/activitat-1-codi-execucio.md) |
+| RA1.b | [Cicle de desenvolupament del programari](04-cicle-desenvolupament.md) | Pendent |
+| RA1.c | [Del codi font a l’execució](03-codi-execucio.md) | [Activitat 1](activitats/activitat-1-codi-execucio.md) |
+| RA1.d | [Del codi font a l’execució](03-codi-execucio.md) | [Activitat 1](activitats/activitat-1-codi-execucio.md) |
+| RA1.e | [Llenguatges de programació](02-llenguatges-programacio.md) | [Activitat 1](activitats/activitat-1-codi-execucio.md) |
+| RA1.f | [Ferramentes de desenvolupament](05-ferramentes-desenvolupament.md) | Pendent |
+| RA1.g | [Metodologies àgils de desenvolupament](06-metodologies-agils.md) | Pendent |
 
 ## Continua
 

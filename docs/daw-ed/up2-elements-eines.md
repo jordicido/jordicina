@@ -45,6 +45,12 @@ Consulta l’[índex de la UP2](up2/index.md) per veure l’ordre recomanat i la
 | [5. Ferramentes de desenvolupament](up2/05-ferramentes-desenvolupament.md) | IDE, build tools, dependències, Git, debugger, proves i CI/CD. |
 | [6. Metodologies àgils](up2/06-metodologies-agils.md) | Agile, Scrum, Kanban, iteracions, increments i feedback. |
 
+### Activitats
+
+| Activitat | Producte |
+| --- | --- |
+| [1. Del codi a l’execució](up2/activitats/activitat-1-codi-execucio.md) | Laboratori comparatiu de C, Java, Python i JavaScript, amb mapes d’execució, taula forense i anàlisi de processos. |
+
 ## Resultat d’aprenentatge i criteris
 
 **RA1.** Reconeix els elements i les ferramentes que intervenen en el desenvolupament d’un programa informàtic, analitzant les seues característiques i les fases en què actuen fins a arribar a la seua posada en funcionament.
