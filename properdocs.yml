@@ -11,6 +11,7 @@ extra_javascript:
 markdown_extensions:
   - admonition
   - pymdownx.details
+  - pymdownx.highlight
   - pymdownx.superfences:
       custom_fences:
         - name: mermaid
@@ -139,8 +140,7 @@ nav:
                   - Activitat 3. Crea, replica i executa un projecte Java: daw-ed/up1/activitats/activitat-3-construccio.md
                   - Autoavaluació: daw-ed/up1/activitats/autoavaluacio.md
               - UP2. Elements i eines del desenvolupament:
-                  - Presentació: daw-ed/up2-elements-eines.md
-                  - Índex i seqüència: daw-ed/up2/index.md
+                  - Inici i seqüència: daw-ed/up2-elements-eines.md
                   - 1. Del programa al sistema informàtic: daw-ed/up2/01-programa-sistema.md
                   - 2. Llenguatges de programació: daw-ed/up2/02-llenguatges-programacio.md
                   - 3. Del codi font a l’execució: daw-ed/up2/03-codi-execucio.md

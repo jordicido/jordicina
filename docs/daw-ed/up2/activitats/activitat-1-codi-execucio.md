@@ -65,12 +65,12 @@ activitat1-nom-cognoms/
 
 Comprova que tens disponibles les ferramentes següents:
 
-~~~bash
-gcc
-javac
-java
-python3
-node
+~~~powershell
+gcc --version
+javac -version
+java -version
+py --version
+node --version
 ~~~
 
 Anota les versions en l'informe. Si alguna ferramenta no està disponible, comunica-ho abans de modificar els programes.
@@ -85,17 +85,17 @@ L'objectiu inicial és executar correctament les quatre versions. No respongues 
 
 Des de programa-c/:
 
-~~~bash
+~~~powershell
 gcc -c programa.c
-gcc programa.o -o programa
-./programa
+gcc programa.o -o programa.exe
+.\programa.exe
 ~~~
 
 #### Versió Java
 
 Des de programa-java/:
 
-~~~bash
+~~~powershell
 javac Programa.java
 java Programa
 ~~~
@@ -104,24 +104,24 @@ java Programa
 
 Des de programa-python/:
 
-~~~bash
-python3 programa.py
+~~~powershell
+py -3 programa.py
 ~~~
 
 #### Versió JavaScript
 
 Des de programa-js/:
 
-~~~bash
+~~~powershell
 node programa.js
 ~~~
 
 Conserva evidències dels fitxers que existeixen **abans i després** de preparar cada programa. Pots utilitzar:
 
-~~~bash
-ls -lh
-file *
-tree
+~~~powershell
+Get-ChildItem -Force
+Get-ChildItem -Recurse -Force | Select-Object FullName, Extension, Length
+tree /F
 ~~~
 
 No cal capturar cada ordre. L'objectiu és demostrar quins fitxers nous han aparegut i quin paper sembla tindre cadascun.
@@ -130,34 +130,36 @@ No cal capturar cada ordre. L'objectiu és demostrar quins fitxers nous han apar
 
 En cada carpeta, compara l'estat inicial i l'estat posterior:
 
-~~~bash
-ls -lh
-file *
-tree
+~~~powershell
+Get-ChildItem -Force
+Get-ChildItem -Recurse -Force | Select-Object FullName, Extension, Length
+tree /F
 ~~~
 
 En Java, observa la classe compilada:
 
-~~~bash
+~~~powershell
 javap -c Programa
 ~~~
 
 En Python, força la compilació interna i observa el resultat:
 
-~~~bash
-python3 -m py_compile programa.py
-python3 -m dis programa.py
+~~~powershell
+py -3 -m py_compile programa.py
+py -3 -m dis programa.py
 ~~~
 
 Comprova si ha aparegut la carpeta __pycache__ i relaciona-la amb el bytecode i la màquina virtual de Python. La representació de dis no és codi màquina de la CPU.
 
 Executa un programa i, abans que passen els trenta segons, obri una segona terminal:
 
-~~~bash
-ps -o pid,comm,%cpu,%mem,rss
+~~~powershell
+Get-CimInstance Win32_Process |
+    Where-Object { $_.Name -match '^(programa|java|python|node)(\.exe)?$' } |
+    Select-Object ProcessId, Name, CommandLine, WorkingSetSize
 ~~~
 
-També pots utilitzar htop si està instal·lat. Repeteix l'observació amb més d'una versió i anota què canvia en el nom del procés, la memòria i el recorregut d'execució.
+També pots utilitzar el **Administrador de tasques** de Windows. Repeteix l'observació amb més d'una versió i anota què canvia en el nom del procés, la memòria i el recorregut d'execució.
 
 ### Fase C. Trenca l'experiment
 
@@ -217,7 +219,7 @@ Respon cada situació amb un paràgraf curt.
 
 #### Cas 1
 
-Has modificat programa.c, però ./programa continua mostrant el resultat antic. Explica per què.
+Has modificat programa.c, però .\programa.exe continua mostrant el resultat antic. Explica per què.
 
 #### Cas 2
 
@@ -225,7 +227,7 @@ Una companya envia només Programa.class a una persona amb una CPU diferent per�
 
 #### Cas 3
 
-Algú afirma: «Python executa directament cada línia del fitxer .py una darrere de l'altra». Durant l'activitat has trobat __pycache__ i has utilitzat python3 -m dis. Explica per què l'afirmació és una simplificació i quin paper té el bytecode.
+Algú afirma: «Python executa directament cada línia del fitxer .py una darrere de l'altra». Durant l'activitat has trobat __pycache__ i has utilitzat py -3 -m dis. Explica per què l'afirmació és una simplificació i quin paper té el bytecode.
 
 #### Cas 4
 
@@ -235,8 +237,10 @@ Tenim programa.c i programa. Explica la diferència entre la representació font
 
 Executa qualsevol programa durant els trenta segons de pausa i localitza el procés amb:
 
-~~~bash
-ps -o pid,comm,%cpu,%mem,rss
+~~~powershell
+Get-CimInstance Win32_Process |
+    Where-Object { $_.Name -match '^(programa|java|python|node)(\.exe)?$' } |
+    Select-Object ProcessId, Name, CommandLine, WorkingSetSize
 ~~~
 
 Produeix un únic esquema que connecte:
@@ -299,5 +303,4 @@ No cal capturar cada ordre. Una captura sense context no és una evidència sufi
 - [ ] L'informe conté entre quatre i sis captures contextualitzades.
 - [ ] No he inclòs credencials ni dades personals.
 
-[Índex de la UP2](../index.md)
-
+[Pàgina de la UP2](../../up2-elements-eines.md)

@@ -1,5 +1,10 @@
 #include <stdio.h>
+
+#ifdef _WIN32
+#include <windows.h>
+#else
 #include <unistd.h>
+#endif
 
 int main(void) {
     int temperatures[] = {18, 21, 24, 19, 27};
@@ -20,7 +25,11 @@ int main(void) {
     printf("Màxima: %d ºC\n\n", maxima);
     printf("Estat: %s\n", maxima >= 27 ? "temperatura elevada" : "temperatura normal");
     printf("\nEl programa continuarà actiu durant 30 segons...\n");
+#ifdef _WIN32
+    Sleep(30000);
+#else
     sleep(30);
+#endif
 
     return 0;
 }

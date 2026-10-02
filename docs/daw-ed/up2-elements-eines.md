@@ -30,9 +30,7 @@ El fil conductor serà una aplicació web de gestió de reserves. Ens ajudarà a
 - Identificar la funció d’un IDE, un compilador, un gestor de dependències, Git, un debugger i CI/CD.
 - Entendre quan i per què un equip utilitza enfocaments iteratius, Scrum o Kanban.
 
-## Itinerari de treball
-
-Consulta l’[índex de la UP2](up2/index.md) per veure l’ordre recomanat i la seqüència de la teoria. Les pàgines també estan disponibles des de la navegació del mòdul.
+## Continguts
 
 ### Materials teòrics
 
@@ -73,4 +71,4 @@ Primer entendràs què passa quan s’executa un programa i com cooperen el sist
 
 No cal memoritzar totes les ordres ni totes les ferramentes. L’objectiu és poder explicar quin problema resol cada element i què ocorre realment quan un programa es construeix i s’executa. En una UP posterior aprofundirem en les proves i en altres ferramentes del cicle de desenvolupament.
 
-[Anar a l’índex de la UP2](up2/index.md) · [Començar la teoria](up2/01-programa-sistema.md)
+[Començar la teoria](up2/01-programa-sistema.md)

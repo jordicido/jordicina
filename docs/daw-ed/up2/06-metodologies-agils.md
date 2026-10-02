@@ -165,4 +165,4 @@ El cicle connecta tota la UP: la necessitat es concreta en requisits; el llengua
 
 ## Tanca la unitat
 
-Has recorregut el camí complet: de la necessitat i el backlog al codi, les ferramentes, l'execució i el feedback. Pots tornar a l'[índex de la UP2](index.md) i utilitzar-lo per repassar els conceptes en ordre.
+Has recorregut el camí complet: de la necessitat i el backlog al codi, les ferramentes, l'execució i el feedback. Pots tornar a la [pàgina de la UP2](../up2-elements-eines.md) i utilitzar-la per repassar els conceptes en ordre.
