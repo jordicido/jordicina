@@ -18,12 +18,12 @@ No es tracta de programar les quatre versions des de zero. El codi font es propo
 
 ## Criteris d'avaluació treballats
 
-| Criteri | Què demostraràs |
+| Criteri d'avaluació | Redacció oficial |
 | --- | --- |
-| **RA1.a** | La relació entre programa, procés, memòria, CPU, sistema operatiu i perifèrics. |
-| **RA1.c** | La diferència entre codi font, codi objecte i codi executable. |
-| **RA1.d** | El paper del codi intermedi i de les màquines virtuals. |
-| **RA1.e** | Característiques i models d'execució de C, Java, Python i JavaScript. |
+| **CA a)** | S’ha reconegut la relació dels programes amb els components del sistema informàtic: memòria, processador i perifèrics, entre altres. |
+| **CA c)** | S’han diferenciat els conceptes de codi font, codi objecte i codi executable. |
+| **CA d)** | S’han reconegut les característiques de la generació de codi intermedi per a la seua execució en màquines virtuals. |
+| **CA e)** | S’han classificat els llenguatges de programació, identificant les seues característiques. |
 
 ## Situació
 
