@@ -1,3 +1,7 @@
+---
+hide:
+  - navigation
+---
 # 4. Usuaris, permisos i seguretat
 
 Una aplicació d’ofimàtica web no és només un editor. També és un sistema que decideix qui pot entrar, què pot fer i quins documents pot veure. Una configuració còmoda però massa permissiva pot exposar informació sensible.

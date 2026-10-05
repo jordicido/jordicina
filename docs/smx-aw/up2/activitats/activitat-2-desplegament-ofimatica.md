@@ -1,3 +1,7 @@
+---
+hide:
+  - navigation
+---
 # Activitat 2. Desplegament d’una aplicació d’ofimàtica web
 
 **Duració:** 2 hores · **Modalitat:** individual o parella, amb evidències individuals

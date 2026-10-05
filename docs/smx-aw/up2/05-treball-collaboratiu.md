@@ -1,3 +1,7 @@
+---
+hide:
+  - navigation
+---
 # 5. Treball col·laboratiu
 
 Col·laborar és treballar sobre un recurs compartit amb responsabilitats i permisos definits. No significa donar edició total a totes les persones.

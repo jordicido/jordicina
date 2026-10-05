@@ -1,3 +1,7 @@
+---
+hide:
+  - navigation
+---
 # 1. Fonaments de l’ofimàtica web
 
 ## Què és l’ofimàtica?

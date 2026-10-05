@@ -1,3 +1,7 @@
+---
+hide:
+  - navigation
+---
 # Activitat 3. Administra un espai de treball col·laboratiu
 
 **Duració:** 2–3 hores · **Modalitat:** part cooperativa, lliurament individual

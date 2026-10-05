@@ -1,3 +1,7 @@
+---
+hide:
+  - navigation
+---
 # 3. Instal·lació i desplegament
 
 En aquest bloc desplegarem **ONLYOFFICE Docs Community Edition** en una màquina virtual amb Docker. És un entorn de laboratori: serveix per entendre la instal·lació i comprovar els editors, no per publicar un servei amb dades reals sense una revisió professional.

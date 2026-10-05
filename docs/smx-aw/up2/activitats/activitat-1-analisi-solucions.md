@@ -1,3 +1,7 @@
+---
+hide:
+  - navigation
+---
 # Activitat 1. Anàlisi de solucions d’ofimàtica web
 
 **Duració:** 1 hora · **Modalitat:** individual o parella, amb lliurament individual

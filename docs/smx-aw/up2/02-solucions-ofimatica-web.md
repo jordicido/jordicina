@@ -1,3 +1,7 @@
+---
+hide:
+  - navigation
+---
 # 2. Solucions d’ofimàtica web
 
 No hi ha una única suite adequada per a tots els casos. La decisió depén dels comptes que ja té l’organització, dels formats, del pressupost, de les necessitats de privacitat i de qui administrarà el servei.
