@@ -4,120 +4,139 @@ hide:
 ---
 # 4. Usuaris, permisos i seguretat
 
-Una aplicació d’ofimàtica web no és només un editor. També és un sistema que decideix qui pot entrar, què pot fer i quins documents pot veure. Una configuració còmoda però massa permissiva pot exposar informació sensible.
+Una aplicació d’ofimàtica web no és només un editor. També és un sistema que decideix qui pot entrar, quins fitxers pot veure, quines accions pot fer i durant quant de temps.
+
+En Microsoft 365, aquesta gestió combina la identitat del compte educatiu, els grups o equips, les carpetes d’OneDrive o SharePoint i els permisos assignats a cada recurs.
 
 ## Identitat, autenticació i autorització
 
-- **Compte d’usuari:** representació d’una persona o servei dins de la plataforma.
-- **Identitat:** informació que permet reconéixer el compte, com el nom, l’adreça i el grup.
-- **Autenticació:** procés de demostrar **qui eres**. Pot usar una contrasenya, un segon factor o un sistema d’identitat corporatiu.
-- **Autorització:** decisió sobre **què pots fer** després d’autenticar-te.
-- **Grup:** conjunt de comptes al qual es poden aplicar permisos o polítiques.
-- **Rol:** conjunt de capacitats, per exemple administrador o editor.
-- **Permís:** acció concreta sobre un recurs, com llegir, comentar o editar.
+- **Compte d’usuari:** identitat digital d’una persona dins de l’organització.
+- **Autenticació:** procés de demostrar **qui eres**, per exemple amb contrasenya i MFA.
+- **Sessió:** accés temporal que el servei manté després d’autenticar-te.
+- **Autorització:** decisió sobre **què pots fer** una vegada autenticat.
+- **Grup o equip:** conjunt de persones al qual es poden aplicar recursos i permisos.
+- **Rol:** conjunt de capacitats, com responsable, editor o revisor.
+- **Permís:** acció concreta sobre un recurs, com llegir, comentar, editar o compartir.
 
 ```mermaid
 flowchart TD
-    I[Usuari introdueix identitat i credencial] --> V{Autenticació correcta?}
-    V -- No --> F[Accés rebutjat i registre de l'intent]
-    V -- Sí --> S[Crear o recuperar sessió]
-    S --> R[Consultar rol, grups i permisos]
-    R --> D{Autoritzat per al document?}
-    D -- No --> N[Document no accessible]
-    D -- Sí --> A[Permetre lectura, comentari o edició]
+    U[Compte educatiu] --> M{Autenticació correcta?}
+    M -- No --> X[Accés rebutjat]
+    M -- Sí --> S[Sessió de Microsoft 365]
+    S --> R[Consultar grups i permisos]
+    R --> D{Pot accedir al fitxer?}
+    D -- No --> N[Fitxer no accessible]
+    D -- Sí --> A[Lectura, comentari o edició]
 ```
 
-Autenticar una persona no li dona automàticament accés a tots els documents. L’aplicació ha de comprovar també l’autorització en cada recurs.
+Autenticar una persona no li dona accés a tots els documents. El servei ha de comprovar també l’autorització del compte sobre cada recurs.
 
-## Rols habituals
+## Rols per al projecte
+
+En la **Activitat 3. Projecte col·laboratiu amb Microsoft 365** treballaràs amb tres rols:
 
 | Rol | Pot fer | No hauria de fer per defecte |
 |---|---|---|
-| Administrador | Gestionar la plataforma, usuaris i polítiques | Editar tots els documents com a tasca quotidiana |
-| Usuari estàndard | Crear i utilitzar els seus recursos | Canviar polítiques globals |
-| Editor | Modificar documents que li han compartit | Administrar comptes |
-| Revisor o comentarista | Llegir i proposar observacions | Canviar el contingut final si no està autoritzat |
-| Lector | Consultar recursos | Editar, compartir o descarregar si està restringit |
-| Convidat | Accedir a un recurs concret i temporal | Entrar a tot l’espai de l’organització |
+| Responsable del projecte | Organitzar carpetes, compartir i revisar permisos | Donar edició a totes les persones sense comprovar la necessitat |
+| Editor | Modificar els documents assignats | Canviar la compartició de tot el projecte |
+| Revisor | Llegir i comentar | Editar el contingut final si no està autoritzat |
 
-Els noms poden variar entre Microsoft 365, Google Workspace, Nextcloud o ONLYOFFICE. El que importa és traduir el rol a capacitats reals i provar-les.
+La plataforma pot mostrar noms diferents, com **pot editar**, **pot visualitzar**, **pot comentar** o **pot compartir**. El que importa és comprovar la capacitat real amb una prova.
 
-## Cicle de vida d’un compte
+## Cicle de vida d’un compte i d’un accés
 
-1. **Alta:** crear el compte, assignar grups i comunicar l’accés per un canal segur.
-2. **Canvi de funció:** revisar grups i permisos; no acumular permisos antics sense motiu.
-3. **Canvi o recuperació de contrasenya:** fer-ho mitjançant el procediment de la plataforma.
-4. **Desactivació:** bloquejar l’accés quan la persona deixa temporalment l’organització.
-5. **Baixa:** eliminar o conservar el compte segons la política de retenció, transferint abans els recursos necessaris.
-6. **Revisió:** comprovar periòdicament comptes inactius, convidats i administradors.
+1. **Alta:** crear o incorporar el compte i assignar-lo al projecte.
+2. **Assignació:** donar només els grups i permisos necessaris.
+3. **Ús:** revisar que l’accés funciona i que la persona pot fer la seua tasca.
+4. **Canvi de funció:** retirar permisos antics abans d’afegir-ne de nous.
+5. **Revocació:** eliminar l’accés quan la persona deixa el projecte.
+6. **Revisió:** comprovar periòdicament enllaços, convidats, comptes inactius i persones amb edició.
 
-!!! question "Cas realista"
-    Una professora canvia de departament. És suficient canviar-li el nom del grup? No necessàriament: cal revisar els grups, les carpetes compartides, els enllaços creats i els documents dels quals era responsable.
+Retirar una persona d’un grup no sempre elimina tots els accessos: pot tindre un enllaç directe o accés heretat d’una altra carpeta. Per això cal provar l’accés final i no limitar-se a mirar una única pantalla.
 
 ## Permisos sobre documents
 
 | Permís | Significat | Ús recomanat |
 |---|---|---|
-| Lectura | Obrir i consultar | Documents de referència |
-| Comentari | Llegir i afegir observacions | Revisió sense editar el text final |
-| Edició | Modificar el contingut | Persones que fan part del treball |
-| Compartició | Convidar altres persones o canviar accés | Responsables limitats |
-| Descàrrega | Copiar el document fora de la plataforma | Només si la política ho permet |
-| Administració | Canviar usuaris, grups o configuració global | Personal tècnic autoritzat |
+| Visualitzar | Obrir i consultar | Document de referència o resultat final |
+| Comentar | Llegir i afegir observacions | Revisió sense editar el text |
+| Editar | Modificar el contingut | Persona que fa part del treball |
+| Compartir | Convidar altres persones o canviar l’accés | Responsable limitat del projecte |
+| Descarregar | Crear una còpia fora de l’espai web | Només si la política ho permet |
 
 ### Principi de mínim privilegi
 
-Cada compte ha de tindre únicament els permisos necessaris per a la seua tasca i durant el temps necessari. És més segur començar amb lectura i ampliar a edició quan cal que donar edició a tothom i intentar corregir-ho després.
+Cada compte ha de tindre únicament els permisos necessaris per a la seua tasca i durant el temps necessari. És més segur començar amb **visualitzar** i ampliar a **comentar** o **editar** quan cal que donar edició a tothom.
+
+La matriu de l’activitat permet convertir aquest principi en una prova:
+
+| Recurs | Responsable | Editor | Revisor |
+|---|---|---|---|
+| Pla de treball | Editar i compartir | Editar | Visualitzar i comentar |
+| Full de tasques | Editar i compartir | Editar | Visualitzar |
+| Presentació | Editar i compartir | Editar | Visualitzar |
+| Carpeta privada de proves | Accés | Sense accés | Sense accés |
 
 ## Compartició i enllaços
 
-- **Restringit a persones o grups:** opció preferida per a informació interna.
-- **Qualsevol persona de l’organització amb l’enllaç:** útil per a un recurs intern general, si la política ho permet.
-- **Qualsevol persona amb l’enllaç:** enllaç potencialment públic; només per a contingut que realment puga ser públic.
-- **Caducitat:** redueix el temps d’exposició d’un enllaç temporal.
-- **Contrasenya:** capa addicional quan la plataforma l’ofereix; no substitueix la restricció per identitat.
-- **Revocació:** elimina un accés que ja no és necessari.
+Ordenats de més restrictiu a més obert:
 
-Compartir un document amb una persona concreta és diferent de compartir la carpeta que el conté. Revisa sempre els permisos heretats: un usuari pot rebre accés per un grup encara que no aparega com a convidat directe.
+1. **Persones concretes:** opció preferida per a un projecte intern.
+2. **Persones de l’organització:** útil quan tot el domini pot consultar el recurs.
+3. **Qualsevol persona amb l’enllaç:** pot arribar a ser públic; només s’ha d’usar amb contingut realment públic.
+
+Abans de compartir, respon:
+
+- Qui necessita el document?
+- Necessita visualitzar, comentar o editar?
+- Pot tornar a compartir-lo?
+- Durant quant de temps necessita l’accés?
+- Com el retiraré quan finalitze el projecte?
+
+Compartir un document amb una persona no és igual que compartir la carpeta que el conté. Revisa els permisos heretats i els enllaços existents.
 
 ## Bones pràctiques de seguretat
 
-### Contrasenyes i MFA
+### Comptes i autenticació
 
-- Usa contrasenyes llargues i diferents per a cada servei.
-- No les envies per correu ni les guardes en un full compartit.
-- Utilitza un gestor de contrasenyes aprovat pel centre o l’empresa.
-- Activa **MFA** (*autenticació multifactor*) quan estiga disponible, sobretot en comptes administradors.
-- Protegeix els codis de recuperació i actualitza els mecanismes de recuperació.
+- Usa el compte educatiu indicat pel centre i no comptes personals.
+- No compartisques contrasenyes ni codis de verificació.
+- Activa MFA quan el centre ho permeta.
+- No mantingues oberta la sessió en un equip compartit.
+- No uses un compte administrador per a treballar diàriament amb documents.
 
-### HTTPS
+### Fitxers i dades
 
-HTTP envia les peticions sense el xifrat que aporta HTTPS. Amb HTTPS, el navegador valida un certificat i la comunicació viatja xifrada entre el client i el servidor. Això ajuda a evitar que tercers lligen o modifiquen la comunicació, però no corregeix permisos mal configurats ni un compte robat.
+- Utilitza dades fictícies en totes les pràctiques.
+- Guarda el fitxer en la carpeta correcta abans de compartir-lo.
+- Revisa el permís abans de copiar l’enllaç.
+- Tapa correus, noms, tokens i URL sensibles en les captures.
+- Comprova l’historial i la recuperació de versions abans de donar per perduda una dada.
 
-### Administració i continuïtat
+### Continuïtat i incidències
 
-- Actualitza la plataforma i les integracions.
-- Fes còpies de seguretat i prova que es poden restaurar.
-- Revisa permisos, enllaços públics i comptes antics.
-- Limita el nombre de comptes administradors.
-- Consulta el registre d’activitat quan hi haja una incidència.
-- Separa l’entorn de proves de les dades reals.
+- Revisa permisos i enllaços quan canvia el grup.
+- Mantín una persona responsable de la versió final.
+- Documenta qui ha detectat una incidència i quina correcció s’ha aplicat.
+- Separa dades de prova i dades reals.
+- No publiques enllaços de la pràctica fora de l’entorn autoritzat.
 
 ## Configuracions insegures i correccions
 
 | Configuració insegura | Risc | Correcció |
 |---|---|---|
-| Document sensible amb enllaç públic d’edició | Qualsevol posseïdor de l’enllaç pot canviar-lo | Restringir a comptes o grups i donar lectura/comentari si és suficient |
-| Tots els usuaris són administradors | Una errada o compte compromés afecta tota la plataforma | Aplicar rols separats i mínim privilegi |
-| Compte d’una persona que ja no treballa actiu | Accés no autoritzat | Desactivar-lo i transferir recursos segons la política |
-| Servei només amb HTTP en una xarxa compartida | Intercepció de credencials o dades | Configurar HTTPS amb certificat vàlid |
-| Única còpia dins del contenidor | Pèrdua en una fallada o actualització | Muntar emmagatzematge i fer còpies verificades |
-| Mateixa contrasenya per a usuaris de laboratori i administració | Una filtració compromet diversos entorns | Comptes individuals i secrets diferents |
+| Document amb enllaç públic d’edició | Qualsevol posseïdor pot canviar-lo | Compartir amb persones concretes i donar el permís mínim |
+| Revisor amb permís d’edició | Pot modificar el resultat final | Canviar a visualització o comentari |
+| Compte d’una persona que deixa el projecte actiu | Accés no autoritzat | Revocar l’accés i comprovar-lo amb una prova |
+| Tots poden compartir la carpeta | Pèrdua de control sobre els destinataris | Limitar la compartició al responsable |
+| Captura amb adreces o tokens visibles | Exposició de dades | Tapar la informació abans de lliurar-la |
 
-!!! warning "Dades de la pràctica"
-    Usa noms ficticis i fitxers de prova. Una captura de pantalla pot contindre adreces, tokens o documents sensibles; revisa-la abans de lliurar-la.
+En la **Activitat 4. Repte Microsoft 365** hauràs de resoldre incidències d’aquest tipus i documentar el símptoma, la causa, l’acció i la comprovació final.
 
-## Criteris treballats
+!!! question "Pensa"
+    Una persona només ha de revisar la redacció d’un informe. Quin permís triaries: visualització, comentari o edició? Com comprovaries que la decisió és correcta?
 
-- RA4.d
-- RA4.e
+## Criteris d’avaluació treballats
+
+- **RA4.d:** gestionar comptes, grups, rols i permisos d’accés.
+- **RA4.e:** aplicar el mínim privilegi, compartir amb seguretat i corregir riscos.

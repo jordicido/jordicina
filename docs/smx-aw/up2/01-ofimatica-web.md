@@ -4,87 +4,104 @@ hide:
 ---
 # 1. Fonaments de l’ofimàtica web
 
-## Què és l’ofimàtica?
+## Què és l’ofimàtica web?
 
-L’**ofimàtica** és el conjunt d’eines que ajuden a crear, tractar, organitzar i compartir informació en una oficina o equip de treball. No és només escriure textos: inclou documents, dades, presentacions, formularis i fluxos de treball.
+L’**ofimàtica** és el conjunt d’eines que permeten crear, tractar, organitzar, compartir i presentar informació en una oficina o equip de treball. Inclou documents, dades, presentacions, formularis i espais on guardar els fitxers.
 
-| Tipus d’eina | Ús habitual | Exemple de resultat |
+Una aplicació d’**ofimàtica web** s’executa principalment en un servidor i s’utilitza des d’un navegador. La persona usuària no ha d’instal·lar tot el programa en cada ordinador: inicia sessió, obri l’aplicació i treballa amb els fitxers que té autoritzats.
+
+| Necessitat | Aplicació habitual de Microsoft 365 | Resultat |
 |---|---|---|
-| Processador de textos | Redactar i revisar informació | Informe, acta o pressupost |
-| Full de càlcul | Organitzar dades i fer càlculs | Pressupost, inventari o gràfic |
-| Presentacions | Comunicar una idea visualment | Presentació d’un projecte |
-| Formularis | Recollir dades estructurades | Enquesta o incidència |
-| Notes i tasques | Capturar informació i seguiment | Llista d’accions |
-| PDF i diagrames | Distribuir o representar informació | Manual o esquema de procés |
+| Redactar i revisar informació | Word | Informe, acta o manual |
+| Organitzar dades i calcular | Excel | Pressupost, inventari o gràfic |
+| Comunicar una idea visualment | PowerPoint | Presentació d’un projecte |
+| Recollir dades estructurades | Forms | Enquesta o inscripció |
+| Guardar i ordenar fitxers | OneDrive | Carpetes i documents del projecte |
+| Compartir i coordinar un equip | Teams o SharePoint | Espai de treball i recursos compartits |
 
-Una suite d’ofimàtica sol integrar diverses d’aquestes eines i un espai per guardar els fitxers.
+La utilitat d’una aplicació no depén només del seu nom. Cal relacionar la necessitat amb l’eina, el tipus de dades, les persones que hi participaran i els permisos que necessitaran.
 
-## Aplicació d’escriptori i aplicació web
+## Per a què serveix en una organització?
 
-Una aplicació d’escriptori s’instal·la i s’executa principalment en l’ordinador de la persona usuària. Una aplicació web s’executa en un servidor i s’utilitza des d’un navegador. En la pràctica hi ha solucions híbrides: una suite web pot oferir també una aplicació local de sincronització o una versió instal·lable.
+L’ofimàtica web és útil quan una organització necessita:
 
-| Aspecte | Escriptori | Web |
+- accedir als documents des de diversos dispositius autoritzats;
+- evitar còpies diferents enviades com a fitxers adjunts;
+- treballar sobre una versió compartida i actualitzada;
+- centralitzar carpetes, permisos i comptes;
+- recuperar una versió anterior després d’una errada;
+- recollir informació amb formularis i convertir-la en dades analitzables;
+- combinar aplicacions en un flux de treball, per exemple `Forms → Excel → PowerPoint`.
+
+En la **Activitat 1. Descobrim Microsoft 365** aplicaràs aquesta relació entre necessitat i aplicació. En les activitats següents crearàs documents, dades, presentacions i formularis en situacions semblants a les d’una empresa.
+
+## Aplicació d’escriptori, aplicació web i PWA
+
+No hem de confondre tres formes d’utilitzar una eina:
+
+| Modalitat | On s’executa? | Exemple | Responsabilitat principal |
+|---|---|---|---|
+| Aplicació d’escriptori | En l’ordinador | Word instal·lat | La persona o l’organització instal·la i actualitza el programa |
+| Aplicació web | En el servei, dins del navegador | Word Online | El proveïdor manté el servei; l’organització gestiona comptes i dades |
+| PWA o aplicació web instal·lada | En el servei, amb una finestra i accés propi | Accés instal·lat a Word web | El navegador crea l’accés; el servei continua sent web |
+
+Una PWA no converteix l’aplicació web en un servidor local ni elimina la necessitat de connexió. Facilita l’accés i pot aparéixer com una aplicació del sistema, però els documents, la identitat i els permisos continuen depenent del servei web.
+
+| Aspecte | Escriptori | Web o PWA |
 |---|---|---|
-| Instal·lació | En cada ordinador; cal mantindre versions | Al servidor o al proveïdor; el navegador accedeix al servei |
-| Accés | Normalment des de l’equip on està instal·lada | Des de qualsevol dispositiu autoritzat amb navegador |
-| Dades | Disc local, servidor de fitxers o sincronització | Emmagatzematge remot, segons el servei |
-| Actualitzacions | Poden requerir intervenció en molts equips | Es centralitzen al servei, però cal revisar-les |
-| Xarxa | Pot funcionar sense connexió en moltes tasques | Necessita connexió, encara que algunes ofereixen mode fora de línia |
-| Compatibilitat | Depén del sistema operatiu i de la versió | Depén del navegador, els formats i el servidor |
-| Col·laboració | Cal intercanviar fitxers o afegir serveis | Compartició, comentaris i edició simultània són funcions naturals |
-| Administració | Configuració repetida en cada client | Comptes, permisos i polítiques centralitzades |
+| Instal·lació | Programa complet en cada equip | Accés al servei; la PWA és una instal·lació lleugera |
+| Actualitzacions | Cal aplicar-les als clients | Les gestiona principalment el proveïdor |
+| Accés | Pot funcionar sense xarxa en moltes tasques | Normalment necessita connexió i sessió |
+| Fitxers | Poden quedar en el disc local | Es guarden al servei, com OneDrive, si així ho triem |
+| Col·laboració | Cal combinar fitxers o serveis | Coedició, comentaris i versions integrats |
 
-La comparació no significa que una opció siga sempre millor. En una empresa amb documents sensibles pot ser important controlar la ubicació de les dades; en un equip mòbil pot pesar més l’accés des de diversos dispositius.
+En la **Activitat 2. La meua oficina al núvol** comprovaràs aquesta diferència i instal·laràs l’accés PWA si el navegador i el compte ho permeten.
 
-## Arquitectura bàsica
+## Arquitectura bàsica d’una aplicació web
 
 ```mermaid
-flowchart TD
-    U[Usuari] --> B[Navegador]
-    B -->|HTTPS| W[Servidor web / aplicació]
-    W --> A[Servei d'ofimàtica]
-    A --> D[(Documents i fitxers)]
-    A --> DB[(Base de dades: usuaris, permisos i metadades)]
+flowchart LR
+    U[Usuari] --> B[Navegador o PWA]
+    B -->|HTTPS| I[Identitat i autenticació]
+    I --> A[Aplicació web]
+    A --> P[Permisos]
+    A --> D[(OneDrive o SharePoint)]
+    A --> V[Versions i activitat]
 ```
 
 Quan una persona obri un document, de manera simplificada ocorre el següent:
 
-1. El navegador resol l’adreça del servei i inicia una connexió, preferiblement amb **HTTPS**.
-2. El servidor comprova la sessió. Si no existeix, demana autenticació.
-3. L’aplicació consulta si l’usuari pot veure o editar el document.
-4. El servidor recupera el document i envia al navegador el codi de l’editor i les dades necessàries.
-5. Les modificacions es transmeten al servei i es guarden. En una edició compartida, el servei coordina les modificacions de les diferents sessions.
+1. El navegador estableix una connexió segura amb el servei.
+2. Microsoft 365 comprova la identitat i crea una sessió.
+3. L’aplicació consulta si el compte pot veure, comentar o editar el recurs.
+4. El servei recupera el document i envia al navegador l’editor i les dades necessàries.
+5. Les modificacions es guarden i, si hi ha més persones, es coordinen amb les altres sessions.
 
-El navegador presenta la interfície, però la identitat, els permisos i l’emmagatzematge han d’estar controlats al costat del servidor.
+El navegador presenta la interfície, però la identitat, els permisos, els fitxers i l’historial es controlen al costat del servei. Per això una incidència de contrasenya o de permisos pot ser tan important com una incidència de l’aplicació.
 
-## Avantatges
+## Avantatges i riscos
 
-- **Accés des de diferents dispositius:** l’equip no queda lligat a un únic ordinador.
+### Avantatges
+
+- **Accés des de diferents dispositius:** el treball no queda lligat a un únic ordinador.
 - **Centralització:** els documents, els comptes i les polítiques es poden administrar des d’un lloc.
 - **Col·laboració:** diverses persones poden treballar sobre el mateix recurs.
 - **Historial de versions:** és possible consultar o recuperar estats anteriors.
-- **Administració centralitzada:** les actualitzacions i els permisos no s’han de repetir en cada client.
-- **Còpies de seguretat planificables:** l’organització pot definir què copia, quan i durant quant de temps.
-- **Menor dependència del client:** el navegador necessita menys instal·lació específica.
+- **Integració:** Forms, Excel, Word i PowerPoint poden formar un mateix flux.
+- **Administració centralitzada:** els permisos i els accessos es poden revisar sense visitar cada ordinador.
 
-## Inconvenients i riscos
+### Riscos
 
 - **Dependència de la xarxa:** una incidència de connectivitat pot impedir l’accés.
-- **Dependència del servidor:** una fallada, una actualització incorrecta o falta de recursos afecta moltes persones.
-- **Privacitat:** en un SaaS cal conéixer les condicions del proveïdor i la ubicació de les dades.
-- **Disponibilitat:** cal revisar els compromisos del servei i tindre un pla per a incidències.
-- **Seguretat:** un compte compromés pot donar accés a molts documents.
-- **Cost:** el servei pot requerir subscripcions, manteniment o infraestructura pròpia.
+- **Compte compromés:** una contrasenya robada pot donar accés a molts documents.
+- **Compartició excessiva:** un enllaç públic pot exposar informació sensible.
+- **Dependència del proveïdor:** les funcions i els límits depenen del pla contractat.
+- **Confusió de còpies:** descarregar i tornar a pujar fitxers pot crear versions desconnectades de l’original.
 
 !!! question "Pensa"
-    Què passaria si una persona guardara l’única còpia d’un document important en el seu portàtil i aquest es perdera? Quines funcions de l’ofimàtica web reduirien el risc?
+    Una companya et demana que li envies per correu el pressupost perquè el puga modificar. Quins problemes evitaries compartint el fitxer d’Excel des d’OneDrive amb el permís adequat?
 
-## Imatge suggerida
+## Criteris d’avaluació treballats
 
-<!-- IMATGE SUGGERIDA:
-Esquema d’un usuari amb navegador connectant-se per HTTPS a un servidor d’ofimàtica i al seu emmagatzematge.
--->
-
-## Criteris treballats
-
-- RA4.a
+- **RA4.a:** establir la utilitat de les aplicacions d’ofimàtica web a partir de necessitats professionals.
+- **RA4.b:** distingir processadors de textos, fulls de càlcul, presentacions, formularis i espais d’emmagatzematge.

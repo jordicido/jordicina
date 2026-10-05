@@ -2,154 +2,115 @@
 hide:
   - navigation
 ---
-# 3. Instal·lació i desplegament
+# 3. Accés, instal·lació i configuració d’aplicacions web
 
-En aquest bloc desplegarem **ONLYOFFICE Docs Community Edition** en una màquina virtual amb Docker. És un entorn de laboratori: serveix per entendre la instal·lació i comprovar els editors, no per publicar un servei amb dades reals sense una revisió professional.
+En una suite SaaS com Microsoft 365, el proveïdor desplega els servidors i l’alumnat utilitza les aplicacions des del navegador. Això no significa que no hi haja instal·lació: cal configurar l’accés, seleccionar l’entorn correcte i, si és possible, instal·lar l’aplicació web com a **PWA**.
 
-!!! info "Què instal·larem exactament?"
-    ONLYOFFICE Docs és el servidor d’editors web. Per crear una plataforma completa amb carpetes, comptes i compartició cal integrar-lo amb una solució com ONLYOFFICE Workspace, DocSpace o Nextcloud. En aquesta pràctica ens centrarem en el desplegament de l’editor i en la verificació del servei.
+Aquesta distinció és important per al **CA4.c**:
 
-## Conceptes imprescindibles
+> S’han instal·lat aplicacions d’ofimàtica web.
 
-- **Imatge:** paquet amb el programari i les dependències necessàries.
-- **Contenidor:** instància en execució d’una imatge, aïllada del sistema host.
-- **Port:** punt d’accés al servei. Publicarem el port `8080` de la màquina virtual i el connectarem amb el port `80` del contenidor.
-- **Volum:** carpeta del host que conserva dades fora del cicle de vida del contenidor.
-- **Persistència:** capacitat de conservar configuració o registres encara que el contenidor es recree.
+En aquesta UP, l’evidència serà la instal·lació o configuració de l’accés a Word, Excel i PowerPoint web com a aplicacions del navegador, juntament amb la verificació que s’obrin amb el compte educatiu i treballen amb els fitxers d’OneDrive.
 
-No necessitem conéixer Docker en profunditat. En aquesta unitat només farem servir descarregar una imatge, crear un contenidor, consultar-lo, parar-lo i tornar-lo a iniciar.
+## Tres nivells d’instal·lació
 
-## Requisits del laboratori
+| Nivell | Qui el realitza? | Exemple | Evidència |
+|---|---|---|---|
+| Desplegament del servei | Proveïdor SaaS o administració tècnica | Servidors, aplicació i base de dades | El servei està disponible |
+| Configuració de l’entorn | Administrador o usuari autoritzat | Compte, idioma, carpetes i permisos | Configuració comprovada |
+| Instal·lació de l’accés web | Persona usuària | PWA, accés directe o aplicació del navegador | Icona, finestra i URL del servei |
 
-| Element | Preparació recomanada |
-|---|---|
-| Màquina virtual | Linux actual, amb xarxa i permisos per usar Docker |
-| CPU | 2 nuclis virtuals com a mínim per a la pràctica |
-| RAM | 4 GB per a ONLYOFFICE, més memòria per al sistema convidat |
-| Disc | 40 GB lliures com a referència de la documentació oficial |
-| Programari | Docker Engine o Docker Desktop compatible |
-| Client | Navegador web actual |
-| Xarxa | Port `8080` lliure en la màquina virtual |
+Una PWA és una forma d’obrir una aplicació web amb una finestra i un accés propis. No és una còpia completa del programa i no converteix Microsoft 365 en un servidor local. Els documents continuen estant al servei web i necessiten la identitat i els permisos corresponents.
 
-La primera arrancada pot tardar perquè el contenidor prepara els seus serveis. En producció caldria dimensionar segons usuaris concurrents, tipus de documents, còpies i alta disponibilitat.
+## Preparació de l’entorn
 
-## Desplegament guiat
+Abans d’instal·lar l’accés, comprova:
 
-### 1. Comprova Docker
+- quin compte educatiu has d’utilitzar;
+- quin navegador està autoritzat i està actualitzat;
+- si el navegador bloqueja finestres emergents o cookies necessàries;
+- si el compte té disponibles Word, Excel, PowerPoint, OneDrive i Forms;
+- si tens una carpeta de pràctiques i dades fictícies;
+- si l’equip té permís per instal·lar aplicacions web.
 
-```bash
-docker --version
-docker info
-```
+No uses un compte personal per a la pràctica. Si una aplicació no apareix, no intentes esquivar la restricció: documenta el compte, el navegador i la limitació.
 
-Si `docker info` dona un error de permisos o indica que el servei no està actiu, resol la incidència amb el professorat abans de continuar. No canvies permisos del sistema sense entendre què estàs fent.
+## Accedir a una aplicació web
 
-### 2. Prepara directoris persistents
+El procediment general és:
 
-```bash
-sudo mkdir -p /opt/onlyoffice/{logs,data,lib}
-```
+1. Obri el portal de Microsoft 365 indicat pel centre.
+2. Inicia sessió amb el compte educatiu.
+3. Obri el llançador d’aplicacions i selecciona Word, Excel o PowerPoint.
+4. Comprova que la barra d’adreces correspon al servei autoritzat i que la sessió és la correcta.
+5. Crea o obri un fitxer de prova dins de la carpeta d’OneDrive de la pràctica.
+6. Escriu una modificació breu, espera que es guarde i tanca el fitxer.
+7. Torna a obrir-lo i verifica que la modificació continua disponible.
 
-Els directoris serviran, respectivament, per a registres, dades/certificats i memòria cau. En una màquina de laboratori també es poden ubicar dins de la carpeta de pràctiques de l’alumnat.
+La prova de persistència és important: veure l’editor no demostra que el document s’haja guardat en la ubicació correcta.
 
-### 3. Crea el contenidor
+## Instal·lar Word, Excel i PowerPoint com a PWA
 
-```bash
-sudo docker run -i -t -d \
-  --name onlyoffice-docs \
-  -p 8080:80 \
-  --restart unless-stopped \
-  -e JWT_SECRET='Canvia-Aquest-Secret-Per-Un-Altre' \
-  -v /opt/onlyoffice/logs:/var/log/onlyoffice \
-  -v /opt/onlyoffice/data:/var/www/onlyoffice/Data \
-  -v /opt/onlyoffice/lib:/var/lib/onlyoffice \
-  onlyoffice/documentserver
-```
+Els noms dels menús depenen del navegador, però l’operació sol seguir aquest patró:
 
-| Part de l’ordre | Funció |
-|---|---|
-| `docker run` | Crea i inicia un contenidor |
-| `--name` | Assigna un nom fàcil de recordar |
-| `-p 8080:80` | Connecta `host:8080` amb `contenidor:80` |
-| `--restart unless-stopped` | Torna a iniciar-lo després d’un reinici, excepte si l’hem parat expressament |
-| `-e JWT_SECRET=...` | Defineix el secret que s’utilitzarà en integracions amb autenticació JWT |
-| `-v host:contenidor` | Munta directoris persistents |
-| `onlyoffice/documentserver` | Imatge oficial de la Community Edition |
+1. Obri l’aplicació web des del compte educatiu.
+2. Busca en el menú del navegador una opció com **Instal·lar aplicació**, **Instal·lar Word** o **Crear accés directe**.
+3. Accepta només si l’adreça i l’aplicació corresponen al servei del centre.
+4. Comprova que apareix una icona o una entrada en el menú d’aplicacions.
+5. Obri la PWA i verifica que mostra la mateixa sessió i els mateixos fitxers que el navegador.
+6. Tanca-la i torna a obrir-la per comprovar que l’accés queda configurat.
 
-En un entorn real no escrigues secrets en un historial compartit ni reutilitzes el de l’exemple. Per a aquesta pràctica, el secret és de laboratori i no protegeix dades reals.
+Si el navegador no ofereix aquesta opció, l’alternativa és crear un accés directe o guardar l’aplicació als favorits. En tots dos casos, indica la limitació i conserva l’evidència de l’accés web funcional.
 
-### 4. Comprova l’estat
+## Configurar una estructura de treball
 
-```bash
-sudo docker ps
-sudo docker ps -a --filter name=onlyoffice-docs
-```
-
-Quan l’estat indique que està en execució, obri en el navegador:
+En la **Activitat 2. La meua oficina al núvol**, crea:
 
 ```text
-http://IP_DE_LA_MAQUINA_VIRTUAL:8080
+Projecte_Jornada/
+├── Documentació/
+├── Pressupostos/
+└── Presentacions/
 ```
 
-Si treballes dins de la mateixa màquina virtual, prova també `http://localhost:8080`. La pàgina de benvinguda d’ONLYOFFICE confirma que el servei respon; no significa encara que hi haja una plataforma de fitxers o comptes configurada.
+La ubicació forma part de la configuració. Un document ben creat però guardat en una carpeta personal o compartit amb el compte equivocat no compleix l’objectiu professional.
 
-### 5. Consulta els logs
+Revisa sempre:
 
-```bash
-sudo docker logs --tail 50 onlyoffice-docs
-sudo docker logs -f onlyoffice-docs
-```
+- nom del fitxer i extensió;
+- propietari o ubicació del fitxer;
+- persones amb accés;
+- permís de cada persona;
+- historial de versions;
+- possibilitat de recuperar el document.
 
-Prem `Ctrl+C` per deixar de seguir els logs. No elimines el contenidor només perquè la primera arrancada tarde: espera, revisa els missatges i comprova el port.
+## SaaS i autoallotjament: què canviaria?
 
-### 6. Parada i arrancada
+En un entorn autoallotjat, com una plataforma de laboratori amb Nextcloud i un editor web, la instal·lació del servei pot incloure servidor, contenidor, volums, actualitzacions i còpies. En Microsoft 365, aquestes tasques corresponen principalment al proveïdor.
 
-```bash
-sudo docker stop onlyoffice-docs
-sudo docker start onlyoffice-docs
-sudo docker ps --filter name=onlyoffice-docs
-```
+| Tasca | Microsoft 365 educatiu | Servei autoallotjat |
+|---|---|---|
+| Servidor i xarxa | Proveïdor | Centre o equip tècnic |
+| Actualitzacions de la plataforma | Principalment proveïdor | Administració pròpia |
+| Compte i permisos de l’activitat | Usuari i professorat | Administració i usuari |
+| Instal·lació de Word web | Accés o PWA | Depén de la plataforma |
+| Còpies i restauració | Cal conéixer l’abast del servei | Responsabilitat explícita del centre |
 
-Parar el contenidor no elimina les carpetes muntades. Si el vols eliminar al final del laboratori, fes-ho només quan ja hages guardat les evidències:
+Per a les activitats d’aquesta UP no publicaràs cap servei ni obriràs ports. L’objectiu és entendre la diferència i saber verificar un accés web instal·lat i funcional.
 
-```bash
-sudo docker rm -f onlyoffice-docs
-```
+## Llista de comprovació del CA4.c
 
-Aquesta ordre elimina el contenidor, però no les tres carpetes del host. Les dades persistents s’han d’eliminar o conservar amb una decisió conscient del responsable de l’entorn.
+Abans de lliurar l’Activitat 2, comprova:
 
-## Problemes habituals
+- [ ] Word web s’obri amb el compte educatiu.
+- [ ] Excel web s’obri amb el compte educatiu.
+- [ ] PowerPoint web s’obri amb el compte educatiu.
+- [ ] Els tres accessos estan instal·lats com a PWA o documentats com a accés directe alternatiu.
+- [ ] Cada aplicació pot obrir o crear un fitxer dins d’OneDrive.
+- [ ] Una modificació es guarda i es recupera en tornar a obrir el fitxer.
+- [ ] Les captures no mostren contrasenyes, tokens ni dades personals innecessàries.
 
-| Símptoma | Comprovació |
-|---|---|
-| El navegador rebutja la connexió | Revisa `docker ps`, espera la primera arrancada i comprova `8080` |
-| El contenidor no arranca | Consulta `docker logs onlyoffice-docs` |
-| El port està ocupat | Usa `ss -ltn` i tria un altre port, per exemple `8081:80` |
-| La màquina va molt lenta | Revisa RAM, CPU i espai lliure; no ho soluciones eliminant logs sense revisar-los |
-| No s’accedeix des de l’host | Comprova la xarxa de la màquina virtual i el tallafoc del laboratori |
-| Es perden dades després de recrear | Revisa els tres muntatges `-v` i el contingut de `/opt/onlyoffice` |
+## Criteris d’avaluació treballats
 
-!!! warning "Seguretat"
-    No exposes el port directament a Internet. Per a un servei real caldrien, com a mínim, un domini, HTTPS amb un certificat vàlid, actualitzacions, còpies verificades, una política de secrets i una revisió de la integració d’usuaris.
-
-## Evidència mínima del desplegament
-
-Guarda en un document breu:
-
-1. la comanda usada, ocultant o substituint el secret;
-2. una captura de `docker ps` amb el contenidor actiu;
-3. una captura de la pàgina accessible en el port `8080`;
-4. un fragment de logs sense informació sensible;
-5. el resultat de parar i arrancar de nou el contenidor;
-6. una incidència trobada i la solució aplicada, si n’hi ha hagut.
-
-## Documentació oficial
-
-- [Instal·lació d’ONLYOFFICE Docs amb Docker](https://helpcenter.onlyoffice.com/docs/installation/docs-community-install-docker.aspx)
-- [Requisits de sistema en Docker](https://helpcenter.onlyoffice.com/docs/installation/docs-community-sys-reqs-docker.aspx)
-- [Imatge d’ONLYOFFICE DocumentServer](https://hub.docker.com/r/onlyoffice/documentserver/)
-
-## Criteris treballats
-
-- RA4.c
-- RA4.f
+- **RA4.c:** instal·lar o configurar l’accés a aplicacions d’ofimàtica web i verificar-ne el funcionament.
+- **RA4.f:** reconéixer l’entorn d’ús i les prestacions disponibles després de la instal·lació o configuració.

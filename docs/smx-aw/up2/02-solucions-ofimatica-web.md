@@ -2,149 +2,127 @@
 hide:
   - navigation
 ---
-# 2. Solucions d’ofimàtica web
+# 2. Solucions i aplicacions d’ofimàtica web
 
-No hi ha una única suite adequada per a tots els casos. La decisió depén dels comptes que ja té l’organització, dels formats, del pressupost, de les necessitats de privacitat i de qui administrarà el servei.
+No hi ha una única suite adequada per a tots els casos. En aquesta unitat treballarem principalment amb **Microsoft 365**, perquè és l’entorn disponible amb el compte educatiu, però també aprendrem a comparar-lo amb Google Workspace i amb una solució autoallotjada.
 
-## Què hem de comparar?
+La comparació no consisteix a copiar una llista de funcions. Consisteix a relacionar una necessitat amb una aplicació, valorar les dades i els permisos i comprovar si l’entorn permet treballar de manera segura.
 
-Abans de triar una solució, convertim la necessitat en criteris observables:
+## L’ecosistema Microsoft 365
 
-- **Cost:** llicències, emmagatzematge, suport i infraestructura.
-- **Privacitat:** qui tracta les dades, on s’allotgen i quines polítiques pot aplicar l’organització.
-- **Compatibilitat:** navegadors, sistemes operatius, dispositius mòbils i accessibilitat.
-- **Formats:** especialment DOCX, XLSX, PPTX, ODT, PDF i exportacions.
-- **Administració:** comptes, grups, rols, auditories, recuperació i polítiques.
-- **Col·laboració:** edició simultània, comentaris, control de canvis i versions.
-- **Integració:** identitat, correu, calendari, emmagatzematge, intranet o LMS.
-- **Autoallotjament:** possibilitat de controlar el servidor i les dades.
-- **Infraestructura:** CPU, memòria, disc, còpies i coneixements necessaris.
+Microsoft 365 és un ecosistema d’aplicacions web i serveis. Les funcions exactes depenen del compte i del pla, però el model de treball és el mateix: una identitat dona accés a diferents eines que comparteixen fitxers, permisos i informació.
 
-## Solucions representatives
+| Aplicació | Funció principal | Exemple per a la UP2 |
+|---|---|---|
+| **Word Online** | Documents de text, estils, taules i revisió | Informe de la jornada o pla de treball |
+| **Excel Online** | Dades, fórmules, filtres i gràfics | Pressupost i anàlisi d’inscripcions |
+| **PowerPoint Online** | Presentacions i comunicació visual | Presentar el pressupost i les conclusions |
+| **OneDrive** | Emmagatzematge, carpetes i compartició | Carpeta `Projecte_Jornada` |
+| **Forms** | Formularis i recollida estructurada de dades | Inscripció a una jornada |
+| **Teams o SharePoint** | Espai d’equip, documents i coordinació | Projecte compartit amb rols |
 
-### Microsoft 365
+Una eina no substitueix automàticament les altres. La competència consisteix a saber quan convé usar-les juntes:
 
-És una oferta **SaaS** de Microsoft que integra aplicacions com Word, Excel, PowerPoint, OneDrive, SharePoint, Teams i serveis d’administració. Les funcions exactes depenen del pla contractat.
+```mermaid
+flowchart LR
+    F[Forms: recollir dades] --> E[Excel: calcular i filtrar]
+    E --> G[Excel: crear gràfic]
+    G --> W[Word o PowerPoint: comunicar resultats]
+    O[OneDrive: organitzar i compartir] --> F
+    O --> E
+    O --> W
+```
 
-- **Col·laboració:** coedició, comentaris, historial i espais de SharePoint o OneDrive.
-- **Usuaris:** gestió centralitzada de comptes, grups i rols mitjançant el centre d’administració i la identitat de Microsoft.
-- **Punts forts:** integració amb formats d’Office i amb organitzacions que ja utilitzen comptes Microsoft.
-- **Limitacions:** cost recurrent, dependència del proveïdor i diferències entre plans.
-- **Autoallotjament:** la suite SaaS no s’instal·la com una còpia completa en un servidor propi; sí que existeixen aplicacions d’escriptori i opcions d’integració.
+En la **Activitat 1. Descobrim Microsoft 365** identificaràs aquestes aplicacions. En la **Activitat 2** les utilitzaràs per a crear un projecte complet i en la **Activitat 4** construiràs el flux Forms–Excel–Word o PowerPoint.
 
-### Google Workspace
+## Prestacions específiques
 
-És una suite **SaaS** que inclou Docs, Sheets, Slides, Drive, Forms, Meet i eines d’administració. Els documents nadius de Google no són exactament fitxers DOCX o XLSX, encara que es poden importar i exportar.
+### Processador de textos: Word
 
-- **Col·laboració:** edició simultània, comentaris, suggeriments i historial de versions.
-- **Usuaris:** domini, grups, unitats organitzatives i rols d’administrador.
-- **Punts forts:** col·laboració ràpida des del navegador i integració amb Drive.
-- **Limitacions:** dependència de l’ecosistema i possibles diferències de format en convertir documents.
-- **Autoallotjament:** no és la modalitat d’ús de Google Workspace; caldria valorar una solució diferent si el requisit és controlar físicament el servidor.
+Word serveix per redactar informació estructurada. Les prestacions que has de saber reconéixer són:
 
-### ONLYOFFICE
+- títols i subtítols amb **estils**;
+- índex automàtic basat en els estils;
+- taules, imatges i text alternatiu;
+- enllaços, capçaleres i peus de pàgina;
+- comentaris i, quan estiga disponible, control de canvis;
+- historial de versions i recuperació;
+- compartició amb lectura, comentari o edició.
 
-ONLYOFFICE Docs proporciona editors web per a documents de text, fulls de càlcul, presentacions i PDF, amb compatibilitat especialment orientada als formats Office Open XML. Es pot usar integrat amb una plataforma de documents o amb solucions de sincronització i compartició.
+Aplicar estils no és només una qüestió estètica: crea una estructura que facilita la navegació, l’accessibilitat i l’actualització de l’índex.
 
-- **Col·laboració:** coedició, comentaris, revisió i versions segons la plataforma que l’integra.
-- **Usuaris:** poden dependre de l’espai integrat, com ONLYOFFICE Workspace, DocSpace o Nextcloud.
-- **Punts forts:** compatibilitat amb DOCX, XLSX i PPTX i possibilitat d’autoallotjament.
-- **Limitacions:** el servidor d’editors no és, per si sol, tota una plataforma d’usuaris i fitxers; el desplegament propi exigeix actualitzacions, còpies i administració.
-- **Infraestructura:** cal reservar recursos del servidor. Com a referència didàctica, la documentació oficial indica 4 GB de RAM i 40 GB lliures com a base per a l’edició en Docker, a més de recursos per al sistema.
+### Full de càlcul: Excel
 
-### Collabora Online
+Excel permet convertir dades en informació útil. En aquesta unitat treballarem:
 
-Collabora Online ofereix editors web basats en LibreOffice i se sol integrar amb plataformes com Nextcloud. CODE és l’edició comunitària orientada a proves, desenvolupament i entorns on corresponga la seua llicència.
+- dades organitzades en files i columnes;
+- fórmules de suma, percentatges i condicions;
+- taules i filtres;
+- format condicional per destacar valors;
+- gràfics adequats al tipus de dada;
+- historial de versions i treball compartit.
 
-- **Col·laboració:** edició simultània, comentaris i funcions d’edició segons la integració.
-- **Usuaris:** normalment els gestiona la plataforma que proporciona els fitxers i l’autenticació.
-- **Punts forts:** ecosistema LibreOffice, formats oberts i integracions amb núvol privat.
-- **Limitacions:** la compatibilitat amb documents complexos pot variar; cal revisar la versió i el suport requerit.
-- **Autoallotjament:** possible, però l’organització assumeix el manteniment del servidor i de la integració.
+En un pressupost, per exemple, el total d’una línia pot calcular-se amb `quantitat × preu unitari`; el total general pot sumar les línies; i una condició pot indicar si s’ha superat el límit. No cal memoritzar una fórmula concreta si saps explicar quines cel·les intervenen i quin resultat esperes.
 
-### El paper de Nextcloud
+Quan hi ha diverses persones editant, convé acordar qui modifica les fórmules i qui introdueix dades. També és important revisar que el gràfic utilitza el rang correcte i no una còpia antiga.
 
-Nextcloud és sobretot una plataforma d’emmagatzematge, sincronització, compartició i aplicacions. Pot integrar editors com ONLYOFFICE o Collabora. Per tant, no s’ha de confondre la plataforma de fitxers amb l’editor de documents: una aporta identitat, carpetes i permisos, i l’altra edita el contingut.
+### Presentacions: PowerPoint
 
-## Comparativa professional
+PowerPoint serveix per comunicar una idea, no per convertir cada diapositiva en una pàgina d’un informe. Les prestacions principals són:
 
-| Criteri | Microsoft 365 | Google Workspace | ONLYOFFICE autoallotjat | Collabora + plataforma pròpia |
-|---|---|---|---|---|
-| Cost | Subscripció per pla i usuari | Subscripció per pla i usuari | Llicència/servei segons edició + servidor | Llicència/servei segons edició + servidor |
-| Privacitat i dades | Gestionades pel proveïdor segons contracte i regió | Gestionades pel proveïdor segons contracte i regió | Control de la infraestructura pròpia | Control de la infraestructura pròpia |
-| Formats | Molt fort en formats Office | Formats natius i importació/exportació | Molt orientat a DOCX/XLSX/PPTX | Bona relació amb formats oberts i Office |
-| Administració | Completa i centralitzada | Completa i centralitzada | La decideix la plataforma integradora | La decideix la plataforma integradora |
-| Col·laboració | Molt integrada | Molt integrada | Depén de Docs i de l’espai integrat | Depén de CODE i de la plataforma |
-| Integracions | Ecosistema Microsoft | Ecosistema Google | Nextcloud, Workspace i altres | Nextcloud i altres integracions |
-| Autoallotjament | No és la modalitat principal | No és la modalitat principal | Sí | Sí |
-| Infraestructura pròpia | Baixa | Baixa | Mitjana/alta | Mitjana/alta |
+- plantilles i temes coherents;
+- jerarquia visual amb títols i textos breus;
+- imatges, taules i gràfics;
+- notes per a la persona que presenta;
+- comentaris i revisió;
+- compartició i historial de versions.
 
-La taula no substitueix una prova amb documents reals. Un centre hauria de provar, per exemple, una plantilla amb taules, un full amb fórmules i una presentació amb imatges abans de decidir.
+En la **Activitat 2** incorporaràs a PowerPoint el gràfic creat en Excel. Això permet comprovar que una dada es pot calcular en un full i comunicar en una presentació sense tornar-la a copiar manualment.
+
+### Emmagatzematge i formularis
+
+OneDrive aporta l’espai de treball: carpetes, noms, ubicacions, compartició i versions. Forms aporta una entrada ordenada de dades. Quan les respostes s’obrin en Excel, cal revisar:
+
+1. si les preguntes han produït columnes comprensibles;
+2. si hi ha respostes buides o incoherents;
+3. quin filtre o càlcul respon a la pregunta professional;
+4. si el gràfic representa realment les dades.
 
 ## SaaS i autoallotjament
 
 ### SaaS
 
-En un model **SaaS** (*Software as a Service*), el proveïdor gestiona la infraestructura, la plataforma i bona part de les actualitzacions. L’organització configura usuaris, permisos i dades des d’un panell web.
+En un model **SaaS** (*Software as a Service*), el proveïdor gestiona la infraestructura i bona part de les actualitzacions. L’organització continua sent responsable dels comptes, els permisos, les dades que comparteix i la formació de les persones usuàries.
 
-**Avantatges:** posada en marxa ràpida, escalabilitat i menys manteniment físic.
-
-**Responsabilitats que continuen existint:** gestionar comptes, protegir l’accés, revisar comparticions, formar les persones usuàries i comprovar que les còpies i la retenció compleixen la necessitat.
+Microsoft 365 i Google Workspace són exemples de suites SaaS. En aquest model, l’alumnat no desplega el servidor: configura l’accés i utilitza les aplicacions disponibles.
 
 ### Autoallotjament
 
-En l’autoallotjament, l’organització proporciona el servidor o la màquina virtual i instal·la la solució. Té més control sobre dades, xarxa i actualitzacions, però també més responsabilitats.
+En l’autoallotjament, l’organització proporciona el servidor o la màquina virtual i instal·la la solució, com podria passar amb Nextcloud integrat amb ONLYOFFICE o Collabora. Té més control sobre la infraestructura, però assumeix també:
 
-```mermaid
-flowchart LR
-    subgraph SaaS[Model SaaS]
-        US[Usuari] --> PS[Servei del proveïdor]
-        PS --> PD[(Dades en la infraestructura del proveïdor)]
-    end
-    subgraph SELF[Autoallotjament]
-        U2[Usuari] --> S2[Servidor de l'organització]
-        S2 --> D2[(Dades i còpies pròpies)]
-        ADM[Administració, actualitzacions i seguretat] --> S2
-    end
-```
+- actualitzacions i vulnerabilitats;
+- còpies de seguretat i restauració;
+- disponibilitat, recursos i xarxa;
+- autenticació, permisos i HTTPS;
+- suport a les persones usuàries.
 
-| Pregunta | SaaS | Autoallotjament |
-|---|---|---|
-| Qui manté el maquinari? | Proveïdor | Organització o servei contractat |
-| Qui actualitza la plataforma? | Principalment el proveïdor | Administració pròpia |
-| Qui ha de protegir els comptes? | Organització, amb eines del proveïdor | Organització |
-| Qui ha de fer còpies? | Cal verificar què cobreix el servei | Organització, explícitament |
-| On es pot provar? | Compte o entorn del proveïdor | Màquina virtual o servidor de laboratori |
+Per això una solució autoallotjada no és automàticament més segura. Pot ser adequada quan el control físic de les dades és un requisit i hi ha personal per administrar-la.
 
-!!! warning "No confongues control amb absència de feina"
-    Autoallotjar una aplicació no fa que les dades siguen automàticament segures. Sense actualitzacions, còpies, HTTPS i una bona gestió de permisos, el control del servidor pot convertir-se en un risc.
+## Comparació professional
 
-## Prestacions específiques
+En la **Activitat 1** faràs una mini comparació amb només aquests cinc criteris:
 
-### Processador de textos
+| Criteri | Microsoft 365 | Google Workspace | Solució autoallotjada |
+|---|---|---|---|
+| Aplicacions i formats | Word, Excel, PowerPoint i integració amb formats Office | Docs, Sheets i Slides, amb formats propis i importació/exportació | Depén de l’editor i la plataforma triats |
+| Col·laboració | Coedició, comentaris, versions i espais compartits | Funcions equivalents dins de Drive | Depén de la plataforma i la configuració |
+| Gestió d’usuaris | Identitat i administració centralitzades | Domini i administració centralitzats | Responsabilitat de l’organització |
+| Control de les dades | Condicions del proveïdor i del pla | Condicions del proveïdor i del pla | Més control físic, més responsabilitats |
+| Infraestructura | Principalment del proveïdor | Principalment del proveïdor | Servidor, xarxa, còpies i manteniment propis |
 
-Treballa amb paràgrafs, estils, capçaleres, taules, imatges, enllaços i exportació a PDF. Les funcions professionals més importants són els comentaris, el control de canvis, la comparació de versions i el treball amb plantilles.
+La decisió ha d’explicar el context. Per a una empresa que ja utilitza comptes Microsoft, la integració pot pesar molt; per a una organització amb requisit de control físic, pot pesar més l’autoallotjament; per a un equip que prioritza la coedició ràpida, cal provar les eines amb documents reals.
 
-### Full de càlcul
+## Criteris d’avaluació treballats
 
-Permet introduir dades, fórmules i funcions; ordenar i filtrar registres; aplicar format condicional i generar gràfics. En col·laboració cal acordar qui modifica les fórmules i protegir, quan siga possible, les cel·les o fulls sensibles.
-
-### Presentacions
-
-Organitza diapositives amb plantilles, text, imatges, taules, gràfics i elements multimèdia. La col·laboració és útil per separar guió, disseny i revisió, però convé establir una persona responsable de la versió final.
-
-### Altres eines
-
-Els formularis recullen dades estructurades; els editors de PDF permeten anotar o emplenar documents; les notes faciliten la captura ràpida; i els diagrames representen processos o arquitectura.
-
-## Enllaços oficials
-
-- [ONLYOFFICE Docs: instal·lació amb Docker](https://helpcenter.onlyoffice.com/docs/installation/docs-community-install-docker.aspx)
-- [Requisits de ONLYOFFICE Docs en Docker](https://helpcenter.onlyoffice.com/docs/installation/docs-community-sys-reqs-docker.aspx)
-- [Google Workspace: unitats compartides](https://support.google.com/a/users/answer/7212025)
-- [Documentació de Collabora Online](https://sdk.collaboraonline.com/)
-
-## Criteris treballats
-
-- RA4.b
-- RA4.f
+- **RA4.b:** descriure processadors de textos, fulls de càlcul, presentacions, formularis i espais d’emmagatzematge.
+- **RA4.f:** reconéixer les prestacions específiques de Word, Excel, PowerPoint, OneDrive i Forms.
