@@ -180,6 +180,101 @@ Permet veure:
 
 Quan "apareix la web equivocada", aquesta ordre sol ser el primer pas.
 
+## Pràctica UP2.3: `catadaw1.com` i `catadaw2.com`
+
+En aquesta activitat es creen dos llocs estàtics sobre la mateixa màquina i el
+mateix port. La selecció no es fa per la carpeta, sinó pel nom que arriba en la
+capçalera `Host`.
+
+### 1. Crear els continguts
+
+```bash
+sudo mkdir -p /var/www/catadaw1 /var/www/catadaw2
+echo '<h1>catadaw1.com</h1>' | sudo tee /var/www/catadaw1/index.html
+echo '<h1>catadaw2.com</h1>' | sudo tee /var/www/catadaw2/index.html
+sudo chown -R www-data:www-data /var/www/catadaw1 /var/www/catadaw2
+sudo find /var/www/catadaw1 /var/www/catadaw2 -type d -exec chmod 755 {} \;
+sudo find /var/www/catadaw1 /var/www/catadaw2 -type f -exec chmod 644 {} \;
+```
+
+### 2. Definir els dos Virtual Hosts
+
+Fitxer `/etc/apache2/sites-available/catadaw1.com.conf`:
+
+```apache
+<VirtualHost *:80>
+    ServerName catadaw1.com
+    ServerAlias www.catadaw1.com
+    DocumentRoot /var/www/catadaw1
+
+    <Directory /var/www/catadaw1>
+        Options -Indexes
+        AllowOverride None
+        Require all granted
+    </Directory>
+
+    ErrorLog ${APACHE_LOG_DIR}/catadaw1-error.log
+    CustomLog ${APACHE_LOG_DIR}/catadaw1-access.log combined
+</VirtualHost>
+```
+
+Fitxer `/etc/apache2/sites-available/catadaw2.com.conf`:
+
+```apache
+<VirtualHost *:80>
+    ServerName catadaw2.com
+    ServerAlias www.catadaw2.com
+    DocumentRoot /var/www/catadaw2
+
+    <Directory /var/www/catadaw2>
+        Options -Indexes
+        AllowOverride None
+        Require all granted
+    </Directory>
+
+    ErrorLog ${APACHE_LOG_DIR}/catadaw2-error.log
+    CustomLog ${APACHE_LOG_DIR}/catadaw2-access.log combined
+</VirtualHost>
+```
+
+Activa'ls i valida la configuració:
+
+```bash
+sudo a2ensite catadaw1.com.conf catadaw2.com.conf
+sudo apache2ctl configtest
+sudo apache2ctl -S
+sudo systemctl reload apache2
+```
+
+### 3. Resoldre els noms en el client
+
+En el fitxer `/etc/hosts` de l'equip des d'on s'obri el navegador, substitueix
+`IP_VM` per la IP real de la màquina virtual:
+
+```text
+IP_VM catadaw1.com www.catadaw1.com
+IP_VM catadaw2.com www.catadaw2.com
+```
+
+Per aïllar si el problema és DNS o Apache, també es poden provar els hosts
+directament amb `curl`:
+
+```bash
+curl -i -H 'Host: catadaw1.com' http://IP_VM/
+curl -i -H 'Host: catadaw2.com' http://IP_VM/
+```
+
+La primera resposta ha de contindre `catadaw1.com` i la segona `catadaw2.com`.
+La comprovació amb navegador completa la prova de resolució real del client.
+
+### Evidències per a la memòria
+
+- els dos fitxers de `sites-available`;
+- l'entrada corresponent del fitxer `/etc/hosts` del client;
+- `apache2ctl configtest` amb `Syntax OK`;
+- `apache2ctl -S` mostrant els dos noms;
+- una prova diferenciada de cada web.
+
 ## 3.9. Logs independents per lloc
 
 És recomanable separar logs:
@@ -210,6 +305,27 @@ Per HTTPS, el Virtual Host escolta el port 443:
 </VirtualHost>
 </IfModule>
 ```
+
+Per a la pràctica UP2.5, si s'ha generat el certificat en la carpeta del
+laboratori, les rutes queden així:
+
+```apache
+SSLCertificateFile /etc/apache2/certs/catadaw1.com.crt
+SSLCertificateKeyFile /etc/apache2/certs/catadaw1.com.key
+```
+
+El nom del certificat, el `ServerName` i el nom que el client envia amb SNI
+han de ser coherents. Després d'afegir o modificar el Virtual Host:
+
+```bash
+sudo a2ensite catadaw1.com-ssl.conf
+sudo apache2ctl configtest
+sudo systemctl reload apache2
+curl -k -I https://catadaw1.com/
+```
+
+L'opció `-k` només s'utilitza en aquest laboratori perquè el certificat és
+autofirmat; en un entorn real s'ha de validar la cadena de confiança.
 
 Necessitem:
 
@@ -312,4 +428,3 @@ nom del lloc
 3. Per què `/etc/hosts` no substitueix la configuració d'Apache?
 4. Què mostra `apache2ctl -S`?
 5. Quan té sentit usar un Virtual Host amb `ProxyPass`?
-

@@ -31,7 +31,7 @@ hide:
 <h2>Unitats de programació</h2>
 <div class="module-grid">
   <a class="module-card" href="up1-implantacio-arquitectures/"><strong>UP1 · Implantació d'arquitectures web</strong><span>Models, protocols, servidors, virtualització, contenidors i requisits.</span></a>
-  <a class="module-card" href="up2/"><strong>UP2 · Servidors web</strong><span>Mòduls, hosts virtuals, autenticació, HTTPS, certificats i logs.</span></a>
+  <a class="module-card" href="up2/"><strong>UP2 · Servidors web</strong><span>Mòduls, hosts virtuals, autenticació, HTTPS, certificats, logs, Docker i AWS.</span></a>
   <a class="module-card" href="up3-servidors-aplicacions/"><strong>UP3 · Servidors d'aplicacions</strong><span>Configuració, seguretat, cooperació amb el servidor web i rendiment.</span></a>
   <a class="module-card" href="up6-documentacio-versions/"><strong>UP6 · Documentació i versions</strong><span>Documentació, Git, GitHub i integració contínua.</span></a>
   <a class="module-card" href="up4-transferencia-arxius/"><strong>UP4 · Transferència d'arxius</strong><span>FTP, SFTP, usuaris, permisos i modes de connexió.</span></a>

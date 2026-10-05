@@ -139,6 +139,75 @@ També es pot utilitzar per redireccions, però per a redireccions simples és p
 >
 > `mod_rewrite` és potent, però una configuració difícil d'entendre és difícil de mantindre. Utilitza'l quan realment necessites reescriptura basada en patrons.
 
+## Pràctica UP2.2: `mod_rewrite` en `.htaccess`
+
+Aquesta pràctica comprova la diferència entre **reescriure internament** una
+URL i fer una redirecció. La regla següent fa que el client demane
+`/about-us`, però Apache servisca el fitxer local `about.html`; la barra d'adreces
+no ha de canviar.
+
+### 1. Preparar el lloc i activar el mòdul
+
+```bash
+sudo mkdir -p /var/www/daw
+echo '<!doctype html><html lang="ca"><meta charset="utf-8"><title>About</title><h1>About DAW</h1></html>' \
+  | sudo tee /var/www/daw/about.html
+
+sudo a2enmod rewrite
+apache2ctl -M | grep rewrite
+```
+
+L'ordre ha de mostrar `rewrite_module (shared)`. Si no apareix, no continues
+amb la prova funcional: revisa l'activació i torna a executar `configtest`.
+
+### 2. Permetre `.htaccess` només al lloc de la pràctica
+
+En el Virtual Host que serveix `/var/www/daw`, incorpora el bloc següent:
+
+```apache
+DocumentRoot /var/www/daw
+
+<Directory /var/www/daw>
+    Options -Indexes
+    AllowOverride All
+    Require all granted
+</Directory>
+```
+
+`AllowOverride All` és necessari ací perquè Apache puga llegir les directives
+de `.htaccess`. En producció és preferible definir la regla directament en el
+Virtual Host i mantindre `AllowOverride None`, però la pràctica vol demostrar
+explícitament el mecanisme de `.htaccess`.
+
+### 3. Crear i provar la regla
+
+```bash
+sudo tee /var/www/daw/.htaccess >/dev/null <<'EOF'
+RewriteEngine On
+RewriteRule ^about-us/?$ about.html [L]
+EOF
+
+sudo apache2ctl configtest
+sudo systemctl reload apache2
+curl -i http://localhost/about-us
+```
+
+El resultat esperat és una resposta `200` amb el contingut d'`about.html`, no
+una resposta `301` ni `302`. Si el lloc se selecciona pel nom, fes la prova
+des del client amb:
+
+```bash
+curl -i -H 'Host: catadaw1.com' http://IP_VM/about-us
+```
+
+### Evidències per a la memòria
+
+- sortida de `apache2ctl -M | grep rewrite`;
+- fragment de la configuració amb `AllowOverride All`;
+- contingut de `.htaccess`;
+- resultat de `apache2ctl configtest`;
+- resposta de `curl` o captura del navegador mostrant `/about-us`.
+
 ## 2.6. `mod_headers`
 
 Permet crear, modificar o eliminar capçaleres HTTP.
@@ -273,4 +342,3 @@ Has de saber:
 2. Per què `proxy` i `proxy_http` poden ser necessaris alhora?
 3. Què aporta `mod_headers` a la seguretat?
 4. Per què activar mòduls innecessaris és una mala pràctica?
-

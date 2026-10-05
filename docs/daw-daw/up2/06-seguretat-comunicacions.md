@@ -151,6 +151,69 @@ Quan el Virtual Host 443 funciona, el port 80 pot limitar-se a redirigir:
 </VirtualHost>
 ```
 
+### Pràctica UP2.5 i UP2.6: HTTPS i capçaleres
+
+En el cas de `catadaw1.com`, el Virtual Host del port 80 només redirigeix i el
+del port 443 serveix el contingut i afegeix les capçaleres. Activa primer els
+mòduls necessaris:
+
+```bash
+sudo a2enmod ssl headers
+sudo apache2ctl configtest
+```
+
+Configuració orientativa del fitxer del lloc:
+
+```apache
+<VirtualHost *:80>
+    ServerName catadaw1.com
+    ServerAlias www.catadaw1.com
+    Redirect permanent / https://catadaw1.com/
+</VirtualHost>
+
+<IfModule mod_ssl.c>
+<VirtualHost *:443>
+    ServerName catadaw1.com
+    ServerAlias www.catadaw1.com
+    DocumentRoot /var/www/catadaw1
+
+    SSLEngine on
+    SSLCertificateFile /etc/apache2/certs/catadaw1.com.crt
+    SSLCertificateKeyFile /etc/apache2/certs/catadaw1.com.key
+
+    <Directory /var/www/catadaw1>
+        Options -Indexes
+        AllowOverride None
+        Require all granted
+    </Directory>
+
+    Header always set X-Frame-Options "DENY"
+    Header always set X-Content-Type-Options "nosniff"
+    Header always set X-XSS-Protection "1; mode=block"
+</VirtualHost>
+</IfModule>
+```
+
+Valida, recarrega i comprova les dues parts de la pràctica:
+
+```bash
+sudo apache2ctl configtest
+sudo systemctl reload apache2
+curl -I http://catadaw1.com/
+curl -k -I https://catadaw1.com/
+```
+
+La primera petició ha de retornar una redirecció amb `Location` cap a HTTPS.
+La segona ha d'incloure `X-Frame-Options: DENY`,
+`X-Content-Type-Options: nosniff` i `X-XSS-Protection: 1; mode=block`.
+`X-XSS-Protection` és una capçalera antiga i no substitueix una política CSP,
+però es manté ací perquè forma part de l'enunciat de l'activitat. Amb un
+certificat autofirmat, `curl` necessita `-k` i el navegador mostrarà un avís.
+
+En les eines de desenvolupament del navegador, obri **Network**, selecciona la
+petició HTTPS i revisa **Response Headers**. Aquesta és l'evidència que prova
+el comportament des del client, no només que Apache accepte la configuració.
+
 Això millora l'experiència, però la primera petició podria haver sigut HTTP. HSTS va un pas més enllà.
 
 ## 6.10. HSTS
@@ -271,4 +334,3 @@ flowchart LR
 3. Per què és necessari SNI?
 4. Què aporta HSTS respecte a una simple redirecció?
 5. Per què HTTPS no impedeix un SQL injection?
-

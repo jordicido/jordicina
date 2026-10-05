@@ -244,6 +244,84 @@ fonts -> inputs -> processament -> índex -> cerca/dashboards
 - alertes;
 - dashboards.
 
+## Pràctica UP2.7: anàlisi amb GoAccess
+
+Per a un únic servidor Apache, **GoAccess** és una opció lleugera que permet
+passar dels fitxers de `/var/log/apache2/` a un informe HTML amb mètriques de
+peticions, codis HTTP, fitxers, hosts i agents d'usuari. És suficient per a la
+pràctica i deixa clar el recorregut complet: instal·lar, llegir, analitzar i
+interpretar.
+
+### 1. Localitzar els logs i instal·lar la ferramenta
+
+```bash
+ls -lh /var/log/apache2/
+sudo apt update
+sudo apt install goaccess
+goaccess --version
+```
+
+Utilitza el log del lloc si existeix (`catadaw1-access.log`) i, si no, el log
+global (`access.log`). No assumes el nom: comprova'l amb `ls`.
+
+### 2. Generar l'informe
+
+Per al log global:
+
+```bash
+sudo goaccess /var/log/apache2/access.log \
+  --log-format=COMBINED \
+  -o /tmp/apache2-report.html
+```
+
+Per al Virtual Host de `catadaw1.com`:
+
+```bash
+sudo goaccess /var/log/apache2/catadaw1-access.log \
+  --log-format=COMBINED \
+  -o /tmp/catadaw1-report.html
+```
+
+Obri l'HTML en el navegador del mateix equip o copia'l a un directori de
+proves accessible pel client. L'informe és una evidència, però la memòria ha
+d'explicar què significa cada dada i quina decisió se'n deriva.
+
+### 3. Completar l'anàlisi amb consultes reproduïbles
+
+```bash
+# Errors del servidor en l'error log
+sudo grep -Ei 'error|crit|warn' /var/log/apache2/error.log | tail -n 50
+
+# Codis 4xx i 5xx en l'access log
+sudo awk '$9 ~ /^(4|5)/ {count[$9]++} END {for (code in count) print code, count[code]}' \
+  /var/log/apache2/access.log | sort -n
+
+# IPs amb més peticions
+sudo awk '{print $1}' /var/log/apache2/access.log \
+  | sort | uniq -c | sort -nr | head
+
+# Peticions a rutes sensibles o inexistents
+sudo grep -E ' /admin|\.env|wp-login|\.git' /var/log/apache2/access.log | tail -n 50
+```
+
+Aquestes cerques no demostren per si soles un atac. Un nombre elevat de 404
+pot ser un error de l'aplicació, un rastrejador o un escaneig automatitzat;
+cal relacionar IP, hora, ruta, codi i freqüència abans d'interpretar-lo.
+
+### 4. Estructura de l'informe
+
+Redacta el resultat amb aquesta seqüència:
+
+1. **Entorn i període analitzat:** servidor, lloc, fitxer i dates.
+2. **Errors detectats:** codi, recompte, hora i possible causa.
+3. **Comportaments inusuals:** IPs o rutes destacades i evidència concreta.
+4. **Impacte:** disponibilitat, rendiment o seguretat afectats.
+5. **Recomanacions:** accions prioritzades i manera de verificar-les.
+6. **Limitacions:** dades que no es poden concloure amb el període disponible.
+
+No omplis la memòria amb valors inventats: les xifres i conclusions han de
+correspondre al log que s'ha analitzat i a una captura o ordre reproduïble.
+
 ## 7.10. Elastic Stack
 
 Tradicionalment s'ha parlat d'**ELK**:
@@ -385,4 +463,3 @@ La gestió professional de logs té quatre capes:
 4. Quina diferència hi ha entre guardar logs i monitoritzar?
 5. Per què no s'han de registrar tokens o contrasenyes?
 6. Com ajudaria un `X-Request-ID` en una arquitectura amb proxy i backend?
-

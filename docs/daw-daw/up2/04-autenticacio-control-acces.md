@@ -80,6 +80,100 @@ sequenceDiagram
     A-->>B: 200 OK
 ```
 
+## Pràctica UP2.4: Basic Auth a `catadaw1.com`
+
+La pràctica protegeix el contingut de
+`/var/www/catadaw1.com/html` amb un fitxer de credencials gestionat per
+Apache. En un laboratori es pot usar l'usuari indicat en l'enunciat, però la
+contrasenya no s'ha de publicar en una memòria, captura o repositori.
+
+### 1. Activar les dependències i crear les credencials
+
+```bash
+sudo apt update
+sudo apt install apache2-utils
+sudo a2enmod auth_basic authn_file authz_user
+
+sudo mkdir -p /var/www/catadaw1.com/html
+echo '<h1>catadaw1.com</h1>' | sudo tee /var/www/catadaw1.com/html/index.html
+sudo chown -R www-data:www-data /var/www/catadaw1.com
+sudo htpasswd -c /etc/apache2/.htpasswd nombreapellido
+sudo chmod 640 /etc/apache2/.htpasswd
+sudo chown root:www-data /etc/apache2/.htpasswd
+sudo grep '^nombreapellido:' /etc/apache2/.htpasswd
+```
+
+Quan `htpasswd` pregunte la contrasenya, escriu-la de manera interactiva. La
+línia guardada ha de contindre l'usuari i un hash, mai la contrasenya en text
+pla. En el laboratori de l'enunciat, introdueix `daw2025` quan la sol·licite el
+prompt; no la reutilitzes fora de la pràctica. No uses `htpasswd -b` perquè
+exposa la contrasenya en la línia d'ordres.
+
+### 2. Configurar el directori protegit
+
+L'enunciat demana treballar en `/etc/apache2/apache2.conf`. Afig-hi el bloc
+següent o, preferiblement, incorpora'l al Virtual Host de `catadaw1.com` per
+limitar l'abast de la regla:
+
+```apache
+<Directory /var/www/catadaw1.com/html>
+    Options -Indexes
+    AllowOverride None
+    AuthType Basic
+    AuthName "catadaw1.com - zona privada"
+    AuthUserFile /etc/apache2/.htpasswd
+    Require valid-user
+</Directory>
+```
+
+Comprova també que el lloc utilitza aquest directori:
+
+```apache
+DocumentRoot /var/www/catadaw1.com/html
+```
+
+No poses `.htpasswd` dins del `DocumentRoot`: és un fitxer de servidor i no ha
+de ser descarregable des del web.
+
+### 3. Validar i provar l'autenticació
+
+```bash
+sudo apache2ctl configtest
+sudo systemctl restart apache2
+
+# Sense credencials: ha de retornar 401
+curl -i http://www.catadaw1.com/
+
+# Amb credencials: ha de retornar 200 si la pàgina existeix
+curl -i -u nombreapellido http://www.catadaw1.com/
+```
+
+Amb `curl -u nombreapellido` la contrasenya es demana de manera interactiva.
+També es pot provar en el navegador: la primera visita ha de mostrar el quadre
+de diàleg d'autenticació i, després d'introduir dades vàlides, la pàgina ha de
+ser accessible.
+
+Resultats que cal interpretar:
+
+| Prova | Resultat esperat | Significat |
+|---|---:|---|
+| Sense credencials | `401 Unauthorized` | Apache demana autenticació |
+| Usuari i contrasenya correctes | `200 OK` | el recurs està autoritzat |
+| Credencials incorrectes | `401 Unauthorized` | la identitat no s'ha validat |
+| Usuari vàlid però `Require` restrictiu | `403 Forbidden` | autenticació correcta, autorització denegada |
+
+### Evidències per a la memòria
+
+- `a2enmod` i `apache2ctl -M` mostrant les dependències;
+- el fragment de configuració sense exposar secrets;
+- una vista parcial de `.htpasswd` on només siga visible el hash;
+- `Syntax OK` i l'estat del servei;
+- prova negativa (`401`) i positiva (`200`);
+- captura del diàleg o de la resposta del navegador.
+
+Basic Auth s'ha de combinar amb HTTPS quan les credencials travessen una xarxa
+real. La pràctica UP2.5/UP2.6 aporta aquesta capa de transport xifrat.
+
 ## 4.2. Basic Auth: quan és apropiat?
 
 Pot ser útil per:
@@ -299,4 +393,3 @@ canal     -> HTTPS/TLS
 3. OAuth 2.0 és autenticació o autorització?
 4. Què aporta OIDC?
 5. Quan tindria sentit usar autenticació amb certificat de client?
-

@@ -140,6 +140,8 @@ nav:
                   - 5. Certificats digitals: daw-daw/up2/05-certificats-digitals.md
                   - 6. Seguretat de les comunicacions: daw-daw/up2/06-seguretat-comunicacions.md
                   - 7. Logs, monitorització i anàlisi: daw-daw/up2/07-logs-monitoratge.md
+                  - 8. Mòduls d'Apache en Docker: daw-daw/up2/08-moduls-apache-docker.md
+                  - 9. Projecte AWS i CE2.h: daw-daw/up2/09-projecte-aws-ce2h.md
               - UP3. Administració de servidors d'aplicacions: daw-daw/up3-servidors-aplicacions.md
               - UP6. Documentació, control de versions i integració contínua: daw-daw/up6-documentacio-versions.md
               - UP4. Servidors de transferència d'arxius: daw-daw/up4-transferencia-arxius.md

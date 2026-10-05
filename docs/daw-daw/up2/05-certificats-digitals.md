@@ -124,6 +124,66 @@ L'opció `-x509` genera directament un **certificat autofirmat**.
 
 El navegador mostrarà una advertència si no confia en l'emissor.
 
+## Pràctica UP2.5: certificat autofirmat per a `catadaw1.com`
+
+La pràctica es realitza en un laboratori, per això es pot utilitzar un
+certificat autofirmat. No és equivalent a un certificat emés per una CA
+pública: el navegador avisarà que l'emissor no és de confiança fins que el
+certificat o la CA del laboratori s'instal·le manualment.
+
+### 1. Comprovar i activar `mod_ssl`
+
+La sintaxi correcta de `find` és:
+
+```bash
+find /usr/lib/apache2/modules -type f -name 'mod_ssl.so'
+sudo a2enmod ssl
+ls -l /etc/apache2/mods-enabled/ssl.load /etc/apache2/mods-enabled/ssl.conf
+```
+
+Si el paquet no està instal·lat, en Ubuntu/Debian:
+
+```bash
+sudo apt update
+sudo apt install apache2 openssl
+```
+
+### 2. Generar la clau i el certificat
+
+La carpeta de la pràctica és `/etc/apache2/certs/`. La clau privada no s'ha de
+publicar ni incloure en una captura llegible.
+
+```bash
+sudo install -d -m 750 /etc/apache2/certs
+sudo openssl req -x509 -nodes -newkey rsa:2048 -days 365 \
+  -keyout /etc/apache2/certs/catadaw1.com.key \
+  -out /etc/apache2/certs/catadaw1.com.crt \
+  -subj "/C=ES/ST=Valencia/L=Catadau/O=IES/OU=MRE/CN=catadaw1.com/emailAddress=tu_correo@alu.edu.gva.es" \
+  -addext "subjectAltName=DNS:catadaw1.com,DNS:www.catadaw1.com"
+
+sudo chown root:root /etc/apache2/certs/catadaw1.com.key
+sudo chmod 600 /etc/apache2/certs/catadaw1.com.key
+sudo chmod 644 /etc/apache2/certs/catadaw1.com.crt
+sudo ls -l /etc/apache2/certs/
+```
+
+Perquè la URL de la pràctica siga `https://catadaw1.com`, el nom del domini
+ha d'aparéixer en el certificat, preferiblement en `subjectAltName`. No uses
+literalment `Tu nombre` com a únic nom comú: provocaria
+`NET::ERR_CERT_COMMON_NAME_INVALID`. Si el professorat exigeix conservar el
+nom de l'alumne en el camp de l'organització o del subjecte, mantín el domini
+en el SAN.
+
+### 3. Inspeccionar el resultat
+
+```bash
+openssl x509 -in /etc/apache2/certs/catadaw1.com.crt \
+  -noout -subject -issuer -dates -ext subjectAltName
+```
+
+La captura ha de permetre comprovar el domini, l'emissor autofirmat i el
+període de validesa, però no ha de revelar el contingut de la clau privada.
+
 ## 5.6. Protegir la clau privada
 
 Exemple de permisos:
@@ -306,4 +366,3 @@ revocació
 3. Què és una CA intermèdia?
 4. Per què `-servername` és important en `openssl s_client`?
 5. Per què és preferible automatitzar la renovació?
-
