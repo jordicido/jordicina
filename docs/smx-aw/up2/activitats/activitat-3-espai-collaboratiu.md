@@ -2,70 +2,71 @@
 hide:
   - navigation
 ---
-# Activitat 3. Administra un espai de treball col·laboratiu
+# Activitat 3. Projecte col·laboratiu amb Microsoft 365
 
-**Duració:** 2–3 hores · **Modalitat:** part cooperativa, lliurament individual
+**Duració:** 2–3 hores · **Modalitat:** grups de tres, amb lliurament individual
 
 ## Objectiu
 
-Preparar un espai de treball amb usuaris, documents, permisos i proves de col·laboració. L’activitat integra instal·lació, administració, seguretat i ús professional.
+Crear i administrar un projecte compartit en Microsoft 365, aplicant permisos segurs i demostrant les funcions de coedició, comentaris i versions.
 
 ## Situació
 
-Eres el tècnic informàtic d’una xicoteta empresa. Has de preparar un espai per a un projecte amb tres persones:
+Eres el tècnic informàtic d’una xicoteta empresa. El grup ha de preparar un espai compartit per a un projecte amb tres rols:
 
-- **administrador:** configura l’espai, però no treballa diàriament en els documents;
+- **responsable del projecte:** organitza la carpeta i revisa els permisos;
 - **editor:** redacta i actualitza els fitxers;
-- **lector/revisor:** consulta i comenta, però no ha de modificar el contingut final.
+- **revisor:** consulta, comenta i valida, però no modifica el contingut final.
 
-La plataforma pot ser la instal·lada en l’activitat 2, una instància de Nextcloud amb ONLYOFFICE/Collabora o l’entorn proporcionat pel professorat. Si una funció no existeix en la plataforma triada, documenta la limitació i demostra l’equivalent disponible.
+Utilitzeu OneDrive i les aplicacions web del compte educatiu. Si l’entorn ofereix Teams o SharePoint, podeu utilitzar-los com a espai de projecte complementari.
 
 ## Tasques
 
-### 1. Crear usuaris i grups
+### 1. Crear l’espai i assignar rols
 
-1. Crea comptes ficticis per a administrador, editor i lector.
-2. Assigna’ls a un grup de projecte si la plataforma ho permet.
-3. Comprova que l’administrador té les funcions de gestió i que l’editor i el lector no les tenen.
-4. Anota com desactivaries el compte d’una persona que deixa el projecte.
+1. Crea en OneDrive una carpeta amb el nom del projecte i una subcarpeta per a documents, dades i presentació.
+2. Comparteix-la amb persones concretes, no amb qualsevol persona que tinga l’enllaç.
+3. Assigna el rol **pot editar** només a la persona editora i el rol **pot visualitzar** al revisor.
+4. Anota com retiraries l’accés d’una persona que deixa el projecte.
 
 ### 2. Crear recursos
 
-Crea:
+Creeu:
 
-- un document de text amb el pla de treball;
-- un full de càlcul amb tasques, responsables i estat;
-- una presentació amb tres diapositives sobre el projecte.
+- un document de Word amb el pla de treball;
+- un full d’Excel amb tasques, responsables i estat;
+- una presentació de PowerPoint amb tres o quatre diapositives sobre el projecte.
 
-Usa dades fictícies. Inclou, com a mínim, un estil o format en el document, una fórmula o filtre en el full i una imatge o gràfic en la presentació.
+Utilitzeu dades fictícies. Incloeu, com a mínim, estils en el document, una fórmula o filtre en el full i una imatge o gràfic en la presentació.
 
 ### 3. Assignar permisos
 
-Configura i prova aquesta matriu:
+Configureu i proveu aquesta matriu:
 
-| Recurs | Administrador | Editor | Lector/revisor |
+| Recurs | Responsable | Editor | Revisor |
 |---|---|---|---|
-| Pla de treball | Administrar/editar | Editar | Comentar |
-| Full de tasques | Administrar/editar | Editar | Llegir |
-| Presentació | Administrar | Editar | Llegir |
-| Carpeta privada de proves | Administrar | Sense accés | Sense accés |
+| Pla de treball | Editar i compartir | Editar | Visualitzar i comentar |
+| Full de tasques | Editar i compartir | Editar | Visualitzar |
+| Presentació | Editar i compartir | Editar | Visualitzar |
+| Carpeta privada de proves | Accés | Sense accés | Sense accés |
 
-Demostra també un usuari sense accés: no és suficient dir que no el compartiràs; inicia sessió o fes una comprovació amb el compte de prova.
+Demostreu també un usuari sense accés. No és suficient dir que no el compartireu: feu la comprovació amb un compte de prova o amb una persona del grup que no tinga el permís.
 
 ### 4. Col·laborar
 
-Amb dues sessions obertes:
+Amb dues o tres sessions obertes:
 
-1. Modifica parts diferents del document de text.
-2. Afig un comentari sobre una frase.
-3. Respon el comentari des de l’altre compte.
-4. Resol el comentari quan l’acció estiga completada.
-5. Revisa l’historial de versions i identifica els canvis.
-6. Comprova que el lector pot comentar només on ho has previst i no pot editar el document.
+1. Modifiqueu parts diferents del document de Word simultàniament.
+2. Afig un comentari sobre una frase i respon-lo des d’un altre compte.
+3. Resol el comentari quan l’acció estiga completada.
+4. Revisa l’historial de versions i identifica qui ha fet dos canvis.
+5. Recupera una versió anterior en un fitxer de prova i comprova el resultat.
+6. Comprova que el revisor pot comentar però no editar.
+7. Retira temporalment un permís i verifica què veu la persona afectada.
 
 ### 5. Detectar i corregir un risc
 
-Aplica temporalment una configuració insegura controlada, per exemple un enllaç públic d’edició, permisos d’administrador per a l’editor o un compte administrador innecessari. Captura l’estat de prova, corregeix-lo i explica:
+Aplica temporalment una configuració insegura controlada, per exemple un enllaç públic d’edició o permís d’edició per al revisor. Captura l’estat de prova, corregeix-lo i explica:
 
 - quin era el risc;
 - quin principi de seguretat s’incomplia;
@@ -77,20 +78,19 @@ Aplica temporalment una configuració insegura controlada, per exemple un enlla�
 Un document de 2–4 pàgines o la plantilla indicada pel professorat amb:
 
 - diagrama o descripció de l’espai;
-- usuaris, grups i rols;
+- rols i permisos assignats;
 - matriu de permisos real;
-- proves d’accés d’editor, lector i usuari sense accés;
+- proves d’accés d’editor, revisor i usuari sense accés;
 - evidències de coedició, comentaris i historial;
 - risc detectat, impacte i correcció;
 - una conclusió amb dues millores que aplicaries en producció.
 
-La part cooperativa pot fer-se amb una altra persona, però cada alumne ha de lliurar les seues evidències i explicar les seues decisions.
+La part cooperativa pot fer-se amb les altres persones del grup, però cada alumne ha de lliurar les seues evidències i explicar les seues decisions.
 
 ## Evidències necessàries
 
-- Captura de la gestió d’usuaris sense mostrar contrasenyes.
-- Captura o exportació de la configuració de permisos.
-- Prova des de cada rol.
+- Captura de la carpeta i de la configuració de permisos.
+- Prova des del compte de cada rol i des d’un compte sense accés.
 - Comentari, resposta i historial de versions.
 - Estat insegur i estat corregit.
 
@@ -99,7 +99,7 @@ La part cooperativa pot fer-se amb una altra persona, però cada alumne ha de ll
 
 ## Criteris d’avaluació treballats
 
-- RA4.d: gestionar comptes, grups i rols.
+- RA4.d: gestionar accessos, permisos i rols d’usuari.
 - RA4.e: aplicar mínim privilegi, compartir amb seguretat i corregir riscos.
 - RA4.f: utilitzar prestacions específiques de documents, fulls i presentacions.
 - RA4.g: treballar de manera col·laborativa amb comentaris i versions.

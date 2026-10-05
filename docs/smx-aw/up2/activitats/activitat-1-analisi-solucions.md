@@ -2,67 +2,74 @@
 hide:
   - navigation
 ---
-# Activitat 1. Anàlisi de solucions d’ofimàtica web
+# Activitat 1. Descobrim Microsoft 365
 
 **Duració:** 1 hora · **Modalitat:** individual o parella, amb lliurament individual
 
 ## Objectiu
 
-Comparar tres solucions d’ofimàtica web a partir de necessitats professionals i justificar una decisió amb criteris tècnics.
+Reconéixer les aplicacions de Microsoft 365 disponibles amb el compte educatiu i triar l’eina més adequada per a situacions habituals de treball.
 
 ## Situació
 
-Una consultora ha de recomanar una solució a tres clients. No vol una llista de funcions: necessita una decisió argumentada sobre cost, privacitat, compatibilitat, administració i col·laboració.
-
-Compara:
-
-- Microsoft 365;
-- Google Workspace;
-- ONLYOFFICE o Collabora integrat amb una plataforma pròpia.
+Treballes com a tècnic o tècnica informàtica en una empresa que utilitza Microsoft 365. Una persona usuària et planteja una necessitat i has de saber quina aplicació li recomanaries, com començaria a utilitzar-la i quina precaució hauria de tindre.
 
 ## Tasques
 
-1. Consulta la informació dels fabricants i els apunts de la unitat.
-2. Completa una taula amb els criteris següents: cost, privacitat, formats, administració, col·laboració, integració, autoallotjament i infraestructura.
-3. Analitza els tres casos:
+1. Inicia sessió amb el compte educatiu i obri el llançador d’aplicacions de Microsoft 365.
+2. Localitza, com a mínim, **Word**, **Excel**, **PowerPoint**, **OneDrive**, **Forms** i, si està disponible, **Teams** o **SharePoint**.
+3. Per a cada aplicació, anota la funció principal, un exemple d’ús professional i una precaució relacionada amb la compartició o la privacitat.
+4. Resol les situacions següents i indica l’aplicació principal i, si cal, una aplicació complementària:
 
-   - **Cas A. Centre educatiu:** professorat i alumnat necessiten documents, fulls de càlcul, presentacions i treball simultani.
-   - **Cas B. Empresa amb comptes Microsoft:** ja utilitza correu i identitats Microsoft i vol reduir la gestió duplicada.
-   - **Cas C. Organització amb dades sensibles:** vol controlar físicament on estan els documents i disposa d’un tècnic per mantindre el servidor.
-
-4. Tria una solució per a cada cas. Si proposes la mateixa per a més d’un cas, explica per què.
-5. Indica una limitació o risc de cada elecció i una comprovació que faries abans de contractar o desplegar.
+   1. Sis persones han de redactar simultàniament un document.
+   2. Cal recollir 50 respostes i analitzar-les.
+   3. Cal compartir un document, però impedir que el modifiquen.
+   4. Tres persones han de preparar una presentació.
+   5. Cal recuperar un document tal com estava ahir.
+   6. Cal guardar els fitxers d’un projecte en carpetes ordenades.
+   7. Cal calcular un pressupost i mostrar-ne l’evolució en un gràfic.
+   8. Cal organitzar una reunió d’un equip que treballa en diferents horaris.
+5. Compara breument Microsoft 365 amb Google Workspace i amb una solució autoallotjada. Utilitza només cinc criteris: aplicacions disponibles, col·laboració, gestió d’usuaris, control de les dades i infraestructura.
+6. Escriu una conclusió de cinc línies: en quin tipus d’organització triaries cada opció i per què.
 
 ## Plantilla de treball
 
-| Criteri | Microsoft 365 | Google Workspace | ONLYOFFICE/Collabora autoallotjat |
+| Aplicació o solució | Per a què serveix? | Exemple d’ús | Precaució |
 |---|---|---|---|
-| Cost i llicència | | | |
-| Privacitat i ubicació de dades | | | |
-| Compatibilitat i formats | | | |
-| Administració d’usuaris | | | |
-| Edició col·laborativa | | | |
-| Integracions | | | |
-| Autoallotjament | | | |
-| Infraestructura necessària | | | |
+| Word | | | |
+| Excel | | | |
+| PowerPoint | | | |
+| OneDrive | | | |
+| Forms | | | |
+| Teams o SharePoint | | | |
+
+Per a la mini comparació final:
+
+| Criteri | Microsoft 365 | Google Workspace | Solució autoallotjada |
+|---|---|---|---|
+| Aplicacions i formats | | | |
+| Col·laboració | | | |
+| Gestió d’usuaris | | | |
+| Control de les dades | | | |
+| Infraestructura | | | |
 
 ## Lliurament
 
 Un document d’una o dues pàgines amb:
 
-- la taula comparativa;
-- la recomanació per als casos A, B i C;
-- dos arguments tècnics per recomanació;
-- una limitació i una prova proposada per solució.
+- la taula d’aplicacions;
+- la resposta a les vuit situacions;
+- la mini comparació final;
+- la conclusió personal.
 
 ## Evidències necessàries
 
-- Fonts o enllaços oficials consultats.
-- Criteris diferenciats de fets i opinions.
-- Justificació relacionada amb el cas, no només amb les funcions disponibles.
+- Captura del llançador d’aplicacions, sense mostrar dades personals innecessàries.
+- Una captura o exportació de la taula de treball.
+- Identificació de l’aplicació i del tipus de permís recomanat en almenys quatre situacions.
 
 !!! warning "Seguretat i privacitat"
-    No uses comptes personals ni compartisques documents de clients reals. Si fas captures, utilitza informació fictícia.
+    No uses comptes personals ni dades de clients reals. Si fas captures, tapa el nom, l’adreça i qualsevol identificador que no siga necessari.
 
 ## Criteris d’avaluació treballats
 
