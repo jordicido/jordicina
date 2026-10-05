@@ -86,7 +86,16 @@ nav:
                   - Activitat 2. Sèrie d’exercicis: intro-python/up1/activitats/activitat-2-exercicis.md
                   - Autoavaluació: intro-python/up1/activitats/autoavaluacio.md
               - UP2. Programes senzills i orientació a objectes: intro-python/up2-programes-senzills.md
-              - UP3. Control i depuració: intro-python/up3-control-i-depuracio.md
+              - UP3. Control, excepcions i depuració:
+                  - Presentació: intro-python/up3-control-i-depuracio.md
+                  - 1. Estructures de selecció: intro-python/up3/01-estructures-seleccio.md
+                  - 2. Estructures de repetició: intro-python/up3/02-estructures-repeticio.md
+                  - 3. Sentències de salt: intro-python/up3/03-sentencies-salt.md
+                  - 4. Control d'excepcions: intro-python/up3/04-control-excepcions.md
+                  - 5. Excepcions pròpies: intro-python/up3/05-excepcions-propies.md
+                  - 6. Assercions: intro-python/up3/06-assercions.md
+                  - 7. Proves i depuració: intro-python/up3/07-proves-depuracio.md
+                  - 8. Documentació i bones pràctiques: intro-python/up3/08-documentacio-bones-practiques.md
               - UP4. Classes i programació orientada a objectes: intro-python/up4-classes-i-poo.md
               - UP5. Entrada, eixida i llibreries: intro-python/up5-entrada-eixida-i-llibreries.md
               - UP6. Estructures avançades de dades: intro-python/up6-estructures-avancades.md
