@@ -1,3 +1,7 @@
+---
+hide:
+  - navigation
+---
 # 3. Sentències de salt
 
 !!! info "Criteris d'avaluació treballats"
@@ -225,6 +229,45 @@ while True:
 
 Ací `break` no amaga un final inesperat: està associat explícitament a l'opció d'eixir.
 
+## Salts i bucles niats
+
+`break` només abandona el bucle més intern. Si vols acabar dos bucles, comunica el resultat amb una variable o reorganitza el codi en una funció.
+
+```python
+trobat = False
+
+for fila in range(3):
+    for columna in range(3):
+        if fila == 1 and columna == 2:
+            trobat = True
+            break
+
+    if trobat:
+        break
+
+print(f"Trobat: {trobat}")
+```
+
+El primer `break` abandona el bucle de `columna`; el segon abandona el de `fila`. Si aquest patró apareix sovint, una funció amb `return` pot expressar millor que la cerca ha acabat.
+
+## Comparació dels mecanismes d'eixida
+
+| Instrucció | Què interromp | On continua el programa |
+| --- | --- | --- |
+| `continue` | la iteració actual | en la iteració següent |
+| `break` | el bucle més intern | després del bucle |
+| `return` | la funció actual | en el punt que havia cridat la funció |
+| `raise` | el flux normal | en un gestor `except` compatible o finalitza amb error |
+
+`return` s'estudia amb les funcions i `raise` amb les excepcions. La comparació permet entendre que no són variants de `break`: tenen un abast i una finalitat diferents.
+
+## Pràctica curta
+
+1. **Prediu.** Determina quins nombres mostra un bucle que executa `continue` quan el nombre és múltiple de 3.
+2. **Detecta.** Explica per què un comptador no avança si hi ha un `continue` abans de l'actualització dins d'un `while`.
+3. **Completa.** Cerca un codi en una llista i utilitza `for-else` per informar si no existeix.
+4. **Construeix.** Crea un menú que permeta registrar reserves, ignore opcions buides i finalitze amb una opció explícita.
+
 ## Errors habituals
 
 - Confondre `continue` amb `break`: el primer salta una iteració; el segon acaba el bucle.
@@ -244,3 +287,5 @@ Ací `break` no amaga un final inesperat: està associat explícitament a l'opci
 - `pass` no fa res i només completa un bloc.
 - `for-else` i `while-else` executen `else` només si no hi ha hagut `break`.
 - Les sentències de salt són eines puntuals, no substituts de qualsevol condició ben dissenyada.
+
+[Anterior: estructures de repetició](02-estructures-repeticio.md) · [Índex de la UP3](index.md) · [Següent: control d'excepcions](04-control-excepcions.md)

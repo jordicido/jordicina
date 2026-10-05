@@ -1,3 +1,7 @@
+---
+hide:
+  - navigation
+---
 # 1. Estructures de selecció
 
 !!! info "Criteris d'avaluació treballats"
@@ -28,6 +32,22 @@ flowchart TD
     C --> E[Continuar]
     D --> E
 ```
+
+### Blocs i indentació
+
+En Python, la indentació forma part de la sintaxi. Una capçalera acabada en dos punts (`:`) obri un bloc, i totes les instruccions del bloc han de tindre la mateixa indentació. La convenció habitual és utilitzar quatre espais i no barrejar espais amb tabuladors.
+
+```python
+temperatura = 31
+
+if temperatura > 30:
+    print("Temperatura elevada")
+    print("Activa la refrigeració")
+
+print("Lectura finalitzada")
+```
+
+Les dues primeres crides a `print()` pertanyen al `if`; l'última queda fora perquè torna al marge inicial. Una indentació incorrecta pot produir `IndentationError` o, pitjor encara, un programa vàlid que execute una instrucció en un bloc diferent del que pretenies.
 
 ## Expressions booleanes
 
@@ -66,6 +86,50 @@ No confongues `=` amb `==`: `=` assigna un valor a una variable i `==` compara d
 !!! warning "Error habitual"
     `if edat = 18:` és incorrecte perquè una assignació no pot ocupar el lloc d'una condició. Escriu `if edat == 18:` si vols comparar.
 
+### Comparacions encadenades
+
+Python permet escriure intervals de manera directa. La comparació següent comprova els dos límits sense repetir la variable:
+
+```python
+nota = 7.5
+
+if 0 <= nota <= 10:
+    print("Nota vàlida")
+```
+
+És equivalent a `nota >= 0 and nota <= 10`. Escriu els límits en l'ordre natural de lectura i evita cadenes massa llargues.
+
+### Pertinença i identitat
+
+`in` i `not in` comproven si un valor pertany a una seqüència o col·lecció. `is` comprova identitat, no igualtat; en aquest nivell s'utilitza sobretot amb `None`.
+
+```python
+rol = "editor"
+rols_permesos = ["administrador", "editor"]
+token = None
+
+if rol in rols_permesos:
+    print("Rol autoritzat")
+
+if token is None:
+    print("No hi ha cap token")
+```
+
+Utilitza `==` per comparar valors (`opcio == "eixir"`) i `is None` o `is not None` per comprovar l'absència d'un valor.
+
+### Valors *truthy* i *falsy*
+
+Una condició no necessita produir explícitament `True` o `False`. Python considera falsos, entre altres, `False`, `None`, zero, la cadena buida i les col·leccions buides. La resta de valors solen considerar-se certs.
+
+```python
+nom = ""
+
+if not nom:
+    print("El nom està buit")
+```
+
+Aquesta forma és clara per comprovar si una cadena o una col·lecció està buida. Quan el significat puga ser ambigu, escriu una comparació explícita.
+
 ### Operadors lògics
 
 Els operadors lògics combinen expressions booleanes.
@@ -94,6 +158,17 @@ pot_entrar = (dia == "dissabte" or dia == "diumenge") and te_reserva
 ```
 
 Python pot deixar d'avaluar una part d'una expressió quan el resultat ja és conegut. Per exemple, en `condicio_a and condicio_b`, si `condicio_a` és falsa, no necessita comprovar `condicio_b`.
+
+Aquest comportament, anomenat **avaluació de curtcircuit**, també permet protegir una operació:
+
+```python
+divisor = 0
+
+if divisor != 0 and 100 / divisor > 10:
+    print("Resultat superior a 10")
+```
+
+Com que `divisor != 0` és fals, Python no avalua la divisió i evita un `ZeroDivisionError`. L'ordre de les condicions és important: posa primer la comprovació que fa segura la següent expressió.
 
 ## L'estructura `if`
 
@@ -252,6 +327,27 @@ match dia:
 
 `match` resulta especialment clar per a opcions, estats o ordres discretes. `if` és més flexible per a intervals i condicions que combinen variables.
 
+### Guardes en `match-case`
+
+Una guarda afegeix una condició a un patró. Només s'executa el cas si coincideix el patró i la guarda és certa.
+
+```python
+estat = "reserva"
+places = 2
+
+match estat:
+    case "reserva" if places > 0:
+        print("Reserva disponible")
+    case "reserva":
+        print("No queden places")
+    case "cancel·lada":
+        print("La reserva està cancel·lada")
+    case _:
+        print("Estat desconegut")
+```
+
+Les guardes són útils quan el patró identifica el cas general i una condició addicional decideix el comportament concret.
+
 ## Programa integrador 1: control d'accés
 
 Aquest programa combina comparacions, operadors lògics, alternatives i un nombre màxim d'intents. El `while` s'explicarà amb detall en la pàgina següent; ací interessa observar com les seleccions descriuen el resultat de cada intent.
@@ -286,6 +382,13 @@ La condició d'accés exigeix que les dues dades siguen correctes (`and`). El se
 
 Amb `nota = 8.9`, quin bloc s'executa en l'exemple de qualificacions? I amb `nota = 10`? Comprova que el cas `else` només correspon a valors iguals o superiors a 9.
 
+## Pràctica curta
+
+1. **Prediu.** Indica el resultat de `bool(0)`, `bool("0")`, `bool([])` i `bool([0])` abans d'executar-lo.
+2. **Detecta.** Explica per què `if nota >= 5` no ha d'aparéixer abans de `elif nota >= 9` si classifiques de major a menor.
+3. **Completa.** Escriu una condició que accepte una edat entre 18 i 65 anys i un document que no siga una cadena buida.
+4. **Construeix.** Demana un tipus de reserva (`normal`, `reduïda` o `gratuïta`) i mostra el preu corresponent amb `match-case`.
+
 ## Errors habituals
 
 ### Incorrecte i correcte: comparació
@@ -317,7 +420,11 @@ if edat == 18:
 ## Resum
 
 - Les comparacions produeixen booleans.
+- La indentació delimita els blocs i forma part de la sintaxi de Python.
+- Els valors buits solen ser *falsy*; `in` comprova pertinença i `is None`, absència.
 - `if`, `elif` i `else` permeten descriure alternatives ordenades.
-- `and`, `or` i `not` combinen condicions; els parèntesis milloren la lectura.
+- `and`, `or` i `not` combinen condicions i utilitzen avaluació de curtcircuit.
 - Les condicions niades són útils, però cal evitar un niament innecessari.
-- `match-case` és una bona opció per a casos discrets d'un mateix valor.
+- `match-case` és una bona opció per a casos discrets i pot incorporar guardes.
+
+[Índex de la UP3](index.md) · [Activitat 1. Condicions](activitats/activitat-1-condicions.md) · [Següent: estructures de repetició](02-estructures-repeticio.md)

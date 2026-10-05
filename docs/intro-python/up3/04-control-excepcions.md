@@ -1,3 +1,7 @@
+---
+hide:
+  - navigation
+---
 # 4. Control d'excepcions
 
 !!! info "Criteris d'avaluació treballats"
@@ -46,6 +50,26 @@ print(preu_final)  # 100, però probablement esperàvem 60
 
 Un `try-except` no soluciona els errors lògics. Cal provar el programa i revisar l'algoritme.
 
+## Llegir un *traceback*
+
+Quan una excepció no es captura, Python mostra un *traceback*. No és només un missatge d'error: descriu el camí de crides fins al punt on s'ha produït el problema.
+
+```text
+Traceback (most recent call last):
+  File "reserves.py", line 8, in <module>
+    places = int(text)
+ValueError: invalid literal for int() with base 10: 'tres'
+```
+
+Llig-lo de baix cap amunt:
+
+1. `ValueError` és el tipus d'excepció.
+2. El text final explica la dada que ha provocat el problema.
+3. La línia anterior indica la instrucció, el fitxer i el número de línia.
+4. Si hi ha diverses crides, les línies superiors mostren com s'ha arribat fins allí.
+
+No comences canviant codi a l'atzar. Localitza la primera línia del teu programa indicada pel *traceback*, identifica les dades que hi arribaven i reprodueix el cas.
+
 ## Excepcions habituals
 
 | Excepció | Quan apareix habitualment |
@@ -63,6 +87,25 @@ int("abc")                 # ValueError
 ["a"][4]                   # IndexError
 {"nom": "Aina"}["edat"]   # KeyError
 ```
+
+### Jerarquia bàsica
+
+Les excepcions formen una jerarquia. `Exception` és la classe base habitual de les excepcions que una aplicació pot tractar; `ValueError`, `TypeError` i `ZeroDivisionError` en són subclasses directes o indirectes.
+
+Una captura d'una classe pare també captura les subclasses. Per això l'ordre correcte és de més específica a més general:
+
+```python
+try:
+    resultat = 100 / int(input("Divisor: "))
+except ValueError:
+    print("L'entrada no és un enter")
+except ZeroDivisionError:
+    print("El divisor no pot ser zero")
+except Exception as error:
+    print(f"Error no previst: {error}")
+```
+
+L'últim bloc només té sentit en una frontera clara del programa i no ha de substituir el tractament específic.
 
 ## `try` i `except`
 
@@ -110,6 +153,21 @@ except ValueError as error:
 ```
 
 Per a un usuari final, mostra un missatge comprensible. Durant el desenvolupament, l'objecte pot ajudar a diagnosticar el problema, però no convé exposar detalls interns o dades sensibles.
+
+### Capturar diversos tipus junts
+
+Si diverses excepcions tenen exactament la mateixa resposta, pots agrupar-les en una tupla:
+
+```python
+try:
+    posicio = int(input("Posició: "))
+    noms = ["Aina", "Biel", "Carla"]
+    print(noms[posicio])
+except (ValueError, IndexError) as error:
+    print(f"Posició no vàlida: {error}")
+```
+
+No les agrupes si l'usuari necessita missatges o accions diferents.
 
 ## Per què evitar `except:`?
 
@@ -265,6 +323,36 @@ else:
 
 Les excepcions pròpies del domini s'expliquen en [Excepcions pròpies](05-excepcions-propies.md).
 
+### Tornar a llançar una excepció
+
+Un `except` pot registrar o contextualitzar el problema i després tornar-lo a llançar amb `raise` perquè un nivell superior el tracte.
+
+```python
+def convertir_places(text):
+    try:
+        return int(text)
+    except ValueError:
+        print(f"No s'ha pogut convertir {text!r}")
+        raise
+```
+
+Escriure `raise` sense cap objecte dins de l'`except` conserva l'excepció original i el seu *traceback*.
+
+### Preservar la causa amb `raise ... from ...`
+
+Quan transformes una excepció tècnica en una de més significativa, `from` conserva la relació entre totes dues.
+
+```python
+def llegir_places(text):
+    try:
+        places = int(text)
+    except ValueError as error_original:
+        raise ValueError("El nombre de places ha de ser enter") from error_original
+    return places
+```
+
+El missatge nou descriu la regla del programa, però el *traceback* continua mostrant que l'origen va ser una conversió incorrecta.
+
 ## Programa integrador 3: operació bancària robusta
 
 Aquest programa combina selecció, repetició, conversió d'entrada, `raise`, una excepció pròpia i `else`.
@@ -302,6 +390,13 @@ print("Operació finalitzada")
 
 La funció `retirar` no sap com es mostrarà l'error: llança una excepció expressiva. El programa principal decideix com informar l'usuari i continua oferint operacions. Una entrada `0` és el sentinella de finalització i no és una retirada.
 
+## Pràctica curta
+
+1. **Prediu.** Indica quins blocs s'executen en un `try-except-else-finally` quan la conversió és correcta i quan falla.
+2. **Detecta.** Explica quin problema causa posar `except Exception` abans de `except ValueError`.
+3. **Completa.** Captura conjuntament `ValueError` i `IndexError` en una consulta de posicions.
+4. **Construeix.** Demana un nombre de places fins que siga enter i positiu; mostra missatges diferents per a format incorrecte i valor fora de rang.
+
 ## Errors habituals
 
 - Envoltar tot el programa en un `try` massa gran.
@@ -320,4 +415,8 @@ La funció `retirar` no sap com es mostrarà l'error: llança una excepció expr
 - `try` delimita el codi que pot fallar; `except` tracta un error concret.
 - `else` s'executa quan no hi ha excepció i `finally`, sempre.
 - `raise` comunica que una operació no pot continuar amb les dades rebudes.
+- Un *traceback* identifica el tipus, el missatge i el camí fins a la línia que ha fallat.
+- `raise` torna a propagar l'error i `raise ... from ...` conserva una causa explícita.
 - Les excepcions formen part del disseny d'un programa robust, no són només missatges de l'intèrpret.
+
+[Anterior: sentències de salt](03-sentencies-salt.md) · [Índex de la UP3](index.md) · [Activitat 3. Excepcions i validació](activitats/activitat-3-excepcions-i-validacio.md) · [Següent: excepcions pròpies](05-excepcions-propies.md)

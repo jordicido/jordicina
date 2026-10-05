@@ -1,3 +1,7 @@
+---
+hide:
+  - navigation
+---
 # 5. Excepcions pròpies
 
 !!! info "Criteris d'avaluació treballats"
@@ -17,6 +21,36 @@ class SaldoInsuficientError(Exception):
 La classe hereta d'`Exception`, que és la classe base habitual per a les excepcions que pot tractar una aplicació. En aquesta unitat només necessites aquesta herència mínima; no cal estudiar encara la programació orientada a objectes en profunditat.
 
 Per convenció, els noms d'excepció acaben en `Error` i utilitzen `PascalCase`.
+
+## Una jerarquia menuda del domini
+
+Si diverses excepcions pertanyen al mateix subsistema, una classe base pròpia permet tractar-les conjuntament quan siga necessari.
+
+```python
+class ReservaError(Exception):
+    """Classe base dels errors de reserva."""
+
+
+class PlacesInsuficientsError(ReservaError):
+    pass
+
+
+class ReservaTancadaError(ReservaError):
+    pass
+```
+
+El codi pot capturar un cas concret o qualsevol error de reserva:
+
+```python
+try:
+    processar_reserva()
+except PlacesInsuficientsError:
+    print("Redueix el nombre de places")
+except ReservaError as error:
+    print(f"No s'ha pogut completar la reserva: {error}")
+```
+
+No crees jerarquies grans sense necessitat. Una classe base i dos o tres casos diferenciables solen ser suficients per a un projecte d'aquesta unitat.
 
 ## Llançar i capturar una excepció pròpia
 
@@ -63,6 +97,29 @@ except EdatNoValidaError as error:
 ```
 
 El missatge és per a informar o depurar. La identitat de l'error és el tipus `EdatNoValidaError`, que permet tractar-lo de manera fiable.
+
+### Informació estructurada en l'excepció
+
+Quan el codi receptor necessita dades concretes, és millor guardar-les com a atributs que obligar-lo a interpretar el missatge.
+
+```python
+class PlacesInsuficientsError(Exception):
+    def __init__(self, sol_licitades, disponibles):
+        self.sol_licitades = sol_licitades
+        self.disponibles = disponibles
+        super().__init__(
+            f"Sol·licitades {sol_licitades}; disponibles {disponibles}"
+        )
+
+
+try:
+    raise PlacesInsuficientsError(5, 2)
+except PlacesInsuficientsError as error:
+    print(error)
+    print(f"Redueix la reserva en {error.sol_licitades - error.disponibles} places")
+```
+
+La classe continua oferint un missatge comprensible, però també exposa dades que es poden utilitzar de manera segura.
 
 ## Excepció estàndard o del domini?
 
@@ -159,6 +216,31 @@ if opcio == "4":
 
 Usa una excepció quan la situació representa una operació que no es pot completar i és útil que el codi receptor la puga distingir.
 
+## Conservar l'error original
+
+Una funció pot convertir una excepció tècnica en una excepció del domini i conservar-ne la causa.
+
+```python
+class DadesReservaError(Exception):
+    pass
+
+
+def convertir_places(text):
+    try:
+        return int(text)
+    except ValueError as error:
+        raise DadesReservaError("Les places han de ser un enter") from error
+```
+
+El programa principal tracta `DadesReservaError`, mentre que el *traceback* permet al desenvolupador veure el `ValueError` original.
+
+## Pràctica curta
+
+1. **Prediu.** Quina captura s'executa si `PlacesInsuficientsError` hereta de `ReservaError` i la captura específica apareix primer?
+2. **Detecta.** Explica per què comparar `str(error) == "sense places"` és més fràgil que capturar un tipus concret.
+3. **Completa.** Crea `ReservaTancadaError` i llança-la quan l'estat siga `"tancada"`.
+4. **Construeix.** Defineix una excepció que conserve `sol·licitades` i `disponibles` com a atributs i utilitza'ls en el missatge de recuperació.
+
 ## Errors habituals
 
 - Oblidar que la classe ha d'heretar d'`Exception`.
@@ -177,4 +259,8 @@ Usa una excepció quan la situació representa una operació que no es pot compl
 - Els noms acaben en `Error` i descriuen una situació del domini.
 - `raise` la llança i `except` la captura.
 - El tipus permet distingir problemes semblants amb precisió.
+- Una classe base del domini permet agrupar errors relacionats.
+- Els atributs conserven informació estructurada sense interpretar missatges.
 - No cal crear una classe nova si una excepció estàndard ja és suficient.
+
+[Anterior: control d'excepcions](04-control-excepcions.md) · [Índex de la UP3](index.md) · [Següent: assercions](06-assercions.md)

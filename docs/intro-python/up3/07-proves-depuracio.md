@@ -1,3 +1,7 @@
+---
+hide:
+  - navigation
+---
 # 7. Proves i depuració
 
 !!! info "Criteris d'avaluació treballats"
@@ -17,6 +21,20 @@ Un cas de prova descriu una entrada i el resultat que esperes. No cal començar 
 | Fora de rang | `-1` o `11` → entrada no vàlida |
 | Tipus o format incorrecte | `"set"` → error de conversió |
 | Cas especial | cap dada o llista buida |
+
+### Matriu de proves
+
+Abans d'executar, transforma els casos en una taula verificable. Afig el resultat real i l'estat quan proves el programa.
+
+| Cas | Entrada | Resultat esperat | Resultat real | Estat |
+| --- | --- | --- | --- | :---: |
+| Reserva mínima | `1` plaça | Total d'una plaça | pendent | ☐ |
+| Límit disponible | totes les places | Reserva acceptada | pendent | ☐ |
+| Sense places | `0` | Dada rebutjada | pendent | ☐ |
+| Excés | més places de les disponibles | Error de domini | pendent | ☐ |
+| Format incorrecte | `"tres"` | Error de conversió controlat | pendent | ☐ |
+
+Una matriu evita repetir sempre el mateix cas i deixa una evidència concreta de la comprovació.
 
 ### Casos normals
 
@@ -104,6 +122,41 @@ for dividend, divisor in [(10, 2), (0, 5), (10, 0)]:
     except ValueError as error:
         print(f"Entrada rebutjada: {error}")
 ```
+
+## Proves automatitzades senzilles amb `assert`
+
+Quan una funció rep dades i retorna un resultat, pots comprovar diversos casos sense introduir-los manualment cada vegada.
+
+```python
+def calcular_total(preu_unitari, places):
+    if places <= 0:
+        raise ValueError("Les places han de ser positives")
+    return preu_unitari * places
+
+
+assert calcular_total(10, 1) == 10
+assert calcular_total(10, 3) == 30
+assert calcular_total(7.5, 4) == 30
+```
+
+Per comprovar una excepció sense una biblioteca externa, usa una variable que confirme que s'ha produït el cas esperat:
+
+```python
+error_detectat = False
+
+try:
+    calcular_total(10, 0)
+except ValueError:
+    error_detectat = True
+
+assert error_detectat, "S'esperava ValueError per a zero places"
+```
+
+Aquestes proves no substitueixen una eina especialitzada, però introdueixen el procés essencial: preparar, executar i comparar automàticament.
+
+### Proves de regressió
+
+Quan trobes un error, conserva l'entrada que el reproduïa i converteix-la en una prova. Si una reserva de totes les places disponibles fallava, eixe cas ha de continuar executant-se després de la correcció. La prova de regressió evita que el mateix defecte reaparega en una modificació posterior.
 
 ## Què és depurar?
 
@@ -295,6 +348,13 @@ if not autenticat:
 
 Abans d'executar-lo, prepara aquests casos: credencials correctes al primer intent, correctes a l'últim, tres intents incorrectes i una contrasenya buida. Això cobreix selecció, repetició, comptador i finalització.
 
+## Pràctica curta
+
+1. **Dissenya.** Prepara una matriu amb casos normals, límit, invàlids i de format per a una reserva de places.
+2. **Prediu.** Indica quin valor tindran l'acumulador i el comptador després de cada iteració d'un bucle donat.
+3. **Depura.** Col·loca un breakpoint condicional que només s'active quan les places disponibles siguen zero.
+4. **Automatitza.** Escriu almenys quatre `assert` per a una funció que calcule el total d'una reserva.
+
 ## Errors habituals
 
 - Provar només el cas normal i oblidar les fronteres.
@@ -310,7 +370,11 @@ Abans d'executar-lo, prepara aquests casos: credencials correctes al primer inte
 ## Resum
 
 - Prova casos normals, límit, invàlids i valors frontera.
+- Una matriu de proves relaciona entrades, resultats esperats, resultats reals i estat.
+- Els `assert` permeten automatitzar comprovacions senzilles i conservar proves de regressió.
 - La depuració segueix un procés: reproduir, localitzar, observar, formular, corregir i tornar a provar.
 - `print()` ajuda a inspeccionar valors, però el debugger permet observar l'execució amb més control.
 - Els breakpoints, les variables, el Watch i la Call Stack aporten informació diferent.
 - Depurar és entendre la causa, no només silenciar el símptoma.
+
+[Anterior: assercions](06-assercions.md) · [Índex de la UP3](index.md) · [Activitat 4. Proves i depuració](activitats/activitat-4-proves-i-depuracio.md) · [Següent: documentació i bones pràctiques](08-documentacio-bones-practiques.md)

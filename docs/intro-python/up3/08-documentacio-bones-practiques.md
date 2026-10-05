@@ -1,3 +1,7 @@
+---
+hide:
+  - navigation
+---
 # 8. Documentació i bones pràctiques
 
 !!! info "Criteris d'avaluació treballats"
@@ -180,6 +184,27 @@ def aplicar_descompte(preu, percentatge):
 
 La docstring explica la funció des de fora. El comentari explica una línia que pot no ser immediata des de dins.
 
+### Documentar el contracte
+
+Una docstring útil pot indicar què rep la funció, què retorna i quines excepcions pot llançar. No cal repetir cada instrucció.
+
+```python
+def reservar(disponibles, quantitat):
+    """Reserva places i retorna les que queden.
+
+    Requereix una quantitat positiva. Llança ValueError si la
+    quantitat no és vàlida i PlacesInsuficientsError si supera
+    les places disponibles.
+    """
+    if quantitat <= 0:
+        raise ValueError("La quantitat ha de ser positiva")
+    if quantitat > disponibles:
+        raise PlacesInsuficientsError("No hi ha prou places")
+    return disponibles - quantitat
+```
+
+El contracte permet utilitzar la funció sense haver de llegir tota la implementació.
+
 ## Introducció breu a PEP 8
 
 PEP 8 és la guia de convencions d'estil més coneguda per a Python. No és necessari memoritzar-la sencera, però les seues idees principals són útils:
@@ -251,6 +276,17 @@ iniciar_sessio()
 
 La docstring descriu el contracte general de cada funció, les constants eviten números màgics i cada nom explica la seua funció. En un sistema real caldria aplicar mesures de seguretat addicionals i no guardar les credencials en el codi.
 
+## Revisió estructurada del codi
+
+Revisa el programa en passades separades. Intentar comprovar-ho tot alhora facilita que alguns problemes passen desapercebuts.
+
+1. **Comportament:** resol tots els casos de la matriu de proves?
+2. **Control de flux:** cada condició, bucle i eixida és necessària i comprensible?
+3. **Errors:** les excepcions distingixen format incorrecte i regles del domini?
+4. **Llegibilitat:** els noms expliquen les dades i les operacions?
+5. **Documentació:** les docstrings i els comentaris aporten informació que el codi no mostra?
+6. **Neteja:** s'han eliminat proves manuals, missatges temporals i codi duplicat?
+
 ## Revisió abans de donar el programa per acabat
 
 ### Checklist final
@@ -268,6 +304,14 @@ La docstring descriu el contracte general de cada funció, les constants eviten 
 - [ ] S'han provat casos límit.
 - [ ] S'han provat casos incorrectes.
 - [ ] S'han eliminat els missatges de depuració temporals.
+
+## Pràctica curta
+
+1. **Detecta.** Subratlla els comentaris que només repetixen la instrucció següent i reescriu o elimina'ls.
+2. **Renomena.** Substitueix noms com `x`, `dades` i `res` per noms relacionats amb una reserva.
+3. **Simplifica.** Reescriu una condició amb tres nivells de niament utilitzant guardes.
+4. **Documenta.** Escriu la docstring d'una funció indicant entrada, retorn i excepcions possibles.
+5. **Revisa.** Aplica la checklist al projecte integrador i registra almenys tres millores realitzades.
 
 ## Errors habituals
 
@@ -289,3 +333,5 @@ La docstring descriu el contracte general de cada funció, les constants eviten 
 - Les condicions clares i el poc niament faciliten la depuració.
 - Les docstrings documenten funcions i formen part de la seua interfície.
 - Una checklist final combina qualitat, validació, proves i neteja del codi.
+
+[Anterior: proves i depuració](07-proves-depuracio.md) · [Índex de la UP3](index.md) · [Projecte integrador](activitats/projecte-integrador.md) · [Autoavaluació](activitats/autoavaluacio.md)

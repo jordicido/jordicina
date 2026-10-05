@@ -1,3 +1,7 @@
+---
+hide:
+  - navigation
+---
 # 2. Estructures de repetició
 
 !!! info "Criteris d'avaluació treballats"
@@ -98,6 +102,24 @@ else:
 
 La conversió a `int` es fa només després de comprovar el sentinella. Si la férem abans, `int("fi")` produiria un `ValueError`.
 
+### El patró `while True`
+
+Quan la condició d'eixida es descobreix enmig del procés, un bucle intencionadament infinit amb un `break` clar pot ser més llegible.
+
+```python
+while True:
+    resposta = input("Confirma la reserva (s/n): ").lower()
+
+    if resposta in ("s", "n"):
+        break
+
+    print("Resposta no vàlida")
+
+print(f"Resposta registrada: {resposta}")
+```
+
+Aquest patró és adequat si el punt d'eixida és visible i fàcil d'explicar. No l'utilitzes per ocultar una condició que podria aparéixer directament en la capçalera del `while`.
+
 ## El bucle `for`
 
 `for` recorre els elements d'una seqüència, com una cadena o una llista, un per un.
@@ -110,6 +132,8 @@ for servidor in servidors:
 ```
 
 En cada iteració, la variable `servidor` pren el valor del següent element. Usa `for` quan vols visitar una seqüència o quan coneixes el conjunt que vols recórrer.
+
+Un objecte **iterable** és qualsevol objecte que pot proporcionar els seus elements un darrere de l'altre. Les cadenes, les llistes i els objectes produïts per `range()` són iterables. Un `for` demana successivament cada element; no necessita gestionar manualment una posició.
 
 ### Cadenes
 
@@ -130,6 +154,31 @@ alumnes = ["Aina", "Biel", "Carla"]
 for alumne in alumnes:
     print(f"Present: {alumne}")
 ```
+
+### Posició i valor amb `enumerate()`
+
+Quan necessites alhora la posició i el contingut, `enumerate()` evita mantindre un comptador manual.
+
+```python
+participants = ["Aina", "Biel", "Carla"]
+
+for posicio, participant in enumerate(participants, start=1):
+    print(f"{posicio}. {participant}")
+```
+
+### Recórrer dades relacionades amb `zip()`
+
+`zip()` combina elements que ocupen la mateixa posició en diverses seqüències. El recorregut acaba quan s'esgota la seqüència més curta.
+
+```python
+participants = ["Aina", "Biel", "Carla"]
+reserves = [2, 1, 3]
+
+for participant, places in zip(participants, reserves):
+    print(f"{participant}: {places} places")
+```
+
+Utilitza `zip()` només quan les seqüències representen dades paral·leles i has comprovat que les longituds són coherents.
 
 ## `range()`
 
@@ -311,6 +360,32 @@ El bucle acaba perquè l'usuari introdueix `4`, i la condició es comprova de no
 
 En `for numero in range(2, 9, 2)`, quantes iteracions hi ha i quins valors pren `numero`? Escriu-los abans d'obrir Python.
 
+### Taula de traça
+
+Per entendre un bucle, registra l'estat després de cada iteració. En el programa següent:
+
+```python
+suma = 0
+
+for valor in [3, 5, 2]:
+    suma += valor
+```
+
+| Iteració | `valor` | `suma` abans | `suma` després |
+| ---: | ---: | ---: | ---: |
+| 1 | 3 | 0 | 3 |
+| 2 | 5 | 3 | 8 |
+| 3 | 2 | 8 | 10 |
+
+Una taula de traça ajuda a detectar inicialitzacions incorrectes, actualitzacions oblidades i errors d'una iteració de més o de menys.
+
+## Pràctica curta
+
+1. **Prediu.** Escriu els valors generats per `range(10, 3, -2)`.
+2. **Detecta.** Localitza per què un `while` que demana una contrasenya no acaba encara que l'usuari l'escriga correctament.
+3. **Completa.** Recorre una llista de preus amb `enumerate()` i mostra una numeració que comence en 1.
+4. **Construeix.** Llig reserves fins que l'usuari escriga `fi`; mostra quantes reserves s'han introduït i el total de places.
+
 ## Errors habituals
 
 - Posar l'actualització de la variable fora del `while` i provocar un bucle infinit.
@@ -326,7 +401,10 @@ En `for numero in range(2, 9, 2)`, quantes iteracions hi ha i quins valors pren 
 ## Resum
 
 - `while` és adequat quan la continuació depén d'una condició.
-- `for` és adequat per recórrer seqüències o repetir un nombre conegut de vegades.
+- `for` és adequat per recórrer iterables o repetir un nombre conegut de vegades.
 - Comptadors compten; acumuladors combinen valors.
 - `range` té el límit final exclòs.
+- `enumerate()` aporta posició i valor; `zip()` recorre seqüències relacionades.
 - Els bucles niats modelen files i columnes, però augmenten el nombre d'iteracions.
+
+[Anterior: estructures de selecció](01-estructures-seleccio.md) · [Índex de la UP3](index.md) · [Activitat 2. Bucles](activitats/activitat-2-bucles.md) · [Següent: sentències de salt](03-sentencies-salt.md)
