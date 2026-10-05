@@ -11,6 +11,8 @@ hide:
 
 Un programa útil no sols ha de produir una eixida quan tot va bé. També ha de saber prendre decisions, repetir tasques, reaccionar davant d’entrades incorrectes i oferir prou informació per trobar els errors. En aquesta unitat aprendràs a controlar el flux d’execució d'un programa Python i a revisar-lo de manera sistemàtica.
 
+Consulta l’[índex de la UP3](up3/index.md) per seguir l’ordre recomanat, revisar els criteris d’avaluació i accedir als vuit blocs de teoria.
+
 El resultat serà codi més segur, llegible i fàcil de mantenir. Els exemples parteixen de programes senzills i avancen fins a aplicacions de consola que combinen selecció, repetició, validació, excepcions, assercions, proves i documentació.
 
 ## Dades de la unitat
@@ -48,42 +50,6 @@ El resultat serà codi més segur, llegible i fàcil de mantenir. Els exemples p
 | **RA3.h** | S'han creat excepcions. |
 | **RA3.i** | S'han utilitzat assercions per a la detecció i correcció d'errors durant la fase de desenvolupament. |
 
-## Mapa conceptual
-
-```mermaid
-flowchart LR
-    A[Entrada i estat] --> B{Selecció}
-    B -->|cas aplicable| C[Acció]
-    B -->|cas no aplicable| D[Alternativa]
-    C --> E{Repetició?}
-    D --> E
-    E -->|sí| B
-    E -->|no| F[Resultat]
-    C -. error .-> G[Excepció]
-    G --> H[Tractament i recuperació]
-    F --> I[Proves i depuració]
-    H --> I
-    I --> J[Documentació i millora]
-```
-
-## Seqüència d'un programa
-
-La majoria de programes de consola segueixen una seqüència semblant: preparen dades, llegeixen informació, decideixen què cal fer, repeteixen operacions si és necessari i mostren un resultat. Les excepcions i les proves permeten controlar els casos que no segueixen el camí normal.
-
-```mermaid
-flowchart TD
-    A[Inici] --> B[Preparar variables]
-    B --> C[Llegir entrada]
-    C --> D{Entrada vàlida?}
-    D -->|No| E[Informar i tornar a demanar]
-    E --> C
-    D -->|Sí| F[Executar lògica]
-    F --> G{Cal repetir?}
-    G -->|Sí| C
-    G -->|No| H[Mostrar resultat]
-    H --> I[Fi]
-```
-
 ## Blocs de la unitat
 
 1. [Estructures de selecció](up3/01-estructures-seleccio.md): decisions i alternatives.
@@ -94,21 +60,6 @@ flowchart TD
 6. [Assercions](up3/06-assercions.md): comprovacions internes durant el desenvolupament.
 7. [Proves i depuració](up3/07-proves-depuracio.md): casos de prova i debugger de VS Code.
 8. [Documentació i bones pràctiques](up3/08-documentacio-bones-practiques.md): codi llegible i mantenible.
-
-## Com triar l'estructura adequada
-
-```mermaid
-flowchart TD
-    A{Cal triar entre casos?}
-    A -->|Sí| B{Casos basats en un mateix valor?}
-    B -->|Sí| C[Considera match-case]
-    B -->|No| D[Utilitza if / elif / else]
-    A -->|No| E{Cal repetir?}
-    E -->|Sí| F{Coneixes les iteracions?}
-    F -->|Sí| G[for]
-    F -->|No| H[while]
-    E -->|No| I[Seqüència simple]
-```
 
 ## Criteris i fitxers
 

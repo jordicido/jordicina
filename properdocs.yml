@@ -97,6 +97,7 @@ nav:
               - UP2. Programes senzills i orientació a objectes: intro-python/up2-programes-senzills.md
               - UP3. Control, excepcions i depuració:
                   - Presentació: intro-python/up3-control-i-depuracio.md
+                  - Índex i seqüència: intro-python/up3/index.md
                   - 1. Estructures de selecció: intro-python/up3/01-estructures-seleccio.md
                   - 2. Estructures de repetició: intro-python/up3/02-estructures-repeticio.md
                   - 3. Sentències de salt: intro-python/up3/03-sentencies-salt.md
