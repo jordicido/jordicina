@@ -28,12 +28,12 @@ Apache pot utilitzar eixe valor per decidir quin lloc ha de servir.
 
 ```mermaid
 flowchart LR
-    U1[Client: dawshop.test] --> A[Apache 192.168.1.50]
-    U2[Client: blog.test] --> A
-    U3[Client: api.test] --> A
-    A -->|Host: dawshop.test| V1[/var/www/dawshop]
-    A -->|Host: blog.test| V2[/var/www/blog]
-    A -->|Host: api.test| V3[Proxy a API]
+    U1["Client: dawshop.test"] --> A["Apache 192.168.1.50"]
+    U2["Client: blog.test"] --> A
+    U3["Client: api.test"] --> A
+    A -->|Host: dawshop.test| V1["/var/www/dawshop"]
+    A -->|Host: blog.test| V2["/var/www/blog"]
+    A -->|Host: api.test| V3["Proxy a API"]
 ```
 
 ## 3.2. Tipus de Virtual Host
@@ -349,8 +349,8 @@ Quan HTTPS ja funciona:
 ```mermaid
 sequenceDiagram
     participant B as Navegador
-    participant H as VH :80
-    participant S as VH :443
+    participant H as VH port 80
+    participant S as VH port 443
     B->>H: GET http://dawshop.test/
     H-->>B: 301 Location: https://dawshop.test/
     B->>S: Connexió TLS + GET /
