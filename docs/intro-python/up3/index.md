@@ -2,7 +2,7 @@
 hide:
   - navigation
 ---
-# UP3. Control, excepcions i depuració
+# UP3. Estructures de control, excepcions i depuració en Python
 
 ## Resultat d’aprenentatge
 

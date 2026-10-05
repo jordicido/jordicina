@@ -2,7 +2,7 @@
 hide:
   - navigation
 ---
-# UP3. Control, excepcions i depuració
+# UP3. Estructures de control, excepcions i depuració en Python
 
 !!! info "Criteris d'avaluació treballats"
     - **RA3.a–RA3.i** — La unitat presenta i connecta tots els criteris d'avaluació del RA3.
