@@ -24,132 +24,190 @@ En Ubuntu/Debian, la configuració d'Apache es reparteix principalment entre:
 └── conf-enabled/
 ```
 
-Aquesta separació és important: en lloc de concentrar-ho tot en un únic fitxer, Debian/Ubuntu organitzen la configuració en peces que es poden activar o desactivar.
+Aquesta separació permet organitzar la configuració en peces que es poden activar o desactivar sense convertir un únic fitxer en un bloc difícil de mantindre.
 
 ## 1.1. Què passa quan arriba una petició?
+
+Abans d'estudiar directives concretes, convé seguir el recorregut d'una petició. Per exemple, si el navegador demana `index.html` dins de `/productes/`:
+
+```text
+http://servidor:80/productes/index.html
+                │
+                ▼
+          Apache escolta :80
+                │
+                ▼
+           <VirtualHost>
+                │
+                ▼
+     DocumentRoot /var/www/daw
+                │
+                ▼
+ <Directory /var/www/daw>
+     permisos / opcions
+                │
+                ▼
+ /var/www/daw/productes/index.html
+```
+
+El recorregut és una simplificació útil:
+
+- **Port d'escolta:** `Listen 80` fa que Apache accepte connexions HTTP en el port 80. Per HTTPS és habitual usar el 443.
+- **`VirtualHost`:** selecciona el lloc que correspon a la combinació d'adreça, port i, normalment, nom sol·licitat (`Host`).
+- **`DocumentRoot`:** indica el directori base del lloc. La ruta demanada es combina amb aquest directori.
+- **`<Directory>`:** aplica permisos i opcions al directori real del sistema de fitxers. No és una URL.
+- **Recurs final:** Apache intenta localitzar i servir el fitxer, executar el tractament corresponent o retornar un error com 403 o 404.
+
+Per exemple, la petició anterior pot acabar en:
+
+```text
+/var/www/daw/productes/index.html
+```
+
+No n'hi ha prou que el fitxer existisca: Apache també ha de tindre permís per travessar els directoris i servir-lo, i la configuració activa ha de permetre l'accés.
+
+També podem representar el flux amb les capes de xarxa i configuració:
 
 ```mermaid
 sequenceDiagram
     participant B as Navegador
     participant SO as Sistema operatiu
     participant A as Apache
-    participant VH as Virtual Host
+    participant VH as VirtualHost
     participant FS as Sistema de fitxers
 
     B->>SO: TCP :80 o :443
     SO->>A: Entrega la connexió
-    A->>VH: Selecciona configuració
-    VH->>FS: Busca el recurs
-    FS-->>VH: HTML / fitxer / error
-    VH-->>A: Genera resposta HTTP
+    A->>VH: Selecciona la configuració
+    VH->>FS: Resol el recurs
+    FS-->>VH: Fitxer o error
+    VH-->>A: Genera la resposta HTTP
     A-->>B: 200, 301, 403, 404, 500...
 ```
 
-Cada etapa està condicionada per paràmetres diferents: ports, nom del servidor, `DocumentRoot`, permisos, mòduls, temps d'espera i logs.
+## 1.2. Àmbits de configuració
 
-## 1.2. Ports d'escolta
+Una directiva no s'aplica necessàriament a tot Apache. L'àmbit on apareix determina a quines peticions afecta i si Apache permet utilitzar-la:
 
-Apache només pot atendre connexions en els ports en què estiga escoltant.
+| Àmbit | On s'escriu | Abast habitual |
+|---|---|---|
+| Global | `apache2.conf`, `ports.conf` o fitxers de `conf-enabled/` | Tot el servidor: ports, valors generals o mòduls comuns. |
+| `<VirtualHost>` | Fitxer d'un lloc en `sites-enabled/` | Només un lloc, port o combinació d'adreça i nom. |
+| `<Directory>` | Dins de la configuració del servidor | Un directori real i els recursos que conté. |
+| `.htaccess` | Dins del directori publicat | Configuració distribuïda per a aquell directori, si `AllowOverride` ho permet. |
 
-Els ports habituals són:
+Per exemple, `Timeout` és un paràmetre general, `ServerName` sol identificar un `VirtualHost` i `Require` dins d'un `<Directory>` controla l'accés als fitxers d'aquell directori.
 
-| Protocol | Port habitual | Ús |
-|---|---:|---|
-| HTTP | 80 | Comunicació sense TLS |
-| HTTPS | 443 | HTTP protegit amb TLS |
+Una mateixa directiva pot tindre àmbits permesos diferents. Apache ho documenta en la seua referència: que una directiva existisca no significa que es puga escriure en qualsevol lloc. Si es posa en un context incorrecte, `apache2ctl configtest` pot informar d'un error de sintaxi o d'un ús no permés.
 
-En Ubuntu, els ports solen declarar-se en `/etc/apache2/ports.conf`:
+## 1.3. Configuracions disponibles i actives
+
+Ubuntu/Debian separen el que està instal·lat del que està actiu:
+
+```text
+/etc/apache2/sites-available/   configuracions de llocs disponibles
+/etc/apache2/sites-enabled/     llocs actius
+
+/etc/apache2/mods-available/    mòduls disponibles
+/etc/apache2/mods-enabled/      mòduls actius
+```
+
+Els directoris `*-enabled` contenen habitualment **enllaços simbòlics** cap als fitxers de `*-available`. Això permet conservar la configuració i decidir fàcilment quins llocs i mòduls participa en l'execució actual:
+
+```text
+sites-available/daw.conf
+        │
+        │ a2ensite daw
+        ▼
+sites-enabled/daw.conf -> ../sites-available/daw.conf
+```
+
+Les ordres no creen un Virtual Host ni instal·len un mòdul nou; gestionen la connexió entre configuració disponible i configuració activa:
+
+```bash
+sudo a2ensite daw
+sudo a2dissite daw
+sudo a2enmod rewrite
+sudo a2dismod rewrite
+```
+
+Desactivar un lloc o un mòdul retira l'enllaç de `*-enabled`, però normalment conserva el fitxer original en `*-available`. Després d'aquest tipus de canvi cal validar la configuració i aplicar-la amb una recàrrega.
+
+## 1.4. Exemple complet de `VirtualHost`
+
+El fragment següent mostra com encaixen diverses directives en un lloc senzill. La directiva `Listen` sol estar en `ports.conf`; el `VirtualHost` descriu què fer amb les peticions que arriben al port 80.
+
+```apache
+# /etc/apache2/sites-available/daw.conf
+<VirtualHost *:80>
+    ServerName daw.test
+    ServerAlias www.daw.test
+
+    DocumentRoot /var/www/daw
+    DirectoryIndex index.html index.php
+
+    <Directory /var/www/daw>
+        Options -Indexes
+        AllowOverride None
+        Require all granted
+    </Directory>
+
+    # Publica un directori que està fora del DocumentRoot.
+    Alias /recursos/ /srv/daw-recursos/
+    <Directory /srv/daw-recursos>
+        Options -Indexes
+        Require all granted
+    </Directory>
+
+    ErrorLog ${APACHE_LOG_DIR}/daw-error.log
+    CustomLog ${APACHE_LOG_DIR}/daw-access.log combined
+</VirtualHost>
+```
+
+Si `daw.test` resol cap a aquest servidor, una petició a `/productes/index.html` buscarà `/var/www/daw/productes/index.html`. En canvi, una petició a `/recursos/logo.svg` buscarà `/srv/daw-recursos/logo.svg` perquè `Alias` modifica el mapa entre URL i sistema de fitxers.
+
+## 1.5. Directives principals
+
+### Escolta i identitat
+
+Apache només pot atendre connexions en els ports que escolta. En Ubuntu/Debian és habitual declarar-los en `/etc/apache2/ports.conf`:
 
 ```apache
 Listen 80
 Listen 443
 ```
 
-Pots comprovar en quins ports està escoltant el sistema amb:
+Els ports habituals són 80 per a HTTP i 443 per a HTTPS. Obrir un port en Apache no garanteix que siga accessible des d'una altra màquina: també poden intervindre el tallafoc, el NAT, el router o la xarxa de la màquina virtual.
 
-```bash
-sudo ss -ltnp | grep apache
-```
-
-> **Important**
->
-> Obrir un port en Apache no implica necessàriament que siga accessible des de fora. També poden intervindre el tallafoc del sistema, les regles de la xarxa, NAT, el router o la configuració de la màquina virtual.
-
-## 1.3. `DocumentRoot`: d'on ix el contingut
-
-`DocumentRoot` indica el directori base des del qual Apache servirà un lloc web.
+`ServerName` defineix el nom principal d'un lloc:
 
 ```apache
-DocumentRoot /var/www/dawshop/public
+ServerName daw.test
 ```
 
-Si arriba una petició per:
-
-```text
-http://dawshop.test/css/app.css
-```
-
-Apache intentarà resoldre-la, de manera simplificada, com:
-
-```text
-/var/www/dawshop/public/css/app.css
-```
-
-Canviar `DocumentRoot` sense revisar permisos o directives `<Directory>` és una causa molt habitual d'errors **403 Forbidden**.
-
-Un exemple coherent seria:
+`ServerAlias` afegeix altres noms que han de seleccionar el mateix lloc:
 
 ```apache
-DocumentRoot /var/www/dawshop/public
-
-<Directory /var/www/dawshop/public>
-    Options -Indexes
-    AllowOverride None
-    Require all granted
-</Directory>
+ServerAlias www.daw.test
 ```
 
-## 1.4. `DirectoryIndex`
+### Mapeig de recursos
 
-Quan l'usuari demana un directori i no especifica fitxer:
+`DocumentRoot` és el directori base del lloc:
 
-```text
-https://dawshop.test/
+```apache
+DocumentRoot /var/www/daw
 ```
 
-Apache necessita saber quin document ha de buscar per defecte.
+Si el client demana `/css/app.css`, Apache intentarà servir `/var/www/daw/css/app.css`, sempre que les regles d'accés ho permeten.
+
+Quan es demana un directori sense especificar un fitxer, `DirectoryIndex` defineix l'ordre dels documents que Apache provarà:
 
 ```apache
 DirectoryIndex index.html index.php
 ```
 
-Per exemple, si volem que `paginasecundaria.html` siga la primera opció:
-
-```apache
-DirectoryIndex paginasecundaria.html index.html
-```
-
-## 1.5. `ServerName` i identitat del servidor
-
-`ServerName` identifica el nom principal amb què Apache ha d'associar una configuració:
-
-```apache
-ServerName dawshop.test
-```
-
-En un servidor amb un únic lloc pot semblar poc important, però és essencial quan treballem amb **Virtual Hosts**.
-
-També és habitual usar:
-
-```apache
-ServerAlias www.dawshop.test
-```
-
-La diferència entre totes dues directives es desenvolupa en l'apartat 3.
-
-## 1.6. `Alias`
-
-`Alias` permet publicar un directori que es troba fora del `DocumentRoot`.
+`Alias` publica una ruta fora del `DocumentRoot`:
 
 ```apache
 Alias /imatges/ /srv/recursos/imatges/
@@ -159,61 +217,38 @@ Alias /imatges/ /srv/recursos/imatges/
 </Directory>
 ```
 
-Amb aquesta configuració:
+Cal protegir sempre el directori real amb el seu propi `<Directory>`. Un `Alias` no concedeix per si mateix permisos d'accés.
 
-```text
-https://dawshop.test/imatges/logo.png
-```
+### Accés i opcions dels directoris
 
-pot correspondre a:
-
-```text
-/srv/recursos/imatges/logo.png
-```
-
-És útil, però convé utilitzar-lo amb prudència perquè estem exposant recursos ubicats fora de l'arrel normal del web.
-
-## 1.7. Blocs `<Directory>`
-
-Els blocs `<Directory>` apliquen regles sobre directoris reals del sistema de fitxers.
+Els blocs `<Directory>` s'apliquen a rutes reals del sistema de fitxers:
 
 ```apache
-<Directory /var/www/dawshop/public>
+<Directory /var/www/daw>
     Options -Indexes
     AllowOverride None
     Require all granted
 </Directory>
 ```
 
-Directives habituals:
+- `Require all granted` permet l'accés al recurs; `Require all denied` el denega.
+- `Require ip 192.168.1.0/24` el limita a una xarxa concreta.
+- `Options -Indexes` evita que Apache mostre un llistat quan falta el fitxer índex.
+- `AllowOverride None` impedeix que un `.htaccess` modifique aquesta configuració.
 
-- `Require all granted`: permet l'accés.
-- `Require all denied`: denega l'accés.
-- `Require ip 192.168.1.0/24`: limita per xarxa.
-- `Options -Indexes`: evita el llistat automàtic de directoris.
-- `AllowOverride None`: impedeix que fitxers `.htaccess` sobreescriguen la configuració.
+Un llistat de directoris pot revelar noms de fitxers, còpies antigues o estructures internes, per això sovint es desactiva amb `Options -Indexes`.
 
-### Per què `Options -Indexes`?
+### Temps i connexions persistents
 
-Si un directori no té un fitxer índex, el llistat de directoris pot revelar noms de fitxers, còpies antigues, recursos interns o estructures que no haurien de ser visibles.
-
-```apache
-Options -Indexes
-```
-
-redueix aquesta exposició.
-
-## 1.8. Temps d'espera
-
-Un servidor no pot mantindre indefinidament connexions que no progressen. `Timeout` defineix el temps màxim per a determinades operacions.
+`Timeout` limita el temps que Apache espera en determinades operacions:
 
 ```apache
 Timeout 60
 ```
 
-Un valor massa gran pot mantindre recursos ocupats durant massa temps; un valor massa baix pot tallar operacions legítimes lentes.
+Un valor massa alt pot deixar recursos ocupats durant massa temps; un valor massa baix pot interrompre operacions legítimes lentes.
 
-En entorns reals també intervenen directives de **KeepAlive**:
+`KeepAlive` permet reutilitzar una connexió TCP per a diverses peticions del mateix client:
 
 ```apache
 KeepAlive On
@@ -221,119 +256,84 @@ MaxKeepAliveRequests 100
 KeepAliveTimeout 5
 ```
 
-HTTP manté connexions reutilitzables per evitar crear una connexió TCP nova per a cada recurs.
-
-## 1.9. Gestió de concurrència: `MaxRequestWorkers`
-
-Materials antics d'Apache poden parlar de `MaxClients`. En Apache 2.4 la directiva actual és **`MaxRequestWorkers`**.
-
-La manera exacta de gestionar processos i fils depén del MPM actiu (`mpm_event`, `mpm_worker` o `mpm_prefork`).
-
-Comprova'l amb:
+Pot reduir el cost d'obrir connexions repetidament, però també cal controlar el nombre de connexions i els recursos disponibles. La concurrència depén, a més, del MPM actiu (`mpm_event`, `mpm_worker` o `mpm_prefork`):
 
 ```bash
 apache2ctl -M | grep mpm
 ```
 
-Exemple conceptual:
+En Apache 2.4, el límit general de peticions simultànies es denomina `MaxRequestWorkers` en els MPM que l'utilitzen. No significa que augmentar-lo sempre millore el rendiment.
+
+### Logs
+
+Els logs permeten relacionar una petició amb el que ha ocorregut al servidor:
 
 ```apache
-MaxRequestWorkers 150
+ErrorLog ${APACHE_LOG_DIR}/daw-error.log
+CustomLog ${APACHE_LOG_DIR}/daw-access.log combined
 ```
 
-No significa que "150 sempre siga millor que 100". Augmentar-lo sense tindre memòria i CPU suficients pot empitjorar el servidor.
+- `ErrorLog` registra errors de configuració, permisos, mòduls, fitxers inexistents i fallades internes.
+- `CustomLog` registra les peticions, el recurs sol·licitat, el codi HTTP i altres dades segons el format.
 
-```mermaid
-flowchart TD
-    R[Peticions entrants] --> Q{Hi ha workers lliures?}
-    Q -->|Sí| W[Worker processa petició]
-    Q -->|No| E[Cua / espera]
-    W --> F[Resposta]
-```
-
-## 1.10. Logs bàsics
-
-Apache registra, com a mínim, dos tipus de dades molt importants:
-
-```apache
-ErrorLog ${APACHE_LOG_DIR}/dawshop-error.log
-CustomLog ${APACHE_LOG_DIR}/dawshop-access.log combined
-```
-
-- **access log**: peticions rebudes, codi HTTP, IP, recurs, agent...
-- **error log**: errors de configuració, permisos, mòduls, fitxers inexistents, fallades internes...
-
-En Ubuntu:
+En Ubuntu/Debian és habitual consultar-los així:
 
 ```bash
 sudo tail -f /var/log/apache2/error.log
 sudo tail -f /var/log/apache2/access.log
 ```
 
-Els logs es desenvoluparan amb més detall en l'apartat 7.
+## 1.6. Validar i aplicar canvis
 
-## 1.11. Capçaleres de seguretat
+El procediment professional és:
 
-Amb `mod_headers` podem afegir capçaleres HTTP que reforcen el comportament del navegador.
+1. modificar la configuració;
+2. comprovar-la abans d'aplicar-la:
 
-Exemples senzills:
+   ```bash
+   sudo apache2ctl configtest
+   ```
 
-```apache
-Header always set X-Content-Type-Options "nosniff"
-Header always set X-Frame-Options "SAMEORIGIN"
-Header always set Referrer-Policy "strict-origin-when-cross-origin"
-```
+3. si retorna `Syntax OK`, recarregar Apache:
 
-Una política moderna de seguretat pot incloure també **Content-Security-Policy (CSP)**, però ha de dissenyar-se segons els recursos que utilitze l'aplicació; copiar una CSP sense entendre-la pot trencar scripts, fonts o imatges legítimes.
+   ```bash
+   sudo systemctl reload apache2
+   ```
 
-## 1.12. Comprovar abans d'aplicar
+`reload` fa que Apache torne a llegir la configuració i intente continuar atenent el servei sense una interrupció completa. És l'opció habitual després d'un canvi de configuració.
 
-El procediment recomanat és:
-
-```bash
-sudo apache2ctl configtest
-```
-
-Si obtens:
-
-```text
-Syntax OK
-```
-
-pots recarregar:
+`restart` atura i inicia de nou el servei:
 
 ```bash
-sudo systemctl reload apache2
+sudo systemctl restart apache2
 ```
 
-`reload` conserva el servei actiu mentre torna a llegir la configuració. `restart` para i inicia de nou el servei, i no sempre és necessari.
+Pot ser necessari després d'un canvi que no es puga aplicar amb una simple recàrrega, però implica reiniciar el procés i pot provocar una interrupció breu. `restart` no substitueix `configtest`: una configuració incorrecta pot deixar el servei sense iniciar.
 
-Per veure com Apache interpreta els Virtual Hosts:
+Per veure com Apache interpreta els Virtual Hosts actius:
 
 ```bash
 sudo apache2ctl -S
 ```
 
-## 1.13. Resum
+## 1.7. Resum
 
-Un administrador ha de saber localitzar i interpretar, com a mínim:
+Quan analitzes un problema d'Apache, segueix el recorregut: port d'escolta, Virtual Host seleccionat, mapeig de la URL al sistema de fitxers, permisos del `<Directory>`, mòduls, resposta i logs.
 
-- ports d'escolta;
-- `DocumentRoot`;
-- `DirectoryIndex`;
-- `ServerName` i `ServerAlias`;
-- regles `<Directory>`;
-- `Alias`;
-- temps d'espera i connexions persistents;
-- límits de concurrència;
-- logs;
-- capçaleres i paràmetres bàsics de seguretat.
+Has de saber interpretar, com a mínim:
+
+- `Listen`, `ServerName` i `ServerAlias`;
+- `DocumentRoot`, `DirectoryIndex` i `Alias`;
+- `<Directory>`, `Require`, `Options` i `AllowOverride`;
+- `Timeout` i `KeepAlive`;
+- `ErrorLog` i `CustomLog`;
+- la diferència entre `reload` i `restart`;
+- la relació entre `*-available`, `*-enabled` i les ordres `a2en*`/`a2dis*`.
 
 ### Comprova que ho entens
 
-1. Quina diferència hi ha entre `DocumentRoot` i `Alias`?
-2. Per què canviar el `DocumentRoot` pot provocar un 403?
-3. Què aporta `apache2ctl configtest`?
-4. Per què no convé augmentar `MaxRequestWorkers` sense analitzar recursos?
-5. Quina informació buscaries primer en un error 500?
-
+1. Quina diferència hi ha entre un `DocumentRoot` i un `Alias`?
+2. Per què una petició pot donar 403 encara que el fitxer existisca?
+3. Quina diferència d'abast hi ha entre una directiva global, un `<VirtualHost>`, un `<Directory>` i un `.htaccess`?
+4. Què canvia conceptualment quan executes `a2ensite`?
+5. Per què convé executar `configtest` abans de `reload`?
