@@ -30,8 +30,6 @@ El resultat serà un únic projecte: el document de Word descriurà la jornada, 
 | Organitzar i recuperar els fitxers del projecte | | | |
 | Compartir un document sense permetre que el modifiquen | | | |
 
-4. Indica quina aplicació utilitzaries per a recollir inscripcions mitjançant un formulari i quina utilitzaries, si està disponible, per a coordinar un equip. No cal crear encara aquests recursos.
-
 !!! tip "Punt de control 1"
     Abans de continuar, has de poder justificar cada elecció relacionant la necessitat amb una prestació concreta de l’aplicació.
 
