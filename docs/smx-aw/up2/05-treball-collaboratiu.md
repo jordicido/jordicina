@@ -73,7 +73,7 @@ No és necessari crear una versió manual per cada tecla. És millor marcar mome
 | Revisor | Comentari o visualització | Detecta errors i proposa millores |
 | Lector | Visualització | Consulta i comprova que la informació és comprensible |
 
-En la **Activitat 3. Projecte col·laboratiu amb Microsoft 365**, cada persona haurà d’assumir un rol, provar el seu accés i comprovar què passa quan se li retira un permís.
+En la **Activitat 2. Projecte col·laboratiu amb Microsoft 365**, cada persona haurà d’assumir un rol, provar el seu accés i comprovar què passa quan se li retira un permís.
 
 ## Compartició segura per a col·laborar
 
@@ -108,7 +108,7 @@ La col·laboració no es limita a editar el mateix document. Un equip pot repart
 5. una persona prepara l’informe de Word o la presentació de PowerPoint;
 6. el revisor deixa comentaris i el responsable valida la versió final.
 
-En la **Activitat 4. Repte Microsoft 365** hauràs de construir aquest flux i explicar les decisions preses. El resultat no és només un gràfic: és una cadena de dades, anàlisi i comunicació amb permisos controlats.
+En la **Activitat 3. Repte Microsoft 365** hauràs de construir aquest flux i explicar les decisions preses. El resultat no és només un gràfic: és una cadena de dades, anàlisi i comunicació amb permisos controlats.
 
 ## Evidència d’una col·laboració real
 

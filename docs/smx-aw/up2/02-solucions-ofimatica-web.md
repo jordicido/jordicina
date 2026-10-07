@@ -33,7 +33,7 @@ flowchart LR
     O --> W
 ```
 
-En la **Activitat 1. Descobrim Microsoft 365** identificaràs aquestes aplicacions. En la **Activitat 2** les utilitzaràs per a crear un projecte complet i en la **Activitat 4** construiràs el flux Forms–Excel–Word o PowerPoint.
+En la **Activitat 1. Dissenyem una oficina al núvol** identificaràs les aplicacions i les utilitzaràs per a crear un projecte complet. En la **Activitat 3** construiràs el flux Forms–Excel–Word o PowerPoint.
 
 ## Prestacions específiques
 
@@ -77,7 +77,7 @@ PowerPoint serveix per comunicar una idea, no per convertir cada diapositiva en 
 - comentaris i revisió;
 - compartició i historial de versions.
 
-En la **Activitat 2** incorporaràs a PowerPoint el gràfic creat en Excel. Això permet comprovar que una dada es pot calcular en un full i comunicar en una presentació sense tornar-la a copiar manualment.
+En la **Activitat 1** incorporaràs a PowerPoint el gràfic creat en Excel. Això permet comprovar que una dada es pot calcular en un full i comunicar en una presentació sense tornar-la a copiar manualment.
 
 ### Emmagatzematge i formularis
 
@@ -110,7 +110,7 @@ Per això una solució autoallotjada no és automàticament més segura. Pot ser
 
 ## Comparació professional
 
-En la **Activitat 1** faràs una mini comparació amb només aquests cinc criteris:
+La taula següent permet fer una mini comparació amb només cinc criteris:
 
 | Criteri | Microsoft 365 | Google Workspace | Solució autoallotjada |
 |---|---|---|---|

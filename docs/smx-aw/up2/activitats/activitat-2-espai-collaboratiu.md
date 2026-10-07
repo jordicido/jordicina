@@ -2,7 +2,7 @@
 hide:
   - navigation
 ---
-# Activitat 3. Projecte col·laboratiu amb Microsoft 365
+# Activitat 2. Projecte col·laboratiu amb Microsoft 365
 
 **Duració:** 2–3 hores · **Modalitat:** grups de tres, amb lliurament individual
 

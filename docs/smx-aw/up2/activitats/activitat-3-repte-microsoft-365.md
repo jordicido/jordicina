@@ -2,7 +2,7 @@
 hide:
   - navigation
 ---
-# Activitat 4. Repte Microsoft 365
+# Activitat 3. Repte Microsoft 365
 
 **Duració:** 1,5–2 hores · **Modalitat:** grups de tres, amb resolució i evidències individuals
 

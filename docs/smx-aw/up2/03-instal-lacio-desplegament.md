@@ -64,7 +64,7 @@ Si el navegador no ofereix aquesta opció, l’alternativa és crear un accés d
 
 ## Configurar una estructura de treball
 
-En la **Activitat 2. La meua oficina al núvol**, crea:
+En la **Activitat 1. Dissenyem una oficina al núvol**, crea:
 
 ```text
 Projecte_Jornada/
@@ -100,7 +100,7 @@ Per a les activitats d’aquesta UP no publicaràs cap servei ni obriràs ports.
 
 ## Llista de comprovació del CA4.c
 
-Abans de lliurar l’Activitat 2, comprova:
+Abans de lliurar l’Activitat 1, comprova:
 
 - [ ] Word web s’obri amb el compte educatiu.
 - [ ] Excel web s’obri amb el compte educatiu.

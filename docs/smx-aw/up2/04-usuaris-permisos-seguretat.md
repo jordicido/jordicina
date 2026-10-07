@@ -33,7 +33,7 @@ Autenticar una persona no li dona accés a tots els documents. El servei ha de c
 
 ## Rols per al projecte
 
-En la **Activitat 3. Projecte col·laboratiu amb Microsoft 365** treballaràs amb tres rols:
+En la **Activitat 2. Projecte col·laboratiu amb Microsoft 365** treballaràs amb tres rols:
 
 | Rol | Pot fer | No hauria de fer per defecte |
 |---|---|---|
@@ -131,7 +131,7 @@ Compartir un document amb una persona no és igual que compartir la carpeta que 
 | Tots poden compartir la carpeta | Pèrdua de control sobre els destinataris | Limitar la compartició al responsable |
 | Captura amb adreces o tokens visibles | Exposició de dades | Tapar la informació abans de lliurar-la |
 
-En la **Activitat 4. Repte Microsoft 365** hauràs de resoldre incidències d’aquest tipus i documentar el símptoma, la causa, l’acció i la comprovació final.
+En la **Activitat 3. Repte Microsoft 365** hauràs de resoldre incidències d’aquest tipus i documentar el símptoma, la causa, l’acció i la comprovació final.
 
 !!! question "Pensa"
     Una persona només ha de revisar la redacció d’un informe. Quin permís triaries: visualització, comentari o edició? Com comprovaries que la decisió és correcta?

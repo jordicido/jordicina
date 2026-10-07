@@ -33,7 +33,7 @@ L’ofimàtica web és útil quan una organització necessita:
 - recollir informació amb formularis i convertir-la en dades analitzables;
 - combinar aplicacions en un flux de treball, per exemple `Forms → Excel → PowerPoint`.
 
-En la **Activitat 1. Descobrim Microsoft 365** aplicaràs aquesta relació entre necessitat i aplicació. En les activitats següents crearàs documents, dades, presentacions i formularis en situacions semblants a les d’una empresa.
+En la **Activitat 1. Dissenyem una oficina al núvol** aplicaràs aquesta relació entre necessitat i aplicació i crearàs documents, dades i presentacions per a un mateix projecte. En les activitats següents compartiràs els recursos i treballaràs amb formularis.
 
 ## Aplicació d’escriptori, aplicació web i PWA
 
@@ -55,7 +55,7 @@ Una PWA no converteix l’aplicació web en un servidor local ni elimina la nece
 | Fitxers | Poden quedar en el disc local | Es guarden al servei, com OneDrive, si així ho triem |
 | Col·laboració | Cal combinar fitxers o serveis | Coedició, comentaris i versions integrats |
 
-En la **Activitat 2. La meua oficina al núvol** comprovaràs aquesta diferència i instal·laràs l’accés PWA si el navegador i el compte ho permeten.
+En la **Activitat 1. Dissenyem una oficina al núvol** comprovaràs aquesta diferència i instal·laràs l’accés PWA si el navegador i el compte ho permeten.
 
 ## Arquitectura bàsica d’una aplicació web
 

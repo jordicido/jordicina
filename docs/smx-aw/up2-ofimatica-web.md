@@ -36,10 +36,9 @@ En aquesta unitat aprendràs a entendre, configurar i utilitzar Microsoft 365 co
 
 ## Activitats
 
-1. [Descobrim Microsoft 365](up2/activitats/activitat-1-analisi-solucions.md) — aplicacions i usos professionals.
-2. [La meua oficina al núvol](up2/activitats/activitat-2-desplegament-ofimatica.md) — Word, Excel, PowerPoint, OneDrive i PWA.
-3. [Projecte col·laboratiu amb Microsoft 365](up2/activitats/activitat-3-espai-collaboratiu.md) — permisos, coedició, comentaris i versions.
-4. [Repte Microsoft 365](up2/activitats/activitat-4-repte-microsoft-365.md) — Forms, dades, gràfics i resolució d’incidències.
+1. [Dissenyem una oficina al núvol](up2/activitats/activitat-1-oficina-nuvol.md) — selecció d’aplicacions, Word, Excel, PowerPoint, OneDrive i PWA.
+2. [Projecte col·laboratiu amb Microsoft 365](up2/activitats/activitat-2-espai-collaboratiu.md) — permisos, coedició, comentaris i versions.
+3. [Repte Microsoft 365](up2/activitats/activitat-3-repte-microsoft-365.md) — Forms, dades, gràfics i resolució d’incidències.
 
 ## Evidències i temporalització
 
@@ -47,12 +46,12 @@ Les evidències són captures o registres de les comprovacions, fitxers creats i
 
 | Sessió | Treball | Evidència principal |
 |---:|---|---|
-| 1 | Fonaments i Activitat 1 | Aplicacions identificades i situacions resoltes |
-| 2–3 | Activitat 2 | Fitxers professionals i estructura d’OneDrive |
+| 1 | Fonaments i fase 1 de l’Activitat 1 | Aplicacions identificades i decisions justificades |
+| 2–3 | Activitat 1 | Fitxers professionals, estructura d’OneDrive i comprovacions |
 | 4 | Usuaris, permisos i seguretat | Matriu de permisos i correcció d’un risc |
-| 5–6 | Activitat 3 | Espai compartit i proves d’accés |
-| 7 | Activitat 3 | Comentaris, versions i configuració segura |
-| 8 | Activitat 4 i tancament | Flux Forms–Excel i incidències resoltes |
+| 5–6 | Activitat 2 | Espai compartit i proves d’accés |
+| 7 | Activitat 2 | Comentaris, versions i configuració segura |
+| 8 | Activitat 3 i tancament | Flux Forms–Excel i incidències resoltes |
 
 !!! warning "Entorn de pràctiques"
     Les pràctiques es faran en l’entorn Microsoft 365 proporcionat pel centre. No publiques enllaços fora de l’entorn autoritzat ni utilitzes dades personals reals.
@@ -71,10 +70,10 @@ Les evidències són captures o registres de les comprovacions, fitxers creats i
 
 | Criteri | Què has de saber demostrar | Teoria principal | Activitats on s’aplica |
 |---|---|---|---|
-| **RA4.a** | Explicar per a què serveix l’ofimàtica web en una situació professional | 1. Fonaments | 1 i 2 |
-| **RA4.b** | Descriure processadors de textos, fulls de càlcul, presentacions, formularis i emmagatzematge | 1. Fonaments · 2. Solucions | 1 i 4 |
-| **RA4.c** | Instal·lar o configurar l’accés a aplicacions web i verificar que funcionen | 3. Accés, instal·lació i configuració | 2 |
-| **RA4.d** | Gestionar comptes, rols i permisos | 4. Usuaris, permisos i seguretat | 3 i 4 |
-| **RA4.e** | Aplicar mínim privilegi, compartició segura i correcció de riscos | 4. Usuaris, permisos i seguretat | 3 i 4 |
-| **RA4.f** | Reconéixer i utilitzar prestacions específiques de les aplicacions | 2. Solucions · 5. Treball col·laboratiu | 1, 2, 3 i 4 |
-| **RA4.g** | Treballar de manera col·laborativa amb comentaris i versions | 5. Treball col·laboratiu | 3 i 4 |
+| **RA4.a** | Explicar per a què serveix l’ofimàtica web en una situació professional | 1. Fonaments | 1 |
+| **RA4.b** | Descriure processadors de textos, fulls de càlcul, presentacions, formularis i emmagatzematge | 1. Fonaments · 2. Solucions | 1 i 3 |
+| **RA4.c** | Instal·lar o configurar l’accés a aplicacions web i verificar que funcionen | 3. Accés, instal·lació i configuració | 1 |
+| **RA4.d** | Gestionar comptes, rols i permisos | 4. Usuaris, permisos i seguretat | 2 i 3 |
+| **RA4.e** | Aplicar mínim privilegi, compartició segura i correcció de riscos | 4. Usuaris, permisos i seguretat | 2 i 3 |
+| **RA4.f** | Reconéixer i utilitzar prestacions específiques de les aplicacions | 2. Solucions · 5. Treball col·laboratiu | 1, 2 i 3 |
+| **RA4.g** | Treballar de manera col·laborativa amb comentaris i versions | 5. Treball col·laboratiu | 2 i 3 |
