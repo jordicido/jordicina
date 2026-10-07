@@ -96,6 +96,8 @@ Crea dins de `Presentacions` una presentació de cinc o sis diapositives amb:
 4. Si el navegador i el compte ho permeten, instal·la una de les aplicacions web com a PWA i verifica que mostra els mateixos fitxers. Si l’opció no està disponible, documenta la limitació i crea un accés ràpid segur, com un favorit.
 5. Explica com compartiries el projecte amb una persona que només l’ha de consultar.
 
+Perquè el professorat puga corregir el projecte, comparteix la carpeta `Projecte_Jornada` amb **j.cidonchanavarret@edu.gva.es** amb permís de **visualització**. No utilitzes l’opció **Qualsevol persona amb l’enllaç** ni dones permisos d’edició.
+
 ## Comprovació final
 
 - [ ] He justificat l’aplicació triada per a cada necessitat.
@@ -109,7 +111,7 @@ Crea dins de `Presentacions` una presentació de cinc o sis diapositives amb:
 
 ## Lliurament
 
-Lliura l’enllaç a la carpeta `Projecte_Jornada` i una fitxa d’evidències d’una o dues pàgines amb:
+Comparteix la carpeta `Projecte_Jornada` amb **j.cidonchanavarret@edu.gva.es** amb permís de visualització i lliura també l’enllaç a la carpeta i una fitxa d’evidències d’una o dues pàgines amb:
 
 - la taula de decisions de la fase 1;
 - una captura de l’estructura d’OneDrive;
