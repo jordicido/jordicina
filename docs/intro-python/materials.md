@@ -29,7 +29,7 @@ hide:
 | --- | --- | --- |
 | UP1 | [Fonaments de la programació](up1-fonaments-programacio.md) | Estructura, sintaxi, variables i tipus. |
 | UP2 | [Programes senzills i orientació a objectes](up2-programes-senzills.md) | Execució, proves i primers objectes. |
-| UP3 | [Control i depuració](up3-control-i-depuracio.md) | Condicions, bucles i depuració. |
+| UP3 | [Control i depuració](up3/index.md) | Condicions, bucles i depuració. |
 | UP4 | [Classes i programació orientada a objectes](up4-classes-i-poo.md) | Classes, mètodes i principis d’orientació a objectes. |
 | UP5 | [Entrada, eixida i llibreries](up5-entrada-eixida-i-llibreries.md) | Fitxers, mòduls i llibreries. |
 | UP6 | [Estructures avançades de dades](up6-estructures-avancades.md) | Col·leccions i manipulació d’informació. |

@@ -96,7 +96,6 @@ nav:
                   - Autoavaluació: intro-python/up1/activitats/autoavaluacio.md
               - UP2. Programes senzills i orientació a objectes: intro-python/up2-programes-senzills.md
               - UP3. Estructures de control, excepcions i depuració en Python:
-                  - Presentació: intro-python/up3-control-i-depuracio.md
                   - Índex i seqüència: intro-python/up3/index.md
                   - 1. Estructures de selecció: intro-python/up3/01-estructures-seleccio.md
                   - 2. Estructures de repetició: intro-python/up3/02-estructures-repeticio.md

@@ -89,4 +89,4 @@ Prepara una matriu per a una funció `reservar(5, quantitat)` que incloga casos 
 
 Si no pots justificar algun punt, torna al bloc corresponent i resol una pràctica curta abans de repetir l'autoavaluació.
 
-[Índex de la UP3](../index.md) · [Projecte integrador](projecte-integrador.md) · [Presentació de la UP3](../../up3-control-i-depuracio.md)
+[Índex de la UP3](../index.md) · [Projecte integrador](projecte-integrador.md)
