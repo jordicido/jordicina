@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="800" viewBox="0 0 1400 800">
+<rect width="1400" height="800" fill="#101722"/>
+<text x="50" y="58" font-family="monospace" font-size="25" fill="#8ee6a7">terminal · execució i proves</text>
+<g font-family="monospace" font-size="22" fill="#e8edf5">
+<text x="50" y="115">$ MONITOR_ESPERA_SEGONS=0 python3 programa.py</text><text x="50" y="160">Temperatures: 18 21 24 19 27</text>
+<text x="50" y="205">Mitjana: 21.8 ºC</text><text x="50" y="250">Mínima: 18 ºC</text><text x="50" y="295">Màxima: 27 ºC</text><text x="50" y="340">Estat: temperatura normal</text>
+<text x="50" y="420">$ python3 -m unittest -v</text><text x="50" y="465" fill="#8ee6a7">.....</text><text x="150" y="465">Ran 5 tests in 0.000s</text><text x="50" y="510" fill="#8ee6a7">OK</text>
+<text x="50" y="590">$ python3 -m py_compile programa.py</text><text x="50" y="635" fill="#8ee6a7">✓ compilació sintàctica correcta</text>
+</g></svg>
