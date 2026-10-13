@@ -64,4 +64,17 @@ Les explicacions teòriques es combinaran amb exemples curts i pràctica guiada.
 | RA3.h | [Excepcions pròpies](05-excepcions-propies.md) |
 | RA3.i | [Assercions](06-assercions.md) |
 
+## Activitats avaluables
+
+La UP3 incorpora un itinerari inicial de tres activitats avaluables i un conjunt d'activitats d'ampliació. Comença per les [activitats avaluables](activitats/activitats-avaluables.md) si encara estàs consolidant les estructures bàsiques; després pots continuar amb les activitats específiques i el projecte integrador.
+
+| Activitat | Producte principal | Criteris |
+| --- | --- | --- |
+| [1. Decisions en Python](activitats/activitats-avaluables.md#activitat-1-decisions-en-python) | Cinc exercicis amb `if`, `elif` i `else` | RA3.a, RA3.e, RA3.g |
+| [2. Repetim accions](activitats/activitats-avaluables.md#activitat-2-repetim-accions) | Cinc exercicis amb `for`, `while`, comptadors i acumuladors | RA3.b, RA3.c, RA3.e, RA3.g |
+| [3. El programa no funciona!](activitats/activitats-avaluables.md#activitat-3-el-programa-no-funciona) | Programes corregits, proves i registre de depuració | RA3.d, RA3.e, RA3.f, RA3.g, RA3.h, RA3.i |
+| [Projecte integrador](activitats/projecte-integrador.md) | Gestor de reserves de consola | RA3.a–RA3.i |
+
+L'itinerari avaluable és individual i demana evidències de proves, explicació dels errors i codi documentat.
+
 [Tornar a la presentació de la UP3](../up3-control-i-depuracio.md) · [Començar la teoria](01-estructures-seleccio.md) · [Consultar l’avaluació](../avaluacio.md)

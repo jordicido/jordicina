@@ -82,6 +82,10 @@ El resultat serà codi més segur, llegible i fàcil de mantenir. Els exemples p
 - No tornar a provar un programa després de modificar-lo.
 - Deixar la documentació i els missatges de depuració per al final.
 
+## Activitats avaluables
+
+Consulta l'[itinerari de tres activitats avaluables](up3/activitats/activitats-avaluables.md): decisions, repeticions i depuració amb excepcions bàsiques. La [pàgina d'índex de la UP3](up3/index.md) inclou també les activitats d'ampliació i el projecte integrador.
+
 !!! tip "Ordre recomanat"
     Estudia els blocs en ordre. Les excepcions aprofiten els bucles de validació, i la depuració i la documentació integren totes les estructures anteriors.
 
