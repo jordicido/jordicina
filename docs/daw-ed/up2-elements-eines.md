@@ -48,7 +48,7 @@ El fil conductor serà una aplicació web de gestió de reserves. Ens ajudarà a
 | Activitat | Producte |
 | --- | --- |
 | [1. Del codi a l’execució](up2/activitats/activitat-1-codi-execucio.md) | Laboratori comparatiu de C, Java, Python i JavaScript, amb mapes d’execució, taula forense i anàlisi de processos. |
-| [2. De la idea al lliurament](up2/activitats/activitat-2-de-la-idea-al-lliurament/informe.md) | Mini-sprint amb anàlisi de necessitats, implementació, proves, debugger, Kanban i retrospectiva. |
+| [2. Del requisit al lliurament](up2/activitats/activitat-2-de-la-idea-al-lliurament/informe.md) | Anàlisi del cicle de desenvolupament d’AulaTask, ferramentes, Scrum, Kanban i mapa del projecte. |
 
 ## Resultat d’aprenentatge i criteris
 

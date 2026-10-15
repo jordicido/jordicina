@@ -1,7 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="800" viewBox="0 0 1400 800">
-<rect width="1400" height="800" fill="#111827"/><rect x="35" y="35" width="1330" height="730" rx="12" fill="#1f2937" stroke="#4b5563"/>
-<text x="70" y="85" font-family="monospace" font-size="25" fill="#93c5fd">pdb · breakpoint en programa.py:38</text>
-<g font-family="monospace" font-size="22"><text x="70" y="145" fill="#f9fafb">&gt; programa.py(38)calcular_resum()</text><text x="70" y="185" fill="#fbbf24">-&gt; "estat": "temperatura elevada" if maxima &gt; LLINDAR_ALERTA else ...</text>
-<text x="70" y="260" fill="#d1d5db">(Pdb) p temperatures</text><text x="510" y="260" fill="#86efac">[20, 30]</text><text x="70" y="315" fill="#d1d5db">(Pdb) p maxima</text><text x="510" y="315" fill="#86efac">30</text><text x="70" y="370" fill="#d1d5db">(Pdb) p LLINDAR_ALERTA</text><text x="510" y="370" fill="#86efac">30</text>
-<text x="70" y="445" fill="#d1d5db">(Pdb) n</text><text x="70" y="500" fill="#d1d5db">(Pdb) p resum["estat"]</text><text x="510" y="500" fill="#86efac">'temperatura normal'</text>
-<text x="70" y="600" fill="#9ca3af">La comparació &gt; evita l’alerta quan màxima == llindar.</text></g></svg>

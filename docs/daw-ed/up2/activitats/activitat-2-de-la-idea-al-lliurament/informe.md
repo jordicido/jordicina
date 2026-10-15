@@ -3,160 +3,137 @@ hide:
   - navigation
 ---
 
-# Activitat 2. De la idea al lliurament
+# Activitat 2. Del requisit al lliurament
 
-> **Projecte base:** monitor senzill de temperatures de l’activitat 1 de la UP2.  
-> **Versió lliurada:** 1.1.0. Les dades són de prova i no contenen informació personal.
+## 1. Fases del desenvolupament
 
-## 1. Anàlisi de l’encàrrec
+### Tasca 1. Classificació de les situacions d’AulaTask
 
-El client vol una versió xicoteta però més fiable del monitor de temperatures. He convertit la petició en aquestes tasques:
-
-| Tasca | Necessitat | Tipus | Criteri d’acceptació |
-| --- | --- | --- | --- |
-| T1. Mostrar la mínima | Afegir la temperatura mínima al resum | Funcionalitat | El resum mostra mínima, mitjana i màxima amb les dades rebudes |
-| T2. Actualitzar el llindar | El nou llindar d’alerta és 30 ºC i no ha d’estar repetit en el codi | Modificació | Amb màxima 30 ºC l’estat és normal; amb 31 ºC és elevat |
-| T3. Corregir el cas límit | La versió anterior usava `>=` i marcava com a elevada una temperatura igual al llindar | Incidència | La comparació usa `>` i queda coberta per una prova |
-| T4. Validar lectures | Evitar llistes buides i valors fora de -100 ºC…60 ºC | Qualitat / proves | Es llança `ValueError` i no es calcula un resum invàlid |
-
-## 2. Fases del desenvolupament
-
-| Fase | Què significa | Què he fet en aquest projecte |
+| Situació | Fase del desenvolupament | Justificació |
 | --- | --- | --- |
-| Requisits | Entendre la necessitat i convertir-la en condicions verificables | He separat funcionalitat, modificació, incidència i validació en T1–T4. |
-| Anàlisi i disseny | Decidir la solució abans d’escriure-la | He mantingut l’aplicació de consola, he centralitzat `LLINDAR_ALERTA` i he separat validació, càlcul i presentació. |
-| Implementació | Escriure o modificar el codi font | He creat `programa.py` amb funcions petites i una entrada `main()`. |
-| Proves | Comprovar comportament normal, límits i errors | He creat cinc proves amb `unittest`: resum, mínima, cas exacte, superació del llindar, rang i llista buida. |
-| Desplegament | Preparar una versió que es puga executar | La versió es pot executar amb Python i permet desactivar l’espera amb `MONITOR_ESPERA_SEGONS=0`. |
-| Manteniment | Corregir, adaptar i evolucionar el producte | La incidència queda documentada i la constant permet canviar el llindar sense buscar literals dispersos. |
+| 1. El client explica que l’alumnat ha de consultar tasques pendents | Requisits | Es concreta una necessitat del client i es transforma en un requisit funcional d’AulaTask. |
+| 2. L’equip decideix com s’organitzaran les dades | Anàlisi i disseny | Abans de programar, l’equip defineix el model de dades: tasques, usuaris, estat i data límit. |
+| 3. Es prepara l’estructura de pantalles | Anàlisi i disseny | Es dissenya la interfície i el recorregut que seguiran professorat i alumnat. |
+| 4. L’equip crea les funcionalitats previstes | Implementació | Es transforma el disseny en una aplicació que permet crear i consultar tasques. |
+| 5. Es comprova que una tasca sense data límit no es puga guardar | Proves | Es verifica una regla del requisit i es comprova el comportament davant d’una dada no vàlida. |
+| 6. Es publica una nova versió | Desplegament | La versió validada es posa a disposició dels usuaris en l’entorn corresponent. |
+| 7. Un usuari comunica que les tasques no apareixen ordenades | Manteniment | És una incidència detectada després del desplegament que cal registrar i analitzar. |
+| 8. L’equip corregeix el problema i prepara una nova versió | Manteniment | Es corregeix una incidència d’una versió ja publicada; la preparació de la versió tornarà després al desplegament. |
+| 9. El client demana marcar tasques com a completades | Requisits | És una nova necessitat que s’ha d’analitzar, prioritzar i convertir en una futura tasca del backlog. |
 
-## 3. Organització del treball
+### Tasca 2. El cicle no acaba amb el desplegament
 
-He utilitzat un flux Kanban amb les columnes `Pendent → En procés → En proves → Fet`. Al principi totes les tasques estaven pendents; al final les quatre han passat per implementació i validació.
+1. **Per què el manteniment forma part del desenvolupament?**
+   Perquè una aplicació continua necessitant correccions, adaptacions, millores i noves funcionalitats després d’arribar als usuaris. El programari viu en un entorn que canvia i també rep feedback real.
 
-![Tauler inicial del mini-sprint](evidencies/tauler-inicial.png)
+2. **En quina fase situaria una petició nova del client?**
+   Inicialment en requisits. Després s’hauria de valorar, prioritzar i convertir en una tasca del backlog abans de passar a anàlisi i disseny.
 
-*Figura 1. Estat inicial: les quatre tasques entren al backlog pendent.*
+3. **Una aplicació pot tornar a fases anteriors després d’haver sigut desplegada?**
+   Sí. Una incidència pot obligar a tornar a anàlisi, disseny, implementació i proves abans de desplegar una correcció. Una nova funcionalitat també inicia un nou cicle de requisits.
 
-![Tauler final del mini-sprint](evidencies/tauler-final.png)
+4. **Per què és incorrecte pensar que desenvolupar és només escriure codi?**
+   Perquè el desenvolupament també inclou entendre les necessitats, dissenyar la solució, provar-la, documentar-la, controlar els canvis, desplegar-la i mantindre-la.
 
-*Figura 2. Estat final: les quatre tasques han superat les proves.*
+## 2. Ferramentes del procés
 
-El límit de treball en curs ha sigut una tasca principal. Això m’ha obligat a acabar i comprovar una tasca abans d’obrir-ne una altra.
+### Tasca 3. Quina ferramenta necessitem?
 
-## 4. Ferramentes utilitzades
-
-| Ferramenta | Funció principal | Funcionalitat utilitzada | Fase útil |
+| Necessitat | Tipus de ferramenta | Exemple | Per què? |
 | --- | --- | --- | --- |
-| VS Code | Editar i navegar pel projecte | Edició de Python, cerca de símbols i terminal integrada | Anàlisi i implementació |
-| Terminal + Python | Executar el programa i les comprovacions | `python3 programa.py`, `unittest` i `py_compile` | Implementació i proves |
-| Git | Conservar l’historial local | Canvis separats per codi, proves i documentació; `git diff` per revisar-los | Tot el cicle |
-| `pdb` / debugger | Pausar l’execució i observar l’estat intern | Breakpoint en el càlcul de l’estat i inspecció de `maxima` i `LLINDAR_ALERTA` | Diagnòstic de la incidència |
-| Tauler Kanban | Fer visible l’estat del treball | Columnes i moviment de T1–T4 | Planificació i seguiment |
+| Escriure i organitzar els fitxers del projecte | IDE o editor de codi | Visual Studio Code | Permet editar fitxers, buscar referències, organitzar carpetes i treballar amb extensions. |
+| Saber qui ha modificat un fitxer i recuperar una versió anterior | Control de versions | Git | Guarda l’historial, identifica els canvis i permet comparar o recuperar versions. |
+| Compartir el projecte entre diversos membres | Repositori remot | GitHub | Centralitza el repositori, facilita la col·laboració i permet revisar canvis mitjançant pull requests. |
+| Saber quines tasques estan pendents, en procés o finalitzades | Gestor de tasques | Trello o Jira | Visualitza el backlog, les prioritats i l’estat del treball. |
+| Comprovar automàticament que una funcionalitat continua funcionant | Ferramenta de proves | pytest | Executa proves repetibles i detecta regressions després dels canvis. |
+| Executar comprovacions quan es publica un canvi | Automatització / CI | GitHub Actions | Pot executar proves, comprovacions de qualitat i construccions sense fer-les manualment. |
+| Mantindre una guia tècnica del projecte | Documentació | Markdown i MkDocs | Permet escriure documentació versionada i publicar-la com un lloc web navegable. |
 
-## 5. Desenvolupament
+### Tasca 4. Avaluació de ferramentes
 
-### 5.1. Canvis realitzats
+| Ferramenta | Quina necessitat resol? | Avantatge principal | Possible limitació |
+| --- | --- | --- | --- |
+| Git | Controlar l’historial i els canvis d’AulaTask | Permet treballar amb branques, revisar diferències i recuperar versions | Requereix aprendre conceptes com commits, branques i conflictes |
+| GitHub | Compartir el repositori i coordinar l’equip | Facilita les revisions de codi, les incidències i la col·laboració remota | Depén d’un servei extern i una configuració incorrecta de permisos pot exposar informació |
+| Jira | Organitzar requisits, tasques i incidències | Ofereix fluxos, prioritats, responsables i informes | Pot resultar massa complex per a un equip menut o un projecte senzill |
+| GitHub Actions | Automatitzar proves i construccions | Dona feedback ràpid i repetible quan arriba un canvi | Les configuracions YAML poden ser difícils de mantindre i consumeixen minuts d’execució |
 
-El fitxer `programa.py` conté ara quatre responsabilitats separades:
+### Es podria desenvolupar només amb un editor?
 
-- `validar_temperatures()` rebutja dades buides o impossibles.
-- `calcular_resum()` calcula mitjana, mínima i màxima.
-- `imprimir_resum()` presenta el resultat.
-- `main()` connecta les parts i conserva l’espera de 30 segons del monitor original.
+Per a una prova molt xicoteta, sí, però no seria una solució adequada quan el projecte creix o hi treballen diverses persones. A més d’escriure fitxers, caldria controlar versions, compartir el repositori, gestionar tasques, revisar canvis, executar proves, automatitzar comprovacions i mantindre la documentació. Un editor és una peça útil, però no resol per si mateix l’organització ni la qualitat del projecte.
 
-El llindar viu en una única constant: `LLINDAR_ALERTA = 30`. També he canviat la comparació de la incidència de `>=` a `>`.
+## 3. Scrum o Kanban
 
-### 5.2. Execució de la versió lliurada
+### Tasca 5. Elecció per escenaris
 
-Amb `MONITOR_ESPERA_SEGONS=0 python3 programa.py` l’eixida és:
+| Escenari | Metodologia preferent | Per què encaixa? | Problema amb l’altra metodologia |
+| --- | --- | --- | --- |
+| A. Nova plataforma educativa, sis persones i una versió cada dues setmanes | **Scrum** | Els sprints de dues setmanes donen un ritme clar. L’equip pot seleccionar un objectiu de sprint, preparar un increment i revisar-lo amb el client al final de cada període. | Amb Kanban podria faltar una cadència fixa per a la revisió i seria més difícil comprometre un increment concret per a cada període. |
+| B. Aplicació en producció amb incidències i peticions diàries | **Kanban** | El flux continu permet ordenar prioritats, limitar el treball en curs i introduir incidències urgents sense esperar al següent sprint. | Amb Scrum, les incidències imprevistes podrien interrompre sovint l’objectiu del sprint i provocar compromisos difícils de complir. |
+| C. Projecte de classe de sis setmanes amb períodes curts | **Scrum** | Els alumnes poden dividir les sis setmanes en sprints, decidir al principi què intentaran acabar i revisar regularment el progrés. | Amb Kanban hi hauria visibilitat del flux, però podria faltar una planificació temporal comuna i un moment formal de revisió per a tot l’equip. |
+
+Scrum és especialment útil quan convé treballar amb iteracions i objectius temporals. Kanban encaixa millor quan les peticions arriben de manera contínua i les prioritats canvien sovint. Tots dos poden utilitzar un backlog, limitar el treball obert i incorporar feedback.
+
+## 4. Interpretació del tauler
+
+El tauler de l’enunciat és:
 
 ```text
-Temperatures: 18 21 24 19 27
+PENDENT              EN PROCÉS             FET
 
-Mitjana: 21.8 ºC
-Mínima: 18 ºC
-Màxima: 27 ºC
-
-Estat: temperatura normal
+T4 Documentació      T2 Pantalla inicial   T1 Requisits
+T5 Proves             T3 Base de dades
+T6 Desplegament
+T7 Nova funcionalitat
 ```
 
-La suite retorna cinc proves correctes (`Ran 5 tests ... OK`). La compilació sintàctica amb `python3 -m py_compile programa.py` també acaba sense errors.
+1. Hi ha **dues tasques en procés**: T2, Pantalla inicial, i T3, Base de dades.
+2. Limitar el treball en curs ajuda a concentrar l’esforç, detectar bloquejos i acabar tasques abans d’obrir-ne massa. També redueix el canvi constant de context.
+3. Si cada membre començara moltes tasques però no n’acabara cap, augmentaria el treball obert, hi hauria més tasques bloquejades i el lliurament real s’endarreriria.
+4. D’una ullada, el tauler mostra què està pendent, què s’està treballant i què ja està acabat. També permet veure que hi ha dues tasques en curs i quatre pendents.
+5. Kanban representa un flux continu: les tasques avancen quan hi ha capacitat. Scrum agrupa el treball en sprints amb una duració definida, un objectiu i una revisió al final.
 
-![Resultat de les proves](evidencies/proves.png)
+## 5. Mapa del projecte
 
-*Figura 3. Evidència de l’execució funcional i de les cinc proves automàtiques.*
+El projecte AulaTask podria organitzar-se així:
 
-## 6. Ús del debugger
-
-He posat un breakpoint en la línia que decideix l’estat dins de `calcular_resum()`, just abans d’avaluar la comparació amb `LLINDAR_ALERTA`.
-
-Amb una lectura de prova de 30 ºC he observat:
-
-```text
-> programa.py(38)calcular_resum()
--> "estat": "temperatura elevada" if maxima > LLINDAR_ALERTA else ...
-(Pdb) p temperatures
-[20, 30]
-(Pdb) p maxima
-30
-(Pdb) p LLINDAR_ALERTA
-30
-(Pdb) n
-(Pdb) p resum["estat"]
-'temperatura normal'
+```mermaid
+flowchart LR
+    R[Requisits<br/>Crear i consultar tasques<br/>Data límit] --> D[Anàlisi i disseny<br/>Model de dades i pantalles]
+    D --> I[Implementació<br/>Funcionalitats d'AulaTask]
+    I --> P[Proves<br/>Validació i regressió]
+    P --> G{Versió acceptada?}
+    G -- No --> D
+    G -- Sí --> U[Desplegament<br/>Publicació per als usuaris]
+    U --> M[Manteniment<br/>Incidències i millores]
+    M --> N[Nova necessitat<br/>Marcar com completada]
+    N --> R
+    K[Gestió àgil<br/>Backlog · prioritats · WIP · feedback] -.-> R
+    K -.-> I
+    K -.-> M
+    E[Ferramentes<br/>VS Code · Git · GitHub<br/>Jira/Trello · pytest<br/>Actions · MkDocs] -.-> D
+    E -.-> P
+    E -.-> U
 ```
 
-![Breakpoint i variables observades](evidencies/debugger.png)
+En aquest mapa, la gestió àgil acompanya tot el procés: ordena el backlog, fa visibles les tasques, controla el treball en curs i incorpora el feedback. El retorn des de manteniment cap a requisits mostra que el desenvolupament és iteratiu i no acaba definitivament en el primer desplegament.
 
-*Figura 4. Breakpoint contextualitzat en la decisió de l’estat.*
+## 6. Conclusions
 
-El debugger permet veure els valors intermedis abans que la funció retorne. Executar el programa només mostra l’eixida final i no permet confirmar tan directament si el problema és la dada, el llindar o l’operador de comparació.
-
-## 7. Valoració de ferramentes
-
-| Ferramenta | Què m’ha permés fer | Avantatge | Limitació o inconvenient |
-| --- | --- | --- | --- |
-| VS Code | Editar, buscar i revisar el canvi | Concentra codi, terminal i extensions | Cal configurar extensions i pot consumir recursos |
-| Python + `unittest` | Repetir cinc comprovacions en segons | Detecta regressions i deixa un resultat objectiu | Les proves no substitueixen una revisió de l’experiència d’ús |
-| Git | Comparar l’estat anterior amb el nou | Permet revisar i recuperar canvis concrets | L’historial només és útil si els canvis tenen missatges clars |
-| `pdb` | Inspeccionar variables en un punt concret | Mostra la causa del cas límit | Interromp el flux i és menys còmode en processos grans |
-| Kanban | Saber què està pendent i què està validat | Fa visible el flux i limita el treball obert | No descriu per si mateix el disseny tècnic ni les prioritats de negoci |
-
-Si haguera de prescindir d’una ferramenta, eliminaria el tauler Kanban en aquest exercici individual: encara podria completar el codi amb una llista escrita, tot i que perdria visibilitat. Considero imprescindible Python amb una ferramenta de proves, perquè permet repetir la validació i demostrar que la correcció del cas límit no és només una suposició.
-
-## 8. Scrum o Kanban
-
-| Equip | Elecció | Justificació |
-| --- | --- | --- |
-| A. Cinc persones, plataforma nova i versió cada dues setmanes | **Scrum** | Un sprint de dues setmanes encaixa amb el ritme de lliurament. El backlog es pot ordenar abans de cada iteració, l’equip selecciona un increment assumible i la revisió amb el client aporta feedback al sprint següent. |
-| B. Tres persones, aplicació en producció i incidències setmanals | **Kanban** | El treball arriba de manera contínua i té prioritats canviants. Un flux amb límit de treball en curs permet atendre una incidència urgent sense esperar al següent sprint i mesurar què bloqueja el lliurament. |
-
-Scrum aporta iteracions, rols i esdeveniments previsibles; Kanban aporta flux continu, priorització dinàmica i control del treball en curs. Tots dos poden incorporar feedback i lliuraments freqüents.
-
-## 9. Retrospectiva
-
-### Què ha funcionat bé?
-
-Separar el càlcul de la presentació ha fet fàcil provar els valors i comprovar la incidència sense dependre de l’eixida de consola. El tauler també ha deixat clar quina tasca estava en proves.
-
-### Què podria millorar?
-
-Les dades encara estan escrites en una constant i no arriben des d’un sensor ni des d’una entrada de l’usuari. Per tant, la validació existeix però l’aplicació encara no gestiona un flux de dades real.
-
-### Què canviaria en una segona iteració?
-
-Afegiria una entrada de lectures des d’un fitxer CSV o una API, mantindria les proves amb dades de prova i afegiria una prova d’integració que verificara el recorregut complet.
+1. **Fase més important:** considere especialment importants els requisits, perquè una interpretació incorrecta pot fer que l’equip construïsca una aplicació que no resol la necessitat real. Tot i això, totes les fases depenen les unes de les altres.
+2. **Ferramenta amb més valor per a un equip:** Git aporta molt valor perquè conserva l’historial, permet treballar en paral·lel i facilita revisar o recuperar canvis.
+3. **Quan utilitzaria Kanban:** en manteniment, suport i projectes on les tasques arriben de manera contínua i les prioritats poden canviar.
+4. **Quan utilitzaria Scrum:** en un producte nou o un projecte amb objectius temporals, sprints definits i necessitat de revisar increments periòdics amb el client.
+5. **Què significa desenvolupar programari:** transformar una necessitat en una solució usable i mantinguda. Inclou analitzar, dissenyar, construir, provar, desplegar, documentar i millorar el producte amb el feedback dels usuaris.
 
 ### Checklist final
 
-- [x] Necessitats convertides en tasques.
-- [x] Fases del desenvolupament relacionades amb el projecte.
-- [x] Tauler Kanban inicial i final.
-- [x] Canvis implementats i executats.
-- [x] Proves automàtiques i validació sintàctica.
-- [x] Breakpoint i inspecció de variables.
-- [x] Funció, avantatge i limitació de cinc ferramentes.
-- [x] Comparació Scrum/Kanban per als dos equips.
-- [x] Retrospectiva completada.
-- [x] Quatre evidències contextualitzades.
+- [x] Situacions classificades segons les fases del desenvolupament.
+- [x] Decisions justificades.
+- [x] Necessitats relacionades amb ferramentes adequades.
+- [x] Quatre ferramentes valorades.
+- [x] Tres escenaris de Scrum/Kanban resolts.
+- [x] Tauler Kanban interpretat.
+- [x] Mapa del projecte creat amb Mermaid.
+- [x] Conclusions respostes.
+- [x] No s’ha inclòs codi ni s’ha desenvolupat cap funcionalitat.
