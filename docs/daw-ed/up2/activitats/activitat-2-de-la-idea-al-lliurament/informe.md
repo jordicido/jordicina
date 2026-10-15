@@ -1,3 +1,8 @@
+---
+hide:
+  - navigation
+---
+
 # Activitat 2. De la idea al lliurament
 
 > **Projecte base:** monitor senzill de temperatures de l’activitat 1 de la UP2.  
@@ -11,23 +16,23 @@ El client vol una versió xicoteta però més fiable del monitor de temperatures
 | --- | --- | --- | --- |
 | T1. Mostrar la mínima | Afegir la temperatura mínima al resum | Funcionalitat | El resum mostra mínima, mitjana i màxima amb les dades rebudes |
 | T2. Actualitzar el llindar | El nou llindar d’alerta és 30 ºC i no ha d’estar repetit en el codi | Modificació | Amb màxima 30 ºC l’estat és normal; amb 31 ºC és elevat |
-| T3. Corregir el cas límit | La versió anterior usava \`>=\` i marcava com a elevada una temperatura exactament igual al llindar | Incidència | La comparació usa \`>\` i queda coberta per una prova |
-| T4. Validar lectures | Evitar llistes buides i valors fora de -100 ºC…60 ºC | Qualitat / proves | Es llança \`ValueError\` i el programa no calcula un resum invàlid |
+| T3. Corregir el cas límit | La versió anterior usava `>=` i marcava com a elevada una temperatura igual al llindar | Incidència | La comparació usa `>` i queda coberta per una prova |
+| T4. Validar lectures | Evitar llistes buides i valors fora de -100 ºC…60 ºC | Qualitat / proves | Es llança `ValueError` i no es calcula un resum invàlid |
 
 ## 2. Fases del desenvolupament
 
 | Fase | Què significa | Què he fet en aquest projecte |
 | --- | --- | --- |
 | Requisits | Entendre la necessitat i convertir-la en condicions verificables | He separat funcionalitat, modificació, incidència i validació en T1–T4. |
-| Anàlisi i disseny | Decidir la solució abans d’escriure-la | He mantingut l’aplicació de consola, he centralitzat \`LLINDAR_ALERTA\` i he separat validació, càlcul i presentació. |
-| Implementació | Escriure o modificar el codi font | He creat \`programa.py\` amb funcions petites i una entrada \`main()\`. |
-| Proves | Comprovar comportament normal, límits i errors | He creat cinc proves amb \`unittest\`: resum, mínima, cas exacte, superació del llindar, rang i llista buida. |
-| Desplegament | Preparar una versió que es puga executar | La versió es pot executar amb Python i permet desactivar l’espera amb \`MONITOR_ESPERA_SEGONS=0\`. |
+| Anàlisi i disseny | Decidir la solució abans d’escriure-la | He mantingut l’aplicació de consola, he centralitzat `LLINDAR_ALERTA` i he separat validació, càlcul i presentació. |
+| Implementació | Escriure o modificar el codi font | He creat `programa.py` amb funcions petites i una entrada `main()`. |
+| Proves | Comprovar comportament normal, límits i errors | He creat cinc proves amb `unittest`: resum, mínima, cas exacte, superació del llindar, rang i llista buida. |
+| Desplegament | Preparar una versió que es puga executar | La versió es pot executar amb Python i permet desactivar l’espera amb `MONITOR_ESPERA_SEGONS=0`. |
 | Manteniment | Corregir, adaptar i evolucionar el producte | La incidència queda documentada i la constant permet canviar el llindar sense buscar literals dispersos. |
 
 ## 3. Organització del treball
 
-He utilitzat un flux Kanban amb les columnes \`Pendent → En procés → En proves → Fet\`. Al principi totes les tasques estaven pendents; al final les quatre han passat per implementació i validació.
+He utilitzat un flux Kanban amb les columnes `Pendent → En procés → En proves → Fet`. Al principi totes les tasques estaven pendents; al final les quatre han passat per implementació i validació.
 
 ![Tauler inicial del mini-sprint](evidencies/tauler-inicial.png)
 
@@ -44,29 +49,29 @@ El límit de treball en curs ha sigut una tasca principal. Això m’ha obligat 
 | Ferramenta | Funció principal | Funcionalitat utilitzada | Fase útil |
 | --- | --- | --- | --- |
 | VS Code | Editar i navegar pel projecte | Edició de Python, cerca de símbols i terminal integrada | Anàlisi i implementació |
-| Terminal + Python | Executar el programa i les comprovacions | \`python3 programa.py\`, \`unittest\` i \`py_compile\` | Implementació i proves |
-| Git | Conservar l’historial local | Canvis separats per codi, proves i documentació; \`git diff\` per revisar-los | Tot el cicle |
-| \`pdb\` / debugger | Pausar l’execució i observar l’estat intern | Breakpoint en el càlcul de l’estat i inspecció de \`maxima\` i \`LLINDAR_ALERTA\` | Diagnòstic de la incidència |
+| Terminal + Python | Executar el programa i les comprovacions | `python3 programa.py`, `unittest` i `py_compile` | Implementació i proves |
+| Git | Conservar l’historial local | Canvis separats per codi, proves i documentació; `git diff` per revisar-los | Tot el cicle |
+| `pdb` / debugger | Pausar l’execució i observar l’estat intern | Breakpoint en el càlcul de l’estat i inspecció de `maxima` i `LLINDAR_ALERTA` | Diagnòstic de la incidència |
 | Tauler Kanban | Fer visible l’estat del treball | Columnes i moviment de T1–T4 | Planificació i seguiment |
 
 ## 5. Desenvolupament
 
 ### 5.1. Canvis realitzats
 
-El fitxer \`programa.py\` conté ara quatre responsabilitats separades:
+El fitxer `programa.py` conté ara quatre responsabilitats separades:
 
-- \`validar_temperatures()\` rebutja dades buides o impossibles.
-- \`calcular_resum()\` calcula mitjana, mínima i màxima.
-- \`imprimir_resum()\` presenta el resultat.
-- \`main()\` connecta les parts i conserva l’espera de 30 segons del monitor original.
+- `validar_temperatures()` rebutja dades buides o impossibles.
+- `calcular_resum()` calcula mitjana, mínima i màxima.
+- `imprimir_resum()` presenta el resultat.
+- `main()` connecta les parts i conserva l’espera de 30 segons del monitor original.
 
-El llindar viu en una única constant: \`LLINDAR_ALERTA = 30\`. També he canviat la comparació de la incidència de \`>=\` a \`>\`.
+El llindar viu en una única constant: `LLINDAR_ALERTA = 30`. També he canviat la comparació de la incidència de `>=` a `>`.
 
 ### 5.2. Execució de la versió lliurada
 
-Amb \`MONITOR_ESPERA_SEGONS=0 python3 programa.py\` l’eixida és:
+Amb `MONITOR_ESPERA_SEGONS=0 python3 programa.py` l’eixida és:
 
-\`\`\`text
+```text
 Temperatures: 18 21 24 19 27
 
 Mitjana: 21.8 ºC
@@ -74,9 +79,9 @@ Mínima: 18 ºC
 Màxima: 27 ºC
 
 Estat: temperatura normal
-\`\`\`
+```
 
-La suite retorna cinc proves correctes (\`Ran 5 tests ... OK\`). La compilació sintàctica amb \`python3 -m py_compile programa.py\` també acaba sense errors.
+La suite retorna cinc proves correctes (`Ran 5 tests ... OK`). La compilació sintàctica amb `python3 -m py_compile programa.py` també acaba sense errors.
 
 ![Resultat de les proves](evidencies/proves.png)
 
@@ -84,11 +89,11 @@ La suite retorna cinc proves correctes (\`Ran 5 tests ... OK\`). La compilació 
 
 ## 6. Ús del debugger
 
-He posat un breakpoint en la línia que decideix l’estat dins de \`calcular_resum()\`, just abans d’avaluar la comparació amb \`LLINDAR_ALERTA\`.
+He posat un breakpoint en la línia que decideix l’estat dins de `calcular_resum()`, just abans d’avaluar la comparació amb `LLINDAR_ALERTA`.
 
 Amb una lectura de prova de 30 ºC he observat:
 
-\`\`\`text
+```text
 > programa.py(38)calcular_resum()
 -> "estat": "temperatura elevada" if maxima > LLINDAR_ALERTA else ...
 (Pdb) p temperatures
@@ -100,7 +105,7 @@ Amb una lectura de prova de 30 ºC he observat:
 (Pdb) n
 (Pdb) p resum["estat"]
 'temperatura normal'
-\`\`\`
+```
 
 ![Breakpoint i variables observades](evidencies/debugger.png)
 
@@ -113,9 +118,9 @@ El debugger permet veure els valors intermedis abans que la funció retorne. Exe
 | Ferramenta | Què m’ha permés fer | Avantatge | Limitació o inconvenient |
 | --- | --- | --- | --- |
 | VS Code | Editar, buscar i revisar el canvi | Concentra codi, terminal i extensions | Cal configurar extensions i pot consumir recursos |
-| Python + \`unittest\` | Repetir cinc comprovacions en segons | Detecta regressions i deixa un resultat objectiu | Les proves no substitueixen una revisió de l’experiència d’ús |
+| Python + `unittest` | Repetir cinc comprovacions en segons | Detecta regressions i deixa un resultat objectiu | Les proves no substitueixen una revisió de l’experiència d’ús |
 | Git | Comparar l’estat anterior amb el nou | Permet revisar i recuperar canvis concrets | L’historial només és útil si els canvis tenen missatges clars |
-| \`pdb\` | Inspeccionar variables en un punt concret | Mostra la causa del cas límit | Interromp el flux i és menys còmode en processos grans |
+| `pdb` | Inspeccionar variables en un punt concret | Mostra la causa del cas límit | Interromp el flux i és menys còmode en processos grans |
 | Kanban | Saber què està pendent i què està validat | Fa visible el flux i limita el treball obert | No descriu per si mateix el disseny tècnic ni les prioritats de negoci |
 
 Si haguera de prescindir d’una ferramenta, eliminaria el tauler Kanban en aquest exercici individual: encara podria completar el codi amb una llista escrita, tot i que perdria visibilitat. Considero imprescindible Python amb una ferramenta de proves, perquè permet repetir la validació i demostrar que la correcció del cas límit no és només una suposició.
