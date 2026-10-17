@@ -42,7 +42,21 @@ nav:
                   - Activitat 2. Selecció i pressupost d’un SAI: smx-si/ut1/activitats/activitat-2-taller-sai.md
                   - Activitat 3. Projecte SecureOffice VLC: smx-si/ut1/activitats/activitat-3-pla-microempresa.md
                   - Autoavaluació: smx-si/ut1/activitats/autoavaluacio.md
-              - UP2. Gestió de dispositius d’emmagatzematge: smx-si/ut2-emmagatzematge.md
+              - UP2. Gestió segura de l’emmagatzematge i de les còpies:
+                  - Índex i presentació: smx-si/ut2-emmagatzematge.md
+                  - 1. Política d’emmagatzematge: smx-si/ut2/01-politica-emmagatzematge.md
+                  - 2. Factors i mètodes: smx-si/ut2/02-factors-metodes.md
+                  - 3. Redundància i RAID: smx-si/ut2/03-redundancia-raid.md
+                  - 4. Emmagatzematge distribuït: smx-si/ut2/04-emmagatzematge-distribuit.md
+                  - 5. Còpies de seguretat: smx-si/ut2/05-copies-seguretat.md
+                  - 6. Retenció, rotació i mitjans: smx-si/ut2/06-retencio-mitjans.md
+                  - 7. Còpies en Linux: smx-si/ut2/07-copies-linux.md
+                  - 8. Imatges de sistema: smx-si/ut2/08-imatges-sistema.md
+                  - Activitat 1. Selecció d’una solució: smx-si/ut2/activitats/activitat-1-seleccio-emmagatzematge.md
+                  - Activitat 2. RAID de prova: smx-si/ut2/activitats/activitat-2-raid.md
+                  - Activitat 3. Còpies i restauració: smx-si/ut2/activitats/activitat-3-copies-restauracio.md
+                  - Activitat 4. Imatge amb Clonezilla: smx-si/ut2/activitats/activitat-4-clonezilla.md
+                  - Autoavaluació: smx-si/ut2/activitats/autoavaluacio.md
               - UP3. Mecanismes de seguretat activa: smx-si/ut3-seguretat-activa.md
               - UP4. Privacitat de la informació en xarxes: smx-si/ut4-privacitat-xarxes.md
               - UP5. Legislació i protecció de dades: smx-si/ut5-legislacio-dades.md

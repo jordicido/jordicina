@@ -24,8 +24,8 @@ hide:
 
 <section class="module-highlight">
   <h2>Què estem treballant ara?</h2>
-  <p><strong>UP1 · Mesures de seguretat passiva</strong></p>
-  <p>Estem treballant què cal protegir en una organització i com aplicar mesures de seguretat física i lògica, SAI, control d'accessos, contrasenyes i biometria. Consulta la <a href="ut1-seguretat-passiva/">teoria de la UP1</a> i les activitats associades.</p>
+  <p><strong>UP2 · Gestió segura de l’emmagatzematge i de les còpies</strong></p>
+  <p>Estem treballant com triar l’emmagatzematge, aplicar redundància, planificar còpies i recuperar dades o sistemes complets. Consulta la <a href="ut2-emmagatzematge/">teoria de la UP2</a> i les activitats associades.</p>
 </section>
 
 <h2>Unitats de programació</h2>
