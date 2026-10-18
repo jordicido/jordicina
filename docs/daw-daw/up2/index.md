@@ -37,10 +37,10 @@ conservar.
 | Activitat | Producte tècnic | Teoria que cal aplicar | Evidència mínima |
 |---|---|---|---|
 | UP2.2 | `mod_rewrite` i `.htaccess` per a `/about-us` | [Mòduls d'Apache](02-moduls-apache.md#pràctica-up22-mod_rewrite-en-htaccess) | `apache2ctl -M`, configuració, `configtest` i resposta de la URL |
-| UP2.3 | `catadaw1.com` i `catadaw2.com` | [Virtual Hosts](03-virtual-hosts.md#pràctica-up23-catadaw1com-i-catadaw2com) | fitxers dels llocs, `/etc/hosts`, `apache2ctl -S` i una prova per domini |
-| UP2.4 | Autenticació Basic amb `.htpasswd` | [Autenticació i control d'accés](04-autenticacio-control-acces.md#pràctica-up24-basic-auth-a-catadaw1com) | mòduls, fitxer de credencials, `401` sense credencials i `200` amb credencials |
-| UP2.5 i UP2.6 | HTTPS, redirecció i capçaleres | [Certificats](05-certificats-digitals.md#pràctica-up25-certificat-autofirmat-per-a-catadaw1com) i [comunicacions](06-seguretat-comunicacions.md#pràctica-up25-i-up26-https-i-capçaleres) | certificat/clau, `curl -I`, capçaleres i avís del certificat autofirmat |
-| UP2.7 | Gestió i anàlisi de logs | [Logs i monitorització](07-logs-monitoratge.md#pràctica-up27-anàlisi-amb-goaccess) | instal·lació de GoAccess, informe, errors, patrons i recomanacions |
+| UP2.3 | `catadaw1.com` i `catadaw2.com` | [Virtual Hosts](03-virtual-hosts.md#practica-up23-catadaw1com-i-catadaw2com) | fitxers dels llocs, `/etc/hosts`, `apache2ctl -S` i una prova per domini |
+| UP2.4 | Autenticació Basic amb `.htpasswd` | [Autenticació i control d'accés](04-autenticacio-control-acces.md#practica-up24-basic-auth-a-catadaw1com) | mòduls, fitxer de credencials, `401` sense credencials i `200` amb credencials |
+| UP2.5 i UP2.6 | HTTPS, redirecció i capçaleres | [Certificats](05-certificats-digitals.md#practica-up25-certificat-autofirmat-per-a-catadaw1com) i [comunicacions](06-seguretat-comunicacions.md#practica-up25-i-up26-https-i-capcaleres) | certificat/clau, `curl -I`, capçaleres i avís del certificat autofirmat |
+| UP2.7 | Gestió i anàlisi de logs | [Logs i monitorització](07-logs-monitoratge.md#practica-up27-analisi-amb-goaccess) | instal·lació de GoAccess, informe, errors, patrons i recomanacions |
 | UP2.8 | Un mòdul d'Apache en Docker | [Apache en Docker](08-moduls-apache-docker.md) | Dockerfile/Compose, mòdul actiu, prova funcional i demostració |
 | Projecte CE2.h | Infraestructura d'una aplicació en AWS | [Projecte AWS](09-projecte-aws-ce2h.md) | diagrama, VPC, subxarxes, rutes, grups de seguretat i proves entre capes |
 

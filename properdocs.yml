@@ -25,6 +25,7 @@ nav:
       - Seguretat informàtica:
           - Inici: smx-si/index.md
           - Guia de l’assignatura: smx-si/guia-assignatura.md
+          - Programació didàctica: smx-si/programacio-didactica.md
           - Calendarització de les sessions: smx-si/calendaritzacio.md
           - Unitats de programació:
               - UP1. Mesures de seguretat passiva:
@@ -60,11 +61,13 @@ nav:
               - UP4. Privacitat de la informació en xarxes: smx-si/ut4-privacitat-xarxes.md
               - UP5. Legislació i protecció de dades: smx-si/ut5-legislacio-dades.md
           - Recursos: smx-si/recursos.md
+          - Materials: smx-si/materials.md
           - Avaluació: smx-si/avaluacio.md
           - Preguntes freqüents: smx-si/preguntes-frequents.md
       - Aplicacions web:
           - Inici: smx-aw/index.md
           - Guia de l’assignatura: smx-aw/guia-assignatura.md
+          - Programació didàctica: smx-aw/programacio-didactica.md
           - Unitats de programació:
               - UP1. Aplicacions web de correu i calendari:
                   - Índex i seqüència: smx-aw/up1/index.md
@@ -82,11 +85,11 @@ nav:
                   - 5. Treball col·laboratiu: smx-aw/up2/05-treball-collaboratiu.md
                   - Activitat 1. Dissenyem una oficina al núvol: smx-aw/up2/activitats/activitat-1-oficina-nuvol.md
                   - Activitat 2. Projecte col·laboratiu amb Microsoft 365: smx-aw/up2/activitats/activitat-2-espai-collaboratiu.md
-                  - Activitat 3. Repte Microsoft 365: smx-aw/up2/activitats/activitat-3-repte-microsoft-365.md
               - UP3. Serveis de gestió d’arxius web: smx-aw/up3-arxius-web.md
               - UP4. Gestors de continguts: smx-aw/up4-gestors-continguts.md
               - UP5. Gestió d’aprenentatge a distància: smx-aw/up5-aprenentatge-distancia.md
           - Recursos: smx-aw/recursos.md
+          - Materials: smx-aw/materials.md
           - Avaluació: smx-aw/avaluacio.md
           - Preguntes freqüents: smx-aw/preguntes-frequents.md
       - Python:
@@ -119,6 +122,12 @@ nav:
                   - 7. Proves i depuració: intro-python/up3/07-proves-depuracio.md
                   - 8. Documentació i bones pràctiques: intro-python/up3/08-documentacio-bones-practiques.md
                   - Activitats avaluables: intro-python/up3/activitats/activitats-avaluables.md
+                  - Activitat 1. Condicions i decisions: intro-python/up3/activitats/activitat-1-condicions.md
+                  - Activitat 2. Bucles i recorreguts: intro-python/up3/activitats/activitat-2-bucles.md
+                  - Activitat 3. Excepcions i validació: intro-python/up3/activitats/activitat-3-excepcions-i-validacio.md
+                  - Activitat 4. Proves i depuració: intro-python/up3/activitats/activitat-4-proves-i-depuracio.md
+                  - Autoavaluació: intro-python/up3/activitats/autoavaluacio.md
+                  - Projecte integrador: intro-python/up3/activitats/projecte-integrador.md
               - UP4. Classes i programació orientada a objectes: intro-python/up4-classes-i-poo.md
               - UP5. Entrada, eixida i llibreries: intro-python/up5-entrada-eixida-i-llibreries.md
               - UP6. Estructures avançades de dades: intro-python/up6-estructures-avancades.md
@@ -166,6 +175,7 @@ nav:
       - Entorns de desenvolupament:
           - Inici: daw-ed/index.md
           - Guia de l’assignatura: daw-ed/guia-assignatura.md
+          - Programació didàctica: daw-ed/programacio-didactica.md
           - Unitats de programació:
               - UP1. Entorns integrats de desenvolupament:
                   - Presentació: daw-ed/up1-entorns-integrats.md
@@ -196,5 +206,6 @@ nav:
               - UP5. Diagrames de classes: daw-ed/up5-diagrames-classes.md
               - UP6. Diagrames de comportament: daw-ed/up6-diagrames-comportament.md
           - Recursos: daw-ed/recursos.md
+          - Materials: daw-ed/materials.md
           - Avaluació: daw-ed/avaluacio.md
           - Preguntes freqüents: daw-ed/preguntes-frequents.md
