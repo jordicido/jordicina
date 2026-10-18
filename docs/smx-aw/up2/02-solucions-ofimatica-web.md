@@ -33,7 +33,7 @@ flowchart LR
     O --> W
 ```
 
-En la **Activitat 1. Dissenyem una oficina al núvol** identificaràs les aplicacions i les utilitzaràs per a crear un projecte complet. En la **Activitat 3** construiràs el flux Forms–Excel–Word o PowerPoint.
+En la **Activitat 1. Dissenyem una oficina al núvol** identificaràs les aplicacions i les utilitzaràs per a crear un projecte complet. En la **Activitat 2** construiràs el flux Forms–Excel–PowerPoint.
 
 ## Prestacions específiques
 

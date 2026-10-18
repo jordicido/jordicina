@@ -56,7 +56,6 @@ Utilitza aquesta pàgina com a índex de la UP2 per seguir l’ordre recomanat, 
 
 | Activitat | Producte |
 | --- | --- |
-| [1. Selecció d’una solució](ut2/activitats/activitat-1-seleccio-emmagatzematge.md) | Comparativa justificada per a cinc situacions. |
 | [2. RAID 5 amb `mdadm`](ut2/activitats/activitat-2-raid.md) | RAID de prova, simulació d’una fallada i reconstrucció. |
 | [3. Còpies i restauració](ut2/activitats/activitat-3-copies-restauracio.md) | Còpia completa, incrementals, `rsync`, mitjà remot i política 3-2-1. |
 | [4. Imatge amb Clonezilla](ut2/activitats/activitat-4-clonezilla.md) | Creació, modificació, restauració i verificació d’una imatge. |
@@ -66,7 +65,6 @@ Utilitza aquesta pàgina com a índex de la UP2 per seguir l’ordre recomanat, 
 
 | Evidència | Producte | Criteris principals |
 | --- | --- | --- |
-| 1. Selecció d’emmagatzematge | Informe comparatiu i justificació | RA2.a, RA2.b, RA2.c |
 | 2. RAID de prova | Registre de l’estat normal, degradat i reconstruït | RA2.c, RA2.d |
 | 3. Pla de còpies | Còpies, restauració, proves i política | RA2.e, RA2.f, RA2.g, RA2.h, RA2.i |
 | 4. Imatge del sistema | Informe de creació i restauració | RA2.j |
@@ -92,4 +90,4 @@ Utilitza aquesta pàgina com a índex de la UP2 per seguir l’ordre recomanat, 
 
 Les pràctiques de RAID, particions i imatges s’han de fer únicament en màquines virtuals i discos de prova. Una ordre mal aplicada pot destruir dades. Abans de copiar o restaurar, comprova sempre l’origen, la destinació i l’estat de les còpies.
 
-[Començar la teoria](ut2/01-politica-emmagatzematge.md) · [Començar les activitats](ut2/activitats/activitat-1-seleccio-emmagatzematge.md)
+[Començar la teoria](ut2/01-politica-emmagatzematge.md) · [Començar les activitats](ut2/activitats/activitat-2-raid.md)

@@ -37,8 +37,7 @@ En aquesta unitat aprendràs a entendre, configurar i utilitzar Microsoft 365 co
 ## Activitats
 
 1. [Dissenyem una oficina al núvol](up2/activitats/activitat-1-oficina-nuvol.md) — selecció d’aplicacions, Word, Excel, PowerPoint, OneDrive i PWA.
-2. [Projecte col·laboratiu amb Microsoft 365](up2/activitats/activitat-2-espai-collaboratiu.md) — permisos, coedició, comentaris i versions.
-3. [Repte Microsoft 365](up2/activitats/activitat-3-repte-microsoft-365.md) — Forms, dades, gràfics i resolució d’incidències.
+2. [Dissenya i presenta el teu esdeveniment](up2/activitats/activitat-2-espai-collaboratiu.md) — Forms, Excel, PowerPoint, permisos i treball col·laboratiu.
 
 ## Evidències i temporalització
 
@@ -49,9 +48,9 @@ Les evidències són captures o registres de les comprovacions, fitxers creats i
 | 1 | Fonaments i fase 1 de l’Activitat 1 | Aplicacions identificades i decisions justificades |
 | 2–3 | Activitat 1 | Fitxers professionals, estructura d’OneDrive i comprovacions |
 | 4 | Usuaris, permisos i seguretat | Matriu de permisos i correcció d’un risc |
-| 5–6 | Activitat 2 | Espai compartit i proves d’accés |
-| 7 | Activitat 2 | Comentaris, versions i configuració segura |
-| 8 | Activitat 3 i tancament | Flux Forms–Excel i incidències resoltes |
+| 5–6 | Activitat 2 | Formulari, respostes, dades sintètiques i anàlisi amb Excel |
+| 7 | Activitat 2 | Gràfics, conclusions i configuració segura |
+| 8 | Activitat 2 i tancament | Presentació, treball col·laboratiu i defensa |
 
 !!! warning "Entorn de pràctiques"
     Les pràctiques es faran en l’entorn Microsoft 365 proporcionat pel centre. No publiques enllaços fora de l’entorn autoritzat ni utilitzes dades personals reals.
