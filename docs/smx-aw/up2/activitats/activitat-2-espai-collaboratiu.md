@@ -1,3 +1,7 @@
+---
+hide:
+  - navigation
+---
 # Activitat 2. Dissenya i presenta el teu esdeveniment
 
 ## Finalitat
