@@ -27,8 +27,7 @@ activitat-1-condicions/
 ├── ex03_numero.py
 ├── ex04_temperatura.py
 ├── ex05_nota.py
-├── ex06_diagnostic_xarxa.py
-└── proves.md
+└── ex06_diagnostic_xarxa.py
 ```
 
 En cada exercici segueix aquest procés:
@@ -36,8 +35,7 @@ En cada exercici segueix aquest procés:
 1. identifica les dades d'entrada i el seu tipus;
 2. escriu les alternatives que ha de distingir el programa;
 3. ordena les condicions abans de programar;
-4. implementa i executa el programa;
-5. prova tots els casos indicats i anota el resultat en `proves.md`.
+4. implementa i executa el programa.
 
 ## Exercici 1. Avís d'espai en disc
 
@@ -82,7 +80,7 @@ Converteix el resultat d'`input()` a `int` abans de comparar-lo.
 | `8` | `L'equip compleix el requisit de RAM.` |
 | `16` | `L'equip compleix el requisit de RAM.` |
 
-Explica en `proves.md` per què el valor `8` és un cas límit important i quina diferència hi ha entre utilitzar `>` i `>=` en aquest exercici.
+Pensa per què el valor `8` és un cas límit important i quina diferència hi ha entre utilitzar `>` i `>=` en aquest exercici.
 
 ## Exercici 3. Classificació d'un número
 
@@ -119,9 +117,7 @@ Demana la temperatura actual d'una CPU en graus Celsius i classifica-la així:
 
 Utilitza `if`, dos blocs `elif` i `else`. Ordena les comprovacions de menor a major perquè cada temperatura quede classificada una sola vegada.
 
-Prova com a mínim els valors `39`, `40`, `69`, `70`, `84` i `85`.
-
-En `proves.md`, explica a quin interval pertany cada valor límit.
+Comprova mentalment a quin interval pertany cadascun dels valors `39`, `40`, `69`, `70`, `84` i `85`.
 
 ## Exercici 5. Qualificació d'una nota
 
@@ -177,17 +173,7 @@ Per validar les respostes, combina condicions amb `and` i `or`. Després utilitz
 | `si` | `si` | `si` | La connexió bàsica funciona |
 | `potser` | `si` | `si` | Resposta no vàlida |
 
-Dibuixa en `proves.md` un esquema senzill amb les decisions del diagnòstic abans d'escriure el codi.
-
-## Document de proves
-
-Completa en `proves.md` una taula per a cada exercici:
-
-| Entrada | Resultat esperat | Resultat obtingut | Correcte? |
-| --- | --- | --- | --- |
-|  |  |  |  |
-
-No cal incloure captures de totes les execucions. És més important registrar les dades utilitzades i comprovar si el resultat coincideix amb l'esperat.
+Abans d'escriure el codi, dibuixa en un full un esquema senzill amb les decisions del diagnòstic.
 
 ## Requisits
 
@@ -201,7 +187,7 @@ No cal incloure captures de totes les execucions. És més important registrar l
 
 ## Lliurament
 
-Entrega la carpeta `activitat-1-condicions` amb els sis programes i `proves.md`.
+Entrega la carpeta `activitat-1-condicions` amb els sis programes.
 
 En la comprovació individual, el professorat podrà demanar que executes un cas, expliques per què entra en una branca concreta o canvies un límit senzill. L'objectiu és comprovar que entens les condicions que has escrit.
 
@@ -209,10 +195,7 @@ En la comprovació individual, el professorat podrà demanar que executes un cas
 
 - [ ] Hi ha sis fitxers `.py`, un per exercici.
 - [ ] Tots els programes s'executen sense errors de sintaxi.
-- [ ] He provat tots els casos indicats.
 - [ ] Només s'executa una alternativa quan les opcions són excloents.
-- [ ] He comprovat especialment els valors límit.
 - [ ] Puc explicar cada condició amb les meues paraules.
-- [ ] `proves.md` conté els resultats obtinguts.
 
 [Índex de la UP3](../index.md) · [Teoria: estructures de selecció](../01-estructures-seleccio.md) · [Següent activitat: bucles](activitat-2-bucles.md)
