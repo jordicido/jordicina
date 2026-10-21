@@ -37,6 +37,17 @@ L’objectiu no és memoritzar sentències aïllades. És saber triar l’estruc
 7. [Proves i depuració](07-proves-depuracio.md): casos de prova, `print()` i depurador de VS Code.
 8. [Documentació i bones pràctiques](08-documentacio-bones-practiques.md): codi llegible, comentaris i mantenibilitat.
 
+## Activitats
+
+- [Activitat 1. Condicions i decisions](activitats/activitat-1-condicions.md): practicar estructures de selecció, comparacions i casos de prova.
+- [Activitat 2. Bucles i recorreguts](activitats/activitat-2-bucles.md): treballar `for`, `while`, comptadors, acumuladors i sentències de salt.
+- [Activitat 3. Excepcions i validació](activitats/activitat-3-excepcions-i-validacio.md): llegir *tracebacks*, tractar errors i crear excepcions pròpies.
+- [Activitat 4. Proves i depuració](activitats/activitat-4-proves-i-depuracio.md): preparar casos de prova, depurar i documentar correccions.
+- [Projecte integrador. Gestor de reserves](activitats/projecte-integrador.md): aplicar tots els criteris de la UP3 en un programa de consola.
+- [Autoavaluació de la UP3](activitats/autoavaluacio.md): comprovar els conceptes i preparar la defensa individual.
+
+Les quatre activitats són individuals i demanen evidències de les proves, una explicació dels errors i codi documentat.
+
 ## Seqüència de treball
 
 | Fase | Treball principal |
@@ -52,26 +63,16 @@ Les explicacions teòriques es combinaran amb exemples curts i pràctica guiada.
 
 ## Cobertura dels criteris
 
-| Criteri | Teoria |
-| --- | --- |
-| RA3.a | [Estructures de selecció](01-estructures-seleccio.md) |
-| RA3.b | [Estructures de repetició](02-estructures-repeticio.md) |
-| RA3.c | [Sentències de salt](03-sentencies-salt.md) |
-| RA3.d | [Control d’excepcions](04-control-excepcions.md) |
-| RA3.e | [Estructures de selecció](01-estructures-seleccio.md), [repetició](02-estructures-repeticio.md) i [proves i depuració](07-proves-depuracio.md) |
-| RA3.f | [Proves i depuració](07-proves-depuracio.md) |
-| RA3.g | [Documentació i bones pràctiques](08-documentacio-bones-practiques.md) |
-| RA3.h | [Excepcions pròpies](05-excepcions-propies.md) |
-| RA3.i | [Assercions](06-assercions.md) |
+| Criteri | Teoria | Activitats |
+| --- | --- | --- |
+| RA3.a | [Estructures de selecció](01-estructures-seleccio.md) | [Activitat 1](activitats/activitat-1-condicions.md) |
+| RA3.b | [Estructures de repetició](02-estructures-repeticio.md) | [Activitat 2](activitats/activitat-2-bucles.md) |
+| RA3.c | [Sentències de salt](03-sentencies-salt.md) | [Activitat 2](activitats/activitat-2-bucles.md) |
+| RA3.d | [Control d’excepcions](04-control-excepcions.md) | [Activitat 3](activitats/activitat-3-excepcions-i-validacio.md) |
+| RA3.e | [Estructures de selecció](01-estructures-seleccio.md), [repetició](02-estructures-repeticio.md) i [proves i depuració](07-proves-depuracio.md) | [Activitat 1](activitats/activitat-1-condicions.md), [activitat 2](activitats/activitat-2-bucles.md) i [activitat 4](activitats/activitat-4-proves-i-depuracio.md) |
+| RA3.f | [Proves i depuració](07-proves-depuracio.md) | [Activitat 4](activitats/activitat-4-proves-i-depuracio.md) |
+| RA3.g | [Documentació i bones pràctiques](08-documentacio-bones-practiques.md) | [Activitat 4](activitats/activitat-4-proves-i-depuracio.md) |
+| RA3.h | [Excepcions pròpies](05-excepcions-propies.md) | [Activitat 3](activitats/activitat-3-excepcions-i-validacio.md) |
+| RA3.i | [Assercions](06-assercions.md) | [Activitat 3](activitats/activitat-3-excepcions-i-validacio.md) |
 
-## Activitats
-
-- [Activitat 1. Decisions en Python](activitats/activitats-avaluables.md#activitat-1-decisions-en-python): cinc exercicis amb `if`, `elif` i `else`.
-- [Activitat 2. Repetim accions](activitats/activitats-avaluables.md#activitat-2-repetim-accions): cinc exercicis amb `for`, `while`, comptadors i acumuladors.
-- [Activitat 3. El programa no funciona!](activitats/activitats-avaluables.md#activitat-3-el-programa-no-funciona): detecció d'errors, proves, excepcions bàsiques i depuració.
-- [Projecte integrador. Gestor de reserves](activitats/projecte-integrador.md): aplicar tots els criteris de la UP3 en un programa de consola.
-- [Autoavaluació de la UP3](activitats/autoavaluacio.md): comprovar els conceptes i preparar la defensa individual.
-
-Les tres activitats avaluables són individuals i demanen evidències de proves, explicació dels errors i codi documentat.
-
-[Tornar a Introducció a la programació en Python](../index.md) · [Començar la teoria](01-estructures-seleccio.md) · [Consultar l’avaluació](../avaluacio.md)
+[Tornar a Introducció a la programació en Python](../index.md) · [Començar la teoria](01-estructures-seleccio.md) · [Començar les activitats](activitats/activitat-1-condicions.md)
