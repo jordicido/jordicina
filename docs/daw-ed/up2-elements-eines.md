@@ -47,8 +47,8 @@ El fil conductor serà una aplicació web de gestió de reserves. Ens ajudarà a
 
 | Activitat | Producte |
 | --- | --- |
-| [1. Del codi a l’execució](up2/activitats/activitat-1-codi-execucio.md) | Laboratori comparatiu de C, Java, Python i JavaScript, amb mapes d’execució, taula forense i anàlisi de processos. |
-| [2. Gestionem un projecte amb Scrum, Kanban i Trello](up2/activitats/activitat-2-de-la-idea-al-lliurament/informe.md) | Simulació amb DAWBooking per crear i prioritzar un Product Backlog, planificar Sprints, limitar el WIP i adaptar el treball amb feedback. |
+| [2. Del codi a l’execució](up2/activitats/activitat-1-codi-execucio.md) | Laboratori comparatiu de C, Java, Python i JavaScript, amb mapes d’execució, taula forense i anàlisi de processos. |
+| [3. Gestionem un projecte amb Scrum, Kanban i Trello](up2/activitats/activitat-2-de-la-idea-al-lliurament/informe.md) | Simulació amb DAWBooking per crear i prioritzar un Product Backlog, planificar Sprints, limitar el WIP i adaptar el treball amb feedback. |
 
 ## Resultat d’aprenentatge i criteris
 

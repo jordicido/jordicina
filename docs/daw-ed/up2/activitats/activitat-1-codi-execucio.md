@@ -3,7 +3,7 @@ hide:
   - navigation
 ---
 
-# Activitat 1. Del codi a l'execució
+# Activitat 2. Del codi a l'execució
 
 ## Finalitat
 
@@ -52,7 +52,7 @@ Copia aquests fitxers en una carpeta de treball:
 Prepara una estructura semblant a aquesta:
 
 ~~~text
-activitat1-nom-cognoms/
+activitat2-nom-cognoms/
 ├── programa-c/
 │   └── programa.c
 ├── programa-java/
@@ -266,7 +266,7 @@ Davall de l'esquema, escriu aproximadament cinc línies explicant què ocorre de
 Entrega una carpeta amb aquesta estructura:
 
 ~~~text
-activitat1-nom-cognoms/
+activitat2-nom-cognoms/
 ├── informe.md
 └── evidencies/
 ~~~
