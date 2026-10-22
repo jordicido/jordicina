@@ -3,137 +3,474 @@ hide:
   - navigation
 ---
 
-# Activitat 2. Del requisit al lliurament
+# Activitat 2. Gestionem un projecte amb Scrum, Kanban i Trello
 
-## 1. Fases del desenvolupament
+## Finalitat
 
-### Tasca 1. Classificació de les situacions d’AulaTask
+En aquesta activitat simulareu el funcionament d’un equip de desenvolupament de programari que treballa amb un enfocament àgil.
 
-| Situació | Fase del desenvolupament | Justificació |
-| --- | --- | --- |
-| 1. El client explica que l’alumnat ha de consultar tasques pendents | Requisits | Es concreta una necessitat del client i es transforma en un requisit funcional d’AulaTask. |
-| 2. L’equip decideix com s’organitzaran les dades | Anàlisi i disseny | Abans de programar, l’equip defineix el model de dades: tasques, usuaris, estat i data límit. |
-| 3. Es prepara l’estructura de pantalles | Anàlisi i disseny | Es dissenya la interfície i el recorregut que seguiran professorat i alumnat. |
-| 4. L’equip crea les funcionalitats previstes | Implementació | Es transforma el disseny en una aplicació que permet crear i consultar tasques. |
-| 5. Es comprova que una tasca sense data límit no es puga guardar | Proves | Es verifica una regla del requisit i es comprova el comportament davant d’una dada no vàlida. |
-| 6. Es publica una nova versió | Desplegament | La versió validada es posa a disposició dels usuaris en l’entorn corresponent. |
-| 7. Un usuari comunica que les tasques no apareixen ordenades | Manteniment | És una incidència detectada després del desplegament que cal registrar i analitzar. |
-| 8. L’equip corregeix el problema i prepara una nova versió | Manteniment | Es corregeix una incidència d’una versió ja publicada; la preparació de la versió tornarà després al desplegament. |
-| 9. El client demana marcar tasques com a completades | Requisits | És una nova necessitat que s’ha d’analitzar, prioritzar i convertir en una futura tasca del backlog. |
+L’objectiu no és únicament aprendre a utilitzar **Trello**, sinó entendre com podem utilitzar un taulell visual per:
 
-### Tasca 2. El cicle no acaba amb el desplegament
+- organitzar un Product Backlog;
+- definir i prioritzar històries d’usuari;
+- seleccionar treball per a un Sprint;
+- descompondre històries d’usuari en tasques tècniques;
+- visualitzar l’estat real del treball;
+- limitar el treball en curs;
+- obtindre feedback;
+- adaptar la planificació quan apareix informació nova.
 
-1. **Per què el manteniment forma part del desenvolupament?**
-   Perquè una aplicació continua necessitant correccions, adaptacions, millores i noves funcionalitats després d’arribar als usuaris. El programari viu en un entorn que canvia i també rep feedback real.
+## Criteris d’avaluació treballats
 
-2. **En quina fase situaria una petició nova del client?**
-   Inicialment en requisits. Després s’hauria de valorar, prioritzar i convertir en una tasca del backlog abans de passar a anàlisi i disseny.
+En aquesta activitat es treballa principalment el criteri següent:
 
-3. **Una aplicació pot tornar a fases anteriors després d’haver sigut desplegada?**
-   Sí. Una incidència pot obligar a tornar a anàlisi, disseny, implementació i proves abans de desplegar una correcció. Una nova funcionalitat també inicia un nou cicle de requisits.
+| Criteri | Descripció |
+| --- | --- |
+| **RA1.g** | S’han identificat les característiques i els escenaris d’ús de les metodologies àgils de desenvolupament de programari. |
 
-4. **Per què és incorrecte pensar que desenvolupar és només escriure codi?**
-   Perquè el desenvolupament també inclou entendre les necessitats, dissenyar la solució, provar-la, documentar-la, controlar els canvis, desplegar-la i mantindre-la.
+---
 
-## 2. Ferramentes del procés
+# 1. Cas d’estudi: DAWBooking
 
-### Tasca 3. Quina ferramenta necessitem?
+Formeu part d’un equip encarregat de desenvolupar **DAWBooking**, una aplicació web destinada a gestionar activitats organitzades pel centre educatiu.
 
-| Necessitat | Tipus de ferramenta | Exemple | Per què? |
-| --- | --- | --- | --- |
-| Escriure i organitzar els fitxers del projecte | IDE o editor de codi | Visual Studio Code | Permet editar fitxers, buscar referències, organitzar carpetes i treballar amb extensions. |
-| Saber qui ha modificat un fitxer i recuperar una versió anterior | Control de versions | Git | Guarda l’historial, identifica els canvis i permet comparar o recuperar versions. |
-| Compartir el projecte entre diversos membres | Repositori remot | GitHub | Centralitza el repositori, facilita la col·laboració i permet revisar canvis mitjançant pull requests. |
-| Saber quines tasques estan pendents, en procés o finalitzades | Gestor de tasques | Trello o Jira | Visualitza el backlog, les prioritats i l’estat del treball. |
-| Comprovar automàticament que una funcionalitat continua funcionant | Ferramenta de proves | pytest | Executa proves repetibles i detecta regressions després dels canvis. |
-| Executar comprovacions quan es publica un canvi | Automatització / CI | GitHub Actions | Pot executar proves, comprovacions de qualitat i construccions sense fer-les manualment. |
-| Mantindre una guia tècnica del projecte | Documentació | Markdown i MkDocs | Permet escriure documentació versionada i publicar-la com un lloc web navegable. |
+El client ens proporciona inicialment les necessitats següents:
 
-### Tasca 4. Avaluació de ferramentes
+- L’alumnat ha de poder consultar les activitats disponibles.
+- Cada activitat ha de mostrar informació com el nom, la data, l’hora i el nombre de places.
+- L’alumnat ha de poder reservar una plaça en una activitat.
+- L’alumnat ha de poder consultar les seues reserves.
+- L’alumnat ha de poder cancel·lar una reserva.
+- El professorat o personal responsable ha de poder crear noves activitats.
+- L’alumnat ha de poder buscar o filtrar activitats.
+- En un futur es podrien incorporar altres millores a l’aplicació.
 
-| Ferramenta | Quina necessitat resol? | Avantatge principal | Possible limitació |
-| --- | --- | --- | --- |
-| Git | Controlar l’historial i els canvis d’AulaTask | Permet treballar amb branques, revisar diferències i recuperar versions | Requereix aprendre conceptes com commits, branques i conflictes |
-| GitHub | Compartir el repositori i coordinar l’equip | Facilita les revisions de codi, les incidències i la col·laboració remota | Depén d’un servei extern i una configuració incorrecta de permisos pot exposar informació |
-| Jira | Organitzar requisits, tasques i incidències | Ofereix fluxos, prioritats, responsables i informes | Pot resultar massa complex per a un equip menut o un projecte senzill |
-| GitHub Actions | Automatitzar proves i construccions | Dona feedback ràpid i repetible quan arriba un canvi | Les configuracions YAML poden ser difícils de mantindre i consumeixen minuts d’execució |
+El client **no ha especificat exactament com s’ha d’implementar cada funcionalitat**. Serà responsabilitat de l’equip analitzar les necessitats i transformar-les en treball que puga ser desenvolupat.
 
-### Es podria desenvolupar només amb un editor?
+---
 
-Per a una prova molt xicoteta, sí, però no seria una solució adequada quan el projecte creix o hi treballen diverses persones. A més d’escriure fitxers, caldria controlar versions, compartir el repositori, gestionar tasques, revisar canvis, executar proves, automatitzar comprovacions i mantindre la documentació. Un editor és una peça útil, però no resol per si mateix l’organització ni la qualitat del projecte.
+# 2. Organització de l’equip
 
-## 3. Scrum o Kanban
+Treballareu en equips de **2 o 3 persones**.
 
-### Tasca 5. Elecció per escenaris
+Durant la simulació existiran les responsabilitats següents:
 
-| Escenari | Metodologia preferent | Per què encaixa? | Problema amb l’altra metodologia |
-| --- | --- | --- | --- |
-| A. Nova plataforma educativa, sis persones i una versió cada dues setmanes | **Scrum** | Els sprints de dues setmanes donen un ritme clar. L’equip pot seleccionar un objectiu de sprint, preparar un increment i revisar-lo amb el client al final de cada període. | Amb Kanban podria faltar una cadència fixa per a la revisió i seria més difícil comprometre un increment concret per a cada període. |
-| B. Aplicació en producció amb incidències i peticions diàries | **Kanban** | El flux continu permet ordenar prioritats, limitar el treball en curs i introduir incidències urgents sense esperar al següent sprint. | Amb Scrum, les incidències imprevistes podrien interrompre sovint l’objectiu del sprint i provocar compromisos difícils de complir. |
-| C. Projecte de classe de sis setmanes amb períodes curts | **Scrum** | Els alumnes poden dividir les sis setmanes en sprints, decidir al principi què intentaran acabar i revisar regularment el progrés. | Amb Kanban hi hauria visibilitat del flux, però podria faltar una planificació temporal comuna i un moment formal de revisió per a tot l’equip. |
+- **Product Owner:** serà el professor. Representarà les necessitats del client i podrà modificar les prioritats del producte.
+- **Scrum Master:** una persona de l’equip. Facilitarà el funcionament de la dinàmica i comprovarà que el taulell es manté actualitzat.
+- **Developers:** totes les persones de l’equip participaran en la definició, desenvolupament i comprovació del treball.
 
-Scrum és especialment útil quan convé treballar amb iteracions i objectius temporals. Kanban encaixa millor quan les peticions arriben de manera contínua i les prioritats canvien sovint. Tots dos poden utilitzar un backlog, limitar el treball obert i incorporar feedback.
+El Scrum Master **no és el cap de l’equip** ni decideix què ha de fer cada persona.
 
-## 4. Interpretació del tauler
+---
 
-El tauler de l’enunciat és:
+# 3. Creació del taulell de Trello
 
-```text
-PENDENT              EN PROCÉS             FET
+Creeu un nou taulell de Trello amb el nom:
 
-T4 Documentació      T2 Pantalla inicial   T1 Requisits
-T5 Proves             T3 Base de dades
-T6 Desplegament
-T7 Nova funcionalitat
-```
+**DAWBooking – Equip X**
 
-1. Hi ha **dues tasques en procés**: T2, Pantalla inicial, i T3, Base de dades.
-2. Limitar el treball en curs ajuda a concentrar l’esforç, detectar bloquejos i acabar tasques abans d’obrir-ne massa. També redueix el canvi constant de context.
-3. Si cada membre començara moltes tasques però no n’acabara cap, augmentaria el treball obert, hi hauria més tasques bloquejades i el lliurament real s’endarreriria.
-4. D’una ullada, el tauler mostra què està pendent, què s’està treballant i què ja està acabat. També permet veure que hi ha dues tasques en curs i quatre pendents.
-5. Kanban representa un flux continu: les tasques avancen quan hi ha capacitat. Scrum agrupa el treball en sprints amb una duració definida, un objectiu i una revisió al final.
+El taulell haurà de contindre, com a mínim, les columnes següents:
 
-## 5. Mapa del projecte
+1. **Product Backlog**
+2. **Sprint Backlog**
+3. **En desenvolupament**
+4. **En proves**
+5. **Fet**
 
-El projecte AulaTask podria organitzar-se així:
+Aquestes columnes representaran el flux del treball durant el projecte.
 
-```mermaid
-flowchart LR
-    R[Requisits<br/>Crear i consultar tasques<br/>Data límit] --> D[Anàlisi i disseny<br/>Model de dades i pantalles]
-    D --> I[Implementació<br/>Funcionalitats d'AulaTask]
-    I --> P[Proves<br/>Validació i regressió]
-    P --> G{Versió acceptada?}
-    G -- No --> D
-    G -- Sí --> U[Desplegament<br/>Publicació per als usuaris]
-    U --> M[Manteniment<br/>Incidències i millores]
-    M --> N[Nova necessitat<br/>Marcar com completada]
-    N --> R
-    K[Gestió àgil<br/>Backlog · prioritats · WIP · feedback] -.-> R
-    K -.-> I
-    K -.-> M
-    E[Ferramentes<br/>VS Code · Git · GitHub<br/>Jira/Trello · pytest<br/>Actions · MkDocs] -.-> D
-    E -.-> P
-    E -.-> U
-```
+---
 
-En aquest mapa, la gestió àgil acompanya tot el procés: ordena el backlog, fa visibles les tasques, controla el treball en curs i incorpora el feedback. El retorn des de manteniment cap a requisits mostra que el desenvolupament és iteratiu i no acaba definitivament en el primer desplegament.
+# 4. Creació del Product Backlog
 
-## 6. Conclusions
+A partir de les necessitats indicades pel client, creeu entre **6 i 8 històries d’usuari**.
 
-1. **Fase més important:** considere especialment importants els requisits, perquè una interpretació incorrecta pot fer que l’equip construïsca una aplicació que no resol la necessitat real. Tot i això, totes les fases depenen les unes de les altres.
-2. **Ferramenta amb més valor per a un equip:** Git aporta molt valor perquè conserva l’historial, permet treballar en paral·lel i facilita revisar o recuperar canvis.
-3. **Quan utilitzaria Kanban:** en manteniment, suport i projectes on les tasques arriben de manera contínua i les prioritats poden canviar.
-4. **Quan utilitzaria Scrum:** en un producte nou o un projecte amb objectius temporals, sprints definits i necessitat de revisar increments periòdics amb el client.
-5. **Què significa desenvolupar programari:** transformar una necessitat en una solució usable i mantinguda. Inclou analitzar, dissenyar, construir, provar, desplegar, documentar i millorar el producte amb el feedback dels usuaris.
+Utilitzeu el format:
 
-### Checklist final
+> Com a **[tipus d’usuari]**\
+> vull **[funcionalitat]**\
+> per a **[benefici o necessitat]**.
 
-- [x] Situacions classificades segons les fases del desenvolupament.
-- [x] Decisions justificades.
-- [x] Necessitats relacionades amb ferramentes adequades.
-- [x] Quatre ferramentes valorades.
-- [x] Tres escenaris de Scrum/Kanban resolts.
-- [x] Tauler Kanban interpretat.
-- [x] Mapa del projecte creat amb Mermaid.
-- [x] Conclusions respostes.
-- [x] No s’ha inclòs codi ni s’ha desenvolupat cap funcionalitat.
+Exemple:
+
+> Com a alumne\
+> vull consultar les activitats disponibles\
+> per a poder decidir en quina activitat participar.
+
+Cada història d’usuari serà una **targeta de Trello**.
+
+## Informació de cada targeta
+
+Cada targeta haurà d’incloure:
+
+### Identificador i títol
+
+Exemple:
+
+**US01 · Consultar activitats**
+
+### Història d’usuari
+
+Inclosa en la descripció de la targeta.
+
+### Prioritat
+
+Utilitzeu etiquetes:
+
+- 🔴 Alta
+- 🟡 Mitjana
+- 🟢 Baixa
+
+### Criteris d’acceptació
+
+Afegiu entre **2 i 4 condicions observables** que permeten decidir si la història està realment acabada.
+
+Exemple:
+
+**US03 · Reservar una activitat**
+
+Criteris d’acceptació:
+
+- Es pot seleccionar una activitat disponible.
+- No és possible reservar si no queden places.
+- La reserva queda registrada.
+- L’usuari rep una confirmació.
+
+---
+
+# 5. Priorització del Product Backlog
+
+Ordeneu les històries del **Product Backlog** de major a menor importància.
+
+Imagineu que no disposeu de temps suficient per implementar totes les funcionalitats.
+
+Pregunteu-vos:
+
+- Quines funcionalitats aporten més valor?
+- Quines són necessàries perquè el producte siga útil?
+- Quines podrien esperar a una versió posterior?
+
+La posició de les targetes dins del Product Backlog haurà de representar aquesta prioritat.
+
+---
+
+# 6. Estimació del treball
+
+Assigneu una estimació aproximada a cada història utilitzant els valors:
+
+**1 – 2 – 3 – 5 – 8 punts**
+
+Els punts no representen hores exactes.
+
+Representen una estimació relativa de:
+
+- quantitat de treball;
+- dificultat;
+- incertesa;
+- complexitat.
+
+Incloeu l’estimació en la descripció de cada targeta.
+
+---
+
+# 7. Sprint Planning
+
+Comença el **Sprint 1**.
+
+El vostre equip té una capacitat màxima aproximada de:
+
+**8 punts**
+
+Seleccioneu del Product Backlog les històries que penseu que podeu completar.
+
+Moveu-les de:
+
+**Product Backlog → Sprint Backlog**
+
+Definiu també un objectiu breu per al Sprint.
+
+Exemple:
+
+> **Sprint Goal:** aconseguir que l’alumnat puga consultar activitats i iniciar el procés de reserva.
+
+---
+
+# 8. De la història d’usuari a les tasques tècniques
+
+Una història d’usuari descriu principalment **què necessita l’usuari i quin valor espera obtindre**.
+
+Per poder implementar-la, l’equip de desenvolupament ha de decidir **com construir-la**.
+
+Per cada història seleccionada per al Sprint, creeu dins de la targeta una checklist anomenada:
+
+**Tasques tècniques**
+
+Exemple:
+
+### Història
+
+> Com a alumne vull reservar una activitat per poder assegurar-me una plaça.
+
+### Possibles tasques tècniques
+
+- [ ] Dissenyar la interfície de reserva.
+- [ ] Crear el formulari.
+- [ ] Implementar la lògica de reserva.
+- [ ] Comprovar les places disponibles.
+- [ ] Guardar la reserva.
+- [ ] Gestionar possibles errors.
+- [ ] Realitzar les proves.
+
+Observeu la diferència:
+
+**Necessitat → Història d’usuari → Tasques tècniques**
+
+La història explica principalment **què volem aconseguir**.
+
+Les tasques expliquen **què haurà de fer tècnicament l’equip per aconseguir-ho**.
+
+---
+
+# 9. Desenvolupament del Sprint
+
+Comenceu a treballar sobre les històries seleccionades.
+
+En aquesta simulació **no serà necessari programar l’aplicació completa**.
+
+Podeu representar el resultat mitjançant:
+
+- wireframes;
+- esquemes;
+- prototips;
+- dissenys de pantalles;
+- descripcions de comportament.
+
+Quan comenceu una història:
+
+**Sprint Backlog → En desenvolupament**
+
+Quan considereu que està implementada:
+
+**En desenvolupament → En proves**
+
+Una altra persona de l’equip haurà de comprovar els seus **criteris d’acceptació**.
+
+Si els compleix:
+
+**En proves → Fet**
+
+Si no els compleix:
+
+**En proves → En desenvolupament**
+
+Una història no està acabada perquè estiga “quasi feta”.
+
+Només passarà a **Fet** quan complisca els criteris establits.
+
+---
+
+# 10. Límit de treball en curs — WIP
+
+Durant el Sprint aplicarem una regla pròpia de Kanban:
+
+> **En la columna “En desenvolupament” no pot haver-hi més de 2 targetes simultàniament.**
+
+Per tant, abans de començar una nova història haureu d’intentar acabar, provar o desbloquejar alguna de les que ja estan en desenvolupament.
+
+L’objectiu és evitar tindre moltes coses començades però poques realment acabades.
+
+---
+
+# 11. Daily Scrum
+
+Durant el Sprint el professor indicarà el moment de realitzar una breu **Daily Scrum**.
+
+La reunió tindrà una duració màxima aproximada d’**1 minut per equip**.
+
+Cada membre explicarà breument:
+
+- Què estic fent?
+- Què faré a continuació?
+- Tinc algun impediment o bloqueig?
+
+L’objectiu no és informar el professor, sinó que l’equip compartisca informació i detecte possibles problemes.
+
+---
+
+# 12. Sprint Review
+
+Quan finalitze el Sprint, deixareu de treballar.
+
+L’equip mostrarà al Product Owner:
+
+- el taulell;
+- les històries completades;
+- els prototips o resultats generats.
+
+El Product Owner comprovarà si les històries compleixen els seus criteris d’acceptació.
+
+Només les històries correctament completades podran romandre en:
+
+**Fet**
+
+---
+
+# 13. Feedback del client
+
+Després de veure el primer increment del producte, el Product Owner proporcionarà **nova informació procedent dels usuaris**.
+
+Aquesta informació podrà provocar:
+
+- canvis de prioritat;
+- noves necessitats;
+- modificacions d’històries existents;
+- aparició de noves històries.
+
+Quan rebeu el feedback:
+
+1. Analitzeu-lo.
+2. Modifiqueu el Product Backlog.
+3. Reordeneu les prioritats.
+4. No modifiqueu arbitràriament allò que ja està acabat.
+5. Utilitzeu la nova informació per decidir el treball futur.
+
+L’objectiu és observar que el pla inicial **pot evolucionar quan apareix informació nova**.
+
+---
+
+# 14. Sprint Retrospective
+
+Abans de començar un nou Sprint, realitzeu una retrospectiva molt breu.
+
+Com a equip, responeu:
+
+### Què ha funcionat bé?
+
+### Què ens ha dificultat el treball?
+
+### Què canviarem en el pròxim Sprint?
+
+Heu d’acordar almenys **una millora concreta**.
+
+Exemples:
+
+- No començar tantes tasques simultàniament.
+- Definir millor els criteris d’acceptació.
+- Coordinar-nos abans de modificar una història.
+- Dividir millor les tasques tècniques.
+- Actualitzar Trello immediatament quan canvia l’estat del treball.
+
+---
+
+# 15. Sprint 2
+
+A partir del Product Backlog actualitzat:
+
+1. Torneu a seleccionar les històries prioritàries.
+2. Respecteu la capacitat indicada pel professor.
+3. Moveu-les al Sprint Backlog.
+4. Reviseu les tasques tècniques.
+5. Desenvolupeu un nou increment.
+6. Manteniu actualitzat el taulell.
+7. Respecteu el límit WIP.
+
+L’objectiu és comprovar com el producte evoluciona mitjançant:
+
+**Planificació → Desenvolupament → Proves → Feedback → Adaptació**
+
+---
+
+# 16. Evidències a entregar
+
+Cada equip haurà d’entregar:
+
+### 1. Enllaç o captura del taulell final de Trello
+
+Ha de permetre observar:
+
+- Product Backlog;
+- Sprint Backlog;
+- històries finalitzades;
+- prioritats;
+- estat de les diferents targetes.
+
+### 2. Històries d’usuari
+
+Com a mínim **6 històries correctament redactades**.
+
+### 3. Criteris d’acceptació
+
+Cada història seleccionada per a un Sprint haurà de disposar de criteris que permeten determinar si està acabada.
+
+### 4. Tasques tècniques
+
+Les històries desenvolupades hauran d’incloure una checklist amb les principals tasques necessàries per implementar-les.
+
+### 5. Retrospectiva
+
+Indiqueu breument:
+
+- què ha funcionat;
+- què ha dificultat el treball;
+- quina millora heu decidit aplicar.
+
+---
+
+# 17. Reflexió individual
+
+Finalment, cada alumne/a respondrà individualment les preguntes següents:
+
+### 1.
+
+Explica amb les teues paraules la diferència entre:
+
+- Product Backlog;
+- Sprint Backlog;
+- història d’usuari;
+- tasca tècnica.
+
+### 2.
+
+Explica un exemple de com el feedback del Product Owner ha provocat una modificació de la planificació.
+
+### 3.
+
+Per què no és convenient tindre moltes targetes simultàniament en la columna **En desenvolupament**?
+
+### 4.
+
+Indica almenys **tres característiques d’una metodologia àgil** que hages observat durant aquesta activitat.
+
+### 5.
+
+Imagina ara un projecte en què:
+
+- els requisits són molt estables;
+- existeix molta documentació obligatòria;
+- qualsevol canvi necessita una aprovació formal;
+- és difícil obtindre feedback freqüent dels usuaris.
+
+Consideres que utilitzar Scrum seria necessàriament la millor opció?
+
+**Justifica la resposta.**
+
+---
+
+# Què heu d’aprendre amb aquesta activitat?
+
+En acabar hauríeu de ser capaços d’explicar que:
+
+- Agile no significa treballar sense planificació.
+- Un Product Backlog representa el treball potencial del producte i les seues prioritats.
+- Un Sprint Backlog conté el treball seleccionat per al Sprint.
+- Una història d’usuari expressa una necessitat o valor per a l’usuari.
+- Una història es pot descompondre en tasques tècniques.
+- Els criteris d’acceptació ajuden a determinar quan una funcionalitat està acabada.
+- El treball pot visualitzar-se mitjançant un taulell.
+- Limitar el treball en curs ajuda a concentrar l’esforç.
+- Scrum treballa mitjançant inspecció i adaptació.
+- El feedback pot modificar les prioritats futures.
+- Un desenvolupament àgil busca generar valor en increments menuts.
+- Agile o Scrum no són necessàriament la millor opció per a qualsevol projecte.
+
+[Activitat 1. Del codi a l’execució](../activitat-1-codi-execucio.md) · [Pàgina de la UP2](../../up2-elements-eines.md)

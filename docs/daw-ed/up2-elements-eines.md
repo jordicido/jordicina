@@ -17,7 +17,7 @@ El fil conductor serà una aplicació web de gestió de reserves. Ens ajudarà a
 | Duració de referència | **11 hores** |
 | Resultat d’aprenentatge | **RA1** |
 | Pes de referència | **15 %** |
-| Producte final | Anàlisi del recorregut d’un programa fins a la seua posada en funcionament |
+| Producte final | Anàlisi del recorregut d’un programa i simulació de la planificació i adaptació d’un projecte àgil |
 | Forma de treball | Explicacions, exemples i teoria guiada |
 
 ## Què aprendràs
@@ -48,7 +48,7 @@ El fil conductor serà una aplicació web de gestió de reserves. Ens ajudarà a
 | Activitat | Producte |
 | --- | --- |
 | [1. Del codi a l’execució](up2/activitats/activitat-1-codi-execucio.md) | Laboratori comparatiu de C, Java, Python i JavaScript, amb mapes d’execució, taula forense i anàlisi de processos. |
-| [2. Del requisit al lliurament](up2/activitats/activitat-2-de-la-idea-al-lliurament/informe.md) | Anàlisi del cicle de desenvolupament d’AulaTask, ferramentes, Scrum, Kanban i mapa del projecte. |
+| [2. Gestionem un projecte amb Scrum, Kanban i Trello](up2/activitats/activitat-2-de-la-idea-al-lliurament/informe.md) | Simulació amb DAWBooking per crear i prioritzar un Product Backlog, planificar Sprints, limitar el WIP i adaptar el treball amb feedback. |
 
 ## Resultat d’aprenentatge i criteris
 
