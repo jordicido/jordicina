@@ -473,4 +473,4 @@ En acabar hauríeu de ser capaços d’explicar que:
 - Un desenvolupament àgil busca generar valor en increments menuts.
 - Agile o Scrum no són necessàriament la millor opció per a qualsevol projecte.
 
-[Activitat 1. Del codi a l’execució](../activitat-1-codi-execucio.md) · [Pàgina de la UP2](../../up2-elements-eines.md)
+[Activitat 1. Del codi a l’execució](../activitat-1-codi-execucio.md) · [Pàgina de la UP2](../../../up2-elements-eines.md)
