@@ -6,7 +6,7 @@ hide:
 
 ## Què és la redundància?
 
-La **redundància** consisteix a disposar d’informació duplicada o d’informació addicional que permeta continuar funcionant quan falla un component. El seu objectiu principal és augmentar la disponibilitat i la tolerància a fallades.
+La **redundància** consisteix a disposar d’informació duplicada o d’informació addicional que permeta continuar funcionant quan falla un component. El seu objectiu principal és augmentar la disponibilitat i la tolerància a fallades. Hola Lucia
 
 ## RAID
 
