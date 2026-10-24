@@ -4,113 +4,186 @@ hide:
 ---
 # Activitat 3. Còpies de seguretat i restauració
 
-## Finalitat
+## Situació
 
-Realitzar còpies completes i incrementals, restaurar-les, provar `rsync`, utilitzar un mitjà remot o extraïble i redactar una política de còpies. Treballareu **RA2.e**, **RA2.f**, **RA2.g**, **RA2.h** i **RA2.i**.
+El RAID implantat en l'activitat anterior protegeix l'empresa davant l'avaria física d'un disc.
 
-## Preparació
+Però apareix un nou problema.
 
-Feu la pràctica en una màquina virtual o en un directori de proves:
+Un usuari elimina accidentalment informació important.
 
-```bash
-mkdir -p ~/dades/{documents,projectes,fotos} ~/backups
-echo "Factura 001" > ~/dades/documents/factura001.txt
-echo "Projecte inicial" > ~/dades/projectes/projecte.txt
-echo "Informació de prova" > ~/dades/documents/informe.txt
-find ~/dades -type f
+Els dos discos del RAID funcionen correctament i, precisament perquè estan sincronitzats, **l'eliminació també afecta les dades redundants**.
+
+L'empresa necessita una estratègia de còpies de seguretat.
+
+## Objectius
+
+En acabar l'activitat hauràs de ser capaç de:
+
+- seleccionar una estratègia de còpia de seguretat;
+- utilitzar un dispositiu diferent per emmagatzemar les còpies;
+- realitzar còpies completes;
+- realitzar còpies incrementals;
+- restaurar informació després d'una pèrdua;
+- comprovar la integritat de les dades recuperades;
+- diferenciar disponibilitat i recuperació.
+
+### Criteris treballats
+
+Principalment:
+
+- **CA 2.e:** seleccionar estratègies per a la realització de còpies de seguretat.
+- **CA 2.f:** tindre en compte la freqüència i l'esquema de rotació.
+- **CA 2.g:** realitzar còpies de seguretat amb diferents estratègies.
+- **CA 2.h:** identificar característiques dels mitjans d'emmagatzematge remots i extraïbles.
+- **CA 2.i:** utilitzar mitjans d'emmagatzematge remots i extraïbles.
+
+## Part 1. Preparació del disc de còpies
+
+Apaga la màquina virtual i afig un nou disc virtual destinat exclusivament a còpies de seguretat.
+
+Capacitat recomanada:
+
+**16 GB o superior.**
+
+Inicia Ubuntu i identifica el nou dispositiu.
+
+Prepara'l amb un sistema de fitxers adequat i munta'l en:
+
+```text
+/mnt/backup
 ```
 
-## Part A. Còpia completa
+### Evidència 1
 
-```bash
-tar --listed-incremental=~/backups/snapshot.snar \
-  -czvf ~/backups/backup_complet.tar.gz ~/dades
-ls -lh ~/backups
+Mostra amb `lsblk` o una ferramenta equivalent:
+
+- disc del sistema;
+- discos del RAID;
+- disc destinat a les còpies;
+- punts de muntatge.
+
+## Part 2. Còpia completa
+
+Abans de provocar cap incidència, realitza una **còpia completa** del contingut de:
+
+```text
+/srv/dades
 ```
 
-## Part B. Canvis i incrementals
+La còpia ha d'emmagatzemar-se en:
 
-```bash
-echo "Nova línia" >> ~/dades/projectes/projecte.txt
-echo "Factura 002" > ~/dades/documents/factura002.txt
-
-tar --listed-incremental=~/backups/snapshot.snar \
-  -czvf ~/backups/backup_incremental_01.tar.gz ~/dades
-
-echo "Nou document" > ~/dades/documents/document_nou.txt
-tar --listed-incremental=~/backups/snapshot.snar \
-  -czvf ~/backups/backup_incremental_02.tar.gz ~/dades
-ls -lh ~/backups
+```text
+/mnt/backup
 ```
 
-Expliqueu per què les còpies incrementals poden ocupar menys espai que la completa i quin ordre caldria seguir per restaurar l’estat final.
+Utilitza una ferramenta adequada de Linux.
 
-## Part C. Pèrdua i restauració
+La còpia haurà de conservar l'estructura dels directoris i permetre posteriorment la restauració.
 
-Comproveu primer que els tres arxius existeixen. En la màquina de proves, traslladeu les dades i restaureu en una carpeta nova:
+### Evidència 2
 
-```bash
-mv ~/dades ~/dades_perdudes
-mkdir ~/restauracio
-cd ~/restauracio
-tar --listed-incremental=/dev/null -xzvf ~/backups/backup_complet.tar.gz
-tar --listed-incremental=/dev/null -xzvf ~/backups/backup_incremental_01.tar.gz
-tar --listed-incremental=/dev/null -xzvf ~/backups/backup_incremental_02.tar.gz
-find . -type f
+Indica:
+
+- ferramenta utilitzada;
+- ordre executada;
+- ubicació de la còpia;
+- mida aproximada;
+- data i hora.
+
+## Part 3. Canvis en les dades
+
+Després de la còpia completa:
+
+1. crea alguns fitxers nous;
+2. modifica almenys dos fitxers existents;
+3. elimina un fitxer que no siga important.
+
+Anota quins canvis has realitzat.
+
+Ara realitza una **còpia incremental** que continga els canvis produïts des de l'última còpia.
+
+### Evidència 3
+
+Mostra les còpies disponibles i explica breument la diferència entre:
+
+- còpia completa;
+- còpia incremental.
+
+## Part 4. Incident
+
+Ara es produeix l'error.
+
+Elimina completament:
+
+```text
+/srv/dades/projectes
 ```
 
-Comproveu contingut, noms, permisos i les modificacions esperades.
+Comprova que el directori ja no existeix.
 
-## Part D. `rsync`
+Observa també l'estat del RAID.
 
-```bash
-mkdir -p ~/backup_rsync
-rsync -av --dry-run ~/restauracio/ ~/backup_rsync/
-rsync -av ~/restauracio/ ~/backup_rsync/
-echo "Canvi posterior" >> ~/restauracio/dades/projectes/projecte.txt
-rsync -av ~/restauracio/ ~/backup_rsync/
+### Pregunta
+
+**El RAID ha detectat alguna avaria? Per què?**
+
+## Part 5. Restauració
+
+Utilitza les còpies creades anteriorment per recuperar la informació eliminada.
+
+L'objectiu és que:
+
+```text
+/srv/dades/projectes
 ```
 
-Descriviu què transfereix principalment la segona execució i per què sincronització i backup no són exactament el mateix.
+torne a contindre la informació que tenia abans de l'incident.
 
-## Part E. Còpia remota i extraïble
+Comprova que els fitxers recuperats poden obrir-se i que el seu contingut és correcte.
 
-Si teniu una segona màquina amb SSH:
+### Evidència 4
 
-```bash
-rsync -av ~/restauracio/ usuari@IP_SERVIDOR:/home/usuari/backup/
-```
+Mostra:
 
-Si no hi ha una màquina remota, utilitzeu un segon disc virtual o una carpeta compartida que represente la destinació. Per a un suport extraïble:
+- l'estat abans de restaurar;
+- el procés de restauració;
+- l'estat final.
 
-```bash
-cp ~/backups/backup_complet.tar.gz /mnt/usb/
-sync
-```
+## Part 6. Política de còpies
 
-Expulseu-lo correctament. Expliqueu com el xifraríeu i com el guardaríeu fora de la ubicació principal.
+Proposa una estratègia senzilla per a este servidor.
 
-## Part F. Política de còpies
+Indica:
 
-Redacteu una política per a un ordinador amb documents importants:
+- amb quina freqüència faries una còpia completa;
+- amb quina freqüència faries còpies incrementals;
+- quantes còpies conservaries;
+- on les guardaries.
 
-| Element | Decisió |
-| --- | --- |
-| Dades que es copiaran | |
-| Tipus de còpia | |
-| Freqüència | |
-| Retenció i rotació | |
-| Còpia local | |
-| Còpia externa | |
-| Mitjà extraïble | |
-| RPO i RTO | |
-| Procediment de restauració | |
-| Prova periòdica | |
+Explica també què milloraries respecte a guardar la còpia en un disc connectat permanentment al mateix servidor.
 
-La proposta ha de complir, si és possible, la regla 3-2-1.
+## Reflexió final
 
-## Lliurament
+Indica quin mecanisme utilitzaries davant de cada situació:
 
-Incloeu l’esquema de la política, captures o eixides de la còpia completa, les incrementals, la restauració, `rsync`, la còpia remota o simulada i el mitjà extraïble. Afegiu una breu reflexió sobre què passaria si la còpia local també quedara xifrada.
+| Situació | RAID o còpia de seguretat? |
+|---|---|
+| Falla físicament un dels discos de dades | |
+| Un usuari elimina una carpeta | |
+| Un fitxer queda corrupte | |
+| Es modifica accidentalment un document | |
+| Falla un disc però les dades han de continuar disponibles | |
 
-[Activitat 4. Clonezilla](activitat-4-clonezilla.md) · [Pàgina principal de la UP2](../../ut2-emmagatzematge.md)
+## Abans de continuar
+
+Conserva:
+
+- el disc del sistema;
+- el RAID;
+- les dades;
+- el disc de còpies.
+
+La pròxima activitat partirà de **la mateixa màquina virtual**.
+
+[Activitat 4. Imatge i recuperació completa amb Clonezilla](activitat-4-clonezilla.md) · [Pàgina principal de la UP2](../../ut2-emmagatzematge.md)

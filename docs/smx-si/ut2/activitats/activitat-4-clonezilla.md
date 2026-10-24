@@ -2,67 +2,185 @@
 hide:
   - navigation
 ---
-# Activitat 4. Creació i restauració d’una imatge amb Clonezilla
+# Activitat 4. Imatge i recuperació completa amb Clonezilla
 
-## Finalitat
+## Situació
 
-Crear una imatge completa d’un sistema en una màquina virtual, modificar-lo, restaurar la imatge i demostrar que l’estat original s’ha recuperat. Treballareu **RA2.j**.
+L'empresa ja disposa de:
 
-## Preparació
+- redundància davant l'avaria d'un disc de dades;
+- còpies de seguretat per recuperar fitxers.
 
-Utilitzeu una màquina virtual Ubuntu o Windows amb aplicacions, configuració personalitzada i alguns documents. Creeu un document identificable, instal·leu una aplicació o canvieu una configuració. Aquest serà l’estat que conservareu.
+Però ara es produeix una incidència diferent.
 
-Necessitareu una destinació separada: segon disc virtual, USB o recurs de xarxa. No utilitzeu el disc de producció d’un ordinador real.
+El disc que conté **Ubuntu i tota la configuració del servidor deixa de funcionar**.
 
-## Part A. Crear la imatge
+Les dades del RAID continuen existint, però el servidor ja no pot iniciar-se.
 
-1. Configureu la màquina i comproveu que arranca.
-2. Arranqueu des de la ISO oficial de Clonezilla.
-3. Seleccioneu `device-image`.
-4. Seleccioneu la ubicació, com `local_dev` per a un segon disc.
-5. Trieu `savedisk` per guardar el disc complet.
-6. Assigneu un nom descriptiu, com `ubuntu_smx_up2`.
-7. Reviseu dues vegades el disc origen i confirmeu.
-8. Comproveu que la imatge existeix a la destinació.
+L'objectiu serà preparar un mecanisme que permeta recuperar ràpidament el sistema complet.
 
-## Part B. Modificar el sistema
+## Objectius
 
-Arranqueu el sistema normalment i feu canvis visibles:
+En acabar l'activitat hauràs de ser capaç de:
 
-- elimineu el document inicial;
-- canvieu el fons o una configuració;
-- desinstal·leu l’aplicació;
-- creeu fitxers nous.
+- crear una imatge d'un sistema en funcionament;
+- emmagatzemar-la en un dispositiu diferent;
+- substituir virtualment un disc avariat;
+- restaurar una imatge sobre un disc nou;
+- comprovar que el sistema recuperat funciona;
+- diferenciar una imatge del sistema d'una còpia de fitxers.
 
-Anoteu els canvis per poder comprovar després que han desaparegut.
+### Criteri treballat
 
-## Part C. Restaurar
+Principalment:
 
-1. Torneu a arrencar Clonezilla.
-2. Seleccioneu `device-image` i localitzeu `ubuntu_smx_up2`.
-3. Trieu `restoredisk`.
-4. Seleccioneu el disc de destinació.
-5. Confirmeu només després de verificar la destinació.
-6. Espereu la finalització i reinicieu.
+- **CA 2.j:** crear i restaurar imatges de suport de sistemes en funcionament.
 
-!!! danger "La restauració sobreescriu"
-    La imatge reemplaçarà el contingut actual del disc de destinació. Practiqueu amb una màquina virtual i conserveu una còpia de les dades necessàries.
+## Part 1. Preparació
 
-## Part D. Verificació
+Comprova que el servidor funciona correctament.
 
-Comproveu que el sistema arranca, que el document original torna a existir, que la configuració i l’aplicació s’han recuperat i que els canvis posteriors han desaparegut.
+Verifica:
 
-## Informe
+- que Ubuntu inicia;
+- que el RAID està actiu;
+- que `/srv/dades` és accessible;
+- que el disc de còpies està disponible.
 
-Incloeu:
+Anota quin dispositiu conté el sistema operatiu.
 
-1. estat inicial i configuració de la màquina;
-2. destinació i nom de la imatge;
-3. passos de creació;
-4. canvis realitzats després;
-5. passos de restauració;
-6. resultat i temps aproximat;
-7. diferència entre imatge i còpia de fitxers;
-8. una mesura que reduiria el risc de restaurar el disc equivocat.
+**És molt important identificar correctament els discos abans de continuar.**
 
-[Autoavaluació](autoavaluacio.md) · [Pàgina principal de la UP2](../../ut2-emmagatzematge.md)
+## Part 2. Creació de la imatge
+
+Apaga Ubuntu.
+
+Connecta a la màquina virtual la ISO de **Clonezilla Live** proporcionada o indicada pel professor.
+
+Inicia la màquina des de Clonezilla.
+
+Crea una imatge del **disc que conté Ubuntu**.
+
+La imatge s'haurà de guardar al disc destinat a còpies de seguretat.
+
+No has de crear una imatge del RAID.
+
+### Evidència 1
+
+Documenta:
+
+- disc d'origen;
+- dispositiu on s'emmagatzema la imatge;
+- nom assignat a la imatge;
+- procés completat correctament.
+
+## Part 3. Simulació de la fallada del disc del sistema
+
+Una vegada creada la imatge:
+
+1. apaga la màquina;
+2. desconnecta de VirtualBox el disc original que conté Ubuntu;
+3. **no l'esborres**, simplement deixa'l desconnectat;
+4. crea un disc virtual nou de capacitat igual o superior;
+5. connecta'l a la màquina virtual.
+
+Intenta iniciar el servidor sense Clonezilla.
+
+### Pregunta
+
+**Què ocorre i per què?**
+
+## Part 4. Restauració
+
+Inicia novament des de Clonezilla.
+
+Selecciona la imatge creada anteriorment i restaura-la sobre el disc nou.
+
+Presta especial atenció a la selecció del disc de destinació.
+
+Una selecció incorrecta podria destruir altres dades.
+
+Quan finalitze:
+
+1. apaga la màquina;
+2. desconnecta la ISO de Clonezilla;
+3. inicia normalment des del disc restaurat.
+
+## Part 5. Verificació
+
+Comprova que:
+
+- Ubuntu inicia correctament;
+- pots iniciar sessió;
+- la configuració del sistema continua disponible;
+- el RAID continua sent detectable;
+- `/srv/dades` continua accessible;
+- els fitxers creats en les activitats anteriors continuen existint.
+
+Si el RAID no es munta automàticament, investiga com tornar a muntar-lo o assemblar-lo.
+
+### Evidència 2
+
+Mostra el servidor arrancat des del **disc restaurat** i l'accés a les dades del RAID.
+
+---
+
+# Informe final de la pràctica incremental
+
+Després de completar les tres activitats, copia i completa la següent taula:
+
+| Incident | Solució principal |
+|---|---|
+| Falla un disc de dades | |
+| Un usuari elimina accidentalment una carpeta | |
+| Un fitxer queda corrupte | |
+| Falla completament el disc del sistema | |
+| Necessitem recuperar Ubuntu amb tota la seua configuració | |
+
+Finalment respon:
+
+### 1. RAID i backup són el mateix?
+
+Justifica la resposta.
+
+### 2. Backup i imatge del sistema són el mateix?
+
+Explica la diferència.
+
+### 3. Quines tres capes de protecció hem implementat?
+
+Completa:
+
+```text
+____________________
+        ↓
+Protecció davant l'avaria d'un disc
+
+____________________
+        ↓
+Recuperació de fitxers i dades
+
+____________________
+        ↓
+Recuperació completa del sistema
+```
+
+### 4. Quin sistema consideres més important?
+
+No hi ha una única resposta correcta. Justifica-la segons el tipus d'incident davant del qual protegeix.
+
+## Lliurament
+
+Per a cada activitat entrega un document amb:
+
+- captures o evidències sol·licitades;
+- ordres principals utilitzades;
+- breu explicació del que has realitzat;
+- resposta a les preguntes plantejades;
+- conclusions.
+
+No és necessari capturar cada ordre executada. Les captures han de demostrar **els punts importants del procés i el resultat final**.
+
+L'objectiu no és acumular captures, sinó demostrar que entens què has configurat, per què ho has fet i com actuaria el sistema davant d'una incidència real.
+
+[Activitat 2. RAID](activitat-2-raid.md) · [Activitat 3. Còpies de seguretat i restauració](activitat-3-copies-restauracio.md) · [Pàgina principal de la UP2](../../ut2-emmagatzematge.md)
