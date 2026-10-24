@@ -56,9 +56,9 @@ Utilitza aquesta pàgina com a índex de la UP2 per seguir l’ordre recomanat, 
 
 | Activitat | Producte |
 | --- | --- |
-| [2. RAID 5 amb `mdadm`](ut2/activitats/activitat-2-raid.md) | RAID de prova, simulació d’una fallada i reconstrucció. |
-| [3. Còpies i restauració](ut2/activitats/activitat-3-copies-restauracio.md) | Còpia completa, incrementals, `rsync`, mitjà remot i política 3-2-1. |
-| [4. Imatge amb Clonezilla](ut2/activitats/activitat-4-clonezilla.md) | Creació, modificació, restauració i verificació d’una imatge. |
+| [2. Tolerància a fallades amb RAID](ut2/activitats/activitat-2-raid.md) | Creació d’un RAID 1, simulació d’una avaria, disponibilitat de les dades i reconstrucció. |
+| [3. Còpies de seguretat i restauració](ut2/activitats/activitat-3-copies-restauracio.md) | Còpia completa i incremental en un disc separat, incident, restauració i política de còpies. |
+| [4. Imatge i recuperació completa amb Clonezilla](ut2/activitats/activitat-4-clonezilla.md) | Creació d’una imatge del sistema, substitució del disc d’arrancada, restauració i verificació. |
 | [Autoavaluació](ut2/activitats/autoavaluacio.md) | Qüestionari individual de repàs. |
 
 ## Evidències avaluables
