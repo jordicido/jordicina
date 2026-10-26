@@ -19,7 +19,7 @@ L'objectiu no és únicament crear el RAID, sinó entendre:
 Treballareu principalment els criteris:
 
 - **RA2.b:** tindre en compte factors inherents a l'emmagatzematge de la informació, especialment la disponibilitat.
-- **RA2.d:** descriure i utilitzar tecnologies d'emmagatzematge redundant.
+- **RA2.d:** descriure les tecnologies d'emmagatzematge redundant i distribuït.
 
 ---
 
@@ -57,7 +57,7 @@ No heu d'instal·lar Ubuntu.
 
 Importeu l'arxiu `.ova` proporcionat pel professor en VirtualBox.
 
-Les credencials de la màquina són:
+Les credencials són:
 
 ```text
 Usuari: alumne
@@ -74,15 +74,14 @@ Els discos han de ser:
 - reservats dinàmicament;
 - connectats al controlador SATA de la màquina virtual.
 
-No modifiqueu el disc original d'Ubuntu.
+!!! warning "Important"
+    No modifiqueu ni elimineu el disc original d'Ubuntu.
 
 ---
 
 # 2. Identificació dels discos
 
-Inicieu Ubuntu i comproveu els dispositius d'emmagatzematge disponibles.
-
-Utilitzeu:
+Inicieu Ubuntu i comproveu els dispositius d'emmagatzematge disponibles:
 
 ```bash
 lsblk
@@ -101,15 +100,14 @@ sdc       4G
 
 Els noms poden variar lleugerament.
 
-### Important
-
-Abans d'executar qualsevol ordre de configuració de discos, heu d'identificar correctament:
+Abans d'executar qualsevol ordre sobre els discos, heu d'identificar correctament:
 
 - quin és el disc d'Ubuntu;
 - quin és el primer disc nou;
 - quin és el segon disc nou.
 
-**No utilitzeu mai el disc que conté Ubuntu per crear el RAID.**
+!!! warning "Atenció"
+    No utilitzeu mai el disc que conté Ubuntu per crear el RAID.
 
 ### Evidència 1
 
@@ -121,9 +119,9 @@ lsblk
 
 I indiqueu:
 
-- disc del sistema:
-- primer disc del RAID:
-- segon disc del RAID:
+- **Disc del sistema:**
+- **Primer disc del RAID:**
+- **Segon disc del RAID:**
 
 ---
 
@@ -137,7 +135,7 @@ Comproveu que està instal·lada:
 mdadm --version
 ```
 
-Si per algun motiu no està disponible, podeu instal·lar-la amb:
+Si no està disponible:
 
 ```bash
 sudo apt update
@@ -154,7 +152,7 @@ Crearem un dispositiu RAID anomenat:
 /dev/md0
 ```
 
-Suposant que els discos nous són `/dev/sdb` i `/dev/sdc`, utilitzeu:
+Suposant que els discos nous són `/dev/sdb` i `/dev/sdc`, executeu:
 
 ```bash
 sudo mdadm --create /dev/md0 \
@@ -176,13 +174,13 @@ Confirmeu l'operació si el sistema ho sol·licita.
 
 # 5. Comprovació de l'estat del RAID
 
-Podeu consultar l'estat general del RAID amb:
+Consulteu l'estat general del RAID amb:
 
 ```bash
 cat /proc/mdstat
 ```
 
-També podeu obtindre informació més detallada amb:
+Podeu obtindre informació més detallada amb:
 
 ```bash
 sudo mdadm --detail /dev/md0
@@ -199,11 +197,16 @@ Responeu:
 3. Quina capacitat aproximada té `/dev/md0`?
 4. Si tenim dos discos de 4 GB, per què el RAID no ofereix aproximadament 8 GB?
 
+!!! question "Investiga"
+    Busca què significa la representació `[UU]` que apareix habitualment en `/proc/mdstat`.
+
+    Explica amb les teues paraules què representa cada `U`.
+
 ---
 
 # 6. Crear el sistema de fitxers
 
-El dispositiu RAID encara no té un sistema de fitxers.
+El dispositiu RAID ja existeix, però encara no té un sistema de fitxers.
 
 Creeu un sistema de fitxers **ext4**:
 
@@ -211,27 +214,38 @@ Creeu un sistema de fitxers **ext4**:
 sudo mkfs.ext4 /dev/md0
 ```
 
-Ara creeu un directori que utilitzarem com a punt de muntatge:
+Ara creeu el directori que utilitzarem com a punt de muntatge:
 
 ```bash
 sudo mkdir -p /srv/dades
 ```
 
-Munteu el RAID en este directori.
-
-Per fer-ho necessitareu utilitzar l'ordre:
-
-```text
-mount
-```
-
-Quan ho tingueu, comproveu el resultat amb:
+Munteu el RAID:
 
 ```bash
-df -h
+sudo mount /dev/md0 /srv/dades
 ```
 
-i:
+Comproveu que s'ha muntat correctament amb:
+
+```bash
+findmnt /srv/dades
+```
+
+Hauríeu d'obtindre una eixida semblant a:
+
+```text
+TARGET      SOURCE    FSTYPE OPTIONS
+/srv/dades /dev/md0  ext4   rw,...
+```
+
+També podeu comprovar-ho amb:
+
+```bash
+df -h /srv/dades
+```
+
+o:
 
 ```bash
 lsblk
@@ -239,17 +253,13 @@ lsblk
 
 ### Evidència 3
 
-Mostreu que:
+Mostreu que `/dev/md0` està muntat en `/srv/dades`.
 
-```text
-/dev/md0
-```
+La captura ha de permetre veure clarament:
 
-està muntat en:
-
-```text
-/srv/dades
-```
+- el dispositiu;
+- el sistema de fitxers;
+- el punt de muntatge.
 
 ---
 
@@ -267,11 +277,9 @@ Dins de `/srv/dades`, creeu:
 └── projectes/
 ```
 
-Podeu utilitzar `mkdir`.
-
 Creeu almenys **dos fitxers dins de cada directori**.
 
-Els fitxers poden ser senzills, però han de contindre algun text.
+Els fitxers han de contindre algun text que permeta identificar-los posteriorment.
 
 Per exemple:
 
@@ -283,35 +291,48 @@ factures/factura1.txt
 factures/factura2.txt
 ```
 
-Utilitzeu `tree` per comprovar l'estructura:
+Podeu visualitzar l'estructura amb:
 
 ```bash
 tree /srv/dades
 ```
 
+!!! question "Busca una solució"
+    Investiga una forma senzilla de:
+
+    - crear diversos directoris des de terminal;
+    - crear un fitxer de text;
+    - escriure contingut dins del fitxer.
+
+    Podeu utilitzar ferramentes com `mkdir`, `nano`, `echo` o altres alternatives.
+
+    No és necessari que tots utilitzeu exactament les mateixes ordres.
+
 ### Evidència 4
 
-Incloeu una captura de l'estructura creada.
+Incloeu una captura de l'estructura creada amb:
+
+```bash
+tree /srv/dades
+```
 
 ---
 
 # 8. Simulació de l'avaria d'un disc
 
-Ara simularem que un dels discos físics del RAID ha fallat.
-
-Abans de continuar, comproveu que podeu llegir els fitxers de:
+Abans de provocar cap fallada, comproveu que podeu accedir als fitxers de:
 
 ```text
 /srv/dades
 ```
 
-Suposant que volem simular una avaria en `/dev/sdb`, executeu:
+Suposant que simularem l'avaria de `/dev/sdb`, executeu:
 
 ```bash
 sudo mdadm /dev/md0 --fail /dev/sdb
 ```
 
-Ara comproveu:
+Comproveu ara l'estat:
 
 ```bash
 cat /proc/mdstat
@@ -331,54 +352,61 @@ Podeu observar una representació semblant a:
 [U_]
 ```
 
-En canvi, un RAID amb els dos discos funcionant apareix habitualment com:
+en lloc de:
 
 ```text
 [UU]
 ```
 
+!!! question "Interpreta el resultat"
+    Explica què creus que representa `[U_]`.
+
+    Relaciona la resposta amb l'estat actual dels dos discos.
+
 ---
 
-# 9. Comprovació de les dades
+# 9. Comprovació de les dades amb el RAID degradat
 
-Sense reparar encara el RAID, comproveu:
+Sense reparar encara el RAID, executeu:
 
 ```bash
 ls /srv/dades
 ```
 
-Obriu alguns dels fitxers que havíeu creat.
+Obriu també alguns dels fitxers que havíeu creat.
 
 ### Evidència 5
 
 Mostreu:
 
-- el RAID degradat;
-- que `/srv/dades` continua accessible.
+- que el RAID està degradat;
+- que `/srv/dades` continua accessible;
+- que encara podeu llegir els fitxers.
 
 Responeu:
 
 1. Per què podem continuar accedint a les dades?
-2. Quin disc està mantenint el sistema en funcionament?
-3. Podríem continuar treballant indefinidament en este estat? Per què?
+2. Quin disc continua mantenint la informació disponible?
+3. Podríem continuar treballant indefinidament en este estat?
+4. Què ocorreria si ara fallara també el segon disc?
 
 ---
 
 # 10. Retirar el disc defectuós
 
-Una vegada marcat el disc com a defectuós, retireu-lo del RAID:
+Una vegada marcat com a defectuós, retireu el disc del RAID:
 
 ```bash
 sudo mdadm /dev/md0 --remove /dev/sdb
 ```
 
-Comproveu de nou:
+Comproveu el resultat amb:
 
 ```bash
 sudo mdadm --detail /dev/md0
 ```
 
-El RAID continuarà funcionant, però només amb un disc.
+El RAID continuarà funcionant amb un únic disc.
 
 ---
 
@@ -386,7 +414,7 @@ El RAID continuarà funcionant, però només amb un disc.
 
 Simularem ara que el tècnic ha substituït el disc avariat.
 
-En esta pràctica reutilitzarem el mateix disc.
+En esta pràctica reutilitzarem el mateix dispositiu.
 
 Torneu a afegir-lo:
 
@@ -406,7 +434,7 @@ També podeu observar-lo contínuament amb:
 watch cat /proc/mdstat
 ```
 
-Eixiu de `watch` amb:
+Per eixir:
 
 ```text
 Ctrl + C
@@ -439,6 +467,10 @@ lsblk
 ```
 
 ```bash
+findmnt /srv/dades
+```
+
+```bash
 tree /srv/dades
 ```
 
@@ -451,9 +483,60 @@ Verifiqueu que:
 
 ---
 
-# 13. RAID no és una còpia de seguretat
+# 13. Què ocorre després de reiniciar?
 
-Ara reflexioneu sobre esta situació.
+Fins ara hem muntat `/dev/md0` manualment:
+
+```bash
+sudo mount /dev/md0 /srv/dades
+```
+
+Reinicieu la màquina:
+
+```bash
+sudo reboot
+```
+
+Quan torne a arrancar, comproveu:
+
+```bash
+findmnt /srv/dades
+```
+
+!!! question "Investiga"
+    Comprova si `/dev/md0` continua muntat automàticament en `/srv/dades`.
+
+    Si no és així, investiga:
+
+    - què és el fitxer `/etc/fstab`;
+    - per a què serveix;
+    - com es pot utilitzar perquè un sistema de fitxers es munte automàticament en iniciar Linux.
+
+!!! tip "Pista"
+    Podeu consultar l'UUID del RAID amb:
+
+    ```bash
+    sudo blkid /dev/md0
+    ```
+
+    Investigueu per què és recomanable utilitzar l'UUID en `/etc/fstab` en lloc d'escriure simplement `/dev/md0`.
+
+!!! warning "Abans de reiniciar"
+    Reviseu bé la línia afegida a `/etc/fstab`.
+
+    Una configuració incorrecta pot provocar problemes durant l'arrancada.
+
+### Evidència 7
+
+Documenteu:
+
+- què ocorria abans de modificar `/etc/fstab`;
+- la línia que heu afegit;
+- el resultat de `findmnt /srv/dades` després de reiniciar.
+
+---
+
+# 14. RAID no és una còpia de seguretat
 
 Imagineu que un usuari executa accidentalment:
 
@@ -461,36 +544,47 @@ Imagineu que un usuari executa accidentalment:
 rm -rf /srv/dades/projectes
 ```
 
-**No executeu esta ordre encara.**
+!!! danger "No executes esta ordre"
+    No elimines la carpeta.
+
+    La situació és només una simulació teòrica en esta activitat.
 
 Responeu:
 
 1. S'eliminaria la carpeta únicament d'un dels discos?
-2. O s'eliminaria del RAID complet?
+2. S'eliminaria dels dos discos del RAID?
 3. Podríem recuperar-la gràcies al RAID 1?
-4. Quin mecanisme necessitaríem per protegir-nos davant este tipus d'incident?
+4. Quin tipus de mecanisme necessitaríem per recuperar dades eliminades?
+
+!!! question "Investiga"
+    Busca la diferència entre:
+
+    - **redundància**;
+    - **còpia de seguretat**.
+
+    Escriu una explicació breu de cada concepte utilitzant les teues pròpies paraules.
 
 Esta situació serà el punt de partida de la pròxima pràctica.
 
 ---
 
-# 14. Conclusions
+# 15. Conclusions
 
 Completeu la següent taula:
 
-| Situació | RAID 1 ens protegeix? |
-|---|---|
-| Falla un dels dos discos | |
-| S'esborra accidentalment un fitxer | |
-| Un usuari modifica incorrectament un document | |
-| Un disc deixa de funcionar | |
-| Un ransomware xifra els fitxers | |
+| Situació | RAID 1 ens protegeix? | Justificació |
+|---|---|---|
+| Falla un dels dos discos | | |
+| S'esborra accidentalment un fitxer | | |
+| Un usuari modifica incorrectament un document | | |
+| Un disc deixa de funcionar | | |
+| Un ransomware xifra els fitxers | | |
 
 Finalment, expliqueu amb les vostres paraules:
 
 ### Quina és la funció principal d'un RAID 1?
 
-La resposta ha d'estar relacionada amb el concepte de **disponibilitat de la informació**.
+Relacioneu la resposta amb el concepte de **disponibilitat de la informació**.
 
 ---
 
@@ -500,6 +594,7 @@ Entregueu un document amb:
 
 - les evidències sol·licitades;
 - les respostes a les preguntes;
+- els resultats de les investigacions indicades;
 - una breu conclusió final.
 
 No és necessari fer una captura de cada ordre.
@@ -511,14 +606,12 @@ Les captures han de demostrar els moments importants:
 3. RAID muntat;
 4. dades creades;
 5. RAID degradat però operatiu;
-6. RAID reconstruït.
+6. RAID reconstruït;
+7. muntatge automàtic després del reinici.
 
-## Important
+!!! warning "Conserveu la màquina virtual"
+    No elimineu el RAID ni els fitxers de `/srv/dades` en finalitzar.
 
-Conserveu esta màquina virtual al final de la pràctica.
-
-**No elimineu el RAID ni els fitxers de `/srv/dades`.**
-
-La següent activitat continuarà treballant sobre **esta mateixa màquina virtual** per implementar un sistema de còpies de seguretat i restauració.
+    La següent activitat continuarà treballant sobre **esta mateixa màquina virtual** per implementar un sistema de còpies de seguretat i restauració.
 
 [Activitat 3. Còpies de seguretat i restauració](activitat-3-copies-restauracio.md) · [Pàgina principal de la UP2](../../ut2-emmagatzematge.md)
