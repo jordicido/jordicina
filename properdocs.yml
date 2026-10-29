@@ -162,7 +162,18 @@ nav:
                   - 7. Logs, monitorització i anàlisi: daw-daw/up2/07-logs-monitoratge.md
                   - 8. Mòduls d'Apache en Docker: daw-daw/up2/08-moduls-apache-docker.md
                   - 9. Projecte AWS i CE2.h: daw-daw/up2/09-projecte-aws-ce2h.md
-              - UP3. Administració de servidors d'aplicacions: daw-daw/up3-servidors-aplicacions.md
+              - UP3. Desplegament d'aplicacions web:
+                  - Presentació: daw-daw/up3-servidors-aplicacions.md
+                  - Índex i seqüència: daw-daw/up3/index.md
+                  - 1. El servidor de aplicaciones: daw-daw/up3/01-servidor-aplicaciones.md
+                  - 2. Configuración y bibliotecas: daw-daw/up3/02-configuracion-bibliotecas.md
+                  - 3. Cooperación entre Apache y Tomcat: daw-daw/up3/03-cooperacion-apache-tomcat.md
+                  - 4. Seguridad del servidor de aplicaciones: daw-daw/up3/04-seguridad-servidor-aplicaciones.md
+                  - 5. Componentes web: daw-daw/up3/05-componentes-web.md
+                  - 6. Ajustes del despliegue: daw-daw/up3/06-ajustes-despliegue.md
+                  - 7. Pruebas y rendimiento: daw-daw/up3/07-pruebas-rendimiento.md
+                  - 8. Administración y documentación: daw-daw/up3/08-administracion-documentacion.md
+                  - 9. Virtualización, contenedores y nube: daw-daw/up3/09-virtualizacion-contenedores-nube.md
               - UP6. Documentació, control de versions i integració contínua: daw-daw/up6-documentacio-versions.md
               - UP4. Servidors de transferència d'arxius: daw-daw/up4-transferencia-arxius.md
               - UP5. Serveis de xarxa implicats en el desplegament: daw-daw/up5-serveis-xarxa.md

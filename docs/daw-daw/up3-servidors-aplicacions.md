@@ -21,6 +21,8 @@ El servidor web pot servir un fitxer, però una aplicació dinàmica necessita e
 
 Hauràs de descriure serveis, fitxers de configuració i biblioteques, connectar el servidor d'aplicacions amb el servidor web, configurar seguretat, fer proves de rendiment i documentar l'administració.
 
+Per estudiar la teoria completa de la unitat, segueix l'[índex de la UP3](up3/index.md), que presenta els nou blocs en l'ordre del RA3.
+
 ## 1. El paper del servidor d'aplicacions
 
 El servidor d'aplicacions proporciona el runtime on s'executa la lògica dinàmica. Pot carregar un artefacte, crear processos o workers, gestionar sessions, aplicar dominis de seguretat, obrir connexions a dades i generar contingut.
