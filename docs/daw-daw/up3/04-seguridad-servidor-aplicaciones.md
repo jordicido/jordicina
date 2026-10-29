@@ -1,135 +1,135 @@
 ---
 hide:
   - navigation
-title: "UP3.4. Seguridad del servidor de aplicaciones"
-description: "Usuarios, permisos, sesiones, TLS, actualizaciones y medidas de seguridad para Tomcat."
+title: "UP3.4. Seguretat del servidor d'aplicacions"
+description: "Usuaris, permisos, sessions, TLS, actualitzacions i mesures de seguretat per a Tomcat."
 ---
 
-# UP3.4. Seguridad del servidor de aplicaciones
+# UP3.4. Seguretat del servidor d'aplicacions
 
-> **RA3.d:** Se han configurado y activado los mecanismos de seguridad del servidor de aplicaciones.
+> **RA3.d:** s'han configurat i activats els mecanismes de Seguretat del servidor d'aplicacions.
 
-## Qué vas a aprender
+## Què aprendràs
 
-Estudiarás:
+En aquest bloc estudiaràs:
 
-- qué riesgos presenta un servidor de aplicaciones;
-- diferencia entre autenticación y autorización;
-- usuarios y roles;
-- acceso a Tomcat Manager;
-- HTTPS y TLS;
-- certificados;
-- sesiones y cookies;
-- principio de mínimo privilegio;
-- medidas básicas de endurecimiento o *hardening*.
+- Quins riscos presenta un servidor d'aplicacions;
+- diferència entre autenticació i autorització;
+- Usuaris i rols;
+- accés a Tomcat Manager;
+- HTTPS i TLS;
+- certificats;
+- Sessions i cookies;
+- principi de Mínim privilegi;
+- mesures bàsiques de endurecimiento o *hardening*.
 
 ---
 
-# 1. Seguridad por capas
+# 1. Seguretat per capes
 
-No existe una única opción que convierta un servidor en “seguro”.
+No existeix una única opció que convierta un servidor en “segur”.
 
-La seguridad se construye mediante varias capas:
+La Seguretat es es construeix mitjançant diverses capes:
 
 ```mermaid
 flowchart TD
-    A["Red / Firewall"] --> B["Apache / Proxy"]
+    A["Xarxa / Firewall"] --> B["Apache / Proxy"]
     B --> C["TLS / HTTPS"]
     C --> D["Tomcat"]
-    D --> E["Autenticación"]
+    D --> E["Autenticació"]
     E --> F["Autorización"]
-    F --> G["Aplicación"]
-    G --> H["Base de datos"]
+    F --> G["Aplicació"]
+    G --> H["Base de dades"]
 ```
 
-Un fallo en una capa no debería implicar automáticamente acceso completo al sistema.
+Un falho en una capa no hauria de implicar automàticament accés complet al sistema.
 
 ---
 
-# 2. Principios básicos
+# 2. principis bàsics
 
-## Confidencialidad
+## confideèncialitat
 
-La información solo puede ser leída por quien tenga autorización.
+La informació només Pot ser leída per qui tinga autorització.
 
-## Integridad
+## integritat
 
-Los datos no deben poder modificarse sin autorización.
+les dades no han de poder modificarse sense autorització.
 
-## Disponibilidad
+## disponibilitat
 
-Los servicios deben estar disponibles cuando se necesitan.
+els serveis han de estar disponibles quan es necessiten.
 
-A estos principios se añaden otros conceptos como:
+A aquests principis es s'afegeixen altres conceptes com:
 
 - autenticidad;
 - trazabilidad;
-- mínimo privilegio;
+- Mínim privilegi;
 - defensa en profundidad.
 
 ---
 
-# 3. Autenticación
+# 3. autenticació
 
-La autenticación responde a:
+La autenticació respon a:
 
 > **¿Quién eres?**
 
-Ejemplos:
+exemples:
 
-- usuario + contraseña;
-- certificado;
+- Usuari + Contrasenya;
+- certificat;
 - token;
-- sistema externo de identidad.
+- sistema extern de identitat.
 
 ```mermaid
 sequenceDiagram
-    participant U as Usuario
+    participant U as Usuari
     participant S as Servidor
 
-    U->>S: Usuario + credencial
+    U->>S: Usuari + cxarxaencial
     S->>S: Verifica identidad
     S-->>U: Identidad autenticada
 ```
 
 ---
 
-# 4. Autorización
+# 4. autorització
 
-La autorización responde a:
+La autorització respon a:
 
-> **Ahora que sé quién eres, ¿qué puedes hacer?**
+> **ara que sé qui eres, ¿Què pots fer?**
 
-Ejemplo:
+exemple:
 
 ```text
 ana    → rol usuario
 jordi  → rol manager
 ```
 
-Permisos:
+permisos:
 
 ```text
 usuario → /perfil
 manager → /perfil + /administracion
 ```
 
-!!! info "No son sinónimos"
+!!! info "No són sinònims"
     **Autenticar** identifica a una persona o sistema.
 
-    **Autorizar** decide qué recursos puede utilizar esa identidad.
+    **Autorizar** decide Què recursos pot utilitzar eixa identitat.
 
 ---
 
-# 5. Roles en Tomcat
+# 5. Rols en Tomcat
 
-Tomcat puede definir roles como:
+Tomcat Pot definir rols com:
 
 ```xml
 <role rolename="manager-gui"/>
 ```
 
-y asignarlos a usuarios:
+i asignarlos a Usuaris:
 
 ```xml
 <user
@@ -138,40 +138,40 @@ y asignarlos a usuarios:
     roles="manager-gui"/>
 ```
 
-El rol `manager-gui` permite utilizar la interfaz web de Tomcat Manager.
+El rol `manager-gui` permet Utilitzar la interfaz web de Tomcat Manager.
 
-!!! danger "Cuenta administrativa"
-    Una cuenta con acceso a Manager puede permitir operaciones muy sensibles, entre ellas desplegar aplicaciones.
+!!! danger "compte administrativa"
+    Una compte amb accés a Manager Pot permetre operacions molt sensibles, entre elles desplegar aplicacions.
 
-    Debe utilizarse únicamente cuando sea necesaria y con credenciales robustas.
+    ha de utilizarse únicament quan sea necessària i amb credeèncials robustas.
 
 ---
 
 # 6. Tomcat Manager
 
-Tomcat Manager permite realizar operaciones como:
+Tomcat Manager permet realitzar operacions com:
 
-- listar aplicaciones;
-- iniciar o detener contextos;
+- listar aplicacions;
+- iniciar o detindre contextos;
 - desplegar;
 - volver a desplegar;
-- consultar sesiones.
+- consultar Sessions.
 
-Por ello, no debería considerarse una página web cualquiera.
+pello, no hauria de considerar-se una pàgina web qualsevol.
 
-Medidas recomendadas:
+mesures recomendadas:
 
-- restringir acceso;
-- utilizar HTTPS;
-- contraseñas robustas;
-- evitar exponerlo a Internet si no es necesario;
-- conceder únicamente roles imprescindibles.
+- restringir accés;
+- Utilitzar HTTPS;
+- Contrasenyes robustas;
+- evitar exposarho a Internet si no és necessari;
+- conceder únicament rols imprescindibles.
 
 ---
 
-# 7. HTTP frente a HTTPS
+# 7. HTTP davant de HTTPS
 
-HTTP transmite información sin proporcionar por sí mismo cifrado de transporte.
+HTTP transmite informació sense proporcionar per sí mateix xifrat de transporte.
 
 HTTPS añade TLS:
 
@@ -179,24 +179,24 @@ HTTPS añade TLS:
 HTTP + TLS = HTTPS
 ```
 
-TLS permite principalmente:
+TLS permet principalment:
 
-- cifrar la comunicación;
-- proteger la integridad;
-- autenticar al servidor mediante certificados.
+- xifrar la comunicació;
+- protegir la integritat;
+- autenticar al Servidor mitjançant certificats.
 
 ```mermaid
 flowchart LR
-    C["Cliente"] -->|"TLS cifrado"| S["Servidor HTTPS"]
+    C["Client"] -->|"TLS cifrado"| S["Servidor HTTPS"]
 ```
 
 ---
 
-# 8. Certificados digitales
+# 8. certificats digitales
 
-Un certificado relaciona una identidad con una clave pública.
+Un certificat relaciona una identitat amb una clau pública.
 
-De forma simplificada:
+de manera simplificada:
 
 ```text
 Certificado
@@ -207,15 +207,15 @@ Certificado
 └── firma
 ```
 
-El navegador confía en un certificado cuando puede construir una cadena de confianza hasta una autoridad certificadora reconocida.
+El navegador confia en un certificat quan Pot construir una cadena de confiança fins a una autoritat certificadora reconeguda.
 
 ---
 
-# 9. Certificado autofirmado
+# 9. certificat autofirmado
 
-En un laboratorio podemos generar un certificado autofirmado mediante `keytool`.
+en un laboratorio podem generar un certificat autofirmado mitjançant `keytool`.
 
-Ejemplo:
+exemple:
 
 ```bash
 keytool -genkeypair \
@@ -224,18 +224,18 @@ keytool -genkeypair \
   -keystore tomcat.keystore
 ```
 
-Un certificado autofirmado permite **cifrar** la comunicación, pero el navegador no puede verificar su identidad mediante una autoridad de confianza.
+Un certificat autofirmado permet **xifrar** la comunicació, però el navegador no Pot verificar el seu identitat mitjançant una autoritat de confiança.
 
-!!! warning "Autofirmado no significa certificado de confianza"
-    Es normal que el navegador muestre una advertencia cuando el certificado es autofirmado.
+!!! warning "Autofirmado no significa certificat de confiança"
+    és normal que el navegador muestre una adverteència quan el certificat és autofirmado.
 
-    El tráfico puede estar cifrado y, aun así, el certificado no ser considerado confiable por el navegador.
+    El trànsit pot estar xifrat i, encara així, el certificat no ser considerat fiable pel navegador.
 
 ---
 
 # 10. HTTPS en Tomcat
 
-Una configuración conceptual puede tener esta forma:
+Una configuració conceptual Pot tindre aquesta forma:
 
 ```xml
 <Connector
@@ -253,7 +253,7 @@ Una configuración conceptual puede tener esta forma:
 </Connector>
 ```
 
-El acceso sería:
+El accés sería:
 
 ```text
 https://localhost:8443/
@@ -261,51 +261,51 @@ https://localhost:8443/
 
 ---
 
-# 11. Terminación TLS en Apache
+# 11. terminació TLS en Apache
 
-En una arquitectura con proxy inverso, también puede ser Apache quien gestione HTTPS:
+en una arquitectura amb proxy invers, també Pot ser Apache qui gestione HTTPS:
 
 ```mermaid
 flowchart LR
-    U["Usuario"] -->|"HTTPS :443"| A["Apache"]
+    U["Usuari"] -->|"HTTPS :443"| A["Apache"]
     A -->|"HTTP :8080"| T["Tomcat"]
 ```
 
-Ventajas:
+avantatges:
 
-- centraliza certificados;
-- Tomcat puede permanecer en red interna;
-- simplifica la gestión de varios backends.
+- centraliza certificats;
+- Tomcat Pot permanecer en xarxa interna;
+- simplifica la Gestió de diversos backends.
 
 ---
 
-# 12. Sesiones
+# 12. Sessions
 
-Una vez autenticado un usuario, la aplicación suele utilizar una sesión.
+Una vez autenticat un Usuari, l'aplicació sol Utilitzar una Sessió.
 
-El identificador de sesión es sensible:
+El identificador de Sessió és sensible:
 
 ```text
 JSESSIONID=...
 ```
 
-Si un atacante consigue utilizar el identificador de otra persona, podría intentar suplantar su sesión.
+Si un atacant aconsegueix Utilitzar el identificador d'una altra persona, podria intentar suplantar el seu Sessió.
 
 ---
 
-# 13. Cookies de sesión
+# 13. Cookies de Sessió
 
-Dos atributos importantes son:
+Dos atributos importants són:
 
 ### `Secure`
 
-La cookie solo debe enviarse mediante HTTPS.
+La cookie només ha de enviar-se mitjançant HTTPS.
 
 ### `HttpOnly`
 
-Impide que JavaScript del navegador acceda directamente a la cookie.
+Impide que JavaScript del navegador acceda directament a la cookie.
 
-Una configuración de aplicación puede declarar:
+Una configuració d'aplicació Pot declarar:
 
 ```xml
 <session-config>
@@ -316,18 +316,18 @@ Una configuración de aplicación puede declarar:
 </session-config>
 ```
 
-!!! note "Dónde se configura"
-    Las propiedades de seguridad de la cookie de sesión pertenecen al mecanismo de sesión/contexto de la aplicación.
+!!! note "on és configura"
+    Les propietats de Seguretat de la cookie de Sessió pertanyen al mecanisme de Sessió/contexto de l'aplicació.
 
-    No deben confundirse con las propiedades del conector de red de Tomcat.
+    No han de confundirse amb Les propietats del connector de xarxa de Tomcat.
 
 ---
 
-# 14. Expiración de sesión
+# 14. Expiració de Sessió
 
-Una sesión no debería permanecer activa indefinidamente.
+Una Sessió no hauria de permanecer activa indefinidamente.
 
-Ejemplo:
+exemple:
 
 ```xml
 <session-config>
@@ -335,40 +335,40 @@ Ejemplo:
 </session-config>
 ```
 
-Una política razonable depende del tipo de aplicación.
+Una política razonable depende del tipus d'aplicació.
 
-Una banca online y una aplicación interna de consulta pueden necesitar tiempos diferentes.
+Una banca online i una aplicació interna de consulta poden necessitar tiempos diferents.
 
 ---
 
-# 15. Mínimo privilegio
+# 15. Mínim privilegi
 
-Cada usuario, proceso o servicio debería disponer únicamente de los permisos que necesita.
+Cada Usuari, procés o Servei hauria de disponer únicament dels permisos que necessita.
 
-Ejemplos:
+exemples:
 
 ```text
 mal:
-usuario de aplicación = administrador de la base de datos
+usuario de aplicació = administrador de la base de datos
 
 mejor:
-usuario de aplicación = SELECT/INSERT/UPDATE sobre las tablas necesarias
+usuario de aplicació = SELECT/INSERT/UPDATE sobre las tablas necesarias
 ```
 
-También se aplica a:
+també es aplica a:
 
-- roles de Tomcat;
-- permisos de archivos;
-- usuarios Linux;
-- contenedores;
-- puertos;
-- credenciales.
+- rols de Tomcat;
+- permisos de Fitxers;
+- Usuaris Linux;
+- Contenidors;
+- Ports;
+- credeèncials.
 
 ---
 
-# 16. Protección de secretos
+# 16. protecció de secrets
 
-No deberían publicarse en un repositorio:
+No haurien de publicarse en un repositorio:
 
 ```text
 contraseñas
@@ -383,22 +383,22 @@ Evitar:
 database.password=123456
 ```
 
-en archivos versionados.
+en Fitxers versionados.
 
-En entornos profesionales pueden utilizarse:
+en entorns professionals poden utilizarse:
 
-- variables de entorno;
-- almacenes de secretos;
-- servicios específicos de gestión de secretos;
-- ficheros protegidos fuera del repositorio.
+- variables de entorn;
+- almacenes de secrets;
+- Serveis específicos de Gestió de secrets;
+- Fitxers protegits fora del repositorio.
 
 ---
 
-# 17. Actualizaciones
+# 17. actualitzacions
 
-Un servidor sin actualizar acumula vulnerabilidades conocidas.
+Un Servidor sense actualitzar acumula vulnerabilitats conocidas.
 
-La estrategia de seguridad debe incluir:
+La estratègia de Seguretat ha de incluir:
 
 ```text
 inventario
@@ -407,75 +407,75 @@ actualización
    ↓
 prueba
    ↓
-despliegue
+desplegament
    ↓
 monitorización
 ```
 
-Nunca debería asumirse que “funciona” significa “es seguro”.
+Nunca hauria de asumirse que “funciona” significa “és segur”.
 
 ---
 
-# 18. Reducir superficie de ataque
+# 18. Reduir superfície de atac
 
-Conviene deshabilitar o eliminar componentes que no sean necesarios.
+Conviene deshabilitar o eliminar components que no sean necessaris.
 
-Ejemplos:
+exemples:
 
-- aplicaciones de ejemplo;
-- interfaces de administración no utilizadas;
-- conectores no necesarios;
-- puertos abiertos innecesariamente;
-- servicios del sistema sin uso.
+- aplicacions de exemple;
+- interfaces d'administració no utilizadas;
+- connectors no necessaris;
+- Ports abiertos innecessàriament;
+- Serveis del sistema sense ús.
 
 ```mermaid
 flowchart LR
-    A["Más servicios expuestos"] --> B["Mayor superficie de ataque"]
-    C["Solo servicios necesarios"] --> D["Menor superficie de ataque"]
+    A["Más serveis expuestos"] --> B["Mayor superficie de ataque"]
+    C["Solo serveis necesarios"] --> D["Menor superficie de ataque"]
 ```
 
 ---
 
-# 19. Logs y auditoría
+# 19. Logs i auditoria
 
-Los registros pueden ayudar a detectar:
+els registres poden ajudar a detectar:
 
-- intentos de acceso;
-- errores repetidos;
-- fallos de autenticación;
-- despliegues inesperados;
+- intentos de accés;
+- errors repetidos;
+- fallos de autenticació;
+- desplegaments inesperados;
 - excepciones;
-- comportamiento anómalo.
+- comportament anómalo.
 
-Pero un log solo es útil si:
+però un log només és útil si:
 
-- se conserva;
-- puede consultarse;
-- tiene una hora correcta;
-- no contiene secretos innecesarios;
-- se revisa cuando existe una incidencia.
+- es conserva;
+- Pot consultarse;
+- té una hora correcta;
+- no conté secrets innecesarios;
+- es revisa quan existeix una incidèència.
 
 ---
 
-# 20. Seguridad en una arquitectura Apache + Tomcat
+# 20. Seguretat en una arquitectura Apache + Tomcat
 
 ```mermaid
 flowchart TD
     I["Internet"] --> F["Firewall<br/>80/443"]
     F --> A["Apache HTTP Server"]
-    A -->|"proxy interno"| T["Tomcat"]
-    T --> APP["Aplicación"]
-    APP --> DB[("Base de datos")]
+    A -->|"proxy intern"| T["Tomcat"]
+    T --> APP["Aplicació"]
+    APP --> DB[("Base de dades")]
 ```
 
-Una configuración razonable podría exponer públicamente:
+Una configuració razonable podria exposar públicamente:
 
 ```text
 80
 443
 ```
 
-pero no necesariamente:
+però no necessàriament:
 
 ```text
 8080
@@ -486,38 +486,38 @@ pero no necesariamente:
 
 ---
 
-# 21. Qué debes retener
+# 21. Què has de retenir
 
-!!! summary "Resumen"
-    - Autenticación identifica; autorización concede permisos.
-    - Tomcat puede utilizar usuarios y roles.
-    - Tomcat Manager debe considerarse un recurso administrativo sensible.
-    - HTTPS protege el tráfico mediante TLS.
-    - Un certificado autofirmado cifra, pero no aporta confianza pública.
-    - Las sesiones deben protegerse mediante cookies y expiración adecuadas.
-    - Debe aplicarse el principio de mínimo privilegio.
-    - Reducir servicios y puertos expuestos disminuye la superficie de ataque.
+!!! summary "resum"
+    - autenticació identifica; autorització concede permisos.
+    - Tomcat pot utilitzar Usuaris i rols.
+    - Tomcat Manager ha de considerar-se un recurs administrativo sensible.
+    - HTTPS protegeix el trànsit mitjançant TLS.
+    - Un certificat autofirmado cifra, però no aporta confiança pública.
+    - Les Sessions han de protegerse mitjançant cookies i Expiració adecuadas.
+    - ha de aplicarse el principi de Mínim privilegi.
+    - Reduir Serveis i Ports expuestos disminuye la superfície de atac.
 
 ---
 
-# 22. Glosario
+# 22. glossari
 
 **TLS**  
-Protocolo criptográfico utilizado para proteger comunicaciones.
+Protocoho criptográfico utilitzat per a protegir comunicacions.
 
-**Certificado digital**  
-Documento firmado que vincula una identidad con una clave pública.
+**certificat digital**  
+Document firmado que vincula una identitat amb una clau pública.
 
-**Autenticación**  
-Proceso de verificar una identidad.
+**autenticació**  
+procés de verificar una identitat.
 
-**Autorización**  
-Proceso de decidir qué acciones puede realizar una identidad.
+**autorització**  
+procés de decidir Què acciones Pot realitzar una identitat.
 
 **Hardening**  
-Proceso de reducir riesgos y endurecer la configuración de un sistema.
+procés de Reduir riscos i endurecer la configuració d'un sistema.
 
-**Superficie de ataque**  
-Conjunto de puntos que un atacante podría intentar explotar.
+**superfície de atac**  
+conjunt de puntos que un atacant podria intentar explotar.
 
 ---

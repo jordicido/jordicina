@@ -1,46 +1,46 @@
 ---
 hide:
   - navigation
-title: "UP3.2. Archivos de configuración y bibliotecas compartidas"
-description: "Ficheros de configuración, directorios y bibliotecas compartidas de Apache Tomcat."
+title: "UP3.2. Fitxers de configuració i biblioteques compartides"
+description: "Fitxers de configuració, directoris i biblioteques compartides de Apache Tomcat."
 ---
 
-# UP3.2. Archivos de configuración y bibliotecas compartidas
+# UP3.2. Fitxers de configuració i biblioteques compartides
 
-> **RA3.b:** Se han identificado los principales ficheros de configuración y de bibliotecas compartidas.
+> **RA3.b:** S'han identificat els principals fitxers de configuració i les biblioteques compartides.
 
-## Qué vas a aprender
+## Què aprendràs
 
-Al finalizar este bloque podrás identificar:
+en finalitzar aquest bloc podràs identificar:
 
-- la diferencia entre configuración del servidor y configuración de una aplicación;
-- los principales directorios de Tomcat;
-- la función de `server.xml`;
-- la función de `web.xml`;
-- la función de `context.xml`;
-- la función de `tomcat-users.xml`;
-- dónde se encuentran las bibliotecas;
-- la diferencia entre una biblioteca privada y una biblioteca compartida;
-- cómo afecta la configuración al despliegue.
+- la diferència entre configuració del servidor i configuració d'una aplicació;
+- els principals directoris de Tomcat;
+- la funció de `server.xml`;
+- la funció de `web.xml`;
+- la funció de `context.xml`;
+- la funció de `tomcat-users.xml`;
+- on és troben Les Biblioteques;
+- la diferèència entre una biblioteca privada i una biblioteca compartida;
+- com afecta la configuració al desplegament.
 
 ---
 
-## 1. Configuración frente a código
+## 1. Configuració davant de Codi
 
-El código de una aplicación indica **qué hace** la aplicación.
+El Codi d'una aplicació indica **Què fa** l'aplicació.
 
-La configuración determina **cómo se ejecuta en un entorno concreto**.
+La configuració determina **com és executa en un entorn concreto**.
 
-Por ejemplo, no sería conveniente programar directamente en Java:
+per exemple, no sería convenient programar directament en Java:
 
 ```java
 String database = "192.168.1.20";
 String password = "123456";
 ```
 
-El servidor de producción y el servidor de pruebas podrían utilizar configuraciones diferentes.
+El Servidor de producció i el servidor de Proves podrian Utilitzar configuraciones diferents.
 
-Por eso conviene separar:
+per això convé separar:
 
 ```text
 Código
@@ -49,28 +49,28 @@ Credenciales
 Infraestructura
 ```
 
-!!! info "Principio importante"
-    Una misma aplicación debería poder desplegarse en distintos entornos cambiando principalmente su **configuración**, no modificando su código fuente.
+!!! info "principi important"
+    Una mateixa aplicació hauria de poder desplegarse en diferents entorns cambiando principalment el seu **configuració**, no modificando el seu Codi font.
 
 ---
 
-## 2. `CATALINA_HOME` y `CATALINA_BASE`
+## 2. `CATALINA_HOME` i `CATALINA_BASE`
 
-En Tomcat aparecen habitualmente estos conceptos:
+en Tomcat apareixen habitualment aquests conceptes:
 
 ### `CATALINA_HOME`
 
-Directorio donde se encuentra instalado Tomcat.
+directori on és troba instal·lat Tomcat.
 
-Incluye los binarios y bibliotecas de la instalación.
+inclou els binarios i Biblioteques de la instal·lació.
 
 ### `CATALINA_BASE`
 
-Directorio que contiene la configuración y datos de una instancia concreta.
+directori que conté la configuració i Dades d'una instaència concreta.
 
-En instalaciones sencillas ambos pueden apuntar al mismo lugar.
+en instalaciones sencillas ambos poden apuntar al mateix lloc.
 
-Una estructura típica puede ser:
+Una estructura típica Pot ser:
 
 ```text
 apache-tomcat/
@@ -85,24 +85,24 @@ apache-tomcat/
 
 ---
 
-## 3. Directorios importantes
+## 3. directoris importants
 
-| Directorio | Uso |
+| directori | ús |
 |---|---|
-| `bin/` | Scripts de inicio y parada |
-| `conf/` | Configuración |
-| `lib/` | Bibliotecas disponibles para Tomcat y aplicaciones |
+| `bin/` | Scripts de Inici i parada |
+| `conf/` | Configuració |
+| `lib/` | Biblioteques disponibles per a Tomcat i aplicacions |
 | `logs/` | Logs |
-| `webapps/` | Aplicaciones desplegadas |
-| `temp/` | Archivos temporales |
-| `work/` | Archivos generados por Tomcat |
+| `webapps/` | Aplicacions desplegades |
+| `temp/` | Fitxers temporales |
+| `work/` | Fitxers generados per Tomcat |
 
 ```mermaid
 flowchart TD
     T["Tomcat"] --> B["bin/<br/>scripts"]
-    T --> C["conf/<br/>configuración"]
+    T --> C["conf/<br/>configuració"]
     T --> L["lib/<br/>bibliotecas"]
-    T --> W["webapps/<br/>aplicaciones"]
+    T --> W["webapps/<br/>aplicacions"]
     T --> G["logs/<br/>registros"]
     T --> WK["work/<br/>temporales compilados"]
 ```
@@ -111,24 +111,24 @@ flowchart TD
 
 ## 4. `server.xml`
 
-`server.xml` define la estructura principal de una instancia de Tomcat.
+`server.xml` define la estructura principal d'una instaència de Tomcat.
 
-Se encuentra normalmente en:
+és troba normalment en:
 
 ```text
 $CATALINA_BASE/conf/server.xml
 ```
 
-En este fichero aparecen elementos como:
+en aquest fitxer apareixen elements com:
 
-- conectores;
-- servicios;
+- connectors;
+- Serveis;
 - engines;
 - hosts;
-- puertos;
-- configuración TLS.
+- Ports;
+- configuració TLS.
 
-Un conector HTTP típico puede tener esta forma:
+Un connector HTTP típico Pot tindre aquesta forma:
 
 ```xml
 <Connector
@@ -138,33 +138,33 @@ Un conector HTTP típico puede tener esta forma:
     redirectPort="8443" />
 ```
 
-### Interpretación
+### Interpretació
 
 `port="8080"`
 
-:   Tomcat escucha conexiones HTTP en el puerto 8080.
+:   Tomcat escucha connexions HTTP en el Port 8080.
 
 `protocol="HTTP/1.1"`
 
-:   Se utiliza un conector HTTP.
+:   sutilitza un connector HTTP.
 
 `connectionTimeout="20000"`
 
-:   Establece un tiempo de espera expresado en milisegundos.
+:   Establece un temps de espera expresado en milisegundos.
 
 `redirectPort="8443"`
 
-:   Indica el puerto seguro al que puede redirigirse una petición cuando una restricción de seguridad requiere transporte confidencial.
+:   Indical Port segur al que Pot redirigirse una petició quan una restricción de Seguretat requereix transporte confideèncial.
 
 !!! warning "Modificar `server.xml`"
-    Un error de sintaxis puede impedir que Tomcat arranque.  
-    Antes de modificarlo conviene mantener una copia de seguridad y revisar el log después del reinicio.
+    Un error de sintaxis Pot impedir que Tomcat arrancada.  
+    abans de modificarho convé mantindre una còpia de Seguretat i revisar el log després del reinici.
 
 ---
 
-## 5. Jerarquía simplificada de `server.xml`
+## 5. Jerarquia simplificada de `server.xml`
 
-Tomcat organiza internamente sus componentes mediante una jerarquía.
+Tomcat organiza internament sus components mitjançant una Jerarquia.
 
 ```mermaid
 flowchart TD
@@ -173,40 +173,40 @@ flowchart TD
     SV --> C2["Connector HTTPS :8443"]
     SV --> E["Engine"]
     E --> H["Host localhost"]
-    H --> A1["Aplicación /app1"]
-    H --> A2["Aplicación /app2"]
+    H --> A1["Aplicació /app1"]
+    H --> A2["Aplicació /app2"]
 ```
 
-No es necesario memorizar toda la estructura XML, pero sí comprender la relación:
+No és necessari memorizar tota la estructura XML, però sí comprendre la relació:
 
 ```text
-conector → servicio → host → aplicaciones
+conector → servicio → host → aplicacions
 ```
 
 ---
 
 ## 6. `web.xml`
 
-`web.xml` es el **descriptor de despliegue** de una aplicación web Java.
+`web.xml` és el **descriptor de desplegament** d'una aplicació web Java.
 
-Dentro de una aplicación suele estar ubicado en:
+dins d'una aplicació sol estar ubicado en:
 
 ```text
 WEB-INF/web.xml
 ```
 
-Puede definir:
+Pot definir:
 
 - servlets;
-- mapeos;
-- filtros;
-- listeners;
-- páginas de error;
+- mapatges;
+- Filtres;
+- listindres;
+- pàgines de error;
 - parámetros;
-- configuración de sesión;
-- restricciones de seguridad.
+- configuració de Sessió;
+- restricciones de Seguretat.
 
-Ejemplo:
+exemple:
 
 ```xml
 <servlet>
@@ -220,7 +220,7 @@ Ejemplo:
 </servlet-mapping>
 ```
 
-En este caso:
+en aquest cas:
 
 ```text
 /hola
@@ -232,13 +232,13 @@ com.ejemplo.HolaServlet
 
 ---
 
-## 7. ¿Siempre hay que utilizar `web.xml`?
+## 7. ¿sempre hi ha que Utilitzar `web.xml`?
 
 No.
 
-Las versiones modernas de la especificación Servlet permiten utilizar **anotaciones**.
+Les versions modernas de la especificación Servlet permeten Utilitzar **Anotacions**.
 
-Por ejemplo:
+per exemple:
 
 ```java
 @WebServlet("/hola")
@@ -246,33 +246,33 @@ public class HolaServlet extends HttpServlet {
 }
 ```
 
-Esta anotación puede sustituir la declaración equivalente en `web.xml`.
+aquesta anotación Pot sustituir la declaración equivalnt en `web.xml`.
 
-!!! note "Configuración declarativa y anotaciones"
-    Es habitual encontrar ambas estrategias:
+!!! note "Configuració declarativa i Anotacions"
+    és habitual trobar ambdues estratègies:
 
-    - anotaciones dentro del código;
-    - configuración centralizada en `web.xml`.
+    - Anotacions dins del codi;
+    - configuració centralizada en `web.xml`.
 
-    Comprender `web.xml` sigue siendo importante porque permite entender cómo se construye una aplicación web Java y porque determinadas configuraciones siguen siendo más claras o centralizadas mediante el descriptor.
+    comprendre `web.xml` segueix siendo important perquè permet entendre com és es construeix una aplicació web Java i perquè determinadas configuraciones siguen siendo més claras o centralizadas mitjançant el descriptor.
 
 ---
 
 ## 8. `context.xml`
 
-Un **Context** representa una aplicación web.
+Un **Context** representa una aplicació web.
 
-`context.xml` permite definir parámetros o recursos relacionados con ese contexto.
+`context.xml` permet definir parámetros o recursos relacionats amb eixe contexto.
 
-Puede utilizarse para:
+Pot utilizarse per a:
 
 - configurar un `DataSource`;
 - parámetros de contexto;
-- comportamiento de cookies;
+- comportament de cookies;
 - recursos JNDI;
-- opciones específicas de una aplicación.
+- opcions específicas d'una aplicació.
 
-Ejemplo conceptual:
+exemple conceptual:
 
 ```xml
 <Context>
@@ -288,15 +288,15 @@ Ejemplo conceptual:
 </Context>
 ```
 
-La aplicación puede solicitar el recurso mediante JNDI sin conocer todos los detalles de conexión.
+La aplicació Pot sol·licitar el recurs mitjançant JNDI sense conéixer tots els detalles de connexió.
 
 ---
 
 ## 9. `tomcat-users.xml`
 
-Se utiliza para configurar usuarios y roles del mecanismo de seguridad interno de Tomcat.
+sutilitza per a configurar Usuaris i rols del mecanisme de Seguretat intern de Tomcat.
 
-Ejemplo:
+exemple:
 
 ```xml
 <role rolename="manager-gui"/>
@@ -307,26 +307,26 @@ Ejemplo:
     roles="manager-gui"/>
 ```
 
-!!! danger "No es una configuración para copiar sin pensar a producción"
-    Los usuarios del entorno de administración deben protegerse cuidadosamente.
+!!! danger "No és una configuració per a copiar sense pensar a producció"
+    els usuaris dl'entorn d'administració han de protegerse cuidadosamente.
 
-    Nunca deben utilizarse contraseñas triviales y el acceso a las aplicaciones de administración debería estar restringido.
+    Nunca han de utilizarse Contrasenyes triviales i el accés a Les aplicacions d'administració hauria de estar restringido.
 
 ---
 
-## 10. Otros archivos relevantes
+## 10. altres Fitxers rellevants
 
 ### `catalina.properties`
 
-Contiene propiedades relacionadas con el cargador de clases y otros elementos internos de Tomcat.
+conté propietats relacionades amb el càrregador de clases i altres elements interns de Tomcat.
 
 ### `logging.properties`
 
-Permite configurar el sistema de logging.
+permet configurar el sistema de logging.
 
-### Ficheros de configuración de las aplicaciones
+### Fitxers de configuració de les aplicacions
 
-Una aplicación puede utilizar:
+Una aplicació pot utilitzar:
 
 ```text
 .properties
@@ -336,7 +336,7 @@ Una aplicación puede utilizar:
 .xml
 ```
 
-Por ejemplo:
+per exemple:
 
 ```properties
 db.host=localhost
@@ -346,51 +346,51 @@ db.name=tienda
 
 ---
 
-## 11. Configuración global y configuración de aplicación
+## 11. Configuració global i configuració d'aplicació
 
 ```mermaid
 flowchart LR
-    S["Configuración de Tomcat"] --> A["server.xml"]
+    S["Configuració de Tomcat"] --> A["server.xml"]
     S --> B["tomcat-users.xml"]
     S --> C["logging.properties"]
-    APP["Configuración de aplicación"] --> D["WEB-INF/web.xml"]
+    APP["Configuració de aplicació"] --> D["WEB-INF/web.xml"]
     APP --> E["META-INF/context.xml"]
     APP --> F["application.properties / otros"]
 ```
 
-Conviene distinguir claramente qué configuración pertenece al **servidor** y cuál pertenece a una **aplicación concreta**.
+Conviene distinguir clarament Què configuració pertenece al **Servidor** i cuál pertenece a una **aplicació concreta**.
 
 ---
 
-# 12. Bibliotecas Java
+# 12. Biblioteques Java
 
-En Java, una biblioteca se distribuye habitualmente como archivo `.jar`.
+en Java, una biblioteca es distribuye habitualment com fitxer `.jar`.
 
-Un JAR puede contener:
+Un JAR Pot contindre:
 
 - clases Java;
 - recursos;
 - metadatos.
 
-Ejemplos habituales:
+exemples habituals:
 
 - driver JDBC de PostgreSQL;
 - driver JDBC de MySQL;
 - librerías de logging;
-- clientes HTTP;
-- bibliotecas de serialización JSON.
+- Clients HTTP;
+- Biblioteques de serialización JSON.
 
 ---
 
-## 13. Biblioteca privada de una aplicación
+## 13. biblioteca privada d'una aplicació
 
-Una aplicación web puede incluir bibliotecas en:
+Una aplicació web Pot incluir Biblioteques en:
 
 ```text
 WEB-INF/lib/
 ```
 
-Ejemplo:
+exemple:
 
 ```text
 miapp/
@@ -402,56 +402,56 @@ miapp/
     └── web.xml
 ```
 
-Estas bibliotecas forman parte de la propia aplicación.
+aquestes Biblioteques formen part de la pròpia aplicació.
 
-### Ventajas
+### avantatges
 
-- la aplicación es más autocontenida;
-- puede utilizar su propia versión;
-- se reducen dependencias externas del servidor.
+- l'aplicació és més autocontenida;
+- pot utilitzar el seu pròpia versió;
+- es reducen dependències externes del servidor.
 
 ---
 
-## 14. Bibliotecas compartidas
+## 14. biblioteques compartides
 
-Tomcat dispone también de:
+Tomcat dispone també de:
 
 ```text
 $CATALINA_BASE/lib/
 ```
 
-Las bibliotecas colocadas aquí pueden estar disponibles para el servidor y para las aplicaciones según el modelo de carga de clases.
+Les Biblioteques col·locadas ací poden estar disponibles per al Servidor i per a Les aplicacions segons el model de Càrrega de classes.
 
-Un ejemplo típico puede ser un driver JDBC utilizado como recurso gestionado por Tomcat.
+Un exemple típico Pot ser un driver JDBC utilitzat com recurs gestionado per Tomcat.
 
 ```mermaid
 flowchart TD
     T["Tomcat"] --> L["lib/postgresql.jar"]
-    L --> A["Aplicación A"]
-    L --> B["Aplicación B"]
-    L --> C["Aplicación C"]
+    L --> A["Aplicació A"]
+    L --> B["Aplicació B"]
+    L --> C["Aplicació C"]
 ```
 
-### Ventaja
+### avantatge
 
-Evita duplicar una biblioteca cuando varias aplicaciones necesitan exactamente el mismo componente.
+Evita duplicar una biblioteca quan diverses aplicacions necessiten exactament el mateix component.
 
-### Riesgo
+### risc
 
-Una actualización puede afectar simultáneamente a varias aplicaciones.
+Una actualització Pot afectar simultàniament a diverses aplicacions.
 
-!!! warning "Versiones incompatibles"
-    Compartir bibliotecas no siempre es mejor.
+!!! warning "versions incompatibles"
+    compartir Biblioteques no sempre és mejor.
 
-    Si la aplicación A necesita la versión 1 y la aplicación B necesita la versión 2 de una misma biblioteca, colocar una única versión global puede provocar conflictos.
+    Si l'aplicació A necessita la versió 1 i l'aplicació B necessita la versió 2 d'una mateixa biblioteca, col·locar una única versió global Pot provocar conflictos.
 
 ---
 
-## 15. Carga de clases
+## 15. Càrrega de classes
 
-Java utiliza **class loaders** para localizar las clases que necesita.
+Java Utilitza **class loaders** per a localitzar Les clases que necessita.
 
-Desde el punto de vista del despliegue, es importante comprender esta idea:
+des del punto de vista del desplegament, és important comprendre aquesta idea:
 
 ```text
 Aplicación
@@ -460,7 +460,7 @@ Aplicación
  └─ bibliotecas visibles desde el servidor
 ```
 
-Un error del tipo:
+Un error del tipus:
 
 ```text
 ClassNotFoundException
@@ -472,36 +472,36 @@ o:
 NoClassDefFoundError
 ```
 
-suele indicar que existe un problema de disponibilidad o compatibilidad de clases.
+sol indicar que existeix un problema de disponibilitat o compatibilidad de clases.
 
 ---
 
-## 16. Qué ocurre al modificar la configuración
+## 16. Què ocorre al modificar la configuració
 
-Una modificación no siempre entra en vigor automáticamente.
+Una modificación no sempre entra en vigor automàticament.
 
-Dependiendo del fichero y del tipo de cambio puede ser necesario:
+segons del fitxer i del tipus de Canvi Pot ser necessari:
 
 ```bash
 sudo systemctl restart tomcat
 ```
 
-o reiniciar manualmente la instancia.
+o reiniciar manualment la instaència.
 
-Después de cualquier cambio importante:
+després de qualsevol Canvi important:
 
-1. comprobar que el servicio arranca;
+1. comprovar que el Servei arranca;
 2. revisar logs;
-3. probar la aplicación;
-4. verificar la configuración afectada.
+3. probar l'aplicació;
+4. verificar la configuració afectada.
 
 ---
 
-## 17. Diagnóstico básico
+## 17. diagnòstic bàsic
 
-Supongamos que tras modificar `server.xml` Tomcat no responde.
+Supongamos que tras modificar `server.xml` Tomcat no respon.
 
-El razonamiento debería ser:
+El razonamiento hauria de ser:
 
 ```mermaid
 flowchart TD
@@ -509,41 +509,41 @@ flowchart TD
     B -->|No| C["Revisar logs"]
     B -->|Sí| D{"¿Puerto escuchando?"}
     D -->|No| E["Revisar Connector"]
-    D -->|Sí| F{"¿Aplicación desplegada?"}
-    F -->|No| G["Revisar despliegue"]
-    F -->|Sí| H["Revisar aplicación / rutas"]
+    D -->|Sí| F{"¿Aplicació desplegada?"}
+    F -->|No| G["Revisar desplegament"]
+    F -->|Sí| H["Revisar aplicació / rutas"]
 ```
 
 ---
 
-## 18. Qué debes retener
+## 18. Què has de retenir
 
-!!! summary "Resumen"
-    - `server.xml` configura la instancia y sus conectores.
-    - `web.xml` describe elementos de una aplicación.
-    - `context.xml` puede definir recursos y opciones del contexto.
-    - `tomcat-users.xml` gestiona usuarios y roles internos.
-    - `WEB-INF/lib` contiene dependencias privadas de una aplicación.
-    - `lib/` puede contener bibliotecas compartidas.
-    - Un cambio de configuración debe verificarse mediante estado, logs y pruebas.
+!!! summary "resum"
+    - `server.xml` configura la instaència i sus connectors.
+    - `web.xml` describe elements d'una aplicació.
+    - `context.xml` Pot definir recursos i opcions del contexto.
+    - `tomcat-users.xml` gestiona Usuaris i rols interns.
+    - `WEB-INF/lib` conté dependències privades d'una aplicació.
+    - `lib/` Pot contindre biblioteques compartides.
+    - Un Canvi de configuració ha de verificarse mitjançant estat, logs i Proves.
 
 ---
 
-## 19. Glosario
+## 19. glossari
 
-**Descriptor de despliegue**  
-Fichero que describe cómo debe desplegarse o comportarse una aplicación.
+**Descriptor de desplegament**  
+fitxer que describe com ha de desplegarse o comportarse una aplicació.
 
 **JAR**  
-Archivo que empaqueta clases y recursos Java.
+fitxer que empaqueta clases i recursos Java.
 
 **JNDI**  
-API de Java utilizada para localizar recursos mediante nombres.
+API de Java Utilitzada per a localitzar recursos mitjançant noms.
 
 **Context**  
-Representación de una aplicación web dentro de Tomcat.
+representació d'una aplicació web dins de Tomcat.
 
 **Class loader**  
-Componente encargado de cargar clases Java.
+component encarregat de carregar clases Java.
 
 ---

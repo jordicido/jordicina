@@ -1,68 +1,68 @@
 ---
 hide:
   - navigation
-title: "UP3.1. El servidor de aplicaciones"
-description: "Componentes, servicios y funcionamiento de un servidor de aplicaciones con Apache Tomcat."
+title: "UP3.1. El servidor d'aplicacions"
+description: "Components, serveis i funcionament d'un servidor d'aplicacions amb Apache Tomcat."
 ---
 
-# UP3.1. El servidor de aplicaciones
+# UP3.1. El servidor d'aplicacions
 
-> **RA3.a:** Se han descrito los componentes y el funcionamiento de los servicios proporcionados por el servidor de aplicaciones.
+> **RA3.a:** s'han descrit els components i el funcionament dels serveis proporcionats pel servidor d'aplicacions.
 
-## Qué vas a aprender
+## Què aprendràs
 
-En este bloque aprenderás:
+En aquest bloc aprendràs:
 
-- qué es un servidor de aplicaciones;
-- qué diferencia existe entre un servidor web y un servidor de aplicaciones;
-- qué componentes forman parte de un servidor de aplicaciones;
-- qué servicios proporciona;
-- cómo se procesa una petición desde que sale del navegador hasta que se genera la respuesta;
-- qué papel desempeña Apache Tomcat dentro de una arquitectura web.
+- Què és un servidor d'aplicacions;
+- Quina diferència existeix entre un servidor web i un servidor d'aplicacions;
+- Quins components formen part d'un servidor d'aplicacions;
+- Quins serveis proporciona;
+- com es processa una petició des que ix del navegador fins a què es genera la Resposta;
+- Què paper exerceix Apache Tomcat dins d'una arquitectura web.
 
 ---
 
-## 1. ¿Por qué necesitamos un servidor de aplicaciones?
+## 1. ¿per què necessitem un servidor d'aplicacions?
 
-Una página HTML guardada en un servidor puede enviarse al navegador sin necesidad de ejecutar ningún programa. El servidor simplemente localiza el archivo y lo devuelve al cliente.
+Una pàgina HTML guardada en un servidor Pot enviar-se al navegador sense necessitat de Executar cap programa. El Servidor simplement localitzal fitxer i ho retorna al Client.
 
-Una aplicación web real suele necesitar mucho más:
+Una aplicació web real sol necessitar molt més:
 
-- identificar usuarios;
-- mantener una sesión iniciada;
-- consultar una base de datos;
-- ejecutar código;
+- identificar Usuaris;
+- mantindre una Sessió iniciada;
+- consultar una base de dades;
+- Executar Codi;
 - aplicar permisos;
-- procesar formularios;
-- gestionar errores;
-- conectarse con otros servicios;
-- registrar qué está ocurriendo;
-- atender a varios usuarios simultáneamente.
+- processar formularis;
+- gestionar errors;
+- connectar-se amb altres Serveis;
+- registrar Què està ocorrent;
+- atendre a diversos Usuaris simultàniament.
 
-El software que proporciona el entorno necesario para ejecutar este tipo de aplicaciones es el **servidor de aplicaciones** o, dependiendo de la tecnología utilizada, el **contenedor de aplicaciones web**.
+El programari que proporciona l'entorn necessari per a Executar aquest tipus d'aplicacions és el **Servidor d'aplicacions** o, segons de la tecnologia Utilitzada, el **Contenidor d'aplicacions web**.
 
-!!! info "Idea fundamental"
-    Un servidor de aplicaciones no contiene únicamente los archivos de una web.  
-    Proporciona un **entorno de ejecución** en el que la aplicación puede recibir peticiones, ejecutar lógica y utilizar servicios comunes proporcionados por el propio servidor.
+!!! info "idea fonamental"
+    Un Servidor d'aplicacions no conté únicament els fitxers d'una web.  
+    proporciona un **entorn de execució** en què l'aplicació Pot rebre Peticions, Executar lògica i Utilitzar Serveis comuns proporcionats pel propi Servidor.
 
 ---
 
-## 2. Servidor web y servidor de aplicaciones
+## 2. Servidor web i Servidor d'aplicacions
 
-Los conceptos **servidor web** y **servidor de aplicaciones** están relacionados, pero no son exactamente lo mismo.
+els conceptes **Servidor web** i **Servidor d'aplicacions** estan relacionats, però no són exactament el mateix.
 
 ### Servidor web
 
-Un servidor web está especializado en recibir peticiones HTTP o HTTPS y devolver recursos al cliente.
+Un Servidor web està especialitzat en rebre Peticions HTTP o HTTPS i retornar recursos al Client.
 
-Algunos ejemplos son:
+alguns exemples són:
 
 - Apache HTTP Server;
 - Nginx;
 - Caddy;
 - Microsoft IIS.
 
-Puede servir directamente:
+Pot servir directament:
 
 ```text
 index.html
@@ -72,20 +72,20 @@ logo.png
 manual.pdf
 ```
 
-También puede realizar tareas como:
+també Pot realitzar tasques com:
 
-- redirecciones;
-- alojamiento de varios sitios mediante virtual hosts;
-- terminación TLS;
-- compresión;
+- redireccions;
+- allotjament de diversos llocs mitjançant virtual hosts;
+- terminació TLS;
+- compressió;
 - caché;
-- proxy inverso.
+- proxy invers.
 
-### Servidor de aplicaciones
+### Servidor d'aplicacions
 
-Un servidor de aplicaciones ejecuta código de servidor y proporciona servicios a las aplicaciones desplegadas.
+Un Servidor d'aplicacions executa Codi de Servidor i proporciona Serveis a Les aplicacions desplegades.
 
-En el ecosistema Java podemos encontrar:
+en el ecosistema Java podem trobar:
 
 - Apache Tomcat;
 - WildFly;
@@ -98,109 +98,109 @@ En el ecosistema Java podemos encontrar:
 ```mermaid
 flowchart LR
     U["Navegador"] -->|HTTP/HTTPS| W["Servidor web<br/>Apache HTTP Server"]
-    W -->|petición dinámica| A["Servidor de aplicaciones<br/>Tomcat"]
-    A --> APP["Aplicación web"]
-    APP --> DB[("Base de datos")]
+    W -->|petició dinámica| A["Servidor de aplicacions<br/>Tomcat"]
+    A --> APP["Aplicació web"]
+    APP --> DB[("Base de dades")]
 ```
 
-!!! note "Tomcat y el término «servidor de aplicaciones»"
-    Apache Tomcat es técnicamente un **contenedor web de Jakarta Servlet y Jakarta Pages**, no un servidor Jakarta EE completo como WildFly o Payara.
+!!! note "Tomcat i el terme «Servidor d'aplicacions»"
+    Apache Tomcat és tècnicament un **Contenidor web de Jakarta Servlet i Jakarta Pages**, no un servidor Jakarta EE complet com WildFly o Payara.
 
-    En esta unidad utilizaremos Tomcat como plataforma de despliegue de aplicaciones web Java porque permite estudiar de manera clara los elementos que nos interesan: conectores HTTP, aplicaciones, servlets, sesiones, seguridad, despliegue y cooperación con Apache HTTP Server.
+    en aquesta unitat Utilitzarem Tomcat com plataforma de desplegament d'aplicacions web Java perquè permet estudiar de manera clarals elements que ens interessen: connectors HTTP, aplicacions, servlets, Sessions, Seguretat, desplegament i Cooperació amb Apache HTTP Server.
 
 ---
 
-## 3. El modelo cliente-servidor
+## 3. El model client-Servidor
 
-Una aplicación web funciona siguiendo un modelo cliente-servidor.
+Una aplicació web funciona seguint un model client-Servidor.
 
-El **cliente**, normalmente un navegador, envía una petición:
+El **Client**, normalment un navegador, envia una petició:
 
 ```http
 GET /tienda/productos HTTP/1.1
 Host: ejemplo.com
 ```
 
-El servidor procesa esa petición y devuelve una respuesta:
+El Servidor processa eixa petició i retorna una Resposta:
 
 ```http
 HTTP/1.1 200 OK
 Content-Type: text/html
 ```
 
-La petición puede provocar que la aplicación:
+La petició Pot provocar que l'aplicació:
 
-1. compruebe si existe una sesión;
-2. ejecute un servlet;
-3. consulte una base de datos;
-4. aplique reglas de negocio;
+1. comprove si existeix una Sessió;
+2. execute un servlet;
+3. consulte una base de dades;
+4. aplique regles de negoci;
 5. genere una vista;
-6. devuelva la respuesta.
+6. retorne la Resposta.
 
 ```mermaid
 sequenceDiagram
-    participant C as Cliente
+    participant C as Client
     participant T as Tomcat
-    participant A as Aplicación
-    participant B as Base de datos
+    participant A as Aplicació
+    participant B as Base de dades
 
-    C->>T: GET /productos
-    T->>A: Entrega la petición
-    A->>B: SELECT productos
-    B-->>A: Datos
-    A-->>T: Genera respuesta
+    C->>T: GET /productes
+    T->>A: Entrega la petició
+    A->>B: SELECT productes
+    B-->>A: Dades
+    A-->>T: Genera resposta
     T-->>C: HTTP 200 + HTML
 ```
 
 ---
 
-## 4. Componentes de un servidor de aplicaciones
+## 4. components d'un servidor d'aplicacions
 
-### 4.1. Conector HTTP
+### 4.1. connector HTTP
 
-El conector es el componente encargado de escuchar peticiones de red.
+El connector és el component encarregat de escoltar Peticions de xarxa.
 
-En Tomcat es habitual encontrar un conector HTTP en el puerto `8080`:
+en Tomcat és habitual trobar un connector HTTP en el Port `8080`:
 
 ```text
 http://servidor:8080/
 ```
 
-El conector:
+El connector:
 
-- abre un puerto;
-- acepta conexiones;
+- obre un port;
+- accepta connexions;
 - interpreta HTTP;
-- entrega cada petición al contenedor;
-- devuelve la respuesta al cliente.
+- entrega cada petició al Contenidor;
+- retorna la Resposta al Client.
 
 ---
 
-### 4.2. Contenedor web
+### 4.2. Contenidor web
 
-Es el elemento que gestiona los componentes de la aplicación web.
+és el element que gestionals components de l'aplicació web.
 
-Entre otras tareas:
+entre altres tasques:
 
-- carga la aplicación;
-- crea los objetos necesarios;
-- administra el ciclo de vida de servlets y filtros;
-- asigna URL a componentes;
-- mantiene sesiones;
-- procesa errores;
-- gestiona recursos internos.
+- càrrega l'aplicació;
+- creals objetos necessaris;
+- administral cicle de vida de servlets i Filtres;
+- asigna URL a components;
+- manté Sessions;
+- processa errors;
+- gestiona recursos interns.
 
-En Tomcat, este contenedor implementa las especificaciones de **Jakarta Servlet**.
+en Tomcat, aquest Contenidor implementa Les especificaciones de **Jakarta Servlet**.
 
 ---
 
-### 4.3. Gestor de sesiones
+### 4.3. Gestor de Sessions
 
-HTTP es un protocolo esencialmente **sin estado**.
+HTTP és un protocoho esseèncialment **sense estat**.
 
-Esto significa que, de manera predeterminada, dos peticiones independientes no contienen ninguna información que indique que pertenecen a la misma persona.
+açò significa que, de manera predeterminada, dos Peticions independents no contenen cap informació que indique que pertanyen a la mateixa persona.
 
-Una tienda online necesita recordar, por ejemplo:
+Una botiga online necessita recordar, per exemple:
 
 ```text
 Usuario autenticado: ana
@@ -209,9 +209,9 @@ Carrito:
   - ratón
 ```
 
-Para ello se utilizan sesiones.
+per alho s'utilitzen Sessions.
 
-Normalmente el servidor crea un identificador de sesión y el navegador lo conserva mediante una cookie como:
+normalment el servidor crea un identificador de Sessió i el navegador ho conserva mitjançant una cookie com:
 
 ```text
 JSESSIONID=...
@@ -225,221 +225,221 @@ sequenceDiagram
     N->>S: POST /login
     S-->>N: Set-Cookie: JSESSIONID=ABC...
     N->>S: GET /panel<br/>Cookie: JSESSIONID=ABC...
-    S-->>N: Contenido de la sesión de ese usuario
+    S-->>N: Contingut de la sesión de ese usuari
 ```
 
 ---
 
-### 4.4. Gestión de conexiones a bases de datos
+### 4.4. Gestió de connexions a bases de dades
 
-Abrir una conexión nueva con una base de datos para cada petición puede resultar costoso.
+obrir una connexió nova amb una base de dades per a cada petició Pot resultar costós.
 
-Por ello es frecuente utilizar un **pool de conexiones**.
+per això és freqüent Utilitzar un **pool de connexions**.
 
-Un pool mantiene varias conexiones preparadas:
+Un pool manté diverses connexions preparades:
 
 ```mermaid
 flowchart LR
-    A1["Petición 1"] --> P["Pool JDBC"]
-    A2["Petición 2"] --> P
-    A3["Petición 3"] --> P
+    A1["Petició 1"] --> P["Pool JDBC"]
+    A2["Petició 2"] --> P
+    A3["Petició 3"] --> P
     P --> C1["Conexión 1"]
     P --> C2["Conexión 2"]
     P --> C3["Conexión 3"]
-    C1 --> DB[("Base de datos")]
+    C1 --> DB[("Base de dades")]
     C2 --> DB
     C3 --> DB
 ```
 
-En lugar de:
+en lloc de:
 
 ```text
 abrir conexión → consultar → cerrar conexión
 ```
 
-se realiza:
+se realitza:
 
 ```text
 pedir conexión al pool → consultar → devolver conexión al pool
 ```
 
-Esto reduce el coste de establecer conexiones repetidamente.
+açò reduce el coste de establecer connexions repetidamente.
 
 ---
 
-### 4.5. Seguridad
+### 4.5. Seguretat
 
-Un servidor de aplicaciones puede colaborar en:
+Un Servidor d'aplicacions Pot colaborar en:
 
-- autenticación;
-- autorización;
-- definición de roles;
-- protección de zonas de administración;
+- autenticació;
+- autorització;
+- definición de rols;
+- protecció de zonas d'administració;
 - TLS/HTTPS;
-- protección de sesiones;
-- restricciones de acceso.
+- protecció de Sessions;
+- restricciones de accés.
 
-Estos conceptos se desarrollan en la **UP3.4**.
+aquests conceptes es desenvolupen en la **UP3.4**.
 
 ---
 
-### 4.6. Registro de eventos
+### 4.6. registre de Esdeveniments
 
-Los **logs** permiten conocer qué está ocurriendo.
+els **logs** permeten conéixer Què està ocorrent.
 
-Pueden registrar:
+poden registrar:
 
-- inicio y parada del servidor;
-- errores;
-- aplicaciones desplegadas;
+- Inici i parada del servidor;
+- errors;
+- aplicacions desplegades;
 - excepciones;
-- accesos;
-- problemas de configuración.
+- accéss;
+- problemes de configuració.
 
-Un administrador no debería diagnosticar un servidor únicamente observando lo que aparece en el navegador.
+Un administrador no hauria de diagnosticar un servidor únicament observando ho que apareix en el navegador.
 
-!!! tip "Regla de diagnóstico"
-    Si una aplicación no arranca o devuelve un error inesperado, una de las primeras acciones debe ser revisar los **logs del servidor**.
+!!! tip "Regla de diagnòstic"
+    Si una aplicació no arranca o retorna un error inesperado, una de les primeras acciones ha de ser revisar els **logs del servidor**.
 
 ---
 
-### 4.7. Administración del despliegue
+### 4.7. Administració del desplegament
 
-El servidor debe poder:
+El Servidor ha de poder:
 
-- cargar una aplicación;
+- carregar una aplicació;
 - iniciarla;
-- detenerla;
+- detindrela;
 - volver a desplegarla;
 - eliminarla;
-- informar de errores durante el despliegue.
+- informar de errors durante el desplegament.
 
-Tomcat puede desplegar aplicaciones mediante:
+Tomcat Pot desplegar aplicacions mitjançant:
 
-- directorios dentro de `webapps`;
-- archivos `.war`;
+- directoris dins de `webapps`;
+- Fitxers `.war`;
 - Tomcat Manager;
-- configuración de contextos;
-- herramientas automatizadas.
+- configuració de contextos;
+- eines automatizadas.
 
 ---
 
-## 5. Servicios proporcionados por el servidor
+## 5. Serveis proporcionats pel servidor
 
-Podemos resumir los principales servicios de la siguiente forma:
+podem resumir els principals Serveis de la següent forma:
 
-| Servicio | Función |
+| Servei | funció |
 |---|---|
-| HTTP/HTTPS | Recibir peticiones de clientes |
-| Contenedor web | Ejecutar componentes web |
-| Sesiones | Mantener estado entre peticiones |
-| Seguridad | Autenticar y autorizar |
-| Recursos | Acceder a bases de datos y otros servicios |
-| Despliegue | Instalar y ejecutar aplicaciones |
-| Logging | Registrar eventos y errores |
-| Gestión | Administrar el entorno |
-| Rendimiento | Gestionar concurrencia, conexiones y recursos |
+| HTTP/HTTPS | rebre Peticions de Clients |
+| Contenidor web | Executar components web |
+| Sessions | mantindre estat entre Peticions |
+| Seguretat | Autenticar i autorizar |
+| recursos | Acceder a bases de dades i altres Serveis |
+| Desplegament | instal·lar i Executar aplicacions |
+| Logging | Registrar Esdeveniments i errors |
+| Gestió | Administrar l'entorn |
+| Rendiment | Gestionar concurrèència, connexions i recursos |
 
 ---
 
-## 6. Flujo completo de una petición
+## 6. flux complet d'una petició
 
-Supongamos que un usuario accede a:
+Supongamos que un Usuari accede a:
 
 ```text
 https://tienda.example.com/productos/15
 ```
 
-En una arquitectura con Apache y Tomcat podría ocurrir lo siguiente:
+en una arquitectura amb Apache i Tomcat podria ocurrir ho següent:
 
 ```mermaid
 flowchart TD
     A["1. Navegador"] -->|"HTTPS"| B["2. Apache HTTP Server"]
-    B -->|"Proxy inverso"| C["3. Tomcat"]
-    C --> D["4. Filtro de autenticación"]
+    B -->|"Proxy invers"| C["3. Tomcat"]
+    C --> D["4. Filtro de autenticació"]
     D --> E["5. Servlet / controlador"]
-    E --> F[("6. Base de datos")]
+    E --> F[("6. Base de dades")]
     F --> E
-    E --> G["7. Vista / respuesta"]
+    E --> G["7. Vista / resposta"]
     G --> C
     C --> B
     B --> A
 ```
 
-Cada elemento tiene una responsabilidad distinta.
+Cadalement té una responsabilitat distinta.
 
-Esta separación permite:
+aquesta separació permet:
 
-- entender mejor la arquitectura;
-- sustituir componentes;
-- aplicar seguridad por capas;
-- escalar diferentes partes;
-- localizar fallos con más facilidad.
+- entendre mejor l'arquitectura;
+- sustituir components;
+- aplicar Seguretat per capes;
+- escalar diferents parts;
+- localitzar fallos amb més facilidad.
 
 ---
 
-## 7. Ejemplos de plataformas
+## 7. exemples de plataformes
 
 ### Apache Tomcat
 
-Especializado en aplicaciones web Java.
+especialitzat en aplicacions web Java.
 
-Soporta tecnologías como:
+Soporta tecnologies com:
 
 - Jakarta Servlet;
 - Jakarta Pages;
 - WebSocket;
 - Expression Language.
 
-Es el servidor principal que utilizaremos en esta unidad.
+és el servidor principal que Utilitzarem en aquesta unitat.
 
 ### WildFly / Payara
 
-Son servidores Jakarta EE más completos.
+són servidors Jakarta EE més complets.
 
-Además del contenedor web pueden proporcionar de forma integrada:
+a més del contenidor web poden proporcionar de manera integrada:
 
 - mensajería;
-- persistencia;
+- persisteència;
 - transacciones empresariales;
 - CDI;
-- servicios Jakarta EE adicionales.
+- Serveis Jakarta EE adicionales.
 
 ### Jetty
 
-Contenedor web ligero que puede integrarse fácilmente dentro de otras aplicaciones.
+Contenidor web ligero que Pot integrarse fàcilment dins de altres aplicacions.
 
 ---
 
-## 8. Qué debes retener
+## 8. Què has de retenir
 
-!!! summary "Resumen"
-    - El servidor web y el servidor de aplicaciones cumplen funciones relacionadas pero diferentes.
-    - Tomcat proporciona un entorno de ejecución para aplicaciones web Java.
-    - El contenedor recibe peticiones y las asigna a componentes de la aplicación.
-    - El servidor ofrece servicios como sesiones, seguridad, conexiones, logging y despliegue.
-    - Una petición web puede atravesar varias capas antes de generar la respuesta.
+!!! summary "resum"
+    - El Servidor web i el servidor d'aplicacions cumplen funcions relacionades però diferents.
+    - Tomcat proporciona un entorn de execució per a aplicacions web Java.
+    - El Contenidor rep Peticions i les asigna a components de l'aplicació.
+    - El Servidor ofereix Serveis com Sessions, Seguretat, connexions, logging i desplegament.
+    - Una petició web Pot atravesar diverses capes abans de generar la Resposta.
 
 ---
 
-## 9. Glosario
+## 9. glossari
 
-**Contenedor web**  
-Entorno responsable de ejecutar componentes de una aplicación web.
+**Contenidor web**  
+entorn responsable de Executar components d'una aplicació web.
 
-**Conector**  
-Componente que recibe conexiones mediante un protocolo, por ejemplo HTTP.
+**connector**  
+component que rep connexions mitjançant un protocolo, per exemple HTTP.
 
-**Sesión**  
-Mecanismo que permite mantener información asociada a un usuario entre varias peticiones.
+**Sessió**  
+mecanisme que permet mantindre informació asociada a un Usuari entre diverses Peticions.
 
-**Pool de conexiones**  
-Conjunto de conexiones reutilizables, normalmente a una base de datos.
+**Pool de connexions**  
+conjunt de connexions reutilitzables, normalment a una base de dades.
 
-**Despliegue**  
-Proceso de instalar y poner en funcionamiento una aplicación.
+**Desplegament**  
+procés de instal·lar i poner en funcionament una aplicació.
 
 **Log**  
-Registro de eventos producido por un sistema o aplicación.
+registre de Esdeveniments producido per un sistema o aplicació.
 
 ---

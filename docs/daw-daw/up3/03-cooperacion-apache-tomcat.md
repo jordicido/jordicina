@@ -1,37 +1,37 @@
 ---
 hide:
   - navigation
-title: "UP3.3. Cooperación entre Apache HTTP Server y Tomcat"
-description: "Integración del servidor web Apache con Apache Tomcat mediante proxy inverso."
+title: "UP3.3. Cooperació entre Apache HTTP Server i Tomcat"
+description: "Integració del servidor web Apache amb Apache Tomcat mitjançant un proxy invers."
 ---
 
-# UP3.3. Cooperación entre Apache HTTP Server y Tomcat
+# UP3.3. Cooperació entre Apache HTTP Server i Tomcat
 
-> **RA3.c:** Se ha configurado el servidor de aplicaciones para que coopere con el servidor web.
+> **RA3.c:** S'ha configurat el servidor d'aplicacions perquè coopere amb el servidor web.
 
-## Qué vas a aprender
+## Què aprendràs
 
-En este bloque estudiarás:
+En aquest bloc estudiaràs:
 
-- por qué se utilizan conjuntamente Apache HTTP Server y Tomcat;
-- qué es un proxy;
-- qué es un proxy inverso;
-- cómo se distribuyen las responsabilidades;
-- cómo se reenvían peticiones desde Apache a Tomcat;
-- qué son `mod_proxy`, `proxy_http` y AJP;
-- qué problemas pueden aparecer durante la integración.
+- per què s'utilitzen conjuntament Apache HTTP Server i Tomcat;
+- Què és un proxy;
+- Què és un proxy invers;
+- com es distribueixen les responsabilitats;
+- com es reenvien peticions des d'Apache a Tomcat;
+- Què són `mod_proxy`, `proxy_http` i AJP;
+- Què problemes poden aparéixer durante la integració.
 
 ---
 
-# 1. Arquitectura con dos servidores
+# 1. Arquitectura amb dos servidors
 
-Tomcat puede recibir directamente peticiones HTTP:
+Tomcat Pot rebre directament Peticions HTTP:
 
 ```text
 http://servidor:8080/app
 ```
 
-Sin embargo, en muchos despliegues se coloca un servidor web delante:
+Tanmateix, en molts desplegaments es col·loca un servidor web davant:
 
 ```text
 Cliente
@@ -41,13 +41,13 @@ Apache HTTP Server
 Tomcat
 ```
 
-El cliente puede acceder simplemente a:
+El Client Pot acceder simplement a:
 
 ```text
 https://www.ejemplo.com/app
 ```
 
-sin necesitar conocer:
+sense necessitar conéixer:
 
 ```text
 localhost:8080
@@ -55,99 +55,99 @@ localhost:8080
 
 ---
 
-## 2. Separación de responsabilidades
+## 2. separació de responsabilitats
 
-Apache HTTP Server puede encargarse de:
+Apache HTTP Server Pot encàrregarse de:
 
-- puertos públicos 80 y 443;
+- Ports públics 80 i 443;
 - HTTPS;
 - virtual hosts;
-- redirecciones;
-- contenido estático;
-- proxy inverso;
-- restricciones de acceso.
+- redireccions;
+- contingut estàtic;
+- proxy invers;
+- restricciones de accés.
 
-Tomcat puede encargarse de:
+Tomcat Pot encàrregarse de:
 
-- ejecutar servlets;
-- procesar JSP;
-- gestionar sesiones;
-- ejecutar lógica de la aplicación;
-- utilizar recursos Java.
+- Executar servlets;
+- processar JSP;
+- gestionar Sessions;
+- Executar lògica de l'aplicació;
+- Utilitzar recursos Java.
 
 ```mermaid
 flowchart LR
-    C["Cliente"] -->|"80/443"| A["Apache HTTP Server"]
+    C["Client"] -->|"80/443"| A["Apache HTTP Server"]
     A -->|"recursos estáticos"| S["HTML / CSS / JS / imágenes"]
     A -->|"proxy"| T["Tomcat :8080"]
-    T --> APP["Aplicación Java"]
+    T --> APP["Aplicació Java"]
 ```
 
 ---
 
-# 3. ¿Qué es un proxy?
+# 3. ¿Què és un proxy?
 
-Un proxy es un intermediario.
+Un proxy és un intermediario.
 
-En un **proxy directo**, el intermediario representa al cliente.
+en un **proxy directo**, el intermediario representa al Client.
 
 ```text
 Cliente → Proxy → Internet
 ```
 
-En un **proxy inverso**, el intermediario representa a los servidores.
+en un **proxy invers**, el intermediario representa als servidors.
 
 ```text
 Internet → Proxy inverso → Servidor interno
 ```
 
-La arquitectura que nos interesa es la segunda.
+La arquitectura que ens interessa és la segona.
 
 ---
 
-# 4. Proxy inverso
+# 4. Proxy invers
 
-Supongamos que Apache recibe:
+Supongamos que Apache rep:
 
 ```text
 http://catadaw2.com/app
 ```
 
-Apache puede reenviarla internamente a:
+Apache Pot reenviarla internament a:
 
 ```text
 http://127.0.0.1:8080/examples/servlets/
 ```
 
-El navegador no necesita conocer esa dirección interna.
+El navegador no necessita conéixer eixa adreça interna.
 
 ```mermaid
 sequenceDiagram
-    participant C as Cliente
+    participant C as Client
     participant A as Apache :80
     participant T as Tomcat :8080
 
     C->>A: GET /app
     A->>T: GET /examples/servlets/
-    T-->>A: HTTP 200 + respuesta
-    A-->>C: HTTP 200 + respuesta
+    T-->>A: HTTP 200 + resposta
+    A-->>C: HTTP 200 + resposta
 ```
 
 ---
 
-# 5. Ventajas del proxy inverso
+# 5. avantatges del proxy invers
 
-## 5.1. Ocultar la infraestructura interna
+## 5.1. ocultar la infraestructura interna
 
-Tomcat no necesita exponerse directamente a Internet.
+Tomcat no necessita exposar-se directament a Internet.
 
-El usuario ve:
+El Usuari ve:
 
 ```text
 https://www.ejemplo.com
 ```
 
-en lugar de:
+en lloc de:
 
 ```text
 http://192.168.1.20:8080
@@ -155,23 +155,23 @@ http://192.168.1.20:8080
 
 ---
 
-## 5.2. Centralizar HTTPS
+## 5.2. centralitzar HTTPS
 
-Apache puede gestionar los certificados y reenviar después el tráfico al backend.
+Apache Pot gestionar els certificats i reenviar després el trànsit al backend.
 
 ```mermaid
 flowchart LR
-    C["Cliente"] -->|"HTTPS"| A["Apache"]
+    C["Client"] -->|"HTTPS"| A["Apache"]
     A -->|"HTTP interno"| T["Tomcat"]
 ```
 
-En infraestructuras más exigentes también puede cifrarse el tramo interno.
+en infraestructuras més exigentes també Pot cifrarse el tramo intern.
 
 ---
 
-## 5.3. Servir contenido estático
+## 5.3. Servir contingut estàtic
 
-Apache puede servir directamente:
+Apache Pot servir directament:
 
 ```text
 /css/
@@ -179,65 +179,65 @@ Apache puede servir directamente:
 /imagenes/
 ```
 
-y enviar a Tomcat únicamente las peticiones que necesiten aplicación.
+i enviar a Tomcat únicament Les Peticions que necesiten aplicació.
 
 ---
 
-## 5.4. Facilitar escalabilidad
+## 5.4. facilitar escalabilitat
 
-Un proxy puede distribuir tráfico entre varios backends.
+Un proxy Pot distribuir trànsit entre diversos backends.
 
 ```mermaid
 flowchart LR
-    U["Usuarios"] --> P["Proxy inverso"]
+    U["Usuaris"] --> P["Proxy invers"]
     P --> T1["Tomcat 1"]
     P --> T2["Tomcat 2"]
     P --> T3["Tomcat 3"]
 ```
 
-Este concepto se denomina **balanceo de carga**.
+aquest concepto es denomina **balanceo de càrrega**.
 
 ---
 
-# 6. Módulos de Apache
+# 6. mòduls de Apache
 
-Apache HTTP Server utiliza módulos para ampliar su funcionalidad.
+Apache HTTP Server Utilitza mòduls per a ampliar el seu funcionalitat.
 
-Para trabajar como proxy son especialmente relevantes:
+per a treballar com proxy són especialment rellevants:
 
 ```text
 proxy
 proxy_http
 ```
 
-En Ubuntu pueden habilitarse mediante:
+en Ubuntu poden habilitarse mitjançant:
 
 ```bash
 sudo a2enmod proxy
 sudo a2enmod proxy_http
 ```
 
-Después:
+després:
 
 ```bash
 sudo apache2ctl configtest
 sudo systemctl reload apache2
 ```
 
-!!! tip "Primero validar, después recargar"
-    Es una buena costumbre ejecutar:
+!!! tip "primer validar, després recarregar"
+    és una buena costumbre Executar:
 
     ```bash
     sudo apache2ctl configtest
     ```
 
-    antes de aplicar cambios de configuración.
+    abans de aplicar canvis de configuració.
 
 ---
 
 # 7. `ProxyPass`
 
-Un ejemplo sencillo:
+Un exemple sencillo:
 
 ```apache
 <VirtualHost *:80>
@@ -250,17 +250,17 @@ Un ejemplo sencillo:
 
 ### `ProxyPass`
 
-Indica dónde debe enviarse una petición.
+Indica on ha de enviar-se una petició.
 
 ### `ProxyPassReverse`
 
-Permite que Apache adapte determinadas cabeceras de respuesta del backend para mantener la URL pública correcta.
+permet que Apache adapte determinadas cabeceras de Resposta del backend per a mantindre la URL pública correcta.
 
 ---
 
-# 8. Ruta pública y ruta interna
+# 8. Ruta pública i ruta interna
 
-Es importante distinguirlas.
+és important distinguirlas.
 
 ```text
 Ruta pública:
@@ -275,42 +275,42 @@ flowchart LR
     P["/app/"] -->|"ProxyPass"| I["/examples/servlets/"]
 ```
 
-Un error frecuente consiste en pensar que ambas rutas deben ser idénticas.
+Un error freqüent consiste en pensar que ambdues rutas han de ser idèntiques.
 
-No es obligatorio.
+No és obligatori.
 
 ---
 
 # 9. `ProxyPreserveHost`
 
-Algunas aplicaciones necesitan conocer el host solicitado originalmente por el usuario.
+algunes aplicacions necessiten conéixer el host sol·licitado originalment pel Usuari.
 
-Apache puede conservarlo mediante:
+Apache Pot conservarho mitjançant:
 
 ```apache
 ProxyPreserveHost On
 ```
 
-Esto puede ser relevante cuando la aplicación:
+açò Pot ser relevante quan l'aplicació:
 
 - genera enlaces absolutos;
-- diferencia dominios;
-- realiza redirecciones;
-- valida el host.
+- diferèència dominios;
+- realitza redireccions;
+- validal host.
 
 ---
 
 # 10. AJP
 
-**AJP (Apache JServ Protocol)** es un protocolo diseñado para comunicar un servidor web con un contenedor Java.
+**AJP (Apache JServ Protocol)** és un protocoho diseñado per a comunicar un servidor web amb un contenidor Java.
 
-Tradicionalmente se ha utilizado con Tomcat mediante el puerto:
+Tradicionalmente es ha utilitzat amb Tomcat mitjançant el Port:
 
 ```text
 8009
 ```
 
-Es importante diferenciar:
+és important difereènciar:
 
 ```text
 proxy_http → Apache habla HTTP con Tomcat
@@ -323,18 +323,18 @@ flowchart TD
     A -->|"AJP :8009"| T2["Conector AJP Tomcat"]
 ```
 
-!!! warning "AJP no debe exponerse innecesariamente"
-    Si se utiliza AJP, debe quedar restringido a la comunicación necesaria entre servidores.
+!!! warning "AJP no ha de exposar-se innecessàriament"
+    Si sutilitza AJP, ha de quedar restringido a la comunicació necessària entre servidors.
 
-    Para una arquitectura docente sencilla, `mod_proxy_http` suele ser más fácil de comprender y diagnosticar.
+    per a una arquitectura docente sencilla, `mod_proxy_http` sol ser més fàcil de comprendre i diagnosticar.
 
 ---
 
-# 11. ¿Cómo sabe Tomcat qué petición debe procesar?
+# 11. ¿com sap Tomcat Què petició ha de processar?
 
-Tomcat recibe la petición reenviada por Apache y la asigna a una aplicación según su **context path**.
+Tomcat rep la petició reenviada per Apache i la asigna a una aplicació segons el seu **context path**.
 
-Ejemplo:
+exemple:
 
 ```text
 http://localhost:8080/tienda/productos
@@ -342,7 +342,7 @@ http://localhost:8080/tienda/productos
                        contexto
 ```
 
-Dentro de la aplicación, el contenedor buscará qué servlet, filtro o recurso corresponde a:
+dins de l'aplicació, el contenidor buscará Què servlet, filtre o recurs correspon a:
 
 ```text
 /productos
@@ -350,61 +350,61 @@ Dentro de la aplicación, el contenedor buscará qué servlet, filtro o recurso 
 
 ---
 
-# 12. Flujo completo
+# 12. flux complet
 
 ```mermaid
 sequenceDiagram
-    participant U as Usuario
+    participant U as Usuari
     participant DNS as DNS
     participant A as Apache
     participant T as Tomcat
-    participant APP as Aplicación
-    participant DB as Base de datos
+    participant APP as Aplicació
+    participant DB as Base de dades
 
     U->>DNS: catadaw2.com
     DNS-->>U: IP servidor
-    U->>A: GET /app/productos
+    U->>A: GET /app/productes
     A->>T: Proxy HTTP
-    T->>APP: /productos
+    T->>APP: /productes
     APP->>DB: Consulta
-    DB-->>APP: Datos
-    APP-->>T: Respuesta
+    DB-->>APP: Dades
+    APP-->>T: Resposta
     T-->>A: HTTP 200
     A-->>U: HTTP 200
 ```
 
 ---
 
-# 13. Diagnóstico de errores
+# 13. diagnòstic de errors
 
 ## `404 Not Found`
 
-Puede significar:
+Pot significar:
 
 - ruta incorrecta en Apache;
-- contexto incorrecto en Tomcat;
-- aplicación no desplegada;
+- contexto incorrecte en Tomcat;
+- aplicació no desplegada;
 - URL interna inexistente.
 
 ## `502 Bad Gateway`
 
-Suele indicar que Apache no consigue comunicarse correctamente con el backend.
+sol indicar que Apache no aconsegueix comunicarse correctament amb el backend.
 
-Comprobar:
+comprovar:
 
 ```bash
 curl http://127.0.0.1:8080/
 ```
 
-Si tampoco funciona directamente, el problema está probablemente en Tomcat o en la conectividad.
+Si tampoc funciona directament, el problema està probablement en Tomcat o en la conectividad.
 
 ## `503 Service Unavailable`
 
-Puede aparecer cuando el backend no está disponible o el proxy no consigue utilizarlo.
+Pot aparéixer quan el backend no està disponible o el proxy no aconsegueix utilitzar-lo.
 
 ---
 
-# 14. Orden lógico para diagnosticar
+# 14. ordre lògic per a diagnosticar
 
 ```mermaid
 flowchart TD
@@ -413,51 +413,51 @@ flowchart TD
     B -->|Sí| D{"¿Apache funciona?"}
     D -->|No| E["Solucionar Apache"]
     D -->|Sí| F{"¿configtest OK?"}
-    F -->|No| G["Corregir configuración"]
+    F -->|No| G["Corregir configuració"]
     F -->|Sí| H["Revisar ProxyPass y logs"]
 ```
 
-!!! tip "Diagnosticar de dentro hacia fuera"
-    Antes de probar el proxy, comprueba siempre que Tomcat responde directamente.
+!!! tip "Diagnosticar de dins cap a fora"
+    abans de probar el proxy, comprova sempre que Tomcat respon directament.
 
-    Primero:
+    primer:
 
     ```bash
     curl http://localhost:8080/
     ```
 
-    Después prueba Apache.
+    després Prova Apache.
 
 ---
 
-# 15. Qué debes retener
+# 15. Què has de retenir
 
-!!! summary "Resumen"
-    - Un proxy inverso recibe peticiones públicas y las envía a servidores internos.
-    - Apache puede funcionar como puerta de entrada y Tomcat como backend.
-    - `mod_proxy` y `proxy_http` permiten realizar proxy HTTP.
-    - `ProxyPass` define el destino de las peticiones.
-    - `ProxyPassReverse` ayuda a adaptar respuestas del backend.
-    - HTTP y AJP son alternativas diferentes para comunicar Apache con Tomcat.
-    - La integración debe probarse primero por componentes y después de extremo a extremo.
+!!! summary "resum"
+    - Un proxy invers rep Peticions públiques i les envia a servidors interns.
+    - Apache Pot funcionar com puerta de entrada i Tomcat com backend.
+    - `mod_proxy` i `proxy_http` permeten realitzar proxy HTTP.
+    - `ProxyPass` define el destinació de les Peticions.
+    - `ProxyPassReverse` ajuda a adaptar Respostes del backend.
+    - HTTP i AJP són alternativas diferents per a comunicar Apache amb Tomcat.
+    - La integració ha de probarse primer per components i després de extrem a extrem.
 
 ---
 
-# 16. Glosario
+# 16. glossari
 
 **Backend**  
-Servidor interno que procesa una petición recibida a través de otro componente.
+Servidor intern que processa una petició rebuda a través d'un altre component.
 
-**Proxy inverso**  
-Intermediario situado delante de uno o varios servidores.
+**Proxy invers**  
+Intermediario situado davant de uno o diversos servidors.
 
 **AJP**  
-Protocolo de comunicación utilizado históricamente entre servidores web y contenedores Java.
+Protocoho de comunicació utilitzat históricamente entre servidors web i Contenidors Java.
 
 **VirtualHost**  
-Configuración que permite a Apache alojar diferentes sitios o dominios.
+Configuració que permet a Apache allotjar diferents llocs o dominios.
 
-**Balanceo de carga**  
-Distribución de peticiones entre varias instancias.
+**Balanceo de càrrega**  
+Distribución de Peticions entre diverses instancies.
 
 ---

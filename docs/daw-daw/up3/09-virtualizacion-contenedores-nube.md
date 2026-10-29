@@ -1,51 +1,51 @@
 ---
 hide:
   - navigation
-title: "UP3.9. Virtualización, contenedores y nube"
-description: "Máquinas virtuales, Docker, Compose, contenedores y servicios de nube aplicados al despliegue."
+title: "UP3.9. Virtualització, contenidors i núvol"
+description: "Màquines virtuals, Docker, Compose, contenidors i serveis de núvol aplicats al desplegament."
 ---
 
-# UP3.9. Virtualización, contenedores y nube
+# UP3.9. Virtualització, contenidors i núvol
 
-> **RA3.i:** Se han utilizado tecnologías de virtualización en el despliegue de servidores de aplicaciones en la nube y en contenedores.
+> **RA3.i:** S'han utilitzat tecnologies de virtualització en el desplegament de servidors d'aplicacions en el núvol i en contenidors.
 
-## Qué vas a aprender
+## Què aprendràs
 
-En este bloque estudiarás:
+en aquest bloc estudiaràs:
 
-- virtualización;
-- máquinas virtuales;
-- contenedores;
+- Virtualització;
+- màquines virtuals;
+- Contenidors;
 - Docker;
-- imágenes;
-- redes;
-- volúmenes;
-- Docker Compose;
-- integración Apache + Tomcat en contenedores;
-- conceptos básicos de despliegue en la nube.
+- imatges;
+- xarxes;
+- volums;
+- Docker compose;
+- integració Apache + Tomcat en Contenidors;
+- conceptes bàsics de desplegament en el núvol.
 
 ---
 
-# 1. El problema de los entornos
+# 1. El problema dels entorns
 
-Una aplicación puede funcionar en el equipo del desarrollador y fallar en otro sistema porque cambian:
+Una aplicació Pot funcionar en el equip del desarrollador i fallar en un altre sistema perquè cambian:
 
 ```text
 sistema operativo
 versión de Java
 bibliotecas
-configuración
+configuració
 puertos
 dependencias
 ```
 
-Las tecnologías de virtualización y contenedores ayudan a crear entornos más reproducibles.
+Les tecnologies de Virtualització i Contenidors ajudan a crear entorns més reproducibles.
 
 ---
 
-# 2. Máquina física
+# 2. màquina física
 
-En un servidor tradicional:
+en un servidor tradicional:
 
 ```mermaid
 flowchart TD
@@ -53,16 +53,16 @@ flowchart TD
     OS --> J["Java"]
     OS --> A["Apache"]
     OS --> T["Tomcat"]
-    OS --> DB["Base de datos"]
+    OS --> DB["Base de dades"]
 ```
 
-Todos los servicios comparten el mismo sistema operativo.
+tots els serveis comparten el mateix sistema operativo.
 
 ---
 
-# 3. Virtualización
+# 3. Virtualització
 
-Un hipervisor permite ejecutar varias máquinas virtuales.
+Un hipervisor permet Executar diverses màquines virtuals.
 
 ```mermaid
 flowchart TD
@@ -72,71 +72,71 @@ flowchart TD
     HV --> V3["VM 3<br/>Ubuntu + BD"]
 ```
 
-Cada VM incluye:
+Cada VM inclou:
 
 - sistema operativo;
-- procesos;
+- processos;
 - disco virtual;
-- memoria asignada;
-- red virtual.
+- memòria asignada;
+- xarxa virtual.
 
 ---
 
-# 4. Ventajas de las máquinas virtuales
+# 4. avantatges de les màquines virtuals
 
 - aislamiento fuerte;
-- sistemas operativos diferentes;
+- sistemes operatius diferents;
 - snapshots;
 - laboratorios reproducibles;
-- separación entre servicios.
+- separació entre Serveis.
 
-Inconvenientes:
+Inconvenients:
 
 - mayor consumo de RAM;
-- más espacio;
-- arranque más lento;
-- administración de varios sistemas operativos.
+- més espacio;
+- arrancada més lent;
+- Administració de diversos sistemes operatius.
 
 ---
 
-# 5. Contenedores
+# 5. Contenidors
 
-Un contenedor aísla procesos sin incluir necesariamente un sistema operativo completo independiente.
+Un Contenidor aísla processos sense incluir necessàriament un sistema operativo complet independiente.
 
 ```mermaid
 flowchart TD
     H["Hardware"] --> OS["Sistema operativo host"]
-    OS --> D["Motor de contenedores"]
+    OS --> D["Motor de contingutrs"]
     D --> C1["Apache"]
     D --> C2["Tomcat"]
-    D --> C3["Base de datos"]
+    D --> C3["Base de dades"]
 ```
 
-Los contenedores comparten el kernel del host.
+els Contenidors comparten el kernel del host.
 
 ---
 
-# 6. VM frente a contenedor
+# 6. VM davant de Contenidor
 
-| Característica | VM | Contenedor |
+| Característica | VM | Contenidor |
 |---|---|---|
-| SO completo | Sí | No |
-| Aislamiento | Alto | A nivel de proceso |
-| Tamaño | Mayor | Menor |
-| Arranque | Más lento | Rápido |
-| Portabilidad | Buena | Muy buena |
+| SO complet | Sí | No |
+| Aislamiento | Alto | A nivell de procés |
+| mida | Mayor | Menor |
+| arrancada | més lent | ràpid |
+| Portabilidad | Buena | molt buena |
 | Densidad | Menor | Mayor |
 
-!!! info "No son tecnologías enemigas"
-    Es habitual ejecutar Docker **dentro de una máquina virtual**.
+!!! info "No són tecnologies enemigas"
+    és habitual Executar Docker **dins d'una màquina virtual**.
 
-    Por ejemplo, una VM en un proveedor cloud puede ejecutar varios contenedores.
+    per exemple, una VM en un proveedor cloud pot executar diversos Contenidors.
 
 ---
 
 # 7. Docker
 
-Docker utiliza varios conceptos fundamentales.
+Docker Utilitza diversos conceptes fonamentals.
 
 ```text
 Dockerfile → imagen → contenedor
@@ -144,21 +144,21 @@ Dockerfile → imagen → contenedor
 
 ### Dockerfile
 
-Describe cómo construir una imagen.
+Describe com construir una imatge.
 
-### Imagen
+### imatge
 
-Plantilla inmutable utilizada para crear contenedores.
+Plantilla inmutable Utilitzada per a crear Contenidors.
 
-### Contenedor
+### Contenidor
 
-Instancia en ejecución de una imagen.
+Instaència en execució d'una imatge.
 
 ---
 
-# 8. Ejemplo de Dockerfile
+# 8. exemple de Dockerfile
 
-Ejemplo conceptual para desplegar un WAR:
+exemple conceptual per a desplegar un WAR:
 
 ```dockerfile
 FROM tomcat:10.1-jdk21
@@ -172,7 +172,7 @@ Construcción:
 docker build -t tienda-tomcat .
 ```
 
-Ejecución:
+execució:
 
 ```bash
 docker run -p 8080:8080 tienda-tomcat
@@ -180,15 +180,15 @@ docker run -p 8080:8080 tienda-tomcat
 
 ---
 
-# 9. Publicación de puertos
+# 9. publicació de Ports
 
-Si Tomcat escucha dentro del contenedor en:
+Si Tomcat escucha dins del contenidor en:
 
 ```text
 8080
 ```
 
-podemos publicar:
+podem publicar:
 
 ```bash
 -p 8080:8080
@@ -200,7 +200,7 @@ Formato:
 puerto_host:puerto_contenedor
 ```
 
-Ejemplo:
+exemple:
 
 ```bash
 -p 9090:8080
@@ -214,26 +214,26 @@ host:9090 → contenedor:8080
 
 ---
 
-# 10. Red entre contenedores
+# 10. xarxa entre Contenidors
 
-Los contenedores de una misma red pueden comunicarse utilizando nombres de servicio.
+els Contenidors d'una mateixa xarxa poden comunicarse utilitzant noms de Servei.
 
 ```mermaid
 flowchart LR
-    U["Host / usuario"] --> A["apache<br/>:80"]
+    U["Host / usuari"] --> A["apache<br/>:80"]
     A -->|"http://tomcat:8080"| T["tomcat<br/>:8080"]
     T -->|"db:5432"| D[("db")]
 ```
 
-Esto evita depender de direcciones IP que pueden cambiar.
+açò evita depender de adreces IP que poden cambiar.
 
 ---
 
-# 11. Docker Compose
+# 11. Docker compose
 
-Docker Compose permite describir varios servicios.
+Docker compose permet descriure diversos Serveis.
 
-Ejemplo conceptual:
+exemple conceptual:
 
 ```yaml
 services:
@@ -249,19 +249,19 @@ services:
     image: tomcat:10.1-jdk21
 ```
 
-Dentro de la red de Compose, Apache podría utilizar:
+dins de la xarxa de compose, Apache podria Utilitzar:
 
 ```text
 http://tomcat:8080
 ```
 
-como destino del proxy.
+com destinació del proxy.
 
 ---
 
-# 12. Proxy inverso entre contenedores
+# 12. Proxy invers entre Contenidors
 
-Configuración conceptual de Apache:
+Configuració conceptual de Apache:
 
 ```apache
 ProxyPass        /app/ http://tomcat:8080/miapp/
@@ -270,23 +270,23 @@ ProxyPassReverse /app/ http://tomcat:8080/miapp/
 
 ```mermaid
 sequenceDiagram
-    participant U as Usuario
-    participant A as contenedor apache
-    participant T as contenedor tomcat
+    participant U as Usuari
+    participant A as contingutr apache
+    participant T as contingutr tomcat
 
     U->>A: GET /app/
     A->>T: GET /miapp/
-    T-->>A: respuesta
-    A-->>U: respuesta
+    T-->>A: resposta
+    A-->>U: resposta
 ```
 
 ---
 
-# 13. No publicar todos los puertos
+# 13. No publicar tots els Ports
 
-Si únicamente Apache debe recibir tráfico público, no siempre es necesario publicar Tomcat.
+Si únicament Apache ha de rebre trànsit públic, no sempre és necessari publicar Tomcat.
 
-En Compose:
+en compose:
 
 ```yaml
 tomcat:
@@ -294,99 +294,99 @@ tomcat:
     - "8080"
 ```
 
-conceptualmente permite que otros servicios de la red lo utilicen sin exponer necesariamente ese puerto al exterior.
+conceptualmente permet que altres Serveis de la xarxa ho utilitzen sense exposar necessàriament eixe Port al exterior.
 
 ```mermaid
 flowchart LR
     I["Internet"] -->|"80/443"| A["Apache"]
-    A -->|"red Docker"| T["Tomcat"]
-    T -->|"red Docker"| D[("BD")]
+    A -->|"xarxa Docker"| T["Tomcat"]
+    T -->|"xarxa Docker"| D[("BD")]
 ```
 
-Esta arquitectura reduce superficie expuesta.
+aquesta arquitectura reduce superfície expuesta.
 
 ---
 
-# 14. Volúmenes
+# 14. volums
 
-Los contenedores son desechables.
+els Contenidors són desechables.
 
-Los datos que deben sobrevivir necesitan persistencia.
+les dades que han de sobrevivir necessiten persisteència.
 
-Ejemplos:
+exemples:
 
 ```text
 base de datos
 archivos subidos
 certificados
-configuración externa
+configuració externa
 ```
 
-Un volumen permite almacenar datos fuera de la capa efímera del contenedor.
+Un volum permet emmagatzemar Dades fora de la capa efímera del contenidor.
 
 ```mermaid
 flowchart LR
-    C["Contenedor"] --> V[("Volumen")]
-    C -.->|"se elimina"| X["contenedor eliminado"]
-    V --> N["nuevo contenedor"]
+    C["Contingutr"] --> V[("Volum")]
+    C -.->|"se elimina"| X["contingutr eliminat"]
+    V --> N["nou contingutr"]
 ```
 
 ---
 
-# 15. Configuración
+# 15. Configuració
 
-En contenedores debemos evitar construir una imagen diferente para cada pequeño cambio de configuración si puede externalizarse.
+en Contenidors debemos evitar construir una imatge diferent per a cada xicotet Canvi de configuració si Pot externalitzar-se.
 
-Opciones:
+opcions:
 
-- variables de entorno;
-- volúmenes;
-- archivos montados;
-- secretos.
+- variables de entorn;
+- volums;
+- Fitxers montados;
+- secrets.
 
 ---
 
-# 16. Seguridad en Docker
+# 16. Seguretat en Docker
 
-Buenas prácticas:
+Buenas pràctiques:
 
-- utilizar imágenes mantenidas;
-- evitar etiquetas ambiguas cuando se necesite reproducibilidad;
-- ejecutar con mínimos privilegios;
-- no introducir contraseñas en el Dockerfile;
-- publicar solo los puertos necesarios;
-- actualizar imágenes;
-- reducir componentes;
-- separar redes cuando corresponda.
+- Utilitzar imatges mantenidas;
+- evitar etiquetas ambiguas quan es necesite reproducibilidad;
+- Executar amb mínims privilegis;
+- no introducir Contrasenyes en el Dockerfile;
+- publicar només els Ports necessaris;
+- actualitzar imatges;
+- Reduir components;
+- separar xarxes quan corresponda.
 
-!!! danger "Imagen no equivale a entorno seguro"
-    Un contenedor no elimina la necesidad de aplicar actualizaciones, restringir permisos o proteger credenciales.
+!!! danger "imatge no equival a entorn segur"
+    Un Contenidor no elimina la necessitat de aplicar actualitzacions, restringir permisos o protegir credeèncials.
 
 ---
 
 # 17. `latest`
 
-Utilizar:
+Utilitzar:
 
 ```yaml
 image: tomcat:latest
 ```
 
-puede provocar que dos despliegues realizados en momentos distintos utilicen versiones diferentes.
+Pot provocar que dos desplegaments realitzats en moments diferents utilitzen versions diferents.
 
-Para entornos reproducibles suele ser preferible fijar una versión suficientemente concreta:
+per a entorns reproducibles sol ser preferible fixar una versió prou concreta:
 
 ```yaml
 image: tomcat:10.1-jdk21
 ```
 
-La estrategia exacta dependerá del proyecto y de su política de actualización.
+La estratègia exacta dependerá del proyecto i del seu política de actualització.
 
 ---
 
-# 18. Logs de contenedores
+# 18. Logs de Contenidors
 
-Docker permite consultar la salida de un contenedor:
+Docker permet consultar la eixida d'un contenidor:
 
 ```bash
 docker logs nombre_contenedor
@@ -398,7 +398,7 @@ seguimiento:
 docker logs -f nombre_contenedor
 ```
 
-Con Compose:
+amb compose:
 
 ```bash
 docker compose logs
@@ -406,9 +406,9 @@ docker compose logs
 
 ---
 
-# 19. Estado de los contenedores
+# 19. estat dels Contenidors
 
-Comandos habituales:
+ordres habituals:
 
 ```bash
 docker ps
@@ -422,7 +422,7 @@ docker compose ps
 docker inspect nombre
 ```
 
-El diagnóstico sigue el mismo principio estudiado anteriormente:
+El diagnòstic segueix el mateix principi estudiado anteriormente:
 
 ```text
 estado
@@ -433,24 +433,24 @@ puerto
   ↓
 logs
   ↓
-aplicación
+aplicació
 ```
 
 ---
 
-# 20. ¿Qué significa “nube”?
+# 20. ¿Què significa “núvol”?
 
-La nube no es simplemente “el ordenador de otra persona”.
+La núvol no és simplement “el ordenador d'una altra persona”.
 
-Hace referencia a un modelo en el que recursos de infraestructura y plataforma pueden aprovisionarse mediante servicios y automatización.
+fa referèència a un model en què recursos de infraestructura i plataforma poden aprovisionarse mitjançant Serveis i automatización.
 
-Modelos habituales:
+models habituals:
 
 ### IaaS
 
-Infraestructura como servicio.
+Infraestructura com Servei.
 
-Ejemplo conceptual:
+exemple conceptual:
 
 ```text
 máquina virtual
@@ -459,23 +459,23 @@ disco
 IP
 ```
 
-El usuario administra buena parte del sistema.
+El Usuari administra buena part del sistema.
 
 ### PaaS
 
-Plataforma como servicio.
+Plataforma com Servei.
 
-El proveedor gestiona más elementos de infraestructura y el usuario se centra principalmente en desplegar la aplicación.
+El proveedor gestiona més elements de infraestructura i el Usuari es centra principalment en desplegar l'aplicació.
 
 ### SaaS
 
-Software completo ofrecido como servicio al usuario final.
+programari complet ofrecido com Servei al Usuari final.
 
 ---
 
-# 21. Contenedores en la nube
+# 21. Contenidors en el núvol
 
-Un contenedor puede ejecutarse:
+Un Contenidor Pot ejecutarse:
 
 ```text
 en portátil
@@ -485,21 +485,21 @@ en proveedor cloud
 en plataforma gestionada
 ```
 
-La imagen ayuda a mantener un entorno consistente.
+La imatge ajuda a mantindre un entorn coherent.
 
 ```mermaid
 flowchart LR
-    I["Imagen Docker"] --> L["Portátil"]
+    I["Imatge Docker"] --> L["Portátil"]
     I --> S["Servidor local"]
     I --> V["VM cloud"]
-    I --> P["Plataforma de contenedores"]
+    I --> P["Plataforma de contingutrs"]
 ```
 
 ---
 
 # 22. Escalado
 
-Si una aplicación es *stateless* en la medida de lo posible, resulta más fácil ejecutar varias instancias.
+Si una aplicació és *stateless* en la mesura de ho posible, resulta més fàcil Executar diverses instancies.
 
 ```mermaid
 flowchart LR
@@ -508,125 +508,125 @@ flowchart LR
     P --> C3["Tomcat 3"]
 ```
 
-Pero las sesiones, archivos locales y datos persistentes pueden complicar el escalado.
+però Les Sessions, Fitxers locales i Dades persistents poden complicar el escalado.
 
-Por ello conviene separar:
+per això convé separar:
 
 ```text
-aplicación
+aplicació
 estado
 datos persistentes
 ```
 
 ---
 
-# 23. De una VM de laboratorio a contenedores
+# 23. d'una VM de laboratorio a Contenidors
 
-La evolución conceptual de la unidad puede entenderse así:
+La evolució conceptual de la unitat Pot entendrese així:
 
 ```mermaid
 flowchart LR
     A["VM Ubuntu"] --> B["Tomcat"]
     B --> C["Apache + Tomcat"]
-    C --> D["Seguridad"]
+    C --> D["Seguretat"]
     D --> E["Apache + Tomcat<br/>en Docker"]
     E --> F["Despliegue reproducible"]
 ```
 
-El objetivo no es aprender comandos aislados de Docker, sino entender que estamos desplegando la **misma arquitectura** utilizando otra tecnología de ejecución.
+El objectiu no és aprendre ordres aïllats de Docker, sinó entendre que estem desplegant la **mateixa arquitectura** utilitzant una altra tecnologia de execució.
 
 ---
 
-# 24. Arquitectura final de referencia
+# 24. Arquitectura final de referèència
 
 ```mermaid
 flowchart TD
-    U["Usuario"] -->|"HTTPS"| A["Apache HTTP Server<br/>contenedor"]
-    A -->|"proxy interno"| T["Tomcat<br/>contenedor"]
-    T --> APP["Aplicación WAR"]
-    APP --> DB[("Base de datos")]
+    U["Usuari"] -->|"HTTPS"| A["Apache HTTP Server<br/>contingutr"]
+    A -->|"proxy intern"| T["Tomcat<br/>contingutr"]
+    T --> APP["Aplicació WAR"]
+    APP --> DB[("Base de dades")]
     T --> LOG["Logs"]
-    DB --> VOL[("Volumen persistente")]
+    DB --> VOL[("Volum persistente")]
 ```
 
-En una arquitectura de este tipo:
+en una arquitectura de aquest tipus:
 
-- Apache es la entrada;
-- Tomcat no necesita publicarse directamente;
-- la aplicación se despliega en Tomcat;
-- la base de datos mantiene persistencia;
-- la configuración debe externalizarse;
-- los servicios se comunican mediante una red interna.
-
----
-
-# 25. Qué debes retener
-
-!!! summary "Resumen"
-    - Una VM virtualiza una máquina completa.
-    - Un contenedor aísla procesos compartiendo el kernel del host.
-    - Docker utiliza Dockerfiles, imágenes y contenedores.
-    - Docker Compose permite definir arquitecturas con varios servicios.
-    - Los contenedores pueden comunicarse por nombre dentro de una red.
-    - No es necesario publicar al exterior todos los puertos internos.
-    - Los datos persistentes deben separarse de la vida del contenedor.
-    - Las mismas imágenes pueden utilizarse en local y en infraestructuras cloud.
-    - La contenerización no sustituye las medidas de seguridad.
+- Apache és la entrada;
+- Tomcat no necessita publicarse directament;
+- l'aplicació es despliega en Tomcat;
+- la base de dades manté persisteència;
+- la configuració ha de externalitzar-se;
+- els serveis es comunican mitjançant una xarxa interna.
 
 ---
 
-# 26. Glosario
+# 25. Què has de retenir
+
+!!! summary "resum"
+    - Una VM virtualiza una màquina completa.
+    - Un Contenidor aísla processos compartiendo el kernel del host.
+    - Docker Utilitza Dockerfiles, imatges i Contenidors.
+    - Docker compose permet definir arquitecturas amb diversos Serveis.
+    - els Contenidors poden comunicarse per nom dins d'una xarxa.
+    - No és necessari publicar al exterior tots els Ports interns.
+    - les dades persistents han de separar-se de la vida del contenidor.
+    - Les mateixes imatges poden utilizarse en local i en infraestructuras cloud.
+    - La contenidorització no substitueix Les mesures de Seguretat.
+
+---
+
+# 26. glossari
 
 **Hipervisor**  
-Software que permite ejecutar máquinas virtuales.
+programari que permet Executar màquines virtuals.
 
-**Imagen**  
-Plantilla utilizada para crear contenedores.
+**imatge**  
+Plantilla Utilitzada per a crear Contenidors.
 
-**Contenedor**  
-Proceso aislado creado a partir de una imagen.
+**Contenidor**  
+procés aïllat creado a partir d'una imatge.
 
-**Volumen**  
-Mecanismo de persistencia independiente del ciclo de vida de un contenedor.
+**volum**  
+mecanisme de persisteència independiente del cicle de vida d'un contenidor.
 
-**Docker Compose**  
-Herramienta para definir y ejecutar aplicaciones formadas por varios contenedores.
+**Docker compose**  
+Herramienta per a definir i Executar aplicacions formadas per diversos Contenidors.
 
 **IaaS**  
-Infraestructura ofrecida como servicio.
+Infraestructura ofrecida com Servei.
 
 **PaaS**  
-Plataforma de ejecución ofrecida como servicio.
+Plataforma de execució ofrecida com Servei.
 
 ---
 
-# Cierre de la UP3
+# tancament de la UP3
 
-Al finalizar estos nueve bloques, el alumnado debería disponer de una visión completa del recorrido:
+en finalitzar aquests nueve blocs, el alumnado hauria de disponer d'una visión completa del recorregut:
 
 ```mermaid
 flowchart LR
-    A["Servidor de aplicaciones"] --> B["Configuración"]
+    A["Servidor de aplicacions"] --> B["Configuració"]
     B --> C["Apache + Tomcat"]
-    C --> D["Seguridad"]
+    C --> D["Seguretat"]
     D --> E["Componentes web"]
     E --> F["Despliegue"]
     F --> G["Pruebas"]
     G --> H["Documentación"]
-    H --> I["Contenedores / nube"]
+    H --> I["Contingutres / núvol"]
 ```
 
-La idea central de toda la unidad es que una aplicación web no termina cuando se escribe el código.
+La idea central de tota la unitat és que una aplicació web no termina quan es escribe el codi.
 
-Para convertirla en un servicio utilizable hay que saber:
+per a convertir-la en un servei utilizable hi ha que saber:
 
-1. **dónde se ejecuta**;
-2. **cómo se configura**;
-3. **cómo se publica**;
-4. **cómo se protege**;
-5. **cómo se comprueba**;
-6. **cómo se mantiene**;
-7. **cómo se documenta**;
-8. **cómo se reproduce el despliegue en otros entornos**.
+1. **on es executa**;
+2. **com és configura**;
+3. **com és publica**;
+4. **com és protegeix**;
+5. **com és comprova**;
+6. **com és manté**;
+7. **com és documenta**;
+8. **com és reproduce el desplegament en altres entorns**.
 
-Esto conecta directamente el desarrollo de aplicaciones con las tareas reales de despliegue, administración y operación de servicios web.
+açò conecta directament el desenvolupament d'aplicacions amb Les tasques reals de desplegament, Administració i operació de Serveis web.

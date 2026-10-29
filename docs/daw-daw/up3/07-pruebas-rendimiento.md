@@ -1,34 +1,34 @@
 ---
 hide:
   - navigation
-title: "UP3.7. Pruebas de funcionamiento y rendimiento"
-description: "Pruebas funcionales, de integración, seguridad, carga y rendimiento del despliegue."
+title: "UP3.7. Proves de funcionament i Rendiment"
+description: "Proves funcionals, d'integració, seguretat, càrrega i rendiment del desplegament."
 ---
 
-# UP3.7. Pruebas de funcionamiento y rendimiento
+# UP3.7. Proves de funcionament i Rendiment
 
-> **RA3.g:** Se han realizado pruebas de funcionamiento y rendimiento de la aplicación web desplegada.
+> **RA3.g:** S'han realitzat proves de funcionament i rendiment de l'aplicació web desplegada.
 
-## Qué vas a aprender
+## Què aprendràs
 
-Una aplicación desplegada no debe considerarse correcta únicamente porque aparece su página principal.
+Una aplicació desplegada no s'ha de considerar correcta únicament perquè apareix la seua pàgina principal.
 
-En este bloque aprenderás:
+En aquest bloc aprendràs:
 
-- qué comprobar después de un despliegue;
-- diferencia entre disponibilidad y funcionamiento;
-- pruebas funcionales;
-- pruebas de integración;
-- pruebas de carga;
-- pruebas de estrés;
-- métricas básicas;
-- herramientas de diagnóstico.
+- Què comprovar després d'un desplegament;
+- diferència entre disponibilitat i funcionament;
+- Proves funcionals;
+- Proves de integració;
+- Proves de càrrega;
+- Proves de estrès;
+- métricas bàsiques;
+- eines de diagnòstic.
 
 ---
 
-# 1. ¿Qué significa “funciona”?
+# 1. ¿Què significa “funciona”?
 
-Considera estas situaciones:
+Considera aquestes situaciones:
 
 ```text
 La portada carga.
@@ -38,41 +38,41 @@ HTTPS funciona, pero el proxy no.
 Un usuario funciona; 100 usuarios bloquean el servidor.
 ```
 
-En todos estos casos podríamos afirmar que “el servidor responde”, pero no que el sistema funciona correctamente.
+en tots aquests casos podriamos afirmar que “el servidor respon”, però no que el sistema funciona correctament.
 
-Debemos comprobar varias capas.
+Debemos comprovar diverses capes.
 
 ---
 
-# 2. Niveles de prueba
+# 2. nivells de Prova
 
 ```mermaid
 flowchart TD
     A["Servicio activo"] --> B["Conectividad"]
-    B --> C["Aplicación responde"]
+    B --> C["Aplicació responde"]
     C --> D["Funciones principales"]
     D --> E["Integraciones"]
-    E --> F["Seguridad"]
-    F --> G["Rendimiento"]
+    E --> F["Seguretat"]
+    F --> G["Rendiment"]
 ```
 
 ---
 
-# 3. Comprobar el servicio
+# 3. comprovar el Servei
 
-En un sistema gestionado por `systemd`:
+en un sistema gestionado per `systemd`:
 
 ```bash
 systemctl status tomcat
 ```
 
-También podemos revisar procesos:
+també podem revisar processos:
 
 ```bash
 ps aux | grep tomcat
 ```
 
-y puertos:
+i Ports:
 
 ```bash
 ss -lntp
@@ -80,58 +80,58 @@ ss -lntp
 
 ---
 
-# 4. Pruebas con `curl`
+# 4. Proves amb `curl`
 
-`curl` permite realizar peticiones sin depender de la interfaz gráfica del navegador.
+`curl` permet realitzar Peticions sense depender de la interfaz gráfica del navegador.
 
-Ejemplo:
+exemple:
 
 ```bash
 curl -I http://localhost:8080/
 ```
 
-Puede mostrar:
+Pot mostrar:
 
 ```text
 HTTP/1.1 200
 Content-Type: text/html
 ```
 
-Otra petición:
+una altra petició:
 
 ```bash
 curl -v http://localhost:8080/miapp/
 ```
 
-La opción `-v` aporta información útil para diagnóstico.
+La opció `-v` aporta informació útil per a diagnòstic.
 
 ---
 
-# 5. Códigos de estado
+# 5. codis de estat
 
-Algunos códigos importantes:
+alguns codis importants:
 
-| Código | Significado general |
+| Codi | significat general |
 |---:|---|
 | 200 | Correcto |
 | 301/302 | Redirección |
-| 400 | Petición incorrecta |
-| 401 | No autenticado |
+| 400 | petició incorrecta |
+| 401 | No autenticat |
 | 403 | Prohibido |
 | 404 | No encontrado |
-| 500 | Error interno |
+| 500 | Error intern |
 | 502 | Error de gateway/proxy |
-| 503 | Servicio no disponible |
+| 503 | Servei no disponible |
 
-El código ayuda a localizar la capa donde se produce el problema.
+El Codi ajuda a localitzar la capa on es produeix el problema.
 
 ---
 
-# 6. Prueba funcional
+# 6. Prova funcional
 
-Comprueba funcionalidades reales.
+comprova funcionalitats reals.
 
-Por ejemplo, para una tienda:
+per exemple, per a una botiga:
 
 ```text
 abrir catálogo
@@ -145,7 +145,7 @@ añadir al carrito
 confirmar operación
 ```
 
-No basta con realizar:
+No basta amb realitzar:
 
 ```text
 GET /
@@ -153,11 +153,11 @@ GET /
 
 ---
 
-# 7. Prueba de integración
+# 7. Prova de integració
 
-Comprueba la comunicación entre componentes.
+comprova la comunicació entre components.
 
-Ejemplos:
+exemples:
 
 ```text
 Apache ↔ Tomcat
@@ -175,109 +175,109 @@ flowchart LR
 
 ---
 
-# 8. Prueba de seguridad básica
+# 8. Prova de Seguretat bàsica
 
-Después de un despliegue también se debe comprobar:
+després d'un desplegament també es ha de comprovar:
 
 - redirección a HTTPS;
-- zonas privadas;
-- cierre de sesión;
-- roles;
+- zonas privades;
+- tancament de Sessió;
+- rols;
 - cookies;
-- acceso a interfaces administrativas;
-- puertos expuestos.
+- accés a interfaces administrativas;
+- Ports expuestos.
 
-Una configuración puede “funcionar” y ser insegura.
+Una configuració Pot “funcionar” i ser insegura.
 
 ---
 
-# 9. Rendimiento
+# 9. Rendiment
 
-El rendimiento estudia cómo responde el sistema bajo determinadas condiciones.
+El Rendiment estudia com responl sistema sota determinadas condiciones.
 
-Algunas métricas:
+algunes métricas:
 
-### Tiempo de respuesta
+### temps de Resposta
 
-Tiempo entre petición y respuesta.
+temps entre petició i Resposta.
 
 ### Throughput
 
-Número de peticiones procesadas por unidad de tiempo.
+Número de Peticions procesadas per unitat de temps.
 
-### Concurrencia
+### concurrèència
 
-Número de clientes o peticiones simultáneas.
+Número de Clients o Peticions simultáneas.
 
-### Tasa de errores
+### taxa de errors
 
-Porcentaje de peticiones que producen fallo.
+Porcentaje de Peticions que producen fallo.
 
-### Recursos
+### recursos
 
 - CPU;
-- memoria;
+- memòria;
 - disco;
-- red;
-- conexiones.
+- xarxa;
+- connexions.
 
 ---
 
-# 10. Latencia frente a throughput
+# 10. latèència davant de throughput
 
-No son lo mismo.
+No són el mateix.
 
-Un sistema puede procesar muchas peticiones por segundo pero tener tiempos individuales altos.
+Un sistema Pot processar moltes Peticions per segon però tindre tiempos individuales altos.
 
 ```mermaid
 flowchart LR
-    L["Latencia"] --> LT["¿Cuánto tarda una petición?"]
-    T["Throughput"] --> TT["¿Cuántas peticiones procesa por segundo?"]
+    L["Latencia"] --> LT["¿Cuánto tarda una petició?"]
+    T["Throughput"] --> TT["¿Cuántas peticions procesa por segundo?"]
 ```
 
 ---
 
-# 11. Prueba de carga
+# 11. Prova de càrrega
 
-Una prueba de carga simula un nivel previsto de uso.
+Una Prova de càrrega simula un nivell previsto d'ús.
 
-Ejemplo:
+exemple:
 
 ```text
 100 usuarios concurrentes
 durante 10 minutos
 ```
 
-El objetivo es comprobar si el sistema cumple los requisitos esperados.
+El objectiu és comprovar si el sistema cumple els requisitos esperados.
 
 ---
 
-# 12. Prueba de estrés
+# 12. Prova de estrès
 
-La prueba de estrés aumenta la carga hasta superar la capacidad prevista.
+La Prova de estrès aumenta la càrrega fins a superar la capacidad prevista.
 
-Objetivos:
+objectius:
 
-- conocer el límite;
-- observar cómo falla;
-- comprobar si se recupera;
-- detectar cuellos de botella.
+- conéixer el límit;
+- observar com falla;
+- comprovar si es recupera;
+- detectar colls de botella.
 
 ```mermaid
 xychart-beta
-    title "Ejemplo conceptual de carga"
+    title "Exemple conceptual de carga"
     x-axis ["10", "50", "100", "200", "400"]
-    y-axis "Tiempo de respuesta" 0 --> 10
+    y-axis "Tiempo de resposta" 0 --> 10
     line [0.2, 0.3, 0.5, 1.5, 8]
 ```
 
 ---
 
-# 13. Herramientas
+# 13. eines
 
 ## ApacheBench
 
-Para pruebas sencillas:
+per a Proves sencillas:
 
 ```bash
 ab -n 1000 -c 20 http://localhost:8080/miapp/
@@ -290,30 +290,30 @@ Conceptualmente:
 -c 20   → concurrencia
 ```
 
-No sustituye una prueba de rendimiento completa, pero permite realizar comprobaciones básicas.
+No substitueix una Prova de Rendiment completa, però permet realitzar comprovacions bàsiques.
 
 ---
 
 ## JMeter
 
-Apache JMeter permite definir escenarios más complejos:
+Apache JMeter permet definir escenarios més complejos:
 
-- varios usuarios;
-- diferentes rutas;
-- formularios;
-- autenticación;
+- diversos Usuaris;
+- diferents rutas;
+- formularis;
+- autenticació;
 - tiempos de espera;
 - informes.
 
-Es más adecuado cuando necesitamos simular un comportamiento realista.
+és més adecuado quan necessitem simular un comportament realista.
 
 ---
 
-# 14. Monitorización del servidor
+# 14. monitorització del servidor
 
-Mientras realizamos una prueba es necesario observar también el servidor.
+mentre realizamos una Prova és necessari observar també el servidor.
 
-Herramientas:
+eines:
 
 ```bash
 top
@@ -335,53 +335,53 @@ df -h
 ss -s
 ```
 
-Una prueba que solo observa el navegador ofrece información incompleta.
+Una Prova que només observal navegador ofereix informació incompleta.
 
 ---
 
-# 15. Cuellos de botella
+# 15. colls de botella
 
-El problema puede encontrarse en:
+El problema Pot trobarse en:
 
 ```mermaid
 flowchart TD
-    A["Respuesta lenta"] --> CPU["CPU"]
+    A["Resposta lenta"] --> CPU["CPU"]
     A --> RAM["Memoria"]
-    A --> DB["Base de datos"]
-    A --> NET["Red"]
-    A --> POOL["Pool de conexiones"]
+    A --> DB["Base de dades"]
+    A --> NET["Xarxa"]
+    A --> POOL["Pool de connexions"]
     A --> JVM["JVM / GC"]
     A --> EXT["Servicio externo"]
 ```
 
-Antes de optimizar debemos medir.
+abans de optimizar debemos medir.
 
-!!! tip "Primero medir"
-    No debe suponerse automáticamente que Tomcat es el problema.
+!!! tip "primer medir"
+    No ha de suponerse automàticament que Tomcat és el problema.
 
-    Una consulta SQL lenta o una API externa pueden dominar por completo el tiempo de respuesta.
+    Una consulta SQL lenta o una API externa poden dominar per complet el temps de Resposta.
 
 ---
 
-# 16. Comparar resultados
+# 16. comparar resultats
 
-Una prueba es especialmente útil cuando existe una referencia.
+Una Prova és especialment útil quan existeix una referèència.
 
-Ejemplo:
+exemple:
 
-| Escenario | Antes | Después |
+| escenari | abans | després |
 |---|---:|---:|
-| Respuesta media | 850 ms | 320 ms |
-| Errores | 4 % | 0 % |
-| Peticiones/s | 25 | 63 |
+| Resposta media | 850 ms | 320 ms |
+| errors | 4 % | 0 % |
+| Peticions/s | 25 | 63 |
 
-Esto permite justificar una mejora.
+açò permet justificar una mejora.
 
 ---
 
-# 17. Prueba de extremo a extremo
+# 17. Prova de extrem a extrem
 
-La verificación final debería utilizar la misma ruta que utilizaría un usuario:
+La Verificació final hauria de Utilitzar la mateixa ruta que utilizaría un Usuari:
 
 ```text
 Cliente
@@ -401,10 +401,10 @@ Base de datos
 
 ```mermaid
 sequenceDiagram
-    participant C as Cliente
+    participant C as Client
     participant A as Apache
     participant T as Tomcat
-    participant APP as Aplicación
+    participant APP as Aplicació
     participant DB as BD
 
     C->>A: HTTPS
@@ -419,15 +419,15 @@ sequenceDiagram
 
 ---
 
-# 18. Qué registrar en una prueba
+# 18. Què registrar en una Prova
 
-Aunque las actividades de evaluación se definan por separado, una prueba técnica debería dejar constancia de:
+encara que Les activitats de avaluació es definan per separado, una Prova tècnica hauria de deixar constàència de:
 
 ```text
 fecha
 versión
 entorno
-configuración
+configuració
 herramienta
 carga
 resultado
@@ -435,42 +435,42 @@ errores
 conclusión
 ```
 
-Sin estos datos resulta difícil repetir la prueba.
+sense aquests Dades resulta difícil repetir la Prova.
 
 ---
 
-# 19. Qué debes retener
+# 19. Què has de retenir
 
-!!! summary "Resumen"
-    - Servicio activo no equivale a aplicación correcta.
-    - `curl` permite realizar comprobaciones rápidas.
-    - Las pruebas funcionales verifican comportamiento.
-    - Las pruebas de integración comprueban conexiones entre componentes.
-    - Las pruebas de carga miden comportamiento bajo uso previsto.
-    - Las pruebas de estrés permiten localizar límites.
-    - El rendimiento debe analizarse conjuntamente con CPU, RAM, red, base de datos y logs.
-    - Toda prueba debe ser reproducible.
+!!! summary "resum"
+    - Servei actiu no equival a aplicació correcta.
+    - `curl` permet realitzar comprovacions rápidas.
+    - les proves funcionals verifican comportament.
+    - les proves de integració comprueban connexions entre components.
+    - les proves de càrrega miden comportament sota ús previsto.
+    - les proves de estrès permeten localitzar límits.
+    - El Rendiment ha de analizarse conjuntament amb CPU, RAM, xarxa, base de dades i logs.
+    - tota Prova ha de ser reproducible.
 
 ---
 
-# 20. Glosario
+# 20. glossari
 
-**Latencia**  
-Tiempo que tarda una operación.
+**latèència**  
+temps que tarda una operació.
 
 **Throughput**  
-Cantidad de trabajo completado por unidad de tiempo.
+quantitat de trabajo completado per unitat de temps.
 
-**Concurrencia**  
-Operaciones o usuarios activos simultáneamente.
+**concurrèència**  
+Operaciones o Usuaris actius simultàniament.
 
-**Prueba de carga**  
-Prueba bajo una carga prevista.
+**Prova de càrrega**  
+Prova sota una càrrega prevista.
 
-**Prueba de estrés**  
-Prueba que lleva el sistema más allá de sus condiciones normales.
+**Prova de estrès**  
+Prova que lleval sistema més allá de sus condiciones normales.
 
-**Cuello de botella**  
-Componente que limita el rendimiento global.
+**Cuelho de botella**  
+component que limital Rendiment global.
 
 ---

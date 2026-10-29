@@ -165,15 +165,15 @@ nav:
               - UP3. Desplegament d'aplicacions web:
                   - Presentació: daw-daw/up3-servidors-aplicacions.md
                   - Índex i seqüència: daw-daw/up3/index.md
-                  - 1. El servidor de aplicaciones: daw-daw/up3/01-servidor-aplicaciones.md
-                  - 2. Configuración y bibliotecas: daw-daw/up3/02-configuracion-bibliotecas.md
-                  - 3. Cooperación entre Apache y Tomcat: daw-daw/up3/03-cooperacion-apache-tomcat.md
-                  - 4. Seguridad del servidor de aplicaciones: daw-daw/up3/04-seguridad-servidor-aplicaciones.md
-                  - 5. Componentes web: daw-daw/up3/05-componentes-web.md
-                  - 6. Ajustes del despliegue: daw-daw/up3/06-ajustes-despliegue.md
-                  - 7. Pruebas y rendimiento: daw-daw/up3/07-pruebas-rendimiento.md
-                  - 8. Administración y documentación: daw-daw/up3/08-administracion-documentacion.md
-                  - 9. Virtualización, contenedores y nube: daw-daw/up3/09-virtualizacion-contenedores-nube.md
+                  - 1. El servidor d'aplicacions: daw-daw/up3/01-servidor-aplicaciones.md
+                  - 2. Fitxers de configuració i biblioteques: daw-daw/up3/02-configuracion-bibliotecas.md
+                  - 3. Cooperació entre Apache i Tomcat: daw-daw/up3/03-cooperacion-apache-tomcat.md
+                  - 4. Seguretat del servidor d'aplicacions: daw-daw/up3/04-seguridad-servidor-aplicaciones.md
+                  - 5. Components web: daw-daw/up3/05-componentes-web.md
+                  - 6. Ajustos del desplegament: daw-daw/up3/06-ajustes-despliegue.md
+                  - 7. Proves i rendiment: daw-daw/up3/07-pruebas-rendimiento.md
+                  - 8. Administració i documentació: daw-daw/up3/08-administracion-documentacion.md
+                  - 9. Virtualització, contenidors i núvol: daw-daw/up3/09-virtualizacion-contenedores-nube.md
               - UP6. Documentació, control de versions i integració contínua: daw-daw/up6-documentacio-versions.md
               - UP4. Servidors de transferència d'arxius: daw-daw/up4-transferencia-arxius.md
               - UP5. Serveis de xarxa implicats en el desplegament: daw-daw/up5-serveis-xarxa.md

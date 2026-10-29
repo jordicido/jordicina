@@ -1,40 +1,40 @@
 ---
 hide:
   - navigation
-title: "UP3.6. Ajustes necesarios para el despliegue"
-description: "Configuración de recursos, memoria, puertos, sesiones y estrategias de despliegue."
+title: "UP3.6. Ajustos necessaris per al desplegament"
+description: "Configuració de recursos, memòria, ports, sessions i estratègies de desplegament."
 ---
 
-# UP3.6. Ajustes necesarios para el despliegue
+# UP3.6. Ajustos necessaris per al desplegament
 
-> **RA3.f:** Se han realizado los ajustes necesarios para el despliegue de aplicaciones sobre el servidor.
+> **RA3.f:** S'han realitzat els ajustos necessaris per al desplegament d'aplicacions sobre el servidor.
 
-## Qué vas a aprender
+## Què aprendràs
 
-En este bloque aprenderás qué significa preparar una aplicación para que funcione correctamente fuera del entorno de desarrollo.
+En aquest bloc aprendràs què significa preparar una aplicació perquè funcione correctament fora de l'entorn de desenvolupament.
 
-Se estudiarán:
+S'estudiaran:
 
-- artefactos de despliegue;
+- artefactes de desplegament;
 - WAR;
-- contexto de aplicación;
-- configuración por entornos;
+- contexto d'aplicació;
+- configuració per entorns;
 - permisos;
-- dependencias;
-- puertos;
+- dependències;
+- Ports;
 - recursos;
-- variables de entorno;
+- variables de entorn;
 - JVM;
 - logs;
-- procedimientos de despliegue y rollback.
+- procediments de desplegament i rollback.
 
 ---
 
-# 1. Ejecutar no es lo mismo que desplegar
+# 1. Executar no és el mateix que desplegar
 
-Durante el desarrollo es frecuente ejecutar la aplicación desde un IDE.
+Durante el desenvolupament és freqüent Executar l'aplicació des d'un IDE.
 
-En producción necesitamos un proceso reproducible:
+en producció necessitem un procés reproducible:
 
 ```text
 código
@@ -43,20 +43,20 @@ compilación
   ↓
 artefacto
   ↓
-configuración
+configuració
   ↓
-despliegue
+desplegament
   ↓
 verificación
 ```
 
-El objetivo es que el resultado no dependa de acciones manuales improvisadas.
+El objectiu és que el resultat no dependa de acciones manuales improvisadas.
 
 ---
 
-# 2. Artefacto WAR
+# 2. artefacte WAR
 
-Una aplicación web Java puede empaquetarse como:
+Una aplicació web Java Pot empaquetarse com:
 
 ```text
 aplicacion.war
@@ -66,7 +66,7 @@ WAR significa:
 
 > **Web Application Archive**
 
-Es un archivo que contiene la estructura de la aplicación.
+és un fitxer que conté la estructura de l'aplicació.
 
 ```text
 aplicacion.war
@@ -77,38 +77,38 @@ aplicacion.war
     └── web.xml
 ```
 
-Tomcat puede desplegarlo dentro de `webapps`.
+Tomcat Pot desplegarho dins de `webapps`.
 
 ---
 
 # 3. Context path
 
-El nombre del despliegue suele relacionarse con la ruta pública.
+El nom del desplegament sol relacionarse amb la ruta pública.
 
-Ejemplo:
+exemple:
 
 ```text
 tienda.war
 ```
 
-puede desplegarse como:
+Pot desplegarse com:
 
 ```text
 http://localhost:8080/tienda/
 ```
 
-El contexto raíz puede desplegarse utilizando la configuración correspondiente o un artefacto denominado `ROOT`.
+El contexto raíz Pot desplegarse utilitzant la configuració correspondiente o un artefacte denominado `ROOT`.
 
 !!! info "Contexto"
-    El **context path** identifica la aplicación dentro del servidor.
+    El **context path** identifica l'aplicació dins del servidor.
 
-    No debe confundirse con una ruta interna de un servlet.
+    No ha de confundirse amb una ruta interna d'un servlet.
 
 ---
 
-# 4. Despliegue expandido
+# 4. Desplegament expandit
 
-Tomcat también puede trabajar con una aplicación expandida:
+Tomcat també Pot treballar amb una aplicació expandida:
 
 ```text
 webapps/
@@ -117,36 +117,36 @@ webapps/
     └── WEB-INF/
 ```
 
-Esto resulta útil para comprender la estructura, aunque en procesos automatizados es habitual trabajar con artefactos construidos de forma reproducible.
+açò resulta útil per a comprendre la estructura, encara que en processos automatizados és habitual treballar amb artefactes construidos de manera reproducible.
 
 ---
 
-# 5. Dependencias
+# 5. dependències
 
-Antes de desplegar debemos saber:
+abans de desplegar debemos saber:
 
 ```text
-¿Qué necesita la aplicación?
+¿Qué necesita la aplicació?
 ```
 
-Por ejemplo:
+per exemple:
 
-- versión de Java;
+- versió de Java;
 - biblioteca JDBC;
-- base de datos;
+- base de dades;
 - variables;
-- archivos;
-- servicios externos;
-- puertos;
-- certificados.
+- Fitxers;
+- Serveis externs;
+- Ports;
+- certificats.
 
-Una aplicación puede compilar correctamente y fallar al arrancar porque falta una dependencia del entorno.
+Una aplicació Pot compilar correctament i fallar al arrancar perquè falta una dependèència dl'entorn.
 
 ---
 
-# 6. Configuración por entornos
+# 6. Configuració per entorns
 
-Podemos tener:
+podem tindre:
 
 ```text
 desarrollo
@@ -154,22 +154,22 @@ pruebas
 producción
 ```
 
-Cada entorno puede necesitar valores distintos.
+Cada entorn Pot necessitar valores diferents.
 
-| Parámetro | Desarrollo | Producción |
+| Parámetro | desenvolupament | producció |
 |---|---|---|
 | DB | localhost | db-interna |
 | logging | DEBUG | INFO |
-| HTTPS | opcional | obligatorio |
-| credenciales | locales | secretas |
+| HTTPS | opcional | obligatori |
+| credeèncials | locales | secretas |
 
-Lo recomendable es externalizar estos valores cuando sea posible.
+ho recomendable és externalizar aquests valores quan sea posible.
 
 ---
 
-# 7. Variables de entorno
+# 7. Variables de entorn
 
-Una estrategia frecuente consiste en utilizar variables:
+Una estratègia freqüent consiste en Utilitzar variables:
 
 ```bash
 export DB_HOST=db
@@ -177,19 +177,19 @@ export DB_PORT=5432
 export DB_NAME=tienda
 ```
 
-La aplicación recupera la configuración en tiempo de ejecución.
+La aplicació recupera la configuració en temps de execució.
 
-Ventajas:
+avantatges:
 
 - evita recompilar;
-- facilita contenedores;
-- permite separar configuración y código.
+- facilita Contenidors;
+- permet separar configuració i Codi.
 
 ---
 
-# 8. Puertos
+# 8. Ports
 
-Antes del despliegue hay que determinar:
+abans del desplegament hi ha que determinar:
 
 ```text
 Apache → 80 / 443
@@ -198,9 +198,9 @@ AJP → 8009 si se usa
 Base de datos → puerto interno
 ```
 
-Un servicio no podrá abrir un puerto que ya esté ocupado.
+Un Servei no podrà obrir un port que ja esté ocupado.
 
-Comandos útiles:
+ordres útiles:
 
 ```bash
 ss -lntp
@@ -214,48 +214,48 @@ sudo lsof -i :8080
 
 ---
 
-# 9. Permisos
+# 9. permisos
 
-El usuario que ejecuta Tomcat debe disponer de los permisos necesarios, pero no más.
+El Usuari que executa Tomcat ha de disponer dels permisos necessaris, però no més.
 
-Por ejemplo, una aplicación puede necesitar escribir en:
+per exemple, una aplicació Pot necessitar escribir en:
 
 ```text
 /var/lib/miapp/uploads/
 ```
 
-No es una buena solución dar permisos globales:
+No és una buena solució donar permisos globales:
 
 ```bash
 chmod 777 ...
 ```
 
-El enfoque correcto consiste en:
+El enfocament correcto consiste en:
 
-- propietario adecuado;
+- Propietari adecuado;
 - grupo adecuado;
-- permisos mínimos necesarios.
+- permisos mínims necessaris.
 
 ---
 
-# 10. Propietario del proceso
+# 10. Propietari del procés
 
-El servidor debería ejecutarse con un usuario específico y no como `root` cuando no sea necesario.
+El Servidor hauria de ejecutarse amb un Usuari específico i no com `root` quan no sea necessari.
 
 ```mermaid
 flowchart TD
-    R["root"] -->|"inicia servicio"| T["usuario tomcat"]
+    R["root"] -->|"inicia servicio"| T["usuari tomcat"]
     T --> A["proceso Tomcat"]
     A --> F["solo recursos autorizados"]
 ```
 
 ---
 
-# 11. Configuración de la JVM
+# 11. Configuració de la JVM
 
-Una aplicación Java puede requerir ajustes en la máquina virtual.
+Una aplicació Java Pot requerir ajustos en la màquina virtual.
 
-Ejemplos:
+exemples:
 
 ```text
 -Xms
@@ -265,24 +265,24 @@ Ejemplos:
 
 Conceptualmente:
 
-- `Xms`: memoria inicial;
-- `Xmx`: límite máximo del heap.
+- `Xms`: memòria inicial;
+- `Xmx`: límit máximo del heap.
 
-!!! warning "Más memoria no siempre arregla el problema"
-    Aumentar `-Xmx` sin investigar la causa puede ocultar temporalmente un problema de consumo, pero no necesariamente solucionarlo.
+!!! warning "més memòria no sempre arreglal problema"
+    Aumentar `-Xmx` sense investigar la causa Pot ocultar temporalmente un problema de consumo, però no necessàriament solucionarlo.
 
 ---
 
 # 12. Logging
 
-El despliegue debe definir:
+El desplegament ha de definir:
 
-- dónde se escriben los logs;
-- qué nivel se utiliza;
-- cómo se rotan;
-- cuánto tiempo se conservan.
+- on es escriben els logs;
+- Què nivell sutilitza;
+- com és rotan;
+- cuánto temps es conservan.
 
-Niveles habituales:
+nivells habituals:
 
 ```text
 ERROR
@@ -292,33 +292,33 @@ DEBUG
 TRACE
 ```
 
-Producción no debería generar sin control enormes cantidades de información de depuración.
+producció no hauria de generar sense control enormes quantitats de informació de depuración.
 
 ---
 
-# 13. Recursos externos
+# 13. recursos externs
 
-Una aplicación puede depender de:
+Una aplicació Pot depender de:
 
 ```mermaid
 flowchart LR
-    APP["Aplicación"] --> DB[("Base de datos")]
-    APP --> FS["Sistema de archivos"]
+    APP["Aplicació"] --> DB[("Base de dades")]
+    APP --> FS["Sistema de fitxers"]
     APP --> API["API externa"]
     APP --> MAIL["Servidor de correo"]
 ```
 
-Antes de declarar un despliegue como correcto debemos comprobar cada dependencia.
+abans de declarar un desplegament com correcto debemos comprovar cada dependèència.
 
 ---
 
-# 14. Despliegue paso a paso
+# 14. Desplegament pas a pas
 
-Un procedimiento razonable:
+Un procediment razonable:
 
 ```mermaid
 flowchart TD
-    A["1. Construir artefacto"] --> B["2. Preparar configuración"]
+    A["1. Construir artefacto"] --> B["2. Preparar configuració"]
     B --> C["3. Verificar dependencias"]
     C --> D["4. Copiar / desplegar"]
     D --> E["5. Arrancar"]
@@ -331,11 +331,11 @@ flowchart TD
 
 # 15. Rollback
 
-Un despliegue puede fallar.
+Un desplegament Pot fallar.
 
-Debe existir una forma de volver a la versión anterior.
+ha de existir una forma de volver a la versió anterior.
 
-Ejemplo:
+exemple:
 
 ```text
 tienda-1.4.war ← versión estable
@@ -350,16 +350,16 @@ desplegar 1.4
 verificar
 ```
 
-!!! info "Un despliegue profesional incluye marcha atrás"
-    Poder desplegar no es suficiente.
+!!! info "Un desplegament professional inclou marxa arrere"
+    Poder desplegar no és suficient.
 
-    También es necesario poder **deshacer el despliegue** de forma controlada.
+    també és necessari poder **desfer el desplegament** de manera controlada.
 
 ---
 
-# 16. Integración con Apache
+# 16. integració amb Apache
 
-Después de desplegar la aplicación en Tomcat debemos comprobar:
+després de desplegar l'aplicació en Tomcat debemos comprovar:
 
 ```text
 Tomcat directo
@@ -369,23 +369,23 @@ Apache como proxy
 URL pública
 ```
 
-No conviene depurar todos los niveles simultáneamente.
+No convé depurar tots els nivells simultàniament.
 
 ---
 
-# 17. Ajustes en contenedores
+# 17. ajustos en Contenidors
 
-Cuando la aplicación se ejecuta con Docker aparecen nuevos elementos:
+quan l'aplicació es executa amb Docker apareixen nous elements:
 
-- imagen;
-- contenedor;
-- puertos publicados;
-- volúmenes;
-- variables de entorno;
-- redes;
-- orden de arranque.
+- imatge;
+- Contenidor;
+- Ports publicados;
+- volums;
+- variables de entorn;
+- xarxes;
+- ordre de arrancada.
 
-Ejemplo conceptual:
+exemple conceptual:
 
 ```yaml
 services:
@@ -400,59 +400,59 @@ services:
       - "80:80"
 ```
 
-La configuración real deberá incluir los archivos y redes necesarias.
+La configuració real deberá incluir els fitxers i xarxes necessàries.
 
 ---
 
-# 18. Checklist de despliegue
+# 18. Checklist de desplegament
 
-!!! note "Antes de considerar finalizado el despliegue"
-    Comprueba:
+!!! note "abans de considerar finalitzat el desplegament"
+    comprova:
 
-    - [ ] versión de Java compatible;
+    - [ ] versió de Java compatible;
     - [ ] Tomcat arranca;
-    - [ ] artefacto desplegado;
+    - [ ] artefacte desplegat;
     - [ ] contexto correcto;
-    - [ ] base de datos accesible;
-    - [ ] dependencias disponibles;
+    - [ ] base de dades accesible;
+    - [ ] dependències disponibles;
     - [ ] permisos correctos;
-    - [ ] configuración del entorno;
-    - [ ] logs sin errores críticos;
+    - [ ] configuració dl'entorn;
+    - [ ] logs sense errors críticos;
     - [ ] URL local funciona;
     - [ ] proxy funciona;
-    - [ ] HTTPS funciona si corresponde;
-    - [ ] existe procedimiento de rollback.
+    - [ ] HTTPS funciona si correspon;
+    - [ ] existeix procediment de rollback.
 
 ---
 
-# 19. Qué debes retener
+# 19. Què has de retenir
 
-!!! summary "Resumen"
-    - El despliegue es un proceso, no la simple copia de un fichero.
-    - WAR es un formato habitual para aplicaciones web Java.
-    - Deben prepararse dependencias y configuración.
-    - Es importante separar configuración de código.
-    - Permisos, puertos y recursos forman parte del despliegue.
-    - Los logs deben revisarse siempre.
-    - Debe existir un procedimiento de vuelta atrás.
+!!! summary "resum"
+    - El desplegament és un procés, no la simple còpia d'un fitxer.
+    - WAR és un formato habitual per a aplicacions web Java.
+    - han de prepararse dependències i configuració.
+    - és important separar configuració de Codi.
+    - permisos, Ports i recursos formen part del desplegament.
+    - els logs han de revisarse sempre.
+    - ha de existir un procediment de vuelta atrás.
 
 ---
 
-# 20. Glosario
+# 20. glossari
 
 **WAR**  
-Archivo empaquetado para una aplicación web Java.
+fitxer empaquetado per a una aplicació web Java.
 
 **Context path**  
-Ruta base que identifica una aplicación dentro del servidor.
+Ruta base que identifica una aplicació dins del servidor.
 
 **Rollback**  
-Procedimiento para volver a una versión anterior.
+procediment per a volver a una versió anterior.
 
-**Artefacto**  
-Resultado construido y preparado para desplegar.
+**artefacte**  
+resultat construido i preparado per a desplegar.
 
-**Variable de entorno**  
-Valor proporcionado al proceso desde el entorno de ejecución.
+**Variable de entorn**  
+Valor proporcionat al procés des dl'entorn de execució.
 
 ---

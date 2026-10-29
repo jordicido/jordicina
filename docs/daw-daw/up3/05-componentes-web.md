@@ -1,33 +1,33 @@
 ---
 hide:
   - navigation
-title: "UP3.5. Componentes web del servidor de aplicaciones"
-description: "Servlets, filtros, listeners, sesiones y otros componentes de una aplicación web Java."
+title: "UP3.5. Components web del servidor d'aplicacions"
+description: "Servlets, filtres, listeners, sessions i altres components d'una aplicació web Java."
 ---
 
-# UP3.5. Componentes web del servidor de aplicaciones
+# UP3.5. Components web del servidor d'aplicacions
 
-> **RA3.e:** Se han configurado y utilizado los componentes web del servidor de aplicaciones.
+> **RA3.e:** S'han configurat i utilitzat els components web del servidor d'aplicacions.
 
-## Qué vas a aprender
+## Què aprendràs
 
-Este bloque explica:
+En aquest bloc estudiaràs:
 
-- estructura de una aplicación web Java;
+- estructura d'una aplicació web Java;
 - servlets;
-- ciclo de vida de un servlet;
-- mapeos de URL;
+- cicle de vida d'un servlet;
+- mapatges de URL;
 - JSP;
-- filtros;
-- listeners;
-- recursos estáticos;
-- relación entre los distintos componentes.
+- Filtres;
+- listindres;
+- recursos estàtics;
+- relació entre els diferents components.
 
 ---
 
-# 1. Estructura de una aplicación web
+# 1. Estructura d'una aplicació web
 
-Una aplicación web desplegada puede tener una estructura parecida a:
+Una aplicació web desplegada Pot tindre una estructura parecida a:
 
 ```text
 miapp/
@@ -46,23 +46,23 @@ miapp/
         └── biblioteca.jar
 ```
 
-El directorio `WEB-INF` tiene un significado especial.
+El directori `WEB-INF` té un significado especial.
 
-Su contenido no debería servirse directamente como un recurso público.
+el seu contingut no hauria de servirse directament com un recurs públic.
 
 ---
 
 # 2. Servlet
 
-Un **servlet** es una clase Java que puede procesar peticiones y generar respuestas.
+Un **servlet** és una clase Java que Pot processar Peticions i generar Respostes.
 
-En Tomcat 10+, la API utiliza el espacio de nombres:
+en Tomcat 10+, la API Utilitzal espacio de noms:
 
 ```java
 jakarta.servlet.*
 ```
 
-Ejemplo simplificado:
+exemple simplificado:
 
 ```java
 import jakarta.servlet.http.*;
@@ -94,17 +94,17 @@ Tomcat ejecutará el servlet asociado.
 
 ---
 
-# 3. Mapeo de URL
+# 3. Mapatge de URL
 
-El mapeo relaciona una URL con un componente.
+El Mapatge relaciona una URL amb un component.
 
-Mediante anotación:
+mitjançant anotación:
 
 ```java
 @WebServlet("/hola")
 ```
 
-Mediante `web.xml`:
+mitjançant `web.xml`:
 
 ```xml
 <servlet>
@@ -127,11 +127,11 @@ flowchart LR
 
 ---
 
-# 4. Ciclo de vida de un servlet
+# 4. cicle de vida d'un servlet
 
-El contenedor gestiona el ciclo de vida.
+El Contenidor gestional cicle de vida.
 
-De forma simplificada:
+de manera simplificada:
 
 ```text
 cargar clase
@@ -157,16 +157,16 @@ stateDiagram-v2
     Destruido --> [*]
 ```
 
-!!! info "El contenedor controla el ciclo de vida"
-    Normalmente no creamos manualmente un objeto servlet con `new`.
+!!! info "El Contenidor controlal cicle de vida"
+    normalment no creamos manualment un objeto servlet amb `new`.
 
-    Tomcat instancia y administra el componente.
+    Tomcat instaència i administral component.
 
 ---
 
-# 5. Petición y respuesta
+# 5. petició i Resposta
 
-El servlet recibe objetos que representan:
+El servlet rep objetos que representan:
 
 ```text
 HttpServletRequest
@@ -175,30 +175,30 @@ HttpServletResponse
 
 ### Request
 
-Permite consultar:
+permet consultar:
 
 - parámetros;
 - cabeceras;
-- método HTTP;
+- mètode HTTP;
 - cookies;
-- sesión;
+- Sessió;
 - atributos.
 
 ### Response
 
-Permite definir:
+permet definir:
 
-- código de estado;
+- Codi de estat;
 - cabeceras;
-- tipo MIME;
-- cuerpo de la respuesta;
-- redirecciones.
+- tipus MIME;
+- cuerpo de la Resposta;
+- redireccions.
 
 ---
 
-# 6. Métodos HTTP
+# 6. mètodes HTTP
 
-Un servlet puede reaccionar a distintos métodos.
+Un servlet Pot reaccionar a diferents mètodes.
 
 ```java
 doGet()
@@ -207,7 +207,7 @@ doPut()
 doDelete()
 ```
 
-Ejemplo conceptual:
+exemple conceptual:
 
 ```text
 GET    /productos      → consultar
@@ -220,32 +220,32 @@ DELETE /productos/15   → eliminar
 
 # 7. JSP
 
-**Jakarta Server Pages (JSP)** permite crear vistas dinámicas.
+**Jakarta Server Pages (JSP)** permet crear vistas dinàmiques.
 
-Una JSP puede combinar HTML con expresiones o etiquetas de servidor.
+Una JSP Pot combinar HTML amb expresiones o etiquetas de Servidor.
 
-Ejemplo conceptual:
+exemple conceptual:
 
 ```jsp
 <h1>Bienvenido ${usuario.nombre}</h1>
 ```
 
-Tomcat transforma internamente la JSP en código que puede ejecutar el contenedor.
+Tomcat transforma internament la JSP en Codi que pot executar el contenidor.
 
 ```mermaid
 flowchart LR
     JSP["pagina.jsp"] --> C["Compilación / transformación"]
     C --> S["Servlet generado"]
-    S --> R["HTML de respuesta"]
+    S --> R["HTML de resposta"]
 ```
 
 ---
 
-# 8. Separar lógica y presentación
+# 8. separar lògica i presentació
 
-Aunque JSP permite incluir lógica, no es recomendable convertir la vista en el lugar principal de la lógica de negocio.
+encara que JSP permet incluir lògica, no és recomendable convertir la vista en el lloc principal de la lògica de negoci.
 
-Una arquitectura más clara:
+Una arquitectura més clara:
 
 ```mermaid
 flowchart LR
@@ -258,40 +258,40 @@ flowchart LR
 
 El servlet:
 
-- procesa la petición;
-- obtiene datos;
+- processa la petició;
+- obtiene Dades;
 - selecciona la vista.
 
 La JSP:
 
-- presenta los datos.
+- presentals Dades.
 
 ---
 
-# 9. Filtros
+# 9. Filtres
 
-Un filtro puede interceptar una petición antes de que llegue al servlet.
+Un filtre Pot interceptar una petició abans que llegue al servlet.
 
-Ejemplos de uso:
+exemples d'ús:
 
-- autenticación;
+- autenticació;
 - logging;
 - CORS;
 - codificación;
-- compresión;
-- medidas de seguridad.
+- compressió;
+- mesures de Seguretat.
 
 ```mermaid
 flowchart LR
-    C["Cliente"] --> F1["Filtro logging"]
-    F1 --> F2["Filtro autenticación"]
+    C["Client"] --> F1["Filtro logging"]
+    F1 --> F2["Filtro autenticació"]
     F2 --> S["Servlet"]
     S --> F2
     F2 --> F1
     F1 --> C
 ```
 
-Ejemplo:
+exemple:
 
 ```java
 @WebFilter("/privado/*")
@@ -302,9 +302,9 @@ public class AuthFilter implements Filter {
 
 ---
 
-# 10. Cadena de filtros
+# 10. Cadena de Filtres
 
-Puede existir más de un filtro.
+Pot existir més d'un filtre.
 
 ```text
 Request
@@ -322,23 +322,23 @@ Filtro A
 Response
 ```
 
-Esto resulta útil para implementar funcionalidades transversales sin repetir código en cada servlet.
+açò resulta útil per a implementar funcionalitats transversales sense repetir Codi en cada servlet.
 
 ---
 
-# 11. Listeners
+# 11. Listindres
 
-Un listener escucha eventos del contenedor.
+Un listindre escucha Esdeveniments del contenidor.
 
-Puede reaccionar, por ejemplo, a:
+Pot reaccionar, per exemple, a:
 
-- inicio de la aplicación;
+- Inici de l'aplicació;
 - parada;
-- creación de una sesión;
-- destrucción de una sesión;
-- cambios en determinados atributos.
+- creación d'una Sessió;
+- destrucción d'una Sessió;
+- canvis en determinados atributos.
 
-Ejemplo conceptual:
+exemple conceptual:
 
 ```java
 @WebListener
@@ -348,7 +348,7 @@ public class AppListener implements ServletContextListener {
 
 ---
 
-# 12. Eventos de aplicación
+# 12. Esdeveniments d'aplicació
 
 ```mermaid
 stateDiagram-v2
@@ -359,18 +359,18 @@ stateDiagram-v2
     AplicacionDetenida --> [*]
 ```
 
-Un listener puede utilizarse para:
+Un listindre Pot utilizarse per a:
 
 - inicializar recursos;
-- registrar información;
+- registrar informació;
 - liberar recursos;
-- mantener métricas.
+- mantindre métricas.
 
 ---
 
-# 13. Recursos estáticos
+# 13. recursos estàtics
 
-Una aplicación también puede incluir:
+Una aplicació també Pot incluir:
 
 ```text
 HTML
@@ -381,9 +381,9 @@ fuentes
 documentos
 ```
 
-Estos recursos no necesitan ejecutar un servlet específico para cada petición.
+aquests recursos no necessiten Executar un servlet específico per a cada petició.
 
-Ejemplo:
+exemple:
 
 ```text
 /miapp/css/styles.css
@@ -392,7 +392,7 @@ Ejemplo:
 
 ---
 
-# 14. Flujo completo de una petición
+# 14. flux complet d'una petició
 
 Supongamos:
 
@@ -400,11 +400,11 @@ Supongamos:
 GET /miapp/privado/panel
 ```
 
-El flujo podría ser:
+El flux podria ser:
 
 ```mermaid
 sequenceDiagram
-    participant U as Usuario
+    participant U as Usuari
     participant T as Tomcat
     participant F as AuthFilter
     participant S as PanelServlet
@@ -414,13 +414,13 @@ sequenceDiagram
     T->>F: ejecuta filtro
     F->>F: comprueba sesión
     F->>S: continúa cadena
-    S->>J: forward con datos
+    S->>J: forward con dades
     J-->>S: HTML
-    S-->>T: respuesta
+    S-->>T: resposta
     T-->>U: HTTP 200
 ```
 
-Si no existe una sesión válida:
+Si no existeix una Sessió válida:
 
 ```text
 Filtro → redirección a /login
@@ -428,24 +428,24 @@ Filtro → redirección a /login
 
 ---
 
-# 15. `forward` y `redirect`
+# 15. `forward` i `redirect`
 
-No son exactamente lo mismo.
+No són exactament el mateix.
 
 ## Forward
 
-El servidor entrega internamente la petición a otro recurso.
+El Servidor entrega internament la petició a un altre recurs.
 
 ```java
 request.getRequestDispatcher("/WEB-INF/panel.jsp")
        .forward(request, response);
 ```
 
-El navegador no realiza una petición nueva.
+El navegador no realitza una petició nova.
 
 ## Redirect
 
-Se devuelve una respuesta al navegador para que solicite otra URL.
+Es retorna una Resposta al navegador perquè solicite una altra URL.
 
 ```java
 response.sendRedirect("login");
@@ -453,17 +453,17 @@ response.sendRedirect("login");
 
 ```mermaid
 flowchart TD
-    F["Forward"] --> FI["Cambio interno en servidor<br/>misma petición"]
-    R["Redirect"] --> RN["El navegador realiza<br/>una nueva petición"]
+    F["Forward"] --> FI["Cambio interno en servidor<br/>misma petició"]
+    R["Xarxairect"] --> RN["El navegador realiza<br/>una nueva petició"]
 ```
 
 ---
 
 # 16. `WEB-INF`
 
-`WEB-INF` protege recursos internos.
+`WEB-INF` protegeix recursos interns.
 
-Por ejemplo:
+per exemple:
 
 ```text
 WEB-INF/web.xml
@@ -472,15 +472,15 @@ WEB-INF/lib/
 WEB-INF/vistas/
 ```
 
-Una JSP interna puede almacenarse dentro de `WEB-INF` para impedir que el cliente la solicite directamente.
+Una JSP interna Pot almacenarse dins de `WEB-INF` per a impedir que el client la solicite directament.
 
-El servlet puede hacer un `forward` hacia ella.
+El servlet Pot fer un `forward` cap alla.
 
 ---
 
-# 17. Anotaciones y `web.xml`
+# 17. Anotacions i `web.xml`
 
-Actualmente es habitual utilizar:
+actualment és habitual Utilitzar:
 
 ```java
 @WebServlet
@@ -488,48 +488,48 @@ Actualmente es habitual utilizar:
 @WebListener
 ```
 
-Pero `web.xml` sigue siendo útil para:
+però `web.xml` segueix siendo útil per a:
 
-- configuración centralizada;
-- restricciones de seguridad;
+- configuració centralizada;
+- restricciones de Seguretat;
 - parámetros;
-- sesiones;
-- páginas de error;
-- despliegues que requieren configuración independiente del código.
+- Sessions;
+- pàgines de error;
+- desplegaments que requereixen configuració independiente del codi.
 
 ---
 
-# 18. Qué debes retener
+# 18. Què has de retenir
 
-!!! summary "Resumen"
-    - Los servlets procesan peticiones.
-    - Las JSP se utilizan principalmente como vistas.
-    - Los filtros interceptan peticiones y respuestas.
-    - Los listeners responden a eventos.
-    - `WEB-INF` contiene elementos internos de la aplicación.
-    - Tomcat gestiona el ciclo de vida de los componentes.
-    - Una aplicación bien organizada separa procesamiento, lógica y presentación.
+!!! summary "resum"
+    - els servlets procesan Peticions.
+    - Les JSP s'utilitzen principalment com vistas.
+    - els Filtres interceptan Peticions i Respostes.
+    - els listindres responn a Esdeveniments.
+    - `WEB-INF` conté elements interns de l'aplicació.
+    - Tomcat gestional cicle de vida dels components.
+    - Una aplicació bien organizada separa procesamiento, lògica i presentació.
 
 ---
 
-# 19. Glosario
+# 19. glossari
 
 **Servlet**  
-Componente Java que procesa peticiones en un contenedor web.
+component Java que processa Peticions en un contenidor web.
 
 **JSP**  
-Tecnología de vistas dinámicas para aplicaciones Java web.
+tecnologia de vistas dinàmiques per a aplicacions Java web.
 
-**Filtro**  
-Componente que intercepta peticiones y respuestas.
+**filtre**  
+component que intercepta Peticions i Respostes.
 
-**Listener**  
-Componente que reacciona a eventos del contenedor.
+**Listindre**  
+component que reacciona a Esdeveniments del contenidor.
 
 **Forward**  
-Transferencia interna de una petición a otro recurso.
+Transfereència interna d'una petició a un altre recurs.
 
 **Redirect**  
-Respuesta que indica al cliente que solicite otra URL.
+Resposta que indica al Client que solicite una altra URL.
 
 ---

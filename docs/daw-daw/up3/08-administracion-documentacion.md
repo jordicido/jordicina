@@ -1,38 +1,38 @@
 ---
 hide:
   - navigation
-title: "UP3.8. Administración y documentación del servidor de aplicaciones"
-description: "Runbooks, inventario, despliegues, rollback, copias, logs y documentación operativa."
+title: "UP3.8. Administració i documentació del servidor d'aplicacions"
+description: "Runbooks, inventari, desplegaments, rollback, còpies, logs i documentació operativa."
 ---
 
-# UP3.8. Administración y documentación del servidor de aplicaciones
+# UP3.8. Administració i Documentació del servidor d'aplicacions
 
-> **RA3.h:** Se ha elaborado documentación relativa a la administración y recomendaciones de uso del servidor de aplicaciones.
+> **RA3.h:** S'ha elaborat documentació relativa a l'administració i a les recomanacions d'ús del servidor d'aplicacions.
 
-## Qué vas a aprender
+## Què aprendràs
 
-Un despliegue no está terminado hasta que otra persona puede comprender cómo se administra.
+Un desplegament no està acabat fins que una altra persona pot comprendre com s'administra.
 
-En este bloque aprenderás:
+En aquest bloc aprendràs:
 
-- qué documentación necesita un servidor;
-- qué es un runbook;
-- cómo documentar arquitectura;
-- inventario de configuración;
-- procedimientos de operación;
+- Quina documentació necessita un servidor;
+- Què és un runbook;
+- com documentar arquitectura;
+- Inventari de configuració;
+- procediments de operació;
 - logs;
-- copias de seguridad;
-- incidencias;
-- cambios;
-- recomendaciones de seguridad y mantenimiento.
+- còpies de Seguretat;
+- incidències;
+- canvis;
+- recomanacions de Seguretat i manteniment.
 
 ---
 
-# 1. ¿Por qué documentar?
+# 1. ¿per què documentar?
 
-Imagina que una persona configura un servidor y seis meses después abandona el equipo.
+Imagina que una persona configura un servidor i seis mesos després abandona l' equip.
 
-Nadie sabe:
+Nadie sap:
 
 ```text
 qué versión se instaló
@@ -44,77 +44,77 @@ dónde se encuentra el certificado
 cómo desplegar una nueva versión
 ```
 
-El servidor puede estar funcionando, pero no es mantenible.
+El Servidor pot estar funcionant, però no és mantenible.
 
-!!! info "La documentación forma parte del sistema"
-    Una infraestructura que depende únicamente de la memoria de quien la creó tiene un riesgo operativo elevado.
+!!! info "La Documentació forma part del sistema"
+    Una infraestructura que depende únicament de la memòria de qui la creó té un risc operativo elevado.
 
 ---
 
-# 2. Tipos de documentación
+# 2. Tipus de documentació
 
-Podemos separar:
+podem separar:
 
 ```mermaid
 flowchart TD
     D["Documentación"] --> A["Arquitectura"]
     D --> I["Instalación"]
-    D --> C["Configuración"]
+    D --> C["Configuració"]
     D --> O["Operación"]
-    D --> S["Seguridad"]
+    D --> S["Seguretat"]
     D --> P["Procedimientos"]
     D --> R["Resolución de incidencias"]
 ```
 
 ---
 
-# 3. Documento de arquitectura
+# 3. Document de arquitectura
 
-Debe explicar los componentes y sus relaciones.
+ha de explicar els components i sus relacions.
 
-Ejemplo:
+exemple:
 
 ```mermaid
 flowchart LR
     I["Internet"] --> A["Apache<br/>80/443"]
     A --> T["Tomcat<br/>8080"]
-    T --> APP["tienda.war"]
+    T --> APP["botiga.war"]
     APP --> DB[("PostgreSQL<br/>5432")]
 ```
 
-Debe indicar:
+ha de indicar:
 
-- propósito de cada componente;
-- conexiones;
-- puertos;
-- dependencias;
-- límites del sistema.
+- propósito de cada component;
+- connexions;
+- Ports;
+- dependències;
+- límits del sistema.
 
 ---
 
-# 4. Inventario técnico
+# 4. Inventari tècnic
 
-Ejemplo:
+exemple:
 
-| Elemento | Valor |
+| element | Valor |
 |---|---|
 | SO | Ubuntu Server |
 | Apache | 2.4.x |
-| Java | 17/21 según proyecto |
+| Java | 17/21 segons proyecto |
 | Tomcat | 10.1.x |
-| Aplicación | tienda |
-| Puerto Apache HTTP | 80 |
-| Puerto Apache HTTPS | 443 |
-| Puerto Tomcat | 8080 |
+| Aplicació | botiga |
+| Port Apache HTTP | 80 |
+| Port Apache HTTPS | 443 |
+| Port Tomcat | 8080 |
 | Ruta Tomcat | `/opt/tomcat/...` |
 
-El objetivo no es llenar páginas, sino poder identificar exactamente el entorno.
+El objectiu no és llenar pàgines, sinó poder identificar exactament l'entorn.
 
 ---
 
-# 5. Configuración
+# 5. Configuració
 
-Deben registrarse los elementos relevantes:
+han de registrarse els elements rellevants:
 
 ```text
 /etc/apache2/sites-available/...
@@ -123,18 +123,18 @@ $CATALINA_BASE/conf/context.xml
 $CATALINA_BASE/conf/tomcat-users.xml
 ```
 
-No es necesario copiar contraseñas dentro de la documentación.
+No és necessari copiar Contrasenyes dins de la documentació.
 
-!!! danger "Documentar no significa publicar secretos"
-    La documentación puede indicar **dónde** se gestiona un secreto sin incluir su valor.
+!!! danger "Documentar no significa publicar secrets"
+    La Documentació Pot indicar **on** es gestiona un secret sense incluir el seu valor.
 
 ---
 
 # 6. Runbook
 
-Un **runbook** es un conjunto de procedimientos operativos.
+Un **runbook** és un conjunt de procediments operatius.
 
-Puede responder a preguntas como:
+Pot responr a preguntes com:
 
 ```text
 ¿Cómo arranco el servicio?
@@ -147,9 +147,9 @@ Puede responder a preguntas como:
 
 ---
 
-# 7. Inicio, parada y reinicio
+# 7. Inici, parada i reinici
 
-Ejemplo:
+exemple:
 
 ```bash
 sudo systemctl start tomcat
@@ -158,19 +158,19 @@ sudo systemctl restart tomcat
 sudo systemctl status tomcat
 ```
 
-La documentación debe indicar qué comando corresponde al entorno real.
+La Documentació ha de indicar Què ordre correspon al entorn real.
 
 ---
 
-# 8. Verificación posterior
+# 8. Verificació posterior
 
-Después de un reinicio:
+després d'un reinici:
 
 ```text
 1. servicio activo
 2. puerto abierto
 3. Tomcat responde
-4. aplicación responde
+4. aplicació responde
 5. Apache responde
 6. prueba de función crítica
 ```
@@ -188,14 +188,14 @@ flowchart LR
 
 # 9. Logs
 
-La documentación debe explicar:
+La Documentació ha de explicar:
 
 - ubicación;
-- finalidad;
+- finalitat;
 - rotación;
-- comandos de consulta.
+- ordres de consulta.
 
-Ejemplos:
+exemples:
 
 ```bash
 journalctl -u tomcat
@@ -211,11 +211,11 @@ journalctl -u apache2
 
 ---
 
-# 10. Procedimiento de despliegue
+# 10. procediment de desplegament
 
-Debe poder repetirse.
+ha de poder repetirse.
 
-Ejemplo:
+exemple:
 
 ```text
 1. obtener artefacto validado
@@ -229,9 +229,9 @@ Ejemplo:
 
 ---
 
-# 11. Procedimiento de rollback
+# 11. procediment de rollback
 
-También debe documentarse.
+també ha de documentarse.
 
 ```text
 si la nueva versión falla:
@@ -244,26 +244,26 @@ si la nueva versión falla:
 
 ---
 
-# 12. Copias de seguridad
+# 12. còpies de Seguretat
 
-No todo lo que existe en el servidor necesita el mismo tipo de copia.
+No tot ho que existeix en el servidor necessital mateix tipus de còpia.
 
-Posibles elementos:
+Posibles elements:
 
-- configuración;
-- certificados;
-- base de datos;
-- archivos subidos;
+- configuració;
+- certificats;
+- base de dades;
+- Fitxers subidos;
 - scripts;
-- documentación.
+- Documentació.
 
-El artefacto de una aplicación quizá pueda reconstruirse desde CI/CD, mientras que una base de datos no.
+El artefacte d'una aplicació potser puga reconstruir-se des de CI/CD, mentre que una base de dades no.
 
 ---
 
-# 13. Gestión de cambios
+# 13. Gestió de canvis
 
-Un cambio debería responder:
+Un Canvi hauria de responr:
 
 ```text
 ¿Qué se cambió?
@@ -274,7 +274,7 @@ Un cambio debería responder:
 ¿Cómo se revierte?
 ```
 
-Ejemplo:
+exemple:
 
 ```text
 2026-10-20
@@ -285,9 +285,9 @@ Rollback: restaurar vhost anterior
 
 ---
 
-# 14. Incidencias
+# 14. incidències
 
-Una buena documentación de incidencia registra:
+Una buena Documentació de incidèència registra:
 
 ```text
 síntoma
@@ -299,7 +299,7 @@ solución
 prevención
 ```
 
-Ejemplo conceptual:
+exemple conceptual:
 
 ```text
 Síntoma: 502 desde Apache
@@ -310,43 +310,43 @@ Prevención: monitorización del proceso
 
 ---
 
-# 15. Recomendaciones de mantenimiento
+# 15. recomanacions de manteniment
 
-## Actualizaciones
+## actualitzacions
 
-Revisar periódicamente:
+revisar periódicamente:
 
 - sistema operativo;
 - Java;
 - Tomcat;
 - Apache;
-- dependencias.
+- dependències.
 
 ## Logs
 
-Comprobar:
+comprovar:
 
-- errores;
+- errors;
 - espacio en disco;
 - rotación.
 
-## Certificados
+## certificats
 
 Registrar fechas de caducidad.
 
-## Copias
+## còpies
 
-Verificar que pueden restaurarse.
+Verificar que poden restaurarse.
 
-## Usuarios
+## Usuaris
 
-Eliminar cuentas que ya no sean necesarias.
+Eliminar comptes que ja no sean necessàries.
 
 ---
 
-# 16. Seguridad de la documentación
+# 16. Seguretat de la documentació
 
-La documentación puede contener información sensible:
+La Documentació Pot contindre informació sensible:
 
 ```text
 arquitectura
@@ -356,23 +356,23 @@ rutas
 usuarios
 ```
 
-Debe almacenarse en un lugar con control de acceso.
+ha de almacenarse en un lloc amb control de accés.
 
-No debería mezclarse documentación pública con secretos operativos.
+No hauria de mezclarse Documentació pública amb secrets operatius.
 
 ---
 
-# 17. Documentación como código
+# 17. Documentació com Codi
 
-Una estrategia útil consiste en guardar documentación en Markdown y controlarla con Git.
+Una estratègia útil consiste en guardar Documentació en Markdown i controlar-la amb Git.
 
-Ventajas:
+avantatges:
 
 - historial;
 - revisión;
-- cambios comparables;
+- canvis comparables;
 - colaboración;
-- documentación cercana al proyecto.
+- Documentació cercana al proyecto.
 
 ```mermaid
 flowchart LR
@@ -384,9 +384,9 @@ flowchart LR
 
 ---
 
-# 18. Estructura recomendada
+# 18. Estructura recomanada
 
-Un documento de administración podría contener:
+Un Document d'administració podria contindre:
 
 ```text
 1. Objetivo
@@ -407,31 +407,31 @@ Un documento de administración podría contener:
 
 ---
 
-# 19. Qué debes retener
+# 19. Què has de retenir
 
-!!! summary "Resumen"
-    - La documentación reduce dependencia de personas concretas.
-    - La arquitectura debe representarse visualmente.
-    - Un runbook documenta procedimientos repetibles.
-    - Deben existir procedimientos de despliegue y rollback.
-    - Los logs y copias deben estar documentados.
-    - La documentación no debe contener secretos innecesarios.
-    - Markdown + Git es una buena estrategia para mantener documentación técnica.
+!!! summary "resum"
+    - La Documentació reduce dependèència de persones concretes.
+    - La arquitectura ha de representarse visualmente.
+    - Un runbook documenta procediments repetibles.
+    - han de existir procediments de desplegament i rollback.
+    - els logs i còpies han de estar documentados.
+    - La Documentació no ha de contindre secrets innecesarios.
+    - Markdown + Git és una buena estratègia per a mantindre Documentació tècnica.
 
 ---
 
-# 20. Glosario
+# 20. glossari
 
 **Runbook**  
-Documento con procedimientos operativos.
+Document amb procediments operatius.
 
 **Rollback**  
-Vuelta controlada a una versión anterior.
+Vuelta controlada a una versió anterior.
 
-**Inventario**  
-Relación de componentes y versiones de un sistema.
+**Inventari**  
+relació de components i versions d'un sistema.
 
-**Documentación como código**  
-Gestión de documentación mediante formatos de texto, control de versiones y procesos similares a los utilizados para código.
+**Documentació com Codi**  
+Gestió de documentació mitjançant formats de texto, control de versions i processos similares als Utilitzats per a Codi.
 
 ---
