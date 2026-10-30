@@ -4,44 +4,25 @@ hide:
 ---
 # UP3. Serveis de gestió d’arxius web
 
-## 1. Introducció
-Instal·larem un servei d’arxius web i aprendrem a administrar-ne usuaris, permisos i recursos compartits.
+La UP3 desenvolupa el **RA3: instal·lar servicis de gestió d’arxius web, identificar les seues aplicacions i verificar la seua integritat**.
 
-## 2. Què aprendràs
-Gestionaràs comptes, directoris, indexació i informació addicional, i comprovaràs la integritat i la seguretat del servei.
+El material teòric està organitzat en cinc blocs. Consulta l’[índex i la seqüència de la UP3](up3/index.md) per seguir l’ordre recomanat.
 
-## 3. Resultat d’aprenentatge relacionat
-**RA3.** Instal·lar serveis de gestió d’arxius web, identificar les seues aplicacions i verificar-ne la integritat.
+## Material teòric
 
-## 4. Continguts
+| Bloc | Contingut |
+|---|---|
+| [1. Gestió d’arxius a través del web](up3/01-gestio-arxius-web.md) | Utilitat, avantatges, models i principals gestors. |
+| [2. Arquitectura i instal·lació](up3/02-arquitectura-installacio.md) | Client-servidor, components i procés d’instal·lació. |
+| [3. Usuaris, permisos i gestió d’arxius](up3/03-usuaris-permisos-arxius.md) | Comptes, grups, quotes, permisos i comparticions. |
+| [4. Informació addicional, metadades i indexació](up3/04-metadades-indexacio.md) | Organització, etiquetes, historial, cerques i índexs. |
+| [5. Seguretat i integritat](up3/05-seguretat-integritat.md) | Confidencialitat, HTTPS, còpies, actualitzacions i logs. |
 
-- Utilitat i aplicacions dels serveis d’arxius web.
-- Instal·lació i adaptació de l’eina.
-- Usuaris, permisos i tipus d’usuari.
-- Gestió d’arxius, directoris i recursos compartits.
-- Informes, estructura de directoris i indexació.
-- Comprovació de la seguretat del gestor.
+## Treball pràctic
 
-## 5. Materials teòrics
-Material pendent de publicar.
+Al llarg de la unitat utilitzarem **Nextcloud** per aplicar aquests conceptes sobre un servei real. Les activitats hauran de demostrar que es poden crear comptes i grups, gestionar arxius i directoris, compartir recursos, cercar informació i comprovar mesures de seguretat.
 
-## 6. Vídeos i demostracions
-Material pendent de publicar.
+!!! note "Evidències"
+    Una captura només demostra allò que s’hi pot llegir. Acompanya cada evidència amb el context, la prova realitzada i el resultat observat. No inclogues contrasenyes, tokens ni dades personals.
 
-## 7. Pràctiques guiades
-Material pendent de publicar.
-
-## 8. Activitats i exercicis
-Material pendent de publicar.
-
-## 9. Activitat avaluable
-La programació associa aquesta UP amb el RA3, amb un pes del 27 % i 20 hores al centre.
-
-## 10. Lliurament
-Format, canal i data: pendent de publicar.
-
-## 11. Autoavaluació
-Material pendent de publicar.
-
-## 12. Recursos complementaris
-Consulta els [recursos generals](recursos.md). TODO: afegir recursos revisats.
+La programació associa aquesta UP amb el RA3, amb un pes del **27 %** i **20 hores al centre**. Consulta els [recursos generals](recursos.md) i les activitats que publique el professorat.

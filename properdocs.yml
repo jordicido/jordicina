@@ -85,7 +85,13 @@ nav:
                   - 5. Treball col·laboratiu: smx-aw/up2/05-treball-collaboratiu.md
                   - Activitat 1. Dissenyem una oficina al núvol: smx-aw/up2/activitats/activitat-1-oficina-nuvol.md
                   - Activitat 2. Projecte col·laboratiu amb Microsoft 365: smx-aw/up2/activitats/activitat-2-espai-collaboratiu.md
-              - UP3. Serveis de gestió d’arxius web: smx-aw/up3-arxius-web.md
+              - UP3. Serveis de gestió d’arxius web:
+                  - Índex i seqüència: smx-aw/up3/index.md
+                  - 1. Gestió d’arxius a través del web: smx-aw/up3/01-gestio-arxius-web.md
+                  - 2. Arquitectura i instal·lació: smx-aw/up3/02-arquitectura-installacio.md
+                  - 3. Usuaris, permisos i gestió d’arxius: smx-aw/up3/03-usuaris-permisos-arxius.md
+                  - 4. Informació addicional, metadades i indexació: smx-aw/up3/04-metadades-indexacio.md
+                  - 5. Seguretat i integritat: smx-aw/up3/05-seguretat-integritat.md
               - UP4. Gestors de continguts: smx-aw/up4-gestors-continguts.md
               - UP5. Gestió d’aprenentatge a distància: smx-aw/up5-aprenentatge-distancia.md
           - Recursos: smx-aw/recursos.md
