@@ -183,3 +183,24 @@ CERCA
 !!! tip "Organitzar abans d’indexar"
     Un bon motor de cerca no substitueix una bona política d’organització. Utilitzar noms coherents, carpetes adequades i etiquetes útils facilita enormement la recuperació de la informació.
 
+## 4.9. Cerca bàsica i cerca de text complet
+
+La indexació i la cerca bàsica no són necessàriament el mateix que una cerca de text complet.
+
+Una **cerca bàsica** pot utilitzar la informació que el gestor ja coneix sobre l’arxiu:
+
+```text
+Cerca bàsica
+    ↓
+nom + ruta + metadades + etiquetes
+```
+
+Una **cerca de text complet** intenta trobar paraules dins del contingut dels documents:
+
+```text
+Cerca de text complet
+    ↓
+contingut dins de PDF, DOCX, etc.
+```
+
+Per tant, una instal·lació bàsica pot permetre buscar per nom, ruta, propietari o etiquetes sense analitzar necessàriament el text intern de tots els documents. Les dues cerques poden requerir configuracions i recursos diferents.

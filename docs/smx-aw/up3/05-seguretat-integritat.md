@@ -204,6 +204,46 @@ Podem imaginar-los com el **diari tècnic del servidor**:
 
 Els logs són especialment útils quan hem d’investigar què ha passat després d’un incident.
 
+## 5.11. Seguretat en un desplegament amb contenidors
+
+Els contenidors faciliten el desplegament i l’aïllament dels servicis, però no eliminen la necessitat de prendre mesures de seguretat.
+
+### Publicar només els ports necessaris
+
+Cada port publicat pot convertir-se en un punt d’accés al servei. Per això, només s’han d’exposar els servicis que realment necessiten ser accessibles des de l’exterior.
+
+### No exposar MariaDB
+
+En el nostre desplegament, el navegador accedeix a Nextcloud i Nextcloud es comunica amb MariaDB:
+
+```mermaid
+flowchart LR
+    I[Internet / navegador]
+    -->|HTTP o HTTPS| NC[Nextcloud]
+
+    NC --> DB[MariaDB]
+```
+
+El navegador no necessita accedir directament a MariaDB. Si només Nextcloud necessita comunicar-se amb la base de dades, no és necessari publicar el port de MariaDB cap a l’exterior.
+
+!!! warning "Menys servicis exposats, menys superfície d’atac"
+    Si només Nextcloud necessita comunicar-se amb MariaDB, no és necessari publicar el port de MariaDB cap a l’exterior.
+
+### Protegir les credencials
+
+Els contenidors necessiten configuració sensible, com ara l’usuari i la contrasenya de la base de dades o les credencials inicials d’administració. Aquestes dades s’han de protegir i no s’han de publicar ni compartir sense necessitat.
+
+### Còpies de seguretat i volums
+
+Copiar només un contenidor no és una còpia de seguretat adequada. Les dades persistents es troben en els volums, i la base de dades també conté informació necessària per recuperar el servei.
+
+Una estratègia de còpia de seguretat ha de tindre en compte els volums, la base de dades i la configuració necessària.
+
+!!! important "Contenidor i dades no són el mateix"
+    Un contenidor es pot recrear.
+
+    El que realment hem de protegir són les dades persistents, la configuració necessària i la base de dades.
+
 ## Resum de la unitat
 
 Un servei de gestió d’arxius web no consisteix simplement a guardar documents en Internet. Combina diferents mecanismes:
@@ -239,4 +279,3 @@ mindmap
 ```
 
 Al llarg de la unitat utilitzarem **Nextcloud** per aplicar aquests conceptes sobre un servei real. L’objectiu no és únicament aprendre a utilitzar Nextcloud, sinó entendre **com funciona i com s’administra un servei web de gestió d’arxius**.
-

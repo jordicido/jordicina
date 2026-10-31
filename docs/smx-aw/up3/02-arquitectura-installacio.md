@@ -144,3 +144,95 @@ Una instal·lació no està acabada fins que hem comprovat que podem accedir des
 !!! important "Instal·lar no és només copiar fitxers"
     Una aplicació web depén de diversos servicis. Quan alguna cosa falla hem d’identificar en quina capa es troba el problema: xarxa, servidor web, PHP, base de dades, permisos o configuració de l’aplicació.
 
+## 2.5. Desplegament mitjançant contenidors
+
+Nextcloud es pot instal·lar de manera tradicional sobre un servidor o es pot desplegar mitjançant contenidors. Les dues opcions necessiten els mateixos components, però els organitzen i els executen de manera diferent.
+
+### Instal·lació tradicional i desplegament amb contenidors
+
+En una instal·lació tradicional, els components s’instal·len directament en el sistema operatiu del servidor:
+
+```text
+Servidor
+├── Apache
+├── PHP
+├── MariaDB
+└── Nextcloud
+```
+
+En un desplegament amb contenidors, cada servei s’executa en un entorn separat:
+
+```mermaid
+flowchart LR
+    U[Navegador] -->|Port publicat| NC[Contenidor Nextcloud]
+    NC --> DB[Contenidor MariaDB]
+
+    NC --> V1[(Volum Nextcloud)]
+    DB --> V2[(Volum MariaDB)]
+```
+
+!!! info "Docker no elimina l’arquitectura"
+    Encara que utilitzem contenidors, Nextcloud continua necessitant els components necessaris per executar l’aplicació i una base de dades.
+
+    Docker simplement canvia la forma en què aquests servicis es despleguen i s’aïllen.
+
+Docker no és el gestor d’arxius. És el mitjà que utilitzem per empaquetar, desplegar i aïllar els servicis que formen Nextcloud.
+
+### Conceptes mínims de Docker
+
+Per entendre la pràctica només necessitem aquests conceptes:
+
+| Concepte | Explicació |
+|---|---|
+| **Imatge** | Plantilla a partir de la qual es crea un contenidor. |
+| **Contenidor** | Instància en execució creada a partir d’una imatge. |
+| **Port** | Permet accedir des de l’exterior a un servei que funciona dins del contenidor. |
+| **Volum** | Espai d’emmagatzematge que permet conservar dades de manera persistent. |
+| **Variable d’entorn** | Valor de configuració que es proporciona al servei, com ara un usuari o una contrasenya. |
+| **Docker Compose** | Ferramenta que permet definir i executar diversos contenidors relacionats. |
+
+### Persistència de les dades
+
+Un contenidor es pot aturar, eliminar i tornar a crear. Per això, les dades importants no haurien de dependre únicament del sistema de fitxers intern del contenidor.
+
+```mermaid
+flowchart TD
+    C[Contenidor Nextcloud]
+    -->|es pot eliminar| N[Nou contenidor]
+
+    V[(Volum persistent)]
+    -->|les dades es conserven| N
+```
+
+!!! important "Persistència"
+    Un contenidor es pot eliminar i tornar a crear.
+
+    Les dades que han de conservar-se s’han d’emmagatzemar en volums persistents.
+
+En el cas de Nextcloud, cal conservar com a mínim els arxius dels usuaris i la informació de la base de dades. En la pràctica comprovarem que aquestes dades continuen disponibles encara que recreem els contenidors.
+
+### Docker Compose
+
+Docker Compose permet descriure en un únic fitxer els servicis necessaris per executar una aplicació formada per diversos contenidors. En el nostre cas, el desplegament tindrà, com a mínim, un servei per a Nextcloud i un altre per a MariaDB:
+
+```yaml
+services:
+  nextcloud:
+    ...
+
+  db:
+    ...
+```
+
+En aquest fitxer es poden definir els servicis, les imatges, els ports, els volums, les variables d’entorn i les relacions entre contenidors. El fitxer funcional formarà part de l’activitat pràctica.
+
+### Comunicació entre contenidors
+
+Els contenidors d’un mateix desplegament poden comunicar-se entre ells. Nextcloud utilitza MariaDB per consultar i guardar la informació del sistema:
+
+```mermaid
+flowchart LR
+    N[Nextcloud] -->|consulta i guarda dades| DB[(MariaDB)]
+```
+
+Nextcloud necessita accedir a MariaDB, però l’usuari no necessita accedir directament a la base de dades. Per això, normalment només es publica el port necessari per accedir a la interfície web de Nextcloud; la comunicació amb MariaDB es realitza internament entre els contenidors.

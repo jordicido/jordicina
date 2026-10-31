@@ -164,3 +164,34 @@ pressupost.pdf
 !!! danger "Enllaç públic"
     Un enllaç públic elimina la necessitat que el receptor tinga un compte intern. Per això s’han d’utilitzar amb cura i aplicar proteccions com contrasenyes, dates de caducitat i permisos restrictius.
 
+## 3.8. Propietat i compartició
+
+La **propietat** d’un arxiu o una carpeta i l’**accés** que té una altra persona mitjançant una compartició són conceptes diferents.
+
+```text
+Anna
+└── Projectes/
+    └── client-a/
+```
+
+Anna pot ser la propietària de la carpeta i compartir-la amb el grup `Tecnics`:
+
+```text
+Grup: Tecnics
+
+Permisos:
+✓ Lectura
+✓ Creació
+✓ Modificació
+✗ Compartició
+```
+
+Tindre accés a una carpeta no significa necessàriament ser-ne el propietari. Una compartició pot concedir operacions diferents:
+
+- lectura;
+- creació;
+- modificació;
+- eliminació;
+- compartició.
+
+Els permisos s’han d’assignar aplicant el principi de mínim privilegi: cada usuari o grup ha de poder fer només les operacions necessàries per al seu treball.
