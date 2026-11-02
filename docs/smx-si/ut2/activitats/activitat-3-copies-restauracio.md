@@ -420,13 +420,13 @@ Ara es produeix l'incident.
 Un usuari elimina accidentalment tota la carpeta:
 
 ```text
-/srv/dades/projectes
+/srv/dades/factures
 ```
 
 En esta activitat **sí que executarem realment l'eliminació**:
 
 ```bash
-sudo rm -rf /srv/dades/projectes
+sudo rm -rf /srv/dades/factures
 ```
 
 Comprova:
@@ -447,7 +447,7 @@ El RAID hauria de continuar funcionant correctament.
 
 Mostra:
 
-- que `projectes` ha desaparegut;
+- que `factures` ha desaparegut;
 - que el RAID continua sa.
 
 Respon:
@@ -531,7 +531,7 @@ tree /tmp/restauracio/srv/dades
 !!! question "Comprova abans de copiar"
     Revisa la informació restaurada i comprova:
 
-    - que existeix la carpeta `projectes`;
+    - que existeix la carpeta `factures`;
     - que apareixen els fitxers de la còpia completa;
     - que també apareixen els canvis inclosos en la còpia incremental.
 
@@ -543,7 +543,7 @@ Una vegada comprovat el contingut temporal, recupera la carpeta:
 
 ```bash
 sudo cp -a \
-/tmp/restauracio/srv/dades/projectes \
+/tmp/restauracio/srv/dades/factures \
 /srv/dades/
 ```
 
@@ -559,7 +559,7 @@ Obri alguns fitxers i comprova que el contingut és correcte.
 
 Mostra:
 
-- la carpeta `projectes` restaurada;
+- la carpeta `factures` restaurada;
 - els seus fitxers;
 - almenys algun dels canvis realitzats després de la còpia completa.
 
