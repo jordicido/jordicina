@@ -1,3 +1,7 @@
+---
+hide:
+  - navigation
+---
 # 2. Disseny de casos de prova
 
 > **CA:** RA3.b · **Sessió:** 2

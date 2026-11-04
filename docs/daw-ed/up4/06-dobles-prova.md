@@ -1,3 +1,7 @@
+---
+hide:
+  - navigation
+---
 # 6. Dobles de prova i aïllament de components
 
 > **CA:** RA3.i · **Sessió:** 9

@@ -1,3 +1,7 @@
+---
+hide:
+  - navigation
+---
 # 3. Depuració de Java amb VS Code
 
 > **CA:** RA3.c, RA3.d i RA3.e · **Sessions:** 3, 4 i 5

@@ -1,3 +1,7 @@
+---
+hide:
+  - navigation
+---
 # 7. Documentació d’incidències
 
 > **CA:** RA3.h · **Sessió:** 10

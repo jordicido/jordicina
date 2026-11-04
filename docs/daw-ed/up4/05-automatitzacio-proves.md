@@ -1,3 +1,7 @@
+---
+hide:
+  - navigation
+---
 # 5. Automatització i execució de bateries
 
 > **CA:** RA3.g · **Sessió:** 8

@@ -1,3 +1,7 @@
+---
+hide:
+  - navigation
+---
 # 1. Fonaments i tipus de proves
 
 > **CA:** RA3.a · **Sessió:** 1

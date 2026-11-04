@@ -1,3 +1,7 @@
+---
+hide:
+  - navigation
+---
 # 4. Proves unitàries amb JUnit Jupiter
 
 > **CA:** RA3.f · **Sessions:** 6 i 7
