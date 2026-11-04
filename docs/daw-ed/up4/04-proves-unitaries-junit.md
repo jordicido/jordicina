@@ -271,4 +271,4 @@ JUnit Jupiter dona una estructura executable a un cas de prova. AAA fa visible e
 
 Per ampliar, consulta la [guia oficial de JUnit 5](https://junit.org/junit5/docs/current/user-guide/) i la [guia oficial de proves Java en VS Code](https://code.visualstudio.com/docs/java/java-testing).
 
-[Bloc anterior: depuració](03-depuracio-vscode.md) · [Inici](index.md) · [Bloc següent: automatització](05-automatitzacio-proves.md)
+[Bloc anterior: depuració](03-depuracio-vscode.md) · [Inici](../up4-proves.md) · [Bloc següent: automatització](05-automatitzacio-proves.md)

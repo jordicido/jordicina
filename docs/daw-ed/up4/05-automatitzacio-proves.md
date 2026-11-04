@@ -120,4 +120,4 @@ Automatitzar permet repetir i comparar, especialment després d’un canvi. Mave
 
 Per ampliar, consulta la [documentació oficial de proves Java en VS Code](https://code.visualstudio.com/docs/java/java-testing) i la [documentació de Maven Surefire](https://maven.apache.org/components/surefire/maven-surefire-plugin/).
 
-[Bloc anterior: JUnit Jupiter](04-proves-unitaries-junit.md) · [Inici](index.md) · [Bloc següent: dobles de prova](06-dobles-prova.md)
+[Bloc anterior: JUnit Jupiter](04-proves-unitaries-junit.md) · [Inici](../up4-proves.md) · [Bloc següent: dobles de prova](06-dobles-prova.md)

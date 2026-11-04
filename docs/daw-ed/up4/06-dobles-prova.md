@@ -177,4 +177,4 @@ Si una classe només necessita que un repositori torne “usuari existent”, un
 
 La injecció de dependències separa la unitat de la frontera externa. Dummy, stub, fake, spy i mock descriuen rols diferents; no són sinònims. Un doble permet proves ràpides i deterministes, però cal vigilar que la simulació no cree una confiança falsa ni lligue cada test a detalls interns.
 
-[Bloc anterior: automatització](05-automatitzacio-proves.md) · [Inici](index.md) · [Bloc següent: incidències](07-documentacio-incidencies.md)
+[Bloc anterior: automatització](05-automatitzacio-proves.md) · [Inici](../up4-proves.md) · [Bloc següent: incidències](07-documentacio-incidencies.md)

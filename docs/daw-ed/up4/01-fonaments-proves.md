@@ -103,4 +103,4 @@ Classifica mentalment aquests casos: (a) comprovar que un saldo insuficient no p
 
 Provar és observar comportaments amb casos definits. Els nivells indiquen l’abast; funcional, no funcional, regressió i smoke indiquen finalitats; manual i automatitzada indiquen com s’executa. Un defecte intern es manifesta com una fallada observable, i tota conclusió ha d’estar limitada a les dades realment provades.
 
-[Inici de la UP4](index.md) · [Bloc següent: disseny de casos](02-disseny-casos-prova.md)
+[Inici de la UP4](../up4-proves.md) · [Bloc següent: disseny de casos](02-disseny-casos-prova.md)

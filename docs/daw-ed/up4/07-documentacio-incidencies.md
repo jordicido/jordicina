@@ -149,4 +149,4 @@ Una captura ha de mostrar prou context: títol de la finestra, versió si és re
 
 Una incidència comunica una desviació amb evidències, no una impressió. El títol i els passos han de ser concrets; esperat i observat han d’estar separats; gravetat i prioritat descriuen decisions diferents. Després de corregir, cal tornar a executar el cas i convertir el coneixement en una prova de regressió quan siga viable.
 
-[Bloc anterior: dobles de prova](06-dobles-prova.md) · [Inici](index.md) · [Tornar a Entorns de desenvolupament](../index.md)
+[Bloc anterior: dobles de prova](06-dobles-prova.md) · [Inici](../up4-proves.md) · [Tornar a Entorns de desenvolupament](../index.md)

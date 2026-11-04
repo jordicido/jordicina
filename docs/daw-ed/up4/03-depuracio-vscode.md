@@ -195,4 +195,4 @@ La depuració és una investigació guiada per hipòtesis. Variables, Watch, Cal
 
 Per ampliar, consulta la [guia oficial de depuració Java de VS Code](https://code.visualstudio.com/docs/java/java-debugging).
 
-[Bloc anterior: disseny de casos](02-disseny-casos-prova.md) · [Inici](index.md) · [Bloc següent: JUnit Jupiter](04-proves-unitaries-junit.md)
+[Bloc anterior: disseny de casos](02-disseny-casos-prova.md) · [Inici](../up4-proves.md) · [Bloc següent: JUnit Jupiter](04-proves-unitaries-junit.md)

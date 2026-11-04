@@ -219,7 +219,7 @@ nav:
                   - Activitat 3. Gestionem un projecte amb Scrum, Kanban i Trello: daw-ed/up2/activitats/activitat-2-de-la-idea-al-lliurament/informe.md
               - UP3. Optimització i qualitat del codi: daw-ed/up3-optimitzacio.md
               - UP4. Proves i verificació:
-                  - Presentació: daw-ed/up4/index.md
+                  - Presentació: daw-ed/up4-proves.md
                   - 1. Fonaments i tipus de proves: daw-ed/up4/01-fonaments-proves.md
                   - 2. Disseny de casos de prova: daw-ed/up4/02-disseny-casos-prova.md
                   - 3. Depuració de Java amb VS Code: daw-ed/up4/03-depuracio-vscode.md

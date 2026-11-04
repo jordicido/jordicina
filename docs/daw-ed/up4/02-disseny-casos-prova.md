@@ -135,4 +135,4 @@ La **traçabilitat** relaciona un requisit amb els casos que el verifiquen. Una 
 
 Un bon cas de prova és concret, reproduïble i vinculat a un requisit. Les classes d’equivalència redueixen casos repetits; els valors límit concentren l’atenció en fronteres; les taules de decisió fan visibles combinacions de condicions. Separar validació i decisió permet que cada resultat tinga una explicació precisa.
 
-[Bloc anterior: fonaments](01-fonaments-proves.md) · [Inici](index.md) · [Bloc següent: depuració amb VS Code](03-depuracio-vscode.md)
+[Bloc anterior: fonaments](01-fonaments-proves.md) · [Inici](../up4-proves.md) · [Bloc següent: depuració amb VS Code](03-depuracio-vscode.md)
