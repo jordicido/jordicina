@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1050" height="440" viewBox="0 0 1050 440" role="img" aria-labelledby="title desc">
+  <title id="title">Jerarquia de tests en Testing</title>
+  <desc id="desc">Esquema orientatiu de projecte, classe, mètodes i estats de proves.</desc>
+  <rect width="1050" height="440" fill="#ffffff"/>
+  <text x="525" y="45" text-anchor="middle" font-family="Arial" font-size="28" font-weight="700" fill="#17324d">Testing: de la bateria al cas</text>
+  <rect x="55" y="105" width="220" height="80" rx="15" fill="#eef6fb" stroke="#24527a" stroke-width="3"/><text x="165" y="153" text-anchor="middle" font-family="Arial" font-size="21" fill="#17324d">Projecte Maven</text>
+  <rect x="335" y="105" width="260" height="80" rx="15" fill="#eef6fb" stroke="#24527a" stroke-width="3"/><text x="465" y="153" text-anchor="middle" font-family="Arial" font-size="21" fill="#17324d">ValidadorTest</text>
+  <rect x="655" y="75" width="320" height="70" rx="15" fill="#eef7f1" stroke="#3a8c61" stroke-width="3"/><text x="815" y="117" text-anchor="middle" font-family="Arial" font-size="19" fill="#245d40">cas correcte ✓</text>
+  <rect x="655" y="180" width="320" height="70" rx="15" fill="#fff2ef" stroke="#c55345" stroke-width="3"/><text x="815" y="222" text-anchor="middle" font-family="Arial" font-size="19" fill="#8c3227">cas fallat → detalls</text>
+  <rect x="335" y="300" width="260" height="70" rx="15" fill="#fff6e8" stroke="#d88718" stroke-width="3"/><text x="465" y="342" text-anchor="middle" font-family="Arial" font-size="19" fill="#8c5b0c">Testing Explorer</text>
+  <path d="M275 145 H335" stroke="#24527a" stroke-width="4"/><path d="M595 125 H655" stroke="#3a8c61" stroke-width="4"/><path d="M595 165 C620 165 625 215 655 215" stroke="#c55345" stroke-width="4" fill="none"/><path d="M465 185 V300" stroke="#d88718" stroke-width="4"/>
+  <text x="525" y="410" text-anchor="middle" font-family="Arial" font-size="18" fill="#4d5d6c">Executa un mètode, una classe o tota la bateria segons la pregunta.</text>
+</svg>

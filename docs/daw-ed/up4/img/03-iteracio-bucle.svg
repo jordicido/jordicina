@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="390" viewBox="0 0 1000 390" role="img" aria-labelledby="title desc">
+  <title id="title">Seguiment d’un índex en un bucle</title>
+  <desc id="desc">Esquema de les iteracions 0, 1 i 2 en un array de tres elements.</desc>
+  <rect width="1000" height="390" fill="#ffffff"/>
+  <text x="500" y="44" text-anchor="middle" font-family="Arial" font-size="28" font-weight="700" fill="#17324d">Watch: l’índex ha d’arribar a l’última posició</text>
+  <g font-family="Arial" text-anchor="middle"><rect x="100" y="110" width="190" height="140" rx="15" fill="#eef6fb" stroke="#24527a" stroke-width="3"/><text x="195" y="155" font-size="24" font-weight="700" fill="#17324d">i = 0</text><text x="195" y="200" font-size="20" fill="#4d5d6c">valors[0] = 4</text>
+  <rect x="405" y="110" width="190" height="140" rx="15" fill="#eef6fb" stroke="#24527a" stroke-width="3"/><text x="500" y="155" font-size="24" font-weight="700" fill="#17324d">i = 1</text><text x="500" y="200" font-size="20" fill="#4d5d6c">valors[1] = 8</text>
+  <rect x="710" y="110" width="190" height="140" rx="15" fill="#fff2ef" stroke="#c55345" stroke-width="3"/><text x="805" y="155" font-size="24" font-weight="700" fill="#8c3227">i = 2</text><text x="805" y="200" font-size="20" fill="#8c3227">valors[2] = 15</text></g>
+  <path d="M290 180 H405" stroke="#24527a" stroke-width="5" marker-end="url(#arrow)"/><path d="M595 180 H710" stroke="#24527a" stroke-width="5" marker-end="url(#arrow)"/>
+  <text x="500" y="315" text-anchor="middle" font-family="Arial" font-size="19" fill="#17324d">Un breakpoint condicional sobre i = 2 revela el cas frontera.</text>
+  <defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#24527a"/></marker></defs>
+</svg>

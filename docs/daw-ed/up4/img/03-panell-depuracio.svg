@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="680" viewBox="0 0 1200 680" role="img" aria-labelledby="title desc">
+  <title id="title">Panell de depuració de VS Code</title>
+  <desc id="desc">Esquema orientatiu no real de les zones del depurador de Java en VS Code.</desc>
+  <rect width="1200" height="680" fill="#ffffff"/>
+  <text x="600" y="42" text-anchor="middle" font-family="Arial" font-size="28" font-weight="700" fill="#17324d">Esquema orientatiu (no és una captura real)</text>
+  <rect x="45" y="80" width="1110" height="535" rx="12" fill="#f6f8fa" stroke="#9aa8b2" stroke-width="3"/>
+  <rect x="45" y="80" width="185" height="535" fill="#eef3f7" stroke="#9aa8b2" stroke-width="2"/>
+  <text x="135" y="120" text-anchor="middle" font-family="Arial" font-size="18" font-weight="700" fill="#17324d">Run and Debug</text>
+  <g font-family="Arial" font-size="17" fill="#24527a"><text x="68" y="175">Variables</text><text x="68" y="245">Watch</text><text x="68" y="315">Call Stack</text><text x="68" y="385">Breakpoints</text><text x="68" y="455">Debug Console</text></g>
+  <rect x="260" y="110" width="860" height="300" fill="#ffffff" stroke="#c3cdd4" stroke-width="2"/>
+  <text x="290" y="145" font-family="Arial" font-size="18" fill="#4d5d6c">Codi Java pausat en un breakpoint</text>
+  <line x1="290" y1="185" x2="1080" y2="185" stroke="#d5e2ea"/><line x1="290" y1="225" x2="1080" y2="225" stroke="#d5e2ea"/><line x1="290" y1="265" x2="1080" y2="265" stroke="#d5e2ea"/>
+  <rect x="280" y="210" width="820" height="40" fill="#fff0b8" opacity=".8"/><text x="315" y="211" font-family="monospace" font-size="20" fill="#17324d">return (double) suma / notes.length;</text>
+  <rect x="260" y="440" width="860" height="140" fill="#eef7f1" stroke="#3a8c61" stroke-width="2"/>
+  <text x="290" y="478" font-family="Arial" font-size="18" font-weight="700" fill="#245d40">Controls</text>
+  <text x="290" y="520" font-family="monospace" font-size="18" fill="#17324d">Continue   Step Over   Step Into   Step Out   Restart   Stop</text>
+  <text x="600" y="650" text-anchor="middle" font-family="Arial" font-size="18" fill="#4d5d6c">Variables i Watch responen «què val?» · Call Stack respon «qui ha cridat?»</text>
+</svg>

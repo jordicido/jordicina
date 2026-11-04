@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="430" viewBox="0 0 1100 430" role="img" aria-labelledby="title desc">
+  <title id="title">Patró Arrange Act Assert</title>
+  <desc id="desc">Tres blocs de colors mostren la preparació, l’execució i la verificació d’un test.</desc>
+  <rect width="1100" height="430" fill="#ffffff"/>
+  <text x="550" y="50" text-anchor="middle" font-family="Arial" font-size="30" font-weight="700" fill="#17324d">Anatomia visual d’un test AAA</text>
+  <g font-family="Arial" text-anchor="middle"><rect x="60" y="110" width="300" height="210" rx="20" fill="#eef6fb" stroke="#24527a" stroke-width="3"/><text x="210" y="160" font-size="25" font-weight="700" fill="#17324d">Arrange</text><text x="210" y="215" font-family="monospace" font-size="18" fill="#4d5d6c">Calculadora c = new...</text><text x="210" y="255" font-size="18" fill="#4d5d6c">preparar dades</text>
+  <rect x="400" y="110" width="300" height="210" rx="20" fill="#fff6e8" stroke="#d88718" stroke-width="3"/><text x="550" y="160" font-size="25" font-weight="700" fill="#8c5b0c">Act</text><text x="550" y="215" font-family="monospace" font-size="18" fill="#4d5d6c">int r = c.sumar(...)</text><text x="550" y="255" font-size="18" fill="#4d5d6c">executar una vegada</text>
+  <rect x="740" y="110" width="300" height="210" rx="20" fill="#eef7f1" stroke="#3a8c61" stroke-width="3"/><text x="890" y="160" font-size="25" font-weight="700" fill="#245d40">Assert</text><text x="890" y="215" font-family="monospace" font-size="18" fill="#4d5d6c">assertEquals(8, r)</text><text x="890" y="255" font-size="18" fill="#4d5d6c">verificar el contracte</text></g>
+  <path d="M360 215 H400" stroke="#9aa8b2" stroke-width="5"/><path d="M700 215 H740" stroke="#9aa8b2" stroke-width="5"/>
+</svg>

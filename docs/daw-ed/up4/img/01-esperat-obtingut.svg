@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="430" viewBox="0 0 1100 430" role="img" aria-labelledby="title desc">
+  <title id="title">Resultat esperat i resultat obtingut</title>
+  <desc id="desc">Esquema orientatiu que compara una expectativa de prova amb el resultat observat i mostra una diferència.</desc>
+  <rect width="1100" height="430" fill="#ffffff"/>
+  <text x="550" y="52" text-anchor="middle" font-family="Arial" font-size="30" font-weight="700" fill="#17324d">Un cas de prova compara dos resultats</text>
+  <rect x="70" y="105" width="420" height="215" rx="22" fill="#eef7f1" stroke="#3a8c61" stroke-width="3"/>
+  <text x="280" y="155" text-anchor="middle" font-family="Arial" font-size="25" font-weight="700" fill="#245d40">Esperat</text>
+  <text x="280" y="210" text-anchor="middle" font-family="monospace" font-size="27" fill="#17324d">6.3333…</text>
+  <text x="280" y="260" text-anchor="middle" font-family="Arial" font-size="18" fill="#4d5d6c">segons el requisit</text>
+  <rect x="610" y="105" width="420" height="215" rx="22" fill="#fff2ef" stroke="#c55345" stroke-width="3"/>
+  <text x="820" y="155" text-anchor="middle" font-family="Arial" font-size="25" font-weight="700" fill="#8c3227">Obtingut</text>
+  <text x="820" y="210" text-anchor="middle" font-family="monospace" font-size="27" fill="#17324d">6.0</text>
+  <text x="820" y="260" text-anchor="middle" font-family="Arial" font-size="18" fill="#4d5d6c">en l’execució observada</text>
+  <path d="M490 215 H610" stroke="#c55345" stroke-width="6" marker-end="url(#arrow)"/>
+  <text x="550" y="190" text-anchor="middle" font-family="Arial" font-size="18" fill="#8c3227">diferència</text>
+  <text x="550" y="375" text-anchor="middle" font-family="Arial" font-size="19" fill="#17324d">La diferència és una evidència per investigar, no una explicació completa.</text>
+  <defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#c55345"/></marker></defs>
+</svg>

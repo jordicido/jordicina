@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="620" viewBox="0 0 900 620" role="img" aria-labelledby="title desc">
+  <title id="title">Cas de prova emplenat</title>
+  <desc id="desc">Fitxa visual amb identificador, entrada, passos, esperat, observat i estat.</desc>
+  <rect width="900" height="620" fill="#ffffff"/>
+  <rect x="70" y="45" width="760" height="500" rx="18" fill="#f8fbfd" stroke="#24527a" stroke-width="3"/>
+  <text x="105" y="92" font-family="Arial" font-size="28" font-weight="700" fill="#17324d">Cas de prova CP-EDAT-04</text>
+  <g font-family="Arial" font-size="20" fill="#17324d">
+    <text x="110" y="145" font-weight="700">Requisit</text><text x="315" y="145">accés a partir de 18 anys</text>
+    <text x="110" y="195" font-weight="700">Entrada</text><text x="315" y="195" font-family="monospace">edat = 18</text>
+    <text x="110" y="245" font-weight="700">Passos</text><text x="315" y="245">cridar rangValid i potAccedir</text>
+    <text x="110" y="305" font-weight="700">Esperat</text><text x="315" y="305" font-family="monospace">true / true</text>
+    <text x="110" y="365" font-weight="700">Observat</text><text x="315" y="365" font-family="monospace">true / true</text>
+    <text x="110" y="425" font-weight="700">Estat</text><text x="315" y="425" fill="#245d40" font-weight="700">SUPERADA</text>
+  </g>
+  <line x1="100" y1="165" x2="800" y2="165" stroke="#d5e2ea" stroke-width="2"/>
+  <line x1="100" y1="215" x2="800" y2="215" stroke="#d5e2ea" stroke-width="2"/>
+  <line x1="100" y1="275" x2="800" y2="275" stroke="#d5e2ea" stroke-width="2"/>
+  <line x1="100" y1="335" x2="800" y2="335" stroke="#d5e2ea" stroke-width="2"/>
+  <line x1="100" y1="395" x2="800" y2="395" stroke="#d5e2ea" stroke-width="2"/>
+  <text x="450" y="505" text-anchor="middle" font-family="Arial" font-size="18" fill="#4d5d6c">Fitxa completa = expectativa + dades + evidència</text>
+</svg>
