@@ -227,6 +227,12 @@ nav:
                   - 5. Automatització i execució de bateries: daw-ed/up4/05-automatitzacio-proves.md
                   - 6. Dobles de prova i aïllament: daw-ed/up4/06-dobles-prova.md
                   - 7. Documentació d’incidències: daw-ed/up4/07-documentacio-incidencies.md
+                  - Activitat 1. Del requisit al pla de proves: daw-ed/up4/activitats/activitat-1-pla-proves.md
+                  - Activitat 2. Depura, explica i verifica: daw-ed/up4/activitats/activitat-2-depuracio.md
+                  - Activitat 3. JUnit, automatització i regressió: daw-ed/up4/activitats/activitat-3-junit-automatitzacio.md
+                  - Activitat 4. Dobles de prova i gestió d’incidències: daw-ed/up4/activitats/activitat-4-dobles-incidencies.md
+                  - Repte 11. La hipòtesi oculta: daw-ed/up4/activitats/repte-11-hipotesi-depuracio.md
+                  - Repte 12. Una bateria que protegeix el contracte: daw-ed/up4/activitats/repte-12-bateria-junit.md
               - UP5. Diagrames de classes: daw-ed/up5-diagrames-classes.md
               - UP6. Diagrames de comportament: daw-ed/up6-diagrames-comportament.md
           - Recursos: daw-ed/recursos.md
