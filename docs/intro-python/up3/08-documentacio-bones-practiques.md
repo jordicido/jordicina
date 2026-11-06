@@ -334,4 +334,4 @@ Revisa el programa en passades separades. Intentar comprovar-ho tot alhora facil
 - Les docstrings documenten funcions i formen part de la seua interfície.
 - Una checklist final combina qualitat, validació, proves i neteja del codi.
 
-[Anterior: proves i depuració](07-proves-depuracio.md) · [Índex de la UP3](index.md) · [Projecte integrador](activitats/projecte-integrador.md) · [Autoavaluació](activitats/autoavaluacio.md)
+[Anterior: proves i depuració](07-proves-depuracio.md) · [Índex de la UP3](index.md)

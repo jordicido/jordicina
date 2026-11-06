@@ -407,4 +407,4 @@ Una taula de traça ajuda a detectar inicialitzacions incorrectes, actualitzacio
 - `enumerate()` aporta posició i valor; `zip()` recorre seqüències relacionades.
 - Els bucles niats modelen files i columnes, però augmenten el nombre d'iteracions.
 
-[Anterior: estructures de selecció](01-estructures-seleccio.md) · [Índex de la UP3](index.md) · [Activitat 2. Bucles](activitats/activitat-2-bucles.md) · [Següent: sentències de salt](03-sentencies-salt.md)
+[Anterior: estructures de selecció](01-estructures-seleccio.md) · [Índex de la UP3](index.md) · [Activitat UP3.2. Bucles `while`](activitats/activitat-2-bucles.md) · [Següent: sentències de salt](03-sentencies-salt.md)

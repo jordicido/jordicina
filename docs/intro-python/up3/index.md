@@ -40,13 +40,9 @@ L’objectiu no és memoritzar sentències aïllades. És saber triar l’estruc
 ## Activitats
 
 - [Activitat 1. Condicions i decisions](activitats/activitat-1-condicions.md): practicar estructures de selecció, comparacions i casos de prova.
-- [Activitat 2. Bucles i recorreguts](activitats/activitat-2-bucles.md): treballar `for`, `while`, comptadors, acumuladors i sentències de salt.
-- [Activitat 3. Excepcions i validació](activitats/activitat-3-excepcions-i-validacio.md): llegir *tracebacks*, tractar errors i crear excepcions pròpies.
-- [Activitat 4. Proves i depuració](activitats/activitat-4-proves-i-depuracio.md): preparar casos de prova, depurar i documentar correccions.
-- [Projecte integrador. Gestor de reserves](activitats/projecte-integrador.md): aplicar tots els criteris de la UP3 en un programa de consola.
-- [Autoavaluació de la UP3](activitats/autoavaluacio.md): comprovar els conceptes i preparar la defensa individual.
+- [Activitat UP3.2. Bucles `while` en Python](activitats/activitat-2-bucles.md): practicar bucles `while`, comptadors, acumuladors i condicionals.
 
-Les quatre activitats són individuals i demanen evidències de les proves, una explicació dels errors i codi documentat.
+Les dues activitats són individuals i demanen provar els programes i lliurar el codi corresponent.
 
 ## Seqüència de treball
 
@@ -67,12 +63,12 @@ Les explicacions teòriques es combinaran amb exemples curts i pràctica guiada.
 | --- | --- | --- |
 | RA3.a | [Estructures de selecció](01-estructures-seleccio.md) | [Activitat 1](activitats/activitat-1-condicions.md) |
 | RA3.b | [Estructures de repetició](02-estructures-repeticio.md) | [Activitat 2](activitats/activitat-2-bucles.md) |
-| RA3.c | [Sentències de salt](03-sentencies-salt.md) | [Activitat 2](activitats/activitat-2-bucles.md) |
-| RA3.d | [Control d’excepcions](04-control-excepcions.md) | [Activitat 3](activitats/activitat-3-excepcions-i-validacio.md) |
-| RA3.e | [Estructures de selecció](01-estructures-seleccio.md), [repetició](02-estructures-repeticio.md) i [proves i depuració](07-proves-depuracio.md) | [Activitat 1](activitats/activitat-1-condicions.md), [activitat 2](activitats/activitat-2-bucles.md) i [activitat 4](activitats/activitat-4-proves-i-depuracio.md) |
-| RA3.f | [Proves i depuració](07-proves-depuracio.md) | [Activitat 4](activitats/activitat-4-proves-i-depuracio.md) |
-| RA3.g | [Documentació i bones pràctiques](08-documentacio-bones-practiques.md) | [Activitat 4](activitats/activitat-4-proves-i-depuracio.md) |
-| RA3.h | [Excepcions pròpies](05-excepcions-propies.md) | [Activitat 3](activitats/activitat-3-excepcions-i-validacio.md) |
-| RA3.i | [Assercions](06-assercions.md) | [Activitat 3](activitats/activitat-3-excepcions-i-validacio.md) |
+| RA3.c | [Sentències de salt](03-sentencies-salt.md) | — |
+| RA3.d | [Control d’excepcions](04-control-excepcions.md) | — |
+| RA3.e | [Estructures de selecció](01-estructures-seleccio.md) i [repetició](02-estructures-repeticio.md) | [Activitat 1](activitats/activitat-1-condicions.md) i [activitat 2](activitats/activitat-2-bucles.md) |
+| RA3.f | [Proves i depuració](07-proves-depuracio.md) | [Activitat 2](activitats/activitat-2-bucles.md) |
+| RA3.g | [Documentació i bones pràctiques](08-documentacio-bones-practiques.md) | [Activitat 1](activitats/activitat-1-condicions.md) |
+| RA3.h | [Excepcions pròpies](05-excepcions-propies.md) | — |
+| RA3.i | [Assercions](06-assercions.md) | — |
 
 [Tornar a Introducció a la programació en Python](../index.md) · [Començar la teoria](01-estructures-seleccio.md) · [Començar les activitats](activitats/activitat-1-condicions.md)

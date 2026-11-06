@@ -377,4 +377,4 @@ Abans d'executar-lo, prepara aquests casos: credencials correctes al primer inte
 - Els breakpoints, les variables, el Watch i la Call Stack aporten informació diferent.
 - Depurar és entendre la causa, no només silenciar el símptoma.
 
-[Anterior: assercions](06-assercions.md) · [Índex de la UP3](index.md) · [Activitat 4. Proves i depuració](activitats/activitat-4-proves-i-depuracio.md) · [Següent: documentació i bones pràctiques](08-documentacio-bones-practiques.md)
+[Anterior: assercions](06-assercions.md) · [Índex de la UP3](index.md) · [Següent: documentació i bones pràctiques](08-documentacio-bones-practiques.md)

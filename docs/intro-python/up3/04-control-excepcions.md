@@ -419,4 +419,4 @@ La funció `retirar` no sap com es mostrarà l'error: llança una excepció expr
 - `raise` torna a propagar l'error i `raise ... from ...` conserva una causa explícita.
 - Les excepcions formen part del disseny d'un programa robust, no són només missatges de l'intèrpret.
 
-[Anterior: sentències de salt](03-sentencies-salt.md) · [Índex de la UP3](index.md) · [Activitat 3. Excepcions i validació](activitats/activitat-3-excepcions-i-validacio.md) · [Següent: excepcions pròpies](05-excepcions-propies.md)
+[Anterior: sentències de salt](03-sentencies-salt.md) · [Índex de la UP3](index.md) · [Següent: excepcions pròpies](05-excepcions-propies.md)

@@ -128,11 +128,7 @@ nav:
                   - 7. Proves i depuració: intro-python/up3/07-proves-depuracio.md
                   - 8. Documentació i bones pràctiques: intro-python/up3/08-documentacio-bones-practiques.md
                   - Activitat 1. Condicions i decisions: intro-python/up3/activitats/activitat-1-condicions.md
-                  - Activitat 2. Bucles i recorreguts: intro-python/up3/activitats/activitat-2-bucles.md
-                  - Activitat 3. Excepcions i validació: intro-python/up3/activitats/activitat-3-excepcions-i-validacio.md
-                  - Activitat 4. Proves i depuració: intro-python/up3/activitats/activitat-4-proves-i-depuracio.md
-                  - Autoavaluació: intro-python/up3/activitats/autoavaluacio.md
-                  - Projecte integrador: intro-python/up3/activitats/projecte-integrador.md
+                  - Activitat UP3.2. Bucles while en Python: intro-python/up3/activitats/activitat-2-bucles.md
               - UP4. Classes i programació orientada a objectes: intro-python/up4-classes-i-poo.md
               - UP5. Entrada, eixida i llibreries: intro-python/up5-entrada-eixida-i-llibreries.md
               - UP6. Estructures avançades de dades: intro-python/up6-estructures-avancades.md
@@ -227,7 +223,6 @@ nav:
                   - 5. Automatització i execució de bateries: daw-ed/up4/05-automatitzacio-proves.md
                   - 6. Dobles de prova i aïllament: daw-ed/up4/06-dobles-prova.md
                   - 7. Documentació d’incidències: daw-ed/up4/07-documentacio-incidencies.md
-                  - Activitat 1. Del requisit al pla de proves: daw-ed/up4/activitats/activitat-1-pla-proves.md
                   - Activitat 2. Depura, explica i verifica: daw-ed/up4/activitats/activitat-2-depuracio.md
                   - Activitat 3. JUnit, automatització i regressió: daw-ed/up4/activitats/activitat-3-junit-automatitzacio.md
                   - Activitat 4. Dobles de prova i gestió d’incidències: daw-ed/up4/activitats/activitat-4-dobles-incidencies.md

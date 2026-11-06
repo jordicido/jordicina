@@ -2,106 +2,144 @@
 hide:
   - navigation
 ---
-# Activitat 2. Bucles i recorreguts
+# Activitat UP3.2 – Bucles `while` en Python
 
-!!! info "Criteris d'avaluació"
-    - **RA3.b** — Utilitzar estructures de repetició.
-    - **RA3.c** — Reconéixer i aplicar sentències de salt.
-    - **RA3.e** — Crear programes executables amb estructures de control.
+**Mòdul:** Introducció a la programació en Python<br>
+**Unitat de programació:** UP3<br>
+**Modalitat:** Treball individual
 
-## Producte
+## Objectius
 
-Una carpeta `activitat-2-bucles` amb els programes, les taules de traça i els casos de prova.
+En aquesta activitat practicaràs els bucles `while` per a repetir instruccions mentre es complisca una condició. Aprendràs a utilitzar comptadors i acumuladors i, en els últims exercicis, a combinar les repeticions amb condicionals `if`, `elif` i `else`.
 
-## 1. Traça d'un acumulador
+## Instruccions generals
 
-Completa la taula abans d'executar:
+- Resol els cinc exercicis en Python.
+- Utilitza obligatòriament un bucle `while` en cadascun.
+- No utilitzes bucles `for`, llistes ni funcions definides per tu.
+- En els exercicis **1, 2 i 3**, resol el problema **sense utilitzar `if`, `elif` ni `else`**.
+- Prova cada programa amb diferents dades per a comprovar que funciona correctament.
+- El codi ha de ser propi: no està permés utilitzar ferramentes d'IA per a generar-lo. Sí que pots consultar explicacions sobre conceptes.
 
-```python
-total = 0
+## Exercici 1. Taula de multiplicar
 
-for places in [2, 4, 1, 3]:
-    total += places
+Crea un programa que demane a l'usuari un nombre enter i mostre la seua taula de multiplicar de l'1 al 10.
+
+Has d'utilitzar un bucle `while` per a generar les deu multiplicacions.
+
+**Exemple d'execució:**
+
+```text
+Introduïx un nombre: 7
+
+7 x 1 = 7
+7 x 2 = 14
+7 x 3 = 21
+7 x 4 = 28
+7 x 5 = 35
+7 x 6 = 42
+7 x 7 = 49
+7 x 8 = 56
+7 x 9 = 63
+7 x 10 = 70
 ```
 
-| Iteració | `places` | `total` abans | `total` després |
-| ---: | ---: | ---: | ---: |
-| 1 | 2 |  |  |
-| 2 | 4 |  |  |
-| 3 | 1 |  |  |
-| 4 | 3 |  |  |
+## Exercici 2. Calculadora d'estalvis
 
-## 2. Detecta el bucle infinit
+Crea un programa que demane a l'usuari les dades següents:
 
-```python
-intent = 1
+- La quantitat inicial de diners que té estalviats.
+- La quantitat de diners que estalvia cada mes.
+- La quantitat total que vol aconseguir.
 
-while intent <= 3:
-    resposta = input("Codi: ")
-    if resposta == "python":
-        print("Correcte")
-        break
-    print("Incorrecte")
+Utilitzant un bucle `while`, calcula quants mesos necessitarà per a arribar a l'objectiu o superar-lo.
+
+**Exemple d'execució:**
+
+```text
+Estalvis inicials: 100
+Estalvi mensual: 50
+Objectiu: 350
+
+Necessitaràs 5 mesos per a aconseguir l'objectiu.
 ```
 
-Explica quin camí no actualitza l'estat i corregeix-lo. Afig un missatge quan s'esgoten els intents sense encertar.
+**Nota:** Pots suposar que l'estalvi mensual és positiu i que l'objectiu és superior als estalvis inicials. No cal validar aquestes dades.
 
-## 3. Resum de reserves
+## Exercici 3. Suma de nombres
 
-| Element | Descripció |
-| --- | --- |
-| Entrada | Nombres de places; `fi` acaba la introducció. |
-| Procés | Validar, comptar reserves i acumular places. |
-| Eixida | Nombre de reserves, places totals i mitjana. |
-| Casos mínims | Cap reserva, una reserva, diverses reserves i valor no numèric. |
+Crea un programa que demane nombres enters a l'usuari repetidament.
 
-En aquesta activitat encara pots mostrar un missatge i repetir si el text no és numèric. En l'activitat següent ho resoldràs amb excepcions.
+El programa ha d'anar sumant tots els nombres introduïts fins que l'usuari escriga **0**. Quan introduïsca el 0, deixarà de demanar nombres i mostrarà la suma total.
 
-## 4. Posició i valor
+**Exemple d'execució:**
 
-Donada la llista següent:
+```text
+Introduïx un nombre (0 per acabar): 5
+Introduïx un nombre (0 per acabar): 10
+Introduïx un nombre (0 per acabar): 3
+Introduïx un nombre (0 per acabar): 0
 
-```python
-participants = ["Aina", "Biel", "Carla", "Dídac"]
+La suma total és: 18
 ```
 
-Mostra una llista numerada que comence en 1 utilitzant `enumerate()`. Després demana un nom i indica la posició on apareix o informa que no existeix mitjançant `for-else`.
+## Exercici 4. Control d'accés amb contrasenya
 
-## 5. Dades paral·leles
+Crea un programa que simule un sistema d'accés amb contrasenya.
 
-Utilitza `zip()` per mostrar cada participant amb el nombre de places reservades.
+La contrasenya correcta serà **`python123`**, definida directament en el programa. L'usuari tindrà un màxim de **3 intents** per a introduir-la correctament.
 
-```python
-participants = ["Aina", "Biel", "Carla"]
-places = [2, 1, 4]
+- Si introduïx la contrasenya correcta, mostra `Accés concedit.` i acaba el programa.
+- Si introduïx una contrasenya incorrecta, mostra `Contrasenya incorrecta.` i permet un altre intent, sempre que encara en queden.
+- Si esgoten els tres intents sense encertar, mostra `Accés bloquejat.` i acaba el programa.
+
+Per a resoldre'l, combina un bucle `while` amb condicionals i un comptador d'intents.
+
+**Exemple d'execució:**
+
+```text
+Introduïx la contrasenya: hola
+Contrasenya incorrecta.
+Introduïx la contrasenya: 1234
+Contrasenya incorrecta.
+Introduïx la contrasenya: python123
+Accés concedit.
 ```
 
-Comprova abans que les dues llistes tenen la mateixa longitud. Calcula també el total de places.
+## Exercici 5. Endevina el nombre
 
-## 6. Menú persistent
+Crea un programa que permeta a l'usuari endevinar un nombre secret.
 
-Crea un menú amb aquestes opcions:
+El nombre secret serà **7** i estarà definit directament en el programa. El programa ha de continuar demanant nombres fins que l'usuari l'endevine.
 
-1. consultar places disponibles;
-2. registrar una reserva;
-3. cancel·lar places;
-4. mostrar estadístiques;
-5. eixir.
+- Si el nombre introduït és **major** que el secret, mostra `El nombre secret és més menut.`
+- Si el nombre introduït és **menor** que el secret, mostra `El nombre secret és més gran.`
+- Si l'usuari l'endevina, mostra `Correcte! Has endevinat el nombre.` i finalitza el programa.
 
-El menú s'ha de repetir amb `while`. Usa `continue` per descartar una opció buida i `break` només per a l'opció d'eixida. De moment pots suposar que les quantitats són enters correctes.
+Per a resoldre'l, combina un bucle `while` amb condicionals `if`, `elif` i `else`.
 
-## 7. Repte: graella de seients
+**Exemple d'execució:**
 
-Mostra una graella de 4 files i 5 columnes amb les coordenades de cada seient. Després modifica-la perquè marque amb `X` una fila i columna indicades.
+```text
+Endevina el nombre: 4
+El nombre secret és més gran.
+Endevina el nombre: 9
+El nombre secret és més menut.
+Endevina el nombre: 7
+Correcte! Has endevinat el nombre.
+```
 
-Abans d'executar, calcula quantes vegades s'executarà el cos del bucle interior.
+## Comprovació final
 
-## Evidències
+Abans de lliurar l'activitat, comprova que:
 
-- [ ] Cada `while` té una condició d'eixida verificable.
-- [ ] Els acumuladors i comptadors s'inicialitzen abans del bucle.
-- [ ] Les taules de traça coincideixen amb l'execució.
-- [ ] `break` i `continue` tenen una finalitat clara.
-- [ ] S'han provat zero, una i diverses iteracions.
+- Els cinc programes utilitzen `while` i acaben quan correspon, sense entrar en un bucle infinit.
+- Els tres primers exercicis no contenen condicionals `if`, `elif` ni `else`.
+- El control d'accés no permet més de tres intents i no bloqueja l'accés si la contrasenya és correcta en l'últim intent.
+- El joc d'endevinar el nombre dona pistes correctes i acaba en encertar.
 
-[Anterior: activitat de condicions](activitat-1-condicions.md) · [Índex de la UP3](../index.md) · [Teoria: bucles](../02-estructures-repeticio.md) · [Següent activitat: excepcions](activitat-3-excepcions-i-validacio.md)
+## Lliurament
+
+Guarda cada exercici en un arxiu Python independent, amb els noms `exercici1.py`, `exercici2.py`, `exercici3.py`, `exercici4.py` i `exercici5.py`. Lliura els cinc arxius segons les indicacions del professorat.
+
+[Anterior: activitat de condicions](activitat-1-condicions.md) · [Índex de la UP3](../index.md) · [Teoria: bucles](../02-estructures-repeticio.md)

@@ -50,7 +50,6 @@ Les activitats segueixen la seqüència de les dotze sessions i deixen evidènci
 | 9–10 | Dobles de prova, aïllament i informes d’incidències | Activitat 4 |
 | 11–12 | Regressió, revisió d’evidències i reptes individuals | Activitats i reptes |
 
-- [Activitat 1. Del requisit al pla de proves](up4/activitats/activitat-1-pla-proves.md)
 - [Activitat 2. Depura, explica i verifica](up4/activitats/activitat-2-depuracio.md)
 - [Activitat 3. JUnit, automatització i regressió](up4/activitats/activitat-3-junit-automatitzacio.md)
 - [Activitat 4. Dobles de prova i gestió d’incidències](up4/activitats/activitat-4-dobles-incidencies.md)
@@ -61,7 +60,6 @@ Les activitats segueixen la seqüència de les dotze sessions i deixen evidènci
 
 | Criteri | Activitat o repte | Evidència principal |
 | --- | --- | --- |
-| RA3.a–b | Activitat 1 | Pla, classes d’equivalència, valors límit i traçabilitat. |
 | RA3.c–e | Activitat 2 i repte 11 | Registre de depuració, hipòtesi, breakpoints i correcció verificada. |
 | RA3.f–g | Activitat 3 i repte 12 | Tests JUnit, execució Maven i report de regressió. |
 | RA3.h | Activitat 2 i activitat 4 | Informe reproduïble i evidències segures. |

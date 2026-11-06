@@ -40,4 +40,4 @@ Descarrega els fitxers de [depuració](recursos/activitat-2-depuracio/Calculador
 
 No canvies les dades de prova perquè coincidisquen amb el resultat incorrecte i no elimines la comprovació que revela el defecte. Si una captura no permet veure el context, acompanya-la d’una transcripció.
 
-[Anterior: pla de proves](activitat-1-pla-proves.md) · [Següent: JUnit](activitat-3-junit-automatitzacio.md) · [Índex](../../up4-proves.md)
+[Següent: JUnit](activitat-3-junit-automatitzacio.md) · [Índex](../../up4-proves.md)
