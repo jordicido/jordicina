@@ -129,6 +129,8 @@ nav:
                   - 8. Documentació i bones pràctiques: intro-python/up3/08-documentacio-bones-practiques.md
                   - Activitat 1. Condicions i decisions: intro-python/up3/activitats/activitat-1-condicions.md
                   - Activitat UP3.2. Bucles while en Python: intro-python/up3/activitats/activitat-2-bucles.md
+                  - Exercicis de repàs:
+                      - Repàs 1. Estructures condicionals: intro-python/up3/activitats/repas-1-condicionals.md
               - UP4. Classes i programació orientada a objectes: intro-python/up4-classes-i-poo.md
               - UP5. Entrada, eixida i llibreries: intro-python/up5-entrada-eixida-i-llibreries.md
               - UP6. Estructures avançades de dades: intro-python/up6-estructures-avancades.md

@@ -44,6 +44,10 @@ L’objectiu no és memoritzar sentències aïllades. És saber triar l’estruc
 
 Les dues activitats són individuals i demanen provar els programes i lliurar el codi corresponent.
 
+## Exercicis de repàs
+
+Practica les estructures condicionals amb problemes senzills i de dificultat progressiva. [Repàs 1. Estructures condicionals](activitats/repas-1-condicionals.md)
+
 ## Seqüència de treball
 
 | Fase | Treball principal |
