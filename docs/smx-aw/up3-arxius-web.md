@@ -22,7 +22,7 @@ El material teòric està organitzat en cinc blocs. Consulta l’[índex i la se
 
 Al llarg de la unitat utilitzarem **Nextcloud** per aplicar aquests conceptes sobre un servei real. Les activitats hauran de demostrar que es poden crear comptes i grups, gestionar arxius i directoris, compartir recursos, cercar informació i comprovar mesures de seguretat.
 
-- [Activitat 3.2 — Desplegament de Nextcloud amb Docker](up3/activitats/activitat-2-nextcloud-docker.md): desplegament independent amb Docker Compose i comprovació de la persistència.
+- [Activitat 3.2. Instal·lació guiada de Nextcloud amb Docker](up3/activitats/activitat-2-nextcloud-docker.md): instal·lació independent amb Docker Compose i comprovació de la persistència.
 
 !!! note "Evidències"
     Una captura només demostra allò que s’hi pot llegir. Acompanya cada evidència amb el context, la prova realitzada i el resultat observat. No inclogues contrasenyes, tokens ni dades personals.

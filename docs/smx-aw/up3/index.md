@@ -33,7 +33,7 @@ description: "Teoria sobre serveis de gestió d’arxius web, Nextcloud, usuaris
 
 ## Activitats
 
-- [Activitat 3.2 — Desplegament de Nextcloud amb Docker](activitats/activitat-2-nextcloud-docker.md): desplegament independent amb Docker Compose i comprovació de la persistència.
+- [Activitat 3.2. Instal·lació guiada de Nextcloud amb Docker](activitats/activitat-2-nextcloud-docker.md): instal·lació independent amb Docker Compose i comprovació de la persistència.
 
 !!! info "Fil conductor"
     Al llarg de la unitat utilitzarem **Nextcloud** per aplicar els conceptes sobre un servei real. L’objectiu no és només aprendre a utilitzar-lo, sinó entendre com funciona i com s’administra un servei web de gestió d’arxius.
