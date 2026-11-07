@@ -92,6 +92,7 @@ nav:
                   - 3. Usuaris, permisos i gestió d’arxius: smx-aw/up3/03-usuaris-permisos-arxius.md
                   - 4. Informació addicional, metadades i indexació: smx-aw/up3/04-metadades-indexacio.md
                   - 5. Seguretat i integritat: smx-aw/up3/05-seguretat-integritat.md
+                  - Activitat 3.2. Desplegament de Nextcloud amb Docker: smx-aw/up3/activitats/activitat-2-nextcloud-docker.md
               - UP4. Gestors de continguts: smx-aw/up4-gestors-continguts.md
               - UP5. Gestió d’aprenentatge a distància: smx-aw/up5-aprenentatge-distancia.md
           - Recursos: smx-aw/recursos.md
