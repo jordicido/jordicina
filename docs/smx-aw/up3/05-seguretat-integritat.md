@@ -104,6 +104,15 @@ Això protegeix les dades mentre circulen per la xarxa, especialment les credenc
 !!! danger
     Un gestor d’arxius amb informació sensible no hauria d’exposar-se a Internet utilitzant únicament HTTP.
 
+### HTTP en un entorn de pràctiques
+
+En aquesta activitat accedim a Nextcloud mitjançant una adreça com `http://localhost:8081` perquè estem treballant amb una instal·lació de laboratori controlada i sense configurar un certificat TLS.
+
+**Açò és una simplificació didàctica, no una recomanació per a un servei públic.** Un Nextcloud real exposat a Internet, o que transmet informació sensible a través d’una xarxa, ha d’utilitzar **HTTPS** amb una configuració adequada.
+
+!!! warning "Un port publicat no implica accés restringit a localhost"
+    Al `compose.yaml` de pràctiques, `8081:80` publica el port al sistema host i, segons la configuració de Docker i la xarxa, **pot estar accessible des d’altres equips**. No exposes aquest servei a Internet ni hi guardes dades reals. Si només es necessita accés des del mateix host, la publicació es pot restringir a `127.0.0.1:8081:80`, però aquesta variant no s’ha d’imposar si l’entorn docent requerix accés des de fora del host (per exemple, des d’una màquina física a una MV).
+
 ## 5.6. Comparticions
 
 Les comparticions són una de les funcionalitats més útils, però també una font habitual de riscos. Abans de crear un enllaç públic hem de preguntar-nos:
@@ -212,9 +221,9 @@ Els contenidors faciliten el desplegament i l’aïllament dels servicis, però 
 
 Cada port publicat pot convertir-se en un punt d’accés al servei. Per això, només s’han d’exposar els servicis que realment necessiten ser accessibles des de l’exterior.
 
-### No exposar MariaDB
+### No exposar una base de dades externa
 
-En el nostre desplegament, el navegador accedeix a Nextcloud i Nextcloud es comunica amb MariaDB:
+En un desplegament amb una base de dades externa, el navegador accedeix a Nextcloud i Nextcloud es comunica amb MariaDB:
 
 ```mermaid
 flowchart LR
@@ -228,6 +237,8 @@ El navegador no necessita accedir directament a MariaDB. Si només Nextcloud nec
 
 !!! warning "Menys servicis exposats, menys superfície d’atac"
     Si només Nextcloud necessita comunicar-se amb MariaDB, no és necessari publicar el port de MariaDB cap a l’exterior.
+
+**En l’A3.2 no tenim un segon contenidor de base de dades.** Utilitzem SQLite, que forma part de la mateixa instal·lació de Nextcloud, i les dades persistents es conserven en el volum `nextcloud_data`. Per tant, no hi ha cap port de MariaDB que calga publicar ni configurar.
 
 ### Protegir les credencials
 
@@ -243,6 +254,20 @@ Una estratègia de còpia de seguretat ha de tindre en compte els volums, la bas
     Un contenidor es pot recrear.
 
     El que realment hem de protegir són les dades persistents, la configuració necessària i la base de dades.
+
+### Què revisarem en l’auditoria de ByteSolutions?
+
+| Comprovació pràctica | Concepte de seguretat |
+| --- | --- |
+| Iniciar sessió amb un usuari d’un altre departament | Autorització i confidencialitat. |
+| Confirmar que els usuaris normals no administren el sistema | Mínim privilegi. |
+| Protegir un enllaç públic amb contrasenya i caducitat | Control de comparticions. |
+| Consultar la versió instal·lada i els avisos disponibles | Actualitzacions i manteniment. |
+| Restaurar un arxiu de la paperera | Recuperació davant d’una eliminació accidental. |
+| Comprovar que l’arxiu continua després de reiniciar el servei | Persistència i disponibilitat bàsica. |
+
+!!! info "Comprovar no significa garantir seguretat total"
+    Aquestes proves permeten verificar mesures concretes, però no substituïxen una auditoria completa, una còpia de seguretat independent ni una configuració segura per a producció.
 
 ## Resum de la unitat
 

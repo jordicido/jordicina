@@ -88,6 +88,37 @@ Marc:
 
 El registre d’activitat permet saber que un arxiu ha sigut creat, modificat, compartit o comentat. Aquest tipus d’informació proporciona **context** al document.
 
+### Arxius d’informació addicional: `LLEGIR-ME`
+
+A més de les metadades que mostra el gestor, un equip pot guardar **un arxiu explicatiu dins d’una carpeta**. És útil quan altres persones necessiten saber què conté, quins documents s’hi poden guardar i com s’han d’anomenar.
+
+Un exemple habitual és `LLEGIR-ME.md` o `LLEGIR-ME.txt`. Aquest arxiu pot incloure instruccions breus sobre l’ús de la carpeta.
+
+**Exemple de contingut per a `Compartit/LLEGIR-ME.md`:**
+
+```markdown
+# Carpeta Compartit — ByteSolutions
+
+## Finalitat
+Espai per als documents que han de consultar diferents departaments.
+
+## Què s’hi pot guardar?
+Plantilles, instruccions comunes i documents de treball no confidencials.
+
+## Com anomenar els documents?
+ANY-MES_CLIENT_TIPUS.extensió
+
+Exemple: 2026-11_ClientA_Pressupost.pdf
+
+## Qui hi té accés?
+Els treballadors autoritzats de ByteSolutions, segons les comparticions.
+```
+
+Un `LLEGIR-ME` **no substituïx** els permisos d’accés ni les metadades de Nextcloud: els complementa amb informació comprensible per a les persones que utilitzen la carpeta.
+
+!!! info "Relació amb el CA3.f"
+    En la pràctica crearàs un arxiu `LLEGIR-ME` i utilitzaràs informació addicional d’alguns documents, com ara comentaris o etiquetes.
+
 ## 4.5. El problema de trobar informació
 
 Amb 20 arxius és fàcil trobar un document. Amb 200.000 no.
@@ -204,3 +235,30 @@ contingut dins de PDF, DOCX, etc.
 ```
 
 Per tant, una instal·lació bàsica pot permetre buscar per nom, ruta, propietari o etiquetes sense analitzar necessàriament el text intern de tots els documents. Les dues cerques poden requerir configuracions i recursos diferents.
+
+#### De la classificació a la cerca: comprovació real
+
+Organitzar els documents ajuda a trobar-los, però **posar noms correctes als fitxers no és el mateix que instal·lar o configurar un motor d’indexació**.
+
+En l’activitat aplicarem criteris de classificació que faciliten la recuperació de la informació:
+
+- **Nomenclatura coherent:** `2026-11_ClientA_Pressupost.pdf`.
+- **Estructura de carpetes:** separar la documentació per departaments i projectes.
+- **Etiquetes:** classificar els documents per client o estat, si aquesta funció està disponible i habilitada en la instal·lació.
+- **Prova de cerca:** introduir una paraula del nom d’un document i comprovar que es recupera el fitxer esperat.
+- **Prova de filtratge:** consultar arxius associats a una etiqueta o utilitzar els filtres que realment oferix la instal·lació.
+
+**Exemple de comprovació:**
+
+1. Crea `2026-11_ClientA_Pressupost.pdf` i `2026-11_ClientB_Informe.pdf`.
+2. Comprova que pots localitzar el primer document escrivint `ClientA` o `Pressupost` en una cerca compatible amb la teua versió.
+3. Si tens disponible la vista o el filtratge per etiquetes, associa i consulta una etiqueta comuna.
+4. Explica **quin camp o característica ha utilitzat realment la cerca** i quins límits has observat.
+
+!!! warning "No confongues les funcionalitats"
+    Un resultat de cerca per **nom** no demostra que Nextcloud haja indexat i siga capaç de buscar el **contingut interior** d’un document PDF. La cerca de text complet pot requerir aplicacions o configuració addicionals.
+
+!!! tip "La interfície pot canviar"
+    Els noms dels menús i les opcions d’etiquetatge/filtratge poden variar segons la versió i les aplicacions habilitades. Si no apareix una opció, no inventes el resultat: indica què has pogut comprovar amb la instal·lació disponible.
+
+**Important per a l’avaluació:** l’actual A3.2 demana aplicar criteris de nomenclatura i etiquetes, i provar la cerca. Açò proporciona evidències de classificació i recuperació, però **no necessàriament de configuració tècnica d’un índex**. No presentes com a fet una indexació avançada que l’alumnat no fa. Si el docent vol exigir una evidència d’indexació més estricta per al CA3.g, serà necessari revisar **també** l’enunciat i la rúbrica en un encàrrec posterior. **No ho canvies ara.**

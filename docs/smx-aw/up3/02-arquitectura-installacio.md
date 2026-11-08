@@ -171,6 +171,8 @@ flowchart LR
     DB --> V2[(Volum MariaDB)]
 ```
 
+Aquest diagrama és un **exemple de desplegament amb una base de dades externa**. És una arquitectura més completa, adequada per comparar alternatives, però no és el desplegament que utilitzarem en l’Activitat 3.2.
+
 !!! info "Docker no elimina l’arquitectura"
     Encara que utilitzem contenidors, Nextcloud continua necessitant els components necessaris per executar l’aplicació i una base de dades.
 
@@ -189,7 +191,7 @@ Per entendre la pràctica només necessitem aquests conceptes:
 | **Port** | Permet accedir des de l’exterior a un servei que funciona dins del contenidor. |
 | **Volum** | Espai d’emmagatzematge que permet conservar dades de manera persistent. |
 | **Variable d’entorn** | Valor de configuració que es proporciona al servei, com ara un usuari o una contrasenya. |
-| **Docker Compose** | Ferramenta que permet definir i executar diversos contenidors relacionats. |
+| **Docker Compose** | Ferramenta que permet definir i executar un o diversos servicis relacionats. |
 
 ### Persistència de les dades
 
@@ -209,11 +211,19 @@ flowchart TD
 
     Les dades que han de conservar-se s’han d’emmagatzemar en volums persistents.
 
-En el cas de Nextcloud, cal conservar com a mínim els arxius dels usuaris i la informació de la base de dades. En la pràctica comprovarem que aquestes dades continuen disponibles encara que recreem els contenidors.
+En el cas de Nextcloud, cal conservar com a mínim els arxius dels usuaris i la informació de la base de dades. En la pràctica comprovarem que aquestes dades continuen disponibles encara que recreem el contenidor.
+
+No és el mateix **reiniciar** un servei, **eliminar i recrear** el contenidor o **eliminar el volum**:
+
+- `docker compose restart` reinicia el servei sense eliminar el contenidor ni el volum.
+- `docker compose down` elimina el contenidor i la xarxa del projecte, però manté els volums amb nom per defecte.
+- `docker compose down -v` també pot eliminar el volum del projecte i, per tant, les dades que conté.
+
+En aquesta pràctica no s’ha d’utilitzar `-v`.
 
 ### Docker Compose
 
-Docker Compose permet descriure en un únic fitxer els servicis necessaris per executar una aplicació formada per diversos contenidors. En el nostre cas, el desplegament tindrà, com a mínim, un servei per a Nextcloud i un altre per a MariaDB:
+Docker Compose permet descriure en un únic fitxer els servicis necessaris per executar una aplicació formada per un o diversos contenidors. En un desplegament més complet es poden definir, per exemple, un servei per a Nextcloud i un altre per a MariaDB:
 
 ```yaml
 services:
@@ -236,3 +246,77 @@ flowchart LR
 ```
 
 Nextcloud necessita accedir a MariaDB, però l’usuari no necessita accedir directament a la base de dades. Per això, normalment només es publica el port necessari per accedir a la interfície web de Nextcloud; la comunicació amb MariaDB es realitza internament entre els contenidors.
+
+## 2.6. La instal·lació que utilitzarem a classe: Nextcloud amb SQLite
+
+En l’Activitat 3.2 treballarem amb un desplegament simplificat de Nextcloud. L’objectiu no és aprendre a administrar bases de dades o construir una infraestructura Docker complexa, sinó **instal·lar i utilitzar un gestor d’arxius web**.
+
+Per això utilitzarem:
+
+- **Un únic contenidor** amb la imatge `nextcloud:apache`, que inclou els components necessaris per servir l’aplicació web.
+- **SQLite**, una base de dades que funciona sense necessitat d’instal·lar un segon servidor de base de dades.
+- **Un volum persistent**, per conservar la configuració, la base de dades SQLite i els documents pujats.
+- **Docker Compose**, per iniciar i gestionar el contenidor a partir d’un fitxer de configuració proporcionat pel professor.
+
+```mermaid
+flowchart TD
+    U["Navegador de l’alumne"] -->|"HTTP · port 8081"| N["Contenidor Nextcloud · Apache i PHP"]
+    N --> D["SQLite · base de dades de l’aplicació"]
+    N --> V[("Volum nextcloud_data")]
+    D -.->|"Dades persistents dins del volum"| V
+```
+
+!!! info "SQLite en l’activitat"
+    SQLite és adequada per a una instal·lació senzilla de proves i aprenentatge. En sistemes de producció amb diversos usuaris i més càrrega, és habitual utilitzar una base de dades externa com MariaDB o PostgreSQL.
+
+**Com llegim el `compose.yaml` de la pràctica?**
+
+```yaml
+services:
+  nextcloud:
+    image: nextcloud:apache
+    ports:
+      - "8081:80"
+    volumes:
+      - nextcloud_data:/var/www/html
+
+volumes:
+  nextcloud_data:
+```
+
+| Element | Què significa? |
+| --- | --- |
+| `nextcloud` | Nom del servei que gestiona Compose. |
+| `image: nextcloud:apache` | Imatge que s’utilitza per crear el contenidor. |
+| `8081:80` | Accedim al **port 8081 de l’ordinador**; la petició es redirigix al **port 80 del contenidor**. |
+| `nextcloud_data:/var/www/html` | Les dades d’aquesta ubicació es conserven en un volum persistent. |
+| `volumes: nextcloud_data` | Es declara el volum que utilitzarà el servei. |
+
+Si Docker i el navegador s’executen en **el mateix ordinador**, l’accés serà normalment `http://localhost:8081`. Si Docker s’executa dins d’una **màquina virtual o un altre equip**, caldrà utilitzar l’adreça i la configuració de xarxa indicades pel professor.
+
+##### Ordres bàsiques que necessitarem
+
+```bash
+# Iniciar Nextcloud en segon pla
+docker compose up -d
+
+# Comprovar si el servei està funcionant
+docker compose ps
+
+# Reiniciar el servei
+docker compose restart
+
+# Eliminar el contenidor i la xarxa del projecte, mantenint el volum
+docker compose down
+
+# Tornar a crear i iniciar el contenidor
+docker compose up -d
+```
+
+!!! warning "Atenció als volums"
+    `docker compose down` **no elimina els volums amb nom** per defecte. En canvi, `docker compose down -v` **sí que pot eliminar el volum del projecte i les seues dades**. No utilitzes `-v` en aquesta pràctica.
+
+**Què comprovarem?** Pujarem un document, reiniciarem el servei i comprovarem que l’arxiu continua disponible. Això permet observar la persistència sense haver de configurar una base de dades externa.
+
+!!! tip "Si el servei no respon"
+    Comprova que has executat l’ordre dins de la carpeta que conté `compose.yaml`, que `docker compose ps` mostra el servei en execució i que el port `8081` no està ocupat per una altra aplicació. No esborres el volum per intentar solucionar un error.

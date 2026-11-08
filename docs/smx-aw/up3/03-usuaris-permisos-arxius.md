@@ -195,3 +195,38 @@ Tindre accés a una carpeta no significa necessàriament ser-ne el propietari. U
 - compartició.
 
 Els permisos s’han d’assignar aplicant el principi de mínim privilegi: cada usuari o grup ha de poder fer només les operacions necessàries per al seu treball.
+
+### Exemple: carpetes de ByteSolutions en Nextcloud
+
+En la pràctica de ByteSolutions, el compte administrador crea inicialment aquesta estructura:
+
+```text
+ByteSolutions/
+├── Direccio/
+├── Administracio/
+├── Projectes/
+└── Compartit/
+```
+
+Després compartix cada carpeta amb els comptes o grups que correspon:
+
+| Carpeta | Qui ha de poder accedir-hi? | Com es pot aconseguir? |
+| --- | --- | --- |
+| `Direccio` | Maria | Compartició només amb Maria o amb el grup Direccio. |
+| `Administracio` | Anna i Marc | Compartició amb el grup Administracio. |
+| `Projectes` | Pau | Compartició amb Pau o amb el grup Tecnics. |
+| `Compartit` | Tots els treballadors | Compartició amb els grups de l’empresa o amb els comptes corresponents. |
+
+!!! info "On apareixen les carpetes compartides?"
+    Una carpeta creada per l’administrador pot aparéixer en l’espai d’arxius d’una altra persona quan la compartix amb ella. **L’usuari receptor pot treballar-hi segons els permisos concedits, però no es convertix per això en el propietari original.**
+
+És important distingir **configurar un permís** de **comprovar-lo**:
+
+1. Inicia sessió amb un usuari autoritzat (per exemple, Anna) i comprova que pot treballar amb `Administracio`.
+2. Inicia sessió amb un usuari no autoritzat (per exemple, Pau) i comprova que no pot accedir a `Administracio`.
+3. Si una persona veu una carpeta que no li correspon, revisa les comparticions i els seus grups abans de donar per acabada la configuració.
+
+!!! tip "Permisos efectius"
+    Per a saber si un permís funciona de veritat, cal provar-lo des del compte de l’usuari afectat. Una captura feta des de l’administrador no demostra, per si sola, que les restriccions funcionen.
+
+Nextcloud no crea automàticament una estructura centralitzada de carpetes de grup només per crear grups. En l’activitat, les carpetes les crea un compte i les **compartix**; no s’exigix instal·lar cap aplicació addicional de carpetes de grup.

@@ -18,6 +18,14 @@ El material teòric està organitzat en cinc blocs. Consulta l’[índex i la se
 | [4. Informació addicional, metadades i indexació](up3/04-metadades-indexacio.md) | Organització, etiquetes, historial, cerques i índexs. |
 | [5. Seguretat i integritat](up3/05-seguretat-integritat.md) | Confidencialitat, HTTPS, còpies, actualitzacions i logs. |
 
+### Quina teoria he de consultar per a l’Activitat 3.2?
+
+| Fase | Teoria recomanada |
+| --- | --- |
+| 1. Instal·lació i configuració | UP3.2: arquitectura, Docker, SQLite i persistència. |
+| 2. Usuaris, permisos i arxius | UP3.3: comptes, grups, quotes i comparticions. |
+| 3. Organització i seguretat | UP3.4: `LLEGIR-ME`, metadades, etiquetes i cerca; UP3.5: seguretat. |
+
 ## Treball pràctic
 
 Al llarg de la unitat utilitzarem **Nextcloud** per aplicar aquests conceptes sobre un servei real. Les activitats hauran de demostrar que es poden crear comptes i grups, gestionar arxius i directoris, compartir recursos, cercar informació i comprovar mesures de seguretat.
