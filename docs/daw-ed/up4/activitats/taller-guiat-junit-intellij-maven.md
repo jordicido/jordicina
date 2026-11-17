@@ -174,6 +174,6 @@ O obri la **finestra Maven** d’IntelliJ (`View → Tool Windows → Maven`) i 
 
 L’alumnat ha de saber explicar les fases AAA, la funció de `@Test`, la diferència entre `assertEquals` i `assertThrows`, i la diferència entre executar un test des de l’IDE i executar tota la bateria amb Maven. Després passarà a l’[Activitat 3](activitat-3-junit-automatitzacio.md), en què haurà de **decidir primer els casos** per si mateix.
 
-**Materials:** [teoria JUnit de la UP4](../04-proves-unitaries-junit.md), [Activitat 3](activitat-3-junit-automatitzacio.md) i el [projecte Maven de suport](../recursos/taller-guiat-junit-intellij-maven/pom.xml). La presentació `UP4_Guia_JUnit5_IntelliJ_Maven_IESMRE.pptx` encara no està incorporada al repositori.
+**Materials:** [teoria JUnit de la UP4](../04-proves-unitaries-junit.md), [Activitat 3](activitat-3-junit-automatitzacio.md) i el [projecte Maven de suport](recursos/taller-guiat-junit-intellij-maven/pom.xml). La presentació `UP4_Guia_JUnit5_IntelliJ_Maven_IESMRE.pptx` encara no està incorporada al repositori.
 
 [Anterior: depuració](activitat-2-depuracio.md) · [Activitat 3](activitat-3-junit-automatitzacio.md) · [Índex](../../up4-proves.md)
