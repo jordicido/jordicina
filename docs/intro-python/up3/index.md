@@ -41,8 +41,9 @@ L’objectiu no és memoritzar sentències aïllades. És saber triar l’estruc
 
 - [Activitat 1. Condicions i decisions](activitats/activitat-1-condicions.md): practicar estructures de selecció, comparacions i casos de prova.
 - [Activitat UP3.2. Bucles `while` en Python](activitats/activitat-2-bucles.md): practicar bucles `while`, comptadors, acumuladors i condicionals.
+- [Activitat UP3.3. Bucles `for` amb `range()` en Python](activitats/activitat-3-for-range.md): practicar recorreguts amb `range()`, salts, comptadors i condicionals.
 
-Les dues activitats són individuals i demanen provar els programes i lliurar el codi corresponent.
+Les tres activitats són individuals i demanen provar els programes i lliurar el codi corresponent.
 
 ## Exercicis de repàs
 
@@ -66,12 +67,12 @@ Les explicacions teòriques es combinaran amb exemples curts i pràctica guiada.
 | Criteri | Teoria | Activitats |
 | --- | --- | --- |
 | RA3.a | [Estructures de selecció](01-estructures-seleccio.md) | [Activitat 1](activitats/activitat-1-condicions.md) |
-| RA3.b | [Estructures de repetició](02-estructures-repeticio.md) | [Activitat 2](activitats/activitat-2-bucles.md) |
+| RA3.b | [Estructures de repetició](02-estructures-repeticio.md) | [Activitat 2](activitats/activitat-2-bucles.md) i [activitat 3](activitats/activitat-3-for-range.md) |
 | RA3.c | [Sentències de salt](03-sentencies-salt.md) | — |
 | RA3.d | [Control d’excepcions](04-control-excepcions.md) | — |
-| RA3.e | [Estructures de selecció](01-estructures-seleccio.md) i [repetició](02-estructures-repeticio.md) | [Activitat 1](activitats/activitat-1-condicions.md) i [activitat 2](activitats/activitat-2-bucles.md) |
-| RA3.f | [Proves i depuració](07-proves-depuracio.md) | [Activitat 2](activitats/activitat-2-bucles.md) |
-| RA3.g | [Documentació i bones pràctiques](08-documentacio-bones-practiques.md) | [Activitat 1](activitats/activitat-1-condicions.md) |
+| RA3.e | [Estructures de selecció](01-estructures-seleccio.md) i [repetició](02-estructures-repeticio.md) | [Activitat 1](activitats/activitat-1-condicions.md), [activitat 2](activitats/activitat-2-bucles.md) i [activitat 3](activitats/activitat-3-for-range.md) |
+| RA3.f | [Proves i depuració](07-proves-depuracio.md) | [Activitat 2](activitats/activitat-2-bucles.md) i [activitat 3](activitats/activitat-3-for-range.md) |
+| RA3.g | [Documentació i bones pràctiques](08-documentacio-bones-practiques.md) | [Activitat 1](activitats/activitat-1-condicions.md) i [activitat 3](activitats/activitat-3-for-range.md) |
 | RA3.h | [Excepcions pròpies](05-excepcions-propies.md) | — |
 | RA3.i | [Assercions](06-assercions.md) | — |
 
