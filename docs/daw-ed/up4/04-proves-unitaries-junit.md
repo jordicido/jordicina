@@ -8,7 +8,7 @@ hide:
 
 ## Què aprendràs
 
-Una prova unitària comprova una unitat menuda —habitualment un mètode o una classe— en unes condicions controlades. Aprendràs l’anatomia d’un test amb JUnit Jupiter, el patró Arrange–Act–Assert, les assercions més habituals i la configuració mínima d’un projecte Maven en VS Code.
+Una prova unitària comprova una unitat menuda —habitualment un mètode o una classe— en unes condicions controlades. Aprendràs l’anatomia d’un test amb JUnit Jupiter, el patró Arrange–Act–Assert, les assercions més habituals i la configuració d’un projecte Maven amb IntelliJ IDEA. La depuració de la UP4 continua fent-se amb VS Code en el bloc corresponent.
 
 ## Què vol dir unitària
 
@@ -29,43 +29,82 @@ flowchart LR
 
 *Figura 1. L’estructura AAA separa preparació, acció i verificació; si es barregen, costa saber què ha provocat la fallada.*
 
-## Projecte Maven i JUnit Jupiter
+## Projecte Maven amb IntelliJ IDEA i JUnit Jupiter
 
-Obri en VS Code la carpeta que conté `pom.xml`. L’exemple complet està en [`exemples/04-junit/pom.xml`](exemples/04-junit/pom.xml). La seua estructura és:
+En IntelliJ IDEA, crea el projecte amb **New Project → Java → Build system: Maven**. Tria **JDK 25** o **Download JDK** si encara no està instal·lat, i indica el nom i les coordenades del projecte, per exemple `GroupId = edu.iesmre` i `ArtifactId = up4-junit-guiada`. No uses un projecte amb **Build system: IntelliJ** sense Maven ni els arquetips antics que poden generar Java 7 i JUnit 4.
+
+La distribució estàndard és:
 
 ```text
-04-junit/
+up4-junit-guiada/
 ├── pom.xml
 └── src/
-    ├── main/java/edu/up4/teoria/Calculadora.java
-    └── test/java/edu/up4/teoria/CalculadoraTest.java
+    ├── main/java/edu/iesmre/up4/Calculadora.java
+    └── test/java/edu/iesmre/up4/CalculadoraTest.java
 ```
 
-El [`pom.xml` de l’exemple](exemples/04-junit/pom.xml) usa Java 17, `junit-jupiter` 5.10.2 i Maven Surefire 3.2.5. JUnit Jupiter és la API de JUnit 5; per això els imports són `org.junit.jupiter.api.Test` i `org.junit.jupiter.api.Assertions.*`, no els imports de JUnit 4.
+El `pom.xml` canònic per a les pràctiques és aquest:
 
 ```xml
-<properties>
-  <maven.compiler.release>17</maven.compiler.release>
-  <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-</properties>
-<dependencies>
-  <dependency>
-    <groupId>org.junit.jupiter</groupId>
-    <artifactId>junit-jupiter</artifactId>
-    <version>5.10.2</version>
-    <scope>test</scope>
-  </dependency>
-</dependencies>
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>edu.iesmre</groupId>
+    <artifactId>up4-junit-guiada</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+    <properties>
+        <maven.compiler.release>25</maven.compiler.release>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter</artifactId>
+            <version>5.14.4</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.16.0</version>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>3.6.1</version>
+            </plugin>
+        </plugins>
+    </build>
+</project>
 ```
 
-La dependència amb `scope=test` no s’inclou en el programa final. Surefire connecta Maven amb la plataforma de tests durant la fase `test`.
+La dependència amb `scope=test` només està disponible per a compilar i executar els tests; no s’inclou com a dependència del programa final. Surefire connecta Maven amb la plataforma de proves durant la fase `test` i escriu els informes en `target/surefire-reports/`. Mantín Maven **3.9 o superior**, JUnit Jupiter **5.14.4**, Maven Compiler Plugin **3.16.0** i Maven Surefire Plugin **3.6.1**. Evita `maven.compiler.source` i `maven.compiler.target` antics del quickstart.
+
+### Coordinar els JDK
+
+Configurar el SDK del projecte a IntelliJ no garanteix per si sol que Maven utilitze el mateix JDK. Revisa les dues configuracions:
+
+1. En **File → Project Structure → Project**, comprova **SDK = 25**. Si no està instal·lat, usa **Download JDK** i tria Java 25.
+2. En **Settings → Build, Execution, Deployment → Build Tools → Maven → Runner**, selecciona **JRE: Project JDK (25)** o **JDK 25**. Els noms exactes poden variar segons la versió d’IntelliJ.
+3. Si executes Maven des de la terminal, comprova `mvn -version`: la línia **Java version** ha d’indicar **25**. Comprova també `java -version` i `javac -version`. Si la terminal usa un JDK diferent, configura `JAVA_HOME` i `PATH` abans de compilar.
+4. Si apareix `release version 25 not supported`, revisa quin JDK real està utilitzant Maven. No canvies `maven.compiler.release` a 21 o 17.
+
+Java 25 és necessari per a construir el projecte amb `maven.compiler.release=25`; el codi resultant no té per què executar-se en Java 17 o 21.
 
 ## Exemple A: `Calculadora`
 
 Primer definim el comportament: sumar i restar tornen el resultat matemàtic; dividir usa decimals i llança `IllegalArgumentException` si el divisor és zero.
 
 ```java
-package edu.up4.teoria;
+package edu.iesmre.up4;
 
 public class Calculadora {
     public int sumar(int a, int b) {
@@ -85,10 +124,10 @@ public class Calculadora {
 }
 ```
 
-El test complet és:
+El test mostra AAA, retorn i excepció:
 
 ```java
-package edu.up4.teoria;
+package edu.iesmre.up4;
 
 import org.junit.jupiter.api.Test;
 
@@ -130,13 +169,17 @@ class CalculadoraTest {
 
 Per als decimals, una comparació amb tolerància pot ser apropiada quan la representació de coma flotant ho requereix. En aquest exemple `3.5` és representable exactament, però en altres operacions pot caldre `assertEquals(esperat, real, delta)`.
 
+## Crear el test des d’IntelliJ
+
+Situa el cursor sobre `Calculadora`, prem **Alt + Enter → Create Test**, selecciona **JUnit 5** i posa-li el nom `CalculadoraTest`. IntelliJ ha de crear-lo sota `src/test/java/edu/iesmre/up4`. Si es mostra **Fix** perquè falta la biblioteca, deixa que IntelliJ incorpore la dependència al `pom.xml`, conserva les versions canòniques anteriors i sincronitza Maven amb **Load Maven Changes** o **Reload All Maven Projects**. `src/test/java` és la carpeta de tests del projecte Maven i no s’ha de confondre amb `src/main/java`.
+
 ## Les assercions essencials
 
 | Assertion | Què comprova | Exemple |
 | --- | --- | --- |
 | `assertEquals(esperat, real)` | Igualtat segons el tipus. | `assertEquals(8, suma)`. |
 | `assertTrue(condició)` | Que una condició siga certa. | `assertTrue(correu.esValid())`. |
-| `assertFalse(condició)` | Que una condició siga falsa. | `assertFalse(validador.accepta(""))`. |
+| `assertFalse(condició)` | Que una condició siga falsa. | `assertFalse(validador.esValid(""))`. |
 | `assertNotNull(valor)` | Que no siga `null`. | `assertNotNull(usuari)`. |
 | `assertThrows(Tipus.class, executable)` | Que una acció llance el tipus indicat. | Dividir entre zero. |
 
@@ -249,30 +292,36 @@ void preparar() {
 
 No amagues una preparació important en un mètode immens. El nom del test ha d’explicar la conducta: `noPermetRetiradaSuperiorAlSaldo` és millor que `test3`.
 
-## Executar en VS Code
+## Executar proves des d’IntelliJ IDEA i amb Maven
 
-Amb el projecte obert, el Test Runner mostra CodeLens sobre la classe i cada mètode: **Run Test** i **Debug Test**. La vista **Testing** permet executar un test individual, una classe o tots els tests. El triangle verd no substitueix la lectura del resultat: obri el detall de la asserció i compara esperat i obtingut.
+Executa el test o la classe amb el **triangle verd** que IntelliJ mostra al costat del mètode o de la classe. En el panell **Run**, llig `expected/actual`, la línia de la fallada i el recompte de proves. El triangle verd no substitueix la lectura del resultat.
 
-Des de la terminal integrada, en la carpeta de l’exemple:
+Des de la finestra Maven d’IntelliJ, obri **View → Tool Windows → Maven** i executa **Lifecycle → test**. També pots usar la terminal integrada, situat en la carpeta que conté `pom.xml`:
 
 ```bash
-mvn test
+mvn clean test
 ```
 
-Maven compila `src/main/java`, compila `src/test/java` i executa Surefire. Si el terminal diu que no troba `pom.xml`, el directori de treball és incorrecte. Si no troba `org.junit.jupiter`, revisa la dependència i que l’IDE haja acabat de descarregar dependències.
+Si Maven no està instal·lat a la terminal, usa l’opció integrada de la finestra Maven d’IntelliJ o instal·la Maven al sistema. En qualsevol cas, comprova abans que el Maven que s’executa usa JDK 25. Maven compila `src/main/java`, compila `src/test/java` i executa Surefire. Si el terminal diu que no troba `pom.xml`, el directori de treball és incorrecte. Si no troba `org.junit.jupiter`, revisa la dependència i que l’IDE haja acabat de sincronitzar el projecte.
 
 ## Errors habituals
 
 - Importar `org.junit.Test`, que és JUnit 4, en un projecte configurat per a Jupiter.
 - Posar la classe de test en `src/main/java` o la classe productiva en `src/test/java`.
+- Oblidar **Reload All Maven Projects** o **Load Maven Changes** després d’editar el `pom.xml`.
+- Obrir una terminal fora de la carpeta que conté `pom.xml`.
+- Usar un arquetip antic amb `source/target 1.7` o versions antigues en lloc de `maven.compiler.release=25`.
 - Fer que un test depenga d’un altre.
 - Comprovar només que no hi ha excepció i oblidar el valor o estat resultant.
 - Confondre `assertThrows` amb “el programa ha fallat”: l’excepció és el resultat esperat del cas.
+- Canviar el `release` a 21 o 17 quan apareix `release version 25 not supported`: cal revisar el JDK real de Maven.
 
 ## Resum
 
 JUnit Jupiter dona una estructura executable a un cas de prova. AAA fa visible el propòsit, les assercions comparen comportaments concrets i Maven permet repetir la bateria amb una configuració fixada. Una prova unitària ben escrita és curta, determinista, independent i expressa una decisió del contracte.
 
-Per ampliar, consulta la [guia oficial de JUnit 5](https://junit.org/junit5/docs/current/user-guide/) i la [guia oficial de proves Java en VS Code](https://code.visualstudio.com/docs/java/java-testing).
+Per ampliar, consulta la [guia oficial de JUnit 5](https://junit.org/junit5/docs/current/user-guide/) i la documentació d’[IntelliJ i Maven](https://www.jetbrains.com/help/idea/maven-support.html).
+
+Continua amb el [taller guiat de JUnit 5 amb IntelliJ IDEA i Maven](activitats/taller-guiat-junit-intellij-maven.md) i després amb l’[Activitat 3. Disseny i implementació de proves unitàries amb JUnit 5](activitats/activitat-3-junit-automatitzacio.md).
 
 [Bloc anterior: depuració](03-depuracio-vscode.md) · [Inici](../up4-proves.md) · [Bloc següent: automatització](05-automatitzacio-proves.md)

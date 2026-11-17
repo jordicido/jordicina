@@ -6,7 +6,7 @@ hide:
 
 ## Presentació
 
-Una aplicació pot compilar i, tanmateix, donar un resultat incorrecte. Compilar comprova que el codi compleix unes regles sintàctiques i que es pot transformar en classes executables; no comprova que totes les decisions siguen les que necessita la persona usuària. En aquesta unitat aprendràs a convertir requisits en proves, observar l’execució amb VS Code, automatitzar comprovacions amb Java i JUnit Jupiter i deixar una incidència prou clara perquè una altra persona la puga reproduir.
+Una aplicació pot compilar i, tanmateix, donar un resultat incorrecte. Compilar comprova que el codi compleix unes regles sintàctiques i que es pot transformar en classes executables; no comprova que totes les decisions siguen les que necessita la persona usuària. En aquesta unitat aprendràs a convertir requisits en proves, observar l’execució i la depuració amb VS Code, dissenyar i executar proves unitàries amb JUnit 5 des d’IntelliJ IDEA i Maven, i deixar una incidència prou clara perquè una altra persona la puga reproduir.
 
 > **Abast de la unitat**
 >
@@ -19,7 +19,7 @@ Una aplicació pot compilar i, tanmateix, donar un resultat incorrecte. Compilar
 | Duració didàctica | **12 sessions d’una hora** |
 | Resultat d’aprenentatge | **RA3** |
 | Pes de referència | **15 %** |
-| Entorn principal | **VS Code, Java 17 o 21, Maven i JUnit Jupiter** |
+| Entorn de treball | **VS Code (depuració); IntelliJ IDEA (JUnit 5); JDK 25; Maven 3.9 o superior (construcció i execució automàtica de proves)** |
 | Producte teòric | Casos de prova, proves automatitzades i informes d’incidències |
 
 ## Continguts de la unitat
@@ -46,12 +46,13 @@ Les activitats segueixen la seqüència de les dotze sessions i deixen evidènci
 | --- | --- | --- |
 | 1–2 | Fonaments, requisits, classes d’equivalència i valors límit | Activitat 1 |
 | 3–5 | Breakpoints, variables, pila de crides i hipòtesis | Activitat 2 |
-| 6–8 | JUnit Jupiter, AAA, Maven i bateries automatitzades | Activitat 3 |
+| 6–8 | JUnit 5 amb IntelliJ IDEA i Maven: taller guiat, disseny i execució de proves unitàries | Taller guiat + Activitat 3 |
 | 9–10 | Dobles de prova, aïllament i informes d’incidències | Activitat 4 |
 | 11–12 | Regressió, revisió d’evidències i reptes individuals | Activitats i reptes |
 
 - [Activitat 2. Depura, explica i verifica](up4/activitats/activitat-2-depuracio.md)
-- [Activitat 3. JUnit, automatització i regressió](up4/activitats/activitat-3-junit-automatitzacio.md)
+- [Taller guiat. Primeres proves unitàries amb JUnit 5 (IntelliJ IDEA i Maven)](up4/activitats/taller-guiat-junit-intellij-maven.md)
+- [Activitat 3. Disseny i implementació de proves unitàries amb JUnit 5](up4/activitats/activitat-3-junit-automatitzacio.md)
 - [Activitat 4. Dobles de prova i gestió d’incidències](up4/activitats/activitat-4-dobles-incidencies.md)
 - [Repte 11. La hipòtesi oculta](up4/activitats/repte-11-hipotesi-depuracio.md)
 - [Repte 12. Una bateria que protegeix el contracte](up4/activitats/repte-12-bateria-junit.md)
@@ -61,6 +62,8 @@ Les activitats segueixen la seqüència de les dotze sessions i deixen evidènci
 | Criteri | Activitat o repte | Evidència principal |
 | --- | --- | --- |
 | RA3.c–e | Activitat 2 i repte 11 | Registre de depuració, hipòtesi, breakpoints i correcció verificada. |
-| RA3.f–g | Activitat 3 i repte 12 | Tests JUnit, execució Maven i report de regressió. |
+| RA3.b | Activitat 3 (pla de casos) | Decisió prèvia de casos concrets, expectatives i justificacions. |
+| RA3.f | Activitat 3 (tests de retorn, estat i excepcions) | Bateria JUnit 5 que comprova els contractes de les dues classes. |
+| RA3.g | Execució automàtica amb Maven / repte 12 | `mvn clean test`, informes de Surefire i bateria repetible. |
 | RA3.h | Activitat 2 i activitat 4 | Informe reproduïble i evidències segures. |
 | RA3.i | Activitat 4 | Interfície injectada i doble de prova en memòria. |
