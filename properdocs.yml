@@ -229,7 +229,7 @@ nav:
                   - 7. Documentació d’incidències: daw-ed/up4/07-documentacio-incidencies.md
                   - Activitat 2. Depura, explica i verifica: daw-ed/up4/activitats/activitat-2-depuracio.md
                   - Taller guiat. Primeres proves unitàries amb JUnit 5 (IntelliJ IDEA i Maven): daw-ed/up4/activitats/taller-guiat-junit-intellij-maven.md
-                  - Activitat 3. Disseny i implementació de proves unitàries amb JUnit 5: daw-ed/up4/activitats/activitat-3-junit-automatitzacio.md
+                  - Activitat 3. Verifiquem una botiga en línia amb JUnit 5: daw-ed/up4/activitats/activitat-3-junit-automatitzacio.md
                   - Activitat 4. Dobles de prova i gestió d’incidències: daw-ed/up4/activitats/activitat-4-dobles-incidencies.md
                   - Repte 11. La hipòtesi oculta: daw-ed/up4/activitats/repte-11-hipotesi-depuracio.md
                   - Repte 12. Una bateria que protegeix el contracte: daw-ed/up4/activitats/repte-12-bateria-junit.md
