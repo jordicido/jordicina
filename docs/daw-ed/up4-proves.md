@@ -46,7 +46,7 @@ Les activitats segueixen la seqüència de les dotze sessions i deixen evidènci
 | --- | --- | --- |
 | 1–2 | Fonaments, requisits, classes d’equivalència i valors límit | Activitat 1 |
 | 3–5 | Breakpoints, variables, pila de crides i hipòtesis | Activitat 2 |
-| 6–8 | Taller guiat + Activitat 3 (taquilla d'un concert): disseny de casos, proves de retorn, estat i excepcions amb JUnit a IntelliJ/Maven | Taller guiat + Activitat 3 |
+| 6–8 | Taller guiat + Activitat 3 (taquilla d'un concert): dissenyar casos, executar-los amb Maven i registrar una regressió amb proves de retorn, estat i excepcions a IntelliJ/Maven | Taller guiat + Activitat 3 |
 | 9–10 | Dobles de prova, aïllament i informes d’incidències | Activitat 4 |
 | 11–12 | Regressió, revisió d’evidències i reptes individuals | Activitats i reptes |
 
@@ -63,7 +63,7 @@ Les activitats segueixen la seqüència de les dotze sessions i deixen evidènci
 | --- | --- | --- |
 | RA3.c–e | Activitat 2 i repte 11 | Registre de depuració, hipòtesi, breakpoints i correcció verificada. |
 | RA3.b | Activitat 3 (pla de casos) | Decisió prèvia de casos concrets, expectatives i justificacions. |
-| RA3.f | Activitat 3 (tests JUnit de retorn, estat i excepcions) | Bateria JUnit 5 que comprova el contracte de la botiga. |
-| RA3.g | Activitat 3 i repte 12 (execució automatitzada amb Maven) | `mvn clean test`, informes de Surefire i bateria repetible. |
+| RA3.f | Activitat 3 (tests JUnit de retorn, estat i excepcions) | Bateria JUnit 5 que comprova el contracte de la taquilla. |
+| RA3.g | Activitat 3 i repte 12 (execució automatitzada amb Maven) | `mvn clean test`, informes de Surefire, bateria repetible i registre d'una regressió. |
 | RA3.h | Activitat 2 i activitat 4 | Informe reproduïble i evidències segures. |
 | RA3.i | Activitat 4 | Interfície injectada i doble de prova en memòria. |

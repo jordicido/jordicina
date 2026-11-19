@@ -4,151 +4,141 @@ hide:
 ---
 # Activitat 3. Posem a prova la taquilla d'un concert
 
-**Mòdul:** Entorns de Desenvolupament · **UP4:** Proves i verificació · **RA3.b, RA3.f i RA3.g**
+**Mòdul:** Entorns de Desenvolupament · **UP4:** Proves i verificació
+**Criteris treballats:** RA3.b (casos de prova), RA3.f (proves unitàries) i RA3.g (automatització)
+**Entorn:** IntelliJ IDEA · Maven · JDK 25 · JUnit Jupiter
 
-### Finalitat
+## Objectius
 
-Una prova unitària no consisteix a executar un programa i veure si «pareix funcionar». Consisteix a decidir **què hauria de passar**, preparar una situació concreta i comprovar el resultat amb una asserció de JUnit.
+L'objectiu és comprovar el funcionament d'una aplicació que ja està programada. **No has de crear el programa de la taquilla ni aprendre a programar objectes:** copiaràs la classe proporcionada i et centraràs en **pensar, escriure i executar proves unitàries**.
 
-En esta activitat aprendràs a:
+Aprendràs a identificar tres tipus de comprovacions:
 
-1. Identificar casos de prova a partir d'unes regles escrites (**RA3.b**).
-2. Escriure proves amb JUnit Jupiter (**RA3.f**).
-3. Executar la bateria completa des d'IntelliJ IDEA i Maven (**RA3.g**).
-4. Distingir **retorn**, **estat** i **excepcions** dins d'un mateix problema.
+- **Retorn:** quin preu ens torna una venda?
+- **Estat:** quantes places queden després d'una venda?
+- **Excepcions:** què passa si intentem efectuar una venda incorrecta? Queden les mateixes places?
 
-## Situació: la taquilla del concert
+## 1. Situació: una taquilla de concert
 
-Una associació organitza un concert amb places limitades. La seua aplicació ha de vendre entrades i evitar que es venen més places de les disponibles.
+Una associació organitza un concert amb places limitades. L'aplicació ven entrades i evita vendre'n més de les disponibles.
 
-La classe `TaquillaConcert` **ja està programada**. Tu **no has de programar la taquilla**: la teua tasca és comprovar mitjançant proves JUnit que respecta les regles de negoci.
-
-### Regles de funcionament (contracte)
-
-| Codi | Regla |
+| Regla | Comportament que ha de complir el programa |
 | --- | --- |
-| R1 | En crear una taquilla, es determina el nombre inicial de places disponibles. Per a la pràctica treballarem normalment amb **30 places**; cada prova pot crear una taquilla nova. |
+| R1 | La taquilla comença amb un nombre de places indicat en crear-la. Habitualment, utilitzarem **30 places**. |
 | R2 | Una entrada **general** costa **12 €**. |
 | R3 | Una entrada **reduïda** costa **8 €**. |
-| R4 | Una venda vàlida retorna el **preu total**: quantitat × preu de l'entrada. |
-| R5 | Una venda vàlida **redueix les places disponibles** exactament en la quantitat venuda. |
-| R6 | No es poden comprar **0 entrades** ni quantitats **negatives**: es llança `IllegalArgumentException`. |
-| R7 | No es poden comprar **més entrades que places disponibles**: es llança `IllegalStateException`. |
-| R8 | **Una venda rebutjada no modifica les places disponibles**. |
-| R9 | És possible vendre exactament totes les places restants; aleshores queden **0 places**. |
+| R4 | En una venda correcta, el mètode retorna **quantitat × preu unitari**. |
+| R5 | Cada venda correcta descompta del total de places la quantitat venuda. |
+| R6 | Vendre **0 entrades** o una quantitat **negativa** provoca `IllegalArgumentException`. |
+| R7 | Vendre més entrades de les disponibles provoca `IllegalStateException`. |
+| R8 | Una venda rebutjada **no canvia** el nombre de places disponibles. |
+| R9 | Es poden vendre **exactament totes** les places disponibles; en eixe cas, en queden 0. |
 
-> **Nota:** `new TaquillaConcert(30)` crea una taquilla amb 30 places. No necessites saber com està construïda internament. Et facilitarà la prova d'un nou escenari. La classe no utilitza arrays ni col·leccions.
-
-### Els dos mètodes que provaràs
+Només utilitzaràs estes operacions:
 
 ```java
-// Vén una quantitat d'entrades, retorna el preu total en euros.
-// entradaReduida = true: entrada de 8 €; false: entrada de 12 €.
-int total = taquilla.vendreEntrades(quantitat, entradaReduida);
-
-// Retorna el nombre actual de places disponibles.
+TaquillaConcert taquilla = new TaquillaConcert(30);
+int importTotal = taquilla.vendreEntrades(quantitat, entradaReduida);
 int places = taquilla.consultarPlaces();
 ```
 
-No cal modificar `TaquillaConcert.java` per a resoldre l'activitat. Només treballaràs en `TaquillaConcertTest.java`.
+`entradaReduida` és un valor `boolean`: `true` per a entrada reduïda i `false` per a entrada general. **No necessites entendre com està implementada la classe per dins**, només què fa cada operació.
 
-## Recursos inicials
+## 2. Crea el projecte des de zero amb IntelliJ i Maven
 
-Descarrega:
+**No has de descarregar cap projecte inicial. El crearàs tu mateix/a.**
 
-- [Projecte Maven inicial (ZIP)](recursos/taquilla-concert-projecte-inicial.zip): conté la classe de producció completa, el `pom.xml` i una classe `TaquillaConcertTest` sense casos resolts.
-- [Fitxa de planificació de proves (Word)](recursos/pla-proves-taquilla-concert.docx): emplena-la abans de començar a escriure els tests.
+1. Obri **IntelliJ IDEA** i selecciona **New Project** (o `File > New > Project`).
+2. Tria **Java** i selecciona **Maven** com a *build system* (segons la versió d'IntelliJ, Maven pot aparéixer com a tipus de projecte).
+3. Selecciona **JDK 25**. Si no el tens configurat, utilitza l'opció d'afegir o descarregar el JDK que mostra IntelliJ.
+4. Dona al projecte el nom **`taquilla-concert`** i, si el formulari ho demana, utilitza `edu.iesmre.up4` com a **GroupId** i `taquilla-concert` com a **ArtifactId**. No és necessari seleccionar cap arquetip.
+5. Quan s'òbriga el projecte, localitza el fitxer **`pom.xml`** a l'arrel. Substitueix-ne el contingut pel bloc complet de l'apartat 3.
+6. Comprova que existeixen les carpetes `src/main/java` i `src/test/java`. Si no existeixen, crea-les. Si cal, marca-les en IntelliJ com a *Sources Root* i *Test Sources Root*, respectivament.
+7. Crea el paquet **`edu.iesmre.up4`** en les dues carpetes. Després crea les classes indicades als apartats 4 i 5.
+8. Espera que IntelliJ sincronitze Maven. Si et pregunta si vols carregar els canvis del `pom.xml`, accepta. Revisa que el **Project SDK** i el **JDK utilitzat per Maven** siguen compatibles amb la compilació per a Java 25.
 
-**Entorn:** IntelliJ IDEA, JDK 25, Maven 3.9+ i JUnit Jupiter 5.14.4. No cal instal·lar JUnit manualment, perquè Maven gestiona la dependència indicada en el `pom.xml`.
+L'estructura final haurà de ser esta:
 
-## Fase 1 — Dissenya les proves abans de programar
-
-1. Llig les regles **R1–R9**.
-2. Obri la **fitxa Word** i anota, per a cada cas, un **nom descriptiu**, la **regla** que comprova, les **dades inicials**, l'**acció** i el **resultat esperat**.
-3. Dissenya com a mínim **9 casos diferents**:
-   - **3 proves de retorn:** comprovar el preu total de vendes vàlides.
-   - **3 proves d'estat:** comprovar com canvia el nombre de places disponibles després de vendre.
-   - **3 proves d'excepcions:** comprovar que es rebutgen operacions incorrectes amb l'excepció adequada. Quan es rebutge una venda, comprova també que les places no hagen canviat.
-4. Inclou algun **cas límit**, és a dir, un cas a la frontera d'una regla (per exemple, el nombre de places). Tria les dades tu mateix/a.
-5. **No escrigues encara els tests.** Revisa que els resultats esperats provenen de les regles i no d'allò que el programa retorne casualment.
-
-## Fase 2 — Implementa els tests amb JUnit
-
-1. Obri el projecte descarregat a IntelliJ IDEA com a **projecte Maven**.
-2. Revisa en `Project Structure` que el projecte treballa amb **JDK 25** i espera que Maven importe les dependències.
-3. Obri `src/test/java/edu/iesmre/up4/TaquillaConcertTest.java`.
-4. Crea un mètode `@Test` per cada cas de la teua fitxa. Usa noms que expliquen la conducta, no `test1`, `test2`, etc.
-5. Estructura cada prova amb **Arrange–Act–Assert**:
-   - **Arrange:** crea una taquilla nova i prepara la situació.
-   - **Act:** executa la venda (o la consulta necessària).
-   - **Assert:** comprova el valor esperat.
-6. Utilitza preferentment:
-   - `assertEquals(esperat, real)` per a imports i places;
-   - `assertThrows(TipusExcepcio.class, () -> ...)` per a vendes prohibides.
-7. **Cada test ha de ser independent.** Crea una taquilla nova en cada test: una prova no pot necessitar que abans s'haja executat una altra.
-8. No modifiques el codi de producció ni les regles per aconseguir que passe un test.
-
-> **Atenció:** una prova d'estat comprova **què ha canviat després de l'operació**; no exigeix conéixer els atributs interns de la classe. Per exemple, pots consultar les places mitjançant `consultarPlaces()`. Una prova d'excepció **passa** quan es llança l'excepció esperada.
-
-## Fase 3 — Executa i interpreta
-
-1. Executa **tota la classe de proves** amb el botó verd d'IntelliJ.
-2. Obri la terminal integrada, situa't a l'arrel del projecte (on hi ha `pom.xml`) i executa:
-
-   ```bash
-   mvn clean test
-   ```
-
-3. Comprova el resum de tests: quants s'han executat, quants han passat i si hi ha fallades o errors.
-4. Conserva una captura amb la bateria **en verd** i l'evidència del resum Maven.
-5. Revisa el directori `target/surefire-reports/`, on Maven guarda els informes de Surefire.
-
-## Fase 4 — Detecta una regressió
-
-Un test útil també ha de detectar quan algú introdueix un error en un programa que abans funcionava.
-
-1. Després d'aconseguir la bateria verda, **canvia temporalment** a `TaquillaConcert.java` el preu de l'entrada general de **12** a **13**.
-2. Executa novament la bateria i comprova si alguna prova detecta l'error.
-3. Guarda una captura d'una prova fallida i explica en una o dues frases **què esperaves, què s'ha obtingut i per què**.
-4. **Restaura el preu original (12 €)** i executa de nou totes les proves. El projecte final s'ha d'entregar amb el codi de producció restaurat.
-
-Si cap prova detecta este canvi, revisa si realment has provat el preu de les entrades generals.
-
-## Ampliació voluntària — Cobertura amb JaCoCo
-
-Si el projecte inicial incorpora JaCoCo, executa:
-
-```bash
-mvn clean verify
+```text
+taquilla-concert/
+├── pom.xml
+└── src/
+    ├── main/java/edu/iesmre/up4/
+    │   └── TaquillaConcert.java
+    └── test/java/edu/iesmre/up4/
+        └── TaquillaConcertTest.java
 ```
 
-Obri `target/site/jacoco/index.html`. Localitza una part no coberta i explica quin cas podries afegir per a comprovar-la. **No hi ha cap percentatge mínim obligatori**. Tindre el 100 % de cobertura no demostra, per si sol, que els tests siguen bons.
+## 3. Copia el fitxer `pom.xml`
 
-## Lliurament
+**Substitueix tot el contingut** de `pom.xml` pel codi següent. Maven s'encarregarà de descarregar la dependència de JUnit i els plugins necessaris.
 
-Entrega a Aules:
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
 
-1. **`pla-proves.docx`** completat abans de programar, amb 9 casos com a mínim i la justificació.
-2. **`taquilla-concert-tests.zip`** amb el projecte Maven complet (`pom.xml`, `src/main` i `src/test`), sense `target/`, ni carpetes `.idea/` ni fitxers temporals.
-3. **Evidències**: captura del resultat final verd d'IntelliJ/Maven i captura de la regressió fallida, juntament amb la breu explicació de la diferència entre l'esperat i l'obtingut. Les captures es poden afegir al ZIP en una carpeta `evidencies/`.
+    <groupId>edu.iesmre.up4</groupId>
+    <artifactId>taquilla-concert</artifactId>
+    <version>1.0-SNAPSHOT</version>
 
-## Què es valorarà?
+    <properties>
+        <maven.compiler.release>25</maven.compiler.release>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
 
-| Aspecte | Assolit | En procés | No assolit |
-| --- | --- | --- | --- |
-| **Pla de proves — RA3.b** | 9 casos coherents, variats i justificats, amb límits i resultats esperats clars. | Casos vàlids però incomplets, repetits o poc justificats. | No hi ha un pla verificable o els resultats esperats no estan definits. |
-| **Proves de retorn — RA3.f** | Comprova correctament el preu total amb diferents escenaris. | Comprovacions parcials o amb alguna asserció incorrecta. | No comprova els imports o els tests no funcionen. |
-| **Proves d'estat — RA3.f** | Comprova les places abans/després i l'efecte de les vendes. | Només comprova parcialment el canvi d'estat. | No verifica les places resultants. |
-| **Excepcions — RA3.f** | Comprova tipus d'excepció i conservació de places en vendes rebutjades. | Comprova part de les excepcions o oblida l'estat. | No identifica els errors o no els prova correctament. |
-| **Execució i evidències — RA3.g** | Bateria repetible des d'IntelliJ i Maven, amb regressió detectada i restaurada. | Execució o evidències incompletes. | No executa els tests ni acredita la regressió. |
+    <dependencies>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter</artifactId>
+            <version>5.14.4</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
 
-> **Important:** el treball és **individual**. Es valorarà la qualitat de les decisions de prova i la correspondència amb el contracte, no únicament que aparega `BUILD SUCCESS`.
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.16.0</version>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>3.6.1</version>
+            </plugin>
+            <plugin>
+                <groupId>org.jacoco</groupId>
+                <artifactId>jacoco-maven-plugin</artifactId>
+                <version>0.8.16</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>prepare-agent</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>report</id>
+                        <phase>verify</phase>
+                        <goals>
+                            <goal>report</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+</project>
+```
 
-## Codi de producció que inclou el projecte inicial
+En el `pom.xml`, `junit-jupiter` és la biblioteca amb què escriurem proves; `maven-compiler-plugin` compila Java 25; `maven-surefire-plugin` executa les proves. JaCoCo permetrà consultar opcionalment la cobertura del codi.
 
-Este fitxer es distribueix ja fet. No el presentes com a exercici de POO ni el deixes incomplet.
+## 4. Copia la classe que provarem: `TaquillaConcert.java`
 
-**`src/main/java/edu/iesmre/up4/TaquillaConcert.java`**
+En el paquet `edu.iesmre.up4`, dins de `src/main/java`, crea la classe **`TaquillaConcert`** i pega **tot** este codi. **No el modifiques** per a fer passar les proves.
 
 ```java
 package edu.iesmre.up4;
@@ -188,11 +178,9 @@ public class TaquillaConcert {
 }
 ```
 
-La capacitat inicial `0` és vàlida; la capacitat negativa és invàlida i es rebutja, però no exigeix als alumnes provar el constructor en els 9 casos obligatoris. Cada cas crea una instància nova. No hi ha arrays, col·leccions, fitxers, connexions externes, decimals, herència, mocks, `@ParameterizedTest`, interfícies ni patrons avançats.
+## 5. Crea `TaquillaConcertTest.java`
 
-## Classe de test inicial (sense solucions)
-
-**`src/test/java/edu/iesmre/up4/TaquillaConcertTest.java`**
+En el **mateix paquet** `edu.iesmre.up4`, però dins de `src/test/java`, crea la classe de prova **`TaquillaConcertTest`** i pega este codi inicial:
 
 ```java
 package edu.iesmre.up4;
@@ -201,72 +189,98 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 class TaquillaConcertTest {
-    // Escriu ací els teus casos de prova.
-    // Recorda: 3 de retorn, 3 d'estat i 3 d'excepcions.
-    // Cada prova ha de crear una TaquillaConcert nova.
+    // Escriu ací els teus tests després de completar la fitxa.
+    // Com a mínim: 3 de retorn, 3 d'estat i 3 d'excepcions.
+    // Crea una taquilla nova dins de cada mètode @Test.
 }
 ```
 
-No inclogues una bateria resolta dins del ZIP de l'alumnat. Si el professorat necessita una solució de verificació, guarda-la fora del directori publicat o en un espai privat, mai en un recurs enllaçat des de MkDocs.
+La classe està deliberadament **sense tests resolts**. Els implementaràs quan hages decidit què vols comprovar. Si encara no tens cap mètode `@Test`, `mvn test` pot acabar sense executar cap prova: això **no vol dir que hages verificat res**.
 
-## Configuració Maven del projecte inicial
+## 6. Abans de programar: completa la fitxa Word d'Aules
 
-El `pom.xml` inclou JDK 25, JUnit Jupiter **5.14.4**, Maven Compiler **3.16.0**, Surefire **3.6.1** i JaCoCo **0.8.16**. JaCoCo no aplica cap llindar de cobertura ni obliga a presentar un informe.
+En la tasca d'**Aules** trobaràs adjunta la **Fitxa de planificació de proves** en format Word. **Descarrega-la d'Aules, emplena-la i conserva-la per al lliurament.** No has de crear cap fitxer Markdown amb el pla de proves.
 
-```xml
-<?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
-    <modelVersion>4.0.0</modelVersion>
-    <groupId>edu.iesmre.up4</groupId>
-    <artifactId>taquilla-concert</artifactId>
-    <version>1.0-SNAPSHOT</version>
+Dissenya **com a mínim 9 casos** diferents:
 
-    <properties>
-        <maven.compiler.release>25</maven.compiler.release>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    </properties>
+| Tipus | Quantitat mínima | Què has de decidir abans del test? |
+| --- | ---: | --- |
+| **Retorn** | 3 | Nombre d'entrades, tipus i import total esperat. Inclou almenys una venda general i una de reduïda. |
+| **Estat** | 3 | Places inicials, venda o vendes que faràs i places finals esperades. |
+| **Excepcions** | 3 | Venda incorrecta, tipus d'excepció esperada i places que han de continuar disponibles. |
 
-    <dependencies>
-        <dependency>
-            <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter</artifactId>
-            <version>5.14.4</version>
-            <scope>test</scope>
-        </dependency>
-    </dependencies>
+Per a cada cas indica: **identificador i nom descriptiu, regla (R1–R9), situació inicial, acció, resultat esperat i justificació**. Pots usar casos límit, però no comptes com a casos diferents dos tests que comproven exactament la mateixa situació.
 
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.16.0</version>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-surefire-plugin</artifactId>
-                <version>3.6.1</version>
-            </plugin>
-            <plugin>
-                <groupId>org.jacoco</groupId>
-                <artifactId>jacoco-maven-plugin</artifactId>
-                <version>0.8.16</version>
-                <executions>
-                    <execution>
-                        <goals><goal>prepare-agent</goal></goals>
-                    </execution>
-                    <execution>
-                        <id>report</id>
-                        <phase>verify</phase>
-                        <goals><goal>report</goal></goals>
-                    </execution>
-                </executions>
-            </plugin>
-        </plugins>
-    </build>
-</project>
+**La fitxa s'ha de completar abans d'escriure els mètodes `@Test`.**
+
+## 7. Escriu les proves JUnit
+
+A partir de la fitxa, implementa en `TaquillaConcertTest.java` almenys **9 mètodes anotats amb `@Test`**, un per a cada cas dissenyat. Cada mètode ha de tindre un nom descriptiu.
+
+En cada prova aplica **Arrange–Act–Assert**:
+
+1. **Arrange:** prepara una taquilla nova amb les places necessàries.
+2. **Act:** executa `vendreEntrades(...)` i/o consulta les places.
+3. **Assert:** compara el resultat real amb el resultat esperat.
+
+Recorda estes ferramentes:
+
+```java
+assertEquals(valorEsperat, valorReal);
+assertThrows(TipusExcepcio.class, () -> accioQueHaDeFallar());
 ```
+
+Per a les proves d'**estat**, utilitza `consultarPlaces()` per a saber quantes places queden. Per a les vendes rebutjades, comprova **tant l'excepció com que les places no hagen canviat**.
+
+**Important:** cada test ha de crear la seua pròpia taquilla; no faces que depenga de les vendes efectuades per un altre test. No canvies les regles ni el codi productiu per aconseguir resultats verds.
+
+## 8. Executa els tests
+
+1. Executa els tests des del **botó verd d'IntelliJ** al costat de la classe o dels mètodes `@Test`.
+2. Obri la terminal integrada, situa't a la carpeta que conté `pom.xml` i executa:
+
+   ```bash
+   mvn clean test
+   ```
+
+3. Comprova quants tests s'han executat i quants han passat. Els informes de Maven es guarden en `target/surefire-reports/`.
+4. Guarda **una captura** amb les proves en verd i el recompte de proves executades.
+
+## 9. Comprova que els tests detecten un error
+
+1. Quan la bateria estiga en verd, canvia **temporalment** a `TaquillaConcert.java` el preu general de **12** a **13**.
+2. Torna a executar `mvn test`. Almenys una prova de retorn d'entrada general hauria de fallar.
+3. Guarda una captura del test roig i explica breument el valor esperat, l'obtingut i la causa.
+4. **Restaura el valor 12**, torna a executar les proves i comprova que tots els tests tornen a passar. El projecte s'ha d'entregar amb el preu correcte.
+
+## 10. Ampliació voluntària: cobertura del codi
+
+El `pom.xml` ja inclou JaCoCo. Si vols comprovar quines parts del programa han executat els tests:
+
+```bash
+mvn clean verify
+```
+
+Obri `target/site/jacoco/index.html` en un navegador. Explica una part del codi que no estiga coberta i quina prova hi afegiries. **No hi ha cap percentatge de cobertura mínim obligatori.**
+
+## 11. Lliurament a Aules
+
+Entrega **en la mateixa tasca d'Aules**:
+
+1. **Fitxa Word** completada amb el pla de proves (almenys 9 casos).
+2. **ZIP del projecte que has creat tu**, amb `pom.xml` i `src/main/java` i `src/test/java`; no inclogues `target/`, `.idea/` ni altres carpetes temporals.
+3. **Evidències**: captura de l'execució final verda, captura de la regressió fallida i explicació breu de la fallada.
+
+### Criteris que es valoraran
+
+| Aspecte | Evidència esperada |
+| --- | --- |
+| **Disseny — RA3.b** | Nou casos ben triats i justificats en la fitxa Word. |
+| **Retorn — RA3.f** | Comprovació dels imports, incloent-hi entrades generals i reduïdes. |
+| **Estat — RA3.f** | Comprovació de les places restants després de vendre. |
+| **Excepcions — RA3.f** | Tipus d'excepció adequat i places sense canvis en operacions rebutjades. |
+| **Execució — RA3.g** | Tests independents executables amb IntelliJ i Maven i detecció d'una regressió. |
+
+> **Recorda:** `BUILD SUCCESS` només confirma que les comprovacions executades han passat. Per això és important **triar bons casos** i indicar clarament què esperes en cadascun.
 
 [Anterior: depuració](activitat-2-depuracio.md) · [Taller guiat](taller-guiat-junit-intellij-maven.md) · [Següent: dobles i incidències](activitat-4-dobles-incidencies.md) · [Índex](../../up4-proves.md)
