@@ -322,6 +322,6 @@ JUnit Jupiter dona una estructura executable a un cas de prova. AAA fa visible e
 
 Per ampliar, consulta la [guia oficial de JUnit 5](https://junit.org/junit5/docs/current/user-guide/) i la documentació d’[IntelliJ i Maven](https://www.jetbrains.com/help/idea/maven-support.html).
 
-Continua amb el [taller guiat de JUnit 5 amb IntelliJ IDEA i Maven](activitats/taller-guiat-junit-intellij-maven.md) i després amb l’[Activitat 3. Verifiquem una botiga en línia amb JUnit 5](activitats/activitat-3-junit-automatitzacio.md). En aquesta pràctica autònoma treballaràs amb mètodes estàtics i arrays, sense que la programació orientada a objectes siga un prerequisit; els exemples amb objectes d’aquest tema són una ampliació conceptual.
+Continua amb el [taller guiat de JUnit 5 amb IntelliJ IDEA i Maven](activitats/taller-guiat-junit-intellij-maven.md) i després amb l’[Activitat 3. Posem a prova la taquilla d'un concert](activitats/activitat-3-junit-automatitzacio.md). En aquesta pràctica autònoma treballaràs amb una classe Java ja implementada i una instància nova per a cada prova, sense que la programació orientada a objectes siga un prerequisit; no hauràs de crear la classe ni gestionar arrays.
 
 [Bloc anterior: depuració](03-depuracio-vscode.md) · [Inici](../up4-proves.md) · [Bloc següent: automatització](05-automatitzacio-proves.md)

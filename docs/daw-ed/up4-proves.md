@@ -46,13 +46,13 @@ Les activitats segueixen la seqüència de les dotze sessions i deixen evidènci
 | --- | --- | --- |
 | 1–2 | Fonaments, requisits, classes d’equivalència i valors límit | Activitat 1 |
 | 3–5 | Breakpoints, variables, pila de crides i hipòtesis | Activitat 2 |
-| 6–8 | Taller guiat + Activitat 3 (botiga en línia): disseny de casos, proves de retorn, estat i excepcions amb JUnit a IntelliJ/Maven | Taller guiat + Activitat 3 |
+| 6–8 | Taller guiat + Activitat 3 (taquilla d'un concert): disseny de casos, proves de retorn, estat i excepcions amb JUnit a IntelliJ/Maven | Taller guiat + Activitat 3 |
 | 9–10 | Dobles de prova, aïllament i informes d’incidències | Activitat 4 |
 | 11–12 | Regressió, revisió d’evidències i reptes individuals | Activitats i reptes |
 
 - [Activitat 2. Depura, explica i verifica](up4/activitats/activitat-2-depuracio.md)
 - [Taller guiat. Primeres proves unitàries amb JUnit 5 (IntelliJ IDEA i Maven)](up4/activitats/taller-guiat-junit-intellij-maven.md)
-- [Activitat 3. Verifiquem una botiga en línia amb JUnit 5](up4/activitats/activitat-3-junit-automatitzacio.md)
+- [Activitat 3. Posem a prova la taquilla d'un concert](up4/activitats/activitat-3-junit-automatitzacio.md)
 - [Activitat 4. Dobles de prova i gestió d’incidències](up4/activitats/activitat-4-dobles-incidencies.md)
 - [Repte 11. La hipòtesi oculta](up4/activitats/repte-11-hipotesi-depuracio.md)
 - [Repte 12. Una bateria que protegeix el contracte](up4/activitats/repte-12-bateria-junit.md)
