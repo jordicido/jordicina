@@ -55,7 +55,7 @@ En acabar la UP seràs capaç de:
 
 ## Activitats
 
-- **[A4.1. La primera pàgina web amb HTML i CSS](activitats/activitat-4-1-html-css.md).** Construcció individual de la portada inicial de ByteAcademy. Activitat preparatòria, amb retroacció formativa.
+- **[A4.1. La primera pàgina web amb HTML i CSS](activitats/activitat-4-1-html-css.md).** Pràctica guiada per construir la primera web de ByteAcademy amb HTML i CSS, amb dos punts de validació.
 - **[A4.2. Implantació i administració de WordPress](activitats/activitat-4-2-wordpress.md).** Projecte integrador amb tres fases i tres validacions amb el professor. Les evidències d'avaluació del RA1 s'obtenen principalment ací.
 
 ## Criteris d'avaluació del RA1
