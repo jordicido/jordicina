@@ -1,3 +1,8 @@
+---
+hide:
+  - navigation
+---
+
 # Activitat 4.2 — Implantació i administració del web ByteAcademy amb WordPress
 
 **Mòdul:** Aplicacions Web · 2n d'SMX  

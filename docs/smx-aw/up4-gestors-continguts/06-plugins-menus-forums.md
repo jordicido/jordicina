@@ -1,3 +1,8 @@
+---
+hide:
+  - navigation
+---
+
 # UP4.6. Plugins, menús i fòrums: ampliar WordPress
 
 **Criteris relacionats:** RA1.f i RA1.h.

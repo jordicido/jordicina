@@ -1,3 +1,8 @@
+---
+hide:
+  - navigation
+---
+
 # Activitat 4.1 — La meua primera pàgina web amb HTML i CSS
 
 **Mòdul:** Aplicacions Web · 2n d'SMX  

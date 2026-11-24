@@ -1,3 +1,8 @@
+---
+hide:
+  - navigation
+---
+
 # UP4.1. Introducció a HTML: l'estructura d'una pàgina web
 
 **Finalitat:** comprendre què interpreta el navegador i crear una primera pàgina sense un editor visual. Aquest bloc prepara la personalització que després farem en WordPress.

@@ -1,3 +1,8 @@
+---
+hide:
+  - navigation
+---
+
 # UP4.4. Creació i personalització de llocs web amb WordPress
 
 **Criteris relacionats:** RA1.c, RA1.d i RA1.f.

@@ -1,3 +1,8 @@
+---
+hide:
+  - navigation
+---
+
 # UP4.5. Usuaris, rols i permisos en WordPress
 
 **Criteri relacionat:** RA1.b.

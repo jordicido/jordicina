@@ -1,3 +1,8 @@
+---
+hide:
+  - navigation
+---
+
 # Fitxa d'evidències — Activitat 4.2: ByteAcademy amb WordPress
 
 > **Instrucció per a l'alumnat:** copia aquesta plantilla a un document editable, completa-la durant la pràctica i exporta-la finalment a PDF. No inclogues contrasenyes ni dades personals reals. Les captures han de mostrar només la informació necessària.

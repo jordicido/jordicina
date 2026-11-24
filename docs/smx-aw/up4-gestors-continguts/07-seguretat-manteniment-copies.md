@@ -1,3 +1,8 @@
+---
+hide:
+  - navigation
+---
+
 # UP4.7. Seguretat, actualitzacions, còpies i proves funcionals
 
 **Criteris relacionats:** RA1.e, RA1.g, RA1.i i RA1.j. També reforça el RA1.d.

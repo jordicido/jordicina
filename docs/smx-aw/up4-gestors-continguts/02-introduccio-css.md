@@ -1,3 +1,8 @@
+---
+hide:
+  - navigation
+---
+
 # UP4.2. Introducció a CSS: donar estil i distribuir continguts
 
 **Finalitat:** passar d'una pàgina HTML estructurada a una interfície llegible, coherent i adaptable. Aplicarem els estils a la web de ByteAcademy que vam començar en el bloc anterior.

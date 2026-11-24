@@ -1,3 +1,8 @@
+---
+hide:
+  - navigation
+---
+
 # UP4.3. Què és un CMS? Arquitectura i instal·lació de WordPress
 
 **Criteris relacionats:** RA1.a i RA1.d.
