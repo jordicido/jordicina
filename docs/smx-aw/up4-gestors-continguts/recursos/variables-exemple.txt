@@ -1,0 +1,6 @@
+# Copia aquest contingut a un fitxer anomenat .env al costat de compose.yaml.
+# Canvia les contrasenyes abans d'usar-lo. No publiques .env al repositori.
+DB_NAME=byteacademy
+DB_USER=byteuser
+DB_PASSWORD=CANVIA_AQUESTA_CONTRASENYA
+DB_ROOT_PASSWORD=CANVIA_AQUESTA_ALTRA_CONTRASENYA

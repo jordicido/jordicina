@@ -93,7 +93,18 @@ nav:
                   - 4. Informació addicional, metadades i indexació: smx-aw/up3/04-metadades-indexacio.md
                   - 5. Seguretat i integritat: smx-aw/up3/05-seguretat-integritat.md
                   - Activitat 3.2. Implantació i administració d'un gestor d'arxius web: smx-aw/up3/activitats/activitat-2-nextcloud-docker.md
-              - UP4. Gestors de continguts: smx-aw/up4-gestors-continguts.md
+              - UP4. Gestors de continguts web:
+                  - Presentació: smx-aw/up4-gestors-continguts/index.md
+                  - 1. Introducció a HTML: smx-aw/up4-gestors-continguts/01-introduccio-html.md
+                  - 2. Introducció a CSS: smx-aw/up4-gestors-continguts/02-introduccio-css.md
+                  - 3. CMS, arquitectura i instal·lació de WordPress: smx-aw/up4-gestors-continguts/03-cms-arquitectura-wordpress.md
+                  - 4. Creació i personalització: smx-aw/up4-gestors-continguts/04-creacio-personalitzacio.md
+                  - 5. Usuaris, rols i permisos: smx-aw/up4-gestors-continguts/05-usuaris-rols-permisos.md
+                  - 6. Plugins, menús i fòrums: smx-aw/up4-gestors-continguts/06-plugins-menus-forums.md
+                  - 7. Seguretat, manteniment i còpies: smx-aw/up4-gestors-continguts/07-seguretat-manteniment-copies.md
+                  - Activitat 4.1. La primera pàgina web amb HTML i CSS: smx-aw/up4-gestors-continguts/activitats/activitat-4-1-html-css.md
+                  - Activitat 4.2. Implantació i administració de WordPress: smx-aw/up4-gestors-continguts/activitats/activitat-4-2-wordpress.md
+                  - Fitxa d’evidències de l’A4.2: smx-aw/up4-gestors-continguts/activitats/fitxa-evidencies-a4-2.md
               - UP5. Gestió d’aprenentatge a distància: smx-aw/up5-aprenentatge-distancia.md
           - Recursos: smx-aw/recursos.md
           - Materials: smx-aw/materials.md
