@@ -3,125 +3,235 @@ hide:
   - navigation
 ---
 
-# Activitat 4.1 — Construïm la nostra primera web amb HTML i CSS
+# Activitat 4.1 — Construïm una pàgina web amb HTML i CSS
 
 **Mòdul:** Aplicacions Web · 2n d'SMX  
 **Unitat:** UP4. Gestors de continguts web  
 **Modalitat:** Individual  
-**Tipus:** Pràctica guiada i formativa
+**Tipus:** Pràctica guiada
 
-## Context
+## L'encàrrec
 
-**ByteAcademy** és una acadèmia fictícia que ofereix cursos d'informàtica. Abans de construir el lloc web definitiu amb WordPress, elaborarem una primera pàgina amb **HTML i CSS** per comprendre com s'estructura i com es dissenya una web.
+Construiràs una **pàgina web d'una sola pàgina** utilitzant HTML i CSS, sense WordPress ni editors visuals.
 
-No has de crear la pàgina des de zero. **Partiràs d'un projecte inicial** que aniràs modificant pas a pas, amb exemples i explicacions a classe. L'última part tindrà alguns canvis que hauràs de fer pel teu compte.
+**La temàtica és lliure:** pot ser sobre tecnologia, videojocs, música, esports, una afició, una botiga fictícia, un servei o qualsevol altra idea adequada. Cada alumne crearà una web diferent, però tots treballareu els mateixos elements d'HTML i CSS.
 
-!!! info "Què aprendràs?"
-    - Identificar les parts principals d'un document HTML.
-    - Modificar textos, enllaços, llistes i imatges.
-    - Reconéixer etiquetes com `header`, `nav`, `main`, `section`, `article` i `footer`.
-    - Relacionar les classes HTML amb els selectors CSS.
-    - Canviar colors, espais, vores i distribucions senzilles.
-    - Utilitzar Flexbox amb un exemple guiat.
-    - Comprovar els canvis en el navegador i explicar com funcionen.
+Al final has de tindre una pàgina amb menú, presentació, informació, targetes, taula, formulari i peu de pàgina. **No has de redactar cap memòria ni respondre preguntes per escrit:** el resultat és la web que construïsques.
 
-## Abans de començar: prepara el projecte
+!!! info "Com treballarem"
+    - Comença amb el projecte inicial i seguix les parts en ordre.
+    - Guarda els canvis i refresca el navegador després de cada pas.
+    - No copies una pàgina completa d'Internet: utilitza els exemples per entendre i escriure el teu codi.
+    - Quan arribes a una validació, avisa el professor i mostra la pàgina **en funcionament**.
 
-1. [Descarrega el projecte inicial](../recursos/a4-1-projecte-inicial.zip).
-2. Descomprimeix-lo en una carpeta anomenada `a4-1-byteacademy`.
-3. Obri la carpeta completa amb **Visual Studio Code**.
-4. Comprova que conté aquesta estructura:
+## Preparació
 
-```text
-a4-1-byteacademy/
-├── index.html
-├── css/
-│   └── estils.css
-└── img/
-    └── academia.svg
-```
+1. Descarrega el **projecte inicial**: [Projecte inicial A4.1](../recursos/a4-1-projecte-inicial.zip).
+2. Descomprimeix-lo i obri la carpeta amb Visual Studio Code.
+3. Comprova els fitxers de partida:
 
-5. Obri `index.html` en el navegador. Ja hauries de veure una pàgina senzilla de ByteAcademy, encara sense el disseny definitiu.
+   ```text
+   activitat-4-1/
+   ├── index.html
+   ├── css/
+   │   └── estils.css
+   └── img/
+       └── exemple.svg
+   ```
 
-!!! tip "Com treballar"
-    Després de cada canvi, **guarda el fitxer i actualitza el navegador**. Si alguna cosa no funciona, revisa primer l'etiqueta, el nom del fitxer, les cometes i la ruta que has escrit.
+4. Obri `index.html` al navegador i comprova que es veu correctament.
+5. Tria la temàtica del teu web i un nom breu per a la pàgina.
+
+!!! tip "No veig els canvis?"
+    Comprova que has guardat els fitxers, que has actualitzat el navegador i que estàs editant el mateix projecte que tens obert.
 
 ---
 
-## Part 1. Coneix i modifica el primer HTML
+## Part 1. Comencem amb HTML
 
-En aquesta part treballaràs amb el fitxer `index.html`. El professor explicarà les etiquetes i fareu els primers canvis conjuntament.
+### 1. Capçalera i menú
 
-1. Localitza `<!DOCTYPE html>`, `<html>`, `<head>`, `<title>` i `<body>`. Identifica quina informació va en cada zona.
-2. Busca el títol principal de ByteAcademy (`<h1>`) i modifica'n el text.
-3. Canvia el paràgraf de presentació per una descripció pròpia de l'acadèmia.
-4. Afig, dins de la secció de presentació, una **llista no ordenada** (`<ul>` i `<li>`) amb tres avantatges d'estudiar a ByteAcademy.
-5. Localitza un enllaç (`<a>`) del menú. Identifica el valor del seu atribut `href` i comprova on et porta en fer clic.
-6. Guarda els canvis i comprova'ls en el navegador.
+En `index.html`:
 
-**Pista:** aquesta és l'estructura d'una llista senzilla:
+1. Modifica el títol del navegador (`<title>`) i el títol principal que apareix al web.
+2. Completa la capçalera amb el nom del teu projecte.
+3. Crea un menú de navegació amb enllaços a **Inici**, **Sobre el projecte**, **Galeria** i **Contacte**.
+4. Comprova que els enllaços apunten als identificadors correctes de les seccions.
+
+Exemple d'enllaç intern:
+
+```html
+<a href="#galeria">Galeria</a>
+```
+
+Aquest enllaç ha de portar a un element de la mateixa pàgina que tinga `id="galeria"`.
+
+### 2. Secció de presentació
+
+1. Afig un títol que explique de què tracta la pàgina.
+2. Escriu un paràgraf breu de presentació.
+3. Incorpora una imatge local amb una descripció alternativa (`alt`).
+4. Afig un enllaç que porte a la galeria; més avant li donarem aparença de botó amb CSS.
+
+Exemple d'imatge:
+
+```html
+<img src="img/exemple.svg" alt="Il·lustració de presentació del projecte">
+```
+
+Pots substituir la imatge de prova per una altra imatge adequada, sempre que la guardes dins de `img/` i actualitzes la ruta.
+
+---
+
+## Part 2. Completem l'estructura de la web
+
+### 3. Sobre el projecte
+
+Afig una secció amb `id="sobre"` que continga:
+
+1. Un títol secundari (`<h2>`).
+2. Dos paràgrafs que expliquen la teua idea.
+3. Una llista de **tres característiques** o punts destacats.
+
+Exemple de llista:
 
 ```html
 <ul>
-  <li>Classes pràctiques</li>
-  <li>Professorat especialitzat</li>
-  <li>Aprenentatge al teu ritme</li>
+  <li>Primera característica</li>
+  <li>Segona característica</li>
+  <li>Tercera característica</li>
 </ul>
 ```
 
----
+### 4. Galeria de targetes
 
-## Part 2. Entén les seccions de la pàgina
+Crea una secció `id="galeria"` amb **tres targetes**, cadascuna amb:
 
-Ara aprendràs com s'organitza el contingut d'una web. Partim de les seccions que ja existeixen en el projecte inicial.
+- Una imatge amb `alt`.
+- Un títol (`<h3>`).
+- Una descripció d'una o dues frases.
 
-1. Identifica i assenyala en el fitxer les etiquetes `header`, `nav`, `main`, `section`, `article` i `footer`.
-2. Localitza les seccions amb els identificadors `inici`, `cursos` i `contacte`.
-3. Modifica els dos cursos d'exemple: canvia'n el nom i la descripció.
-4. Completa la informació de contacte amb una adreça de correu **fictícia**.
-5. Incorpora a la presentació una imatge amb `<img>`, utilitzant l'arxiu `img/academia.svg` que ja tens al projecte. Escriu un text alternatiu (`alt`) que descriga la imatge.
-6. Comprova que els enllaços del menú porten a les seccions correctes.
+Cada targeta ha d'utilitzar un element `<article>` i la classe `targeta` perquè després pugues aplicar-hi el mateix CSS.
 
-**Exemple d'imatge:**
+Pista per a **una** de les targetes:
 
 ```html
-<img src="img/academia.svg" alt="Il·lustració de l'acadèmia ByteAcademy">
+<article class="targeta">
+  <img src="img/exemple.svg" alt="Descripció de la imatge">
+  <h3>Primer element</h3>
+  <p>Descripció breu de l'element.</p>
+</article>
 ```
 
-!!! note "Important"
-    `id` identifica un element i pot funcionar com a destinació d'un enllaç intern. `class` serveix, entre altres coses, per aplicar els mateixos estils a diversos elements.
+Ara crea **dues targetes més** adaptades a la temàtica que has triat.
 
-### Validació 1 — HTML
+### 5. Taula d'informació
 
-**Abans de passar a la part de CSS, avisa el professor.** Hauràs de:
+Afig una taula relacionada amb el teu web. Pot comparar preus ficticis, horaris, característiques, resultats, activitats o qualsevol informació que tinga sentit.
 
-- Mostrar el HTML obert en VS Code i la pàgina en el navegador.
-- Demostrar que els enllaços interns funcionen.
-- Assenyalar la capçalera, el menú, el contingut principal i les targetes de cursos.
-- Explicar breument per a què serveixen dues etiquetes HTML que et pregunte el professor.
+Ha de contindre:
 
-Si hi ha algun error, corregeix-lo abans de continuar.
+- Una fila d'encapçalaments (`<th>`).
+- Com a mínim **tres files de dades** (`<td>`).
+- Almenys **tres columnes**.
+
+Pista d'estructura:
+
+```html
+<table>
+  <thead>
+    <tr>
+      <th>Element</th>
+      <th>Característica</th>
+      <th>Detall</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Exemple A</td>
+      <td>Opció 1</td>
+      <td>Informació A</td>
+    </tr>
+  </tbody>
+</table>
+```
+
+Completa les files fins que la taula mostre tres registres diferents.
+
+### 6. Formulari de contacte
+
+Crea una secció `id="contacte"` amb un formulari visual que incloga:
+
+1. Un camp de **nom**.
+2. Un camp de **correu electrònic** (`type="email"`).
+3. Un camp de **missatge** (`<textarea>`).
+4. Un botó d'enviament.
+5. Una etiqueta `<label>` associada a cada camp.
+
+Exemple del camp de nom:
+
+```html
+<label for="nom">Nom</label>
+<input type="text" id="nom" name="nom" required>
+```
+
+Repetix el patró amb els altres camps. Pots usar `action="#"` en el formulari com a marcador de posició.
+
+!!! warning "És un formulari de prova"
+    No has de programar l'enviament de missatges ni connectar el formulari amb cap servidor. El botó no enviarà cap correu real. **No introduïsques dades personals reals** quan el proves.
+
+### 7. Peu de pàgina
+
+Afig un `<footer>` que continga:
+
+- El teu nom com a autor/a.
+- Una informació de contacte **fictícia**.
+- Un enllaç per tornar a l'inici de la pàgina.
+
+### Validació 1 — Estructura HTML
+
+**Avisa el professor quan hages acabat les set parts anteriors, abans de treballar el CSS en profunditat.**
+
+Hauràs de mostrar al navegador i en VS Code:
+
+- Les set seccions/parts de la pàgina.
+- Els enllaços interns del menú funcionant.
+- Les tres targetes, la taula i el formulari.
+- Una imatge local i el seu atribut `alt`.
+
+El professor et pot demanar una **xicoteta modificació en directe**, com afegir una fila a la taula o canviar l'enllaç d'una secció. **No has d'entregar explicacions escrites.**
 
 ---
 
 ## Part 3. Donem estil amb CSS
 
-Obri `css/estils.css`. Ja inclou unes quantes regles inicials; el professor explicarà com es relacionen amb les classes del HTML.
+Obri `css/estils.css`. Tots els estils han d'estar en aquest fitxer, no dins de les etiquetes HTML.
 
-1. Localitza un selector com `.capcalera` i troba quin element de `index.html` utilitza eixa classe.
-2. Canvia el color de fons de la capçalera i comprova el resultat.
-3. Modifica la tipografia o la mida d'un títol utilitzant CSS.
-4. Crea una regla per a les targetes amb la classe `.targeta-curs`. Utilitza `padding`, `border` i `border-radius`.
-5. Organitza les targetes mitjançant **Flexbox** amb l'ajuda de l'exemple següent:
+### 8. Estils generals
+
+1. Aplica una tipografia llegible a `body`.
+2. Tria **dos colors principals** que combinen amb la teua temàtica.
+3. Defineix el color del text i el fons de la pàgina.
+4. Dona espai als diferents blocs utilitzant `margin` i `padding`.
+5. Personalitza l'aparença de la capçalera, el menú i el peu de pàgina.
+
+### 9. Galeria amb Flexbox
+
+1. Posa les tres targetes dins d'un contenidor amb classe `graella-targetes`.
+2. Aplica Flexbox perquè les targetes es puguen col·locar una al costat de l'altra.
+3. Afig un espai entre targetes (`gap`).
+4. Dona a les targetes una vora, espai interior i cantonades arredonides.
+
+Pista de CSS:
 
 ```css
-.llista-cursos {
+.graella-targetes {
   display: flex;
   flex-wrap: wrap;
   gap: 16px;
 }
 
-.targeta-curs {
+.targeta {
   flex: 1 1 220px;
   padding: 16px;
   border: 1px solid #cbd5e1;
@@ -129,59 +239,108 @@ Obri `css/estils.css`. Ja inclou unes quantes regles inicials; el professor expl
 }
 ```
 
-6. Canvia un dels valors (`gap`, `padding`, `border-radius`...) i observa què ocorre.
-7. Redueix l'amplària de la finestra del navegador i comprova què passa amb les targetes.
+Ajusta les mides i els colors a la teua web. Comprova què passa si canvies `gap` o `padding`.
 
-!!! tip "Si el CSS no s'aplica"
-    Comprova que el fitxer s'ha guardat, que el HTML enllaça amb `css/estils.css`, que el selector coincideix amb el nom de la classe i que la regla acaba correctament amb `;` i `}`.
+### 10. Dona estil a la taula
+
+1. Aplica `border-collapse` i amplària a la taula.
+2. Afig vores i espai interior a `th` i `td`.
+3. Diferencia visualment la fila d'encapçalament.
+4. Dona un color de fons alternatiu a les files, si ho consideres útil.
+
+Pista:
+
+```css
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  border: 1px solid #cbd5e1;
+  padding: 10px;
+}
+```
+
+### 11. Dona estil al formulari
+
+1. Separa visualment les etiquetes i els camps.
+2. Fes que els camps tinguen una amplària còmoda i que no desborden el contenidor.
+3. Personalitza el botó amb `background-color`, `color`, `padding` i `border-radius`.
+4. Comprova que és fàcil identificar cada camp.
+
+### 12. Efectes senzills
+
+Afig almenys **un efecte `:hover`** en un botó o enllaç.
+
+Exemple:
+
+```css
+.boto:hover {
+  background-color: #155e75;
+}
+```
+
+Per a utilitzar aquest exemple, l'enllaç o botó ha de tindre la classe `boto`.
 
 ---
 
-## Part 4. Personalitza la pàgina pel teu compte
+## Part 4. Personalització i comprovacions finals
 
-Ara que ja tens un exemple funcional, fes aquestes modificacions **sense copiar una solució completa**:
+Fes les últimes millores **pel teu compte**:
 
-1. Afig una **tercera targeta de curs**. Ha de mantindre l'estructura de les altres dues, però tindre un títol i una descripció diferents.
-2. Modifica almenys **dos colors** de la web per aconseguir una paleta coherent.
-3. Afig **una regla CSS pròpia** o modifica clarament una de les existents (per exemple, l'estil dels enllaços, dels títols o de les targetes).
-4. Comprova que les tres targetes es distribueixen correctament i que els enllaços continuen funcionant.
-5. Mostra la pàgina en una finestra estreta i corregeix qualsevol problema senzill de llegibilitat o de desbordament.
+1. Canvia com a mínim **dos valors d'estil** respecte dels exemples (colors, espaiats, vores o tipografia).
+2. Comprova que totes les targetes tenen el mateix estil, encara que tinguen continguts diferents.
+3. Revisa que les imatges no es desborden i que mantenen una mida raonable.
+4. Obri el web en una finestra estreta i comprova que continua sent llegible.
+5. Prova tots els enllaços interns.
+6. Comprova que la taula té tres files de dades i que el formulari mostra tots els camps.
 
-### Validació 2 — CSS i comprensió
+### Validació 2 — CSS i resultat final
 
-**Quan acabes, avisa el professor.** Hauràs de:
+**Avisa el professor abans de fer el lliurament.** Li hauràs de mostrar:
 
-- Mostrar la pàgina final amb tres targetes.
-- Localitzar una classe en el HTML i la seua regla en el CSS.
-- Explicar què fa `display: flex` en aquest projecte.
-- Canviar en directe un valor de CSS (per exemple, un color o un espaiat) i demostrar-ne l'efecte.
+- El web acabat amb els estils aplicats.
+- Les targetes distribuïdes amb Flexbox.
+- La taula i el formulari personalitzats.
+- Un efecte `:hover` que funcione.
+- La web en una finestra estreta.
 
-No és necessari presentar una memòria ni respondre per escrit un qüestionari llarg: les explicacions es faran durant la validació.
+El professor et demanarà modificar **un valor CSS en directe** i mostrar-ne l'efecte. Per exemple: canviar el color de la capçalera, el marge d'una targeta o la mida d'una imatge.
 
 ## Ampliació voluntària
 
-**Només si has acabat les quatre parts:** investiga què fa `@media` i prova d'afegir una regla CSS que canvie algun estil quan la finestra siga estreta. Aquesta ampliació **no és necessària per completar l'activitat**.
+Si has acabat abans, tria una o dues millores:
 
-## Comprovació final
+- Afegir una quarta targeta amb una imatge diferent.
+- Incorporar una regla `@media` per canviar la disposició en pantalles estretes.
+- Aplicar `:hover` a les targetes o millorar els estats `:focus` dels camps del formulari.
+- Millorar l'estil del menú de navegació en pantalles petites.
 
-- [ ] La pàgina s'obri correctament.
-- [ ] He modificat textos i creat una llista en HTML.
-- [ ] He afegit la imatge amb un `alt` adequat.
-- [ ] Els enllaços del menú funcionen.
-- [ ] Tinc tres targetes de cursos.
-- [ ] Les targetes tenen estil CSS i s'organitzen amb Flexbox.
-- [ ] He realitzat almenys tres modificacions pròpies en la part final.
-- [ ] He superat les dues validacions amb el professor.
+## Comprovació abans d'entregar
+
+- [ ] El web té les set seccions/parts obligatòries.
+- [ ] He utilitzat HTML semàntic i els enllaços interns funcionen.
+- [ ] Hi ha tres targetes, una taula amb almenys tres files de dades i un formulari visual.
+- [ ] Les imatges locals funcionen i tenen `alt`.
+- [ ] El CSS està en un fitxer extern.
+- [ ] He utilitzat classes CSS, model de caixa, Flexbox i un efecte `:hover`.
+- [ ] He comprovat el resultat en una finestra estreta.
+- [ ] He realitzat les dues validacions pràctiques amb el professor.
 
 ## Lliurament
 
-Comprimeix la carpeta `a4-1-byteacademy` en un **ZIP** i entrega'l en Aules. Ha de contindre `index.html`, `css/estils.css` i els recursos locals necessaris perquè el professor puga obrir la pàgina en el seu ordinador.
+Entrega en Aules **un únic ZIP amb la web**, amb aquesta estructura:
 
-**No cal entregar un `README.md` ni una memòria extensa.** El professor comprovarà directament el treball i la comprensió durant les validacions.
+```text
+activitat-4-1/
+├── index.html
+├── css/
+│   └── estils.css
+└── img/
+    └── (les imatges utilitzades)
+```
 
-## Per a què servirà després?
+El professor ha de poder obrir `index.html` i veure la web completa sense dependre de rutes del teu ordinador.
 
-Conserva aquest projecte. En l'**A4.2, Implantació i administració de WordPress**, recuperaràs la idea de les targetes de cursos i alguns dels estils CSS per personalitzar el web de ByteAcademy.
-
-!!! info "Avaluació"
-    Aquesta és una **activitat formativa** de preparació. Els coneixements d'HTML i CSS es tornaran a utilitzar, especialment per a la **personalització de la interfície del gestor de continguts (CA1.c)**, en l'A4.2 de WordPress.
+**No cal cap documentació:** no entregues memòria, `README.md`, qüestionari, fitxa de captures ni PDF. El que s'avalua és la pàgina i la demostració pràctica.
