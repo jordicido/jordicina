@@ -10,7 +10,7 @@ Una aplicació pot compilar i, tanmateix, donar un resultat incorrecte. Compilar
 
 > **Abast de la unitat**
 >
-> La teoria es completa amb quatre activitats avaluables i dos reptes individuals. Cada exemple i cada projecte inicial és menut i independent: no hi ha cap projecte transversal.
+> La teoria es completa amb quatre activitats. Cada exemple i cada projecte inicial és menut i independent: no hi ha cap projecte transversal.
 
 ## Dades de la unitat
 
@@ -38,7 +38,7 @@ Un resultat verd només diu que els casos executats han coincidit amb l’espera
 
 [Tornar a Entorns de desenvolupament](index.md) · [Consultar l’avaluació](avaluacio.md)
 
-## Activitats i reptes
+## Activitats
 
 Les activitats segueixen la seqüència de les dotze sessions i deixen evidències verificables.
 
@@ -46,24 +46,23 @@ Les activitats segueixen la seqüència de les dotze sessions i deixen evidènci
 | --- | --- | --- |
 | 1–2 | Fonaments, requisits, classes d’equivalència i valors límit | Activitat 1 |
 | 3–5 | Breakpoints, variables, pila de crides i hipòtesis | Activitat 2 |
-| 6–8 | Taller guiat + Activitat 3 (taquilla d'un concert): dissenyar casos, executar-los amb Maven i registrar una regressió amb proves de retorn, estat i excepcions a IntelliJ/Maven | Taller guiat + Activitat 3 |
-| 9–10 | Dobles de prova, aïllament i informes d’incidències | Activitat 4 |
-| 11–12 | Regressió, revisió d’evidències i reptes individuals | Activitats i reptes |
+| 6–8 | Activitat 3 (taquilla d'un concert): dissenyar casos, executar-los amb Maven i registrar una regressió amb proves de retorn, estat i excepcions a IntelliJ/Maven | Activitat 3 |
+| 9–10 | Documentació d’incidències i registre de tres casos | Activitat 4 (1 sessió) |
+| 11–12 | Consolidació i tancament de la unitat | — |
 
+- Activitat 1. Disseny d'un pla de proves (treballada prèviament).
 - [Activitat 2. Depura, explica i verifica](up4/activitats/activitat-2-depuracio.md)
-- [Taller guiat. Primeres proves unitàries amb JUnit 5 (IntelliJ IDEA i Maven)](up4/activitats/taller-guiat-junit-intellij-maven.md)
 - [Activitat 3. Posem a prova la taquilla d'un concert](up4/activitats/activitat-3-junit-automatitzacio.md)
-- [Activitat 4. Dobles de prova i gestió d’incidències](up4/activitats/activitat-4-dobles-incidencies.md)
-- [Repte 11. La hipòtesi oculta](up4/activitats/repte-11-hipotesi-depuracio.md)
-- [Repte 12. Una bateria que protegeix el contracte](up4/activitats/repte-12-bateria-junit.md)
+- [Activitat 4. Registre d'incidències](up4/activitats/activitat-4-dobles-incidencies.md)
 
 ## Cobertura dels criteris
 
-| Criteri | Activitat o repte | Evidència principal |
+| Criteri | Activitat | Evidència principal |
 | --- | --- | --- |
-| RA3.c–e | Activitat 2 i repte 11 | Registre de depuració, hipòtesi, breakpoints i correcció verificada. |
+| RA3.a–b | Activitat 1 | Pla, classes d’equivalència, valors límit i traçabilitat. |
+| RA3.c–e | Activitat 2 | Registre de depuració, hipòtesi, breakpoints i correcció verificada. |
 | RA3.b | Activitat 3 (pla de casos) | Decisió prèvia de casos concrets, expectatives i justificacions. |
 | RA3.f | Activitat 3 (tests JUnit de retorn, estat i excepcions) | Bateria JUnit 5 que comprova el contracte de la taquilla. |
-| RA3.g | Activitat 3 i repte 12 (execució automatitzada amb Maven) | `mvn clean test`, informes de Surefire, bateria repetible i registre d'una regressió. |
-| RA3.h | Activitat 2 i activitat 4 | Informe reproduïble i evidències segures. |
-| RA3.i | Activitat 4 | Interfície injectada i doble de prova en memòria. |
+| RA3.g | Activitat 3 (execució automatitzada amb Maven) | `mvn clean test`, informes de Surefire, bateria repetible i registre d'una regressió. |
+| RA3.h | Activitat 2 i Activitat 4 | Informe reproduïble i evidències segures. |
+| RA3.i | Sense activitat específica en aquesta revisió | El criteri es conserva en la teoria de dobles de prova; no s'atribueix a l'Activitat 4. |

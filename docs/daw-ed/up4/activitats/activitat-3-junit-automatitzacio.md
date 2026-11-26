@@ -283,4 +283,4 @@ Entrega **en la mateixa tasca d'Aules**:
 
 > **Recorda:** `BUILD SUCCESS` només confirma que les comprovacions executades han passat. Per això és important **triar bons casos** i indicar clarament què esperes en cadascun.
 
-[Anterior: depuració](activitat-2-depuracio.md) · [Taller guiat](taller-guiat-junit-intellij-maven.md) · [Següent: dobles i incidències](activitat-4-dobles-incidencies.md) · [Índex](../../up4-proves.md)
+[Anterior: depuració](activitat-2-depuracio.md) · [Següent: registre d'incidències](activitat-4-dobles-incidencies.md) · [Índex](../../up4-proves.md)
