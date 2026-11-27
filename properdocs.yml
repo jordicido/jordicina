@@ -57,7 +57,14 @@ nav:
                   - Activitat 3. Còpies i restauració: smx-si/ut2/activitats/activitat-3-copies-restauracio.md
                   - Activitat 4. Imatge amb Clonezilla: smx-si/ut2/activitats/activitat-4-clonezilla.md
                   - Autoavaluació: smx-si/ut2/activitats/autoavaluacio.md
-              - UP3. Mecanismes de seguretat activa: smx-si/ut3-seguretat-activa.md
+              - UP3. Mecanismes de seguretat activa:
+                  - Presentació: smx-si/ut3-seguretat-activa/index.md
+                  - 1. Amenaces i programari maliciós: smx-si/ut3-seguretat-activa/01-amenaces-programari-malicios.md
+                  - 2. Vulnerabilitats i actualització de sistemes: smx-si/ut3-seguretat-activa/02-vulnerabilitats-actualitzacions.md
+                  - 3. Verificació i instal·lació segura de programari: smx-si/ut3-seguretat-activa/03-verificacio-programari.md
+                  - 4. Detecció i eliminació de programari maliciós: smx-si/ut3-seguretat-activa/04-deteccio-eliminacio-malware.md
+                  - 5. Plans de contingència i resposta a incidents: smx-si/ut3-seguretat-activa/05-plans-contingencia-incidents.md
+                  - 6. Tècniques de recuperació de dades: smx-si/ut3-seguretat-activa/06-recuperacio-dades.md
               - UP4. Privacitat de la informació en xarxes: smx-si/ut4-privacitat-xarxes.md
               - UP5. Legislació i protecció de dades: smx-si/ut5-legislacio-dades.md
           - Recursos: smx-si/recursos.md
