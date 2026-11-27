@@ -47,7 +47,8 @@ Les tres activitats són individuals i demanen provar els programes i lliurar el
 
 ## Exercicis de repàs
 
-Practica les estructures condicionals amb problemes senzills i de dificultat progressiva. [Repàs 1. Estructures condicionals](activitats/repas-1-condicionals.md)
+- [Repàs 1. Estructures condicionals](activitats/repas-1-condicionals.md): practicar estructures condicionals amb problemes senzills i de dificultat progressiva.
+- [Repàs 2. El teu Tamagotchi](activitats/repas-2-tamagotchi.md): integrar condicionals, bucles, sentències de salt i comprovacions en un programa interactiu.
 
 ## Seqüència de treball
 
