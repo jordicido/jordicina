@@ -1,0 +1,32 @@
+[
+  {
+    "nom": "AULA-01",
+    "ram": 8,
+    "so": "Ubuntu",
+    "estat": "operatiu"
+  },
+  {
+    "nom": "AULA-02",
+    "ram": 16,
+    "so": "Windows",
+    "estat": "revisió"
+  },
+  {
+    "nom": "AULA-03",
+    "ram": 8,
+    "so": "Ubuntu",
+    "estat": "operatiu"
+  },
+  {
+    "nom": "AULA-04",
+    "ram": 32,
+    "so": "Windows",
+    "estat": "operatiu"
+  },
+  {
+    "nom": "AULA-05",
+    "ram": 16,
+    "so": "Debian",
+    "estat": "operatiu"
+  }
+]

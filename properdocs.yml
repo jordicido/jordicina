@@ -154,7 +154,20 @@ nav:
                       - Repàs 2. El teu Tamagotchi: intro-python/up3/activitats/repas-2-tamagotchi.md
               - UP4. Classes i programació orientada a objectes: intro-python/up4-classes-i-poo.md
               - UP5. Entrada, eixida i llibreries: intro-python/up5-entrada-eixida-i-llibreries.md
-              - UP6. Estructures avançades de dades: intro-python/up6-estructures-avancades.md
+              - UP6. Estructures de dades avançades i tractament de documents:
+                  - Presentació: intro-python/up6-estructures-avancades.md
+                  - Índex i seqüència: intro-python/up6/index.md
+                  - 1. Llistes: intro-python/up6/01-llistes.md
+                  - 2. Diccionaris: intro-python/up6/02-diccionaris.md
+                  - 3. Tractament de documents: intro-python/up6/03-documents.md
+                  - Activitat 1. Gestió de les temperatures d’un servidor: intro-python/up6/activitats/activitat-1-temperatures.md
+                  - Activitat 2. Inventari d’una aula d’informàtica: intro-python/up6/activitats/activitat-2-inventari-aula.md
+                  - Activitat 3. Importació i exportació d’un inventari: intro-python/up6/activitats/activitat-3-formats.md
+                  - Activitat 4. SMX Inventory Manager: intro-python/up6/activitats/activitat-4-inventory-manager.md
+                  - Recursos de dades: intro-python/up6/recursos/index.md
+                  - inventari.csv: intro-python/up6/recursos/inventari.csv
+                  - inventari.json: intro-python/up6/recursos/inventari.json
+                  - inventari.xml: intro-python/up6/recursos/inventari.xml
           - Materials: intro-python/materials.md
           - Recursos: intro-python/recursos.md
           - Avaluació: intro-python/avaluacio.md

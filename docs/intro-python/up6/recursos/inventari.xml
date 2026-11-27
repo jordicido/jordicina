@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<inventari>
+  <equip nom="AULA-01">
+    <ram>8</ram>
+    <so>Ubuntu</so>
+    <estat>operatiu</estat>
+  </equip>
+  <equip nom="AULA-02">
+    <ram>16</ram>
+    <so>Windows</so>
+    <estat>revisió</estat>
+  </equip>
+  <equip nom="AULA-03">
+    <ram>8</ram>
+    <so>Ubuntu</so>
+    <estat>operatiu</estat>
+  </equip>
+  <equip nom="AULA-04">
+    <ram>32</ram>
+    <so>Windows</so>
+    <estat>operatiu</estat>
+  </equip>
+  <equip nom="AULA-05">
+    <ram>16</ram>
+    <so>Debian</so>
+    <estat>operatiu</estat>
+  </equip>
+</inventari>

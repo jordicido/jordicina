@@ -34,7 +34,7 @@ hide:
   <a class="module-card" href="up3/"><strong>UP3 · Control i depuració · RA3</strong><span>20 h · 25 % · Condicions, bucles, depuració i anàlisi del codi.</span></a>
   <a class="module-card" href="up4-classes-i-poo/"><strong>UP4 · Classes i programació orientada a objectes · RA4</strong><span>12 h · 20 % · Classes, objectes, encapsulació, herència i polimorfisme.</span></a>
   <a class="module-card" href="up5-entrada-eixida-i-llibreries/"><strong>UP5 · Entrada, eixida i llibreries · RA5</strong><span>9 h · 15 % · Fitxers, formats d’informació, mòduls i llibreries de classes.</span></a>
-  <a class="module-card" href="up6-estructures-avancades/"><strong>UP6 · Estructures avançades de dades · RA6</strong><span>6 h · 10 % · Llistes, diccionaris, tuples, conjunts i manipulació d’informació.</span></a>
+  <a class="module-card" href="up6-estructures-avancades/"><strong>UP6 · Estructures de dades avançades i documents · RA6</strong><span>12 h · 15 % · Llistes, diccionaris, persistència i formats CSV, JSON i XML.</span></a>
 </div>
 
 <section class="module-highlight">
