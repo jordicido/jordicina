@@ -69,4 +69,4 @@ No inclogues llibreries externes ni una solució copiada. Has de poder explicar 
 - La mitjana no provoca divisió per zero.
 - Has provat els quatre casos de prova.
 
-[Índex de la UP6](../index.md) · [Activitat 2](activitat-2-inventari-aula.md) · [Teoria: llistes](../01-llistes.md)
+[Índex de la UP6](../../up6-estructures-avancades.md) · [Activitat 2](activitat-2-inventari-aula.md) · [Teoria: llistes](../01-llistes.md)

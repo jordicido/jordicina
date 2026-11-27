@@ -32,4 +32,4 @@ Utilitza aquests fitxers com a dades locals de pràctica. No necessiten Internet
 3. Llig l’XML i identifica l’arrel inventari i els elements equip.
 4. Comprova que els cinc noms i els valors de RAM coincideixen.
 
-[Índex de la UP6](../index.md) · [Teoria: tractament de documents](../03-documents.md)
+[Índex de la UP6](../../up6-estructures-avancades.md) · [Teoria: tractament de documents](../03-documents.md)

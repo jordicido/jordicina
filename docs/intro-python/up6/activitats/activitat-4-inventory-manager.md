@@ -104,4 +104,4 @@ Entrega:
 - Les exportacions mantenen els mateixos registres.
 - No has introduït classes pròpies ni una arquitectura innecessària.
 
-[Activitat 3](activitat-3-formats.md) · [Índex de la UP6](../index.md) · [Recursos](../recursos/index.md)
+[Activitat 3](activitat-3-formats.md) · [Índex de la UP6](../../up6-estructures-avancades.md) · [Recursos](../recursos/index.md)

@@ -40,6 +40,13 @@ Aprendrem a guardar dades en llistes i diccionaris, a recórrer-les i analitzar-
 4. [Activitats](up6/activitats/activitat-1-temperatures.md): quatre pràctiques, de la consolidació al repte integrador.
 5. [Recursos de dades](up6/recursos/index.md): el mateix inventari en CSV, JSON i XML.
 
+## Activitats de la unitat
+
+- [Activitat 1. Gestió de les temperatures d’un servidor](up6/activitats/activitat-1-temperatures.md)
+- [Activitat 2. Inventari d’una aula d’informàtica](up6/activitats/activitat-2-inventari-aula.md)
+- [Activitat 3. Importació i exportació d’un inventari](up6/activitats/activitat-3-formats.md)
+- [Activitat 4. SMX Inventory Manager](up6/activitats/activitat-4-inventory-manager.md)
+
 ## Evidències
 
 | Evidència | Criteri de l’enunciat | Cobertura |
@@ -58,4 +65,4 @@ Començarem amb exemples curts i executables. Després resoldrem exercicis de co
 
 > **Recorda:** en aquesta UP no treballarem tuples, conjunts, arrays específics, matrius, expressions regulars, NumPy ni Pandas. Ens centrarem en llistes, diccionaris i documents.
 
-[Començar l’índex de la UP6](up6/index.md) · [Tornar a l’inici d’Introducció a la programació en Python](index.md) · [Consultar l’avaluació](avaluacio.md)
+[Tornar a l’inici d’Introducció a la programació en Python](index.md) · [Consultar l’avaluació](avaluacio.md)

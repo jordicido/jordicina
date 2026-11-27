@@ -327,4 +327,4 @@ print("Alertes:", len(alertes))
 - Per què cal comprovar una llista buida abans de calcular-ne la mitjana?
 - Quan preferiries `enumerate()` a `range(len(...))`?
 
-[Següent: diccionaris](02-diccionaris.md) · [Índex de la UP6](index.md)
+[Següent: diccionaris](02-diccionaris.md) · [Índex de la UP6](../up6-estructures-avancades.md)

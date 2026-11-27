@@ -155,8 +155,7 @@ nav:
               - UP4. Classes i programació orientada a objectes: intro-python/up4-classes-i-poo.md
               - UP5. Entrada, eixida i llibreries: intro-python/up5-entrada-eixida-i-llibreries.md
               - UP6. Estructures de dades avançades i tractament de documents:
-                  - Presentació: intro-python/up6-estructures-avancades.md
-                  - Índex i seqüència: intro-python/up6/index.md
+                  - Índex i seqüència: intro-python/up6-estructures-avancades.md
                   - 1. Llistes: intro-python/up6/01-llistes.md
                   - 2. Diccionaris: intro-python/up6/02-diccionaris.md
                   - 3. Tractament de documents: intro-python/up6/03-documents.md

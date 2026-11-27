@@ -362,4 +362,4 @@ except ET.ParseError:
 - Què representen Element i ElementTree?
 - Per què no és bona idea afegir una línia arbitrària al final d’un JSON?
 
-[Anterior: diccionaris](02-diccionaris.md) · [Recursos de dades](recursos/index.md) · [Índex de la UP6](index.md)
+[Anterior: diccionaris](02-diccionaris.md) · [Recursos de dades](recursos/index.md) · [Índex de la UP6](../up6-estructures-avancades.md)

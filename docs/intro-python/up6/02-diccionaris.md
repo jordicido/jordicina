@@ -249,4 +249,4 @@ print("Per sistema:", per_so)
 - Quina estructura representa millor molts equips amb els mateixos camps?
 - Què significa que les claus d’un diccionari siguen úniques?
 
-[Anterior: llistes](01-llistes.md) · [Següent: tractament de documents](03-documents.md) · [Índex de la UP6](index.md)
+[Anterior: llistes](01-llistes.md) · [Següent: tractament de documents](03-documents.md) · [Índex de la UP6](../up6-estructures-avancades.md)
