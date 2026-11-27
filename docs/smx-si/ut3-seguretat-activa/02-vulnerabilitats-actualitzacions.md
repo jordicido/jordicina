@@ -127,4 +127,4 @@ No confongues `apt update` amb instal·lar, CVE amb CVSS, antivirus amb pedaç, 
 - [Actualitzacions de seguretat d’Ubuntu](https://documentation.ubuntu.com/security/security-updates/) i [USN](https://ubuntu.com/security/notices).
 - [Windows Update Security](https://learn.microsoft.com/en-us/windows/deployment/update/windows-update-security) i [MSRC](https://msrc.microsoft.com/update-guide).
 
-[Següent: verificació de programari](03-verificacio-programari.md) · [Índex de la UP3](index.md)
+[Següent: verificació de programari](03-verificacio-programari.md) · [Portada de la UP3](../ut3-seguretat-activa.md)

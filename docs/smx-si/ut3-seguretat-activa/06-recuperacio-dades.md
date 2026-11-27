@@ -136,4 +136,4 @@ No continues usant el disc, no instal·les el recuperador en l’origen, no guar
 - [TestDisk: fitxers eliminats](https://www.cgsecurity.org/testdisk_doc/undelete.html) i [particions](https://www.cgsecurity.org/wiki/TestDisk_Step_By_Step).
 - [Còpies de seguretat de la UP2](../ut2/05-copies-seguretat.md).
 
-[Anterior: plans de contingència](05-plans-contingencia-incidents.md) · [Índex de la UP3](index.md)
+[Anterior: plans de contingència](05-plans-contingencia-incidents.md) · [Portada de la UP3](../ut3-seguretat-activa.md)

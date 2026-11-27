@@ -106,4 +106,4 @@ No apagues ni formats per impuls, no elimines evidències, no restaures sobre un
 - [INCIBE-CERT](https://www.incibe.es/incibe-cert), avisos i guies.
 - [CISA](https://www.cisa.gov/), recursos de resposta.
 
-[Següent: recuperació de dades](06-recuperacio-dades.md) · [Índex de la UP3](index.md)
+[Següent: recuperació de dades](06-recuperacio-dades.md) · [Portada de la UP3](../ut3-seguretat-activa.md)

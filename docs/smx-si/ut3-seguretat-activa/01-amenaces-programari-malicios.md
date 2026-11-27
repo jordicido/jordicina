@@ -119,4 +119,4 @@ El malware es classifica des de diversos eixos i les etiquetes es poden combinar
 - [CISA](https://www.cisa.gov/), recursos sobre amenaces i resposta.
 - [NIST SP 800-61 Rev. 3](https://csrc.nist.gov/pubs/sp/800/61/r3/final), resposta a incidents.
 
-[Següent: vulnerabilitats i actualitzacions](02-vulnerabilitats-actualitzacions.md) · [Índex de la UP3](index.md)
+[Següent: vulnerabilitats i actualitzacions](02-vulnerabilitats-actualitzacions.md) · [Portada de la UP3](../ut3-seguretat-activa.md)

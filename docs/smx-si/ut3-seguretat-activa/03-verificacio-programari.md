@@ -128,4 +128,4 @@ HTTPS no certifica el programa; un hash no identifica l’editor; un hash public
 - [Get-AuthenticodeSignature](https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.security/get-authenticodesignature).
 - [VirusTotal](https://www.virustotal.com/), només per a consultes compatibles amb la política de privacitat.
 
-[Següent: detecció i eliminació](04-deteccio-eliminacio-malware.md) · [Índex de la UP3](index.md)
+[Següent: detecció i eliminació](04-deteccio-eliminacio-malware.md) · [Portada de la UP3](../ut3-seguretat-activa.md)
